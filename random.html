@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Náhodné čísla a simulácie | Pravdepodobnosť a štatistika 2</title>
+  <meta name="description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Náhodné čísla a simulácie | Pravdepodobnosť a štatistika 2" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Náhodné čísla a simulácie | Pravdepodobnosť a štatistika 2" />
+  
+  <meta name="twitter:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  
+
+<meta name="author" content="Lukáš Lafférs" />
+
+
+<meta name="date" content="2023-09-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="structures.html"/>
+<link rel="next" href="recap.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Pravdepodobnosť a štatistika 2</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O tomto kurze</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Úvod do jazyka R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#nejaké-príklady-r"><i class="fa fa-check"></i><b>1.2</b> Nejaké príklady R</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#nevýhody-r"><i class="fa fa-check"></i><b>1.3</b> Nevýhody R</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#a-čo-teraz."><i class="fa fa-check"></i><b>1.4</b> A čo teraz.</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#demonštrácia-v-r"><i class="fa fa-check"></i><b>1.5</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#na-záver-úvodu"><i class="fa fa-check"></i><b>1.6</b> Na záver úvodu</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#cvičenia"><i class="fa fa-check"></i><b>1.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="structures.html"><a href="structures.html"><i class="fa fa-check"></i><b>2</b> Premenné a dátové štruktúry</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="structures.html"><a href="structures.html#typy-premenných"><i class="fa fa-check"></i><b>2.1</b> Typy premenných</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="structures.html"><a href="structures.html#numeric"><i class="fa fa-check"></i><b>2.1.1</b> <code>numeric</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="structures.html"><a href="structures.html#character"><i class="fa fa-check"></i><b>2.1.2</b> <code>character</code></a></li>
+<li class="chapter" data-level="2.1.3" data-path="structures.html"><a href="structures.html#logical"><i class="fa fa-check"></i><b>2.1.3</b> <code>logical</code></a></li>
+<li class="chapter" data-level="2.1.4" data-path="structures.html"><a href="structures.html#factor"><i class="fa fa-check"></i><b>2.1.4</b> <code>factor</code></a></li>
+<li class="chapter" data-level="2.1.5" data-path="structures.html"><a href="structures.html#iné"><i class="fa fa-check"></i><b>2.1.5</b> Iné</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="structures.html"><a href="structures.html#typy-dátových-štruktúr"><i class="fa fa-check"></i><b>2.2</b> Typy dátových štruktúr</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="structures.html"><a href="structures.html#vector"><i class="fa fa-check"></i><b>2.2.1</b> <code>vector</code></a></li>
+<li class="chapter" data-level="2.2.2" data-path="structures.html"><a href="structures.html#matrix"><i class="fa fa-check"></i><b>2.2.2</b> <code>matrix</code></a></li>
+<li class="chapter" data-level="2.2.3" data-path="structures.html"><a href="structures.html#array"><i class="fa fa-check"></i><b>2.2.3</b> <code>array</code></a></li>
+<li class="chapter" data-level="2.2.4" data-path="structures.html"><a href="structures.html#list"><i class="fa fa-check"></i><b>2.2.4</b> <code>list</code></a></li>
+<li class="chapter" data-level="2.2.5" data-path="structures.html"><a href="structures.html#data.frame"><i class="fa fa-check"></i><b>2.2.5</b> <code>data.frame</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="structures.html"><a href="structures.html#vlastné-funkcie"><i class="fa fa-check"></i><b>2.3</b> Vlastné funkcie</a></li>
+<li class="chapter" data-level="2.4" data-path="structures.html"><a href="structures.html#for-cyklus"><i class="fa fa-check"></i><b>2.4</b> <code>for</code> cyklus</a></li>
+<li class="chapter" data-level="2.5" data-path="structures.html"><a href="structures.html#knižnice"><i class="fa fa-check"></i><b>2.5</b> Knižnice</a></li>
+<li class="chapter" data-level="2.6" data-path="structures.html"><a href="structures.html#štandardy"><i class="fa fa-check"></i><b>2.6</b> Štandardy</a></li>
+<li class="chapter" data-level="2.7" data-path="structures.html"><a href="structures.html#časté-chyby"><i class="fa fa-check"></i><b>2.7</b> Časté chyby</a></li>
+<li class="chapter" data-level="2.8" data-path="structures.html"><a href="structures.html#demonštrácia-v-r-1"><i class="fa fa-check"></i><b>2.8</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="2.9" data-path="structures.html"><a href="structures.html#cvičenia-1"><i class="fa fa-check"></i><b>2.9</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="random.html"><a href="random.html"><i class="fa fa-check"></i><b>3</b> Náhodné čísla a simulácie</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="random.html"><a href="random.html#pseudonáhodné-čísla-v-počítači"><i class="fa fa-check"></i><b>3.1</b> (Pseudo)Náhodné čísla v počítači</a></li>
+<li class="chapter" data-level="3.2" data-path="random.html"><a href="random.html#ako-to-funguje"><i class="fa fa-check"></i><b>3.2</b> Ako to funguje</a></li>
+<li class="chapter" data-level="3.3" data-path="random.html"><a href="random.html#rôzne-typy-náhodných-premenných"><i class="fa fa-check"></i><b>3.3</b> Rôzne typy náhodných premenných</a></li>
+<li class="chapter" data-level="3.4" data-path="random.html"><a href="random.html#rovnomerné-rozdelenie-ako-základ"><i class="fa fa-check"></i><b>3.4</b> Rovnomerné rozdelenie ako základ</a></li>
+<li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
+<li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
+<li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="recap.html"><a href="recap.html#diskrétne-náhodné-premenné"><i class="fa fa-check"></i><b>4.1</b> Diskrétne náhodné premenné</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="recap.html"><a href="recap.html#pravdepodobnostná-funkcia"><i class="fa fa-check"></i><b>4.1.1</b> Pravdepodobnostná funkcia</a></li>
+<li class="chapter" data-level="4.1.2" data-path="recap.html"><a href="recap.html#stredná-hodnota"><i class="fa fa-check"></i><b>4.1.2</b> Stredná hodnota</a></li>
+<li class="chapter" data-level="4.1.3" data-path="recap.html"><a href="recap.html#variancia"><i class="fa fa-check"></i><b>4.1.3</b> Variancia</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="recap.html"><a href="recap.html#spojité-náhodné-premenné"><i class="fa fa-check"></i><b>4.2</b> Spojité náhodné premenné</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="recap.html"><a href="recap.html#funkcia-hustoty"><i class="fa fa-check"></i><b>4.2.1</b> Funkcia hustoty</a></li>
+<li class="chapter" data-level="4.2.2" data-path="recap.html"><a href="recap.html#stredná-hodnota-1"><i class="fa fa-check"></i><b>4.2.2</b> Stredná hodnota</a></li>
+<li class="chapter" data-level="4.2.3" data-path="recap.html"><a href="recap.html#variancia-1"><i class="fa fa-check"></i><b>4.2.3</b> Variancia</a></li>
+<li class="chapter" data-level="4.2.4" data-path="recap.html"><a href="recap.html#kvantil"><i class="fa fa-check"></i><b>4.2.4</b> Kvantil</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="recap.html"><a href="recap.html#demonštrácia-v-r-2"><i class="fa fa-check"></i><b>4.3</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="4.4" data-path="recap.html"><a href="recap.html#cvičenia-3"><i class="fa fa-check"></i><b>4.4</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="suvis.html"><a href="suvis.html"><i class="fa fa-check"></i><b>5</b> Náhodné vektory a súvis medzi náhodnými premennými</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="suvis.html"><a href="suvis.html#závislosť-náhodných-premenných"><i class="fa fa-check"></i><b>5.1</b> Závislosť náhodných premenných</a></li>
+<li class="chapter" data-level="5.2" data-path="suvis.html"><a href="suvis.html#korelácia-nie-je-kauzalita"><i class="fa fa-check"></i><b>5.2</b> Korelácia nie je kauzalita</a></li>
+<li class="chapter" data-level="5.3" data-path="suvis.html"><a href="suvis.html#cvičenia-4"><i class="fa fa-check"></i><b>5.3</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html"><i class="fa fa-check"></i><b>6</b> Zobrazovanie dát</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#zlé-vizualizácie"><i class="fa fa-check"></i><b>6.1</b> Zlé vizualizácie</a></li>
+<li class="chapter" data-level="6.2" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#dobré-vizualizácie"><i class="fa fa-check"></i><b>6.2</b> Dobré vizualizácie</a></li>
+<li class="chapter" data-level="6.3" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#vizualizácia-v-rku-ggplot2-knižnica"><i class="fa fa-check"></i><b>6.3</b> Vizualizácia v Rku: <code>ggplot2</code> knižnica</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#zobrazenie-závislosti-dvoch-premenných"><i class="fa fa-check"></i><b>6.3.1</b> Zobrazenie závislosti dvoch premenných</a></li>
+<li class="chapter" data-level="6.3.2" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#zobrazenie-distribúcie-premennej"><i class="fa fa-check"></i><b>6.3.2</b> Zobrazenie distribúcie premennej</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
+<li class="chapter" data-level="6.5" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
+<li class="chapter" data-level="6.6" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#jedno"><i class="fa fa-check"></i><b>7.1</b> Jednovýberové testy</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#test-na-základe-normálnej-aproximácie-z-test"><i class="fa fa-check"></i><b>7.1.1</b> Test na základe normálnej aproximácie (Z-test)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#t-test"><i class="fa fa-check"></i><b>7.1.2</b> T-test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#dvojvýberové-testy"><i class="fa fa-check"></i><b>7.2</b> Dvojvýberové testy</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#rovnaká-variancia"><i class="fa fa-check"></i><b>7.2.1</b> Rovnaká variancia</a></li>
+<li class="chapter" data-level="7.2.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#rôzna-variancia"><i class="fa fa-check"></i><b>7.2.2</b> Rôzna variancia</a></li>
+<li class="chapter" data-level="7.2.3" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#párové-testy"><i class="fa fa-check"></i><b>7.2.3</b> Párové testy</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#konfidenčný-interval"><i class="fa fa-check"></i><b>7.3</b> Konfidenčný interval</a></li>
+<li class="chapter" data-level="7.4" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#testovanie-podielu"><i class="fa fa-check"></i><b>7.4</b> Testovanie podielu</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#testovanie-podielu-pre-jednu-skupinu"><i class="fa fa-check"></i><b>7.4.1</b> Testovanie podielu pre jednu skupinu</a></li>
+<li class="chapter" data-level="7.4.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#testovanie-rovnosti-podielov-pre-dve-skupiny"><i class="fa fa-check"></i><b>7.4.2</b> Testovanie rovnosti podielov pre dve skupiny</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
+<li class="chapter" data-level="7.6" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
+<li class="chapter" data-level="7.7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#lineárny-regresný-model"><i class="fa fa-check"></i><b>8.1</b> Lineárny regresný model</a></li>
+<li class="chapter" data-level="8.2" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#maticová-notácia"><i class="fa fa-check"></i><b>8.2</b> Maticová notácia</a></li>
+<li class="chapter" data-level="8.3" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#názvoslovie"><i class="fa fa-check"></i><b>8.3</b> Názvoslovie</a></li>
+<li class="chapter" data-level="8.4" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#ako-na-to"><i class="fa fa-check"></i><b>8.4</b> Ako na to</a></li>
+<li class="chapter" data-level="8.5" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#geometria-najmenších-štvorcov"><i class="fa fa-check"></i><b>8.5</b> Geometria najmenších štvorcov</a></li>
+<li class="chapter" data-level="8.6" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#konfidenčné-intervaly"><i class="fa fa-check"></i><b>8.6</b> Konfidenčné intervaly</a></li>
+<li class="chapter" data-level="8.7" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#viacrozmerná-lineárna-regresia"><i class="fa fa-check"></i><b>8.7</b> Viacrozmerná lineárna regresia</a></li>
+<li class="chapter" data-level="8.8" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#testovanie-podmodelov"><i class="fa fa-check"></i><b>8.8</b> Testovanie podmodelov</a></li>
+<li class="chapter" data-level="8.9" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#transformácie-a-interpretácia"><i class="fa fa-check"></i><b>8.9</b> Transformácie a interpretácia</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#level-level-model"><i class="fa fa-check"></i><b>8.9.1</b> Level-level model</a></li>
+<li class="chapter" data-level="8.9.2" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#log-level-model"><i class="fa fa-check"></i><b>8.9.2</b> Log-level model</a></li>
+<li class="chapter" data-level="8.9.3" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#level-log-model"><i class="fa fa-check"></i><b>8.9.3</b> Level-log model</a></li>
+<li class="chapter" data-level="8.9.4" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#log-log-model"><i class="fa fa-check"></i><b>8.9.4</b> Log-log model</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.10</b> Zhrnutie</a></li>
+<li class="chapter" data-level="8.11" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#cvičenia-7"><i class="fa fa-check"></i><b>8.11</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html#r-markdown"><i class="fa fa-check"></i><b>9.1</b> R Markdown</a></li>
+<li class="chapter" data-level="9.2" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html#cvičenia-8"><i class="fa fa-check"></i><b>9.2</b> Cvičenia</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pravdepodobnosť a štatistika 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="random" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Náhodné čísla a simulácie<a href="random.html#random" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Obrovskou výhodou počítačov je schopnosť simulovať náhodnosť.</p>
+<p> </p>
+<p>Veľa otázok je mimoriadne zložitých, častokrát kvôli tomu, že sa týkajú nejakého javu, ktorý je náhodný.
+Nevieme, aké bude zajtra počasie alebo ako dopadnú voľby. Náhodnosť je zväčša súčasťou daného procesu a nevieme sa jej zbaviť. Chceme ju <em>spoznať</em>, <em>porozumieť</em> jej.
+Na toto je vhodný mechanický nástroj. Pomocou počítača si veci vieme vyskúšať, môžeme simulovať rôzne scenáre toho, ako veci môžu dopadnúť. A výpočtová sila je stále a stále lacnejšia, transistory v procesoroch sa zmenšujú a dnešná moderná smart chladnička má väčšiu výpočtovú silu ako superpočítač v minulosti.</p>
+<p> </p>
+<p>V minulosti sme sa naučili ako kvantifikovať náhodnosť. Pomocou rôznych nástrojov niekedy vieme vypočítať pravdepodobnosť nejakej udalosti alebo charakteristiky nejakej náhodnej premennej. Príklady s ktorými sme sa doteraz stretali sú relatívne umelé. Na to aby sme vedeli vypočítať pravdepodobnosť udalosti pomocou ceruzky a papiera, potrebujeme aby bol daný problém dostatočne jednoduchý. A preto sme:</p>
+<ul>
+<li>hádzali férovou mincou.</li>
+<li>hádzali neférovou mincou.</li>
+<li>vyberali srdcové eso z dokonale zamiešaného balíčka kariet.</li>
+<li>vyberali guľôčky z vreca plného modrých a červených guľôčok.</li>
+</ul>
+<p>Tieto príklady sú ilustratívne a pomôžu nám uchopiť štruktúru niektorých jednoduchých typov náhodnosti. Akonáhle však ideme riešiť praktické problémy, veci sa veľmi rýchlo počítajú ťažšie.</p>
+<p> </p>
+<div class="example">
+<p><span id="exm:unlabeled-div-12" class="example"><strong>Príklad 3.1  </strong></span>Letecké spoločnosti typicky robia overbooking. Predajú viacej lístkov ako majú miest na sedenie, lebo sa mnohokrát stane, že niekto zmešká let/nepríde. Ak prídu všetci, niektorých musia posadiť na ďalší let a zaplatiť im nejaké kompenzácie. Ak predajú málo leteniek, tak nosia v lietadle vzduch a ten neplatí za letenky. Balancovať tieto dve protichodné sily je neľahké. Predstavte si Boeing 737-700, ktorý má 149 miest na sedenie pre pasažierov. Nech je počet záujemcov o let Poissonovsky rozdelená náhodná premenná so strednou hodnotou 150. Nech je pravdepodnosť, že pasažier, ktorý si kúpi lístok príde na letisko náhodná premenná, ktorá je rovnomerne rozdelená na intervale <span class="math inline">\([0.95,1].\)</span> Nech cena letenky 200eur ale pre 150.teho zákazníka stúpa od 300euro po 5 eurách (t.j. potenciálny 180.zákazník zaplatí <span class="math inline">\(300+30.5 = 450\)</span> eur). S overbookingom je spojené riziko, že zákazníkovi, ktorý sa nedostane do lietadla musí letecká spoločnosť vyplatiť kompenzáciu vo výške 1000eur. Každý 50.ty sklamaný zákazník podá žalobu na leteckú spoločnosť z čoho jej vznikne ujma 500eur pre každú žalobu a ak spoločnosť súd prehrá ďalších 10000eur. Zo skúseností vieme, že šanca úspešnej žaloby je <span class="math inline">\(30\%\)</span> s pravdepodobnosťou <span class="math inline">\(90\%\)</span> a normálne rozdelená náhodná premenná so strednou hodnotou <span class="math inline">\(80\%\)</span> a smerodajnou odchýlkou <span class="math inline">\(2\%\)</span> s pravdepodobnosťou <span class="math inline">\(10\%.\)</span></p>
+<p>Ako má robiť táto letecká spoločnosť overbooking? Konkrétne:</p>
+<ul>
+<li>Aká je optimálna stratégia leteckej spoločnosti, ak chce maximalizovať priemerný zisk?</li>
+<li>Aká je optimálna stratégia leteckej spoločnosti, ak chce minimalizovať riziko pri fixnom priemernom zisku 42000 eur za jeden let?</li>
+</ul>
+<p> </p>
+<p>Odpoveď asi nebude priamočiara. Šikovnejší sa k odpovedi dopočítajú v konečnom čase ale my ostatní si zvolíme praktickejšiu cestu. Odpoveď získame pomocou <em>simulácie</em>! Vygenerujeme si veľa veľa náhodných scenárov pre rôzne úrovne overbookingu a pozrieme sa, čo je najlepšie pre leteckú spoločnosť najlepšie. Detaily neskôr. Poučenie nateraz je takéto: pravdepodobnosť nie sú len karty, guličky a kocky. Sú to aj peniaze.</p>
+</div>
+<div id="pseudonáhodné-čísla-v-počítači" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> (Pseudo)Náhodné čísla v počítači<a href="random.html#pseudonáhodné-čísla-v-počítači" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Na to aby sme vedeli generovať náhodné čísla, potrebujeme nejaký zdroj náhodnosti. Ten môže prísť z nejakého externého zdroja.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Na počítači sa preto uspokojujeme so <em>pseudonáhodnými</em> číslami. Existujú deterministické procesy, ktoré generujú čísla, ktoré sú z praktického hľadiska náhodné.
+Tieto procesy sú rôzne a sú “rôzne kvalitné” generátory pseudonáhodných čísel. My budeme používať tú predvolenú metódu v Rku.</p>
+<p>Príkazom <code>set.seed()</code> zafixujeme generátor náhodných čísel a zabezpečíme tým reprodukovateľnosť našich výsledkov.</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="random.html#cb267-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28394</span>)</span></code></pre></div>
+<p>Keď si teraz niekto nechá vygenerovať 10 náhodných čísel z intervalu <span class="math inline">\([0,1],\)</span> ktoré sú rovnomerne rozdelené, tak dostane úplne tie isté čísla.</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="random.html#cb268-1" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##  [1] 0.1707599 0.1818867 0.7865318 0.5782902 0.9364266 0.9324842 0.1914957
+##  [8] 0.2923337 0.4330475 0.8927892</code></pre>
+<p>Akonáhle si vygenerujeme novú desaticu čísel, tieto budú prirodzene iné.</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="random.html#cb270-1" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##  [1] 0.5294097 0.9021275 0.9895494 0.5304749 0.1230083 0.3572835 0.2611675
+##  [8] 0.3291930 0.3557725 0.7183207</code></pre>
+<p>Ale ak znovu zafixujeme seed náhodného generátora čísel, znova dostaneme tie isté čísla ako predtým.</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="random.html#cb272-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28394</span>)</span>
+<span id="cb272-2"><a href="random.html#cb272-2" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##  [1] 0.1707599 0.1818867 0.7865318 0.5782902 0.9364266 0.9324842 0.1914957
+##  [8] 0.2923337 0.4330475 0.8927892</code></pre>
+<p>Na čo je toto užitočné? Umožní nám to jednoducho vytvárať reprodukovateľný kód, kde budeme generovať nejaké náhodné čísla. Každý kto si neskôr spustí našu simuláciu dostane <em>tie isté</em> výsledky. Potrebuje však zadať to isté číslo 28394.</p>
+</div>
+<div id="ako-to-funguje" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Ako to funguje<a href="random.html#ako-to-funguje" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Z <a href="https://bookdown.org/lukas_laffers/pas1/zvc.html#slabý-zákon-veľkých-č%C3%ADsel">teórie vieme</a>, že sa (za určitých podmienok) aritmetický priemer vypočítaný z iid vzorky blíži ku skutočnému populačnému priemeru.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>Uvažujme udalosť <span class="math inline">\(A.\)</span> Jej pravdepodobnosť označme <span class="math inline">\(P(A).\)</span> Označme naviac funkciu <span class="math inline">\(I(A),\)</span> ktorá nadobúda hodnotu 1 ak udalosť <span class="math inline">\(A\)</span> nastala a hodnotu <span class="math inline">\(0\)</span> ak nenastala.</p>
+<p><span class="math display">\[
+    I(A)=
+\begin{cases}
+    1,&amp; \text{ak udalosť A nastala,} \\
+    0,              &amp; \text{ak udalosť A nenastala.}
+\end{cases}
+\]</span></p>
+<p>Vieme, že <span class="math inline">\(E[I(A)] = 1\cdot P(A) + 0\cdot P(A^C) = P(A).\)</span> Preto použitím <a href="https://bookdown.org/lukas_laffers/pas1/zvc.html#slabý-zákon-veľkých-č%C3%ADsel">ZVČ</a> vieme, že ak máme <span class="math inline">\(I_1, I_2,\cdots,I_n\)</span> nezávislé realizácie <span class="math inline">\(I(A),\)</span> potom</p>
+<p><span class="math display">\[\frac{I_1 + \cdots + I_n}{n} \rightarrow_P P(A),\]</span>
+kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href="https://bookdown.org/lukas_laffers/pas1/zvc.html#konvergencia-podľa-pravdepodobnosti">konvergenciu podľa pravdepodobnosti</a>. Takže v skutočnosti len využívame <a href="https://bookdown.org/lukas_laffers/pas1/set.html#kombinátorika">frekventistickú interpretáciu pravdepodobnosti</a>:
+<span class="math display">\[P(A) = \frac{\text{počet úspešných pokusov (teda udalosť $A$ nastane)}}{\text{počet všetkých možných pokusov}}.\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-13" class="example"><strong>Príklad 3.2  </strong></span>Odhad čísla <span class="math inline">\(\pi\)</span> pomocou simulácie. Vieme, že obsah kruhu je <span class="math inline">\(\pi r^2.\)</span> Môžeme rovnomerne náhodne generovať čísla na intervale <span class="math inline">\([0,1]\)</span> na oboch osiach a pozrieť sa, aká proporcia z nich spadne do kruhu.</p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="random.html#cb274-1" tabindex="-1"></a>piApprox <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb274-2"><a href="random.html#cb274-2" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb274-3"><a href="random.html#cb274-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb274-4"><a href="random.html#cb274-4" tabindex="-1"></a>  z <span class="ot">&lt;-</span> (x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">1</span>)</span>
+<span id="cb274-5"><a href="random.html#cb274-5" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">pty=</span><span class="st">&quot;s&quot;</span>)</span>
+<span id="cb274-6"><a href="random.html#cb274-6" tabindex="-1"></a>  <span class="fu">plot</span>(x,y,<span class="at">pch=</span><span class="dv">20</span>,<span class="at">main=</span><span class="fu">paste</span>(<span class="st">&quot;Pi approximation&quot;</span>,<span class="fu">as.character</span>(<span class="dv">4</span><span class="sc">*</span><span class="fu">mean</span>(z))))</span>
+<span id="cb274-7"><a href="random.html#cb274-7" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb274-8"><a href="random.html#cb274-8" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb274-9"><a href="random.html#cb274-9" tabindex="-1"></a>  <span class="fu">points</span>(x[z],y[z],<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
+<span id="cb274-10"><a href="random.html#cb274-10" tabindex="-1"></a>}</span>
+<span id="cb274-11"><a href="random.html#cb274-11" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">1000</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="random.html#cb275-1" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">10000</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-107-2.png" width="672" /></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-14" class="example"><strong>Príklad 3.3  </strong></span><a href="https://bookdown.org/lukas_laffers/pas1/zvc.html">Zákon o veľkých číslach</a> Aritmetický priemer z pozorovaní s rovnakou strednou hodnotou sa za určitých podmienok blíži ku skutočnému priemeru.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="random.html#cb276-1" tabindex="-1"></a><span class="co">#law of large numbers</span></span>
+<span id="cb276-2"><a href="random.html#cb276-2" tabindex="-1"></a>simLLN <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim,nSample){</span>
+<span id="cb276-3"><a href="random.html#cb276-3" tabindex="-1"></a>  barX <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSample) </span>
+<span id="cb276-4"><a href="random.html#cb276-4" tabindex="-1"></a>  <span class="cf">for</span> (iSim <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim){</span>
+<span id="cb276-5"><a href="random.html#cb276-5" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">rpois</span>(nSample,<span class="dv">3</span>)</span>
+<span id="cb276-6"><a href="random.html#cb276-6" tabindex="-1"></a>    barX[iSim] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
+<span id="cb276-7"><a href="random.html#cb276-7" tabindex="-1"></a>  }</span>
+<span id="cb276-8"><a href="random.html#cb276-8" tabindex="-1"></a>  <span class="fu">hist</span>(barX,<span class="at">main=</span><span class="st">&quot;Demonstration of LLN&quot;</span>)</span>
+<span id="cb276-9"><a href="random.html#cb276-9" tabindex="-1"></a>}</span>
+<span id="cb276-10"><a href="random.html#cb276-10" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="random.html#cb277-1" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-108-2.png" width="672" /></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-15" class="example"><strong>Príklad 3.4  </strong></span><a href="https://bookdown.org/lukas_laffers/pas1/clv.html">Centrálna limitná veta</a> Aritmetický priemer z iid pozorovaní sa za určitých podmienok blíži k normálnemu rozdeleniu.</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="random.html#cb278-1" tabindex="-1"></a>simCLT <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim,nSample){</span>
+<span id="cb278-2"><a href="random.html#cb278-2" tabindex="-1"></a>  barX <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSample) </span>
+<span id="cb278-3"><a href="random.html#cb278-3" tabindex="-1"></a>  <span class="cf">for</span> (iSim <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim){</span>
+<span id="cb278-4"><a href="random.html#cb278-4" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">rpois</span>(nSample,<span class="dv">3</span>)</span>
+<span id="cb278-5"><a href="random.html#cb278-5" tabindex="-1"></a>    barX[iSim] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
+<span id="cb278-6"><a href="random.html#cb278-6" tabindex="-1"></a>  }</span>
+<span id="cb278-7"><a href="random.html#cb278-7" tabindex="-1"></a>  trueMean <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb278-8"><a href="random.html#cb278-8" tabindex="-1"></a>  trueSD <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">3</span>)</span>
+<span id="cb278-9"><a href="random.html#cb278-9" tabindex="-1"></a>  <span class="fu">hist</span>( <span class="fu">sqrt</span>(nSample)<span class="sc">*</span>(barX<span class="sc">-</span>trueMean)<span class="sc">/</span>trueSD,</span>
+<span id="cb278-10"><a href="random.html#cb278-10" tabindex="-1"></a>        <span class="at">xlab=</span><span class="st">&quot;Centered and Scaled Mean of IID vars&quot;</span>, <span class="at">prob=</span><span class="cn">TRUE</span>,</span>
+<span id="cb278-11"><a href="random.html#cb278-11" tabindex="-1"></a>        <span class="at">main=</span><span class="st">&quot;Demonstration of CLT&quot;</span>)</span>
+<span id="cb278-12"><a href="random.html#cb278-12" tabindex="-1"></a>  <span class="fu">lines</span>( <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="fu">dnorm</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>)) )</span>
+<span id="cb278-13"><a href="random.html#cb278-13" tabindex="-1"></a>}</span>
+<span id="cb278-14"><a href="random.html#cb278-14" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="random.html#cb279-1" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-109-2.png" width="672" /></p>
+</div>
+</div>
+<div id="rôzne-typy-náhodných-premenných" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Rôzne typy náhodných premenných<a href="random.html#rôzne-typy-náhodných-premenných" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Rko má jednotnú syntax na prácu s rôznymi typmi náhodných premenných.</p>
+<ul>
+<li><code>rpois</code> - nám vygeneruje <span class="math inline">\(n\)</span> iid čísel z <a href="https://bookdown.org/lukas_laffers/pas1/dnp.html#poissonovo-rozdelenie">Poissonoveho rozdelenia</a> s parametrom <code>lambda</code></li>
+<li><code>dpois</code> - <a href="https://bookdown.org/lukas_laffers/pas1/dnp.html#pravdepodobnostná-funkcia-diskrétnej-náhodnej-premennej">pravdepodobnostná funkcia</a> (v prípade <a href="https://bookdown.org/lukas_laffers/pas1/snp.html">spojitej náhodnej premennej</a> by to bola <a href="https://bookdown.org/lukas_laffers/pas1/snp.html#funkcia-hustoty-spojite-rozdelenej-náhodnej-premennej">funkcia hustoty pravdepodobnosti</a>)</li>
+<li><code>ppois</code> - <a href="https://bookdown.org/lukas_laffers/pas1/np.html#kumulat%C3%ADvna-distribučná-funkcia">kumulatívna distribučná funkcia</a></li>
+<li><code>qpois</code> - kvantil pravdepodobnostného rozdelenia (inverzná kumulatívna distribučná funkcia)</li>
+</ul>
+<p>Pre iné <a href="https://bookdown.org/lukas_laffers/pas1/np.html#kumulat%C3%ADvna-distribučná-funkcia">náhodné premenné</a> je syntax podobná:</p>
+<ul>
+<li><code>runif</code>, <code>dunif</code>, <code>punif</code>, <code>qunif</code> - Rovnomerné rozdelenie (<a href="https://bookdown.org/lukas_laffers/pas1/dnp.html#rovnomerné-rozdelenie">diskrétne</a>, <a href="">spojité</a>)</li>
+<li><code>rbinom</code>, <code>dbinom</code>, <code>pbinom</code>, <code>qbinom</code>
+<a href="https://bookdown.org/lukas_laffers/pas1/dnp.html#binomické-rozdelenie">Binomické rozdelenie</a> (a jeho špeciálny príklad <a href="https://bookdown.org/lukas_laffers/pas1/dnp.html#bernoulliho-rozdelenie">Bernoulliho rozdelenie</a>)</li>
+<li><code>rgeom</code>, <code>dgeom</code>, <code>pgeom</code>, <code>qgeom</code> -<a href="https://bookdown.org/lukas_laffers/pas1/dnp.html#geometrické-rozdelenie">Geometrické rozdelenie</a></li>
+<li><code>rhyper</code>, <code>dhyper</code>, <code>phyper</code>, <code>qhyper</code> -<a href="https://bookdown.org/lukas_laffers/pas1/dnp.html#hypergeometrické-rozdelenie">Hypergeometrické rozdelenie</a></li>
+<li><code>rnbinom</code>, <code>dnbinom</code>, <code>pnbinom</code>, <code>qnbinom</code> -<a href="https://bookdown.org/lukas_laffers/pas1/dnp.html#negat%C3%ADvne-binomické-rozdelenie">Negatívne binomické rozdelenie</a></li>
+<li><code>rnorm</code>, <code>dnorm</code>, <code>pnorm</code>, <code>qnorm</code> -<a href="https://bookdown.org/lukas_laffers/pas1/snp.html#normálne-rozdelenie">Normálne rozdelenie</a></li>
+<li><code>rexp</code>, <code>dexp</code>, <code>pexp</code>, <code>qexp</code> -<a href="https://bookdown.org/lukas_laffers/pas1/snp.html#exponenciálne-rozdelenie">Exponenciálne rozdelenie</a></li>
+<li><code>rchisq</code>, <code>dchisq</code>, <code>pchisq</code>, <code>qchisq</code> -<a href="https://bookdown.org/lukas_laffers/pas1/snp.html#ch%C3%AD-kvadrát-rozdelenie">Chí-kvadrát rozdelenie</a></li>
+<li><code>rt</code>, <code>dt</code>, <code>pt</code>, <code>qt</code> -<a href="https://bookdown.org/lukas_laffers/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">Studentovo rozdelenie (t-rozdelenie)</a></li>
+</ul>
+</div>
+<div id="rovnomerné-rozdelenie-ako-základ" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Rovnomerné rozdelenie ako základ<a href="random.html#rovnomerné-rozdelenie-ako-základ" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Akonáhle máme generátor pseudonáhodných čísel, ktorý vie generovať rovnomerne náhodne na intervale <span class="math inline">\([0,1]\)</span>, pomocou neho vieme generovať akékoľvek iné pravdepodobnostné rozdelenie.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-16" class="example"><strong>Príklad 3.5  </strong></span>Skúsme simulovať hádzanie kockou ale len s pomocou funkcie <code>runif()</code>. Ak padne číslo väčšie ako 0.5, prehlásime to za hlavu.</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="random.html#cb280-1" tabindex="-1"></a>hodMincou <span class="ot">&lt;-</span> <span class="cf">function</span>(nThrows){</span>
+<span id="cb280-2"><a href="random.html#cb280-2" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span><span class="sc">*</span>(<span class="fu">runif</span>(nThrows)<span class="sc">&gt;</span><span class="fl">0.5</span>))</span>
+<span id="cb280-3"><a href="random.html#cb280-3" tabindex="-1"></a>}</span>
+<span id="cb280-4"><a href="random.html#cb280-4" tabindex="-1"></a><span class="fu">hodMincou</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##  [1] 1 0 0 1 0 0 1 1 1 0</code></pre>
+</div>
+<p>Majme <a href="https://bookdown.org/lukas_laffers/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">spojitú</a> <a href="https://bookdown.org/lukas_laffers/pas1/np.html#čo-je-to-náhodná-premenná.">náhodnú premennú</a> <span class="math inline">\(X\)</span>, ktorá má <a href="https://bookdown.org/lukas_laffers/pas1/np.html#kumulat%C3%ADvna-distribučná-funkcia">kumulatívnu distribučnú funkciu</a> <span class="math inline">\(F_X.\)</span> Označme symbolom <span class="math inline">\(U\)</span> <a href="https://bookdown.org/lukas_laffers/pas1/snp.html#rovnomerné-rozdelenie-1">rovnomerne rozdelenú náhodnú premennú</a> <span class="math inline">\(U \sim Unif[0,1].\)</span> Potom pre <span class="math inline">\(Y = F_X^{-1}(U)\)</span> platí <span class="math inline">\(Y \sim F_X.\)</span></p>
+<p>Toto má obrovské praktické dôsledky. Akonáhle máme generátor pre <span class="math inline">\(U\)</span>, vieme si vygenerovať <strong>akúkoľvek</strong> spojitú náhodnú premennú. Stačí len pretransformovať <span class="math inline">\(U.\)</span></p>
+<p>Potom máme
+<span class="math display">\[P(Y \leq y) = P(F_X^{-1}(U) \leq y) = P(U \leq F_X(y)) = F_U(F_X(y))=F_X(y)\]</span>
+kde posledná rovnosť plynie zo skutočnosti, že <span class="math inline">\(U \sim Unif[0,1]\)</span> a <span class="math inline">\(F_X(y) \in [0,1].\)</span>
+<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+</div>
+<div id="náhodný-výber" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Náhodný výber<a href="random.html#náhodný-výber" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ak z nejakej množiny chceme náhodne vyberať objekty, použijeme funkciu <code>sample()</code>. Bez akýchkoľvek iných argumentov dostávame náhodnú permutáciu (cudzie slovo pre “poprehadzovanie”).</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="random.html#cb282-1" tabindex="-1"></a><span class="co">#sampling</span></span>
+<span id="cb282-2"><a href="random.html#cb282-2" tabindex="-1"></a>namesVec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Julia&quot;</span>,<span class="st">&quot;Martin&quot;</span>,<span class="st">&quot;Peter&quot;</span>,<span class="st">&quot;Stefan&quot;</span>,<span class="st">&quot;Robert&quot;</span>,<span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Zuzana&quot;</span>)</span>
+<span id="cb282-3"><a href="random.html#cb282-3" tabindex="-1"></a><span class="co">#random permutation</span></span>
+<span id="cb282-4"><a href="random.html#cb282-4" tabindex="-1"></a><span class="fu">sample</span>(namesVec)</span></code></pre></div>
+<pre><code>## [1] &quot;Peter&quot;  &quot;Maria&quot;  &quot;Robert&quot; &quot;Stefan&quot; &quot;Martin&quot; &quot;Zuzana&quot; &quot;Julia&quot;</code></pre>
+<p>Druhý argument hovorí o tom, koľko objektov máme vybrať, defaultne je to dĺžka vstupného vektora.</p>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="random.html#cb284-1" tabindex="-1"></a><span class="co">#choose 3 names without replacement</span></span>
+<span id="cb284-2"><a href="random.html#cb284-2" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Zuzana&quot; &quot;Stefan&quot; &quot;Robert&quot;</code></pre>
+<p>Tretí argument je, či je daný objekt môžeme po vybratí dať naspäť (<code>replace=TRUE</code> znamená, že áno, dáme naspäť).</p>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="random.html#cb286-1" tabindex="-1"></a><span class="co">#choose 3 names WITH replacement</span></span>
+<span id="cb286-2"><a href="random.html#cb286-2" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Stefan&quot; &quot;Maria&quot;  &quot;Maria&quot;</code></pre>
+<p>Počet vybratých objektov môže byť väčší ako dĺžka vstupného vektora len ak je nastavené <code>replace=TRUE</code></p>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="random.html#cb288-1" tabindex="-1"></a><span class="co">#choose 10 names WITH replacement</span></span>
+<span id="cb288-2"><a href="random.html#cb288-2" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">10</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;Martin&quot; &quot;Peter&quot;  &quot;Robert&quot; &quot;Zuzana&quot; &quot;Robert&quot; &quot;Martin&quot; &quot;Peter&quot;  &quot;Martin&quot;
+##  [9] &quot;Julia&quot;  &quot;Martin&quot;</code></pre>
+<p>Skúsme hodiť férovou mincou 100krát.</p>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="random.html#cb290-1" tabindex="-1"></a><span class="co">#throw a fair coin 100 times</span></span>
+<span id="cb290-2"><a href="random.html#cb290-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">100</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##   [1] 1 1 1 1 0 0 0 0 1 1 1 0 1 0 0 1 1 1 0 0 1 0 1 1 0 1 1 0 1 1 1 0 0 0 0 0 1
+##  [38] 1 1 1 0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 1 0 1 0 0 1 0 0 0 1 1 1 1 1 0 1 0 0 0
+##  [75] 0 1 0 0 1 0 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 0 1 0 1 1</code></pre>
+<p>Alebo 20krát hodiť férovou kockou.</p>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="random.html#cb292-1" tabindex="-1"></a><span class="co">#throw a fair dice 100 times</span></span>
+<span id="cb292-2"><a href="random.html#cb292-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">20</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##  [1] 1 3 1 3 2 6 3 6 2 6 6 6 5 2 1 4 4 2 6 6</code></pre>
+<div class="example">
+<p><span id="exm:unlabeled-div-17" class="example"><strong>Príklad 3.6  </strong></span>Hodili sme férovou kockou 6 krát a súčet je 30. Je to veľa?</p>
+<p>A vôbec, čo to vlastné znamená “veľa”?</p>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="random.html#cb294-1" tabindex="-1"></a><span class="co">#We throw the dice 6 times and got 30 in sum together. Is it a lot?</span></span>
+<span id="cb294-2"><a href="random.html#cb294-2" tabindex="-1"></a><span class="co">#Simulate</span></span>
+<span id="cb294-3"><a href="random.html#cb294-3" tabindex="-1"></a>sim3dices <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim){</span>
+<span id="cb294-4"><a href="random.html#cb294-4" tabindex="-1"></a>  th <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSim)</span>
+<span id="cb294-5"><a href="random.html#cb294-5" tabindex="-1"></a>  <span class="cf">for</span> (iSim <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim){</span>
+<span id="cb294-6"><a href="random.html#cb294-6" tabindex="-1"></a>    th[iSim] <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">6</span>,<span class="at">replace=</span><span class="cn">TRUE</span>))</span>
+<span id="cb294-7"><a href="random.html#cb294-7" tabindex="-1"></a>  }</span>
+<span id="cb294-8"><a href="random.html#cb294-8" tabindex="-1"></a>  <span class="fu">return</span>(th)</span>
+<span id="cb294-9"><a href="random.html#cb294-9" tabindex="-1"></a>}</span>
+<span id="cb294-10"><a href="random.html#cb294-10" tabindex="-1"></a>throws <span class="ot">&lt;-</span> <span class="fu">sim3dices</span>(<span class="dv">10000</span>)</span>
+<span id="cb294-11"><a href="random.html#cb294-11" tabindex="-1"></a><span class="co">#plot</span></span>
+<span id="cb294-12"><a href="random.html#cb294-12" tabindex="-1"></a><span class="fu">hist</span>(throws)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-117-1.png" width="672" /></p>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="random.html#cb295-1" tabindex="-1"></a><span class="co">#check how many times we got 30 or more extreme observation</span></span>
+<span id="cb295-2"><a href="random.html#cb295-2" tabindex="-1"></a><span class="fu">mean</span>(throws<span class="sc">&gt;=</span><span class="dv">30</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0212</code></pre>
+<p>Môžeme si simulovať hádzanie mnoho krát a skrátka sa pozrieť koľkokrát nastane ešte extrémnejšia udalosť. Na to, aby toto číslo bolo presné potrebujeme veľa simulácií.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-18" class="example"><strong>Príklad 3.7  </strong></span>Vyberte 100 náhodných animovaných filmov dlhších ako 60 minút a zobrazte vzťah medzi hodnotením a rozpočtom.</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="random.html#cb297-1" tabindex="-1"></a><span class="co">#plot the relationship between budget and rating for 100 randomly selected</span></span>
+<span id="cb297-2"><a href="random.html#cb297-2" tabindex="-1"></a><span class="co"># animation films that are longer than 60mins</span></span>
+<span id="cb297-3"><a href="random.html#cb297-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
+<span id="cb297-4"><a href="random.html#cb297-4" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb297-5"><a href="random.html#cb297-5" tabindex="-1"></a></span>
+<span id="cb297-6"><a href="random.html#cb297-6" tabindex="-1"></a>dd <span class="ot">&lt;-</span> movies <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Animation<span class="sc">==</span><span class="dv">1</span>,</span>
+<span id="cb297-7"><a href="random.html#cb297-7" tabindex="-1"></a>                        length<span class="sc">&gt;</span><span class="dv">60</span>)</span>
+<span id="cb297-8"><a href="random.html#cb297-8" tabindex="-1"></a></span>
+<span id="cb297-9"><a href="random.html#cb297-9" tabindex="-1"></a>nRows  <span class="ot">&lt;-</span> <span class="fu">dim</span>(dd)[<span class="dv">1</span>]</span>
+<span id="cb297-10"><a href="random.html#cb297-10" tabindex="-1"></a>idRows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>nRows,<span class="dv">100</span>)</span>
+<span id="cb297-11"><a href="random.html#cb297-11" tabindex="-1"></a>dd100  <span class="ot">&lt;-</span> dd[idRows,]</span>
+<span id="cb297-12"><a href="random.html#cb297-12" tabindex="-1"></a><span class="fu">with</span>(dd100,<span class="fu">plot</span>(budget,rating))</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
+</div>
+</div>
+<div id="zhrnutie" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Zhrnutie<a href="random.html#zhrnutie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Riešenie problémov pomocou simulácií je jednoduché a poľahky sa implementuje. Na druhej strane sú simulácie vždy špecifické pre dané konkrétne nastavenie tej ktorej simulácie. Je to použitie hrubej sily. Vidíme, <strong>ako</strong> to je ale nie <strong>prečo</strong>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-119"></span>
+<img src="fig_3_sim.png" alt="CBA pre simulačný prístup" width="80%" />
+<p class="caption">
+Obrázok 3.1: CBA pre simulačný prístup
+</p>
+</div>
+<p><a href="https://www.dropbox.com/s/vm17rjzlwe0t3qs/lecture_week4.R?dl=0">R súbor z prednášky z 13.10.2022</a></p>
+</div>
+<div id="cvičenia-2" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Cvičenia<a href="random.html#cvičenia-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-19" class="exercise"><strong>Cvičenie 3.1  </strong></span>Naprogramujte hod férovou kockou len s použitím funkcie <code>runif()</code>. Potom s ňou hoďte 100 krát a nakreslite histogram. Zabezpečte, aby váš kód bol reprodukovateľný.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-20" class="exercise"><strong>Cvičenie 3.2  </strong></span>Použitím predošlej funkcie popíšte pravdepodobnostné správanie súčtu počtu bodíkov na troch nezávislých kockách. Zabezpečte, aby bol váš popis dostatočne presný.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Cvičenie 3.3  </strong></span>Podrobne vysvetlite, prečo nie je dobrým nápadom fixovať seed náhodného generátora vo vnútri funkcie.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-22" class="exercise"><strong>Cvičenie 3.4  </strong></span>Majme balíček kariet hodnosti v poradí 2,3,4,5,6,7,8,9,10,J,Q,K,A a 4 rôzne farby. Vyberte z balíčka 5 kariet. Aká je šanca, že dostaneme postupku?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-23" class="exercise"><strong>Cvičenie 3.5  </strong></span>Vyberte 200 náhodných akčných filmov starších ako 20 rokov a zobrazte vzťah medzi hodnotením a dĺžkou filmu.
+Vyberte rôzne vzorky a pozerajte sa, ako veľmi sa tento vzťah mení.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Cvičenie 3.6  </strong></span>Palicu rovnomerne náhodne zlomíme na dvoch miestach. Aká je šanca, že budeme vedieť z týchto troch kúskov urobiť trojuholník?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Cvičenie 3.7  </strong></span>Skúsení kartári poznajú hru Vojna. Porozmýšľajte, ako by ste overili akú veľkú výhodu Vám dáva skutočnosť, že máte v balíčku všetky 4 esá. Aké všetky komplikácie musíte riešiť. Navrhnite principiálny postup (nič neprogramujte), ako by ste to overili ak by ste mali neobmedzene veľa výpočtovej sily.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-26" class="exercise"><strong>Cvičenie 3.8  </strong></span>Adam a Božena idú do streleckého súboja, Adam strieľa ako prvý a trafí s pravdepdodobnosťou 30%. Božena po ňom (ak sa netrafí) a triafa s pravdepobnosťou 35%. Kto má väčšiu šancu, že vyhrá? Aká by musela byť Boženina presnosť, aby bol súboj spravodlivý?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-27" class="exercise"><strong>Cvičenie 3.9  </strong></span>Astrián sa má stretnúť s Barborou niekedy medzi 10 a 11tou. Ale nikto si nepamätá presne kedy. Obaja sú ochotní čakať 10 minút. Aká je šanca, že sa stretnú?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-28" class="exercise"><strong>Cvičenie 3.10  </strong></span>Piati ľudia v porote majú nasledovné šance, že sa správne rozhodnú: 95%, 80%, 90%, 82%, 99%. O výsledku rozhodne väčšina. Aká je šanca, že sa celá porota zhodne na správnom výsledku?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-29" class="exercise"><strong>Cvičenie 3.11  </strong></span>Aká, je šanca, medzi študentami absolovujúcimi tento kurz bude aspoň jedna dvojica s rovnakým dátumom narodenia?</p>
+<p>Aká je pravdepodobnostná distribúcia počtu ľudí, ktorí zdieľajú narodeniny s niekým iným v skupine 25ľudí?</p>
+</div>
+<!-- [R súbor z cvičení zo 14.10.2022](https://www.dropbox.com/s/7p88mytf5pjpz1c/labs_week4.R?dl=0) -->
+<!-- ## Domáca úloha 2 -->
+<!-- Deadline je 24.10.2022 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného zip súboru v tvare `du2_MenoPriezvisko.zip` (napr. `du2_PeterKovac.zip`) a pošlite na email. Kód musí byť spustiteľný a podrobne okomentovaný. Odovzdávate mi Vašu vlastnú prácu. -->
+<!-- ::: {.exercise name="DÚ 2.1"} -->
+<!-- Zobrazte vývoj pozitivity (pomer medzi pozitívnymi testami a počtom vykonaných testov) [antigénových testov](https://github.com/Institut-Zdravotnych-Analyz/covid19-data) v okresoch Banská Bystrica a Zvolen za posledné 3 mesiace.  -->
+<!-- :::  -->
+<!-- ::: {.exercise name="DÚ 2.2"} -->
+<!-- Zobrazte rebríček TOP10 najdrahších [knižiek o data science z Amazonu](https://www.kaggle.com/datasets/die9origephit/amazon-data-science-books), ktoré majú viacej 5 hviezdičkových recenzií ako 4 hviezdičkových a zároveň majú menej ako 500 strán. -->
+<!-- :::  -->
+<!-- ::: {.exercise name="DÚ 2.3"} -->
+<!-- Simuláciou overte, či je pravdepodobnejšie, že padne na 3 kockách dokopy súčet 11 alebo na 6 kockách dokopy súčet 22. -->
+<!-- :::  -->
+<!-- ::: {.exercise name="DÚ 2.4"} -->
+<!-- Pomocou počítača vypočítajte -->
+<!-- \begin{equation*}  -->
+<!-- \sum_{n=3}^{\infty}\frac{1}{n(n-1)(n-2)}. -->
+<!-- \end{equation*} -->
+<!-- :::  -->
+<!-- ::: {.exercise name="DÚ BONUS"} -->
+<!-- Pomocou simulácie vypočítajte pravdepodobnosť, že ak palicu náhodne rozlomím na 4 kusy, tak z týchto kúskov budem vedieť poskladať stvoruholník. -->
+<!-- :::  -->
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Napríklad môžeme merať náhodne fluktuujúce napätie na procesore, na to však potrebujem hardvér, ktorý nie je štandardnou súčasťou počítača.<a href="random.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>iid - independently and identically distributed, teda pozorovania sú nezávislé a rovnako rozdelené<a href="random.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Pre všeobecnú náhodnú premennú je táto transformácia <span class="math inline">\(Y=\inf \{x; F_X(x)\geq U \}\)</span><a href="random.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="structures.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="recap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PaS2bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

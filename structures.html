@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Premenné a dátové štruktúry | Pravdepodobnosť a štatistika 2</title>
+  <meta name="description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Premenné a dátové štruktúry | Pravdepodobnosť a štatistika 2" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Premenné a dátové štruktúry | Pravdepodobnosť a štatistika 2" />
+  
+  <meta name="twitter:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  
+
+<meta name="author" content="Lukáš Lafférs" />
+
+
+<meta name="date" content="2023-09-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="random.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Pravdepodobnosť a štatistika 2</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O tomto kurze</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Úvod do jazyka R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#nejaké-príklady-r"><i class="fa fa-check"></i><b>1.2</b> Nejaké príklady R</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#nevýhody-r"><i class="fa fa-check"></i><b>1.3</b> Nevýhody R</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#a-čo-teraz."><i class="fa fa-check"></i><b>1.4</b> A čo teraz.</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#demonštrácia-v-r"><i class="fa fa-check"></i><b>1.5</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#na-záver-úvodu"><i class="fa fa-check"></i><b>1.6</b> Na záver úvodu</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#cvičenia"><i class="fa fa-check"></i><b>1.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="structures.html"><a href="structures.html"><i class="fa fa-check"></i><b>2</b> Premenné a dátové štruktúry</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="structures.html"><a href="structures.html#typy-premenných"><i class="fa fa-check"></i><b>2.1</b> Typy premenných</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="structures.html"><a href="structures.html#numeric"><i class="fa fa-check"></i><b>2.1.1</b> <code>numeric</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="structures.html"><a href="structures.html#character"><i class="fa fa-check"></i><b>2.1.2</b> <code>character</code></a></li>
+<li class="chapter" data-level="2.1.3" data-path="structures.html"><a href="structures.html#logical"><i class="fa fa-check"></i><b>2.1.3</b> <code>logical</code></a></li>
+<li class="chapter" data-level="2.1.4" data-path="structures.html"><a href="structures.html#factor"><i class="fa fa-check"></i><b>2.1.4</b> <code>factor</code></a></li>
+<li class="chapter" data-level="2.1.5" data-path="structures.html"><a href="structures.html#iné"><i class="fa fa-check"></i><b>2.1.5</b> Iné</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="structures.html"><a href="structures.html#typy-dátových-štruktúr"><i class="fa fa-check"></i><b>2.2</b> Typy dátových štruktúr</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="structures.html"><a href="structures.html#vector"><i class="fa fa-check"></i><b>2.2.1</b> <code>vector</code></a></li>
+<li class="chapter" data-level="2.2.2" data-path="structures.html"><a href="structures.html#matrix"><i class="fa fa-check"></i><b>2.2.2</b> <code>matrix</code></a></li>
+<li class="chapter" data-level="2.2.3" data-path="structures.html"><a href="structures.html#array"><i class="fa fa-check"></i><b>2.2.3</b> <code>array</code></a></li>
+<li class="chapter" data-level="2.2.4" data-path="structures.html"><a href="structures.html#list"><i class="fa fa-check"></i><b>2.2.4</b> <code>list</code></a></li>
+<li class="chapter" data-level="2.2.5" data-path="structures.html"><a href="structures.html#data.frame"><i class="fa fa-check"></i><b>2.2.5</b> <code>data.frame</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="structures.html"><a href="structures.html#vlastné-funkcie"><i class="fa fa-check"></i><b>2.3</b> Vlastné funkcie</a></li>
+<li class="chapter" data-level="2.4" data-path="structures.html"><a href="structures.html#for-cyklus"><i class="fa fa-check"></i><b>2.4</b> <code>for</code> cyklus</a></li>
+<li class="chapter" data-level="2.5" data-path="structures.html"><a href="structures.html#knižnice"><i class="fa fa-check"></i><b>2.5</b> Knižnice</a></li>
+<li class="chapter" data-level="2.6" data-path="structures.html"><a href="structures.html#štandardy"><i class="fa fa-check"></i><b>2.6</b> Štandardy</a></li>
+<li class="chapter" data-level="2.7" data-path="structures.html"><a href="structures.html#časté-chyby"><i class="fa fa-check"></i><b>2.7</b> Časté chyby</a></li>
+<li class="chapter" data-level="2.8" data-path="structures.html"><a href="structures.html#demonštrácia-v-r-1"><i class="fa fa-check"></i><b>2.8</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="2.9" data-path="structures.html"><a href="structures.html#cvičenia-1"><i class="fa fa-check"></i><b>2.9</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="random.html"><a href="random.html"><i class="fa fa-check"></i><b>3</b> Náhodné čísla a simulácie</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="random.html"><a href="random.html#pseudonáhodné-čísla-v-počítači"><i class="fa fa-check"></i><b>3.1</b> (Pseudo)Náhodné čísla v počítači</a></li>
+<li class="chapter" data-level="3.2" data-path="random.html"><a href="random.html#ako-to-funguje"><i class="fa fa-check"></i><b>3.2</b> Ako to funguje</a></li>
+<li class="chapter" data-level="3.3" data-path="random.html"><a href="random.html#rôzne-typy-náhodných-premenných"><i class="fa fa-check"></i><b>3.3</b> Rôzne typy náhodných premenných</a></li>
+<li class="chapter" data-level="3.4" data-path="random.html"><a href="random.html#rovnomerné-rozdelenie-ako-základ"><i class="fa fa-check"></i><b>3.4</b> Rovnomerné rozdelenie ako základ</a></li>
+<li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
+<li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
+<li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="recap.html"><a href="recap.html#diskrétne-náhodné-premenné"><i class="fa fa-check"></i><b>4.1</b> Diskrétne náhodné premenné</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="recap.html"><a href="recap.html#pravdepodobnostná-funkcia"><i class="fa fa-check"></i><b>4.1.1</b> Pravdepodobnostná funkcia</a></li>
+<li class="chapter" data-level="4.1.2" data-path="recap.html"><a href="recap.html#stredná-hodnota"><i class="fa fa-check"></i><b>4.1.2</b> Stredná hodnota</a></li>
+<li class="chapter" data-level="4.1.3" data-path="recap.html"><a href="recap.html#variancia"><i class="fa fa-check"></i><b>4.1.3</b> Variancia</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="recap.html"><a href="recap.html#spojité-náhodné-premenné"><i class="fa fa-check"></i><b>4.2</b> Spojité náhodné premenné</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="recap.html"><a href="recap.html#funkcia-hustoty"><i class="fa fa-check"></i><b>4.2.1</b> Funkcia hustoty</a></li>
+<li class="chapter" data-level="4.2.2" data-path="recap.html"><a href="recap.html#stredná-hodnota-1"><i class="fa fa-check"></i><b>4.2.2</b> Stredná hodnota</a></li>
+<li class="chapter" data-level="4.2.3" data-path="recap.html"><a href="recap.html#variancia-1"><i class="fa fa-check"></i><b>4.2.3</b> Variancia</a></li>
+<li class="chapter" data-level="4.2.4" data-path="recap.html"><a href="recap.html#kvantil"><i class="fa fa-check"></i><b>4.2.4</b> Kvantil</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="recap.html"><a href="recap.html#demonštrácia-v-r-2"><i class="fa fa-check"></i><b>4.3</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="4.4" data-path="recap.html"><a href="recap.html#cvičenia-3"><i class="fa fa-check"></i><b>4.4</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="suvis.html"><a href="suvis.html"><i class="fa fa-check"></i><b>5</b> Náhodné vektory a súvis medzi náhodnými premennými</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="suvis.html"><a href="suvis.html#závislosť-náhodných-premenných"><i class="fa fa-check"></i><b>5.1</b> Závislosť náhodných premenných</a></li>
+<li class="chapter" data-level="5.2" data-path="suvis.html"><a href="suvis.html#korelácia-nie-je-kauzalita"><i class="fa fa-check"></i><b>5.2</b> Korelácia nie je kauzalita</a></li>
+<li class="chapter" data-level="5.3" data-path="suvis.html"><a href="suvis.html#cvičenia-4"><i class="fa fa-check"></i><b>5.3</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html"><i class="fa fa-check"></i><b>6</b> Zobrazovanie dát</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#zlé-vizualizácie"><i class="fa fa-check"></i><b>6.1</b> Zlé vizualizácie</a></li>
+<li class="chapter" data-level="6.2" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#dobré-vizualizácie"><i class="fa fa-check"></i><b>6.2</b> Dobré vizualizácie</a></li>
+<li class="chapter" data-level="6.3" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#vizualizácia-v-rku-ggplot2-knižnica"><i class="fa fa-check"></i><b>6.3</b> Vizualizácia v Rku: <code>ggplot2</code> knižnica</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#zobrazenie-závislosti-dvoch-premenných"><i class="fa fa-check"></i><b>6.3.1</b> Zobrazenie závislosti dvoch premenných</a></li>
+<li class="chapter" data-level="6.3.2" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#zobrazenie-distribúcie-premennej"><i class="fa fa-check"></i><b>6.3.2</b> Zobrazenie distribúcie premennej</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
+<li class="chapter" data-level="6.5" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
+<li class="chapter" data-level="6.6" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#jedno"><i class="fa fa-check"></i><b>7.1</b> Jednovýberové testy</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#test-na-základe-normálnej-aproximácie-z-test"><i class="fa fa-check"></i><b>7.1.1</b> Test na základe normálnej aproximácie (Z-test)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#t-test"><i class="fa fa-check"></i><b>7.1.2</b> T-test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#dvojvýberové-testy"><i class="fa fa-check"></i><b>7.2</b> Dvojvýberové testy</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#rovnaká-variancia"><i class="fa fa-check"></i><b>7.2.1</b> Rovnaká variancia</a></li>
+<li class="chapter" data-level="7.2.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#rôzna-variancia"><i class="fa fa-check"></i><b>7.2.2</b> Rôzna variancia</a></li>
+<li class="chapter" data-level="7.2.3" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#párové-testy"><i class="fa fa-check"></i><b>7.2.3</b> Párové testy</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#konfidenčný-interval"><i class="fa fa-check"></i><b>7.3</b> Konfidenčný interval</a></li>
+<li class="chapter" data-level="7.4" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#testovanie-podielu"><i class="fa fa-check"></i><b>7.4</b> Testovanie podielu</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#testovanie-podielu-pre-jednu-skupinu"><i class="fa fa-check"></i><b>7.4.1</b> Testovanie podielu pre jednu skupinu</a></li>
+<li class="chapter" data-level="7.4.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#testovanie-rovnosti-podielov-pre-dve-skupiny"><i class="fa fa-check"></i><b>7.4.2</b> Testovanie rovnosti podielov pre dve skupiny</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
+<li class="chapter" data-level="7.6" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
+<li class="chapter" data-level="7.7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#lineárny-regresný-model"><i class="fa fa-check"></i><b>8.1</b> Lineárny regresný model</a></li>
+<li class="chapter" data-level="8.2" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#maticová-notácia"><i class="fa fa-check"></i><b>8.2</b> Maticová notácia</a></li>
+<li class="chapter" data-level="8.3" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#názvoslovie"><i class="fa fa-check"></i><b>8.3</b> Názvoslovie</a></li>
+<li class="chapter" data-level="8.4" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#ako-na-to"><i class="fa fa-check"></i><b>8.4</b> Ako na to</a></li>
+<li class="chapter" data-level="8.5" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#geometria-najmenších-štvorcov"><i class="fa fa-check"></i><b>8.5</b> Geometria najmenších štvorcov</a></li>
+<li class="chapter" data-level="8.6" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#konfidenčné-intervaly"><i class="fa fa-check"></i><b>8.6</b> Konfidenčné intervaly</a></li>
+<li class="chapter" data-level="8.7" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#viacrozmerná-lineárna-regresia"><i class="fa fa-check"></i><b>8.7</b> Viacrozmerná lineárna regresia</a></li>
+<li class="chapter" data-level="8.8" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#testovanie-podmodelov"><i class="fa fa-check"></i><b>8.8</b> Testovanie podmodelov</a></li>
+<li class="chapter" data-level="8.9" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#transformácie-a-interpretácia"><i class="fa fa-check"></i><b>8.9</b> Transformácie a interpretácia</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#level-level-model"><i class="fa fa-check"></i><b>8.9.1</b> Level-level model</a></li>
+<li class="chapter" data-level="8.9.2" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#log-level-model"><i class="fa fa-check"></i><b>8.9.2</b> Log-level model</a></li>
+<li class="chapter" data-level="8.9.3" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#level-log-model"><i class="fa fa-check"></i><b>8.9.3</b> Level-log model</a></li>
+<li class="chapter" data-level="8.9.4" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#log-log-model"><i class="fa fa-check"></i><b>8.9.4</b> Log-log model</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.10</b> Zhrnutie</a></li>
+<li class="chapter" data-level="8.11" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#cvičenia-7"><i class="fa fa-check"></i><b>8.11</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html#r-markdown"><i class="fa fa-check"></i><b>9.1</b> R Markdown</a></li>
+<li class="chapter" data-level="9.2" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html#cvičenia-8"><i class="fa fa-check"></i><b>9.2</b> Cvičenia</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pravdepodobnosť a štatistika 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="structures" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Premenné a dátové štruktúry<a href="structures.html#structures" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>V tejto kapitole postupneme pokračujeme v spoznávaní Rka. Pozrieme sa na bežne používané objekty s ktorými budeme pracovať, či už premenné dátové štruktúry alebo iné užitočné funkcie.</p>
+<div id="typy-premenných" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Typy premenných<a href="structures.html#typy-premenných" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="numeric" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> <code>numeric</code><a href="structures.html#numeric" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Objekt tohoto typu číslo. Môžeme prealokovať pamäť a vytvoriť objekt typu <code>numeric</code>. Štandardne bude tento objekt nula alebo vektor núl.</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="structures.html#cb172-1" tabindex="-1"></a><span class="co"># create a vector of length 5 of type numeric</span></span>
+<span id="cb172-2"><a href="structures.html#cb172-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">5</span>)</span>
+<span id="cb172-3"><a href="structures.html#cb172-3" tabindex="-1"></a><span class="co"># it will be filled with zeros</span></span></code></pre></div>
+<p>Ďalej sa môžeme opýtať či je daný objekt typu <code>numeric</code> pomocou <code>is.numeric()</code> Ak nie je, tak môžeme skonvertovať do <code>numeric</code> typu pomocou <code>as.numeric()</code>, pokiaľ sa to dá.</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="structures.html#cb173-1" tabindex="-1"></a><span class="fu">is.numeric</span>(x)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="structures.html#cb175-1" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb175-2"><a href="structures.html#cb175-2" tabindex="-1"></a><span class="fu">is.numeric</span>(y)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="structures.html#cb177-1" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(y)</span>
+<span id="cb177-2"><a href="structures.html#cb177-2" tabindex="-1"></a><span class="fu">is.numeric</span>(z)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="character" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> <code>character</code><a href="structures.html#character" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Slová/texty sú typu <code>character</code>. Podobne ako pri iných typoch premenných, môžeme použiť funkcie <code>character()</code>, <code>is.character()</code> a <code>as.character()</code> na vytvorenie, overenie alebo konvertovanie.</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="structures.html#cb179-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="st">&quot;Hello&quot;</span></span>
+<span id="cb179-2"><a href="structures.html#cb179-2" tabindex="-1"></a><span class="fu">is.character</span>(f)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="logical" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> <code>logical</code><a href="structures.html#logical" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Logická (boolovská) premenná nadobúda hodnoty <code>TRUE</code> alebo <code>FALSE</code>. Akonáhle urobíme s logickou premennou nejakú aritmetickú operáciu, Rko ju automaticky skonvertuje na číselnú (<code>numeric</code>).</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="structures.html#cb181-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span> <span class="sc">&gt;</span> <span class="dv">5</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="structures.html#cb183-1" tabindex="-1"></a><span class="dv">10</span><span class="sc">+</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">2</span> <span class="sc">&gt;</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<p>Logické premenné sú tiež doležité na skúmanie podmnožín</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="structures.html#cb185-1" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.75</span>, <span class="fl">1.80</span>, <span class="fl">1.65</span>, <span class="fl">1.90</span>, <span class="fl">1.74</span>, <span class="fl">1.91</span>)</span>
+<span id="cb185-2"><a href="structures.html#cb185-2" tabindex="-1"></a>height <span class="sc">&gt;</span> <span class="fl">1.70</span></span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="structures.html#cb187-1" tabindex="-1"></a>ind <span class="ot">&lt;-</span> (height <span class="sc">&gt;</span> <span class="fl">1.75</span>)</span>
+<span id="cb187-2"><a href="structures.html#cb187-2" tabindex="-1"></a>height[ind]</span></code></pre></div>
+<pre><code>## [1] 1.80 1.90 1.91</code></pre>
+<p>Funkcia <code>which()</code> vráti indexy súradníc vektora typu <code>logical</code>, ktoré nadobúdajú hodnoty <code>TRUE</code>. Na 0-1 vektor typu <code>numeric</code> nefunguje.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="structures.html#cb189-1" tabindex="-1"></a><span class="fu">which</span>(height <span class="sc">&gt;</span> <span class="fl">1.70</span>)</span></code></pre></div>
+<pre><code>## [1] 1 2 4 5 6</code></pre>
+</div>
+<div id="factor" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> <code>factor</code><a href="structures.html#factor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Faktorová premenná (<code>factor</code>) je užitočná na prácu s informáciami, ktoré sú v nenumerickom tvare. Môžeme mať usporiadané faktory (silne nesúhlasím, nesúhlasím, nemám názor, súhlasím, silne súhlasím.) alebo neusporiadané faktory (modrá, žltá, zelená…).</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="structures.html#cb191-1" tabindex="-1"></a>carColors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;salmon&quot;</span>,<span class="st">&quot;white&quot;</span>,<span class="st">&quot;grapefruit&quot;</span>,<span class="st">&quot;white&quot;</span>,<span class="st">&quot;black&quot;</span>)</span>
+<span id="cb191-2"><a href="structures.html#cb191-2" tabindex="-1"></a>fcarColors <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(carColors)</span>
+<span id="cb191-3"><a href="structures.html#cb191-3" tabindex="-1"></a>fcarColors</span></code></pre></div>
+<pre><code>## [1] red        red        blue       yellow     salmon     white      grapefruit
+## [8] white      black     
+## Levels: black blue grapefruit red salmon white yellow</code></pre>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="structures.html#cb193-1" tabindex="-1"></a>pain <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb193-2"><a href="structures.html#cb193-2" tabindex="-1"></a>fpain <span class="ot">&lt;-</span> <span class="fu">factor</span>(pain,<span class="at">levels=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb193-3"><a href="structures.html#cb193-3" tabindex="-1"></a><span class="fu">levels</span>(fpain) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;none&quot;</span>,<span class="st">&quot;mild&quot;</span>,<span class="st">&quot;medium&quot;</span>,<span class="st">&quot;severe&quot;</span>)</span>
+<span id="cb193-4"><a href="structures.html#cb193-4" tabindex="-1"></a>fpain</span></code></pre></div>
+<pre><code>## [1] none   severe medium medium mild  
+## Levels: none &lt; mild &lt; medium &lt; severe</code></pre>
+</div>
+<div id="iné" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Iné<a href="structures.html#iné" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Existujú všelijaké iné typy premenných, napríklad <code>complex</code> pre komplexné čísla, <code>integer</code> pre celé čísla alebo napríklad <code>date</code> pre dátumy.</p>
+</div>
+</div>
+<div id="typy-dátových-štruktúr" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Typy dátových štruktúr<a href="structures.html#typy-dátových-štruktúr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="vector" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> <code>vector</code><a href="structures.html#vector" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vektor je skupina objektov rovnakého typu. Nemusí nutne ísť len o čísla.</p>
+</div>
+<div id="matrix" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> <code>matrix</code><a href="structures.html#matrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Matica je tabuľka objektov rovnakého typu.</p>
+</div>
+<div id="array" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> <code>array</code><a href="structures.html#array" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pole je skupina objektov rovnakého typu, môže mať aj viac ako 2 dimenzie.</p>
+</div>
+<div id="list" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> <code>list</code><a href="structures.html#list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Zoznam sa používa na objekty, ktoré sú rôzneho typu.</p>
+</div>
+<div id="data.frame" class="section level3 hasAnchor" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> <code>data.frame</code><a href="structures.html#data.frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dátová tabuľka je jedným zo základných objektov, ktoré používa ako vstup mnoho súčastí R. Na rozdiel od matice môže mať viacej typov dát. Dátová tabuľka je v podstate špeciálnym typom zoznamu, kde komponenty musia byť vektory.</p>
+<p>Nasledujúce užitočné funkcie umožňujú efektívnu prácu s objektom typu <code>data.frame</code>.</p>
+<ul>
+<li><code>head()</code> - vypíše hlavičku tabuľky, takže prvých 6 riadkov</li>
+<li><code>tail()</code> - vypíše koniec tabuľky, takže posledných 6 riadkov</li>
+<li><code>dim()</code> - dimenzie tabuľky</li>
+<li><code>nrow()</code> - počet riadkov</li>
+<li><code>ncol()</code> - počet stĺpcov</li>
+<li><code>names()</code> - mená vektorov, ktoré tvoria dátovú tabuľku</li>
+<li><code>sapply(df,class)</code> - funkcia, ktorá vypíše typ jednotlivých vektorov v rámci daného <code>data.frame</code> s názvom <code>df</code></li>
+</ul>
+</div>
+</div>
+<div id="vlastné-funkcie" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Vlastné funkcie<a href="structures.html#vlastné-funkcie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-62"></span>
+<img src="fig_2_fun.png" alt="Funkcia." width="30%" />
+<p class="caption">
+Obrázok 2.1: Funkcia.
+</p>
+</div>
+<p>Zadefinujeme si funkciu nasledovne.</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="structures.html#cb195-1" tabindex="-1"></a>myfunction <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, <span class="at">c=</span><span class="dv">5</span>){</span>
+<span id="cb195-2"><a href="structures.html#cb195-2" tabindex="-1"></a>  x <span class="ot">&lt;-</span> a<span class="sc">+</span>b</span>
+<span id="cb195-3"><a href="structures.html#cb195-3" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">*</span>c)</span>
+<span id="cb195-4"><a href="structures.html#cb195-4" tabindex="-1"></a>}</span></code></pre></div>
+<p>Čo bude výsledkom <code>myFunction(2,3)</code> a <code>myFunction(2,3,4)</code> ?</p>
+</div>
+<div id="for-cyklus" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> <code>for</code> cyklus<a href="structures.html#for-cyklus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nasledujúci kód sčíta všetky čísla od 1 po 1000</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="structures.html#cb196-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb196-2"><a href="structures.html#cb196-2" tabindex="-1"></a><span class="cf">for</span>(iNumber <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>) {</span>
+<span id="cb196-3"><a href="structures.html#cb196-3" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> iNumber</span>
+<span id="cb196-4"><a href="structures.html#cb196-4" tabindex="-1"></a>}</span>
+<span id="cb196-5"><a href="structures.html#cb196-5" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] 500500</code></pre>
+<p>Index <code>iNumber</code> prechádza, cez všetky čísla vo vektore <code>1:1000</code> a vykoná všetky operácie, ktoré sú v kučeravých zátvorkách.</p>
+<p>Podobne môžeme prechádzať cez vektor iných objektov ako je číslo. Tu budeme prechádzať cez vektor textov.</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="structures.html#cb198-1" tabindex="-1"></a>persons <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Martin&quot;</span>, <span class="st">&quot;Elena&quot;</span>, <span class="st">&quot;Chryzogóm&quot;</span>, <span class="st">&quot;Lucia&quot;</span>)</span>
+<span id="cb198-2"><a href="structures.html#cb198-2" tabindex="-1"></a><span class="cf">for</span>(iPerson <span class="cf">in</span> persons) {</span>
+<span id="cb198-3"><a href="structures.html#cb198-3" tabindex="-1"></a>  <span class="fu">print</span>(iPerson)</span>
+<span id="cb198-4"><a href="structures.html#cb198-4" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;Martin&quot;
+## [1] &quot;Elena&quot;
+## [1] &quot;Chryzogóm&quot;
+## [1] &quot;Lucia&quot;</code></pre>
+<p>Rovnaký výstup dostaneme, ak budeme prechádzať cez indexy.</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="structures.html#cb200-1" tabindex="-1"></a>persons <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Martin&quot;</span>, <span class="st">&quot;Elena&quot;</span>, <span class="st">&quot;Chryzogóm&quot;</span>, <span class="st">&quot;Lucia&quot;</span>)</span>
+<span id="cb200-2"><a href="structures.html#cb200-2" tabindex="-1"></a><span class="cf">for</span>(iNumber <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb200-3"><a href="structures.html#cb200-3" tabindex="-1"></a>  <span class="fu">print</span>(persons[iNumber])</span>
+<span id="cb200-4"><a href="structures.html#cb200-4" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;Martin&quot;
+## [1] &quot;Elena&quot;
+## [1] &quot;Chryzogóm&quot;
+## [1] &quot;Lucia&quot;</code></pre>
+</div>
+<div id="knižnice" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Knižnice<a href="structures.html#knižnice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Knižnice (libraries) sú kolekciou rôznych funkcií. Niektoré knižnice sú vytvorené priamo tvorcami R, ako napríklad <code>base</code>, iné nadšencami, ako napríklad <code>causalweight</code>. Ak chceme používať príkazy z nejakej knižnice, musíme ju mať nainštalovanú a musíme ju zavolať. Napríklad populárna knižnica <code>ggplot2</code> slúži na tvorbu vizualizácií. Najprv musíte spustiť príkaz <code>install.packages("ggplot2")</code> a z online repozitára sa stiahne táto knižnica na Váš počítač.</p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="structures.html#cb202-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb202-2"><a href="structures.html#cb202-2" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>carat, <span class="at">y=</span>price, <span class="at">color=</span>cut))</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-67-1.png" width="672" />
+Ak do konzoly napíšeme <code>?ggplot</code> ukáže sa nám podrobná dokumentácia. Väčšina knižníc má svoju <code>vignette</code>, kde je nárornou formou stručne vysvetlená základná funkcionalita danej knižnice.</p>
+</div>
+<div id="štandardy" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Štandardy<a href="structures.html#štandardy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>“Good coding style is like correct punctuation:
+you can manage without it, butitsuremakesthingseasiertoread.”</p>
+<p>— Hadley Wickham</p>
+</blockquote>
+<p>Je dobrou praxou písať pekný kód. Čo to znamená? Napríklad:</p>
+<ul>
+<li><code>loadData.R</code> - názov funkcie alebo skriptu - veľké písmeno na začiatku ďalšieho slova. Alebo <code>load_data.R</code></li>
+<li><code>&lt;-</code> - priradenie. Používajte namiesto <code>=</code></li>
+<li>Nie je dobré písať príliš dlhé riadky.</li>
+<li><code>getConvReel_11</code> - dávajte zrozumiteľné názvy funkciám</li>
+<li>vyvarujte sa dvojitím záporom, sú nezrozumiteľné</li>
+<li>okolo <code>=</code> , <code>+</code>, <code>-</code>, <code>&lt;-</code> nechávajte medzeru, nech sa to lepšie číta</li>
+<li>píšte veľa komentárov (#najlepsie bez makcenov a dlznov) a odsadzujte slová</li>
+<li><em>píšte kód tak, aby ho vedel čítať niekto po vás s minimálnou námahou</em></li>
+</ul>
+<p>Mnoho odporúčaní je tu: <a href="https://style.tidyverse.org" class="uri">https://style.tidyverse.org</a> a tu: <a href="https://google.github.io/styleguide/Rguide.html" class="uri">https://google.github.io/styleguide/Rguide.html</a></p>
+</div>
+<div id="časté-chyby" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Časté chyby<a href="structures.html#časté-chyby" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Neporiadok v kóde - čítať neporiadny kód je bolesť. Niekedy je aj vlastný kód po pár mesiacoch úplne nečitateľný. Špeciálna bolesť je čítat cudzí neporiadny kód.</li>
+<li><code>(0.1 + 0.2) == 0.3</code> - treba si dávať pozor na to, ako počítač reprezentuje čísla.</li>
+<li>zlé ozátvorkovanie - viacej zátvoriek je skoro vždy lepšie. Keď sa neviete rozhodnúť č’i pridať zátvorku, pridajte ju. Sú lacné.</li>
+<li>chýbajúca knižnica - je dobrou praxou na začiatku programu inicializovať všetky knižnice, ktoré sú potrebné na spustenie.</li>
+<li>nekompatibilné objekty - veľmi často sa robia operácie s nekompatibilnými objektami. Pokiaľ Rko neviem automaticky skonvertovať objekty na kompatibilné, tak vyhlási chybu. Niekedy je však horšie keď chybu ani nevyhlási, niečo urobí a chyba sa môže ukázať na úplne inom mieste.</li>
+</ul>
+</div>
+<div id="demonštrácia-v-r-1" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Demonštrácia v R<a href="structures.html#demonštrácia-v-r-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Na začiatku musíme načítať knižnice, ktoré budeme potrebovať. Nejaké môžeme načítať aj neskôr,</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="structures.html#cb203-1" tabindex="-1"></a><span class="co">#This package contains the datasets used in ISwR book</span></span>
+<span id="cb203-2"><a href="structures.html#cb203-2" tabindex="-1"></a><span class="fu">library</span>(ISwR)</span>
+<span id="cb203-3"><a href="structures.html#cb203-3" tabindex="-1"></a></span>
+<span id="cb203-4"><a href="structures.html#cb203-4" tabindex="-1"></a><span class="co">#load the package &quot;survival&quot;</span></span>
+<span id="cb203-5"><a href="structures.html#cb203-5" tabindex="-1"></a><span class="co">#you may need to install it first</span></span>
+<span id="cb203-6"><a href="structures.html#cb203-6" tabindex="-1"></a><span class="co">#install.packages(&quot;survival&quot;)</span></span>
+<span id="cb203-7"><a href="structures.html#cb203-7" tabindex="-1"></a><span class="fu">library</span>(survival)</span></code></pre></div>
+<p>Do premennej pridáme hodnotu použitím <code>-&gt;</code>. Rko automaticky vyhodnotí o aký objekt ide. Objekt <code>f</code> bude typu <code>numeric</code> a objekt <code>g</code> bude typu <code>character</code>.</p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="structures.html#cb204-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="dv">14</span></span>
+<span id="cb204-2"><a href="structures.html#cb204-2" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="st">&quot;seven&quot;</span></span></code></pre></div>
+<p>Môžeme sa mechanicky pozrieť, ktoré premenné máme v pamäti (funkcia <code>ls()</code>). Vymazať všetko v pamäti môžeme pomocou <code>rm(list=ls())</code>.</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="structures.html#cb205-1" tabindex="-1"></a><span class="co">#list all the variables in the memory</span></span>
+<span id="cb205-2"><a href="structures.html#cb205-2" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
+<pre><code>##  [1] &quot;bmi&quot;           &quot;carColors&quot;     &quot;d&quot;             &quot;exp.lean&quot;     
+##  [5] &quot;exp.obese&quot;     &quot;f&quot;             &quot;fcarColors&quot;    &quot;fpain&quot;        
+##  [9] &quot;g&quot;             &quot;height&quot;        &quot;hh&quot;            &quot;ind&quot;          
+## [13] &quot;intake.post&quot;   &quot;intake.pre&quot;    &quot;intake.sorted&quot; &quot;iNumber&quot;      
+## [17] &quot;iPerson&quot;       &quot;l&quot;             &quot;m&quot;             &quot;myfunction&quot;   
+## [21] &quot;mylist&quot;        &quot;o&quot;             &quot;oops&quot;          &quot;pain&quot;         
+## [25] &quot;persons&quot;       &quot;sel&quot;           &quot;v&quot;             &quot;weight&quot;       
+## [29] &quot;x&quot;             &quot;xbar&quot;          &quot;y&quot;             &quot;z&quot;</code></pre>
+<p>Ak chceme pridať všetky premenné z nejakej dátovej tabuľky, použijeme <code>attach()</code>.</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="structures.html#cb207-1" tabindex="-1"></a><span class="co"># thuesen is a name of a dataset in the ISwR package</span></span>
+<span id="cb207-2"><a href="structures.html#cb207-2" tabindex="-1"></a><span class="co"># it is not in the global environment</span></span>
+<span id="cb207-3"><a href="structures.html#cb207-3" tabindex="-1"></a>thuesen</span></code></pre></div>
+<pre><code>##    blood.glucose short.velocity
+## 1           15.3           1.76
+## 2           10.8           1.34
+## 3            8.1           1.27
+## 4           19.5           1.47
+## 5            7.2           1.27
+## 6            5.3           1.49
+## 7            9.3           1.31
+## 8           11.1           1.09
+## 9            7.5           1.18
+## 10          12.2           1.22
+## 11           6.7           1.25
+## 12           5.2           1.19
+## 13          19.0           1.95
+## 14          15.1           1.28
+## 15           6.7           1.52
+## 16           8.6             NA
+## 17           4.2           1.12
+## 18          10.3           1.37
+## 19          12.5           1.19
+## 20          16.1           1.05
+## 21          13.3           1.32
+## 22           4.9           1.03
+## 23           8.8           1.12
+## 24           9.5           1.70</code></pre>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="structures.html#cb209-1" tabindex="-1"></a><span class="co">#it has to be called like this</span></span>
+<span id="cb209-2"><a href="structures.html#cb209-2" tabindex="-1"></a>thuesen<span class="sc">$</span>blood.glucose</span></code></pre></div>
+<pre><code>##  [1] 15.3 10.8  8.1 19.5  7.2  5.3  9.3 11.1  7.5 12.2  6.7  5.2 19.0 15.1  6.7
+## [16]  8.6  4.2 10.3 12.5 16.1 13.3  4.9  8.8  9.5</code></pre>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="structures.html#cb211-1" tabindex="-1"></a><span class="co">#attach the whole dataset</span></span>
+<span id="cb211-2"><a href="structures.html#cb211-2" tabindex="-1"></a><span class="fu">attach</span>(thuesen)</span>
+<span id="cb211-3"><a href="structures.html#cb211-3" tabindex="-1"></a><span class="co">#and access is directly</span></span>
+<span id="cb211-4"><a href="structures.html#cb211-4" tabindex="-1"></a>blood.glucose</span></code></pre></div>
+<pre><code>##  [1] 15.3 10.8  8.1 19.5  7.2  5.3  9.3 11.1  7.5 12.2  6.7  5.2 19.0 15.1  6.7
+## [16]  8.6  4.2 10.3 12.5 16.1 13.3  4.9  8.8  9.5</code></pre>
+<p>Takýmto spôsobom zadefinujeme novú funkciu.</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="structures.html#cb213-1" tabindex="-1"></a>myfunction <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, <span class="at">c=</span><span class="dv">5</span>){ </span>
+<span id="cb213-2"><a href="structures.html#cb213-2" tabindex="-1"></a>  <span class="fu">return</span>(a<span class="sc">*</span>b<span class="sc">*</span>c)</span>
+<span id="cb213-3"><a href="structures.html#cb213-3" tabindex="-1"></a>}</span>
+<span id="cb213-4"><a href="structures.html#cb213-4" tabindex="-1"></a></span>
+<span id="cb213-5"><a href="structures.html#cb213-5" tabindex="-1"></a><span class="fu">myfunction</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="structures.html#cb215-1" tabindex="-1"></a><span class="fu">myfunction</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<p>Funkcie môžeme mať v rámci skriptu alebo ako separátne súbory typu <code>subor.R</code>. Pomocou <code>setwd()</code> nastavíme working directory. Ak chcete vedieť v ktorom adresári ste, použite <code>getwd()</code>.</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="structures.html#cb217-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/lukaslaffers/Dropbox/pravdepodobnost a statistika 2/ISwR/scripts&quot;</span>)</span>
+<span id="cb217-2"><a href="structures.html#cb217-2" tabindex="-1"></a></span>
+<span id="cb217-3"><a href="structures.html#cb217-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;myfunction2.R&quot;</span>)</span>
+<span id="cb217-4"><a href="structures.html#cb217-4" tabindex="-1"></a><span class="fu">myfunction2</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span></code></pre></div>
+<p>Tu sú rôzne spôsoby ako vykresiť závislosť dvoch premenných. Funkcia <code>with(table,fun)</code> vyhodnotí <code>fun</code> na dátovej tabuľke <code>table</code>.</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="structures.html#cb218-1" tabindex="-1"></a><span class="fu">attach</span>(thuesen)</span></code></pre></div>
+<pre><code>## The following objects are masked from thuesen (pos = 3):
+## 
+##     blood.glucose, short.velocity</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="structures.html#cb220-1" tabindex="-1"></a><span class="fu">plot</span>(blood.glucose, short.velocity)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="structures.html#cb221-1" tabindex="-1"></a><span class="fu">plot</span>(thuesen<span class="sc">$</span>blood.glucose, thuesen<span class="sc">$</span>short.velocity)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-74-2.png" width="672" /></p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="structures.html#cb222-1" tabindex="-1"></a><span class="fu">with</span>(thuesen, <span class="fu">plot</span>(blood.glucose, short.velocity))</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-74-3.png" width="672" /></p>
+<p><code>subset</code> umožnuje vytvoriť podmnožinu dátovej tabuľky.</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="structures.html#cb223-1" tabindex="-1"></a><span class="co">#choose a subset</span></span>
+<span id="cb223-2"><a href="structures.html#cb223-2" tabindex="-1"></a>thue2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(thuesen,blood.glucose<span class="sc">&lt;</span><span class="dv">7</span>)</span>
+<span id="cb223-3"><a href="structures.html#cb223-3" tabindex="-1"></a>thue2</span></code></pre></div>
+<pre><code>##    blood.glucose short.velocity
+## 6            5.3           1.49
+## 11           6.7           1.25
+## 12           5.2           1.19
+## 15           6.7           1.52
+## 17           4.2           1.12
+## 22           4.9           1.03</code></pre>
+<p>Pomocou <code>setwd()</code> vieme pridať ďalšiu premennú do dátovej tabuľky, napríklad transformovaním existujúcich premenných.</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="structures.html#cb225-1" tabindex="-1"></a>thue3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(thuesen,<span class="at">log.gluc=</span><span class="fu">log</span>(blood.glucose))</span>
+<span id="cb225-2"><a href="structures.html#cb225-2" tabindex="-1"></a>thue3</span></code></pre></div>
+<pre><code>##    blood.glucose short.velocity log.gluc
+## 1           15.3           1.76 2.727853
+## 2           10.8           1.34 2.379546
+## 3            8.1           1.27 2.091864
+## 4           19.5           1.47 2.970414
+## 5            7.2           1.27 1.974081
+## 6            5.3           1.49 1.667707
+## 7            9.3           1.31 2.230014
+## 8           11.1           1.09 2.406945
+## 9            7.5           1.18 2.014903
+## 10          12.2           1.22 2.501436
+## 11           6.7           1.25 1.902108
+## 12           5.2           1.19 1.648659
+## 13          19.0           1.95 2.944439
+## 14          15.1           1.28 2.714695
+## 15           6.7           1.52 1.902108
+## 16           8.6             NA 2.151762
+## 17           4.2           1.12 1.435085
+## 18          10.3           1.37 2.332144
+## 19          12.5           1.19 2.525729
+## 20          16.1           1.05 2.778819
+## 21          13.3           1.32 2.587764
+## 22           4.9           1.03 1.589235
+## 23           8.8           1.12 2.174752
+## 24           9.5           1.70 2.251292</code></pre>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="structures.html#cb227-1" tabindex="-1"></a>thue2<span class="sc">$</span>log.gluc <span class="ot">&lt;-</span> <span class="fu">log</span>(thue2<span class="sc">$</span>blood.glucose)</span></code></pre></div>
+<p>Podobne <code>within()</code> modifikuje dátovú tabuľku (narozdiel of <code>with()</code>, ktorá len vytvorí nový objekt).</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="structures.html#cb228-1" tabindex="-1"></a>thue4 <span class="ot">&lt;-</span> <span class="fu">within</span>(thuesen,{</span>
+<span id="cb228-2"><a href="structures.html#cb228-2" tabindex="-1"></a>  log.gluc <span class="ot">&lt;-</span> <span class="fu">log</span>(blood.glucose)</span>
+<span id="cb228-3"><a href="structures.html#cb228-3" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">mean</span>(log.gluc)</span>
+<span id="cb228-4"><a href="structures.html#cb228-4" tabindex="-1"></a>  centered.log.gluc <span class="ot">&lt;-</span> log.gluc <span class="sc">-</span> m</span>
+<span id="cb228-5"><a href="structures.html#cb228-5" tabindex="-1"></a>  <span class="fu">rm</span>(m)</span>
+<span id="cb228-6"><a href="structures.html#cb228-6" tabindex="-1"></a>})</span>
+<span id="cb228-7"><a href="structures.html#cb228-7" tabindex="-1"></a></span>
+<span id="cb228-8"><a href="structures.html#cb228-8" tabindex="-1"></a>thue4</span></code></pre></div>
+<pre><code>##    blood.glucose short.velocity centered.log.gluc log.gluc
+## 1           15.3           1.76       0.481879807 2.727853
+## 2           10.8           1.34       0.133573113 2.379546
+## 3            8.1           1.27      -0.154108960 2.091864
+## 4           19.5           1.47       0.724441444 2.970414
+## 5            7.2           1.27      -0.271891996 1.974081
+## 6            5.3           1.49      -0.578266201 1.667707
+## 7            9.3           1.31      -0.015958621 2.230014
+## 8           11.1           1.09       0.160972087 2.406945
+## 9            7.5           1.18      -0.231070001 2.014903
+## 10          12.2           1.22       0.255462930 2.501436
+## 11           6.7           1.25      -0.343865495 1.902108
+## 12           5.2           1.19      -0.597314396 1.648659
+## 13          19.0           1.95       0.698465958 2.944439
+## 14          15.1           1.28       0.468721722 2.714695
+## 15           6.7           1.52      -0.343865495 1.902108
+## 16           8.6             NA      -0.094210818 2.151762
+## 17           4.2           1.12      -0.810888496 1.435085
+## 18          10.3           1.37       0.086170874 2.332144
+## 19          12.5           1.19       0.279755623 2.525729
+## 20          16.1           1.05       0.532846250 2.778819
+## 21          13.3           1.32       0.341791014 2.587764
+## 22           4.9           1.03      -0.656737817 1.589235
+## 23           8.8           1.12      -0.071221300 2.174752
+## 24           9.5           1.70       0.005318777 2.251292</code></pre>
+<p>Pri generovaní náhodných čísel (<code>runif()</code> generuje náhodné čísla rovnomerne medzi 0 a 1) je dobrým zvykom nastaviť seed generátora (pseudo)náhodných čísel. Takýmto spôsobom dostaneme všetci úplne totožné výsledky.</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="structures.html#cb230-1" tabindex="-1"></a><span class="co">#plotting</span></span>
+<span id="cb230-2"><a href="structures.html#cb230-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">98453</span>)</span>
+<span id="cb230-3"><a href="structures.html#cb230-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb230-4"><a href="structures.html#cb230-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">2</span>)</span></code></pre></div>
+<p>Nakreslíme a modifikujeme graf. Tu vidíme, že vyskúšaním hneď pochopíte, čo daná funkcia robí bez toho, aby ste čítali dokumentáciu.</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="structures.html#cb231-1" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">main=</span><span class="st">&quot;Titulok&quot;</span>, <span class="at">sub=</span><span class="st">&quot;subtitle&quot;</span>,</span>
+<span id="cb231-2"><a href="structures.html#cb231-2" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;x-label&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-label&quot;</span>)</span>
+<span id="cb231-3"><a href="structures.html#cb231-3" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.6</span>,<span class="fl">0.6</span>,<span class="st">&quot;text at (0.6,0.6)&quot;</span>)</span>
+<span id="cb231-4"><a href="structures.html#cb231-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span>.<span class="dv">6</span>,<span class="at">v=</span>.<span class="dv">6</span>)</span>
+<span id="cb231-5"><a href="structures.html#cb231-5" tabindex="-1"></a></span>
+<span id="cb231-6"><a href="structures.html#cb231-6" tabindex="-1"></a><span class="cf">for</span> (side <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>){ </span>
+<span id="cb231-7"><a href="structures.html#cb231-7" tabindex="-1"></a>  <span class="fu">mtext</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="at">side=</span>side,<span class="at">at=</span>.<span class="dv">7</span>,<span class="at">line=</span><span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb231-8"><a href="structures.html#cb231-8" tabindex="-1"></a>}</span>
+<span id="cb231-9"><a href="structures.html#cb231-9" tabindex="-1"></a></span>
+<span id="cb231-10"><a href="structures.html#cb231-10" tabindex="-1"></a><span class="fu">mtext</span>(<span class="fu">paste</span>(<span class="st">&quot;side&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">side=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">line=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">font=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+<p>Podobne tu.</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="structures.html#cb232-1" tabindex="-1"></a><span class="co">#empty figure</span></span>
+<span id="cb232-2"><a href="structures.html#cb232-2" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>, <span class="at">axes=</span>F)</span>
+<span id="cb232-3"><a href="structures.html#cb232-3" tabindex="-1"></a><span class="co">#add elements one by one</span></span>
+<span id="cb232-4"><a href="structures.html#cb232-4" tabindex="-1"></a><span class="co">#points</span></span>
+<span id="cb232-5"><a href="structures.html#cb232-5" tabindex="-1"></a><span class="fu">points</span>(x,y)</span>
+<span id="cb232-6"><a href="structures.html#cb232-6" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>)</span>
+<span id="cb232-7"><a href="structures.html#cb232-7" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>,<span class="at">at=</span><span class="fu">seq</span>(<span class="fl">0.2</span>,<span class="fl">1.8</span>,<span class="fl">0.2</span>))</span>
+<span id="cb232-8"><a href="structures.html#cb232-8" tabindex="-1"></a><span class="fu">box</span>()</span>
+<span id="cb232-9"><a href="structures.html#cb232-9" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">&quot;Main title&quot;</span>, <span class="at">sub=</span><span class="st">&quot;subtitle&quot;</span>,</span>
+<span id="cb232-10"><a href="structures.html#cb232-10" tabindex="-1"></a>      <span class="at">xlab=</span><span class="st">&quot;x-label&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-label&quot;</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
+<p>Tu sú rôzne varianty zobrazenia distribúcie</p>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="structures.html#cb233-1" tabindex="-1"></a><span class="co">#in order to reproduce the graph exactly</span></span>
+<span id="cb233-2"><a href="structures.html#cb233-2" tabindex="-1"></a><span class="co"># we need to fix the seed of the random number generator</span></span>
+<span id="cb233-3"><a href="structures.html#cb233-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>) <span class="co">#make it happen....</span></span>
+<span id="cb233-4"><a href="structures.html#cb233-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>)</span>
+<span id="cb233-5"><a href="structures.html#cb233-5" tabindex="-1"></a></span>
+<span id="cb233-6"><a href="structures.html#cb233-6" tabindex="-1"></a><span class="fu">hist</span>(x)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="structures.html#cb234-1" tabindex="-1"></a><span class="fu">hist</span>(x,<span class="at">freq=</span>F)</span>
+<span id="cb234-2"><a href="structures.html#cb234-2" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">add=</span>T)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-81-2.png" width="672" /></p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="structures.html#cb235-1" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">hist</span>(x, <span class="at">plot=</span>F)</span>
+<span id="cb235-2"><a href="structures.html#cb235-2" tabindex="-1"></a>ylim <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="dv">0</span>, h<span class="sc">$</span>density, <span class="fu">dnorm</span>(<span class="dv">0</span>))</span>
+<span id="cb235-3"><a href="structures.html#cb235-3" tabindex="-1"></a><span class="fu">hist</span>(x, <span class="at">freq=</span>F, <span class="at">ylim=</span>ylim)</span>
+<span id="cb235-4"><a href="structures.html#cb235-4" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x), <span class="at">add=</span>T)  </span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-81-3.png" width="672" /></p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="structures.html#cb236-1" tabindex="-1"></a>hist.with.normal <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">xlab=</span><span class="fu">deparse</span>(<span class="fu">substitute</span>(x)),...)</span>
+<span id="cb236-2"><a href="structures.html#cb236-2" tabindex="-1"></a>{</span>
+<span id="cb236-3"><a href="structures.html#cb236-3" tabindex="-1"></a>  h <span class="ot">&lt;-</span> <span class="fu">hist</span>(x, <span class="at">plot=</span>F, ...)</span>
+<span id="cb236-4"><a href="structures.html#cb236-4" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
+<span id="cb236-5"><a href="structures.html#cb236-5" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb236-6"><a href="structures.html#cb236-6" tabindex="-1"></a>  ylim <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="dv">0</span>,h<span class="sc">$</span>density,<span class="fu">dnorm</span>(<span class="dv">0</span>,<span class="at">sd=</span>s))</span>
+<span id="cb236-7"><a href="structures.html#cb236-7" tabindex="-1"></a>  <span class="fu">hist</span>(x, <span class="at">freq=</span>F, <span class="at">ylim=</span>ylim, <span class="at">xlab=</span>xlab, ...)</span>
+<span id="cb236-8"><a href="structures.html#cb236-8" tabindex="-1"></a>  <span class="fu">curve</span>(<span class="fu">dnorm</span>(x,m,s), <span class="at">add=</span>T)</span>
+<span id="cb236-9"><a href="structures.html#cb236-9" tabindex="-1"></a>}</span>
+<span id="cb236-10"><a href="structures.html#cb236-10" tabindex="-1"></a></span>
+<span id="cb236-11"><a href="structures.html#cb236-11" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>)</span>
+<span id="cb236-12"><a href="structures.html#cb236-12" tabindex="-1"></a><span class="fu">hist.with.normal</span>(a)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p>Naćítanie dát z tabuľky je zvyčajne prvým krokom akejkoľvek analýzy. Dáta prichádzajú v rôznych formách. Tu je zopár príkladov ako načítať dáta z rôznych typov súborov. Dôležité je, aby v adresári v ktorom sa nachádzame daný súbor aj naozaj bol.</p>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="structures.html#cb237-1" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb237-2"><a href="structures.html#cb237-2" tabindex="-1"></a><span class="co">#This part is not taken from ISwR book</span></span>
+<span id="cb237-3"><a href="structures.html#cb237-3" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb237-4"><a href="structures.html#cb237-4" tabindex="-1"></a></span>
+<span id="cb237-5"><a href="structures.html#cb237-5" tabindex="-1"></a><span class="co">#There are many different ways how can we load data to R</span></span>
+<span id="cb237-6"><a href="structures.html#cb237-6" tabindex="-1"></a><span class="co"># and many different formats of the data</span></span>
+<span id="cb237-7"><a href="structures.html#cb237-7" tabindex="-1"></a><span class="co"># Here we cover some of them:</span></span>
+<span id="cb237-8"><a href="structures.html#cb237-8" tabindex="-1"></a></span>
+<span id="cb237-9"><a href="structures.html#cb237-9" tabindex="-1"></a><span class="co"># xlsx</span></span>
+<span id="cb237-10"><a href="structures.html#cb237-10" tabindex="-1"></a><span class="co"># csv</span></span>
+<span id="cb237-11"><a href="structures.html#cb237-11" tabindex="-1"></a><span class="co"># dat</span></span>
+<span id="cb237-12"><a href="structures.html#cb237-12" tabindex="-1"></a><span class="co"># txt</span></span>
+<span id="cb237-13"><a href="structures.html#cb237-13" tabindex="-1"></a></span>
+<span id="cb237-14"><a href="structures.html#cb237-14" tabindex="-1"></a><span class="co"># remember to set the current directory using setwd()</span></span>
+<span id="cb237-15"><a href="structures.html#cb237-15" tabindex="-1"></a><span class="co"># You may check it using this command</span></span>
+<span id="cb237-16"><a href="structures.html#cb237-16" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;/Users/lukaslaffers/Dropbox/pravdepodobnost a statistika 2/PaS2bookdown&quot;</code></pre>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="structures.html#cb239-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb239-2"><a href="structures.html#cb239-2" tabindex="-1"></a><span class="co">#you may need to install it first</span></span>
+<span id="cb239-3"><a href="structures.html#cb239-3" tabindex="-1"></a><span class="co">#install.packages(&quot;survival&quot;)</span></span></code></pre></div>
+<p>Na otvorenie typu <code>xlsx</code> potrebujeme načítať novú knižnicu. Sú rôzne knižnice, ktoré toto vedia.</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="structures.html#cb240-1" tabindex="-1"></a><span class="co">#working with datasets</span></span>
+<span id="cb240-2"><a href="structures.html#cb240-2" tabindex="-1"></a>data_card <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;card.xlsx&quot;</span>)</span>
+<span id="cb240-3"><a href="structures.html#cb240-3" tabindex="-1"></a><span class="co"># Data downloaded from https://davidcard.berkeley.edu/data_sets.html</span></span>
+<span id="cb240-4"><a href="structures.html#cb240-4" tabindex="-1"></a><span class="co"># from paper: </span></span>
+<span id="cb240-5"><a href="structures.html#cb240-5" tabindex="-1"></a><span class="co"># &quot;Using Geographic Variation in College Proximity to Estimate the Return to Schooling&quot;. </span></span>
+<span id="cb240-6"><a href="structures.html#cb240-6" tabindex="-1"></a><span class="co">#   In L.N. Christofides, E.K. Grant, and R. Swidinsky, editors, Aspects of Labor Market </span></span>
+<span id="cb240-7"><a href="structures.html#cb240-7" tabindex="-1"></a><span class="co">#   Behaviour: Essays in Honour of John Vanderkamp. Toronto: University of Toronto Press, 1995.</span></span>
+<span id="cb240-8"><a href="structures.html#cb240-8" tabindex="-1"></a><span class="co"># Data also here: https://docs.google.com/spreadsheets/d/116KwP9SJUQ8LZHeIH-sTvlFFwCgkKIsz86exk1I7O1s/edit#gid=943363882</span></span></code></pre></div>
+<p>CSV súbor je častokrát preferovaný, lebo jeho forma nezávisí na verzii MS Excel.</p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="structures.html#cb241-1" tabindex="-1"></a><span class="co">#use read.csv to load comma-separated-value file</span></span>
+<span id="cb241-2"><a href="structures.html#cb241-2" tabindex="-1"></a>data_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;card.csv&quot;</span>)</span></code></pre></div>
+<p>Ďalších častým formátom je <code>.dat</code>.</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="structures.html#cb242-1" tabindex="-1"></a><span class="co">#we may save the dataset to a &quot;.dat&quot;</span></span>
+<span id="cb242-2"><a href="structures.html#cb242-2" tabindex="-1"></a><span class="fu">save</span>(data_card, <span class="at">file=</span><span class="st">&quot;card.dat&quot;</span>)</span>
+<span id="cb242-3"><a href="structures.html#cb242-3" tabindex="-1"></a><span class="co">#then load it using load</span></span>
+<span id="cb242-4"><a href="structures.html#cb242-4" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;card.dat&quot;</span>)</span></code></pre></div>
+<p>Natívne podporovaný formát je <code>.RData</code>.</p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="structures.html#cb243-1" tabindex="-1"></a><span class="co">#we may save the dataset to a &quot;.RData&quot;</span></span>
+<span id="cb243-2"><a href="structures.html#cb243-2" tabindex="-1"></a><span class="fu">save</span>(data_card, <span class="at">file=</span><span class="st">&quot;card.RData&quot;</span>)</span>
+<span id="cb243-3"><a href="structures.html#cb243-3" tabindex="-1"></a><span class="co">#then load it using load</span></span>
+<span id="cb243-4"><a href="structures.html#cb243-4" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;card.RData&quot;</span>)</span></code></pre></div>
+<p>Bežným je tiež <code>.txt</code> formát.</p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="structures.html#cb244-1" tabindex="-1"></a><span class="co">#use read.table to load a txt file</span></span>
+<span id="cb244-2"><a href="structures.html#cb244-2" tabindex="-1"></a>data_txt <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;card.txt&quot;</span>)</span></code></pre></div>
+<p>Súbor, ktorý sťahujeme môže byť aj na internete.</p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="structures.html#cb245-1" tabindex="-1"></a><span class="co">#sometime the dataset is on the internet</span></span>
+<span id="cb245-2"><a href="structures.html#cb245-2" tabindex="-1"></a>data_card <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;https://lukas-laffers.squarespace.com/s/card.txt&quot;</span>)</span></code></pre></div>
+<p>Alebo v nejakej konkrétnej Rkovej knižnici.</p>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="structures.html#cb246-1" tabindex="-1"></a><span class="co">#dataset may be already in some R-package</span></span>
+<span id="cb246-2"><a href="structures.html#cb246-2" tabindex="-1"></a><span class="fu">data</span>(malaria, <span class="at">package=</span><span class="st">&quot;ISwR&quot;</span>)</span></code></pre></div>
+<p>Vždy sa pozeráme na sumár datasetu. Ten nás informuje o formátoch a charakteristikách jednotlivých premenných.</p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="structures.html#cb247-1" tabindex="-1"></a><span class="co">#look at the dataset</span></span>
+<span id="cb247-2"><a href="structures.html#cb247-2" tabindex="-1"></a><span class="fu">summary</span>(data_card)</span></code></pre></div>
+<pre><code>##        id           nearc2           nearc4          nearc4a      
+##  Min.   :   2   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000  
+##  1st Qu.:1330   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.0000  
+##  Median :2574   Median :0.0000   Median :1.0000   Median :0.0000  
+##  Mean   :2610   Mean   :0.4318   Mean   :0.6781   Mean   :0.4921  
+##  3rd Qu.:3908   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000  
+##  Max.   :5225   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000  
+##     nearc4b           ed76            ed66           age76      
+##  Min.   :0.000   Min.   : 0.00   Min.   : 0.00   Min.   :24.00  
+##  1st Qu.:0.000   1st Qu.:12.00   1st Qu.: 9.00   1st Qu.:25.00  
+##  Median :0.000   Median :13.00   Median :11.00   Median :28.00  
+##  Mean   :0.186   Mean   :13.23   Mean   :10.74   Mean   :28.18  
+##  3rd Qu.:0.000   3rd Qu.:16.00   3rd Qu.:12.00   3rd Qu.:31.00  
+##  Max.   :1.000   Max.   :18.00   Max.   :18.00   Max.   :34.00  
+##      daded          nodaded           momed          nomomed      
+##  Min.   : 0.00   Min.   :0.0000   Min.   : 0.00   Min.   :0.0000  
+##  1st Qu.: 8.00   1st Qu.:0.0000   1st Qu.: 8.00   1st Qu.:0.0000  
+##  Median : 9.94   Median :0.0000   Median :11.00   Median :0.0000  
+##  Mean   :10.00   Mean   :0.2242   Mean   :10.34   Mean   :0.1143  
+##  3rd Qu.:12.00   3rd Qu.:0.0000   3rd Qu.:12.00   3rd Qu.:0.0000  
+##  Max.   :18.00   Max.   :1.0000   Max.   :18.00   Max.   :1.0000  
+##      weight           momdad14         sinmom14          step14       
+##  Min.   :  75607   Min.   :0.0000   Min.   :0.0000   Min.   :0.00000  
+##  1st Qu.: 123030   1st Qu.:1.0000   1st Qu.:0.0000   1st Qu.:0.00000  
+##  Median : 365200   Median :1.0000   Median :0.0000   Median :0.00000  
+##  Mean   : 320318   Mean   :0.7921   Mean   :0.1002   Mean   :0.03847  
+##  3rd Qu.: 405452   3rd Qu.:1.0000   3rd Qu.:0.0000   3rd Qu.:0.00000  
+##  Max.   :1752340   Max.   :1.0000   Max.   :1.0000   Max.   :1.00000  
+##      reg661            reg662          reg663          reg664       
+##  Min.   :0.00000   Min.   :0.000   Min.   :0.000   Min.   :0.00000  
+##  1st Qu.:0.00000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.00000  
+##  Median :0.00000   Median :0.000   Median :0.000   Median :0.00000  
+##  Mean   :0.04456   Mean   :0.155   Mean   :0.194   Mean   :0.06919  
+##  3rd Qu.:0.00000   3rd Qu.:0.000   3rd Qu.:0.000   3rd Qu.:0.00000  
+##  Max.   :1.00000   Max.   :1.000   Max.   :1.000   Max.   :1.00000  
+##      reg665           reg666          reg667           reg668     
+##  Min.   :0.0000   Min.   :0.000   Min.   :0.0000   Min.   :0.000  
+##  1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:0.000  
+##  Median :0.0000   Median :0.000   Median :0.0000   Median :0.000  
+##  Mean   :0.2095   Mean   :0.093   Mean   :0.1102   Mean   :0.031  
+##  3rd Qu.:0.0000   3rd Qu.:0.000   3rd Qu.:0.0000   3rd Qu.:0.000  
+##  Max.   :1.0000   Max.   :1.000   Max.   :1.0000   Max.   :1.000  
+##      reg669           south66           work76          work78      
+##  Min.   :0.00000   Min.   :0.0000   Min.   :0.000   Min.   :0.0000  
+##  1st Qu.:0.00000   1st Qu.:0.0000   1st Qu.:1.000   1st Qu.:0.0000  
+##  Median :0.00000   Median :0.0000   Median :1.000   Median :1.0000  
+##  Mean   :0.09355   Mean   :0.4127   Mean   :0.835   Mean   :0.7351  
+##  3rd Qu.:0.00000   3rd Qu.:1.0000   3rd Qu.:1.000   3rd Qu.:1.0000  
+##  Max.   :1.00000   Max.   :1.0000   Max.   :1.000   Max.   :1.0000  
+##    lwage76            lwage78              famed           black     
+##  Length:3613        Length:3613        Min.   :1.000   Min.   :0.00  
+##  Class :character   Class :character   1st Qu.:3.000   1st Qu.:0.00  
+##  Mode  :character   Mode  :character   Median :6.000   Median :0.00  
+##                                        Mean   :5.913   Mean   :0.23  
+##                                        3rd Qu.:8.000   3rd Qu.:0.00  
+##                                        Max.   :9.000   Max.   :1.00  
+##     smsa76r         smsa78r              reg76r          reg78r         
+##  Min.   :0.0000   Length:3613        Min.   :0.0000   Length:3613       
+##  1st Qu.:0.0000   Class :character   1st Qu.:0.0000   Class :character  
+##  Median :1.0000   Mode  :character   Median :0.0000   Mode  :character  
+##  Mean   :0.6947                      Mean   :0.3997                     
+##  3rd Qu.:1.0000                      3rd Qu.:1.0000                     
+##  Max.   :1.0000                      Max.   :1.0000                     
+##     reg80r             smsa66r          wage76             wage78         
+##  Length:3613        Min.   :0.0000   Length:3613        Length:3613       
+##  Class :character   1st Qu.:0.0000   Class :character   Class :character  
+##  Mode  :character   Median :1.0000   Mode  :character   Mode  :character  
+##                     Mean   :0.6427                                        
+##                     3rd Qu.:1.0000                                        
+##                     Max.   :1.0000                                        
+##     wage80             noint78           noint80          enroll76      
+##  Length:3613        Min.   :0.00000   Min.   :0.0000   Min.   :0.00000  
+##  Class :character   1st Qu.:0.00000   1st Qu.:0.0000   1st Qu.:0.00000  
+##  Mode  :character   Median :0.00000   Median :0.0000   Median :0.00000  
+##                     Mean   :0.08137   Mean   :0.1068   Mean   :0.09466  
+##                     3rd Qu.:0.00000   3rd Qu.:0.0000   3rd Qu.:0.00000  
+##                     Max.   :1.00000   Max.   :1.0000   Max.   :1.00000  
+##    enroll78           enroll80             kww                 iq           
+##  Length:3613        Length:3613        Length:3613        Length:3613       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##                                                                             
+##                                                                             
+##                                                                             
+##    marsta76           marsta78           marsta80           libcrd14        
+##  Length:3613        Length:3613        Length:3613        Length:3613       
+##  Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+##                                                                             
+##                                                                             
+## </code></pre>
+<p>Vśimneme si, že premenná je typu faktor.</p>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="structures.html#cb249-1" tabindex="-1"></a><span class="co">#IQ is apparently not a text</span></span>
+<span id="cb249-2"><a href="structures.html#cb249-2" tabindex="-1"></a>data_card<span class="sc">$</span>iq[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;.&quot;   &quot;93&quot;  &quot;103&quot; &quot;88&quot;  &quot;108&quot;</code></pre>
+<p>Vieme ju skonvertovať na numerickú premennú tak, že ju najprv skonvertujeme na text.</p>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="structures.html#cb251-1" tabindex="-1"></a><span class="co">#we may recode it</span></span>
+<span id="cb251-2"><a href="structures.html#cb251-2" tabindex="-1"></a>data_card<span class="sc">$</span>iqn <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(data_card<span class="sc">$</span>iq))</span></code></pre></div>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="structures.html#cb253-1" tabindex="-1"></a>data_card<span class="sc">$</span>wage78n <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(data_card<span class="sc">$</span>wage78))</span></code></pre></div>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<p>A nakresliť.</p>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="structures.html#cb255-1" tabindex="-1"></a><span class="co">#look at the association of IQ and wages</span></span>
+<span id="cb255-2"><a href="structures.html#cb255-2" tabindex="-1"></a><span class="fu">with</span>(data_card,<span class="fu">plot</span>(iqn,wage78n))</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p>Rovnako nakreslíme závislosť IQ a mzdy pre tých, ktorý zarábajú menej ako 2000.</p>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="structures.html#cb256-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb256-2"><a href="structures.html#cb256-2" tabindex="-1"></a><span class="co">#zoom for those who earned less than 2000</span></span>
+<span id="cb256-3"><a href="structures.html#cb256-3" tabindex="-1"></a><span class="fu">with</span>(data_card <span class="sc">%&gt;%</span> <span class="fu">filter</span>(wage78n<span class="sc">&lt;</span><span class="dv">2000</span>),<span class="fu">plot</span>(iqn,wage78n))</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+<p>Kreslenie obrázkov a vizualizácia je zaujímavá kapitola sama o sebe.</p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="structures.html#cb257-1" tabindex="-1"></a><span class="co">#or more fancy graph</span></span>
+<span id="cb257-2"><a href="structures.html#cb257-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>data_card <span class="sc">%&gt;%</span> <span class="fu">filter</span>(wage78n<span class="sc">&lt;</span><span class="dv">2000</span>), <span class="fu">aes</span>(<span class="at">x =</span> iqn, <span class="at">y =</span> wage78n)) <span class="sc">+</span></span>
+<span id="cb257-3"><a href="structures.html#cb257-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb257-4"><a href="structures.html#cb257-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
+<span id="cb257-5"><a href="structures.html#cb257-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 817 rows containing non-finite values (stat_smooth).
+## Removed 817 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 817 rows containing missing values (geom_point).</code></pre>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
+<p><a href="https://www.dropbox.com/s/925fr47pk0dfhbl/ch02.R?dl=0">R súbor z prednášky z 6.10.2022</a></p>
+</div>
+<div id="cvičenia-1" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Cvičenia<a href="structures.html#cvičenia-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Cvičenie 2.1  </strong></span>Vráťme sa k príkladu</p>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="structures.html#cb260-1" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.75</span>, <span class="fl">1.80</span>, <span class="fl">1.65</span>, <span class="fl">1.90</span>, <span class="fl">1.74</span>, <span class="fl">1.91</span>)</span>
+<span id="cb260-2"><a href="structures.html#cb260-2" tabindex="-1"></a>ind1 <span class="ot">&lt;-</span> (height <span class="sc">&gt;</span> <span class="fl">1.75</span>)</span>
+<span id="cb260-3"><a href="structures.html#cb260-3" tabindex="-1"></a>ind2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">*</span>ind1</span></code></pre></div>
+<p>Podrobne vysvetlite, prečo <code>height[ind1]</code> a <code>height[ind2]</code> nedáva ten istý výstup.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Cvičenie 2.2  </strong></span>Viete vysvetliť tento zdanlivý paradox?</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="structures.html#cb261-1" tabindex="-1"></a>(<span class="fl">0.1</span> <span class="sc">+</span> <span class="fl">0.2</span>) <span class="sc">==</span> <span class="fl">0.3</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Cvičenie 2.3  </strong></span>Poďme naspäť k cvičeniu 1.3 o filmoch.</p>
+<p><em>Aký je rozpočet akčných filmov, vydaných po 1995?</em></p>
+<p>Tu je pomôcka. Sú tu 4 rôzne spôsoby ako sa to dá robiť. Líšia sa najmä prehľadnosťou zápisu. Prehľadnejší kód znamená menší priestor pre chyby.</p>
+<p>Spôsob 1. Indexovaním. Indexy si uchovávame:</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="structures.html#cb263-1" tabindex="-1"></a><span class="co">#option 1</span></span>
+<span id="cb263-2"><a href="structures.html#cb263-2" tabindex="-1"></a>ind <span class="ot">&lt;-</span> movies<span class="sc">$</span>year <span class="sc">&gt;</span> <span class="dv">1995</span> <span class="sc">&amp;</span> movies<span class="sc">$</span>Action<span class="sc">==</span><span class="dv">1</span></span>
+<span id="cb263-3"><a href="structures.html#cb263-3" tabindex="-1"></a><span class="co">#look at column called &quot;budget&quot;</span></span>
+<span id="cb263-4"><a href="structures.html#cb263-4" tabindex="-1"></a>movies[ind,<span class="st">&quot;budget&quot;</span>]</span>
+<span id="cb263-5"><a href="structures.html#cb263-5" tabindex="-1"></a><span class="co">#or </span></span>
+<span id="cb263-6"><a href="structures.html#cb263-6" tabindex="-1"></a><span class="co"># &quot;budget&quot; is in the 4th column</span></span>
+<span id="cb263-7"><a href="structures.html#cb263-7" tabindex="-1"></a><span class="fu">names</span>(movies)</span>
+<span id="cb263-8"><a href="structures.html#cb263-8" tabindex="-1"></a><span class="co">#look at the fourth column</span></span>
+<span id="cb263-9"><a href="structures.html#cb263-9" tabindex="-1"></a>movies[ind,<span class="dv">4</span>]</span></code></pre></div>
+<p>Spôsob 2. Priamo indexovaním.</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="structures.html#cb264-1" tabindex="-1"></a><span class="co">#option 2 directly (less readable)</span></span>
+<span id="cb264-2"><a href="structures.html#cb264-2" tabindex="-1"></a>movies[movies<span class="sc">$</span>year <span class="sc">&gt;</span> <span class="dv">1995</span> <span class="sc">&amp;</span> movies<span class="sc">$</span>Action<span class="sc">==</span><span class="dv">1</span>,<span class="st">&quot;budget&quot;</span>]</span>
+<span id="cb264-3"><a href="structures.html#cb264-3" tabindex="-1"></a>movies[movies<span class="sc">$</span>year <span class="sc">&gt;</span> <span class="dv">1995</span> <span class="sc">&amp;</span> movies<span class="sc">$</span>Action<span class="sc">==</span><span class="dv">1</span>,<span class="dv">4</span>]</span></code></pre></div>
+<p>Spôsob 3. Pomocou funkcie <code>with()</code>.</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="structures.html#cb265-1" tabindex="-1"></a><span class="co">#option 3 nicer</span></span>
+<span id="cb265-2"><a href="structures.html#cb265-2" tabindex="-1"></a><span class="co"># use function with, takes dataset as the first argument</span></span>
+<span id="cb265-3"><a href="structures.html#cb265-3" tabindex="-1"></a><span class="fu">with</span>(movies, budget[year <span class="sc">&gt;</span> <span class="dv">1995</span> <span class="sc">&amp;</span> Action<span class="sc">==</span><span class="dv">1</span>])</span></code></pre></div>
+<p>Spôsob 4. Pomocou knižnice <code>dplyr</code></p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="structures.html#cb266-1" tabindex="-1"></a><span class="co">#option 4 much nicer (use dplyr package)</span></span>
+<span id="cb266-2"><a href="structures.html#cb266-2" tabindex="-1"></a>movies <span class="sc">%&gt;%</span> </span>
+<span id="cb266-3"><a href="structures.html#cb266-3" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;</span> <span class="dv">1995</span>, Action<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb266-4"><a href="structures.html#cb266-4" tabindex="-1"></a>  <span class="fu">select</span>(budget)</span></code></pre></div>
+<p>Všimnite si, že posledný kód je oveľa čitateľnejší.</p>
+<p>Teraz splňte nasledovnú úlohu:</p>
+<p><em>Usporiadajte animované filmy s viac ako 1000 hodnoteniami, vydané po roku 1980, ktoré trvajú dlhšie ako 30 minút podľa hodnotenia od najlepšieho po najhorší.</em></p>
+<p>(Možno použiť funkcie <code>filter()</code>, <code>arrange()</code> a <code>desc()</code>.)</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-8" class="exercise"><strong>Cvičenie 2.4  </strong></span>Vytvorte funkciu s menom <code>bmi</code>, ktorá dostane ako vstup výšku v cm a váhu v kg a jej výstupom bude BMI. Môžete uvažovať, že vstupy sú korektne zadané.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-9" class="exercise"><strong>Cvičenie 2.5  </strong></span>Pomocou for cyklu zrátajte</p>
+<p><span class="math display">\[\begin{equation*}
+\sum_{i=1}^{350}\frac{i(i-1)}{i+2}
+\end{equation*}\]</span></p>
+<p>a</p>
+<p><span class="math display">\[\begin{equation*}
+\prod_{i=1}^{350}\frac{i+1}{i+2}
+\end{equation*}\]</span></p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-10" class="exercise"><strong>Cvičenie 2.6  </strong></span>Stiahnite si a načítajte dáta o kvalite červených vín.
+<a href="https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009">stadiaľto</a>. Porozmýšľajte ako sú rôzne atribúty červeného vína asociované s jeho kvalitou (<code>quality</code>).</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-11" class="exercise"><strong>Cvičenie 2.7  </strong></span>Stiahnite si a načítajte dáta o výkone študentov na rôznych testoch.
+<a href="https://www.kaggle.com/datasets/spscientist/students-performance-in-exams">stadiaľto</a>. Porozmýšľajte ako je vzdelanie rodičov asociované s akademickým výkonom v rôznych oblastiach (<code>math.score</code>, <code>reading.score</code>, <code>writing.score</code>).</p>
+</div>
+<!-- [R súbor z cvičení z 7.10.2022](https://www.dropbox.com/s/32za36lyf75rh05/labs_week3.R?dl=0) -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="random.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PaS2bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

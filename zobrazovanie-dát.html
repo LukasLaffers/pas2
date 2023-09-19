@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Zobrazovanie dát | Pravdepodobnosť a štatistika 2</title>
+  <meta name="description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Zobrazovanie dát | Pravdepodobnosť a štatistika 2" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Zobrazovanie dát | Pravdepodobnosť a štatistika 2" />
+  
+  <meta name="twitter:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  
+
+<meta name="author" content="Lukáš Lafférs" />
+
+
+<meta name="date" content="2023-09-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="suvis.html"/>
+<link rel="next" href="štatistické-testovanie-hypotéz.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Pravdepodobnosť a štatistika 2</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O tomto kurze</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Úvod do jazyka R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#nejaké-príklady-r"><i class="fa fa-check"></i><b>1.2</b> Nejaké príklady R</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#nevýhody-r"><i class="fa fa-check"></i><b>1.3</b> Nevýhody R</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#a-čo-teraz."><i class="fa fa-check"></i><b>1.4</b> A čo teraz.</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#demonštrácia-v-r"><i class="fa fa-check"></i><b>1.5</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#na-záver-úvodu"><i class="fa fa-check"></i><b>1.6</b> Na záver úvodu</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#cvičenia"><i class="fa fa-check"></i><b>1.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="structures.html"><a href="structures.html"><i class="fa fa-check"></i><b>2</b> Premenné a dátové štruktúry</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="structures.html"><a href="structures.html#typy-premenných"><i class="fa fa-check"></i><b>2.1</b> Typy premenných</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="structures.html"><a href="structures.html#numeric"><i class="fa fa-check"></i><b>2.1.1</b> <code>numeric</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="structures.html"><a href="structures.html#character"><i class="fa fa-check"></i><b>2.1.2</b> <code>character</code></a></li>
+<li class="chapter" data-level="2.1.3" data-path="structures.html"><a href="structures.html#logical"><i class="fa fa-check"></i><b>2.1.3</b> <code>logical</code></a></li>
+<li class="chapter" data-level="2.1.4" data-path="structures.html"><a href="structures.html#factor"><i class="fa fa-check"></i><b>2.1.4</b> <code>factor</code></a></li>
+<li class="chapter" data-level="2.1.5" data-path="structures.html"><a href="structures.html#iné"><i class="fa fa-check"></i><b>2.1.5</b> Iné</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="structures.html"><a href="structures.html#typy-dátových-štruktúr"><i class="fa fa-check"></i><b>2.2</b> Typy dátových štruktúr</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="structures.html"><a href="structures.html#vector"><i class="fa fa-check"></i><b>2.2.1</b> <code>vector</code></a></li>
+<li class="chapter" data-level="2.2.2" data-path="structures.html"><a href="structures.html#matrix"><i class="fa fa-check"></i><b>2.2.2</b> <code>matrix</code></a></li>
+<li class="chapter" data-level="2.2.3" data-path="structures.html"><a href="structures.html#array"><i class="fa fa-check"></i><b>2.2.3</b> <code>array</code></a></li>
+<li class="chapter" data-level="2.2.4" data-path="structures.html"><a href="structures.html#list"><i class="fa fa-check"></i><b>2.2.4</b> <code>list</code></a></li>
+<li class="chapter" data-level="2.2.5" data-path="structures.html"><a href="structures.html#data.frame"><i class="fa fa-check"></i><b>2.2.5</b> <code>data.frame</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="structures.html"><a href="structures.html#vlastné-funkcie"><i class="fa fa-check"></i><b>2.3</b> Vlastné funkcie</a></li>
+<li class="chapter" data-level="2.4" data-path="structures.html"><a href="structures.html#for-cyklus"><i class="fa fa-check"></i><b>2.4</b> <code>for</code> cyklus</a></li>
+<li class="chapter" data-level="2.5" data-path="structures.html"><a href="structures.html#knižnice"><i class="fa fa-check"></i><b>2.5</b> Knižnice</a></li>
+<li class="chapter" data-level="2.6" data-path="structures.html"><a href="structures.html#štandardy"><i class="fa fa-check"></i><b>2.6</b> Štandardy</a></li>
+<li class="chapter" data-level="2.7" data-path="structures.html"><a href="structures.html#časté-chyby"><i class="fa fa-check"></i><b>2.7</b> Časté chyby</a></li>
+<li class="chapter" data-level="2.8" data-path="structures.html"><a href="structures.html#demonštrácia-v-r-1"><i class="fa fa-check"></i><b>2.8</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="2.9" data-path="structures.html"><a href="structures.html#cvičenia-1"><i class="fa fa-check"></i><b>2.9</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="random.html"><a href="random.html"><i class="fa fa-check"></i><b>3</b> Náhodné čísla a simulácie</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="random.html"><a href="random.html#pseudonáhodné-čísla-v-počítači"><i class="fa fa-check"></i><b>3.1</b> (Pseudo)Náhodné čísla v počítači</a></li>
+<li class="chapter" data-level="3.2" data-path="random.html"><a href="random.html#ako-to-funguje"><i class="fa fa-check"></i><b>3.2</b> Ako to funguje</a></li>
+<li class="chapter" data-level="3.3" data-path="random.html"><a href="random.html#rôzne-typy-náhodných-premenných"><i class="fa fa-check"></i><b>3.3</b> Rôzne typy náhodných premenných</a></li>
+<li class="chapter" data-level="3.4" data-path="random.html"><a href="random.html#rovnomerné-rozdelenie-ako-základ"><i class="fa fa-check"></i><b>3.4</b> Rovnomerné rozdelenie ako základ</a></li>
+<li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
+<li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
+<li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="recap.html"><a href="recap.html#diskrétne-náhodné-premenné"><i class="fa fa-check"></i><b>4.1</b> Diskrétne náhodné premenné</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="recap.html"><a href="recap.html#pravdepodobnostná-funkcia"><i class="fa fa-check"></i><b>4.1.1</b> Pravdepodobnostná funkcia</a></li>
+<li class="chapter" data-level="4.1.2" data-path="recap.html"><a href="recap.html#stredná-hodnota"><i class="fa fa-check"></i><b>4.1.2</b> Stredná hodnota</a></li>
+<li class="chapter" data-level="4.1.3" data-path="recap.html"><a href="recap.html#variancia"><i class="fa fa-check"></i><b>4.1.3</b> Variancia</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="recap.html"><a href="recap.html#spojité-náhodné-premenné"><i class="fa fa-check"></i><b>4.2</b> Spojité náhodné premenné</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="recap.html"><a href="recap.html#funkcia-hustoty"><i class="fa fa-check"></i><b>4.2.1</b> Funkcia hustoty</a></li>
+<li class="chapter" data-level="4.2.2" data-path="recap.html"><a href="recap.html#stredná-hodnota-1"><i class="fa fa-check"></i><b>4.2.2</b> Stredná hodnota</a></li>
+<li class="chapter" data-level="4.2.3" data-path="recap.html"><a href="recap.html#variancia-1"><i class="fa fa-check"></i><b>4.2.3</b> Variancia</a></li>
+<li class="chapter" data-level="4.2.4" data-path="recap.html"><a href="recap.html#kvantil"><i class="fa fa-check"></i><b>4.2.4</b> Kvantil</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="recap.html"><a href="recap.html#demonštrácia-v-r-2"><i class="fa fa-check"></i><b>4.3</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="4.4" data-path="recap.html"><a href="recap.html#cvičenia-3"><i class="fa fa-check"></i><b>4.4</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="suvis.html"><a href="suvis.html"><i class="fa fa-check"></i><b>5</b> Náhodné vektory a súvis medzi náhodnými premennými</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="suvis.html"><a href="suvis.html#závislosť-náhodných-premenných"><i class="fa fa-check"></i><b>5.1</b> Závislosť náhodných premenných</a></li>
+<li class="chapter" data-level="5.2" data-path="suvis.html"><a href="suvis.html#korelácia-nie-je-kauzalita"><i class="fa fa-check"></i><b>5.2</b> Korelácia nie je kauzalita</a></li>
+<li class="chapter" data-level="5.3" data-path="suvis.html"><a href="suvis.html#cvičenia-4"><i class="fa fa-check"></i><b>5.3</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html"><i class="fa fa-check"></i><b>6</b> Zobrazovanie dát</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#zlé-vizualizácie"><i class="fa fa-check"></i><b>6.1</b> Zlé vizualizácie</a></li>
+<li class="chapter" data-level="6.2" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#dobré-vizualizácie"><i class="fa fa-check"></i><b>6.2</b> Dobré vizualizácie</a></li>
+<li class="chapter" data-level="6.3" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#vizualizácia-v-rku-ggplot2-knižnica"><i class="fa fa-check"></i><b>6.3</b> Vizualizácia v Rku: <code>ggplot2</code> knižnica</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#zobrazenie-závislosti-dvoch-premenných"><i class="fa fa-check"></i><b>6.3.1</b> Zobrazenie závislosti dvoch premenných</a></li>
+<li class="chapter" data-level="6.3.2" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#zobrazenie-distribúcie-premennej"><i class="fa fa-check"></i><b>6.3.2</b> Zobrazenie distribúcie premennej</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
+<li class="chapter" data-level="6.5" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
+<li class="chapter" data-level="6.6" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#jedno"><i class="fa fa-check"></i><b>7.1</b> Jednovýberové testy</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#test-na-základe-normálnej-aproximácie-z-test"><i class="fa fa-check"></i><b>7.1.1</b> Test na základe normálnej aproximácie (Z-test)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#t-test"><i class="fa fa-check"></i><b>7.1.2</b> T-test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#dvojvýberové-testy"><i class="fa fa-check"></i><b>7.2</b> Dvojvýberové testy</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#rovnaká-variancia"><i class="fa fa-check"></i><b>7.2.1</b> Rovnaká variancia</a></li>
+<li class="chapter" data-level="7.2.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#rôzna-variancia"><i class="fa fa-check"></i><b>7.2.2</b> Rôzna variancia</a></li>
+<li class="chapter" data-level="7.2.3" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#párové-testy"><i class="fa fa-check"></i><b>7.2.3</b> Párové testy</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#konfidenčný-interval"><i class="fa fa-check"></i><b>7.3</b> Konfidenčný interval</a></li>
+<li class="chapter" data-level="7.4" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#testovanie-podielu"><i class="fa fa-check"></i><b>7.4</b> Testovanie podielu</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#testovanie-podielu-pre-jednu-skupinu"><i class="fa fa-check"></i><b>7.4.1</b> Testovanie podielu pre jednu skupinu</a></li>
+<li class="chapter" data-level="7.4.2" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#testovanie-rovnosti-podielov-pre-dve-skupiny"><i class="fa fa-check"></i><b>7.4.2</b> Testovanie rovnosti podielov pre dve skupiny</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
+<li class="chapter" data-level="7.6" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
+<li class="chapter" data-level="7.7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#lineárny-regresný-model"><i class="fa fa-check"></i><b>8.1</b> Lineárny regresný model</a></li>
+<li class="chapter" data-level="8.2" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#maticová-notácia"><i class="fa fa-check"></i><b>8.2</b> Maticová notácia</a></li>
+<li class="chapter" data-level="8.3" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#názvoslovie"><i class="fa fa-check"></i><b>8.3</b> Názvoslovie</a></li>
+<li class="chapter" data-level="8.4" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#ako-na-to"><i class="fa fa-check"></i><b>8.4</b> Ako na to</a></li>
+<li class="chapter" data-level="8.5" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#geometria-najmenších-štvorcov"><i class="fa fa-check"></i><b>8.5</b> Geometria najmenších štvorcov</a></li>
+<li class="chapter" data-level="8.6" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#konfidenčné-intervaly"><i class="fa fa-check"></i><b>8.6</b> Konfidenčné intervaly</a></li>
+<li class="chapter" data-level="8.7" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#viacrozmerná-lineárna-regresia"><i class="fa fa-check"></i><b>8.7</b> Viacrozmerná lineárna regresia</a></li>
+<li class="chapter" data-level="8.8" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#testovanie-podmodelov"><i class="fa fa-check"></i><b>8.8</b> Testovanie podmodelov</a></li>
+<li class="chapter" data-level="8.9" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#transformácie-a-interpretácia"><i class="fa fa-check"></i><b>8.9</b> Transformácie a interpretácia</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#level-level-model"><i class="fa fa-check"></i><b>8.9.1</b> Level-level model</a></li>
+<li class="chapter" data-level="8.9.2" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#log-level-model"><i class="fa fa-check"></i><b>8.9.2</b> Log-level model</a></li>
+<li class="chapter" data-level="8.9.3" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#level-log-model"><i class="fa fa-check"></i><b>8.9.3</b> Level-log model</a></li>
+<li class="chapter" data-level="8.9.4" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#log-log-model"><i class="fa fa-check"></i><b>8.9.4</b> Log-log model</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.10</b> Zhrnutie</a></li>
+<li class="chapter" data-level="8.11" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#cvičenia-7"><i class="fa fa-check"></i><b>8.11</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html#r-markdown"><i class="fa fa-check"></i><b>9.1</b> R Markdown</a></li>
+<li class="chapter" data-level="9.2" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html#cvičenia-8"><i class="fa fa-check"></i><b>9.2</b> Cvičenia</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pravdepodobnosť a štatistika 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="zobrazovanie-dát" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Zobrazovanie dát<a href="zobrazovanie-dát.html#zobrazovanie-dát" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Vhodné zobrazenie dát je tak trochu umenie. Treba nájsť vhodný typ grafu, farieb, písiem na plynulé odkomunikovanie myšlienky. Čo umenie nie je, je urobiť <strong>zlú</strong> vizualizáciu.</p>
+<div id="zlé-vizualizácie" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Zlé vizualizácie<a href="zobrazovanie-dát.html#zlé-vizualizácie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pri nasledujúcich obrázkov nebude príliš ťažké pochopiť, v čom sú problematické. V niektorých prípadoch ide o subjektívne hodnotenie.</p>
+<p>Častokrát <strong>proporcie nie sú zachované</strong>. Toto môže byť použité ako manipulatívna stratégia na demonštrovanie veľkého rastu.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-142"></span>
+<img src="figs/fig_vis_bad_1.jpg" alt="Obrovský nárast?" width="80%" />
+<p class="caption">
+Obrázok 6.1: Obrovský nárast?
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-143"></span>
+<img src="figs/fig_vis_bad_5.jpg" alt="Späťnásobila sa minimálna mzda medzi 2012 a 2017?" width="80%" />
+<p class="caption">
+Obrázok 6.2: Späťnásobila sa minimálna mzda medzi 2012 a 2017?
+</p>
+</div>
+<p><strong>Koláčové grafy sú notoricky problematické</strong> a snažíme sa im vyhýbať, najmä ak je kategórií viacej a proporcie sú náročné na porovnávanie. Špeciálne zlé sú vždy a všade 3D koláčové grafy. Tie nesmierne skresľujú porovnávanie.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-144"></span>
+<img src="figs/fig_vis_bad_2.png" alt="Koláčové grafy radšej nie." width="80%" />
+<p class="caption">
+Obrázok 6.3: Koláčové grafy radšej nie.
+</p>
+</div>
+<p><strong>Trojrozmerné alebo aj dvojrozmerné piktogramy</strong> sú problematické tiež. Ak je ich úlohou oživiť prezentáciu, tomu sa dá porozumieť. Vyhýbame sa aj 3D prvkom.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-145"></span>
+<img src="figs/fig_vis_bad_3.png" alt="Bolo predajov domov v 2001 dvakrát viacej, štyrikrát viacej alebo osemkrát toľko ako v roku 2000?" width="80%" />
+<p class="caption">
+Obrázok 6.4: Bolo predajov domov v 2001 dvakrát viacej, štyrikrát viacej alebo osemkrát toľko ako v roku 2000?
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-146"></span>
+<img src="figs/fig_vis_3Dpismo.png" alt="Zdroj: vlastná tvorba." width="80%" />
+<p class="caption">
+Obrázok 6.5: Zdroj: vlastná tvorba.
+</p>
+</div>
+<p>Niekedy sú vizualizácie zlé lebo sú <strong>necitlivé</strong>, ako v týchto dvoch prípadoch.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-147"></span>
+&lt;img src=“figs/fig_vis_bad_4.png” alt=“Naozaj to nešlo zobraziť”nudnejšie”?” width=“80%” /&gt;
+<p class="caption">
+Obrázok 6.6: Naozaj to nešlo zobraziť “nudnejšie”?
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-148"></span>
+<img src="figs/fig_vis_bad_4_2.jpg" alt="Energia využitá na tvorbu tejto prezentácie nebola múdra investícia." width="80%" />
+<p class="caption">
+Obrázok 6.7: Energia využitá na tvorbu tejto prezentácie nebola múdra investícia.
+</p>
+</div>
+<p>Niekedy príliš kreatívna ba priam <strong>manipulatívna</strong> transformácia vertikálnej osi chce pomôcť niečo odkomunikovať (napríklad nie príliš prudký nárast).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-149"></span>
+<img src="figs/fig_vis_bad_6.png" alt="Čo je to na vertikálnej osi?" width="80%" />
+<p class="caption">
+Obrázok 6.8: Čo je to na vertikálnej osi?
+</p>
+</div>
+</div>
+<div id="dobré-vizualizácie" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Dobré vizualizácie<a href="zobrazovanie-dát.html#dobré-vizualizácie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dobrá vizualizácia je ako Rembrandtova kresba. Zaujme, odomunikuje emóciu, príbeh, vzbudí záujem a núti klásť otázky.</p>
+<p>Pozrime sa na nasledovný obrázok.</p>
+<p><img src="figs/fig_vis_good_2.png" width="80%" style="display: block; margin: auto;" />
+Okamžite si všimneme dominantné postavenie písmena n na pravej strane. Ktoré sú to tie krstné mená, ktoré končia na n? Prečo sa distribúcia tak zmenila? Človek má chuť okamžite hľadať, ktoré sú to mená(?) (John, Brandon, Ryan, Jonathan, Christian, Austin, Dylan, Ethan, Benjamin…).
+Tak či onak, tento obrázok je úspešný v tom, že zaujme.</p>
+<p>Všimnime si vzťah medzi výdavkami na zdravotnú starostlivosť a očaká vanou dĺžkou života.
+<img src="figs/fig_vis_good_1.png" width="80%" style="display: block; margin: auto;" />
+Zvýraznené dve krajiny - USA a Mexiko sú susedné. Je okamžite zreteľné, že USA sú veľmi iné ako ostatné ekonomicky rozvinuté štáty. Namiesto sledovania čísel v tabuľkách máme túto informáciu okamžite.</p>
+<p>Podobným príkladom, z ktorého vyvstáva mnoho otázok je tento:
+<img src="figs/fig_vis_good_3.png" width="80%" style="display: block; margin: auto;" />
+USA je ohromne iná krajina, čo sa týka zbraní. Veľmi veľmi iná. Grafické zobrazenie nám umožní tento rozdiel “pocítiť”, tým, že vidíme vzdialenosti. Porovnáme si najextrémnejšie protipóly v ostatku sveta - Filipíny a India. Vidíme ako sú vzdialené Rusko a Čína. Žiadne z týchto rozdielov ani zďaleka neobsiahnu rozdiel medzi USA a zvyškom sveta.</p>
+</div>
+<div id="vizualizácia-v-rku-ggplot2-knižnica" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Vizualizácia v Rku: <code>ggplot2</code> knižnica<a href="zobrazovanie-dát.html#vizualizácia-v-rku-ggplot2-knižnica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://r4ds.had.co.nz/data-visualisation.html">Knižnica <code>ggplot2</code></a> je veľmi populárnym spôsobom na vytváranie vizualizácií. Má vnútornú logiku: každý objekt sa skladá z vrstiev, ktoré majú určité atribúty. Názov <code>ggplot2</code> pochádza z “Grammar of Graphics”.</p>
+<div id="zobrazenie-závislosti-dvoch-premenných" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Zobrazenie závislosti dvoch premenných<a href="zobrazovanie-dát.html#zobrazenie-závislosti-dvoch-premenných" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Začnime príkladom, zobrazme si spotrebu aút (dataset <code>mpg</code> z knižnice <code>ggplot2</code>), konkrétne vzťah medzi diaľničným dojazdom v míľach <code>hwy</code> oproti objemu motora v litroch <code>displ</code>.</p>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="zobrazovanie-dát.html#cb341-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb341-2"><a href="zobrazovanie-dát.html#cb341-2" tabindex="-1"></a></span>
+<span id="cb341-3"><a href="zobrazovanie-dát.html#cb341-3" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb341-4"><a href="zobrazovanie-dát.html#cb341-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy))</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-153-1.png" width="672" /></p>
+<p>Tento príkaz inicializuje grafické okno, dáta, teda parameter <code>data</code> vstupujú vo formáte <code>data.frame</code>. Funkcia <code>geom_point()</code> zobrazuje jednu vrstvu, konkrétne body. Táto potrebuje</p>
+<ul>
+<li><code>data</code> - tie sú už zadefinované globálne v rámci grafického okna <code>ggplot</code></li>
+<li><code>mapping</code> - musíme vedieť, ktoré premenné majú byť na osiach. Hodnota <code>aes(x = displ, y = hwy)</code> nastaví horizontálnu os na premennú <code>displ</code> a vertikálnu os na <code>hwy</code></li>
+</ul>
+<p>V datasete máme informáciu aj o tom, v akej triede je auto (<code>class</code>). Túto informáciu môžeme zobraziť rôznymi spôsobmi: napríklad nastavením</p>
+<ul>
+<li>farby (<code>color</code>)</li>
+<li>priesvitnosti (<code>alpha</code>)</li>
+<li>tvaru (<code>shape</code>)</li>
+</ul>
+<p>bodov.</p>
+<p>Rovnaký výsledok dostaneme aj pomocou použitia pipeline-u <code>%&gt;%</code> z knižnice <code>dplyr</code>. Knižnica <code>tidyverse</code> rovno načíta <code>ggplot2</code> aj <code>dplyr</code>.</p>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="zobrazovanie-dát.html#cb342-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb342-2"><a href="zobrazovanie-dát.html#cb342-2" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb342-3"><a href="zobrazovanie-dát.html#cb342-3" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb342-4"><a href="zobrazovanie-dát.html#cb342-4" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy))</span></code></pre></div>
+<p>Grafické parametre môžeme nastaviť aj nezávisle od hodnôt nejakej premennej. Tieto parametre sú nastavené špecificky pre vrstvu <code>geom_point</code>. Nižšie je príklad keď je skombinovaná jedna vrstva s druhou. V druhej vrstve je vybraný iný parameter <code>data</code>, konkrétne len tie autá, ktoré majú 4 valce. Pre viacero príkladov stačí keď do konzoly zadáte <code>vignette("ggplot2-specs")</code>.</p>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="zobrazovanie-dát.html#cb343-1" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span>
+<span id="cb343-2"><a href="zobrazovanie-dát.html#cb343-2" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb343-3"><a href="zobrazovanie-dát.html#cb343-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> class))</span>
+<span id="cb343-4"><a href="zobrazovanie-dát.html#cb343-4" tabindex="-1"></a></span>
+<span id="cb343-5"><a href="zobrazovanie-dát.html#cb343-5" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb343-6"><a href="zobrazovanie-dát.html#cb343-6" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">alpha =</span> class))</span>
+<span id="cb343-7"><a href="zobrazovanie-dát.html#cb343-7" tabindex="-1"></a></span>
+<span id="cb343-8"><a href="zobrazovanie-dát.html#cb343-8" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb343-9"><a href="zobrazovanie-dát.html#cb343-9" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">shape =</span> class))</span>
+<span id="cb343-10"><a href="zobrazovanie-dát.html#cb343-10" tabindex="-1"></a></span>
+<span id="cb343-11"><a href="zobrazovanie-dát.html#cb343-11" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb343-12"><a href="zobrazovanie-dát.html#cb343-12" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy), </span>
+<span id="cb343-13"><a href="zobrazovanie-dát.html#cb343-13" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>,  <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">shape =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb343-14"><a href="zobrazovanie-dát.html#cb343-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mpg <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span>),</span>
+<span id="cb343-15"><a href="zobrazovanie-dát.html#cb343-15" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy), </span>
+<span id="cb343-16"><a href="zobrazovanie-dát.html#cb343-16" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>,  <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">shape =</span> <span class="dv">1</span>, </span>
+<span id="cb343-17"><a href="zobrazovanie-dát.html#cb343-17" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>)</span>
+<span id="cb343-18"><a href="zobrazovanie-dát.html#cb343-18" tabindex="-1"></a></span>
+<span id="cb343-19"><a href="zobrazovanie-dát.html#cb343-19" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">&quot;AUTO&quot;</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-155-1.png" width="672" /></p>
+<p>Môžeme sa pozerať na závislosť premenných <code>hwy</code> a <code>displ</code> pre rôzne kombinácie typu pohonu <code>drv</code> (predný, zadný, 4x4) a počet valcov <code>cyl</code>.</p>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="zobrazovanie-dát.html#cb344-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb344-2"><a href="zobrazovanie-dát.html#cb344-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb344-3"><a href="zobrazovanie-dát.html#cb344-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>drv)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-156-1.png" width="672" /></p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="zobrazovanie-dát.html#cb345-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb345-2"><a href="zobrazovanie-dát.html#cb345-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb345-3"><a href="zobrazovanie-dát.html#cb345-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(cyl <span class="sc">~</span> drv)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-156-2.png" width="672" /></p>
+<p>Parametre <code>data</code> a <code>mapping</code> môžu ísť priamo do <code>ggplot</code> objektu, takže ich netreba separátne volať pre rôzne vrstvy. Tu je navyše vrstva <code>geom_smooth</code>, ktorá vyhladí dáta - preloźí nimi aproximačnú krivku.</p>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="zobrazovanie-dát.html#cb346-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb346-2"><a href="zobrazovanie-dát.html#cb346-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb346-3"><a href="zobrazovanie-dát.html#cb346-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-157-1.png" width="672" /></p>
+<p>Rko nás upozorní, ktorú vyhladzovaciu krivku použilo.</p>
+<p>Nasledujúci kód uloží obrázok ako vo formáte pdf s danými veľkosťami.</p>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+</div>
+<div id="zobrazenie-distribúcie-premennej" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Zobrazenie distribúcie premennej<a href="zobrazovanie-dát.html#zobrazenie-distribúcie-premennej" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vygenerujme si dáta, ktore budeme zobrazovať (inšpirované <a href="http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization">nasledovných odkazom</a>).</p>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="zobrazovanie-dát.html#cb349-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2930</span>)</span>
+<span id="cb349-2"><a href="zobrazovanie-dát.html#cb349-2" tabindex="-1"></a>data_test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb349-3"><a href="zobrazovanie-dát.html#cb349-3" tabindex="-1"></a>              <span class="at">school=</span><span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;8r_gym&quot;</span>, <span class="st">&quot;4r_gym&quot;</span>), <span class="at">each=</span><span class="dv">40</span>)),</span>
+<span id="cb349-4"><a href="zobrazovanie-dát.html#cb349-4" tabindex="-1"></a>              <span class="at">score=</span><span class="fu">round</span>(<span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">75</span>, <span class="at">sd=</span><span class="dv">8</span>), <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">65</span>, <span class="at">sd=</span><span class="dv">5</span>)))</span>
+<span id="cb349-5"><a href="zobrazovanie-dát.html#cb349-5" tabindex="-1"></a>              )</span>
+<span id="cb349-6"><a href="zobrazovanie-dát.html#cb349-6" tabindex="-1"></a></span>
+<span id="cb349-7"><a href="zobrazovanie-dát.html#cb349-7" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb349-8"><a href="zobrazovanie-dát.html#cb349-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-159-1.png" width="672" /></p>
+<p>Tu si skúsime ponastavovať rôzne vlastnosti vrstvy <code>geom_histogram</code>. Vertikálnu čiaru pridáme pomocou <code>geom_vline</code> a odhad hustoty cez <code>geom_density</code>.</p>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="zobrazovanie-dát.html#cb351-1" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb351-2"><a href="zobrazovanie-dát.html#cb351-2" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(<span class="at">binwidth=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>, <span class="at">fill=</span><span class="st">&quot;white&quot;</span>)</span>
+<span id="cb351-3"><a href="zobrazovanie-dát.html#cb351-3" tabindex="-1"></a></span>
+<span id="cb351-4"><a href="zobrazovanie-dát.html#cb351-4" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb351-5"><a href="zobrazovanie-dát.html#cb351-5" tabindex="-1"></a>        <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb351-6"><a href="zobrazovanie-dát.html#cb351-6" tabindex="-1"></a>        <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept=</span><span class="fu">mean</span>(score)),</span>
+<span id="cb351-7"><a href="zobrazovanie-dát.html#cb351-7" tabindex="-1"></a>            <span class="at">color=</span><span class="st">&quot;blue&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)</span>
+<span id="cb351-8"><a href="zobrazovanie-dát.html#cb351-8" tabindex="-1"></a>  </span>
+<span id="cb351-9"><a href="zobrazovanie-dát.html#cb351-9" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb351-10"><a href="zobrazovanie-dát.html#cb351-10" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..)) <span class="sc">+</span> </span>
+<span id="cb351-11"><a href="zobrazovanie-dát.html#cb351-11" tabindex="-1"></a>        <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>, <span class="at">fill=</span><span class="st">&quot;red&quot;</span>) </span>
+<span id="cb351-12"><a href="zobrazovanie-dát.html#cb351-12" tabindex="-1"></a>  </span>
+<span id="cb351-13"><a href="zobrazovanie-dát.html#cb351-13" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb351-14"><a href="zobrazovanie-dát.html#cb351-14" tabindex="-1"></a>        <span class="fu">geom_histogram</span>()</span>
+<span id="cb351-15"><a href="zobrazovanie-dát.html#cb351-15" tabindex="-1"></a>        </span>
+<span id="cb351-16"><a href="zobrazovanie-dát.html#cb351-16" tabindex="-1"></a></span>
+<span id="cb351-17"><a href="zobrazovanie-dát.html#cb351-17" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">&quot;AUTO&quot;</span>)</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-160-1.png" width="672" /></p>
+<p>Pozrite sa na tento kód a zhodnoťte, čo robí ten ktorý príkaz.</p>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="zobrazovanie-dát.html#cb353-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb353-2"><a href="zobrazovanie-dát.html#cb353-2" tabindex="-1"></a>mu <span class="ot">&lt;-</span> data_test <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(school) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">group_means =</span> <span class="fu">mean</span>(score))</span>
+<span id="cb353-3"><a href="zobrazovanie-dát.html#cb353-3" tabindex="-1"></a></span>
+<span id="cb353-4"><a href="zobrazovanie-dát.html#cb353-4" tabindex="-1"></a><span class="fu">ggplot</span>(data_test, <span class="fu">aes</span>(<span class="at">x=</span>score, <span class="at">color=</span>school, <span class="at">fill=</span>school)) <span class="sc">+</span></span>
+<span id="cb353-5"><a href="zobrazovanie-dát.html#cb353-5" tabindex="-1"></a><span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">position=</span><span class="st">&quot;identity&quot;</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb353-6"><a href="zobrazovanie-dát.html#cb353-6" tabindex="-1"></a><span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb353-7"><a href="zobrazovanie-dát.html#cb353-7" tabindex="-1"></a><span class="fu">geom_vline</span>(<span class="at">data=</span>mu, <span class="fu">aes</span>(<span class="at">xintercept=</span>group_means, <span class="at">color=</span>school),</span>
+<span id="cb353-8"><a href="zobrazovanie-dát.html#cb353-8" tabindex="-1"></a>           <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>)<span class="sc">+</span></span>
+<span id="cb353-9"><a href="zobrazovanie-dát.html#cb353-9" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;#999999&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>))<span class="sc">+</span></span>
+<span id="cb353-10"><a href="zobrazovanie-dát.html#cb353-10" tabindex="-1"></a><span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;#999999&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>))<span class="sc">+</span></span>
+<span id="cb353-11"><a href="zobrazovanie-dát.html#cb353-11" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Score histogram&quot;</span>,<span class="at">x=</span><span class="st">&quot;Score(points)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)<span class="sc">+</span></span>
+<span id="cb353-12"><a href="zobrazovanie-dát.html#cb353-12" tabindex="-1"></a><span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb353-13"><a href="zobrazovanie-dát.html#cb353-13" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-161-1.png" width="672" /></p>
+<p>Na zobrazovanie distribúcie je užitočný aj boxplot. Nasledujúce obrázky (inšpirované týmto <a href="http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization">odkazom</a>) sú vytvorené pomocou vrstiev <code>geom_boxplot</code>, <code>geom_dotplot</code> a <code>geom_jitter</code>.</p>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="zobrazovanie-dát.html#cb355-1" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score)) <span class="sc">+</span> </span>
+<span id="cb355-2"><a href="zobrazovanie-dát.html#cb355-2" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span>
+<span id="cb355-3"><a href="zobrazovanie-dát.html#cb355-3" tabindex="-1"></a></span>
+<span id="cb355-4"><a href="zobrazovanie-dát.html#cb355-4" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> g1 <span class="sc">+</span></span>
+<span id="cb355-5"><a href="zobrazovanie-dát.html#cb355-5" tabindex="-1"></a>        <span class="fu">geom_dotplot</span>(<span class="at">binaxis=</span><span class="st">&#39;y&#39;</span>, <span class="at">stackdir=</span><span class="st">&#39;center&#39;</span>, <span class="at">dotsize=</span><span class="dv">1</span>)</span>
+<span id="cb355-6"><a href="zobrazovanie-dát.html#cb355-6" tabindex="-1"></a></span>
+<span id="cb355-7"><a href="zobrazovanie-dát.html#cb355-7" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> g1 <span class="sc">+</span></span>
+<span id="cb355-8"><a href="zobrazovanie-dát.html#cb355-8" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
+<span id="cb355-9"><a href="zobrazovanie-dát.html#cb355-9" tabindex="-1"></a>  </span>
+<span id="cb355-10"><a href="zobrazovanie-dát.html#cb355-10" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">color =</span> school)) <span class="sc">+</span> </span>
+<span id="cb355-11"><a href="zobrazovanie-dát.html#cb355-11" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb355-12"><a href="zobrazovanie-dát.html#cb355-12" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
+<span id="cb355-13"><a href="zobrazovanie-dát.html#cb355-13" tabindex="-1"></a></span>
+<span id="cb355-14"><a href="zobrazovanie-dát.html#cb355-14" tabindex="-1"></a>g5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">fill =</span> school)) <span class="sc">+</span> </span>
+<span id="cb355-15"><a href="zobrazovanie-dát.html#cb355-15" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb355-16"><a href="zobrazovanie-dát.html#cb355-16" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
+<span id="cb355-17"><a href="zobrazovanie-dát.html#cb355-17" tabindex="-1"></a></span>
+<span id="cb355-18"><a href="zobrazovanie-dát.html#cb355-18" tabindex="-1"></a>g6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">fill =</span> school)) <span class="sc">+</span> </span>
+<span id="cb355-19"><a href="zobrazovanie-dát.html#cb355-19" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb355-20"><a href="zobrazovanie-dát.html#cb355-20" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb355-21"><a href="zobrazovanie-dát.html#cb355-21" tabindex="-1"></a>        <span class="fu">scale_fill_grey</span>() <span class="sc">+</span> </span>
+<span id="cb355-22"><a href="zobrazovanie-dát.html#cb355-22" tabindex="-1"></a>        <span class="fu">theme_classic</span>()</span>
+<span id="cb355-23"><a href="zobrazovanie-dát.html#cb355-23" tabindex="-1"></a></span>
+<span id="cb355-24"><a href="zobrazovanie-dát.html#cb355-24" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, g5, g6, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">&quot;AUTO&quot;</span>)</span></code></pre></div>
+<pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-162-1.png" width="672" /></p>
+</div>
+</div>
+<div id="niektoré-princípy" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Niektoré princípy<a href="zobrazovanie-dát.html#niektoré-princípy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Individuálnym výstupom rozumieme na základe porovnávania podobných objektov.</strong></p>
+<p>Toto si vždy opakujeme, keď si nie sme nejakou voľbou istí. <a href="https://blog.datawrapper.de/category/datavis-dos-and-donts/">Toto</a> je vynikajúca séria článkov od
+Lisy Charlotte Muth, odporúčam tiež <a href="https://pubs.aeaweb.org/doi/pdf/10.1257/jep.28.1.209">prehľadový článok</a>, <a href="https://policyviz.com/pv_books/better-presentations-a-guide-for-scholars-researchers-and-wonks/">knihu o prezentáciách</a> a <a href="https://policyviz.com/pv_books/better-data-visualizations-a-guide-for-scholars-researchers-and-wonks/">vizualizáciách</a> od Jonathana Schwabisha.</p>
+<ul>
+<li>Zvoľte správny typ grafu.</li>
+<li>Sumárne štatistiky zavádzajú.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-163"></span>
+<img src="figs/fig_1dyn.png" alt="Tieto dátové vzorky majú rovnaké sumárne štatistiky." width="70%" />
+<p class="caption">
+Obrázok 6.9: Tieto dátové vzorky majú rovnaké sumárne štatistiky.
+</p>
+</div>
+<ul>
+<li>Je užitočné zobraziť surové dáta.</li>
+<li>Dátový bod = jedna machuľa atramentu.</li>
+<li>Ďalšie machule pridávame len ak nám pomôžu pochopiť niečo nové.</li>
+<li>Využite moment prekvapenia vo svoj prospech.</li>
+<li>Zvýraznite dôležité elementy grafu. Napríklad ten najdôležitejší dátový bod alebo podskupinu. Označovať môžete priamo v grafe aj textom.</li>
+<li>Zjednodušujte. Vynechajte nepotrebné grafické elementy, menej je niekedy viacej.</li>
+<li>Graf by mal byť samovysvetľujúci, na jeho základné pochopenie by malo stačiť pozrieť sa na graf a príslušný popis.</li>
+<li>Označenie osí musí byť zrozumiteľné. Prispôsobte tomu veľkosť a typ písma. V počítačovej podobe preferujeme písmo bez pätiek. V tlačenej podobne naopak <a href="https://blog.datawrapper.de/fonts-for-data-visualization/#sans-serif-fonts">pätkové písmo</a>. Čísla sa lepšie porovnávajú ak sú tabulované (majú rovnakú šírku) a liniovité (majú rovnakú výšku).</li>
+<li>Farebné elementy lepšie vyniknú na sivom alebo (ako čistobielom) <a href="https://blog.datawrapper.de/background-color-of-data-visualizations/">podklade</a>. Bezpečnou voľbou na podklad je tiež teplá, veľmi svetlá a málo saturovaná farba. Farby sa zväčša používajú na vysvetľovanú premennú, nie na prediktory. <a href="https://blog.datawrapper.de/10-ways-to-use-fewer-colors-in-your-data-visualizations/">Volíme menej farieb</a> ak sa to dá, napríklad spojených niektorých kategórií a ideálne volíme farebnú škálu zrozumiteľnú aj pre čiastočne farboslepých. Farbám sa môžeme vyhnúť aj tak, že skupiny odlíšime symbolmi, vzormi alebo typom čiary. Rôzne mediá, inštitúcie alebo spoločnosti používajú <a href="https://blog.datawrapper.de/colors-for-data-vis-style-guides/">fixné farebné palety</a> aby bola prezentácia farebne jednotná.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-164"></span>
+<img src="figs/fig_color_pallete.png" alt="Vybrať si vhodnú farebnú identitu je náročné. Zdroj: https://blog.datawrapper.de/colors-for-data-vis-style-guides/" width="80%" />
+<p class="caption">
+Obrázok 6.10: Vybrať si vhodnú farebnú identitu je náročné. Zdroj: <a href="https://blog.datawrapper.de/colors-for-data-vis-style-guides/" class="uri">https://blog.datawrapper.de/colors-for-data-vis-style-guides/</a>
+</p>
+</div>
+<ul>
+<li>V prípade rôznych názorov je užitočné hľadať konsenzus v tíme.</li>
+</ul>
+<p><strong>Individuálnym výstupom rozumieme na základe porovnávania podobných objektov.</strong></p>
+</div>
+<div id="cvičenia-5" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Cvičenia<a href="zobrazovanie-dát.html#cvičenia-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://www.dropbox.com/s/eo4s74292u8emp1/labs_week7.R?dl=0">R súbor k cvičeniam 3.11.2022</a></p>
+<!-- [R súbor k cvičeniam (riešenia) 3.11.2022](https://www.dropbox.com/s/plw8hvv5bz9fuws/labs_week7_solutions.R?dl=0) -->
+<div class="exercise">
+<p><span id="exr:unlabeled-div-53" class="exercise"><strong>Cvičenie 6.1  (Znovu filmy) </strong></span>Použite túto náhodnú podvzorku filmov z knižnice <code>ggplot2movies</code>.</p>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="zobrazovanie-dát.html#cb357-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
+<span id="cb357-2"><a href="zobrazovanie-dát.html#cb357-2" tabindex="-1"></a><span class="fu">library</span>(eatATA)</span>
+<span id="cb357-3"><a href="zobrazovanie-dát.html#cb357-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">224</span>)</span>
+<span id="cb357-4"><a href="zobrazovanie-dát.html#cb357-4" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;year&quot;</span>,<span class="st">&quot;length&quot;</span>,<span class="st">&quot;budget&quot;</span>,<span class="st">&quot;rating&quot;</span>,<span class="st">&quot;votes&quot;</span>)</span>
+<span id="cb357-5"><a href="zobrazovanie-dát.html#cb357-5" tabindex="-1"></a>catVars <span class="ot">&lt;-</span> <span class="fu">names</span>(movies)[<span class="dv">18</span><span class="sc">:</span><span class="dv">23</span>]</span>
+<span id="cb357-6"><a href="zobrazovanie-dát.html#cb357-6" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">rowSums</span>(movies[,<span class="dv">18</span><span class="sc">:</span><span class="dv">23</span>])<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb357-7"><a href="zobrazovanie-dát.html#cb357-7" tabindex="-1"></a>ind2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(ind,<span class="dv">1000</span>)</span>
+<span id="cb357-8"><a href="zobrazovanie-dát.html#cb357-8" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> movies[ind2,<span class="fu">c</span>(vars, catVars)]</span>
+<span id="cb357-9"><a href="zobrazovanie-dát.html#cb357-9" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> <span class="fu">dummiesToFactor</span>(data_sam, catVars, <span class="at">facVar =</span> <span class="st">&quot;category&quot;</span>)</span>
+<span id="cb357-10"><a href="zobrazovanie-dát.html#cb357-10" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> data_sam <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">era =</span> <span class="fu">as.factor</span>(<span class="dv">50</span><span class="sc">*</span><span class="fu">floor</span>(data_sam<span class="sc">$</span>year<span class="sc">/</span><span class="dv">50</span>)))</span>
+<span id="cb357-11"><a href="zobrazovanie-dát.html#cb357-11" tabindex="-1"></a><span class="fu">levels</span>(data_sam<span class="sc">$</span>era) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1850-1899&quot;</span>, <span class="st">&quot;1900-1949&quot;</span>, <span class="st">&quot;1950-1999&quot;</span>, <span class="st">&quot;2000-&quot;</span>)</span></code></pre></div>
+<p>Čo presne sme tu urobili?</p>
+<p>Teraz zreprodukujte tieto grafy:
+<img src="PaS2bookdown_files/figure-html/unnamed-chunk-166-1.png" width="672" /><img src="PaS2bookdown_files/figure-html/unnamed-chunk-166-2.png" width="672" /><img src="PaS2bookdown_files/figure-html/unnamed-chunk-166-3.png" width="672" /></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-166-4.png" width="672" /></p>
+<pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-166-5.png" width="672" /></p>
+<p>(Pri poslednom grafe potrebujete vytvoriť novú premennú.)</p>
+</div>
+</div>
+<div id="bonus" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Bonus<a href="zobrazovanie-dát.html#bonus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dáta vedia rozprávať príbehy. Je dôležité pozerať sa na dáta z rôznych strán, uhlov, aby sme pochopili do hĺbky všetky skryté súvislosti v ich plnej rozmanitosti.</p>
+<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-167-1.png" width="672" /></p>
+<!-- ## Domáca úloha 3 -->
+<!-- Deadline je 14.11.2022 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie `rar` súbor, nie OneDrive folder) v tvare `du3_MenoPriezvisko.zip` (napr. `du3_PeterKovac.zip`) a pošlite na email. Kód musí byť spustiteľný a podrobne okomentovaný. Odovzdávate mi Vašu **vlastnú** prácu.  -->
+<!-- ::: {.exercise name="DÚ 3.1"} -->
+<!-- Stiahnite si dataset o HDP zo [stránky Our World In Data](https://ourworldindata.org/grapher/gdp-per-capita-worldbank). -->
+<!-- Zobrazte vývoj hrubého domáceho produktu v krajinách V4 na logaritmickej osi pomocou knižnice `ggplot2`. Krajiny V4 zobrazte rôznymi farbami a pridajte rovné čiary, ktoré budú kopírovať dáta za posledných 20 rokov pre rôzne krajiny (napr. pomocou vrstvy `geom_smooth()` s parametrom `method="lm"`). Stručne okomentujte, čo ste sa dozvedeli. -->
+<!-- Urobte Váš graf zrozumiteľným a vizuálne príťažlivým vhodnou voľbou grafických elementov (farieb, typom a veľkostou písiem, popismi, nápisov, legendou...). -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 3.2"} -->
+<!-- Zrekonštruujte nasledovné obrázky z datasetu `USArrests` z knižnice `datasets`. -->
+<!-- ```{r,cache = TRUE,eval=TRUE, echo=FALSE} -->
+<!-- g1 <- ggplot(data = USArrests) +  -->
+<!--   geom_point(mapping = aes(x = Assault, y = Murder))+ -->
+<!--   geom_smooth(mapping = aes(x = Assault, y = Murder), -->
+<!--               method = 'loess', formula = 'y ~ x') -->
+<!-- g2 <- ggplot(data = USArrests) +  -->
+<!--   geom_text(mapping = aes(x = Assault, y = Murder, label=rownames(USArrests)), -->
+<!--             check_overlap = TRUE) -->
+<!-- g3 <- ggplot(data = USArrests, mapping = aes(x = UrbanPop, y = Assault)) +  -->
+<!--   geom_point() + -->
+<!--   geom_smooth(method = 'loess', formula = 'y ~ x') +  -->
+<!--   geom_smooth(method = "lm", formula = 'y ~ x',  -->
+<!--               color = "red")  -->
+<!-- g4 <- ggplot(data = USArrests) +  -->
+<!--   geom_point(mapping = aes(x = Assault, y = Murder, color = UrbanPop > mean(UrbanPop))) + -->
+<!--   theme(legend.position="bottom") -->
+<!-- plot_grid(g1, g2, ncol = 1, labels = "AUTO") -->
+<!-- plot_grid(g3, g4, ncol = 1, labels = "AUTO") -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 3.3 (voľby)"} -->
+<!-- Stiahnite si volebné dáta z nedávnych volieb do župných samospráv. -->
+<!-- ```{r,cache = TRUE,eval=FALSE, echo=TRUE} -->
+<!-- library(openxlsx) -->
+<!-- data_zupy <- read.xlsx("https://www.volbysr.sk/osk/files/xlsx/OSK2022_SK_tab04b.xlsx") -->
+<!-- ``` -->
+<!-- Zobrazte aký bol vzťah medzi percentuálnym ziskom vo voľbách do zastupiteľstiev a skutočnosťou, či bol/nebol kandidát/ka podporovaný/á nejakou politickou stranou. Pozrite sa na tento vzťah osobitne cez rôzne kraje a cez veľké/malé okrsky. Zvoľte vhodný typ vizualizácie a dotiahnite detaily. -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 3.4 (indexy)"} -->
+<!-- Využite dáta `EuStockMarkets` z knižnice `datasets` a skúmajte ako sa korelačná matica **výnosov** (pozor nie cien) rôznych európskych indexov menila v čase.  Popíšte Vaše zistenia. -->
+<!-- Súčasťou riešenia je výber rozumného spôsobu vizualizácie. -->
+<!-- ::: -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="suvis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="štatistické-testovanie-hypotéz.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PaS2bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
