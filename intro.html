@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2023-10-02" />
+<meta name="date" content="2023-10-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -427,9 +427,9 @@ Obrázok 1.13: Nie je hanbou gúglovať. (Zdroj: internety.)
 <p>Vytvoríme 15 ďalších náhodných čísel.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="intro.html#cb8-1" tabindex="-1"></a><span class="co">#create a vector of 15 realizations of normally distributed random variables with mean 0 and variance 1</span></span>
 <span id="cb8-2"><a href="intro.html#cb8-2" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">15</span>)</span></code></pre></div>
-<pre><code>##  [1]  0.009225946 -2.106423814  2.260541307 -0.875067904 -0.170208602
-##  [6] -0.981407452  1.014806039  0.481138695  0.865075520 -0.389633562
-## [11]  0.535542232 -0.040247316  0.732099468  0.617564375  0.377503873</code></pre>
+<pre><code>##  [1] -1.4731193  0.5356001  1.0884045  1.2706340  1.9186872  0.2571632
+##  [7]  0.5901966  1.2638880 -0.8426933 -1.0451763 -0.3326231 -0.9278564
+## [13] -1.3781241  1.7660923 -1.2478511</code></pre>
 <p>Do premennej uloźíme číslo. Na to použijeme šípku. Odteraz bude mať Rko uložené, že v <code>x</code> bude 2.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="intro.html#cb10-1" tabindex="-1"></a><span class="co">#assign number &quot;2&quot; to variable &quot;x&quot;</span></span>
 <span id="cb10-2"><a href="intro.html#cb10-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span></code></pre></div>
@@ -757,15 +757,15 @@ Obrázok 1.13: Nie je hanbou gúglovať. (Zdroj: internety.)
 <p>Funkcie môžeme kombinovať a vnárať do seba.</p>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="intro.html#cb145-1" tabindex="-1"></a><span class="co">#combine functions rexp, mean, replicate</span></span>
 <span id="cb145-2"><a href="intro.html#cb145-2" tabindex="-1"></a><span class="fu">replicate</span>(<span class="dv">10</span>,<span class="fu">mean</span>(<span class="fu">rexp</span>(<span class="dv">20</span>)))</span></code></pre></div>
-<pre><code>##  [1] 1.1223798 1.3551857 0.9676520 1.0794580 1.0856746 1.0842902 1.1096802
-##  [8] 0.9463761 0.7477966 0.8088061</code></pre>
+<pre><code>##  [1] 1.1024106 1.0418839 0.8336265 1.1063302 1.0227015 0.9696957 0.7646227
+##  [8] 0.9072335 1.1088880 0.9098603</code></pre>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="intro.html#cb147-1" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">12</span>),<span class="dv">4</span>)</span>
 <span id="cb147-2"><a href="intro.html#cb147-2" tabindex="-1"></a>m</span></code></pre></div>
-<pre><code>##            [,1]       [,2]       [,3]
-## [1,] -0.4756149 -1.6925643  0.5577309
-## [2,]  1.7856836  0.4736007  0.4881250
-## [3,] -0.9925473  0.7235816  0.8832636
-## [4,] -0.3060997  0.3667858 -0.7313042</code></pre>
+<pre><code>##            [,1]       [,2]        [,3]
+## [1,]  2.0388473 -0.6217274  0.06396701
+## [2,] -0.9342557 -0.0433444 -0.22089266
+## [3,] -0.2555643  0.7341898  0.44098351
+## [4,] -0.2276818 -0.7550470  0.32748096</code></pre>
 <p>Ak potrebujeme jednu funkciu aplikovať mnoho krát na rôzne podčasti objektu môžeme použiť <code>lapply()</code>,<code>sapply()</code>,<code>apply()</code> alebo <code>tapply()</code>, ktorých výstupom bude zoznam, vektor alebo tabuľka.</p>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="intro.html#cb149-1" tabindex="-1"></a><span class="co">#l as list</span></span>
 <span id="cb149-2"><a href="intro.html#cb149-2" tabindex="-1"></a><span class="fu">lapply</span>(thuesen, mean, <span class="at">na.rm=</span>T)</span></code></pre></div>
