@@ -392,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="vlastné-funkcie" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Vlastné funkcie<a href="structures.html#vlastné-funkcie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:structures-fun"></span>
 <img src="fig_2_fun.png" alt="Funkcia." width="30%" />
 <p class="caption">
 Obrázok 2.1: Funkcia.
@@ -439,7 +439,7 @@ Obrázok 2.1: Funkcia.
 <p>Knižnice (libraries) sú kolekciou rôznych funkcií. Niektoré knižnice sú vytvorené priamo tvorcami R, ako napríklad <code>base</code>, iné nadšencami, ako napríklad <code>causalweight</code>. Ak chceme používať príkazy z nejakej knižnice, musíme ju mať nainštalovanú a musíme ju zavolať. Napríklad populárna knižnica <code>ggplot2</code> slúži na tvorbu vizualizácií. Najprv musíte spustiť príkaz <code>install.packages("ggplot2")</code> a z online repozitára sa stiahne táto knižnica na Váš počítač.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="structures.html#cb31-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb31-2"><a href="structures.html#cb31-2" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>carat, <span class="at">y=</span>price, <span class="at">color=</span>cut))</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<p><img src="PaS2bookdown_files/figure-html/structures-diam-1.png" width="672" />
 Ak do konzoly napíšeme <code>?ggplot</code> ukáže sa nám podrobná dokumentácia. Väčšina knižníc má svoju <code>vignette</code>, kde je nárornou formou stručne vysvetlená základná funkcionalita danej knižnice.</p>
 </div>
 <div id="štandardy" class="section level2 hasAnchor" number="2.6">
@@ -550,11 +550,11 @@ you can manage without it, butitsuremakesthingseasiertoread.”</p>
 ## 
 ##     blood.glucose, short.velocity</code></pre>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="structures.html#cb49-1" tabindex="-1"></a><span class="fu">plot</span>(blood.glucose, short.velocity)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-with-1.png" width="672" /></p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="structures.html#cb50-1" tabindex="-1"></a><span class="fu">plot</span>(thuesen<span class="sc">$</span>blood.glucose, thuesen<span class="sc">$</span>short.velocity)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-with-2.png" width="672" /></p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="structures.html#cb51-1" tabindex="-1"></a><span class="fu">with</span>(thuesen, <span class="fu">plot</span>(blood.glucose, short.velocity))</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-20-3.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-with-3.png" width="672" /></p>
 <p><code>subset</code> umožnuje vytvoriť podmnožinu dátovej tabuľky.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="structures.html#cb52-1" tabindex="-1"></a><span class="co">#choose a subset</span></span>
 <span id="cb52-2"><a href="structures.html#cb52-2" tabindex="-1"></a>thue2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(thuesen,blood.glucose<span class="sc">&lt;</span><span class="dv">7</span>)</span>
@@ -645,7 +645,7 @@ you can manage without it, butitsuremakesthingseasiertoread.”</p>
 <span id="cb60-8"><a href="structures.html#cb60-8" tabindex="-1"></a>}</span>
 <span id="cb60-9"><a href="structures.html#cb60-9" tabindex="-1"></a></span>
 <span id="cb60-10"><a href="structures.html#cb60-10" tabindex="-1"></a><span class="fu">mtext</span>(<span class="fu">paste</span>(<span class="st">&quot;side&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">side=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">line=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">font=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-title-1.png" width="672" /></p>
 <p>Podobne tu.</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="structures.html#cb61-1" tabindex="-1"></a><span class="co">#empty figure</span></span>
 <span id="cb61-2"><a href="structures.html#cb61-2" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>, <span class="at">axes=</span>F)</span>
@@ -657,7 +657,7 @@ you can manage without it, butitsuremakesthingseasiertoread.”</p>
 <span id="cb61-8"><a href="structures.html#cb61-8" tabindex="-1"></a><span class="fu">box</span>()</span>
 <span id="cb61-9"><a href="structures.html#cb61-9" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">&quot;Main title&quot;</span>, <span class="at">sub=</span><span class="st">&quot;subtitle&quot;</span>,</span>
 <span id="cb61-10"><a href="structures.html#cb61-10" tabindex="-1"></a>      <span class="at">xlab=</span><span class="st">&quot;x-label&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-label&quot;</span>)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-empty-1.png" width="672" /></p>
 <p>Tu sú rôzne varianty zobrazenia distribúcie</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="structures.html#cb62-1" tabindex="-1"></a><span class="co">#in order to reproduce the graph exactly</span></span>
 <span id="cb62-2"><a href="structures.html#cb62-2" tabindex="-1"></a><span class="co"># we need to fix the seed of the random number generator</span></span>
@@ -665,15 +665,15 @@ you can manage without it, butitsuremakesthingseasiertoread.”</p>
 <span id="cb62-4"><a href="structures.html#cb62-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>)</span>
 <span id="cb62-5"><a href="structures.html#cb62-5" tabindex="-1"></a></span>
 <span id="cb62-6"><a href="structures.html#cb62-6" tabindex="-1"></a><span class="fu">hist</span>(x)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-dist-1.png" width="672" /></p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="structures.html#cb63-1" tabindex="-1"></a><span class="fu">hist</span>(x,<span class="at">freq=</span>F)</span>
 <span id="cb63-2"><a href="structures.html#cb63-2" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x),<span class="at">add=</span>T)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-dist-2.png" width="672" /></p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="structures.html#cb64-1" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">hist</span>(x, <span class="at">plot=</span>F)</span>
 <span id="cb64-2"><a href="structures.html#cb64-2" tabindex="-1"></a>ylim <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="dv">0</span>, h<span class="sc">$</span>density, <span class="fu">dnorm</span>(<span class="dv">0</span>))</span>
 <span id="cb64-3"><a href="structures.html#cb64-3" tabindex="-1"></a><span class="fu">hist</span>(x, <span class="at">freq=</span>F, <span class="at">ylim=</span>ylim)</span>
 <span id="cb64-4"><a href="structures.html#cb64-4" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x), <span class="at">add=</span>T)  </span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-27-3.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-dist-3.png" width="672" /></p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="structures.html#cb65-1" tabindex="-1"></a>hist.with.normal <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">xlab=</span><span class="fu">deparse</span>(<span class="fu">substitute</span>(x)),...)</span>
 <span id="cb65-2"><a href="structures.html#cb65-2" tabindex="-1"></a>{</span>
 <span id="cb65-3"><a href="structures.html#cb65-3" tabindex="-1"></a>  h <span class="ot">&lt;-</span> <span class="fu">hist</span>(x, <span class="at">plot=</span>F, ...)</span>
@@ -686,7 +686,7 @@ you can manage without it, butitsuremakesthingseasiertoread.”</p>
 <span id="cb65-10"><a href="structures.html#cb65-10" tabindex="-1"></a></span>
 <span id="cb65-11"><a href="structures.html#cb65-11" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>)</span>
 <span id="cb65-12"><a href="structures.html#cb65-12" tabindex="-1"></a><span class="fu">hist.with.normal</span>(a)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-dist2-1.png" width="672" /></p>
 <p>Naćítanie dát z tabuľky je zvyčajne prvým krokom akejkoľvek analýzy. Dáta prichádzajú v rôznych formách. Tu je zopár príkladov ako načítať dáta z rôznych typov súborov. Dôležité je, aby v adresári v ktorom sa nachádzame daný súbor aj naozaj bol.</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="structures.html#cb66-1" tabindex="-1"></a><span class="do">######################################</span></span>
 <span id="cb66-2"><a href="structures.html#cb66-2" tabindex="-1"></a><span class="co">#This part is not taken from ISwR book</span></span>
@@ -846,12 +846,12 @@ you can manage without it, butitsuremakesthingseasiertoread.”</p>
 <p>A nakresliť.</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="structures.html#cb84-1" tabindex="-1"></a><span class="co">#look at the association of IQ and wages</span></span>
 <span id="cb84-2"><a href="structures.html#cb84-2" tabindex="-1"></a><span class="fu">with</span>(data_card,<span class="fu">plot</span>(iqn,wage78n))</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-iq3-1.png" width="672" /></p>
 <p>Rovnako nakreslíme závislosť IQ a mzdy pre tých, ktorý zarábajú menej ako 2000.</p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="structures.html#cb85-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb85-2"><a href="structures.html#cb85-2" tabindex="-1"></a><span class="co">#zoom for those who earned less than 2000</span></span>
 <span id="cb85-3"><a href="structures.html#cb85-3" tabindex="-1"></a><span class="fu">with</span>(data_card <span class="sc">%&gt;%</span> <span class="fu">filter</span>(wage78n<span class="sc">&lt;</span><span class="dv">2000</span>),<span class="fu">plot</span>(iqn,wage78n))</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-iqnice-1.png" width="672" /></p>
 <p>Kreslenie obrázkov a vizualizácia je zaujímavá kapitola sama o sebe.</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="structures.html#cb86-1" tabindex="-1"></a><span class="co">#or more fancy graph</span></span>
 <span id="cb86-2"><a href="structures.html#cb86-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>data_card <span class="sc">%&gt;%</span> <span class="fu">filter</span>(wage78n<span class="sc">&lt;</span><span class="dv">2000</span>), <span class="fu">aes</span>(<span class="at">x =</span> iqn, <span class="at">y =</span> wage78n)) <span class="sc">+</span></span>
@@ -861,8 +861,8 @@ you can manage without it, butitsuremakesthingseasiertoread.”</p>
 <pre><code>## Warning: Removed 817 rows containing non-finite values (`stat_smooth()`).
 ## Removed 817 rows containing non-finite values (`stat_smooth()`).</code></pre>
 <pre><code>## Warning: Removed 817 rows containing missing values (`geom_point()`).</code></pre>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
-<p><a href="https://www.dropbox.com/s/925fr47pk0dfhbl/ch02.R?dl=0">R súbor z prednášky z 6.10.2022</a></p>
+<p><img src="PaS2bookdown_files/figure-html/structures-card-fancy-1.png" width="672" /></p>
+<p><a href="https://www.dropbox.com/s/925fr47pk0dfhbl/ch02.R?dl=0">R súbor z prednášky</a></p>
 </div>
 <div id="cvičenia-1" class="section level2 hasAnchor" number="2.9">
 <h2><span class="header-section-number">2.9</span> Cvičenia<a href="structures.html#cvičenia-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>

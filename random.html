@@ -366,9 +366,9 @@ kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href=
 <span id="cb8-9"><a href="random.html#cb8-9" tabindex="-1"></a>  <span class="fu">points</span>(x[z],y[z],<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
 <span id="cb8-10"><a href="random.html#cb8-10" tabindex="-1"></a>}</span>
 <span id="cb8-11"><a href="random.html#cb8-11" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">1000</span>)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/random-plot-1.png" width="672" /></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="random.html#cb9-1" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">10000</span>)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/random-plot-2.png" width="672" /></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-3" class="example"><strong>Príklad 3.3  </strong></span><a href="https://bookdown.org/lukas_laffers/pas1/zvc.html">Zákon o veľkých číslach</a> Aritmetický priemer z pozorovaní s rovnakou strednou hodnotou sa za určitých podmienok blíži ku skutočnému priemeru.</p>
@@ -382,9 +382,9 @@ kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href=
 <span id="cb10-8"><a href="random.html#cb10-8" tabindex="-1"></a>  <span class="fu">hist</span>(barX,<span class="at">main=</span><span class="st">&quot;Demonstration of LLN&quot;</span>)</span>
 <span id="cb10-9"><a href="random.html#cb10-9" tabindex="-1"></a>}</span>
 <span id="cb10-10"><a href="random.html#cb10-10" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/random-lln-1.png" width="672" /></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="random.html#cb11-1" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/random-lln-2.png" width="672" /></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-4" class="example"><strong>Príklad 3.4  </strong></span><a href="https://bookdown.org/lukas_laffers/pas1/clv.html">Centrálna limitná veta</a> Aritmetický priemer z iid pozorovaní sa za určitých podmienok blíži k normálnemu rozdeleniu.</p>
@@ -402,9 +402,9 @@ kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href=
 <span id="cb12-12"><a href="random.html#cb12-12" tabindex="-1"></a>  <span class="fu">lines</span>( <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="fu">dnorm</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>)) )</span>
 <span id="cb12-13"><a href="random.html#cb12-13" tabindex="-1"></a>}</span>
 <span id="cb12-14"><a href="random.html#cb12-14" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/random-lln2-1.png" width="672" /></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="random.html#cb13-1" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/random-lln2-2.png" width="672" /></p>
 </div>
 </div>
 <div id="rôzne-typy-náhodných-premenných" class="section level2 hasAnchor" number="3.3">
@@ -494,7 +494,7 @@ kde posledná rovnosť plynie zo skutočnosti, že <span class="math inline">\(U
 <span id="cb28-10"><a href="random.html#cb28-10" tabindex="-1"></a>throws <span class="ot">&lt;-</span> <span class="fu">sim3dices</span>(<span class="dv">10000</span>)</span>
 <span id="cb28-11"><a href="random.html#cb28-11" tabindex="-1"></a><span class="co">#plot</span></span>
 <span id="cb28-12"><a href="random.html#cb28-12" tabindex="-1"></a><span class="fu">hist</span>(throws)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/random-vela-1.png" width="672" /></p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="random.html#cb29-1" tabindex="-1"></a><span class="co">#check how many times we got 30 or more extreme observation</span></span>
 <span id="cb29-2"><a href="random.html#cb29-2" tabindex="-1"></a><span class="fu">mean</span>(throws<span class="sc">&gt;=</span><span class="dv">30</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0212</code></pre>
@@ -514,13 +514,13 @@ kde posledná rovnosť plynie zo skutočnosti, že <span class="math inline">\(U
 <span id="cb31-10"><a href="random.html#cb31-10" tabindex="-1"></a>idRows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>nRows,<span class="dv">100</span>)</span>
 <span id="cb31-11"><a href="random.html#cb31-11" tabindex="-1"></a>dd100  <span class="ot">&lt;-</span> dd[idRows,]</span>
 <span id="cb31-12"><a href="random.html#cb31-12" tabindex="-1"></a><span class="fu">with</span>(dd100,<span class="fu">plot</span>(budget,rating))</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="PaS2bookdown_files/figure-html/random-films-1.png" width="672" /></p>
 </div>
 </div>
 <div id="zhrnutie" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> Zhrnutie<a href="random.html#zhrnutie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Riešenie problémov pomocou simulácií je jednoduché a poľahky sa implementuje. Na druhej strane sú simulácie vždy špecifické pre dané konkrétne nastavenie tej ktorej simulácie. Je to použitie hrubej sily. Vidíme, <strong>ako</strong> to je ale nie <strong>prečo</strong>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:random-simul"></span>
 <img src="fig_3_sim.png" alt="CBA pre simulačný prístup" width="80%" />
 <p class="caption">
 Obrázok 3.1: CBA pre simulačný prístup
