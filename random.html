@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2023-10-03" />
+<meta name="date" content="2023-10-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -186,6 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
 <li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
 <li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="3.8" data-path="random.html"><a href="random.html#domáca-úloha-2"><i class="fa fa-check"></i><b>3.8</b> Domáca úloha 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
 <ul>
@@ -566,6 +567,7 @@ Vyberte rôzne vzorky a pozerajte sa, ako veľmi sa tento vzťah mení.</p>
 <p>Aká je pravdepodobnostná distribúcia počtu ľudí, ktorí zdieľajú narodeniny s niekým iným v skupine 25ľudí?</p>
 </div>
 <!-- [R súbor z cvičení zo 14.10.2022](https://www.dropbox.com/s/7p88mytf5pjpz1c/labs_week4.R?dl=0) -->
+<p><a href="https://www.dropbox.com/scl/fi/ce0o6duu7qys73499h40d/20231005-labs03.R?rlkey=hbwjr8gwg427ale7acc8gng0w&amp;dl=0">R súbor z cvičení zo 5.10.2023</a></p>
 <!-- ## Domáca úloha 2 -->
 <!-- Deadline je 24.10.2022 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného zip súboru v tvare `du2_MenoPriezvisko.zip` (napr. `du2_PeterKovac.zip`) a pošlite na email. Kód musí byť spustiteľný a podrobne okomentovaný. Odovzdávate mi Vašu vlastnú prácu. -->
 <!-- ::: {.exercise name="DÚ 2.1"} -->
@@ -586,6 +588,43 @@ Vyberte rôzne vzorky a pozerajte sa, ako veľmi sa tento vzťah mení.</p>
 <!-- ::: {.exercise name="DÚ BONUS"} -->
 <!-- Pomocou simulácie vypočítajte pravdepodobnosť, že ak palicu náhodne rozlomím na 4 kusy, tak z týchto kúskov budem vedieť poskladať stvoruholník. -->
 <!-- :::  -->
+</div>
+<div id="domáca-úloha-2" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> Domáca úloha 2<a href="random.html#domáca-úloha-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deadline je 18.10.2023 o 12:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného zip súboru v tvare <code>du2_MenoPriezvisko.zip</code> (napr. <code>du2_PeterKovac.zip</code>) a pošlite na email. Kód musí byť spustiteľný a podrobne okomentovaný. Odovzdávate mi Vašu vlastnú prácu.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-19" class="exercise"><strong>Cvičenie 3.12  (DÚ 1.1, knihy) </strong></span>Máme dáta o
+<a href="https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019/data">top 50 najpredávanejších knihách</a>
+za roky 2009-2019 na Amazone.</p>
+<ol style="list-style-type: decimal">
+<li><p>Vykreslite si vzťah medzi cenou a hodnotením. Oplatí sa kúpiť drahšie knižky?</p></li>
+<li><p>Nájdite 2 najvýraznejšie iné pozorovania na grafe a zistite, ktoré knihy to sú a prečo sú výrazne iné. Vykreslite graf bez týchto kníh.</p></li>
+<li><p>Vezmite si knihy s viac ako 10 000 recenziami, s cenou medzi 10 a 20 dolárov, obsahujúce fikciu.
+Koľko z nich bolo bestsellerom práve v roku 2018?</p></li>
+<li><p>Vypíšte názvy 10 najlepšie hodnotených a 10 najhoršie hodnotených kníh s viac ako 15 000 recenziami, ktoré stoja menej ako 15 dolárov.</p></li>
+<li><p>Zistite, aká je priemerná cena za knihy J.K. Rowlinovej, ktoré sa nachádzajú v tomto rebríčku.
+Koľko majú tieto knihy v priemere recenzií?</p></li>
+</ol>
+<p>BONUS: Pomocou cyklu alebo funkcie zistite, v ktorých rokoch prevláda fikcia medzi 20 najlepšie hodnotenými knihami daného roku.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-20" class="exercise"><strong>Cvičenie 3.13  (DÚ 1.2, guličky) </strong></span>Z vrecúška vyťahujete guličky s číslami od 1 po 20 bez vracania.
+Simuláciou zistite, či je pravdepodobnejšie, že na 3 vytiahnutých guličkách je dokopy súčet 20
+alebo na 5 guličkách je súčet 25.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Cvičenie 3.14  (DÚ 1.3, vzorec) </strong></span>Pomocou počítača vypočítajte
+<span class="math display">\[\begin{equation*}
+\sum_{n=5}^{100}\frac{n}{(n+1)(n-1)}.
+\end{equation*}\]</span>
+Vypočítajte aj nekonečnú sumu
+<span class="math display">\[\begin{equation*}
+\sum_{n=2}^{\infty}\frac{4}{(n+1)(n-1)}.
+\end{equation*}\]</span></p>
+</div>
+<!-- ::: {.exercise name="DÚ BONUS"} -->
+<!-- Pomocou simulácie vypočítajte pravdepodobnosť, že ak palicu náhodne rozlomím na 4 kusy, tak z týchto kúskov budem vedieť poskladať stvoruholník. -->
+<!-- ::: -->
 
 </div>
 </div>
