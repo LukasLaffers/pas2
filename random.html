@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Náhodné čísla a simulácie | Pravdepodobnosť a štatistika 2</title>
   <meta name="description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Náhodné čísla a simulácie | Pravdepodobnosť a štatistika 2" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2023-10-04" />
+<meta name="date" content="2023-10-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,10 +119,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -186,7 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
 <li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
 <li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
-<li class="chapter" data-level="3.8" data-path="random.html"><a href="random.html#domáca-úloha-2"><i class="fa fa-check"></i><b>3.8</b> Domáca úloha 2</a></li>
+<li class="chapter" data-level="3.8" data-path="random.html"><a href="random.html#domáca-úloha-1"><i class="fa fa-check"></i><b>3.8</b> Domáca úloha 1</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
 <ul>
@@ -589,8 +585,8 @@ Vyberte rôzne vzorky a pozerajte sa, ako veľmi sa tento vzťah mení.</p>
 <!-- Pomocou simulácie vypočítajte pravdepodobnosť, že ak palicu náhodne rozlomím na 4 kusy, tak z týchto kúskov budem vedieť poskladať stvoruholník. -->
 <!-- :::  -->
 </div>
-<div id="domáca-úloha-2" class="section level2 hasAnchor" number="3.8">
-<h2><span class="header-section-number">3.8</span> Domáca úloha 2<a href="random.html#domáca-úloha-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="domáca-úloha-1" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> Domáca úloha 1<a href="random.html#domáca-úloha-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Deadline je 18.10.2023 o 12:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) zabaľte do jedného zip súboru v tvare <code>du2_MenoPriezvisko.zip</code> (napr. <code>du2_PeterKovac.zip</code>) a pošlite na <code>miroslava.sartorisova@umb.sk</code>. Kód musí byť spustiteľný a podrobne okomentovaný. Odovzdávate Vašu vlastnú prácu.</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-19" class="exercise"><strong>Cvičenie 3.12  (DÚ 1.1, knihy) </strong></span>Máme dáta o
@@ -601,26 +597,31 @@ za roky 2009-2019 na Amazone.</p>
 <li><p>Nájdite 2 najvýraznejšie iné pozorovania na grafe a zistite, ktoré knihy to sú a prečo sú výrazne iné. Vykreslite graf bez týchto kníh.</p></li>
 <li><p>Vezmite si knihy s viac ako 10 000 recenziami, s cenou medzi 10 a 20 dolárov, obsahujúce fikciu.
 Koľko z nich bolo bestsellerom práve v roku 2018?</p></li>
-<li><p>Vypíšte názvy 10 najlepšie hodnotených a 10 najhoršie hodnotených kníh s viac ako 15 000 recenziami, ktoré stoja menej ako 15 dolárov.</p></li>
-<li><p>Zistite, aká je priemerná cena za knihy J.K. Rowlinovej, ktoré sa nachádzajú v tomto rebríčku.
+<li><p>Vypíšte názvy 10 najlepšie hodnotených a 10 najhoršie hodnotených kníh s viac ako 15 000 recenziami, ktoré stoja menej ako 15 dolárov. Vysvetlite, prečo sa niektoré knihy opakujú.</p></li>
+<li><p>Zistite, aká je priemerná cena za knihy J.K. Rowlingovej, ktoré sa nachádzajú v tomto rebríčku.
 Koľko majú tieto knihy v priemere recenzií?</p></li>
 </ol>
-<p>BONUS: Pomocou cyklu alebo funkcie zistite, v ktorých rokoch prevláda fikcia medzi 20 najlepšie hodnotenými knihami daného roku.</p>
+<p>BONUS: Pomocou cyklu alebo funkcie zistite, v ktorých rokoch prevláda fikcia medzi 20 najlepšie hodnotenými knihami daného roku.
+Vysvetlite, ako postupujete, aby sme tam mali každú knihu len raz.
+V roku, kedy bol pomer fikcie najväčší, vypíšte pre top 20 kníh názov, autora a to, či je to fikcia.</p>
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-20" class="exercise"><strong>Cvičenie 3.13  (DÚ 1.2, guličky) </strong></span>Z vrecúška vyťahujete guličky s číslami od 1 po 20 bez vracania.
 Simuláciou zistite, či je pravdepodobnejšie, že na 3 vytiahnutých guličkách je dokopy súčet 20
-alebo na 5 guličkách je súčet 25.</p>
+alebo na 5 guličkách je súčet 35.</p>
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-21" class="exercise"><strong>Cvičenie 3.14  (DÚ 1.3, vzorec) </strong></span>Pomocou počítača vypočítajte
 <span class="math display">\[\begin{equation*}
 \sum_{n=5}^{100}\frac{n}{(n+1)(n-1)}.
 \end{equation*}\]</span>
-Vypočítajte aj nekonečnú sumu
+Vypočítajte aj nekonečnú sumu, detailne opíšte Vaše riešenie
 <span class="math display">\[\begin{equation*}
 \sum_{n=2}^{\infty}\frac{4}{(n+1)(n-1)}.
 \end{equation*}\]</span></p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-22" class="exercise"><strong>Cvičenie 3.15  (DÚ 1.4, porota, cvičenie 3.10) </strong></span>Piati ľudia v porote majú nasledovné šance, že sa správne rozhodnú: 95%, 80%, 90%, 82%, 99%. O výsledku rozhodne väčšina. Aká je šanca, že sa celá porota zhodne na správnom výsledku?</p>
 </div>
 <!-- ::: {.exercise name="DÚ BONUS"} -->
 <!-- Pomocou simulácie vypočítajte pravdepodobnosť, že ak palicu náhodne rozlomím na 4 kusy, tak z týchto kúskov budem vedieť poskladať stvoruholník. -->
