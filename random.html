@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2023-10-12" />
+<meta name="date" content="2023-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -224,6 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
 <li class="chapter" data-level="6.5" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
 <li class="chapter" data-level="6.6" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
+<li class="chapter" data-level="6.7" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#domáca-úloha-2"><i class="fa fa-check"></i><b>6.7</b> Domáca úloha 2</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
 <ul>
@@ -247,6 +248,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
 <li class="chapter" data-level="7.6" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
 <li class="chapter" data-level="7.7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="7.8" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#domáca-úloha-3"><i class="fa fa-check"></i><b>7.8</b> Domáca úloha 3</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
 <ul>
@@ -268,6 +270,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.11" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.11</b> Zhrnutie</a></li>
 <li class="chapter" data-level="8.12" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#cvičenia-7"><i class="fa fa-check"></i><b>8.12</b> Cvičenia</a></li>
+<li class="chapter" data-level="8.13" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#domáca-úloha-4"><i class="fa fa-check"></i><b>8.13</b> Domáca úloha 4</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
 <ul>
@@ -323,18 +326,18 @@ Na toto je vhodný mechanický nástroj. Pomocou počítača si veci vieme vysk�
 <p>Na to aby sme vedeli generovať náhodné čísla, potrebujeme nejaký zdroj náhodnosti. Ten môže prísť z nejakého externého zdroja.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Na počítači sa preto uspokojujeme so <em>pseudonáhodnými</em> číslami. Existujú deterministické procesy, ktoré generujú čísla, ktoré sú z praktického hľadiska náhodné.
 Tieto procesy sú rôzne a sú “rôzne kvalitné” generátory pseudonáhodných čísel. My budeme používať tú predvolenú metódu v Rku.</p>
 <p>Príkazom <code>set.seed()</code> zafixujeme generátor náhodných čísel a zabezpečíme tým reprodukovateľnosť našich výsledkov.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="random.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28394</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="random.html#cb1-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28394</span>)</span></code></pre></div>
 <p>Keď si teraz niekto nechá vygenerovať 10 náhodných čísel z intervalu <span class="math inline">\([0,1],\)</span> ktoré sú rovnomerne rozdelené, tak dostane úplne tie isté čísla.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="random.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="random.html#cb2-1" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.1707599 0.1818867 0.7865318 0.5782902 0.9364266 0.9324842 0.1914957
 ##  [8] 0.2923337 0.4330475 0.8927892</code></pre>
 <p>Akonáhle si vygenerujeme novú desaticu čísel, tieto budú prirodzene iné.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="random.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="random.html#cb4-1" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.5294097 0.9021275 0.9895494 0.5304749 0.1230083 0.3572835 0.2611675
 ##  [8] 0.3291930 0.3557725 0.7183207</code></pre>
 <p>Ale ak znovu zafixujeme seed náhodného generátora čísel, znova dostaneme tie isté čísla ako predtým.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="random.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28394</span>)</span>
-<span id="cb6-2"><a href="random.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="random.html#cb6-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28394</span>)</span>
+<span id="cb6-2"><a href="random.html#cb6-2" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.1707599 0.1818867 0.7865318 0.5782902 0.9364266 0.9324842 0.1914957
 ##  [8] 0.2923337 0.4330475 0.8927892</code></pre>
 <p>Na čo je toto užitočné? Umožní nám to jednoducho vytvárať reprodukovateľný kód, kde budeme generovať nejaké náhodné čísla. Každý kto si neskôr spustí našu simuláciu dostane <em>tie isté</em> výsledky. Potrebuje však zadať to isté číslo 28394.</p>
@@ -356,55 +359,55 @@ kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href=
 <span class="math display">\[P(A) = \frac{\text{počet úspešných pokusov (teda udalosť $A$ nastane)}}{\text{počet všetkých možných pokusov}}.\]</span></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-2" class="example"><strong>Príklad 3.2  </strong></span>Odhad čísla <span class="math inline">\(\pi\)</span> pomocou simulácie. Vieme, že obsah kruhu je <span class="math inline">\(\pi r^2.\)</span> Môžeme rovnomerne náhodne generovať čísla na intervale <span class="math inline">\([0,1]\)</span> na oboch osiach a pozrieť sa, aká proporcia z nich spadne do kruhu.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="random.html#cb8-1" aria-hidden="true" tabindex="-1"></a>piApprox <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
-<span id="cb8-2"><a href="random.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb8-3"><a href="random.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb8-4"><a href="random.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> (x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">1</span>)</span>
-<span id="cb8-5"><a href="random.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">pty=</span><span class="st">&quot;s&quot;</span>)</span>
-<span id="cb8-6"><a href="random.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x,y,<span class="at">pch=</span><span class="dv">20</span>,<span class="at">main=</span><span class="fu">paste</span>(<span class="st">&quot;Pi approximation&quot;</span>,<span class="fu">as.character</span>(<span class="dv">4</span><span class="sc">*</span><span class="fu">mean</span>(z))))</span>
-<span id="cb8-7"><a href="random.html#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb8-8"><a href="random.html#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb8-9"><a href="random.html#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">points</span>(x[z],y[z],<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
-<span id="cb8-10"><a href="random.html#cb8-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-11"><a href="random.html#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">1000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="random.html#cb8-1" tabindex="-1"></a>piApprox <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb8-2"><a href="random.html#cb8-2" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb8-3"><a href="random.html#cb8-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb8-4"><a href="random.html#cb8-4" tabindex="-1"></a>  z <span class="ot">&lt;-</span> (x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">1</span>)</span>
+<span id="cb8-5"><a href="random.html#cb8-5" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">pty=</span><span class="st">&quot;s&quot;</span>)</span>
+<span id="cb8-6"><a href="random.html#cb8-6" tabindex="-1"></a>  <span class="fu">plot</span>(x,y,<span class="at">pch=</span><span class="dv">20</span>,<span class="at">main=</span><span class="fu">paste</span>(<span class="st">&quot;Pi approximation&quot;</span>,<span class="fu">as.character</span>(<span class="dv">4</span><span class="sc">*</span><span class="fu">mean</span>(z))))</span>
+<span id="cb8-7"><a href="random.html#cb8-7" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb8-8"><a href="random.html#cb8-8" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb8-9"><a href="random.html#cb8-9" tabindex="-1"></a>  <span class="fu">points</span>(x[z],y[z],<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
+<span id="cb8-10"><a href="random.html#cb8-10" tabindex="-1"></a>}</span>
+<span id="cb8-11"><a href="random.html#cb8-11" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">1000</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/random-plot-1.png" width="672" /></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="random.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">10000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="random.html#cb9-1" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">10000</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/random-plot-2.png" width="672" /></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-3" class="example"><strong>Príklad 3.3  </strong></span><a href="https://bookdown.org/lukas_laffers/pas1/zvc.html">Zákon o veľkých číslach</a> Aritmetický priemer z pozorovaní s rovnakou strednou hodnotou sa za určitých podmienok blíži ku skutočnému priemeru.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="random.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#law of large numbers</span></span>
-<span id="cb10-2"><a href="random.html#cb10-2" aria-hidden="true" tabindex="-1"></a>simLLN <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim,nSample){</span>
-<span id="cb10-3"><a href="random.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  barX <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSim) </span>
-<span id="cb10-4"><a href="random.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (iSim <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim){</span>
-<span id="cb10-5"><a href="random.html#cb10-5" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">rpois</span>(nSample,<span class="dv">3</span>)</span>
-<span id="cb10-6"><a href="random.html#cb10-6" aria-hidden="true" tabindex="-1"></a>    barX[iSim] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
-<span id="cb10-7"><a href="random.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb10-8"><a href="random.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(barX,<span class="at">main=</span><span class="st">&quot;Demonstration of LLN&quot;</span>)</span>
-<span id="cb10-9"><a href="random.html#cb10-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-10"><a href="random.html#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="random.html#cb10-1" tabindex="-1"></a><span class="co">#law of large numbers</span></span>
+<span id="cb10-2"><a href="random.html#cb10-2" tabindex="-1"></a>simLLN <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim,nSample){</span>
+<span id="cb10-3"><a href="random.html#cb10-3" tabindex="-1"></a>  barX <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSim) </span>
+<span id="cb10-4"><a href="random.html#cb10-4" tabindex="-1"></a>  <span class="cf">for</span> (iSim <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim){</span>
+<span id="cb10-5"><a href="random.html#cb10-5" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">rpois</span>(nSample,<span class="dv">3</span>)</span>
+<span id="cb10-6"><a href="random.html#cb10-6" tabindex="-1"></a>    barX[iSim] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
+<span id="cb10-7"><a href="random.html#cb10-7" tabindex="-1"></a>  }</span>
+<span id="cb10-8"><a href="random.html#cb10-8" tabindex="-1"></a>  <span class="fu">hist</span>(barX,<span class="at">main=</span><span class="st">&quot;Demonstration of LLN&quot;</span>)</span>
+<span id="cb10-9"><a href="random.html#cb10-9" tabindex="-1"></a>}</span>
+<span id="cb10-10"><a href="random.html#cb10-10" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/random-lln-1.png" width="672" /></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="random.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="random.html#cb11-1" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/random-lln-2.png" width="672" /></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-4" class="example"><strong>Príklad 3.4  </strong></span><a href="https://bookdown.org/lukas_laffers/pas1/clv.html">Centrálna limitná veta</a> Aritmetický priemer z iid pozorovaní sa za určitých podmienok blíži k normálnemu rozdeleniu.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="random.html#cb12-1" aria-hidden="true" tabindex="-1"></a>simCLT <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim,nSample){</span>
-<span id="cb12-2"><a href="random.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  barX <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSim) </span>
-<span id="cb12-3"><a href="random.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (iSim <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim){</span>
-<span id="cb12-4"><a href="random.html#cb12-4" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">rpois</span>(nSample,<span class="dv">3</span>)</span>
-<span id="cb12-5"><a href="random.html#cb12-5" aria-hidden="true" tabindex="-1"></a>    barX[iSim] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
-<span id="cb12-6"><a href="random.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-7"><a href="random.html#cb12-7" aria-hidden="true" tabindex="-1"></a>  trueMean <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb12-8"><a href="random.html#cb12-8" aria-hidden="true" tabindex="-1"></a>  trueSD <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">3</span>)</span>
-<span id="cb12-9"><a href="random.html#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>( <span class="fu">sqrt</span>(nSample)<span class="sc">*</span>(barX<span class="sc">-</span>trueMean)<span class="sc">/</span>trueSD,</span>
-<span id="cb12-10"><a href="random.html#cb12-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab=</span><span class="st">&quot;Centered and Scaled Mean of IID vars&quot;</span>, <span class="at">prob=</span><span class="cn">TRUE</span>,</span>
-<span id="cb12-11"><a href="random.html#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">main=</span><span class="st">&quot;Demonstration of CLT&quot;</span>)</span>
-<span id="cb12-12"><a href="random.html#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>( <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="fu">dnorm</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>)) )</span>
-<span id="cb12-13"><a href="random.html#cb12-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-14"><a href="random.html#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="random.html#cb12-1" tabindex="-1"></a>simCLT <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim,nSample){</span>
+<span id="cb12-2"><a href="random.html#cb12-2" tabindex="-1"></a>  barX <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSim) </span>
+<span id="cb12-3"><a href="random.html#cb12-3" tabindex="-1"></a>  <span class="cf">for</span> (iSim <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim){</span>
+<span id="cb12-4"><a href="random.html#cb12-4" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">rpois</span>(nSample,<span class="dv">3</span>)</span>
+<span id="cb12-5"><a href="random.html#cb12-5" tabindex="-1"></a>    barX[iSim] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
+<span id="cb12-6"><a href="random.html#cb12-6" tabindex="-1"></a>  }</span>
+<span id="cb12-7"><a href="random.html#cb12-7" tabindex="-1"></a>  trueMean <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb12-8"><a href="random.html#cb12-8" tabindex="-1"></a>  trueSD <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">3</span>)</span>
+<span id="cb12-9"><a href="random.html#cb12-9" tabindex="-1"></a>  <span class="fu">hist</span>( <span class="fu">sqrt</span>(nSample)<span class="sc">*</span>(barX<span class="sc">-</span>trueMean)<span class="sc">/</span>trueSD,</span>
+<span id="cb12-10"><a href="random.html#cb12-10" tabindex="-1"></a>        <span class="at">xlab=</span><span class="st">&quot;Centered and Scaled Mean of IID vars&quot;</span>, <span class="at">prob=</span><span class="cn">TRUE</span>,</span>
+<span id="cb12-11"><a href="random.html#cb12-11" tabindex="-1"></a>        <span class="at">main=</span><span class="st">&quot;Demonstration of CLT&quot;</span>)</span>
+<span id="cb12-12"><a href="random.html#cb12-12" tabindex="-1"></a>  <span class="fu">lines</span>( <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="fu">dnorm</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>)) )</span>
+<span id="cb12-13"><a href="random.html#cb12-13" tabindex="-1"></a>}</span>
+<span id="cb12-14"><a href="random.html#cb12-14" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/random-lln2-1.png" width="672" /></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="random.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="random.html#cb13-1" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/random-lln2-2.png" width="672" /></p>
 </div>
 </div>
@@ -436,10 +439,10 @@ kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href=
 <p>Akonáhle máme generátor pseudonáhodných čísel, ktorý vie generovať rovnomerne náhodne na intervale <span class="math inline">\([0,1]\)</span>, pomocou neho vieme generovať akékoľvek iné pravdepodobnostné rozdelenie.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-5" class="example"><strong>Príklad 3.5  </strong></span>Skúsme simulovať hádzanie kockou ale len s pomocou funkcie <code>runif()</code>. Ak padne číslo väčšie ako 0.5, prehlásime to za hlavu.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="random.html#cb14-1" aria-hidden="true" tabindex="-1"></a>hodMincou <span class="ot">&lt;-</span> <span class="cf">function</span>(nThrows){</span>
-<span id="cb14-2"><a href="random.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span><span class="sc">*</span>(<span class="fu">runif</span>(nThrows)<span class="sc">&gt;</span><span class="fl">0.5</span>))</span>
-<span id="cb14-3"><a href="random.html#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb14-4"><a href="random.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hodMincou</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="random.html#cb14-1" tabindex="-1"></a>hodMincou <span class="ot">&lt;-</span> <span class="cf">function</span>(nThrows){</span>
+<span id="cb14-2"><a href="random.html#cb14-2" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span><span class="sc">*</span>(<span class="fu">runif</span>(nThrows)<span class="sc">&gt;</span><span class="fl">0.5</span>))</span>
+<span id="cb14-3"><a href="random.html#cb14-3" tabindex="-1"></a>}</span>
+<span id="cb14-4"><a href="random.html#cb14-4" tabindex="-1"></a><span class="fu">hodMincou</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##  [1] 1 0 0 1 0 0 1 1 1 0</code></pre>
 </div>
 <p>Majme <a href="https://bookdown.org/lukas_laffers/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">spojitú</a> <a href="https://bookdown.org/lukas_laffers/pas1/np.html#čo-je-to-náhodná-premenná.">náhodnú premennú</a> <span class="math inline">\(X\)</span>, ktorá má <a href="https://bookdown.org/lukas_laffers/pas1/np.html#kumulat%C3%ADvna-distribučná-funkcia">kumulatívnu distribučnú funkciu</a> <span class="math inline">\(F_X.\)</span> Označme symbolom <span class="math inline">\(U\)</span> <a href="https://bookdown.org/lukas_laffers/pas1/snp.html#rovnomerné-rozdelenie-1">rovnomerne rozdelenú náhodnú premennú</a> <span class="math inline">\(U \sim Unif[0,1].\)</span> Potom pre <span class="math inline">\(Y = F_X^{-1}(U)\)</span> platí <span class="math inline">\(Y \sim F_X.\)</span></p>
@@ -452,69 +455,69 @@ kde posledná rovnosť plynie zo skutočnosti, že <span class="math inline">\(U
 <div id="náhodný-výber" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> Náhodný výber<a href="random.html#náhodný-výber" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ak z nejakej množiny chceme náhodne vyberať objekty, použijeme funkciu <code>sample()</code>. Bez akýchkoľvek iných argumentov dostávame náhodnú permutáciu (cudzie slovo pre “poprehadzovanie”).</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="random.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sampling</span></span>
-<span id="cb16-2"><a href="random.html#cb16-2" aria-hidden="true" tabindex="-1"></a>namesVec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Julia&quot;</span>,<span class="st">&quot;Martin&quot;</span>,<span class="st">&quot;Peter&quot;</span>,<span class="st">&quot;Stefan&quot;</span>,<span class="st">&quot;Robert&quot;</span>,<span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Zuzana&quot;</span>)</span>
-<span id="cb16-3"><a href="random.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#random permutation</span></span>
-<span id="cb16-4"><a href="random.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="random.html#cb16-1" tabindex="-1"></a><span class="co">#sampling</span></span>
+<span id="cb16-2"><a href="random.html#cb16-2" tabindex="-1"></a>namesVec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Julia&quot;</span>,<span class="st">&quot;Martin&quot;</span>,<span class="st">&quot;Peter&quot;</span>,<span class="st">&quot;Stefan&quot;</span>,<span class="st">&quot;Robert&quot;</span>,<span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Zuzana&quot;</span>)</span>
+<span id="cb16-3"><a href="random.html#cb16-3" tabindex="-1"></a><span class="co">#random permutation</span></span>
+<span id="cb16-4"><a href="random.html#cb16-4" tabindex="-1"></a><span class="fu">sample</span>(namesVec)</span></code></pre></div>
 <pre><code>## [1] &quot;Peter&quot;  &quot;Maria&quot;  &quot;Robert&quot; &quot;Stefan&quot; &quot;Martin&quot; &quot;Zuzana&quot; &quot;Julia&quot;</code></pre>
 <p>Druhý argument hovorí o tom, koľko objektov máme vybrať, defaultne je to dĺžka vstupného vektora.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="random.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#choose 3 names without replacement</span></span>
-<span id="cb18-2"><a href="random.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="random.html#cb18-1" tabindex="-1"></a><span class="co">#choose 3 names without replacement</span></span>
+<span id="cb18-2"><a href="random.html#cb18-2" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Zuzana&quot; &quot;Stefan&quot; &quot;Robert&quot;</code></pre>
 <p>Tretí argument je, či je daný objekt môžeme po vybratí dať naspäť (<code>replace=TRUE</code> znamená, že áno, dáme naspäť).</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="random.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#choose 3 names WITH replacement</span></span>
-<span id="cb20-2"><a href="random.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="random.html#cb20-1" tabindex="-1"></a><span class="co">#choose 3 names WITH replacement</span></span>
+<span id="cb20-2"><a href="random.html#cb20-2" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Stefan&quot; &quot;Maria&quot;  &quot;Maria&quot;</code></pre>
 <p>Počet vybratých objektov môže byť väčší ako dĺžka vstupného vektora len ak je nastavené <code>replace=TRUE</code></p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="random.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#choose 10 names WITH replacement</span></span>
-<span id="cb22-2"><a href="random.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">10</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="random.html#cb22-1" tabindex="-1"></a><span class="co">#choose 10 names WITH replacement</span></span>
+<span id="cb22-2"><a href="random.html#cb22-2" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">10</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Martin&quot; &quot;Peter&quot;  &quot;Robert&quot; &quot;Zuzana&quot; &quot;Robert&quot; &quot;Martin&quot; &quot;Peter&quot;  &quot;Martin&quot;
 ##  [9] &quot;Julia&quot;  &quot;Martin&quot;</code></pre>
 <p>Skúsme hodiť férovou mincou 100krát.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="random.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#throw a fair coin 100 times</span></span>
-<span id="cb24-2"><a href="random.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">100</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="random.html#cb24-1" tabindex="-1"></a><span class="co">#throw a fair coin 100 times</span></span>
+<span id="cb24-2"><a href="random.html#cb24-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">100</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##   [1] 1 1 1 1 0 0 0 0 1 1 1 0 1 0 0 1 1 1 0 0 1 0 1 1 0 1 1 0 1 1 1 0 0 0 0 0 1
 ##  [38] 1 1 1 0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 1 0 1 0 0 1 0 0 0 1 1 1 1 1 0 1 0 0 0
 ##  [75] 0 1 0 0 1 0 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 0 1 0 1 1</code></pre>
 <p>Alebo 20krát hodiť férovou kockou.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="random.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#throw a fair dice 100 times</span></span>
-<span id="cb26-2"><a href="random.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">20</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="random.html#cb26-1" tabindex="-1"></a><span class="co">#throw a fair dice 100 times</span></span>
+<span id="cb26-2"><a href="random.html#cb26-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">20</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##  [1] 1 3 1 3 2 6 3 6 2 6 6 6 5 2 1 4 4 2 6 6</code></pre>
 <div class="example">
 <p><span id="exm:unlabeled-div-6" class="example"><strong>Príklad 3.6  </strong></span>Hodili sme férovou kockou 6 krát a súčet je 30. Je to veľa?</p>
 <p>A vôbec, čo to vlastné znamená “veľa”?</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="random.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We throw the dice 6 times and got 30 in sum together. Is it a lot?</span></span>
-<span id="cb28-2"><a href="random.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Simulate</span></span>
-<span id="cb28-3"><a href="random.html#cb28-3" aria-hidden="true" tabindex="-1"></a>sim3dices <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim){</span>
-<span id="cb28-4"><a href="random.html#cb28-4" aria-hidden="true" tabindex="-1"></a>  th <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSim)</span>
-<span id="cb28-5"><a href="random.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (iSim <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim){</span>
-<span id="cb28-6"><a href="random.html#cb28-6" aria-hidden="true" tabindex="-1"></a>    th[iSim] <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">6</span>,<span class="at">replace=</span><span class="cn">TRUE</span>))</span>
-<span id="cb28-7"><a href="random.html#cb28-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb28-8"><a href="random.html#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(th)</span>
-<span id="cb28-9"><a href="random.html#cb28-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb28-10"><a href="random.html#cb28-10" aria-hidden="true" tabindex="-1"></a>throws <span class="ot">&lt;-</span> <span class="fu">sim3dices</span>(<span class="dv">10000</span>)</span>
-<span id="cb28-11"><a href="random.html#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co">#plot</span></span>
-<span id="cb28-12"><a href="random.html#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(throws)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="random.html#cb28-1" tabindex="-1"></a><span class="co">#We throw the dice 6 times and got 30 in sum together. Is it a lot?</span></span>
+<span id="cb28-2"><a href="random.html#cb28-2" tabindex="-1"></a><span class="co">#Simulate</span></span>
+<span id="cb28-3"><a href="random.html#cb28-3" tabindex="-1"></a>sim3dices <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim){</span>
+<span id="cb28-4"><a href="random.html#cb28-4" tabindex="-1"></a>  th <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSim)</span>
+<span id="cb28-5"><a href="random.html#cb28-5" tabindex="-1"></a>  <span class="cf">for</span> (iSim <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim){</span>
+<span id="cb28-6"><a href="random.html#cb28-6" tabindex="-1"></a>    th[iSim] <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">6</span>,<span class="at">replace=</span><span class="cn">TRUE</span>))</span>
+<span id="cb28-7"><a href="random.html#cb28-7" tabindex="-1"></a>  }</span>
+<span id="cb28-8"><a href="random.html#cb28-8" tabindex="-1"></a>  <span class="fu">return</span>(th)</span>
+<span id="cb28-9"><a href="random.html#cb28-9" tabindex="-1"></a>}</span>
+<span id="cb28-10"><a href="random.html#cb28-10" tabindex="-1"></a>throws <span class="ot">&lt;-</span> <span class="fu">sim3dices</span>(<span class="dv">10000</span>)</span>
+<span id="cb28-11"><a href="random.html#cb28-11" tabindex="-1"></a><span class="co">#plot</span></span>
+<span id="cb28-12"><a href="random.html#cb28-12" tabindex="-1"></a><span class="fu">hist</span>(throws)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/random-vela-1.png" width="672" /></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="random.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check how many times we got 30 or more extreme observation</span></span>
-<span id="cb29-2"><a href="random.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(throws<span class="sc">&gt;=</span><span class="dv">30</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="random.html#cb29-1" tabindex="-1"></a><span class="co">#check how many times we got 30 or more extreme observation</span></span>
+<span id="cb29-2"><a href="random.html#cb29-2" tabindex="-1"></a><span class="fu">mean</span>(throws<span class="sc">&gt;=</span><span class="dv">30</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0212</code></pre>
 <p>Môžeme si simulovať hádzanie mnoho krát a skrátka sa pozrieť koľkokrát nastane ešte extrémnejšia udalosť. Na to, aby toto číslo bolo presné potrebujeme veľa simulácií.</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-7" class="example"><strong>Príklad 3.7  </strong></span>Vyberte 100 náhodných animovaných filmov dlhších ako 60 minút a zobrazte vzťah medzi hodnotením a rozpočtom.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="random.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot the relationship between budget and rating for 100 randomly selected</span></span>
-<span id="cb31-2"><a href="random.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># animation films that are longer than 60mins</span></span>
-<span id="cb31-3"><a href="random.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
-<span id="cb31-4"><a href="random.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-5"><a href="random.html#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="random.html#cb31-6" aria-hidden="true" tabindex="-1"></a>dd <span class="ot">&lt;-</span> movies <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Animation<span class="sc">==</span><span class="dv">1</span>,</span>
-<span id="cb31-7"><a href="random.html#cb31-7" aria-hidden="true" tabindex="-1"></a>                        length<span class="sc">&gt;</span><span class="dv">60</span>)</span>
-<span id="cb31-8"><a href="random.html#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-9"><a href="random.html#cb31-9" aria-hidden="true" tabindex="-1"></a>nRows  <span class="ot">&lt;-</span> <span class="fu">dim</span>(dd)[<span class="dv">1</span>]</span>
-<span id="cb31-10"><a href="random.html#cb31-10" aria-hidden="true" tabindex="-1"></a>idRows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>nRows,<span class="dv">100</span>)</span>
-<span id="cb31-11"><a href="random.html#cb31-11" aria-hidden="true" tabindex="-1"></a>dd100  <span class="ot">&lt;-</span> dd[idRows,]</span>
-<span id="cb31-12"><a href="random.html#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dd100,<span class="fu">plot</span>(budget,rating))</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="random.html#cb31-1" tabindex="-1"></a><span class="co">#plot the relationship between budget and rating for 100 randomly selected</span></span>
+<span id="cb31-2"><a href="random.html#cb31-2" tabindex="-1"></a><span class="co"># animation films that are longer than 60mins</span></span>
+<span id="cb31-3"><a href="random.html#cb31-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
+<span id="cb31-4"><a href="random.html#cb31-4" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb31-5"><a href="random.html#cb31-5" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="random.html#cb31-6" tabindex="-1"></a>dd <span class="ot">&lt;-</span> movies <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Animation<span class="sc">==</span><span class="dv">1</span>,</span>
+<span id="cb31-7"><a href="random.html#cb31-7" tabindex="-1"></a>                        length<span class="sc">&gt;</span><span class="dv">60</span>)</span>
+<span id="cb31-8"><a href="random.html#cb31-8" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="random.html#cb31-9" tabindex="-1"></a>nRows  <span class="ot">&lt;-</span> <span class="fu">dim</span>(dd)[<span class="dv">1</span>]</span>
+<span id="cb31-10"><a href="random.html#cb31-10" tabindex="-1"></a>idRows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>nRows,<span class="dv">100</span>)</span>
+<span id="cb31-11"><a href="random.html#cb31-11" tabindex="-1"></a>dd100  <span class="ot">&lt;-</span> dd[idRows,]</span>
+<span id="cb31-12"><a href="random.html#cb31-12" tabindex="-1"></a><span class="fu">with</span>(dd100,<span class="fu">plot</span>(budget,rating))</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/random-films-1.png" width="672" /></p>
 </div>
 </div>

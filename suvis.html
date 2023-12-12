@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2023-10-19" />
+<meta name="date" content="2023-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -226,6 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
 <li class="chapter" data-level="6.5" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
 <li class="chapter" data-level="6.6" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
+<li class="chapter" data-level="6.7" data-path="zobrazovanie-dát.html"><a href="zobrazovanie-dát.html#domáca-úloha-2"><i class="fa fa-check"></i><b>6.7</b> Domáca úloha 2</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
 <ul>
@@ -249,6 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
 <li class="chapter" data-level="7.6" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
 <li class="chapter" data-level="7.7" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="7.8" data-path="štatistické-testovanie-hypotéz.html"><a href="štatistické-testovanie-hypotéz.html#domáca-úloha-3"><i class="fa fa-check"></i><b>7.8</b> Domáca úloha 3</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
 <ul>
@@ -270,6 +272,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.11" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.11</b> Zhrnutie</a></li>
 <li class="chapter" data-level="8.12" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#cvičenia-7"><i class="fa fa-check"></i><b>8.12</b> Cvičenia</a></li>
+<li class="chapter" data-level="8.13" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#domáca-úloha-4"><i class="fa fa-check"></i><b>8.13</b> Domáca úloha 4</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
 <ul>
@@ -339,17 +342,17 @@ ak sú spojite rozdelené.</p>
 <p>Nezávislé náhodné premenné spolu vôbec nesúvisia. Preto informácia o správaní <em>jednotlivých</em> náhodných premenných je postačujúca na <strong>úplný popis</strong> celého pravdepodobnostného vektora.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-1" class="example"><strong>Príklad 5.1  </strong></span>Majme dve náhodné premenné <span class="math inline">\((X, Y)\)</span>, ktorých pravdepodobnostná funkcia je popísaná nasledovnou tabuľkou:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="suvis.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-2"><a href="suvis.html#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot; &quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;X=1&quot;</span>,<span class="st">&quot;X=2&quot;</span>, <span class="st">&quot;X=3&quot;</span>), </span>
-<span id="cb1-3"><a href="suvis.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;0.1&quot;</span>,<span class="st">&quot;0.3&quot;</span>,<span class="st">&quot;0&quot;</span>), </span>
-<span id="cb1-4"><a href="suvis.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;2&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;0&quot;</span>,<span class="st">&quot;0.2&quot;</span>), </span>
-<span id="cb1-5"><a href="suvis.html#cb1-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;3&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;0.1&quot;</span>,<span class="st">&quot;0.1&quot;</span>,<span class="st">&quot;0&quot;</span>), </span>
-<span id="cb1-6"><a href="suvis.html#cb1-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;4&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;0.2&quot;</span>,<span class="st">&quot;0&quot;</span>))</span>
-<span id="cb1-7"><a href="suvis.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">c</span>(<span class="st">&quot; &quot;</span>,<span class="st">&quot;Y=1&quot;</span>,<span class="st">&quot;Y=2&quot;</span>,<span class="st">&quot;Y=3&quot;</span>,<span class="st">&quot;Y=4&quot;</span>))</span>
-<span id="cb1-8"><a href="suvis.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="suvis.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(df, <span class="at">booktabs =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb1-10"><a href="suvis.html#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-11"><a href="suvis.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Pravdedpodobnostná funkcia&quot;</span> <span class="ot">=</span> <span class="dv">5</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="suvis.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-2"><a href="suvis.html#cb1-2" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot; &quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;X=1&quot;</span>,<span class="st">&quot;X=2&quot;</span>, <span class="st">&quot;X=3&quot;</span>), </span>
+<span id="cb1-3"><a href="suvis.html#cb1-3" tabindex="-1"></a>                 <span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;0.1&quot;</span>,<span class="st">&quot;0.3&quot;</span>,<span class="st">&quot;0&quot;</span>), </span>
+<span id="cb1-4"><a href="suvis.html#cb1-4" tabindex="-1"></a>                 <span class="st">&quot;2&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;0&quot;</span>,<span class="st">&quot;0.2&quot;</span>), </span>
+<span id="cb1-5"><a href="suvis.html#cb1-5" tabindex="-1"></a>                 <span class="st">&quot;3&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;0.1&quot;</span>,<span class="st">&quot;0.1&quot;</span>,<span class="st">&quot;0&quot;</span>), </span>
+<span id="cb1-6"><a href="suvis.html#cb1-6" tabindex="-1"></a>                 <span class="st">&quot;4&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;0.2&quot;</span>,<span class="st">&quot;0&quot;</span>))</span>
+<span id="cb1-7"><a href="suvis.html#cb1-7" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">c</span>(<span class="st">&quot; &quot;</span>,<span class="st">&quot;Y=1&quot;</span>,<span class="st">&quot;Y=2&quot;</span>,<span class="st">&quot;Y=3&quot;</span>,<span class="st">&quot;Y=4&quot;</span>))</span>
+<span id="cb1-8"><a href="suvis.html#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="suvis.html#cb1-9" tabindex="-1"></a><span class="fu">kbl</span>(df, <span class="at">booktabs =</span> T) <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href="suvis.html#cb1-10" tabindex="-1"></a>  <span class="fu">kable_classic</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="suvis.html#cb1-11" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot;Pravdedpodobnostná funkcia&quot;</span> <span class="ot">=</span> <span class="dv">5</span>))</span></code></pre></div>
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -465,15 +468,15 @@ Napriek tomu, že sú nezávislé, tak <a href="https://bookdown.org/lukas_laffe
 <p>Ilustratívny príklad s dinosaurom, kedy korelácia nedobre popisuje mieru závislosti, lebo závislosť nie je lineárna <a href="https://bookdown.org/lukas_laffers/pas1/cov.html#miera-závislosti">je tu</a>.</p>
 <p>Tu je Rkový kód, ktorý generuje dvojice dát s rôznymi závislosťami
 Takto vyzerá realizácia 100 náhodných vektorov <span class="math inline">\((X,Y)\)</span> s rôznymi koreláciami.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="suvis.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span>
-<span id="cb2-2"><a href="suvis.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="suvis.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
-<span id="cb2-4"><a href="suvis.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12922</span>)</span>
-<span id="cb2-5"><a href="suvis.html#cb2-5" aria-hidden="true" tabindex="-1"></a>rho <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.9</span>,<span class="sc">-</span><span class="fl">0.7</span>,<span class="sc">-</span><span class="fl">0.6</span>,<span class="sc">-</span><span class="fl">0.2</span>,<span class="sc">-</span><span class="fl">0.1</span>, <span class="dv">0</span>, <span class="fl">0.15</span>,<span class="fl">0.3</span>,<span class="fl">0.4</span>, <span class="fl">0.6</span>,<span class="fl">0.8</span>,<span class="fl">0.99</span>)</span>
-<span id="cb2-6"><a href="suvis.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (iRho <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(rho)){</span>
-<span id="cb2-7"><a href="suvis.html#cb2-7" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(<span class="dv">100</span>,<span class="at">sigma=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,rho[iRho],rho[iRho],<span class="dv">1</span>),<span class="at">nrow=</span><span class="dv">2</span>))</span>
-<span id="cb2-8"><a href="suvis.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x[,<span class="dv">1</span>],x[,<span class="dv">2</span>],<span class="at">main=</span><span class="fu">paste</span>(<span class="st">&quot;Korelácia =&quot;</span>,rho[iRho]),<span class="at">xlab=</span><span class="st">&quot;X&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Y&quot;</span>)</span>
-<span id="cb2-9"><a href="suvis.html#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="suvis.html#cb2-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb2-2"><a href="suvis.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="suvis.html#cb2-3" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
+<span id="cb2-4"><a href="suvis.html#cb2-4" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12922</span>)</span>
+<span id="cb2-5"><a href="suvis.html#cb2-5" tabindex="-1"></a>rho <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.9</span>,<span class="sc">-</span><span class="fl">0.7</span>,<span class="sc">-</span><span class="fl">0.6</span>,<span class="sc">-</span><span class="fl">0.2</span>,<span class="sc">-</span><span class="fl">0.1</span>, <span class="dv">0</span>, <span class="fl">0.15</span>,<span class="fl">0.3</span>,<span class="fl">0.4</span>, <span class="fl">0.6</span>,<span class="fl">0.8</span>,<span class="fl">0.99</span>)</span>
+<span id="cb2-6"><a href="suvis.html#cb2-6" tabindex="-1"></a><span class="cf">for</span> (iRho <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(rho)){</span>
+<span id="cb2-7"><a href="suvis.html#cb2-7" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(<span class="dv">100</span>,<span class="at">sigma=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,rho[iRho],rho[iRho],<span class="dv">1</span>),<span class="at">nrow=</span><span class="dv">2</span>))</span>
+<span id="cb2-8"><a href="suvis.html#cb2-8" tabindex="-1"></a>  <span class="fu">plot</span>(x[,<span class="dv">1</span>],x[,<span class="dv">2</span>],<span class="at">main=</span><span class="fu">paste</span>(<span class="st">&quot;Korelácia =&quot;</span>,rho[iRho]),<span class="at">xlab=</span><span class="st">&quot;X&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Y&quot;</span>)</span>
+<span id="cb2-9"><a href="suvis.html#cb2-9" tabindex="-1"></a>}</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/depen-par-1.png" width="672" /><img src="PaS2bookdown_files/figure-html/depen-par-2.png" width="672" /></p>
 <p>Korelačná štruktúra náhodného vektora <span class="math inline">\(X\)</span> je popísaná <strong>korelačnou maticou</strong> <span class="math inline">\(\text{Corr}[X]\)</span>, ktorej <span class="math inline">\(i,j\)</span>-ty prvok je daný <span class="math inline">\(\text{Corr}[X_i,X_j]\)</span>:</p>
 <p><span class="math display">\[{\small \text{Corr}[X] = \begin{pmatrix}
@@ -492,51 +495,51 @@ Takto vyzerá realizácia 100 náhodných vektorov <span class="math inline">\((
 </ul>
 <div class="example">
 <p><span id="exm:unlabeled-div-2" class="example"><strong>Príklad 5.2  (Filmy) </strong></span>Pozrime sa na korelácie rôznych premenných náhodnej podvzorky filmov z knižnice <code>ggplot2movies</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="suvis.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
-<span id="cb3-2"><a href="suvis.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="suvis.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">224</span>)</span>
-<span id="cb3-4"><a href="suvis.html#cb3-4" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;year&quot;</span>,<span class="st">&quot;length&quot;</span>,<span class="st">&quot;budget&quot;</span>,<span class="st">&quot;rating&quot;</span>,<span class="st">&quot;votes&quot;</span>)</span>
-<span id="cb3-5"><a href="suvis.html#cb3-5" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(movies)[<span class="dv">1</span>],<span class="dv">1000</span>)</span>
-<span id="cb3-6"><a href="suvis.html#cb3-6" aria-hidden="true" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> movies[ind,vars]</span>
-<span id="cb3-7"><a href="suvis.html#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="suvis.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(data_sam)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="suvis.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
+<span id="cb3-2"><a href="suvis.html#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="suvis.html#cb3-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">224</span>)</span>
+<span id="cb3-4"><a href="suvis.html#cb3-4" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;year&quot;</span>,<span class="st">&quot;length&quot;</span>,<span class="st">&quot;budget&quot;</span>,<span class="st">&quot;rating&quot;</span>,<span class="st">&quot;votes&quot;</span>)</span>
+<span id="cb3-5"><a href="suvis.html#cb3-5" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(movies)[<span class="dv">1</span>],<span class="dv">1000</span>)</span>
+<span id="cb3-6"><a href="suvis.html#cb3-6" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> movies[ind,vars]</span>
+<span id="cb3-7"><a href="suvis.html#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="suvis.html#cb3-8" tabindex="-1"></a><span class="fu">pairs</span>(data_sam)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/depen-movies-1.png" width="672" /></p>
 <p>Alebo krajší párový graf s využitím knižnice <code>GGally</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="suvis.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb4-2"><a href="suvis.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="suvis.html#cb4-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb4-2"><a href="suvis.html#cb4-2" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code></pre></div>
 <pre><code>## Loading required package: ggplot2</code></pre>
 <pre><code>## Registered S3 method overwritten by &#39;GGally&#39;:
 ##   method from   
 ##   +.gg   ggplot2</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="suvis.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(data_sam)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="suvis.html#cb7-1" tabindex="-1"></a><span class="fu">ggpairs</span>(data_sam)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/depen-ggally-1.png" width="672" />
 Korelačné matice sa dajú <a href="https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html">rôzne zobraziť</a>, aby odkomunikovali súvzťažnosť jednotlivých premenných. Tu sú nejaké príklady:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="suvis.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span>
-<span id="cb8-2"><a href="suvis.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
-<span id="cb8-3"><a href="suvis.html#cb8-3" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(data_sam,<span class="at">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
-<span id="cb8-4"><a href="suvis.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix)</span>
-<span id="cb8-5"><a href="suvis.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">&#39;color&#39;</span>, <span class="at">order =</span> <span class="st">&#39;alphabet&#39;</span>)</span>
-<span id="cb8-6"><a href="suvis.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">&#39;shade&#39;</span>, <span class="at">order =</span> <span class="st">&#39;AOE&#39;</span>, <span class="at">diag =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb8-7"><a href="suvis.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">&#39;ellipse&#39;</span>, <span class="at">order =</span> <span class="st">&#39;AOE&#39;</span>, <span class="at">type =</span> <span class="st">&#39;upper&#39;</span>)</span>
-<span id="cb8-8"><a href="suvis.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(cor_matrix, <span class="at">order =</span> <span class="st">&#39;AOE&#39;</span>)</span>
-<span id="cb8-9"><a href="suvis.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(cor_matrix, <span class="at">lower =</span> <span class="st">&#39;shade&#39;</span>, <span class="at">upper =</span> <span class="st">&#39;pie&#39;</span>, <span class="at">order =</span> <span class="st">&#39;hclust&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="suvis.html#cb8-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb8-2"><a href="suvis.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb8-3"><a href="suvis.html#cb8-3" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(data_sam,<span class="at">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
+<span id="cb8-4"><a href="suvis.html#cb8-4" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix)</span>
+<span id="cb8-5"><a href="suvis.html#cb8-5" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">&#39;color&#39;</span>, <span class="at">order =</span> <span class="st">&#39;alphabet&#39;</span>)</span>
+<span id="cb8-6"><a href="suvis.html#cb8-6" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">&#39;shade&#39;</span>, <span class="at">order =</span> <span class="st">&#39;AOE&#39;</span>, <span class="at">diag =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-7"><a href="suvis.html#cb8-7" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">&#39;ellipse&#39;</span>, <span class="at">order =</span> <span class="st">&#39;AOE&#39;</span>, <span class="at">type =</span> <span class="st">&#39;upper&#39;</span>)</span>
+<span id="cb8-8"><a href="suvis.html#cb8-8" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(cor_matrix, <span class="at">order =</span> <span class="st">&#39;AOE&#39;</span>)</span>
+<span id="cb8-9"><a href="suvis.html#cb8-9" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(cor_matrix, <span class="at">lower =</span> <span class="st">&#39;shade&#39;</span>, <span class="at">upper =</span> <span class="st">&#39;pie&#39;</span>, <span class="at">order =</span> <span class="st">&#39;hclust&#39;</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/depen-corr-1.png" width="672" /></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-3" class="example"><strong>Príklad 5.3  (Perfektne kolineárne premenné) </strong></span>Tu je situácia, keď je jedna premenná priamo lineárnou transformáciou druhej. Konkrétne <span class="math inline">\(X_2 = 2-3X_3\)</span></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="suvis.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">232</span>)</span>
-<span id="cb9-2"><a href="suvis.html#cb9-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">20</span>,<span class="dv">1</span>)</span>
-<span id="cb9-3"><a href="suvis.html#cb9-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">30</span>,<span class="dv">2</span>)</span>
-<span id="cb9-4"><a href="suvis.html#cb9-4" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2 <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb9-5"><a href="suvis.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cbind</span>(x1,x2,x3))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="suvis.html#cb9-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">232</span>)</span>
+<span id="cb9-2"><a href="suvis.html#cb9-2" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">20</span>,<span class="dv">1</span>)</span>
+<span id="cb9-3"><a href="suvis.html#cb9-3" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">30</span>,<span class="dv">2</span>)</span>
+<span id="cb9-4"><a href="suvis.html#cb9-4" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2 <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb9-5"><a href="suvis.html#cb9-5" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cbind</span>(x1,x2,x3))</span></code></pre></div>
 <pre><code>##            x1         x2         x3
 ## x1  1.0000000 -0.1118414  0.1118414
 ## x2 -0.1118414  1.0000000 -1.0000000
 ## x3  0.1118414 -1.0000000  1.0000000</code></pre>
 <p>Tu vidíme, že <span class="math inline">\(\text{Corr}[X_1,X_2]=-1.\)</span></p>
 <p>Teraz nech <span class="math inline">\(X_2 = 2-3X_3^{1.05},\)</span> takže závislosť medzi <span class="math inline">\(X_2\)</span> a <span class="math inline">\(X_3\)</span> je “skoro” lineárna.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="suvis.html#cb11-1" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">=</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2<span class="sc">^</span>{<span class="fl">1.1</span>} <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb11-2"><a href="suvis.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cbind</span>(x1,x2,x3))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="suvis.html#cb11-1" tabindex="-1"></a>x3 <span class="ot">=</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2<span class="sc">^</span>{<span class="fl">1.1</span>} <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb11-2"><a href="suvis.html#cb11-2" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cbind</span>(x1,x2,x3))</span></code></pre></div>
 <pre><code>##            x1         x2         x3
 ## x1  1.0000000 -0.1118414  0.1118155
 ## x2 -0.1118414  1.0000000 -0.9999870
@@ -592,7 +595,7 @@ Obrázok 5.2: (zdroj: www.pixabay.com)
 <p><a href="https://www.dropbox.com/scl/fi/t0rb4nxr3p6t74ldlncfe/20231012-labs05.R?rlkey=p5863jc8pfwxd9k63pvzsztrv&amp;dl=0">R súbor z cvičení zo 19.10.2023</a></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-7" class="exercise"><strong>Cvičenie 5.1  </strong></span>Pozrite sa na korelačnú štruktúru premenných v nasledovnom dasete o autách.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="suvis.html#cb13-1" aria-hidden="true" tabindex="-1"></a>data_car <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;http://www.r-exercises.com/wp-content/uploads/2017/04/auto.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="suvis.html#cb13-1" tabindex="-1"></a>data_car <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;http://www.r-exercises.com/wp-content/uploads/2017/04/auto.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-8" class="exercise"><strong>Cvičenie 5.2  </strong></span>Pomocou simulácie overte vzťah <span class="math inline">\(\text{Var}[a^T X] = a^T\text{Var}[X]a\)</span> pre nejakú voľbu trojrozmerného náhodného vektora <span class="math inline">\(X\)</span>, ktorý vygenerujte s viacrozmerného normálneho rozdelenia pomocou funkcie <code>rmvnorm</code> z knižnice <code>mvtnorm</code>. Vyskúšajte rôzne trojrozmerné vektory <span class="math inline">\(a\)</span>.</p>
