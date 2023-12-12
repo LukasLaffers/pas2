@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2023-12-04" />
+<meta name="date" content="2023-12-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -269,6 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.10" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.10</b> Zhrnutie</a></li>
 <li class="chapter" data-level="8.11" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#cvičenia-7"><i class="fa fa-check"></i><b>8.11</b> Cvičenia</a></li>
+<li class="chapter" data-level="8.12" data-path="úvod-do-lineárnej-regresie.html"><a href="úvod-do-lineárnej-regresie.html#domáca-úloha-4"><i class="fa fa-check"></i><b>8.12</b> Domáca úloha 4</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="komunikácia-výsledkov.html"><a href="komunikácia-výsledkov.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
 <ul>
@@ -305,16 +306,16 @@ Pozorujeme pozitívnu závislosť, čo nie je prekvapivé. Miera ich lineárnej 
 Nie je to úplne nemysliteľné ale keď sa zahľadím na dáta spolu s touto modrou čiarou, tak vidíme, že fituje len nedobre. Ak by sme si mysleli, že nepripravený študent uhádne 50% na teste a každá hodina štúdia navýši očakávaný výsledok o 0.8 percentuálneho bodu, potom by to vyzeralo nasledovne:
 <img src="PaS2bookdown_files/figure-html/reg-4-1.png" width="672" />
 Táto priamka oveľa lepšie fituje dáta. Avšak asi by sme potrebovali nejaký systematickejší spôsob ako zvoliť tú priamku, ktorá najlepšie fituje dáta. Slovo “najlepšie” implikuje, že potrebujeme mať <strong>merateľné kritérium</strong>, ktoré bude posudzovať kvalitu fitu. Jedným takýmto kritériom je napríklad suma štovrcov vertikálnych vzdialeností.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="úvod-do-lineárnej-regresie.html#cb2-1" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore)</span>
-<span id="cb2-2"><a href="úvod-do-lineárnej-regresie.html#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="úvod-do-lineárnej-regresie.html#cb2-3" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> hoursLearned)</span>
-<span id="cb2-4"><a href="úvod-do-lineárnej-regresie.html#cb2-4" tabindex="-1"></a><span class="co">#summary(lmod)</span></span>
-<span id="cb2-5"><a href="úvod-do-lineárnej-regresie.html#cb2-5" tabindex="-1"></a>beta <span class="ot">&lt;-</span> lmod<span class="sc">$</span>coeff</span>
-<span id="cb2-6"><a href="úvod-do-lineárnej-regresie.html#cb2-6" tabindex="-1"></a>predictedScore <span class="ot">&lt;-</span> beta[<span class="dv">1</span>] <span class="sc">+</span> beta[<span class="dv">2</span>]<span class="sc">*</span>hoursLearned</span>
-<span id="cb2-7"><a href="úvod-do-lineárnej-regresie.html#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="úvod-do-lineárnej-regresie.html#cb2-8" tabindex="-1"></a><span class="fu">lines</span>(hoursLearned, predictedScore)</span>
-<span id="cb2-9"><a href="úvod-do-lineárnej-regresie.html#cb2-9" tabindex="-1"></a><span class="fu">segments</span>(hoursLearned, predictedScore,hoursLearned,testScore)</span>
-<span id="cb2-10"><a href="úvod-do-lineárnej-regresie.html#cb2-10" tabindex="-1"></a><span class="fu">points</span>(hoursLearned, predictedScore, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="úvod-do-lineárnej-regresie.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore)</span>
+<span id="cb2-2"><a href="úvod-do-lineárnej-regresie.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="úvod-do-lineárnej-regresie.html#cb2-3" aria-hidden="true" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> hoursLearned)</span>
+<span id="cb2-4"><a href="úvod-do-lineárnej-regresie.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(lmod)</span></span>
+<span id="cb2-5"><a href="úvod-do-lineárnej-regresie.html#cb2-5" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> lmod<span class="sc">$</span>coeff</span>
+<span id="cb2-6"><a href="úvod-do-lineárnej-regresie.html#cb2-6" aria-hidden="true" tabindex="-1"></a>predictedScore <span class="ot">&lt;-</span> beta[<span class="dv">1</span>] <span class="sc">+</span> beta[<span class="dv">2</span>]<span class="sc">*</span>hoursLearned</span>
+<span id="cb2-7"><a href="úvod-do-lineárnej-regresie.html#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="úvod-do-lineárnej-regresie.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(hoursLearned, predictedScore)</span>
+<span id="cb2-9"><a href="úvod-do-lineárnej-regresie.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(hoursLearned, predictedScore,hoursLearned,testScore)</span>
+<span id="cb2-10"><a href="úvod-do-lineárnej-regresie.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(hoursLearned, predictedScore, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-5-1.png" width="672" />
 Spomedzi všetkých možných priamiek, je práve táto ktorá minimializuje sumu štvorcov vertikálnych výchyliek. Budeme používať nasledovné značenie:</p>
 <ul>
@@ -413,19 +414,19 @@ Diagonálne elementy <span class="math inline">\(2 \times 2\)</span> matice <spa
 <div id="ako-na-to" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Ako na to<a href="úvod-do-lineárnej-regresie.html#ako-na-to" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Čiaru minimalizujúcu fit v zmysle najmenších štvorcov odchýlok dostaneme aj použitím funkcie <code>geom_smooth</code> možnosťou <code>method="lm"</code> a <code>formula = "y~x"</code> ako je uvedené nižšie.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="úvod-do-lineárnej-regresie.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="úvod-do-lineárnej-regresie.html#cb3-2" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">hours =</span> hoursLearned, </span>
-<span id="cb3-3"><a href="úvod-do-lineárnej-regresie.html#cb3-3" tabindex="-1"></a>                 <span class="at">score =</span> testScore)</span>
-<span id="cb3-4"><a href="úvod-do-lineárnej-regresie.html#cb3-4" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="úvod-do-lineárnej-regresie.html#cb3-5" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>hours,<span class="at">y=</span>score)) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="úvod-do-lineárnej-regresie.html#cb3-6" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb3-7"><a href="úvod-do-lineárnej-regresie.html#cb3-7" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,</span>
-<span id="cb3-8"><a href="úvod-do-lineárnej-regresie.html#cb3-8" tabindex="-1"></a>              <span class="at">formula =</span> <span class="st">&quot;y~x&quot;</span>,</span>
-<span id="cb3-9"><a href="úvod-do-lineárnej-regresie.html#cb3-9" tabindex="-1"></a>              <span class="at">se=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="úvod-do-lineárnej-regresie.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="úvod-do-lineárnej-regresie.html#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">hours =</span> hoursLearned, </span>
+<span id="cb3-3"><a href="úvod-do-lineárnej-regresie.html#cb3-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">score =</span> testScore)</span>
+<span id="cb3-4"><a href="úvod-do-lineárnej-regresie.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="úvod-do-lineárnej-regresie.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>hours,<span class="at">y=</span>score)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="úvod-do-lineárnej-regresie.html#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb3-7"><a href="úvod-do-lineárnej-regresie.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,</span>
+<span id="cb3-8"><a href="úvod-do-lineárnej-regresie.html#cb3-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> <span class="st">&quot;y~x&quot;</span>,</span>
+<span id="cb3-9"><a href="úvod-do-lineárnej-regresie.html#cb3-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">se=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-8-1.png" width="672" /></p>
 <p>Ak chceme detailné informácie o krivke, použijeme funkciu <code>lm</code> a <code>summary</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="úvod-do-lineárnej-regresie.html#cb4-1" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> hoursLearned)</span>
-<span id="cb4-2"><a href="úvod-do-lineárnej-regresie.html#cb4-2" tabindex="-1"></a><span class="fu">summary</span>(lmod)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="úvod-do-lineárnej-regresie.html#cb4-1" aria-hidden="true" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> hoursLearned)</span>
+<span id="cb4-2"><a href="úvod-do-lineárnej-regresie.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmod)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = testScore ~ hoursLearned)
@@ -529,19 +530,19 @@ Obrázok 8.7: Konfidenčné a predikčné intervaly.
 </p>
 </div>
 <p>Predikčné intervaly nie sú v <code>ggplot2</code> natívne, preto si ich musíme dorobiť mechanicky.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="úvod-do-lineárnej-regresie.html#cb6-1" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> hours, <span class="at">data=</span>df)</span>
-<span id="cb6-2"><a href="úvod-do-lineárnej-regresie.html#cb6-2" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="úvod-do-lineárnej-regresie.html#cb6-3" tabindex="-1"></a>pi95 <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmod, <span class="at">interval=</span><span class="st">&quot;prediction&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="úvod-do-lineárnej-regresie.html#cb6-1" aria-hidden="true" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> hours, <span class="at">data=</span>df)</span>
+<span id="cb6-2"><a href="úvod-do-lineárnej-regresie.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="úvod-do-lineárnej-regresie.html#cb6-3" aria-hidden="true" tabindex="-1"></a>pi95 <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmod, <span class="at">interval=</span><span class="st">&quot;prediction&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in predict.lm(lmod, interval = &quot;prediction&quot;): predictions on current data refer to _future_ responses</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="úvod-do-lineárnej-regresie.html#cb8-1" tabindex="-1"></a>df2      <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df, pi95)</span>
-<span id="cb8-2"><a href="úvod-do-lineárnej-regresie.html#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="úvod-do-lineárnej-regresie.html#cb8-3" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df2, <span class="fu">aes</span>(<span class="at">x=</span>hours,<span class="at">y=</span>score)) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="úvod-do-lineárnej-regresie.html#cb8-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb8-5"><a href="úvod-do-lineárnej-regresie.html#cb8-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,</span>
-<span id="cb8-6"><a href="úvod-do-lineárnej-regresie.html#cb8-6" tabindex="-1"></a>              <span class="at">formula =</span> <span class="st">&quot;y~x&quot;</span>,</span>
-<span id="cb8-7"><a href="úvod-do-lineárnej-regresie.html#cb8-7" tabindex="-1"></a>              <span class="at">se=</span><span class="cn">TRUE</span>) <span class="sc">+</span> </span>
-<span id="cb8-8"><a href="úvod-do-lineárnej-regresie.html#cb8-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>lwr), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>)<span class="sc">+</span></span>
-<span id="cb8-9"><a href="úvod-do-lineárnej-regresie.html#cb8-9" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>upr), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="úvod-do-lineárnej-regresie.html#cb8-1" aria-hidden="true" tabindex="-1"></a>df2      <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df, pi95)</span>
+<span id="cb8-2"><a href="úvod-do-lineárnej-regresie.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="úvod-do-lineárnej-regresie.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df2, <span class="fu">aes</span>(<span class="at">x=</span>hours,<span class="at">y=</span>score)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="úvod-do-lineárnej-regresie.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb8-5"><a href="úvod-do-lineárnej-regresie.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,</span>
+<span id="cb8-6"><a href="úvod-do-lineárnej-regresie.html#cb8-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> <span class="st">&quot;y~x&quot;</span>,</span>
+<span id="cb8-7"><a href="úvod-do-lineárnej-regresie.html#cb8-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">se=</span><span class="cn">TRUE</span>) <span class="sc">+</span> </span>
+<span id="cb8-8"><a href="úvod-do-lineárnej-regresie.html#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>lwr), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>)<span class="sc">+</span></span>
+<span id="cb8-9"><a href="úvod-do-lineárnej-regresie.html#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>upr), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-15-1.png" width="672" /></p>
 </div>
 <div id="viacrozmerná-lineárna-regresia" class="section level2 hasAnchor" number="8.7">
@@ -568,10 +569,10 @@ alebo skrátene len
 <p>Preto bude zápis odhadu minimalizujúceho súčet štvorcov odchýlok v maticovom zápise rovnaký ako predtým:</p>
 <p><span class="math display">\[\hat \beta = (X^T X)^{-1} X^T y\]</span>
 Demonštrujeme si to na príklade. Chceli by sme vysvetlovať tržby na základe objemu peňazí investovaného do rôzneho typu reklamy (facebook, youtube, noviny).</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="úvod-do-lineárnej-regresie.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(datarium)</span>
-<span id="cb9-2"><a href="úvod-do-lineárnej-regresie.html#cb9-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;marketing&quot;</span>, <span class="at">package =</span> <span class="st">&quot;datarium&quot;</span>)</span>
-<span id="cb9-3"><a href="úvod-do-lineárnej-regresie.html#cb9-3" tabindex="-1"></a><span class="co">#let us try to explain sales with ads on both youtube and facebook</span></span>
-<span id="cb9-4"><a href="úvod-do-lineárnej-regresie.html#cb9-4" tabindex="-1"></a><span class="fu">summary</span>(marketing)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="úvod-do-lineárnej-regresie.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datarium)</span>
+<span id="cb9-2"><a href="úvod-do-lineárnej-regresie.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;marketing&quot;</span>, <span class="at">package =</span> <span class="st">&quot;datarium&quot;</span>)</span>
+<span id="cb9-3"><a href="úvod-do-lineárnej-regresie.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#let us try to explain sales with ads on both youtube and facebook</span></span>
+<span id="cb9-4"><a href="úvod-do-lineárnej-regresie.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(marketing)</span></code></pre></div>
 <pre><code>##     youtube          facebook       newspaper          sales      
 ##  Min.   :  0.84   Min.   : 0.00   Min.   :  0.36   Min.   : 1.92  
 ##  1st Qu.: 89.25   1st Qu.:11.97   1st Qu.: 15.30   1st Qu.:12.45  
@@ -579,8 +580,8 @@ Demonštrujeme si to na príklade. Chceli by sme vysvetlovať tržby na základe
 ##  Mean   :176.45   Mean   :27.92   Mean   : 36.66   Mean   :16.83  
 ##  3rd Qu.:262.59   3rd Qu.:43.83   3rd Qu.: 54.12   3rd Qu.:20.88  
 ##  Max.   :355.68   Max.   :59.52   Max.   :136.80   Max.   :32.40</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="úvod-do-lineárnej-regresie.html#cb11-1" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube<span class="sc">+</span>facebook <span class="sc">+</span> newspaper,<span class="at">data=</span>marketing)</span>
-<span id="cb11-2"><a href="úvod-do-lineárnej-regresie.html#cb11-2" tabindex="-1"></a><span class="fu">summary</span>(lmod)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="úvod-do-lineárnej-regresie.html#cb11-1" aria-hidden="true" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube<span class="sc">+</span>facebook <span class="sc">+</span> newspaper,<span class="at">data=</span>marketing)</span>
+<span id="cb11-2"><a href="úvod-do-lineárnej-regresie.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmod)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = sales ~ youtube + facebook + newspaper, data = marketing)
@@ -602,21 +603,21 @@ Demonštrujeme si to na príklade. Chceli by sme vysvetlovať tržby na základe
 ## Multiple R-squared:  0.8972, Adjusted R-squared:  0.8956 
 ## F-statistic: 570.3 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Môžeme si všimnúť, že tržby sú pozitívne asociované s nákladami na reklamu na Youtube a Facebooku a príslušné koeficienty sú štatisticky významné. Reklama v novinách je len veľmi málo asociovaná s tržbami, dokonca negatívne ale jej koeficient nie je štatisticky významný. A táto negatívna parciálna asociácia je tam aj napriek tomu, že samotná korelácia medzi reklamou v novinách a tržbami je pozitívna. Môže to byť napríklad tým, že keď firmy inzerujú na Facebooku, tak inzerujú aj v novinách ale v skutočnosti je ta tá Facebooková reklama, ktorá zaberá. Každopádne teraz skúmame len asociácie. Nevieme, prečo v skutočnosti tržby rastú.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="úvod-do-lineárnej-regresie.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
-<span id="cb13-2"><a href="úvod-do-lineárnej-regresie.html#cb13-2" tabindex="-1"></a><span class="fu">corrplot</span>(<span class="fu">cor</span>(marketing), <span class="at">type =</span> <span class="st">&quot;upper&quot;</span>, <span class="at">order =</span> <span class="st">&quot;hclust&quot;</span>, </span>
-<span id="cb13-3"><a href="úvod-do-lineárnej-regresie.html#cb13-3" tabindex="-1"></a>         <span class="at">tl.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">tl.srt =</span> <span class="dv">45</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="úvod-do-lineárnej-regresie.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb13-2"><a href="úvod-do-lineárnej-regresie.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(<span class="fu">cor</span>(marketing), <span class="at">type =</span> <span class="st">&quot;upper&quot;</span>, <span class="at">order =</span> <span class="st">&quot;hclust&quot;</span>, </span>
+<span id="cb13-3"><a href="úvod-do-lineárnej-regresie.html#cb13-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">tl.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">tl.srt =</span> <span class="dv">45</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-18-1.png" width="672" /></p>
 <p>Teraz si zobrazme asociáciu medzi tržbami a štatisticky významými prediktormi (<code>youtube</code>, <code>facebook</code>), spolu s odhadnutou regresnou plochou.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="úvod-do-lineárnej-regresie.html#cb14-1" tabindex="-1"></a><span class="co"># we will follow https://rpubs.com/pjozefek/576206</span></span>
-<span id="cb14-2"><a href="úvod-do-lineárnej-regresie.html#cb14-2" tabindex="-1"></a><span class="co"># and modify it for our purposes</span></span>
-<span id="cb14-3"><a href="úvod-do-lineárnej-regresie.html#cb14-3" tabindex="-1"></a><span class="fu">attach</span>(marketing)</span>
-<span id="cb14-4"><a href="úvod-do-lineárnej-regresie.html#cb14-4" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="úvod-do-lineárnej-regresie.html#cb14-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> sales</span>
-<span id="cb14-6"><a href="úvod-do-lineárnej-regresie.html#cb14-6" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> facebook</span>
-<span id="cb14-7"><a href="úvod-do-lineárnej-regresie.html#cb14-7" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> youtube</span>
-<span id="cb14-8"><a href="úvod-do-lineárnej-regresie.html#cb14-8" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="úvod-do-lineárnej-regresie.html#cb14-9" tabindex="-1"></a>lmodM <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2)</span>
-<span id="cb14-10"><a href="úvod-do-lineárnej-regresie.html#cb14-10" tabindex="-1"></a><span class="fu">summary</span>(lmodM)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="úvod-do-lineárnej-regresie.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we will follow https://rpubs.com/pjozefek/576206</span></span>
+<span id="cb14-2"><a href="úvod-do-lineárnej-regresie.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and modify it for our purposes</span></span>
+<span id="cb14-3"><a href="úvod-do-lineárnej-regresie.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(marketing)</span>
+<span id="cb14-4"><a href="úvod-do-lineárnej-regresie.html#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="úvod-do-lineárnej-regresie.html#cb14-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> sales</span>
+<span id="cb14-6"><a href="úvod-do-lineárnej-regresie.html#cb14-6" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> facebook</span>
+<span id="cb14-7"><a href="úvod-do-lineárnej-regresie.html#cb14-7" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> youtube</span>
+<span id="cb14-8"><a href="úvod-do-lineárnej-regresie.html#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="úvod-do-lineárnej-regresie.html#cb14-9" aria-hidden="true" tabindex="-1"></a>lmodM <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2)</span>
+<span id="cb14-10"><a href="úvod-do-lineárnej-regresie.html#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmodM)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = y ~ x1 + x2)
@@ -636,38 +637,38 @@ Demonštrujeme si to na príklade. Chceli by sme vysvetlovať tržby na základe
 ## Residual standard error: 2.018 on 197 degrees of freedom
 ## Multiple R-squared:  0.8972, Adjusted R-squared:  0.8962 
 ## F-statistic: 859.6 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="úvod-do-lineárnej-regresie.html#cb16-1" tabindex="-1"></a><span class="fu">library</span>(plot3D)</span>
-<span id="cb16-2"><a href="úvod-do-lineárnej-regresie.html#cb16-2" tabindex="-1"></a>grid.lines <span class="ot">=</span> <span class="dv">20</span></span>
-<span id="cb16-3"><a href="úvod-do-lineárnej-regresie.html#cb16-3" tabindex="-1"></a>x1.pred <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x1), <span class="fu">max</span>(x1), <span class="at">length.out =</span> grid.lines)</span>
-<span id="cb16-4"><a href="úvod-do-lineárnej-regresie.html#cb16-4" tabindex="-1"></a>x2.pred <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x2), <span class="fu">max</span>(x2), <span class="at">length.out =</span> grid.lines)</span>
-<span id="cb16-5"><a href="úvod-do-lineárnej-regresie.html#cb16-5" tabindex="-1"></a>x1x2 <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>( <span class="at">x1 =</span> x1.pred, <span class="at">x2 =</span> x2.pred)</span>
-<span id="cb16-6"><a href="úvod-do-lineárnej-regresie.html#cb16-6" tabindex="-1"></a>y.pred <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">predict</span>(lmodM, <span class="at">newdata =</span> x1x2), </span>
-<span id="cb16-7"><a href="úvod-do-lineárnej-regresie.html#cb16-7" tabindex="-1"></a>                 <span class="at">nrow =</span> grid.lines, <span class="at">ncol =</span> grid.lines)</span>
-<span id="cb16-8"><a href="úvod-do-lineárnej-regresie.html#cb16-8" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="úvod-do-lineárnej-regresie.html#cb16-9" tabindex="-1"></a><span class="co"># create the fitted points for droplines to the surface</span></span>
-<span id="cb16-10"><a href="úvod-do-lineárnej-regresie.html#cb16-10" tabindex="-1"></a>fitpoints <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmodM)</span>
-<span id="cb16-11"><a href="úvod-do-lineárnej-regresie.html#cb16-11" tabindex="-1"></a></span>
-<span id="cb16-12"><a href="úvod-do-lineárnej-regresie.html#cb16-12" tabindex="-1"></a><span class="co"># scatter plot with regression plane</span></span>
-<span id="cb16-13"><a href="úvod-do-lineárnej-regresie.html#cb16-13" tabindex="-1"></a><span class="fu">scatter3D</span>(x1, x2, y, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="dv">1</span>,<span class="at">colvar =</span> <span class="cn">NULL</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, </span>
-<span id="cb16-14"><a href="úvod-do-lineárnej-regresie.html#cb16-14" tabindex="-1"></a>          <span class="at">theta =</span> <span class="sc">-</span><span class="dv">130</span>, <span class="at">phi =</span> <span class="dv">20</span>, <span class="at">bty=</span><span class="st">&quot;b&quot;</span>,</span>
-<span id="cb16-15"><a href="úvod-do-lineárnej-regresie.html#cb16-15" tabindex="-1"></a>          <span class="at">xlab =</span> <span class="st">&quot;youtube&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;facebook&quot;</span>, <span class="at">zlab =</span> <span class="st">&quot;sales&quot;</span>,  </span>
-<span id="cb16-16"><a href="úvod-do-lineárnej-regresie.html#cb16-16" tabindex="-1"></a>          <span class="at">surf =</span> <span class="fu">list</span>(<span class="at">x =</span> x1.pred, <span class="at">y =</span> x2.pred, <span class="at">z =</span> y.pred,  </span>
-<span id="cb16-17"><a href="úvod-do-lineárnej-regresie.html#cb16-17" tabindex="-1"></a>                      <span class="at">facets =</span> <span class="cn">TRUE</span>, <span class="at">fit =</span> fitpoints, </span>
-<span id="cb16-18"><a href="úvod-do-lineárnej-regresie.html#cb16-18" tabindex="-1"></a>                      <span class="at">col=</span><span class="fu">ramp.col</span> (<span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;dodgerblue3&quot;</span>,<span class="st">&quot;seagreen2&quot;</span>), </span>
-<span id="cb16-19"><a href="úvod-do-lineárnej-regresie.html#cb16-19" tabindex="-1"></a>                                    <span class="at">n =</span> <span class="dv">300</span>, <span class="at">alpha=</span><span class="fl">0.9</span>), <span class="at">border=</span><span class="st">&quot;black&quot;</span>), </span>
-<span id="cb16-20"><a href="úvod-do-lineárnej-regresie.html#cb16-20" tabindex="-1"></a>          <span class="at">main =</span> <span class="st">&quot;Marketing&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="úvod-do-lineárnej-regresie.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plot3D)</span>
+<span id="cb16-2"><a href="úvod-do-lineárnej-regresie.html#cb16-2" aria-hidden="true" tabindex="-1"></a>grid.lines <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb16-3"><a href="úvod-do-lineárnej-regresie.html#cb16-3" aria-hidden="true" tabindex="-1"></a>x1.pred <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x1), <span class="fu">max</span>(x1), <span class="at">length.out =</span> grid.lines)</span>
+<span id="cb16-4"><a href="úvod-do-lineárnej-regresie.html#cb16-4" aria-hidden="true" tabindex="-1"></a>x2.pred <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x2), <span class="fu">max</span>(x2), <span class="at">length.out =</span> grid.lines)</span>
+<span id="cb16-5"><a href="úvod-do-lineárnej-regresie.html#cb16-5" aria-hidden="true" tabindex="-1"></a>x1x2 <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>( <span class="at">x1 =</span> x1.pred, <span class="at">x2 =</span> x2.pred)</span>
+<span id="cb16-6"><a href="úvod-do-lineárnej-regresie.html#cb16-6" aria-hidden="true" tabindex="-1"></a>y.pred <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">predict</span>(lmodM, <span class="at">newdata =</span> x1x2), </span>
+<span id="cb16-7"><a href="úvod-do-lineárnej-regresie.html#cb16-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">nrow =</span> grid.lines, <span class="at">ncol =</span> grid.lines)</span>
+<span id="cb16-8"><a href="úvod-do-lineárnej-regresie.html#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="úvod-do-lineárnej-regresie.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># create the fitted points for droplines to the surface</span></span>
+<span id="cb16-10"><a href="úvod-do-lineárnej-regresie.html#cb16-10" aria-hidden="true" tabindex="-1"></a>fitpoints <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmodM)</span>
+<span id="cb16-11"><a href="úvod-do-lineárnej-regresie.html#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="úvod-do-lineárnej-regresie.html#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># scatter plot with regression plane</span></span>
+<span id="cb16-13"><a href="úvod-do-lineárnej-regresie.html#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter3D</span>(x1, x2, y, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="dv">1</span>,<span class="at">colvar =</span> <span class="cn">NULL</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, </span>
+<span id="cb16-14"><a href="úvod-do-lineárnej-regresie.html#cb16-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">theta =</span> <span class="sc">-</span><span class="dv">130</span>, <span class="at">phi =</span> <span class="dv">20</span>, <span class="at">bty=</span><span class="st">&quot;b&quot;</span>,</span>
+<span id="cb16-15"><a href="úvod-do-lineárnej-regresie.html#cb16-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">xlab =</span> <span class="st">&quot;youtube&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;facebook&quot;</span>, <span class="at">zlab =</span> <span class="st">&quot;sales&quot;</span>,  </span>
+<span id="cb16-16"><a href="úvod-do-lineárnej-regresie.html#cb16-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">surf =</span> <span class="fu">list</span>(<span class="at">x =</span> x1.pred, <span class="at">y =</span> x2.pred, <span class="at">z =</span> y.pred,  </span>
+<span id="cb16-17"><a href="úvod-do-lineárnej-regresie.html#cb16-17" aria-hidden="true" tabindex="-1"></a>                      <span class="at">facets =</span> <span class="cn">TRUE</span>, <span class="at">fit =</span> fitpoints, </span>
+<span id="cb16-18"><a href="úvod-do-lineárnej-regresie.html#cb16-18" aria-hidden="true" tabindex="-1"></a>                      <span class="at">col=</span><span class="fu">ramp.col</span> (<span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;dodgerblue3&quot;</span>,<span class="st">&quot;seagreen2&quot;</span>), </span>
+<span id="cb16-19"><a href="úvod-do-lineárnej-regresie.html#cb16-19" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">n =</span> <span class="dv">300</span>, <span class="at">alpha=</span><span class="fl">0.9</span>), <span class="at">border=</span><span class="st">&quot;black&quot;</span>), </span>
+<span id="cb16-20"><a href="úvod-do-lineárnej-regresie.html#cb16-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">main =</span> <span class="st">&quot;Marketing&quot;</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-19-1.png" width="672" />
 ## Nelineárne vzťahy a lineárna regresia</p>
 <p>Niekedy je závislosť medzi dvomi premennými zjavne nelineárna. Ak sa nazdávame, že by bola vhodne modelovaná kvadratickou funkciou, potom by sme chceli fitovať nasledovný model.</p>
 <p><span class="math display">\[y_i = \beta_0 + \beta_1 x_i + \beta_2 x^2_i + \epsilon_i,\]</span>
 Takýto model odhadneme nasledovne (dva spôsoby).</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="úvod-do-lineárnej-regresie.html#cb17-1" tabindex="-1"></a>marketing<span class="sc">$</span>youtube2 <span class="ot">&lt;-</span> (marketing<span class="sc">$</span>youtube)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb17-2"><a href="úvod-do-lineárnej-regresie.html#cb17-2" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="úvod-do-lineárnej-regresie.html#cb17-3" tabindex="-1"></a><span class="co">#lmodq &lt;- lm(sales ~ youtube + youtube2, data=marketing)</span></span>
-<span id="cb17-4"><a href="úvod-do-lineárnej-regresie.html#cb17-4" tabindex="-1"></a><span class="co">#summary(lmod)</span></span>
-<span id="cb17-5"><a href="úvod-do-lineárnej-regresie.html#cb17-5" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="úvod-do-lineárnej-regresie.html#cb17-6" tabindex="-1"></a>lmodq2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> <span class="fu">I</span>(youtube<span class="sc">^</span><span class="dv">2</span>), <span class="at">data=</span>marketing)</span>
-<span id="cb17-7"><a href="úvod-do-lineárnej-regresie.html#cb17-7" tabindex="-1"></a><span class="fu">summary</span>(lmodq2)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="úvod-do-lineárnej-regresie.html#cb17-1" aria-hidden="true" tabindex="-1"></a>marketing<span class="sc">$</span>youtube2 <span class="ot">&lt;-</span> (marketing<span class="sc">$</span>youtube)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb17-2"><a href="úvod-do-lineárnej-regresie.html#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="úvod-do-lineárnej-regresie.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#lmodq &lt;- lm(sales ~ youtube + youtube2, data=marketing)</span></span>
+<span id="cb17-4"><a href="úvod-do-lineárnej-regresie.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(lmod)</span></span>
+<span id="cb17-5"><a href="úvod-do-lineárnej-regresie.html#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="úvod-do-lineárnej-regresie.html#cb17-6" aria-hidden="true" tabindex="-1"></a>lmodq2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> <span class="fu">I</span>(youtube<span class="sc">^</span><span class="dv">2</span>), <span class="at">data=</span>marketing)</span>
+<span id="cb17-7"><a href="úvod-do-lineárnej-regresie.html#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmodq2)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = sales ~ youtube + I(youtube^2), data = marketing)
@@ -688,15 +689,15 @@ Takýto model odhadneme nasledovne (dva spôsoby).</p>
 ## Multiple R-squared:  0.619,  Adjusted R-squared:  0.6152 
 ## F-statistic: 160.1 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Zo sumárnej tabuľky vidime, že kvadratický člen má pridružený p-hodnotu tesne nad <span class="math inline">\(5\%\)</span>. Na tomto obrázku to môžeme porovnať vizuálne.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="úvod-do-lineárnej-regresie.html#cb19-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>marketing, <span class="fu">aes</span>(<span class="at">x=</span>youtube, <span class="at">y=</span>sales)) <span class="sc">+</span></span>
-<span id="cb19-2"><a href="úvod-do-lineárnej-regresie.html#cb19-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb19-3"><a href="úvod-do-lineárnej-regresie.html#cb19-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">formula=</span><span class="st">&quot;y ~ x&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb19-4"><a href="úvod-do-lineárnej-regresie.html#cb19-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">formula=</span><span class="st">&quot;y ~ x + I(x^2)&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="úvod-do-lineárnej-regresie.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>marketing, <span class="fu">aes</span>(<span class="at">x=</span>youtube, <span class="at">y=</span>sales)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="úvod-do-lineárnej-regresie.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb19-3"><a href="úvod-do-lineárnej-regresie.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">formula=</span><span class="st">&quot;y ~ x&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb19-4"><a href="úvod-do-lineárnej-regresie.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">formula=</span><span class="st">&quot;y ~ x + I(x^2)&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-21-1.png" width="672" /></p>
 <p>Teraz môžeme tieto myšlienky nakombinovať. Uvažujme, nech je závislosť v premennej <code>youtube</code> kvadratická a nech je v premennej <code>facebook</code> lineárna:</p>
 <p><span class="math display">\[sales_i = \beta_0 + \beta_1 youtube_i + \beta_2 youtube^2_i + \beta_3 facebook_i  + \epsilon_i,\]</span></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="úvod-do-lineárnej-regresie.html#cb20-1" tabindex="-1"></a>lmod_yt2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> <span class="fu">I</span>(youtube<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> facebook, <span class="at">data=</span>marketing)</span>
-<span id="cb20-2"><a href="úvod-do-lineárnej-regresie.html#cb20-2" tabindex="-1"></a><span class="fu">summary</span>(lmod_yt2)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="úvod-do-lineárnej-regresie.html#cb20-1" aria-hidden="true" tabindex="-1"></a>lmod_yt2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> <span class="fu">I</span>(youtube<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> facebook, <span class="at">data=</span>marketing)</span>
+<span id="cb20-2"><a href="úvod-do-lineárnej-regresie.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmod_yt2)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = sales ~ youtube + I(youtube^2) + facebook, data = marketing)
@@ -740,13 +741,13 @@ Obrázok 8.9: Porovnanie zložitejšieho a jednoduchšieho modelu.
 </p>
 </div>
 <p>Test toho, či je podmodel korektný, je implementovaný nasledovne:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="úvod-do-lineárnej-regresie.html#cb22-1" tabindex="-1"></a>lmod_full <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> <span class="fu">I</span>(youtube<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> facebook <span class="sc">+</span> newspaper, <span class="at">data=</span>marketing)</span>
-<span id="cb22-2"><a href="úvod-do-lineárnej-regresie.html#cb22-2" tabindex="-1"></a>lmod_rest <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> facebook, <span class="at">data=</span>marketing)</span>
-<span id="cb22-3"><a href="úvod-do-lineárnej-regresie.html#cb22-3" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="úvod-do-lineárnej-regresie.html#cb22-4" tabindex="-1"></a>RSS_rest <span class="ot">&lt;-</span> <span class="fu">sum</span>(lmod_rest<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb22-5"><a href="úvod-do-lineárnej-regresie.html#cb22-5" tabindex="-1"></a>RSS_full <span class="ot">&lt;-</span> <span class="fu">sum</span>(lmod_full<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb22-6"><a href="úvod-do-lineárnej-regresie.html#cb22-6" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="úvod-do-lineárnej-regresie.html#cb22-7" tabindex="-1"></a><span class="fu">anova</span>(lmod_rest,lmod_full)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="úvod-do-lineárnej-regresie.html#cb22-1" aria-hidden="true" tabindex="-1"></a>lmod_full <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> <span class="fu">I</span>(youtube<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> facebook <span class="sc">+</span> newspaper, <span class="at">data=</span>marketing)</span>
+<span id="cb22-2"><a href="úvod-do-lineárnej-regresie.html#cb22-2" aria-hidden="true" tabindex="-1"></a>lmod_rest <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> facebook, <span class="at">data=</span>marketing)</span>
+<span id="cb22-3"><a href="úvod-do-lineárnej-regresie.html#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="úvod-do-lineárnej-regresie.html#cb22-4" aria-hidden="true" tabindex="-1"></a>RSS_rest <span class="ot">&lt;-</span> <span class="fu">sum</span>(lmod_rest<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb22-5"><a href="úvod-do-lineárnej-regresie.html#cb22-5" aria-hidden="true" tabindex="-1"></a>RSS_full <span class="ot">&lt;-</span> <span class="fu">sum</span>(lmod_full<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb22-6"><a href="úvod-do-lineárnej-regresie.html#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="úvod-do-lineárnej-regresie.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(lmod_rest,lmod_full)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Model 1: sales ~ youtube + facebook
@@ -757,25 +758,25 @@ Obrázok 8.9: Porovnanie zložitejšieho a jednoduchšieho modelu.
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Teraz tieto čísla zreprodukujeme mechanicky:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="úvod-do-lineárnej-regresie.html#cb24-1" tabindex="-1"></a><span class="co">#get F-statistic</span></span>
-<span id="cb24-2"><a href="úvod-do-lineárnej-regresie.html#cb24-2" tabindex="-1"></a><span class="co"># this tests null hypothesis H0:beta1=0</span></span>
-<span id="cb24-3"><a href="úvod-do-lineárnej-regresie.html#cb24-3" tabindex="-1"></a>(Fstat <span class="ot">&lt;-</span> ((RSS_rest <span class="sc">-</span> RSS_full)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">/</span> (RSS_full<span class="sc">/</span>(<span class="dv">200-5</span>)) ) </span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="úvod-do-lineárnej-regresie.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get F-statistic</span></span>
+<span id="cb24-2"><a href="úvod-do-lineárnej-regresie.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this tests null hypothesis H0:beta1=0</span></span>
+<span id="cb24-3"><a href="úvod-do-lineárnej-regresie.html#cb24-3" aria-hidden="true" tabindex="-1"></a>(Fstat <span class="ot">&lt;-</span> ((RSS_rest <span class="sc">-</span> RSS_full)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">/</span> (RSS_full<span class="sc">/</span>(<span class="dv">200-5</span>)) ) </span></code></pre></div>
 <pre><code>## [1] 22.84728</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="úvod-do-lineárnej-regresie.html#cb26-1" tabindex="-1"></a><span class="co">#corresponding p-value</span></span>
-<span id="cb26-2"><a href="úvod-do-lineárnej-regresie.html#cb26-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pf</span>(Fstat,<span class="at">df1=</span><span class="dv">2</span>,<span class="at">df2=</span><span class="dv">200-5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="úvod-do-lineárnej-regresie.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#corresponding p-value</span></span>
+<span id="cb26-2"><a href="úvod-do-lineárnej-regresie.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pf</span>(Fstat,<span class="at">df1=</span><span class="dv">2</span>,<span class="at">df2=</span><span class="dv">200-5</span>)</span></code></pre></div>
 <pre><code>## [1] 1.217338e-09</code></pre>
 <p>Tu sme testovali reštrikciu, či je kvadratický člen <code>youtube</code> nevýznamný a zároveň či je prediktor <code>newspaper</code> nevýznamný, teda či sú prislúchajúce koeficienty nulové.</p>
 </div>
 <div id="transformácie-a-interpretácia" class="section level2 hasAnchor" number="8.9">
 <h2><span class="header-section-number">8.9</span> Transformácie a interpretácia<a href="úvod-do-lineárnej-regresie.html#transformácie-a-interpretácia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>V niektorých prípadoch modelujeme namiesto samotnej premennej jej rast. Napríklad je asi uveriteľnejšie uvažovať, že vzdelanie môže pomôcť zvýšit mzdu <strong>proporcionálne</strong>. To znamená, že absolvovanie vysokej školy zvýši mzdu v priemere približne o 20% a nie o 300eur. Rozdiel medzi 1000eur a 1300eur je totiž výraznejší z praktického hľadiska ako z 3500eur na 3800eur. Na modelovanie rastu používame logaritmickú transformáciu. Všetko si to ukážeme na našom príklade so študentami a ich výkonom na teste.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="úvod-do-lineárnej-regresie.html#cb28-1" tabindex="-1"></a>hoursLearned <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">40</span>,<span class="dv">33</span>,<span class="dv">11</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="fl">13.5</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">30</span>,</span>
-<span id="cb28-2"><a href="úvod-do-lineárnej-regresie.html#cb28-2" tabindex="-1"></a>                  <span class="dv">6</span>,<span class="dv">22</span>,<span class="dv">45</span>,<span class="dv">20</span>,<span class="dv">11</span>,<span class="dv">22</span>,<span class="dv">40</span>,<span class="dv">29</span>,<span class="dv">47</span>,<span class="dv">9</span>)</span>
-<span id="cb28-3"><a href="úvod-do-lineárnej-regresie.html#cb28-3" tabindex="-1"></a>testScore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">81</span>, <span class="fl">95.5</span>, <span class="fl">63.5</span>, <span class="dv">71</span>, <span class="dv">59</span>, <span class="dv">59</span>, <span class="dv">57</span>, <span class="fl">60.5</span>, <span class="dv">79</span>,</span>
-<span id="cb28-4"><a href="úvod-do-lineárnej-regresie.html#cb28-4" tabindex="-1"></a>               <span class="dv">45</span>, <span class="dv">54</span>, <span class="dv">50</span>, <span class="dv">52</span>, <span class="dv">50</span>, <span class="dv">61</span>, <span class="dv">68</span>, <span class="dv">66</span>, <span class="dv">64</span>, <span class="dv">50</span>)</span>
-<span id="cb28-5"><a href="úvod-do-lineárnej-regresie.html#cb28-5" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">&quot;B&quot;</span>,<span class="dv">10</span>))</span>
-<span id="cb28-6"><a href="úvod-do-lineárnej-regresie.html#cb28-6" tabindex="-1"></a>gA <span class="ot">&lt;-</span> (group<span class="sc">==</span><span class="st">&quot;A&quot;</span>)<span class="sc">*</span><span class="dv">1</span></span>
-<span id="cb28-7"><a href="úvod-do-lineárnej-regresie.html#cb28-7" tabindex="-1"></a>gB <span class="ot">&lt;-</span> (group<span class="sc">==</span><span class="st">&quot;B&quot;</span>)<span class="sc">*</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="úvod-do-lineárnej-regresie.html#cb28-1" aria-hidden="true" tabindex="-1"></a>hoursLearned <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">40</span>,<span class="dv">33</span>,<span class="dv">11</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="fl">13.5</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">30</span>,</span>
+<span id="cb28-2"><a href="úvod-do-lineárnej-regresie.html#cb28-2" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">6</span>,<span class="dv">22</span>,<span class="dv">45</span>,<span class="dv">20</span>,<span class="dv">11</span>,<span class="dv">22</span>,<span class="dv">40</span>,<span class="dv">29</span>,<span class="dv">47</span>,<span class="dv">9</span>)</span>
+<span id="cb28-3"><a href="úvod-do-lineárnej-regresie.html#cb28-3" aria-hidden="true" tabindex="-1"></a>testScore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">81</span>, <span class="fl">95.5</span>, <span class="fl">63.5</span>, <span class="dv">71</span>, <span class="dv">59</span>, <span class="dv">59</span>, <span class="dv">57</span>, <span class="fl">60.5</span>, <span class="dv">79</span>,</span>
+<span id="cb28-4"><a href="úvod-do-lineárnej-regresie.html#cb28-4" aria-hidden="true" tabindex="-1"></a>               <span class="dv">45</span>, <span class="dv">54</span>, <span class="dv">50</span>, <span class="dv">52</span>, <span class="dv">50</span>, <span class="dv">61</span>, <span class="dv">68</span>, <span class="dv">66</span>, <span class="dv">64</span>, <span class="dv">50</span>)</span>
+<span id="cb28-5"><a href="úvod-do-lineárnej-regresie.html#cb28-5" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">&quot;B&quot;</span>,<span class="dv">10</span>))</span>
+<span id="cb28-6"><a href="úvod-do-lineárnej-regresie.html#cb28-6" aria-hidden="true" tabindex="-1"></a>gA <span class="ot">&lt;-</span> (group<span class="sc">==</span><span class="st">&quot;A&quot;</span>)<span class="sc">*</span><span class="dv">1</span></span>
+<span id="cb28-7"><a href="úvod-do-lineárnej-regresie.html#cb28-7" aria-hidden="true" tabindex="-1"></a>gB <span class="ot">&lt;-</span> (group<span class="sc">==</span><span class="st">&quot;B&quot;</span>)<span class="sc">*</span><span class="dv">1</span></span></code></pre></div>
 <p>Na konci každého modelu je korektná interpretácia. Budeme uvažovať štyri rôzne modely.</p>
 <ul>
 <li>Level-level model <span class="math inline">\(testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
@@ -787,9 +788,9 @@ Obrázok 8.9: Porovnanie zložitejšieho a jednoduchšieho modelu.
 <div id="level-level-model" class="section level3 hasAnchor" number="8.9.1">
 <h3><span class="header-section-number">8.9.1</span> Level-level model<a href="úvod-do-lineárnej-regresie.html#level-level-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[testScore_i = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\]</span></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="úvod-do-lineárnej-regresie.html#cb29-1" tabindex="-1"></a><span class="co">#level - level</span></span>
-<span id="cb29-2"><a href="úvod-do-lineárnej-regresie.html#cb29-2" tabindex="-1"></a>lmod_lv_lv <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> gA <span class="sc">+</span> hoursLearned)</span>
-<span id="cb29-3"><a href="úvod-do-lineárnej-regresie.html#cb29-3" tabindex="-1"></a><span class="fu">summary</span>(lmod_lv_lv)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="úvod-do-lineárnej-regresie.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#level - level</span></span>
+<span id="cb29-2"><a href="úvod-do-lineárnej-regresie.html#cb29-2" aria-hidden="true" tabindex="-1"></a>lmod_lv_lv <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> gA <span class="sc">+</span> hoursLearned)</span>
+<span id="cb29-3"><a href="úvod-do-lineárnej-regresie.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmod_lv_lv)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = testScore ~ gA + hoursLearned)
@@ -809,12 +810,12 @@ Obrázok 8.9: Porovnanie zložitejšieho a jednoduchšieho modelu.
 ## Residual standard error: 8.209 on 17 degrees of freedom
 ## Multiple R-squared:  0.6376, Adjusted R-squared:  0.595 
 ## F-statistic: 14.96 on 2 and 17 DF,  p-value: 0.0001789</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="úvod-do-lineárnej-regresie.html#cb31-1" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
-<span id="cb31-2"><a href="úvod-do-lineárnej-regresie.html#cb31-2" tabindex="-1"></a><span class="co"># 1hour additional learning is associated with an increase of </span></span>
-<span id="cb31-3"><a href="úvod-do-lineárnej-regresie.html#cb31-3" tabindex="-1"></a><span class="co"># test score by 0.65 points on average</span></span>
-<span id="cb31-4"><a href="úvod-do-lineárnej-regresie.html#cb31-4" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
-<span id="cb31-5"><a href="úvod-do-lineárnej-regresie.html#cb31-5" tabindex="-1"></a><span class="fu">abline</span>(lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">1</span>],lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">3</span>])</span>
-<span id="cb31-6"><a href="úvod-do-lineárnej-regresie.html#cb31-6" tabindex="-1"></a><span class="fu">abline</span>(lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">1</span>]<span class="sc">+</span>lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">2</span>],lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">3</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="úvod-do-lineárnej-regresie.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
+<span id="cb31-2"><a href="úvod-do-lineárnej-regresie.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1hour additional learning is associated with an increase of </span></span>
+<span id="cb31-3"><a href="úvod-do-lineárnej-regresie.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># test score by 0.65 points on average</span></span>
+<span id="cb31-4"><a href="úvod-do-lineárnej-regresie.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
+<span id="cb31-5"><a href="úvod-do-lineárnej-regresie.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">1</span>],lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">3</span>])</span>
+<span id="cb31-6"><a href="úvod-do-lineárnej-regresie.html#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">1</span>]<span class="sc">+</span>lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">2</span>],lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">3</span>])</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-27-1.png" width="672" /></p>
 <p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je každá ďaľšia hodina učenia asociovaná s navýšením skóre v priemere o <span class="math inline">\(0.65\)</span>.</p>
 <p><span class="math display">\[\begin{eqnarray*}
@@ -837,9 +838,9 @@ y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
 <div id="log-level-model" class="section level3 hasAnchor" number="8.9.2">
 <h3><span class="header-section-number">8.9.2</span> Log-level model<a href="úvod-do-lineárnej-regresie.html#log-level-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\log(testScore_i) = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\]</span></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="úvod-do-lineárnej-regresie.html#cb32-1" tabindex="-1"></a><span class="co">#log - level</span></span>
-<span id="cb32-2"><a href="úvod-do-lineárnej-regresie.html#cb32-2" tabindex="-1"></a>lmod_log_lv <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(testScore) <span class="sc">~</span> gA <span class="sc">+</span> hoursLearned)</span>
-<span id="cb32-3"><a href="úvod-do-lineárnej-regresie.html#cb32-3" tabindex="-1"></a><span class="fu">summary</span>(lmod_log_lv)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="úvod-do-lineárnej-regresie.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#log - level</span></span>
+<span id="cb32-2"><a href="úvod-do-lineárnej-regresie.html#cb32-2" aria-hidden="true" tabindex="-1"></a>lmod_log_lv <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(testScore) <span class="sc">~</span> gA <span class="sc">+</span> hoursLearned)</span>
+<span id="cb32-3"><a href="úvod-do-lineárnej-regresie.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmod_log_lv)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = log(testScore) ~ gA + hoursLearned)
@@ -859,17 +860,17 @@ y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
 ## Residual standard error: 0.1252 on 17 degrees of freedom
 ## Multiple R-squared:  0.6475, Adjusted R-squared:  0.606 
 ## F-statistic: 15.61 on 2 and 17 DF,  p-value: 0.0001417</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="úvod-do-lineárnej-regresie.html#cb34-1" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
-<span id="cb34-2"><a href="úvod-do-lineárnej-regresie.html#cb34-2" tabindex="-1"></a><span class="co"># 1hour additional learning is associated with an increase of </span></span>
-<span id="cb34-3"><a href="úvod-do-lineárnej-regresie.html#cb34-3" tabindex="-1"></a><span class="co"># test score by approximately 1.03% on average</span></span>
-<span id="cb34-4"><a href="úvod-do-lineárnej-regresie.html#cb34-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb34-5"><a href="úvod-do-lineárnej-regresie.html#cb34-5" tabindex="-1"></a>dfA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>),<span class="at">hoursLearned=</span>x)</span>
-<span id="cb34-6"><a href="úvod-do-lineárnej-regresie.html#cb34-6" tabindex="-1"></a>predA <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_lv,dfA))</span>
-<span id="cb34-7"><a href="úvod-do-lineárnej-regresie.html#cb34-7" tabindex="-1"></a>dfB <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">50</span>),<span class="at">hoursLearned=</span>x)</span>
-<span id="cb34-8"><a href="úvod-do-lineárnej-regresie.html#cb34-8" tabindex="-1"></a>predB <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_lv,dfB))</span>
-<span id="cb34-9"><a href="úvod-do-lineárnej-regresie.html#cb34-9" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
-<span id="cb34-10"><a href="úvod-do-lineárnej-regresie.html#cb34-10" tabindex="-1"></a><span class="fu">lines</span>(x,predA)</span>
-<span id="cb34-11"><a href="úvod-do-lineárnej-regresie.html#cb34-11" tabindex="-1"></a><span class="fu">lines</span>(x,predB)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="úvod-do-lineárnej-regresie.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
+<span id="cb34-2"><a href="úvod-do-lineárnej-regresie.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1hour additional learning is associated with an increase of </span></span>
+<span id="cb34-3"><a href="úvod-do-lineárnej-regresie.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># test score by approximately 1.03% on average</span></span>
+<span id="cb34-4"><a href="úvod-do-lineárnej-regresie.html#cb34-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb34-5"><a href="úvod-do-lineárnej-regresie.html#cb34-5" aria-hidden="true" tabindex="-1"></a>dfA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>),<span class="at">hoursLearned=</span>x)</span>
+<span id="cb34-6"><a href="úvod-do-lineárnej-regresie.html#cb34-6" aria-hidden="true" tabindex="-1"></a>predA <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_lv,dfA))</span>
+<span id="cb34-7"><a href="úvod-do-lineárnej-regresie.html#cb34-7" aria-hidden="true" tabindex="-1"></a>dfB <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">50</span>),<span class="at">hoursLearned=</span>x)</span>
+<span id="cb34-8"><a href="úvod-do-lineárnej-regresie.html#cb34-8" aria-hidden="true" tabindex="-1"></a>predB <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_lv,dfB))</span>
+<span id="cb34-9"><a href="úvod-do-lineárnej-regresie.html#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
+<span id="cb34-10"><a href="úvod-do-lineárnej-regresie.html#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,predA)</span>
+<span id="cb34-11"><a href="úvod-do-lineárnej-regresie.html#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,predB)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-28-1.png" width="672" /></p>
 <p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je každá ďaľšia hodina učenia asociovaná s navýšením skóre v priemer o približne <span class="math inline">\(1.03\%\)</span>.</p>
 <p><span class="math display">\[\begin{eqnarray*}
@@ -886,23 +887,23 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 \end{eqnarray*}\]</span></p>
 <p> </p>
 <p>Táto aproximácia (preto to slovo <em>približne</em>) je založená na tom, že pre malé hodnoty <span class="math inline">\(x\)</span> je funkcia <span class="math inline">\((1+\beta x)\)</span> veľmi podobná funkcii <span class="math inline">\(e^{\beta x}\)</span> ako je zobrazené na tomto obrázku.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="úvod-do-lineárnej-regresie.html#cb35-1" tabindex="-1"></a><span class="co"># 1+beta*x is similar to exp(beta*x) for small x</span></span>
-<span id="cb35-2"><a href="úvod-do-lineárnej-regresie.html#cb35-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="fl">0.01</span>)</span>
-<span id="cb35-3"><a href="úvod-do-lineárnej-regresie.html#cb35-3" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb35-4"><a href="úvod-do-lineárnej-regresie.html#cb35-4" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>beta<span class="sc">*</span>x</span>
-<span id="cb35-5"><a href="úvod-do-lineárnej-regresie.html#cb35-5" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">exp</span>(beta<span class="sc">*</span>x)</span>
-<span id="cb35-6"><a href="úvod-do-lineárnej-regresie.html#cb35-6" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb35-7"><a href="úvod-do-lineárnej-regresie.html#cb35-7" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb35-8"><a href="úvod-do-lineárnej-regresie.html#cb35-8" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="úvod-do-lineárnej-regresie.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1+beta*x is similar to exp(beta*x) for small x</span></span>
+<span id="cb35-2"><a href="úvod-do-lineárnej-regresie.html#cb35-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="fl">0.01</span>)</span>
+<span id="cb35-3"><a href="úvod-do-lineárnej-regresie.html#cb35-3" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb35-4"><a href="úvod-do-lineárnej-regresie.html#cb35-4" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>beta<span class="sc">*</span>x</span>
+<span id="cb35-5"><a href="úvod-do-lineárnej-regresie.html#cb35-5" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">exp</span>(beta<span class="sc">*</span>x)</span>
+<span id="cb35-6"><a href="úvod-do-lineárnej-regresie.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb35-7"><a href="úvod-do-lineárnej-regresie.html#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb35-8"><a href="úvod-do-lineárnej-regresie.html#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-29-1.png" width="672" /></p>
 </div>
 <div id="level-log-model" class="section level3 hasAnchor" number="8.9.3">
 <h3><span class="header-section-number">8.9.3</span> Level-log model<a href="úvod-do-lineárnej-regresie.html#level-log-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i  + \epsilon_i\]</span></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="úvod-do-lineárnej-regresie.html#cb36-1" tabindex="-1"></a><span class="co">#level - log</span></span>
-<span id="cb36-2"><a href="úvod-do-lineárnej-regresie.html#cb36-2" tabindex="-1"></a>lhoursLearned <span class="ot">&lt;-</span> <span class="fu">log</span>(hoursLearned)</span>
-<span id="cb36-3"><a href="úvod-do-lineárnej-regresie.html#cb36-3" tabindex="-1"></a>lmod_lv_log <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> gA <span class="sc">+</span> lhoursLearned)</span>
-<span id="cb36-4"><a href="úvod-do-lineárnej-regresie.html#cb36-4" tabindex="-1"></a><span class="fu">summary</span>(lmod_lv_log)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="úvod-do-lineárnej-regresie.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#level - log</span></span>
+<span id="cb36-2"><a href="úvod-do-lineárnej-regresie.html#cb36-2" aria-hidden="true" tabindex="-1"></a>lhoursLearned <span class="ot">&lt;-</span> <span class="fu">log</span>(hoursLearned)</span>
+<span id="cb36-3"><a href="úvod-do-lineárnej-regresie.html#cb36-3" aria-hidden="true" tabindex="-1"></a>lmod_lv_log <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> gA <span class="sc">+</span> lhoursLearned)</span>
+<span id="cb36-4"><a href="úvod-do-lineárnej-regresie.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmod_lv_log)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = testScore ~ gA + lhoursLearned)
@@ -922,19 +923,19 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 ## Residual standard error: 7.052 on 17 degrees of freedom
 ## Multiple R-squared:  0.7325, Adjusted R-squared:  0.7011 
 ## F-statistic: 23.28 on 2 and 17 DF,  p-value: 1.354e-05</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="úvod-do-lineárnej-regresie.html#cb38-1" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
-<span id="cb38-2"><a href="úvod-do-lineárnej-regresie.html#cb38-2" tabindex="-1"></a><span class="co"># 1% in time spent learning is associated with an increase of </span></span>
-<span id="cb38-3"><a href="úvod-do-lineárnej-regresie.html#cb38-3" tabindex="-1"></a><span class="co"># test score by approximately on average 0.12 points</span></span>
-<span id="cb38-4"><a href="úvod-do-lineárnej-regresie.html#cb38-4" tabindex="-1"></a><span class="co"># (hence doubling the time learning ~ +12points)</span></span>
-<span id="cb38-5"><a href="úvod-do-lineárnej-regresie.html#cb38-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb38-6"><a href="úvod-do-lineárnej-regresie.html#cb38-6" tabindex="-1"></a>lx <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>))</span>
-<span id="cb38-7"><a href="úvod-do-lineárnej-regresie.html#cb38-7" tabindex="-1"></a>dfA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
-<span id="cb38-8"><a href="úvod-do-lineárnej-regresie.html#cb38-8" tabindex="-1"></a>predA <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmod_lv_log,dfA)</span>
-<span id="cb38-9"><a href="úvod-do-lineárnej-regresie.html#cb38-9" tabindex="-1"></a>dfB <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
-<span id="cb38-10"><a href="úvod-do-lineárnej-regresie.html#cb38-10" tabindex="-1"></a>predB <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmod_lv_log,dfB)</span>
-<span id="cb38-11"><a href="úvod-do-lineárnej-regresie.html#cb38-11" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
-<span id="cb38-12"><a href="úvod-do-lineárnej-regresie.html#cb38-12" tabindex="-1"></a><span class="fu">lines</span>(x,predA)</span>
-<span id="cb38-13"><a href="úvod-do-lineárnej-regresie.html#cb38-13" tabindex="-1"></a><span class="fu">lines</span>(x,predB)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="úvod-do-lineárnej-regresie.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
+<span id="cb38-2"><a href="úvod-do-lineárnej-regresie.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1% in time spent learning is associated with an increase of </span></span>
+<span id="cb38-3"><a href="úvod-do-lineárnej-regresie.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># test score by approximately on average 0.12 points</span></span>
+<span id="cb38-4"><a href="úvod-do-lineárnej-regresie.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (hence doubling the time learning ~ +12points)</span></span>
+<span id="cb38-5"><a href="úvod-do-lineárnej-regresie.html#cb38-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb38-6"><a href="úvod-do-lineárnej-regresie.html#cb38-6" aria-hidden="true" tabindex="-1"></a>lx <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>))</span>
+<span id="cb38-7"><a href="úvod-do-lineárnej-regresie.html#cb38-7" aria-hidden="true" tabindex="-1"></a>dfA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
+<span id="cb38-8"><a href="úvod-do-lineárnej-regresie.html#cb38-8" aria-hidden="true" tabindex="-1"></a>predA <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmod_lv_log,dfA)</span>
+<span id="cb38-9"><a href="úvod-do-lineárnej-regresie.html#cb38-9" aria-hidden="true" tabindex="-1"></a>dfB <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
+<span id="cb38-10"><a href="úvod-do-lineárnej-regresie.html#cb38-10" aria-hidden="true" tabindex="-1"></a>predB <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmod_lv_log,dfB)</span>
+<span id="cb38-11"><a href="úvod-do-lineárnej-regresie.html#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
+<span id="cb38-12"><a href="úvod-do-lineárnej-regresie.html#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,predA)</span>
+<span id="cb38-13"><a href="úvod-do-lineárnej-regresie.html#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,predB)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-30-1.png" width="672" /></p>
 <p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je nárast učenia o 1% asociovaný s navýšením skóre v priemere o približne <span class="math inline">\(0.12\)</span>. Takže zdvojnásobnenie je asociované s približne 12 bodmi na teste.</p>
 <p><span class="math display">\[\begin{eqnarray*}
@@ -949,25 +950,25 @@ y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
 \end{eqnarray*}\]</span></p>
 <p> </p>
 <p>Táto aproximácia (preto to slovo <em>približne</em>) je založená na tom, že pre malé hodnoty <span class="math inline">\(x\)</span> je funkcia <span class="math inline">\(\beta \log(1+ x)\)</span> veľmi podobná funkcii <span class="math inline">\(\beta x\)</span> ako je zobrazené na tomto obrázku.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="úvod-do-lineárnej-regresie.html#cb39-1" tabindex="-1"></a><span class="co"># beta*log(1+x) is similar to beta*x for small x</span></span>
-<span id="cb39-2"><a href="úvod-do-lineárnej-regresie.html#cb39-2" tabindex="-1"></a><span class="co"># or </span></span>
-<span id="cb39-3"><a href="úvod-do-lineárnej-regresie.html#cb39-3" tabindex="-1"></a><span class="co"># log(1+x) is similar to x for small x</span></span>
-<span id="cb39-4"><a href="úvod-do-lineárnej-regresie.html#cb39-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="dv">1</span>,<span class="fl">0.01</span>)</span>
-<span id="cb39-5"><a href="úvod-do-lineárnej-regresie.html#cb39-5" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
-<span id="cb39-6"><a href="úvod-do-lineárnej-regresie.html#cb39-6" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> beta<span class="sc">*</span><span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span>x)</span>
-<span id="cb39-7"><a href="úvod-do-lineárnej-regresie.html#cb39-7" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> beta<span class="sc">*</span>x</span>
-<span id="cb39-8"><a href="úvod-do-lineárnej-regresie.html#cb39-8" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb39-9"><a href="úvod-do-lineárnej-regresie.html#cb39-9" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb39-10"><a href="úvod-do-lineárnej-regresie.html#cb39-10" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="úvod-do-lineárnej-regresie.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># beta*log(1+x) is similar to beta*x for small x</span></span>
+<span id="cb39-2"><a href="úvod-do-lineárnej-regresie.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or </span></span>
+<span id="cb39-3"><a href="úvod-do-lineárnej-regresie.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># log(1+x) is similar to x for small x</span></span>
+<span id="cb39-4"><a href="úvod-do-lineárnej-regresie.html#cb39-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="dv">1</span>,<span class="fl">0.01</span>)</span>
+<span id="cb39-5"><a href="úvod-do-lineárnej-regresie.html#cb39-5" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb39-6"><a href="úvod-do-lineárnej-regresie.html#cb39-6" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> beta<span class="sc">*</span><span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span>x)</span>
+<span id="cb39-7"><a href="úvod-do-lineárnej-regresie.html#cb39-7" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> beta<span class="sc">*</span>x</span>
+<span id="cb39-8"><a href="úvod-do-lineárnej-regresie.html#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb39-9"><a href="úvod-do-lineárnej-regresie.html#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb39-10"><a href="úvod-do-lineárnej-regresie.html#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-31-1.png" width="672" /></p>
 </div>
 <div id="log-log-model" class="section level3 hasAnchor" number="8.9.4">
 <h3><span class="header-section-number">8.9.4</span> Log-log model<a href="úvod-do-lineárnej-regresie.html#log-log-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\log(testScore_i) = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i  + \epsilon_i\]</span></p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="úvod-do-lineárnej-regresie.html#cb40-1" tabindex="-1"></a><span class="co">#log - log</span></span>
-<span id="cb40-2"><a href="úvod-do-lineárnej-regresie.html#cb40-2" tabindex="-1"></a>ltestScore <span class="ot">&lt;-</span> <span class="fu">log</span>(testScore)</span>
-<span id="cb40-3"><a href="úvod-do-lineárnej-regresie.html#cb40-3" tabindex="-1"></a>lmod_log_log <span class="ot">&lt;-</span> <span class="fu">lm</span>(ltestScore <span class="sc">~</span> gA <span class="sc">+</span> lhoursLearned)</span>
-<span id="cb40-4"><a href="úvod-do-lineárnej-regresie.html#cb40-4" tabindex="-1"></a><span class="fu">summary</span>(lmod_log_log)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="úvod-do-lineárnej-regresie.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#log - log</span></span>
+<span id="cb40-2"><a href="úvod-do-lineárnej-regresie.html#cb40-2" aria-hidden="true" tabindex="-1"></a>ltestScore <span class="ot">&lt;-</span> <span class="fu">log</span>(testScore)</span>
+<span id="cb40-3"><a href="úvod-do-lineárnej-regresie.html#cb40-3" aria-hidden="true" tabindex="-1"></a>lmod_log_log <span class="ot">&lt;-</span> <span class="fu">lm</span>(ltestScore <span class="sc">~</span> gA <span class="sc">+</span> lhoursLearned)</span>
+<span id="cb40-4"><a href="úvod-do-lineárnej-regresie.html#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmod_log_log)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = ltestScore ~ gA + lhoursLearned)
@@ -987,19 +988,19 @@ y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
 ## Residual standard error: 0.099 on 17 degrees of freedom
 ## Multiple R-squared:  0.7795, Adjusted R-squared:  0.7536 
 ## F-statistic: 30.05 on 2 and 17 DF,  p-value: 2.624e-06</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="úvod-do-lineárnej-regresie.html#cb42-1" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
-<span id="cb42-2"><a href="úvod-do-lineárnej-regresie.html#cb42-2" tabindex="-1"></a><span class="co"># 1% in time spent learning is associated with an increase of </span></span>
-<span id="cb42-3"><a href="úvod-do-lineárnej-regresie.html#cb42-3" tabindex="-1"></a><span class="co"># test score by approximately 0.2% points</span></span>
-<span id="cb42-4"><a href="úvod-do-lineárnej-regresie.html#cb42-4" tabindex="-1"></a><span class="co"># (hence doubling the time learning ~ +20%points)</span></span>
-<span id="cb42-5"><a href="úvod-do-lineárnej-regresie.html#cb42-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb42-6"><a href="úvod-do-lineárnej-regresie.html#cb42-6" tabindex="-1"></a>lx <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>))</span>
-<span id="cb42-7"><a href="úvod-do-lineárnej-regresie.html#cb42-7" tabindex="-1"></a>dfA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
-<span id="cb42-8"><a href="úvod-do-lineárnej-regresie.html#cb42-8" tabindex="-1"></a>predA <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_log,dfA))</span>
-<span id="cb42-9"><a href="úvod-do-lineárnej-regresie.html#cb42-9" tabindex="-1"></a>dfB <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
-<span id="cb42-10"><a href="úvod-do-lineárnej-regresie.html#cb42-10" tabindex="-1"></a>predB <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_log,dfB))</span>
-<span id="cb42-11"><a href="úvod-do-lineárnej-regresie.html#cb42-11" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
-<span id="cb42-12"><a href="úvod-do-lineárnej-regresie.html#cb42-12" tabindex="-1"></a><span class="fu">lines</span>(x,predA)</span>
-<span id="cb42-13"><a href="úvod-do-lineárnej-regresie.html#cb42-13" tabindex="-1"></a><span class="fu">lines</span>(x,predB)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="úvod-do-lineárnej-regresie.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
+<span id="cb42-2"><a href="úvod-do-lineárnej-regresie.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1% in time spent learning is associated with an increase of </span></span>
+<span id="cb42-3"><a href="úvod-do-lineárnej-regresie.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># test score by approximately 0.2% points</span></span>
+<span id="cb42-4"><a href="úvod-do-lineárnej-regresie.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (hence doubling the time learning ~ +20%points)</span></span>
+<span id="cb42-5"><a href="úvod-do-lineárnej-regresie.html#cb42-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb42-6"><a href="úvod-do-lineárnej-regresie.html#cb42-6" aria-hidden="true" tabindex="-1"></a>lx <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>))</span>
+<span id="cb42-7"><a href="úvod-do-lineárnej-regresie.html#cb42-7" aria-hidden="true" tabindex="-1"></a>dfA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
+<span id="cb42-8"><a href="úvod-do-lineárnej-regresie.html#cb42-8" aria-hidden="true" tabindex="-1"></a>predA <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_log,dfA))</span>
+<span id="cb42-9"><a href="úvod-do-lineárnej-regresie.html#cb42-9" aria-hidden="true" tabindex="-1"></a>dfB <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
+<span id="cb42-10"><a href="úvod-do-lineárnej-regresie.html#cb42-10" aria-hidden="true" tabindex="-1"></a>predB <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_log,dfB))</span>
+<span id="cb42-11"><a href="úvod-do-lineárnej-regresie.html#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
+<span id="cb42-12"><a href="úvod-do-lineárnej-regresie.html#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,predA)</span>
+<span id="cb42-13"><a href="úvod-do-lineárnej-regresie.html#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,predB)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-32-1.png" width="672" /></p>
 <p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je nárast učenia o 1% asociovaný s navýšením skóre v priemerę o približne <span class="math inline">\(0.2\%\)</span> bodov. Takže zdvojnásobnenie je asociované s približne s 20% nárastom bodov na teste.</p>
 <p><span class="math display">\[\begin{eqnarray*}
@@ -1018,14 +1019,14 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 \end{eqnarray*}\]</span></p>
 <p> </p>
 <p>Táto aproximácia (znovu tu máme slovo <em>približne</em>) je založená na tom, že pre malé hodnoty <span class="math inline">\(x\)</span> je funkcia <span class="math inline">\((1+ x)^{\beta}\)</span> veľmi podobná funkcii <span class="math inline">\(1+\beta x\)</span> ako je zobrazené na tomto obrázku.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="úvod-do-lineárnej-regresie.html#cb43-1" tabindex="-1"></a><span class="co"># (1+x)^beta is similar to (1+beta*x) for small x</span></span>
-<span id="cb43-2"><a href="úvod-do-lineárnej-regresie.html#cb43-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="dv">1</span>,<span class="fl">0.01</span>)</span>
-<span id="cb43-3"><a href="úvod-do-lineárnej-regresie.html#cb43-3" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
-<span id="cb43-4"><a href="úvod-do-lineárnej-regresie.html#cb43-4" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">+</span>x)<span class="sc">^</span>beta</span>
-<span id="cb43-5"><a href="úvod-do-lineárnej-regresie.html#cb43-5" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>beta<span class="sc">*</span>x</span>
-<span id="cb43-6"><a href="úvod-do-lineárnej-regresie.html#cb43-6" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb43-7"><a href="úvod-do-lineárnej-regresie.html#cb43-7" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb43-8"><a href="úvod-do-lineárnej-regresie.html#cb43-8" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="úvod-do-lineárnej-regresie.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (1+x)^beta is similar to (1+beta*x) for small x</span></span>
+<span id="cb43-2"><a href="úvod-do-lineárnej-regresie.html#cb43-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="dv">1</span>,<span class="fl">0.01</span>)</span>
+<span id="cb43-3"><a href="úvod-do-lineárnej-regresie.html#cb43-3" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb43-4"><a href="úvod-do-lineárnej-regresie.html#cb43-4" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">+</span>x)<span class="sc">^</span>beta</span>
+<span id="cb43-5"><a href="úvod-do-lineárnej-regresie.html#cb43-5" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>beta<span class="sc">*</span>x</span>
+<span id="cb43-6"><a href="úvod-do-lineárnej-regresie.html#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb43-7"><a href="úvod-do-lineárnej-regresie.html#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb43-8"><a href="úvod-do-lineárnej-regresie.html#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/reg-33-1.png" width="672" /></p>
 </div>
 </div>
@@ -1061,17 +1062,69 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-8" class="exercise"><strong>Cvičenie 8.8  (Študenti) </strong></span>Majme nasledovné dve skupiny študentov. Zaujíma nás, ako je počet hodín strávených učením asociovaný s dosiahnutým skóre v teste.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="úvod-do-lineárnej-regresie.html#cb44-1" tabindex="-1"></a><span class="co"># you measure how much they learned</span></span>
-<span id="cb44-2"><a href="úvod-do-lineárnej-regresie.html#cb44-2" tabindex="-1"></a>hoursLearned <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">40</span>,<span class="dv">33</span>,<span class="dv">11</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="fl">13.5</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">30</span>,</span>
-<span id="cb44-3"><a href="úvod-do-lineárnej-regresie.html#cb44-3" tabindex="-1"></a>                  <span class="dv">6</span>,<span class="dv">22</span>,<span class="dv">45</span>,<span class="dv">20</span>,<span class="dv">11</span>,<span class="dv">22</span>,<span class="dv">40</span>,<span class="dv">29</span>,<span class="dv">47</span>,<span class="dv">9</span>)</span>
-<span id="cb44-4"><a href="úvod-do-lineárnej-regresie.html#cb44-4" tabindex="-1"></a><span class="co"># and how they performed on a test</span></span>
-<span id="cb44-5"><a href="úvod-do-lineárnej-regresie.html#cb44-5" tabindex="-1"></a>testScore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">81</span>, <span class="fl">95.5</span>, <span class="fl">63.5</span>, <span class="dv">71</span>, <span class="dv">59</span>, <span class="dv">59</span>, <span class="dv">57</span>, <span class="fl">60.5</span>, <span class="dv">79</span>,</span>
-<span id="cb44-6"><a href="úvod-do-lineárnej-regresie.html#cb44-6" tabindex="-1"></a>               <span class="dv">45</span>, <span class="dv">54</span>, <span class="dv">50</span>, <span class="dv">52</span>, <span class="dv">50</span>, <span class="dv">61</span>, <span class="dv">68</span>, <span class="dv">66</span>, <span class="dv">64</span>, <span class="dv">50</span>)</span>
-<span id="cb44-7"><a href="úvod-do-lineárnej-regresie.html#cb44-7" tabindex="-1"></a><span class="co"># and how they performed on a test</span></span>
-<span id="cb44-8"><a href="úvod-do-lineárnej-regresie.html#cb44-8" tabindex="-1"></a></span>
-<span id="cb44-9"><a href="úvod-do-lineárnej-regresie.html#cb44-9" tabindex="-1"></a><span class="co">#there are two different groups of students</span></span>
-<span id="cb44-10"><a href="úvod-do-lineárnej-regresie.html#cb44-10" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">&quot;B&quot;</span>,<span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="úvod-do-lineárnej-regresie.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># you measure how much they learned</span></span>
+<span id="cb44-2"><a href="úvod-do-lineárnej-regresie.html#cb44-2" aria-hidden="true" tabindex="-1"></a>hoursLearned <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">40</span>,<span class="dv">33</span>,<span class="dv">11</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="fl">13.5</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">30</span>,</span>
+<span id="cb44-3"><a href="úvod-do-lineárnej-regresie.html#cb44-3" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">6</span>,<span class="dv">22</span>,<span class="dv">45</span>,<span class="dv">20</span>,<span class="dv">11</span>,<span class="dv">22</span>,<span class="dv">40</span>,<span class="dv">29</span>,<span class="dv">47</span>,<span class="dv">9</span>)</span>
+<span id="cb44-4"><a href="úvod-do-lineárnej-regresie.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and how they performed on a test</span></span>
+<span id="cb44-5"><a href="úvod-do-lineárnej-regresie.html#cb44-5" aria-hidden="true" tabindex="-1"></a>testScore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">81</span>, <span class="fl">95.5</span>, <span class="fl">63.5</span>, <span class="dv">71</span>, <span class="dv">59</span>, <span class="dv">59</span>, <span class="dv">57</span>, <span class="fl">60.5</span>, <span class="dv">79</span>,</span>
+<span id="cb44-6"><a href="úvod-do-lineárnej-regresie.html#cb44-6" aria-hidden="true" tabindex="-1"></a>               <span class="dv">45</span>, <span class="dv">54</span>, <span class="dv">50</span>, <span class="dv">52</span>, <span class="dv">50</span>, <span class="dv">61</span>, <span class="dv">68</span>, <span class="dv">66</span>, <span class="dv">64</span>, <span class="dv">50</span>)</span>
+<span id="cb44-7"><a href="úvod-do-lineárnej-regresie.html#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="co"># and how they performed on a test</span></span>
+<span id="cb44-8"><a href="úvod-do-lineárnej-regresie.html#cb44-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-9"><a href="úvod-do-lineárnej-regresie.html#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="co">#there are two different groups of students</span></span>
+<span id="cb44-10"><a href="úvod-do-lineárnej-regresie.html#cb44-10" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">&quot;B&quot;</span>,<span class="dv">10</span>))</span></code></pre></div>
 <p>Využitím lineárneho modelu uvažujte ako sú tieto dve skupiny rôzne: čo sa týka priemerného testovacieho skóre ako aj čo sa týka citlivosti skóre na učenie.</p>
+</div>
+</div>
+<div id="domáca-úloha-4" class="section level2 hasAnchor" number="8.12">
+<h2><span class="header-section-number">8.12</span> Domáca úloha 4<a href="úvod-do-lineárnej-regresie.html#domáca-úloha-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deadline je 8.1.2024 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie <code>rar</code> súbor, nie OneDrive folder) v tvare <code>du4_MenoPriezvisko.zip</code> (napr. <code>du4_PeterKovac.zip</code>) a pošlite na email <code>miroslava.sartorisova@umb.sk</code>. Kód musí byť <strong>spustiteľný</strong> (vyskúšajte či Vám prebehne, keď máte prázdnu pamäť. Tú si uvoľníte pomocou príkazu <code>rm(list=ls())</code>) a podrobne okomentovaný. Odovzdávate mi Vašu <strong>vlastnú</strong> prácu (teda nie niekoho iného).</p>
+<p>Dáta sú vymyslené, <a href="https://www.dropbox.com/scl/fi/5bz3q2rusd6f0ys3gdd57/du4-data.R?rlkey=0nmap4wm3emv7w626akg2sxvh&amp;dl=0">stiahnete si ich tu</a>.
+Všetky vaše zistenia podrobne okomentujte a podporte vhodným obrázkom.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-9" class="exercise"><strong>Cvičenie 8.9  (DÚ 4.1 teplota) </strong></span>Na niekoľkých meracích staniciach máme údaje o teplote, hĺbke jazera a jeho nadmorskej výške.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Urobte jednoduchý lineárny model vysvetľujúci teplotu pomocou nadmorskej výšky jazera.
+Odhadnite teplotu jazera v nadmorskej výške 1100 m.n.m. a 1250 m.n.m.
+Tieto predpovede farebne vyznačte do vykresleného grafu.
+Odhadnite, o koľko sa zmení teplota nejakého jazera, pokiaľ by sa nachádzalo o 100 výškových metrov vyššie alebo nižšie.</p></li>
+<li><p>Urobte jednoduchý lineárny model vysvetľujúci teplotu pomocou hĺbky jazera a porovnajte
+ho s prvým lineárnym modelom. Odhadnite teplotu jazera s hĺbkou 22 m.</p></li>
+<li><p>Urobte lineárny model vysvetľujúci teplotu pomocou nadmorskej výšky aj hĺbky jazera a
+určte, ktorý z troch modelov je najlepší. Odhadnite teplotu pre jazero v nadmorskej výške
+1100 m.n.m. s hĺbkou 22 m.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-10" class="exercise"><strong>Cvičenie 8.10  (DÚ 4.2) </strong></span>Urobte jednoduchý lineárny model, kde hodnoty y budete predpovedať pomocou
+hodnôt x. Pomocou obrázku zistite, či je lineárny model vhodný na takýto typ dát. Pokúste sa
+spraviť lepší lineárny model a porovnajte ho s predošlým.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>dáta x1, y1 z priloženého R-kódu.</p></li>
+<li><p>dáta x2, y2 z priloženého R-kódu.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-11" class="exercise"><strong>Cvičenie 8.11  (DÚ 4.3 - Filmy a Rmd Projekt) </strong></span>Pozrite sa do datasetu <code>movies</code> z knižnice <code>ggplot2movies</code>. Vaše zadanie je vyprodukovať ucelený report o prediktoroch hodnotenia filmu. Zaujíma nás vzťah medzi hodnotením filmu a jeho rozpočtom ako aj dĺžkou a typom filmu.</p>
+<p>Vyberte len relevantné hodnotenia.</p>
+<p>Bude obsahovať</p>
+<ul>
+<li>Krátky popis datasetu, premenných a problému, ktorý skúmame,</li>
+<li>Sumárne štatistiky premenných,</li>
+<li>Párové grafy a korelácie,</li>
+<li>Porovnanie rôznych podskupín pomocou vhodných štatistických testov a zobrazení.</li>
+<li>Rozumne zvolený lineárny model,</li>
+<li>Závery, interpretácie a zistenia. Nepodceňte túto časť.</li>
+</ul>
+<p>Dokument</p>
+<ul>
+<li>musí byť čitateľný pre <em>úplného laika</em>,</li>
+<li>musí byť vytvorený v RMarkdown,</li>
+<li>všetok kód musí byť schovaný ale vhodne okomentovaný v <code>rmd</code> súbore,</li>
+<li>obrázky musia byť vyladené, musia mať vhodne zvolené vizuálne elementy ako aj popisy,</li>
+<li>môžete ale nemusíte písať v angličtine,</li>
+<li>k tejto úlohe mi prosím pošlite dva súbory: <code>Rmd</code> súbor a <code>html</code> súbor.</li>
+</ul>
+<p>Bude to demonštrácia, vizitka a oslava všetkého toho, čo ste sa naučili.</p>
 </div>
 
 </div>
