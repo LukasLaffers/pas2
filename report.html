@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Pravdepodobnosť a štatistika 2</title>
+  <title>9 Komunikácia výsledkov | Pravdepodobnosť a štatistika 2</title>
   <meta name="description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Pravdepodobnosť a štatistika 2" />
+  <meta property="og:title" content="9 Komunikácia výsledkov | Pravdepodobnosť a štatistika 2" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Pravdepodobnosť a štatistika 2" />
+  <meta name="twitter:title" content="9 Komunikácia výsledkov | Pravdepodobnosť a štatistika 2" />
   
   <meta name="twitter:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="reg.html"/>
 
-<link rel="next" href="intro.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -230,52 +230,118 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Pravdepodobnosť a štatistika 2</h1>
-<p class="author"><em>Lukáš Lafférs</em></p>
-<p class="date"><em>2023-12-13</em></p>
+<div id="report" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Komunikácia výsledkov<a href="report.html#report" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Zhrňme si, čo všetko už doteraz vieme</p>
+<ul>
+<li>poznáme syntax Rka</li>
+<li>vieme načítavať datasety z rôznych súborov a upravovať ich</li>
+<li>pozerať sa na rôzne podvzorky</li>
+<li>vieme zobrazovať a charakterizovať pravdepodobnostné rozdelenia premenných (stredná hodnota, variancia, histogram, funkcia hustoty…)</li>
+<li>vieme zobrazovať a charakterizovať súvzťažnosť rôznych premenných (korelácia, lineárna regresia…)</li>
+<li>poznáme základy štatistického testovanie hypotéz a vieme interpretovať výstupy týchto testov</li>
+</ul>
+<div id="r-markdown" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> R Markdown<a href="report.html#r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Do skladačky nám ešte chýba nejaký elegantný spôsob ako všetky tieto veci robiť a spísať ich do uceleného zmysluplného textu, ako tieto veci odkomunikovať. Môžeme separátne urobiť štatistickú analýzu a potom nakopírovať tabuľky a obrázky do textového editora, v ktorom to upravíme. Toto je však dosť prácne. Pridáte jeden riadok do dátovej tabuľky a celé to môžete prerobiť odznovu. Ak chcete zmeniť nejaký aspekt výberu dát na začiatku (napr. obmedzím sa na nejakú zaujímavú a relevantnú podvzorku dát), tak znova to všetko môžete prerobiť.
+Rko nám však ponúka veľmi elegantnú alternatívu. Môžeme totiž písať dokumenty (html, pdf, docx) a robiť analýzu <strong>naraz</strong> a to priamo v Rku. Skrátka si výrazne uľahčíme (pos slovensky) workflow. Sú aj ďalšie veci, ktoré Rko vie: napr. produkovať aplikácie alebo webovské stránky. Aj táto webstránka, na ktorú sa práve pozeráte je vyrobená priamo v RStudio.</p>
+<p>Otvoríme si nový RMarkdown dokument.</p>
+<div class="figure" style="text-align: center">
+<img src="fig_Rmark1.png" alt=" " width="80%" />
+<p class="caption">
+</p>
 </div>
-<div id="o-tomto-kurze" class="section level1 unnumbered hasAnchor">
-<h1>O tomto kurze<a href="index.html#o-tomto-kurze" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><span style="color: red;"><strong>[NEDOKONČENÝ TEXT - tento text budem priebežne upravovať a budem veľmi rád za akúkoľvek spätnú väzbu. Preklepy, logické chyby, nejasnosti. Ďakujem!]</strong></span></p>
-<p>Tento kurz má ambíciu priblížiť pravdepodobnosť a štatistiku praktickým spôsobom. A teda najmä s použitím softvéru.</p>
-<p> </p>
-<p>Študenti by mali byť familiárni s nasledujúcimi pojmami:</p>
+<p>Uložíme ho (teraz som si uložil ako <code>projekt.Rmd</code>).</p>
+<div class="figure" style="text-align: center">
+<img src="fig_Rmark2.png" alt=" " width="40%" />
+<p class="caption">
+</p>
+</div>
+<p>Takto potom vyzerá.</p>
+<div class="figure" style="text-align: center">
+<img src="fig_Rmark3.png" alt=" " width="80%" />
+<p class="caption">
+</p>
+</div>
+<p>Po štuknutí na tlačítko Knit dostaneme takýto html dokument, ktorý je uložený v našom priečinku.</p>
+<p><img src="fig_Rmark4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Syntax je priamočiara a stačí zopár základných pravidiel a budeme vedieť väčšinu užitočného. Do textu pridávame <strong>chunk</strong>-y, to sú kusy kódu. Napríklad tu sú chunky pre zobrazenie sumáru datasetu <code>cars</code> ako aj chunk na zobrazenie obrázka. Symbol ## slúži na definovanie podkapitoly, vidíme ako pridať odkaz na webstránku ako aj ako <strong>zvýrazniť text</strong>.</p>
+<p><img src="fig_Rmark5.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Užitočné vlastnosti chunkov sú tieto</p>
 <ul>
-<li>Pravdepodobnosť</li>
-<li>Podmienená pravdepodobnosť, nezávislosť udalostí.</li>
-<li>Diskrétne rozdelenia náhodných premenných - popis náhodnosti pomocou pravdepodobnostnej funkcie a kumulatívnej distribučnej funkcie.</li>
-<li>Spojité rozdelenia náhodných premenných - popis nahodnosti pomocou funkcie hustoty a kumulatívnej distribučnej funkcie.</li>
-<li>Charakteristiky náhodných premenných - stredná hodnota, variancia, kovariancia.</li>
-<li>Nezávislosť náhodných premenných a súvis náhodných premenných - kovariancia a korelácia.</li>
-<li>Zákon veľkých čísel</li>
-<li>Centrálna limitná veta</li>
+<li><code>echo</code> - či sa zobrazí kus kódu alebo nie,</li>
+<li><code>cache</code> - či sa má znovu vykonať kus kódu (niektoré časti môžu dlho trvať, tak ich spustíme len raz),</li>
+<li><code>warning</code> - vie skryť upozornenia,</li>
+<li><code>eval</code> - či sa kus kódu má vykonať,</li>
+<li><code>message</code> - vie skryť správy,</li>
+<li><code>error</code> - ak nastavené na TRUE tak pokračuje v kompilácii aj keď narazí na chybu.</li>
 </ul>
-<p>K týmto pojmom sa budeme vracať a budeme ich hlbšie spoznávať s použitím softvéru R. Ak si ich potrebujete osviežiť, môžete tak urobiť napríklad na tomto odkaze: <a href="https://bookdown.org/lukas_laffers/pas1/" class="uri">https://bookdown.org/lukas_laffers/pas1/</a></p>
-<p> </p>
-<p>Tu je prehľad kurzu. Veci, s ktorými by ste sa mali počas semestra sfamiliarizovať ako aj budúce získané (snáď) kompetencie.</p>
+<p>Pre chunky s obrázkami sú to</p>
 <ul>
-<li>Základy štatistického prostredia R, práca s rôznymi dátovými štruktúrami. Cykly, usporiadanie, podmienené príkazy.</li>
-<li>Práca s dátovými súbormi, skripty, knižnice, úvod do zobrazovania dát.</li>
-<li>Pravdepodobnostné distribúcie - diskrétne a spojité. Ich vlastnosti a použitie.</li>
-<li>Deskriptívne štatistiky a vizualizácia dát. Rôzne typy grafov - ich použitie, výhody a nevýhody.</li>
-<li>Úvod do štatického testovania hypotéz.</li>
-<li>Testovanie štatistických hypotéz v R, jedno a dvoj-výberové testy, parametrické a neparametrické testy.</li>
-<li>Úvod do lineárnej regresie. Geometria úlohy najmenších štvorcov.</li>
-<li>Lineárna regresia v R, použitie, užitočnosť a limitácie.</li>
-<li>Aplikácie (nielen) v pedagogickej praxi. Kvantitatívny vedecký výskum.</li>
+<li><code>fig.show</code> - či sa zobrazí obrázok alebo nie,</li>
+<li><code>fig.cap</code> - popisok obrázku,</li>
+<li><code>out.width</code> - šírka obrázka,</li>
+<li><code>fig.asp</code> - aspect ratio,</li>
+<li><code>fig.align</code> - zarovnanie (<code>center</code> ak na stred).</li>
 </ul>
 <p> </p>
-<p>Kým doteraz ste sa na pravdepodobnosť a štatistiku pozerali najmä teoreticky - spoznávali charakter matematických objektov, s ktorými sa v štatistike pracuje - teraz bude zreteľ kladený najmä na praktickú stránku, teda ako tieto poznatky aplikovať v praxi - teda ako veci robiť.</p>
+<p> </p>
+<p>Je užitočné začať <a href="http://rmarkdown.rstudio.com">tu</a>.</p>
+</div>
+<div id="cvičenia-8" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Cvičenia<a href="report.html#cvičenia-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://www.dropbox.com/s/s1ncl2c79atq8a1/labs%20week%2012_empty.Rmd?dl=0">Rmd súbor k cvičeniam</a></p>
+<p>Inštrukcie na úspešné skompilovanie:</p>
+<ul>
+<li>Stiahnite si súbor do adresára v ktorom budete pracovať</li>
+<li>Zatvorte RStudio a otvorte Rmd súbor priamo z tohoto adresára. Teraz Vám správne nastaví <code>current directory</code>, toto skontrolujete príkazom <code>getwd()</code></li>
+<li>Do Vášho adresára nahrajte prázdny priečinok s menom <code>tables</code>. Do tohoto sa potom nahrá súbor s tabuľkami.</li>
+<li>Nainštalujte si knižnice <code>pacman</code> a <code>eatATA</code> pomocou funkcie <code>install.packages()</code></li>
+<li>Stlačte tlačíko <strong>Knit</strong></li>
+<li>Doplňte časti chýbajúceho kódu.</li>
+</ul>
+<!-- [Rmd súbor k cvičeniam 8.12.2022 (riešenia)](https://www.dropbox.com/s/pi3ajqj3qms3w9a/labs%20week%2012.Rmd?dl=0) -->
+<!-- [R súbor k cvičeniam 15.12.2022 (opakovanie)](https://www.dropbox.com/s/wous3abitw1b7oz/labs_week13.R?dl=0) -->
+<div class="exercise">
+<p><span id="exr:unlabeled-div-1" class="exercise"><strong>Cvičenie 9.1  (Tutorial) </strong></span>Napíšte v RMarkdowne kratučký tutoriál, ktorý vysvetlí ako sa používa funkcia <code>plot()</code> v R. Postupne pridávajte komplikáciu za komplikáciou, aby bolo z kódu zreteľné, ako táto funkcia funguje.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Cvičenie 9.2  (predošlá úloha v RMD) </strong></span>Napíšte v RMarkdowne prvé dve cvičenia z Vašej poslednej domácej úlohy.</p>
+</div>
+<!-- ## Domáca úloha 5 -->
+<!-- Deadline je  -->
+<!-- * 10.1.2023 o 20:00 pre ľudí prihlásených na skúšku 11.1.2023 (o 9:00, prihlasovanie v AISe) -->
+<!-- * 17.1.2023 o 20:00 pre ľudí prihlásených na skúšku 18.1.2023 (o 9:00, prihlasovanie v AISe) -->
+<!-- akékoľvek výnimky musia byť odkomunikované dostatočne dopredu a len vo vážnych prípadoch. -->
+<!-- Váše súbory mi pošlite prosím v tvare `du5_MenoPriezvisko.html` (napr. `du4_PeterKovac.html`) a `du5_MenoPriezvisko.rmd` (napr. `du5_PeterKovac.rmd`) na email. Kód musí byť **spustiteľný** (vyskúšajte či Vám prebehne, keď máte prázdnu pamäť. Tú si uvoľníte pomocou príkazu `rm(list=ls())`)  a podrobne okomentovaný. Odovzdávate mi Vašu **vlastnú** prácu (teda nie prácu niekoho iného).  -->
+<!-- ::: {.exercise name="DÚ 5 - Pôrodná váha detí"} -->
+<!-- Pozrite sa do datasetu `birthwt` z knižnice `MASS`. Tento obsahuje informácie o 189 narodených deťoch v Springfield, MA v 1986. Vaše zadanie je vyprodukovať ucelený report o prediktoroch pôrodnej váhy. Zaujíma nás vzťah medzi pôrodnou váhou dieťaťa a hmotnosťou matky ako aj tým, či matka počas tehotenstva fajčila (hovoríme o 80.tych rokoch, doba bola iná...).  -->
+<!-- Bude obsahovať -->
+<!-- * Krátky popis datasetu, premenných a problému, ktorý skúmame, -->
+<!-- * Sumárne štatistiky premenných, -->
+<!-- * Párové grafy a korelácie, -->
+<!-- * Porovnanie rôznych podskupín, (zaujimá nás pôrodná váha dieťaťa(), pomocou vhodných štatistických testov a zobrazení. -->
+<!-- * Rozumne zvolený lineárny model (s vhodne zvolenou transformáciou), -->
+<!-- * Závery, interpretácie a zistenia. Nepodceňte túto časť. -->
+<!-- Dokument  -->
+<!-- * musí byť čitateľný pre *úplného laika*,  -->
+<!-- * musí byť vytvorený v RMarkdown, -->
+<!-- * všetok kód musí byť schovaný ale vhodne okomentovaný v `rmd` súbore, -->
+<!-- * obrázky musia byť vyladené, musia mať vhodne zvolené vizuálne elementy ako aj popisy, -->
+<!-- * môžete ale nemusíte písať v angličtine, -->
+<!-- * pošlite mi prosím dva súbory: `Rmd` súbor a `html` súbor. -->
+<!-- Bude to demonštrácia, vizitka a oslava všetkého toho, čo ste sa naučili. -->
+<!-- ::: -->
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="reg.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

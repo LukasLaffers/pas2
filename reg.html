@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Úvod do lineárnej regresie | Pravdepodobnosť a štatistika 2</title>
+  <meta name="description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Úvod do lineárnej regresie | Pravdepodobnosť a štatistika 2" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Úvod do lineárnej regresie | Pravdepodobnosť a štatistika 2" />
+  
+  <meta name="twitter:description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
+  
+
+<meta name="author" content="Lukáš Lafférs" />
+
+
+<meta name="date" content="2023-12-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ttest.html"/>
+<link rel="next" href="report.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Pravdepodobnosť a štatistika 2</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O tomto kurze</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Úvod do jazyka R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#nejaké-príklady-r"><i class="fa fa-check"></i><b>1.2</b> Nejaké príklady R</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#nevýhody-r"><i class="fa fa-check"></i><b>1.3</b> Nevýhody R</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#a-čo-teraz."><i class="fa fa-check"></i><b>1.4</b> A čo teraz.</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#demonštrácia-v-r"><i class="fa fa-check"></i><b>1.5</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#na-záver-úvodu"><i class="fa fa-check"></i><b>1.6</b> Na záver úvodu</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#cvičenia"><i class="fa fa-check"></i><b>1.7</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="structures.html"><a href="structures.html"><i class="fa fa-check"></i><b>2</b> Premenné a dátové štruktúry</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="structures.html"><a href="structures.html#typy-premenných"><i class="fa fa-check"></i><b>2.1</b> Typy premenných</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="structures.html"><a href="structures.html#numeric"><i class="fa fa-check"></i><b>2.1.1</b> <code>numeric</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="structures.html"><a href="structures.html#character"><i class="fa fa-check"></i><b>2.1.2</b> <code>character</code></a></li>
+<li class="chapter" data-level="2.1.3" data-path="structures.html"><a href="structures.html#logical"><i class="fa fa-check"></i><b>2.1.3</b> <code>logical</code></a></li>
+<li class="chapter" data-level="2.1.4" data-path="structures.html"><a href="structures.html#factor"><i class="fa fa-check"></i><b>2.1.4</b> <code>factor</code></a></li>
+<li class="chapter" data-level="2.1.5" data-path="structures.html"><a href="structures.html#iné"><i class="fa fa-check"></i><b>2.1.5</b> Iné</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="structures.html"><a href="structures.html#typy-dátových-štruktúr"><i class="fa fa-check"></i><b>2.2</b> Typy dátových štruktúr</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="structures.html"><a href="structures.html#vector"><i class="fa fa-check"></i><b>2.2.1</b> <code>vector</code></a></li>
+<li class="chapter" data-level="2.2.2" data-path="structures.html"><a href="structures.html#matrix"><i class="fa fa-check"></i><b>2.2.2</b> <code>matrix</code></a></li>
+<li class="chapter" data-level="2.2.3" data-path="structures.html"><a href="structures.html#array"><i class="fa fa-check"></i><b>2.2.3</b> <code>array</code></a></li>
+<li class="chapter" data-level="2.2.4" data-path="structures.html"><a href="structures.html#list"><i class="fa fa-check"></i><b>2.2.4</b> <code>list</code></a></li>
+<li class="chapter" data-level="2.2.5" data-path="structures.html"><a href="structures.html#data.frame"><i class="fa fa-check"></i><b>2.2.5</b> <code>data.frame</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="structures.html"><a href="structures.html#vlastné-funkcie"><i class="fa fa-check"></i><b>2.3</b> Vlastné funkcie</a></li>
+<li class="chapter" data-level="2.4" data-path="structures.html"><a href="structures.html#for-cyklus"><i class="fa fa-check"></i><b>2.4</b> <code>for</code> cyklus</a></li>
+<li class="chapter" data-level="2.5" data-path="structures.html"><a href="structures.html#knižnice"><i class="fa fa-check"></i><b>2.5</b> Knižnice</a></li>
+<li class="chapter" data-level="2.6" data-path="structures.html"><a href="structures.html#štandardy"><i class="fa fa-check"></i><b>2.6</b> Štandardy</a></li>
+<li class="chapter" data-level="2.7" data-path="structures.html"><a href="structures.html#časté-chyby"><i class="fa fa-check"></i><b>2.7</b> Časté chyby</a></li>
+<li class="chapter" data-level="2.8" data-path="structures.html"><a href="structures.html#demonštrácia-v-r-1"><i class="fa fa-check"></i><b>2.8</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="2.9" data-path="structures.html"><a href="structures.html#cvičenia-1"><i class="fa fa-check"></i><b>2.9</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="random.html"><a href="random.html"><i class="fa fa-check"></i><b>3</b> Náhodné čísla a simulácie</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="random.html"><a href="random.html#pseudonáhodné-čísla-v-počítači"><i class="fa fa-check"></i><b>3.1</b> (Pseudo)Náhodné čísla v počítači</a></li>
+<li class="chapter" data-level="3.2" data-path="random.html"><a href="random.html#ako-to-funguje"><i class="fa fa-check"></i><b>3.2</b> Ako to funguje</a></li>
+<li class="chapter" data-level="3.3" data-path="random.html"><a href="random.html#rôzne-typy-náhodných-premenných"><i class="fa fa-check"></i><b>3.3</b> Rôzne typy náhodných premenných</a></li>
+<li class="chapter" data-level="3.4" data-path="random.html"><a href="random.html#rovnomerné-rozdelenie-ako-základ"><i class="fa fa-check"></i><b>3.4</b> Rovnomerné rozdelenie ako základ</a></li>
+<li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
+<li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
+<li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="3.8" data-path="random.html"><a href="random.html#domáca-úloha-1"><i class="fa fa-check"></i><b>3.8</b> Domáca úloha 1</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="recap.html"><a href="recap.html#diskrétne-náhodné-premenné"><i class="fa fa-check"></i><b>4.1</b> Diskrétne náhodné premenné</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="recap.html"><a href="recap.html#pravdepodobnostná-funkcia"><i class="fa fa-check"></i><b>4.1.1</b> Pravdepodobnostná funkcia</a></li>
+<li class="chapter" data-level="4.1.2" data-path="recap.html"><a href="recap.html#stredná-hodnota"><i class="fa fa-check"></i><b>4.1.2</b> Stredná hodnota</a></li>
+<li class="chapter" data-level="4.1.3" data-path="recap.html"><a href="recap.html#variancia"><i class="fa fa-check"></i><b>4.1.3</b> Variancia</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="recap.html"><a href="recap.html#spojité-náhodné-premenné"><i class="fa fa-check"></i><b>4.2</b> Spojité náhodné premenné</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="recap.html"><a href="recap.html#funkcia-hustoty"><i class="fa fa-check"></i><b>4.2.1</b> Funkcia hustoty</a></li>
+<li class="chapter" data-level="4.2.2" data-path="recap.html"><a href="recap.html#stredná-hodnota-1"><i class="fa fa-check"></i><b>4.2.2</b> Stredná hodnota</a></li>
+<li class="chapter" data-level="4.2.3" data-path="recap.html"><a href="recap.html#variancia-1"><i class="fa fa-check"></i><b>4.2.3</b> Variancia</a></li>
+<li class="chapter" data-level="4.2.4" data-path="recap.html"><a href="recap.html#kvantil"><i class="fa fa-check"></i><b>4.2.4</b> Kvantil</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="recap.html"><a href="recap.html#demonštrácia-v-r-2"><i class="fa fa-check"></i><b>4.3</b> Demonštrácia v R</a></li>
+<li class="chapter" data-level="4.4" data-path="recap.html"><a href="recap.html#cvičenia-3"><i class="fa fa-check"></i><b>4.4</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="depen.html"><a href="depen.html"><i class="fa fa-check"></i><b>5</b> Náhodné vektory a súvis medzi náhodnými premennými</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="depen.html"><a href="depen.html#závislosť-náhodných-premenných"><i class="fa fa-check"></i><b>5.1</b> Závislosť náhodných premenných</a></li>
+<li class="chapter" data-level="5.2" data-path="depen.html"><a href="depen.html#korelácia-nie-je-kauzalita"><i class="fa fa-check"></i><b>5.2</b> Korelácia nie je kauzalita</a></li>
+<li class="chapter" data-level="5.3" data-path="depen.html"><a href="depen.html#cvičenia-4"><i class="fa fa-check"></i><b>5.3</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visual.html"><a href="visual.html"><i class="fa fa-check"></i><b>6</b> Zobrazovanie dát</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="visual.html"><a href="visual.html#zlé-vizualizácie"><i class="fa fa-check"></i><b>6.1</b> Zlé vizualizácie</a></li>
+<li class="chapter" data-level="6.2" data-path="visual.html"><a href="visual.html#dobré-vizualizácie"><i class="fa fa-check"></i><b>6.2</b> Dobré vizualizácie</a></li>
+<li class="chapter" data-level="6.3" data-path="visual.html"><a href="visual.html#vizualizácia-v-rku-ggplot2-knižnica"><i class="fa fa-check"></i><b>6.3</b> Vizualizácia v Rku: <code>ggplot2</code> knižnica</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="visual.html"><a href="visual.html#zobrazenie-závislosti-dvoch-premenných"><i class="fa fa-check"></i><b>6.3.1</b> Zobrazenie závislosti dvoch premenných</a></li>
+<li class="chapter" data-level="6.3.2" data-path="visual.html"><a href="visual.html#zobrazenie-distribúcie-premennej"><i class="fa fa-check"></i><b>6.3.2</b> Zobrazenie distribúcie premennej</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="visual.html"><a href="visual.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
+<li class="chapter" data-level="6.5" data-path="visual.html"><a href="visual.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
+<li class="chapter" data-level="6.6" data-path="visual.html"><a href="visual.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
+<li class="chapter" data-level="6.7" data-path="visual.html"><a href="visual.html#domáca-úloha-2"><i class="fa fa-check"></i><b>6.7</b> Domáca úloha 2</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ttest.html"><a href="ttest.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ttest.html"><a href="ttest.html#jedno"><i class="fa fa-check"></i><b>7.1</b> Jednovýberové testy</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="ttest.html"><a href="ttest.html#test-na-základe-normálnej-aproximácie-z-test"><i class="fa fa-check"></i><b>7.1.1</b> Test na základe normálnej aproximácie (Z-test)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="ttest.html"><a href="ttest.html#t-test"><i class="fa fa-check"></i><b>7.1.2</b> T-test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ttest.html"><a href="ttest.html#dvojvýberové-testy"><i class="fa fa-check"></i><b>7.2</b> Dvojvýberové testy</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="ttest.html"><a href="ttest.html#rovnaká-variancia"><i class="fa fa-check"></i><b>7.2.1</b> Rovnaká variancia</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ttest.html"><a href="ttest.html#rôzna-variancia"><i class="fa fa-check"></i><b>7.2.2</b> Rôzna variancia</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ttest.html"><a href="ttest.html#párové-testy"><i class="fa fa-check"></i><b>7.2.3</b> Párové testy</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ttest.html"><a href="ttest.html#konfidenčný-interval"><i class="fa fa-check"></i><b>7.3</b> Konfidenčný interval</a></li>
+<li class="chapter" data-level="7.4" data-path="ttest.html"><a href="ttest.html#testovanie-podielu"><i class="fa fa-check"></i><b>7.4</b> Testovanie podielu</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="ttest.html"><a href="ttest.html#testovanie-podielu-pre-jednu-skupinu"><i class="fa fa-check"></i><b>7.4.1</b> Testovanie podielu pre jednu skupinu</a></li>
+<li class="chapter" data-level="7.4.2" data-path="ttest.html"><a href="ttest.html#testovanie-rovnosti-podielov-pre-dve-skupiny"><i class="fa fa-check"></i><b>7.4.2</b> Testovanie rovnosti podielov pre dve skupiny</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="ttest.html"><a href="ttest.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
+<li class="chapter" data-level="7.6" data-path="ttest.html"><a href="ttest.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
+<li class="chapter" data-level="7.7" data-path="ttest.html"><a href="ttest.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="7.8" data-path="ttest.html"><a href="ttest.html#domáca-úloha-3"><i class="fa fa-check"></i><b>7.8</b> Domáca úloha 3</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="reg.html"><a href="reg.html#lineárny-regresný-model"><i class="fa fa-check"></i><b>8.1</b> Lineárny regresný model</a></li>
+<li class="chapter" data-level="8.2" data-path="reg.html"><a href="reg.html#maticová-notácia"><i class="fa fa-check"></i><b>8.2</b> Maticová notácia</a></li>
+<li class="chapter" data-level="8.3" data-path="reg.html"><a href="reg.html#názvoslovie"><i class="fa fa-check"></i><b>8.3</b> Názvoslovie</a></li>
+<li class="chapter" data-level="8.4" data-path="reg.html"><a href="reg.html#ako-na-to"><i class="fa fa-check"></i><b>8.4</b> Ako na to</a></li>
+<li class="chapter" data-level="8.5" data-path="reg.html"><a href="reg.html#geometria-najmenších-štvorcov"><i class="fa fa-check"></i><b>8.5</b> Geometria najmenších štvorcov</a></li>
+<li class="chapter" data-level="8.6" data-path="reg.html"><a href="reg.html#konfidenčné-intervaly"><i class="fa fa-check"></i><b>8.6</b> Konfidenčné intervaly</a></li>
+<li class="chapter" data-level="8.7" data-path="reg.html"><a href="reg.html#viacrozmerná-lineárna-regresia"><i class="fa fa-check"></i><b>8.7</b> Viacrozmerná lineárna regresia</a></li>
+<li class="chapter" data-level="8.8" data-path="reg.html"><a href="reg.html#testovanie-podmodelov"><i class="fa fa-check"></i><b>8.8</b> Testovanie podmodelov</a></li>
+<li class="chapter" data-level="8.9" data-path="reg.html"><a href="reg.html#transformácie-a-interpretácia"><i class="fa fa-check"></i><b>8.9</b> Transformácie a interpretácia</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="reg.html"><a href="reg.html#level-level-model"><i class="fa fa-check"></i><b>8.9.1</b> Level-level model</a></li>
+<li class="chapter" data-level="8.9.2" data-path="reg.html"><a href="reg.html#log-level-model"><i class="fa fa-check"></i><b>8.9.2</b> Log-level model</a></li>
+<li class="chapter" data-level="8.9.3" data-path="reg.html"><a href="reg.html#level-log-model"><i class="fa fa-check"></i><b>8.9.3</b> Level-log model</a></li>
+<li class="chapter" data-level="8.9.4" data-path="reg.html"><a href="reg.html#log-log-model"><i class="fa fa-check"></i><b>8.9.4</b> Log-log model</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="reg.html"><a href="reg.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.10</b> Zhrnutie</a></li>
+<li class="chapter" data-level="8.11" data-path="reg.html"><a href="reg.html#cvičenia-7"><i class="fa fa-check"></i><b>8.11</b> Cvičenia</a></li>
+<li class="chapter" data-level="8.12" data-path="reg.html"><a href="reg.html#domáca-úloha-4"><i class="fa fa-check"></i><b>8.12</b> Domáca úloha 4</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="report.html"><a href="report.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="report.html"><a href="report.html#r-markdown"><i class="fa fa-check"></i><b>9.1</b> R Markdown</a></li>
+<li class="chapter" data-level="9.2" data-path="report.html"><a href="report.html#cvičenia-8"><i class="fa fa-check"></i><b>9.2</b> Cvičenia</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pravdepodobnosť a štatistika 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="reg" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Úvod do lineárnej regresie<a href="reg.html#reg" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Doteraz sme sa naučili načítať dataset, zobraziť dáta, vypočítať a zobraziť korelácie a otestovať či je medzi nejakými skupinami významný rozdiel. Teraz sa budeme viacej venovať <strong>súvzťažnosti</strong> rôznych premenných.</p>
+<p>Začnime príkladom. Majme informácie o tom, koľko hodín sa študenti pripravujú na test a ich výsledku na teste.</p>
+<p><img src="PaS2bookdown_files/figure-html/reg-1-1.png" width="672" />
+Pozorujeme pozitívnu závislosť, čo nie je prekvapivé. Miera ich lineárnej súvzťažnosti, teda korelácia, je rovná <span class="math inline">\(91.8\%\)</span>, takže veľmi vysoká.</p>
+<pre><code>## [1] 0.9177971</code></pre>
+<p>Možno by sme chceli nejakým spôsobom popísať, ako presne rastie výsledok testu s úsilím, meraným počtom hodín strávených štúdiom, kvantifikovať túto závislosť.</p>
+<p>Uvažujme situáciu, že absolútne nepripravený študent uhádne <span class="math inline">\(40\%\)</span> a potom každá strávená hodina učenia mu zvýši očakávaný výsledok o 1 percentuálny bod.
+<img src="PaS2bookdown_files/figure-html/reg-3-1.png" width="672" />
+Nie je to úplne nemysliteľné ale keď sa zahľadím na dáta spolu s touto modrou čiarou, tak vidíme, že fituje len nedobre. Ak by sme si mysleli, že nepripravený študent uhádne 50% na teste a každá hodina štúdia navýši očakávaný výsledok o 0.8 percentuálneho bodu, potom by to vyzeralo nasledovne:
+<img src="PaS2bookdown_files/figure-html/reg-4-1.png" width="672" />
+Táto priamka oveľa lepšie fituje dáta. Avšak asi by sme potrebovali nejaký systematickejší spôsob ako zvoliť tú priamku, ktorá najlepšie fituje dáta. Slovo “najlepšie” implikuje, že potrebujeme mať <strong>merateľné kritérium</strong>, ktoré bude posudzovať kvalitu fitu. Jedným takýmto kritériom je napríklad suma štovrcov vertikálnych vzdialeností.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="reg.html#cb2-1" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore)</span>
+<span id="cb2-2"><a href="reg.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="reg.html#cb2-3" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> hoursLearned)</span>
+<span id="cb2-4"><a href="reg.html#cb2-4" tabindex="-1"></a><span class="co">#summary(lmod)</span></span>
+<span id="cb2-5"><a href="reg.html#cb2-5" tabindex="-1"></a>beta <span class="ot">&lt;-</span> lmod<span class="sc">$</span>coeff</span>
+<span id="cb2-6"><a href="reg.html#cb2-6" tabindex="-1"></a>predictedScore <span class="ot">&lt;-</span> beta[<span class="dv">1</span>] <span class="sc">+</span> beta[<span class="dv">2</span>]<span class="sc">*</span>hoursLearned</span>
+<span id="cb2-7"><a href="reg.html#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="reg.html#cb2-8" tabindex="-1"></a><span class="fu">lines</span>(hoursLearned, predictedScore)</span>
+<span id="cb2-9"><a href="reg.html#cb2-9" tabindex="-1"></a><span class="fu">segments</span>(hoursLearned, predictedScore,hoursLearned,testScore)</span>
+<span id="cb2-10"><a href="reg.html#cb2-10" tabindex="-1"></a><span class="fu">points</span>(hoursLearned, predictedScore, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-5-1.png" width="672" />
+Spomedzi všetkých možných priamiek, je práve táto ktorá minimializuje sumu štvorcov vertikálnych výchyliek. Budeme používať nasledovné značenie:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> je veľkosť dátovej vzorky (u nás <span class="math inline">\(n=10\)</span>)</li>
+<li><span class="math inline">\(i \in \{1,2,\dots,n \}\)</span> bude index pozorovania (u nás <span class="math inline">\(i\)</span> bude označovať jedného z 10 študentov)</li>
+<li><span class="math inline">\(x_i\)</span> bude označovať nezávislú premennú pre pozorovanie <span class="math inline">\(i\)</span> (koľko hodín sa učil <span class="math inline">\(i\)</span>-ty śtudent)</li>
+<li><span class="math inline">\(y_i\)</span> bude označovať závislú premennú pre pozorovanie <span class="math inline">\(i\)</span> (výsledok testu <span class="math inline">\(i\)</span>-teho śtudenta)</li>
+</ul>
+<p>Nájdenie najlepšej priamky v zmysle vedie na takýto optimializačný problém.
+<span class="math display">\[(\hat \beta_0, \hat \beta_1) = \arg \min_{(\beta_0, \beta_1)} \sum_{i=1}^{n} \Big(y_i - (\beta_0 + \beta_1 x_i) \Big)^2.\]</span>
+Na výpočet sme použili funkciu <code>lm</code> a naše odhady <span class="math inline">\((\hat \beta_0, \hat \beta_1)\)</span> neznámych parametrov <span class="math inline">\((\beta_0, \beta_1)\)</span> sú <span class="math inline">\(46.52\)</span> a <span class="math inline">\(1.12.\)</span>
+Číslo <span class="math inline">\(46.52\)</span> je výška v ktorej pretína čierna priamka os y a číslo <span class="math inline">\(1.12\)</span> je smernica tejto priamky, teda ako rýchlo rastie.</p>
+<p>Ešte predtým, ako sa zavŕtame do detailov, uvedomme si nasledovné skutočnosti</p>
+<ul>
+<li>Chyba je symetrická - penalizujeme podhodnotenie aj nadhodnotenie rovnako.</li>
+<li>Chyba rastie veľmi rýchlo - štvorec, teda kvadratická funkcia, rastie veľmi rýchlo a preto sa budeme snažiť vyhýbať veľmi veľkým chybám.</li>
+<li>Chyby sú merané ako vertikálne vzdialenosti. Takže ak vymeníme úlohy <span class="math inline">\(x\)</span> a <span class="math inline">\(y\)</span>, tak naše výsledky sa <strong>zmenia</strong>.</li>
+</ul>
+<p>Parametre minimalizujúce sumu štvorcov (a teda maximalizujú fit) sa v tomto prípade dajú spočítať aj analyticky - teda existuje explicitný vzťah do ktorého dosadíme hodnoty <span class="math inline">\(x_i, y_i\)</span> a rovno priamo dostaneme <span class="math inline">\((\hat \beta_0, \hat \beta_1).\)</span> Toto je užitočné lebo sa ani nemusíme spoliehať na numerické algoritmy.</p>
+<p>Vzťah pre <span class="math inline">\((\hat \beta_0, \hat \beta_1)\)</span> vyzerá nasledovne:</p>
+<p><span class="math display">\[\hat \beta_1 = \frac{\sum_{i=1}^n (y_i-\bar{y})(x_i - \bar{x}) }{\sum_{i=1}^n (x_i-\bar{x})^2} \]</span></p>
+<span class="math display">\[\hat \beta_0 = \bar y - \hat \beta_1 \bar x.\]</span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reg-6"></span>
+<img src="fig_8_reg_points.png" alt="Rôzne fitované priamky." width="49%" height="20%" /><img src="fig_8_reg_badfit1.png" alt="Rôzne fitované priamky." width="49%" height="20%" /><img src="fig_8_reg_badfit2.png" alt="Rôzne fitované priamky." width="49%" height="20%" /><img src="fig_8_reg_squ.png" alt="Rôzne fitované priamky." width="49%" height="20%" />
+<p class="caption">
+Obrázok 8.1: Rôzne fitované priamky.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reg-7"></span>
+<img src="fig_8_reg_squ_col.png" alt="Ilustrácia metódy najmenších štvorcov" width="80%" />
+<p class="caption">
+Obrázok 8.2: Ilustrácia metódy najmenších štvorcov
+</p>
+</div>
+<div id="lineárny-regresný-model" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Lineárny regresný model<a href="reg.html#lineárny-regresný-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Môžeme sa na problém pozrieť nasledovne. Predpokladajme, že skutočné <span class="math inline">\(y_i\)</span> a <span class="math inline">\(x_i\)</span> sú v nasledujúcom vzťahu</p>
+<p><span class="math display">\[y_i = \beta_0 + \beta_1 x_i + \epsilon_i,\]</span>
+kde <span class="math inline">\(\epsilon_i\)</span> označuje aproximačnú chybu. Takto rozdelíme variabilitu v <span class="math inline">\(y_i\)</span> na systematickú časť (<span class="math inline">\(\beta_0 + \beta_1 x_i\)</span>) a nesystematickú časť (<span class="math inline">\(\epsilon_i\)</span>). Pomocou nášho odhadu <span class="math inline">\((\hat \beta_0, \hat \beta_1)\)</span> neznámych parametrov <span class="math inline">\((\beta_0, \beta_1)\)</span> teda dostávame <strong>odhad</strong> <span class="math inline">\(\hat \epsilon_i = y_i - (\hat \beta_0 + \hat \beta_1 x_i)\)</span> skutočných aproximačných chýb <span class="math inline">\(\epsilon_i\)</span>, ktoré sú nepozorované.</p>
+<p>Toto je samozrejme nejaké zjednodušenie. Nemusíme veriť, že je to <em>presne</em> tak, robíme to preto, aby sme systematizovali kvantifikáciu vzťahu medzi dvomi veličinami. Ak predpokláme o chybách, že sú rozdelené normálne</p>
+<p><span class="math display">\[\epsilon_i \sim N(0, \sigma^2),\]</span>
+tak potom vieme odvodiť aj pravdepodobnostné správanie samotných odhadov <span class="math inline">\((\hat \beta_0, \hat \beta_1),\)</span> ktoré majú taktiež normálne rozdelenie a sú centrované okolo skutočných hodnôt <span class="math inline">\((\beta_0,\beta_1).\)</span></p>
+</div>
+<div id="maticová-notácia" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Maticová notácia<a href="reg.html#maticová-notácia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ak rovnice <span class="math inline">\(y_i = \beta_0 + \beta_1 x_i + \epsilon_i\)</span> napíšeme pod seba <span class="math inline">\(i = 1,2,\dots,n,\)</span> dostaneme</p>
+<p><span class="math display">\[ \begin{pmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix} = \begin{pmatrix}1 &amp; x_1 \\1 &amp; x_2 \\ \vdots&amp; \vdots \\ 1 &amp; x_n \end{pmatrix} \begin{pmatrix}\beta_0 \\ \beta_1 \end{pmatrix} + \begin{pmatrix}\epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \end{pmatrix}\]</span>
+alebo skrátene len
+<span class="math display">\[y = X\beta + \epsilon.\]</span></p>
+<p>Odhad minimalizujúci súčet štvorcov odchýlok je v maticovom zápise nasledovný:</p>
+<p><span class="math display">\[\hat \beta = (X^T X)^{-1} X^T y\]</span></p>
+<p>Ak uvažujeme, že <span class="math inline">\(\epsilon_i \sim N(0, \sigma^2)\)</span> potom <span class="math inline">\(\epsilon \sim N(0, \sigma^2I_n),\)</span> kde <span class="math inline">\(I_n\)</span> označuje <span class="math inline">\(n \times n\)</span> maticu identity (diagonálnu maticu s jednotkami na diagonále a nulami inde).</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\hat \beta &amp;=&amp; (X^T X)^{-1} X^T y \\
+&amp;=&amp; (X^T X)^{-1} X^T (X\beta + \epsilon) \\
+&amp;=&amp; \beta + (X^T X)^{-1} X^T\epsilon
+\end{eqnarray*}\]</span></p>
+<p>Preto</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\hat \beta &amp;\sim&amp; N(\beta, (X^T X)^{-1} X^T Var[\epsilon] X (X^T X)^{-1}  )\\
+        &amp;\sim&amp; N(\beta, (X^T X)^{-1} X^T \sigma^2I_n X (X^T X)^{-1}  )\\
+        &amp;\sim&amp; N(\beta, \sigma^2 (X^T X)^{-1} X^T X (X^T X)^{-1}  )\\
+        &amp;\sim&amp; N(\beta, \sigma^2 (X^T X)^{-1}).
+\end{eqnarray*}\]</span></p>
+<p>Teda my úplne presne vieme aké má pravdepodobnostné rozdelenie. Až na varianciu chýb <span class="math inline">\(\sigma^2\)</span>.
+Tú nevieme a znova len budeme musieť odhadnúť. Dobrým odhadom (nevychýleným) je</p>
+<p><span class="math display">\[\hat \sigma^2 = \sum_{i=1}^n  \frac{\hat \epsilon_i^2}{n-k} = \sum_{i=1}^n  \frac{ \left(y_i - (\beta_0 + \beta_1 x_i)\right)^2}{n-k},\]</span>
+kde <span class="math inline">\(k\)</span> je počet parametrov v modeli (v našom prípade 2).</p>
+<p>Tento odhad variancie chýb použijeme na odhad kovariančnej matice <span class="math inline">\(\hat \beta\)</span>:</p>
+<p><span class="math display">\[\hat Var[\hat \beta] = \hat Var\left[\begin{pmatrix}\hat \beta_0 \\ \hat \beta_1 \end{pmatrix}\right] = \hat \sigma^2 (X^T X)^{-1}.\]</span>
+Diagonálne elementy <span class="math inline">\(2 \times 2\)</span> matice <span class="math inline">\(Var[\hat \beta]\)</span> sú <span class="math inline">\(Var\left[\hat \beta_0\right]\)</span> a <span class="math inline">\(Var\left[\hat \beta_1\right].\)</span> Podobne diagonálne členy odhadu (symetrickej) matice <span class="math inline">\(\hat [\hat \beta]\)</span> sú <span class="math inline">\(\hat Var\left[\hat \beta_0\right]\)</span> a <span class="math inline">\(\hat Var\left[\hat \beta_1\right]\)</span>, mimo diagonály sú <span class="math inline">\(\hat Cov\left[\hat \beta_0,\hat \beta_1\right]\)</span>.</p>
+</div>
+<div id="názvoslovie" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Názvoslovie<a href="reg.html#názvoslovie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pripomeňme si, čo je čo. V matematike je pekným zvykom rozumieť, čo ktoré objekty označujú.</p>
+<ul>
+<li><span class="math inline">\(x_4\)</span> je náhodná premenná, ide o náhodnú premennú <span class="math inline">\(x\)</span> nameranú pre štvrté pozorovanie,</li>
+<li><span class="math inline">\(y_7\)</span> je náhodná premenná, ide o náhodnú premennú <span class="math inline">\(y\)</span> nameranú pre siedme pozorovanie,</li>
+<li><span class="math inline">\(\epsilon_2\)</span> je náhodná premenná, realizáciu tejto náhodnej premennej druhéhp pozorovania nepozorujeme,</li>
+<li><span class="math inline">\(\bar x\)</span> je náhodná premenná (lebo je to funkcia iných náhodných premenných),</li>
+<li><span class="math inline">\(\bar y\)</span> je náhodná premenná (lebo je to funkcia iných náhodných premenných),</li>
+<li><span class="math inline">\(\beta_0\)</span> je číslo. Fixné ale nám neznáme. Hovorí o priesečníku (s osou <span class="math inline">\(y\)</span>) neznámej ale fixnej priamky <span class="math inline">\(\beta_0 + \beta_1 x\)</span>,</li>
+<li><span class="math inline">\(\hat \beta_0\)</span> je náhodná premenná. Je funkciou iných náhodných premenných a odhaduje nám neznáme číslo <span class="math inline">\(\beta_0\)</span>,</li>
+<li><span class="math inline">\(\beta_1\)</span> je číslo. Fixné ale nám neznáme. Hovorí o smernici neznámej ale fixnej priamky <span class="math inline">\(\beta_0 + \beta_1 x\)</span>,</li>
+<li><span class="math inline">\(\hat \beta_1\)</span> je náhodná premenná. Je funkciou iných náhodných premenných a odhaduje nám neznáme číslo <span class="math inline">\(\beta_1\)</span>,</li>
+<li><span class="math inline">\(y\)</span> je vektor náhodných premenných,</li>
+<li><span class="math inline">\(X\)</span> je matica náhodných premenných, ktorá sa skladá z dvoch stĺpcov: jednotiek a vektora náhodných premenných <span class="math inline">\(x_1\)</span> až <span class="math inline">\(x_n\)</span>,</li>
+<li><span class="math inline">\(\beta\)</span> je fixný ale nám neznámy <span class="math inline">\(2 \times 1\)</span> vektor,</li>
+<li><span class="math inline">\(\hat \beta\)</span> je náhodný vektor,</li>
+<li><span class="math inline">\(\sigma^2\)</span> je fixné ale nám neznáme číslo. Je to variancia chýb <span class="math inline">\(\epsilon_i\)</span>. Uvažujeme, že sú rovnaké pre všetky <span class="math inline">\(i=1,\dots,n,\)</span></li>
+<li><span class="math inline">\(\hat \sigma^2\)</span> je náhodná premenná. Je to odhad nám neznámej hodnoty <span class="math inline">\(\sigma^2\)</span>,</li>
+<li><span class="math inline">\(Var\left[\hat \beta\right] = \sigma^2 (X^T X)^{-1}\)</span> je kovariančná matica náhodného vektora <span class="math inline">\(\hat \beta\)</span>,</li>
+<li><span class="math inline">\(\hat Var\left[\hat \beta\right] = \hat \sigma^2 (X^T X)^{-1}\)</span> je odhad kovariančnej matice náhodného vektora <span class="math inline">\(\hat \beta\)</span>.</li>
+</ul>
+</div>
+<div id="ako-na-to" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Ako na to<a href="reg.html#ako-na-to" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Čiaru minimalizujúcu fit v zmysle najmenších štvorcov odchýlok dostaneme aj použitím funkcie <code>geom_smooth</code> možnosťou <code>method="lm"</code> a <code>formula = "y~x"</code> ako je uvedené nižšie.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="reg.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="reg.html#cb3-2" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">hours =</span> hoursLearned, </span>
+<span id="cb3-3"><a href="reg.html#cb3-3" tabindex="-1"></a>                 <span class="at">score =</span> testScore)</span>
+<span id="cb3-4"><a href="reg.html#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="reg.html#cb3-5" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>hours,<span class="at">y=</span>score)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="reg.html#cb3-6" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb3-7"><a href="reg.html#cb3-7" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,</span>
+<span id="cb3-8"><a href="reg.html#cb3-8" tabindex="-1"></a>              <span class="at">formula =</span> <span class="st">&quot;y~x&quot;</span>,</span>
+<span id="cb3-9"><a href="reg.html#cb3-9" tabindex="-1"></a>              <span class="at">se=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-8-1.png" width="672" /></p>
+<p>Ak chceme detailné informácie o krivke, použijeme funkciu <code>lm</code> a <code>summary</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="reg.html#cb4-1" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> hoursLearned)</span>
+<span id="cb4-2"><a href="reg.html#cb4-2" tabindex="-1"></a><span class="fu">summary</span>(lmod)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = testScore ~ hoursLearned)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -10.2990  -2.2503  -0.8337   1.9847  12.0375 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   46.5193     3.6968  12.584 1.49e-06 ***
+## hoursLearned   1.1195     0.1712   6.538 0.000181 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 6.246 on 8 degrees of freedom
+## Multiple R-squared:  0.8424, Adjusted R-squared:  0.8226 
+## F-statistic: 42.75 on 1 and 8 DF,  p-value: 0.0001807</code></pre>
+<p>Je tu veľa informácií. Všetky tieto čísla si dopodrobna rozoberieme.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reg-10"></span>
+<img src="fig_8_reg.png" alt="Regresná tabuľka" width="80%" />
+<p class="caption">
+Obrázok 8.3: Regresná tabuľka
+</p>
+</div>
+<ul>
+<li>Parameter formula nám hovorí akou rovnicou aproximujeme <span class="math inline">\(y_i\)</span> pomocou <span class="math inline">\(x_i\)</span>.</li>
+<li>Residuals označujú charakteristiky distribúcie odhadovaných chýb, takže hodnoty <span class="math inline">\(\hat \epsilon_i\)</span>.</li>
+<li>V tabuľke koeficientov je prvý riadok o odhade <span class="math inline">\(\hat \beta_0\)</span> a druhý riadok o odhade <span class="math inline">\(\hat \beta_1\)</span>.</li>
+<li>Prvý stĺpec sú samotné hodnoty odhadov, v druhom sú odhady smerodajných odchýlok odhadov, nazývané aj <strong>štandardné chyby</strong> (v angl. Standard errors).</li>
+<li>V treťom stĺpci sú testovacie štatistiky, ktoré testujú hypotézu <span class="math inline">\(H_0: \beta_0 = 0\)</span> a <span class="math inline">\(H_0: \beta_1 = 0\)</span> a v poslednom stĺpci sú príslušné p-hodnoty týchto testov (viac o testovacích štatistikách neskôr).</li>
+</ul>
+<p>Pokračujeme ďalej:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reg-11"></span>
+<img src="fig_8_reg_2.png" alt="Regresná tabuľka" width="80%" />
+<p class="caption">
+Obrázok 8.4: Regresná tabuľka
+</p>
+</div>
+<ul>
+<li>V tabuľke máme aj reziduálnu štandardnú chybu, čo je odhad smerodajnej odchýlky reziduí <span class="math inline">\(\hat{sd}[\hat \epsilon]\)</span>,</li>
+<li>Počet <strong>stupňov voľnosti</strong> je počet pozorovaní mínus počet parametrov v modeli,</li>
+<li><span class="math inline">\(R^2\)</span> je číslo medzi 0 a 1, ktoré vyjadruje kvalitu fitu. Hodnota 0 znamená, že <span class="math inline">\(x\)</span> neposkytuje žiadnu užitočnú informáciu na fitovanie <span class="math inline">\(y\)</span> (pomocou lineárneho modelu), hodnota 1 znamená, že <span class="math inline">\(x\)</span> perfektne predikuje <span class="math inline">\(y\)</span> (pomocou lineárneho modelu),</li>
+<li>F štatistika testuje významnosť regresie, teda v tomto prípade porovnáva modely <span class="math inline">\(y_i = \beta_0 + \beta_1 x_i + \epsilon_i,\)</span> a <span class="math inline">\(y_i = \beta_0 + \epsilon_i,\)</span> takže v tomto prípade testuje <span class="math inline">\(H_0: \beta_1 = 0.\)</span> (Všimnime si, že p-hodnota je rovnaká ako v riadku pri <span class="math inline">\(\hat \beta_1\)</span>, až na zaokrúhlenie).</li>
+</ul>
+</div>
+<div id="geometria-najmenších-štvorcov" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Geometria najmenších štvorcov<a href="reg.html#geometria-najmenších-štvorcov" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Metóda, ktorá nastavuje parametre neznámej priamky tak, že minimalizuje sumu štvorcov má zaujimavú geometrickú interpretáciu.</p>
+<p>Ide totiž o projekciu.</p>
+<p> </p>
+<p>Snažíme sa projektovať vektor <span class="math inline">\(y = (y_1, y_2, \dots, y_n)^T\)</span> do podpriestoru generovaného konštantných jednotiek <span class="math inline">\((1,1,\cdots,1)^T\)</span> a <span class="math inline">\(x = (x_1, x_2, \dots, x_n)^T\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reg-12"></span>
+<img src="fig_8_reg_geom.png" alt="Geometria najmenších štvorcov" width="80%" />
+<p class="caption">
+Obrázok 8.5: Geometria najmenších štvorcov
+</p>
+</div>
+<p>Obrázok ukazuje geometriu najmenších štvorcov. Každý vektor (šípka) reprezentuje bod v n-rozmernom priestore. Vektor <span class="math inline">\(y\)</span> sa nenachádza v priestore generovanom vektorom konštantných jednotiek a <span class="math inline">\(x\)</span>. Metóda najmenších štvorcov projektu vektor <span class="math inline">\(y\)</span> do tohoto podpriestoru, teda hľadá minimálnu vzdialenosť červeného vektora <span class="math inline">\(\hat \epsilon\)</span> v zmysle euklidovskej vzdialenosti (to je taká tá obyčajná na akú sme zvyknú v našom 3D svete a meriame ju pravítkom). Takže tu máme viacerozmernú verziu Pytagorovho trojuholníka.</p>
+<p>Miera (lineárneho) fitu je popísaná nasledujúcim vzťahom:</p>
+<p><span class="math display">\[R^2 = 1- \frac{\sum (y_i - \hat y_i )^2}{\sum (y_i - \bar y)^2} = 1- \frac{{RSS}}{{TSS}} =  \frac{ESS}{{TSS}} = \frac{\sum (\bar y - \hat y_i )^2}{\sum (y_i - \bar y)^2},\]</span>
+kde používame nasledovné značenie</p>
+<ul>
+<li>RSS - reziduálna suma štvorcov (residual sum of squares),</li>
+<li>ESS - vysvetlená suma štvorcov (explained sum of squares),</li>
+<li>TSS - celková suma štvorcov (total sum of squares).</li>
+</ul>
+<p>Nejde v podstate o nič iné ako odhad lineárnej súvzťažnosti medzi <span class="math inline">\(y\)</span> a odhadovaných <span class="math inline">\(\hat y\)</span>:
+<span class="math display">\[R^2 = \left(\hat{cor}(\hat y, y)\right)^2 = \frac{\sum (\bar y - \hat y_i )^2}{\sum (y_i - \bar y_i)^2}.\]</span></p>
+<p>Hodnota <span class="math inline">\(R^2\)</span> nám teda hovorí o miere <strong>lineárnej</strong> súvzťažnosti medzi fitovanými hodnotami <span class="math inline">\(\hat y\)</span> a skutočnými hodnotami <span class="math inline">\(y\)</span>. Toto však môže byť matúce, ak medzi dvomi premennými nie je lineárny vzťah. (Tuto ide o menej zábavnú verziu <a href="https://bookdown.org/lukas_laffers/pas1/cov.html#miera-závislosti">datasetov s dinosaurom</a>.)</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reg-13"></span>
+<img src="fig_8_reg_R2.png" alt="Veľmi rôzne dáta vedú na rovnaké miery fitu $R^2$. (Zdroj: Faraway, Julian J. Linear models with R. Chapman and Hall/CRC, 2004.)" width="80%" />
+<p class="caption">
+Obrázok 8.6: Veľmi rôzne dáta vedú na rovnaké miery fitu <span class="math inline">\(R^2\)</span>. (Zdroj: Faraway, Julian J. Linear models with R. Chapman and Hall/CRC, 2004.)
+</p>
+</div>
+<p>Ale to je tak vždy, keď sa komplexnú informáciu snažím skomprimovať do jedného čísla, svet je totiž rozmanitý.</p>
+</div>
+<div id="konfidenčné-intervaly" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Konfidenčné intervaly<a href="reg.html#konfidenčné-intervaly" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Chceli by sme kvantifikovať neistotu spojenú s odhadom budúcich hodnôt. Ako veľmi si môžeme byť istí tým, že študent učiaci sa 20 hodín bude mať očakávaný počet bodov práve <span class="math inline">\(\hat \beta_0 + \hat \beta_1 20 = 46.52 + 1.12 \cdot 20 = 68.92\)</span>?</p>
+<p>Nakoľko vieme kvantifikovať neistotu spojenú s <span class="math inline">\(\hat \beta_0\)</span> a <span class="math inline">\(\hat \beta_1\)</span>, môžeme použiť na <span class="math inline">\(\hat \beta_0 + \hat \beta_1 x\)</span> pre akékoľvek číslo <span class="math inline">\(x\)</span>.</p>
+<p>Stredná hodnota pre modelovanú premennú ak by <span class="math inline">\(x\)</span> nadobúdalo hodnotu <span class="math inline">\(x_0\)</span> je
+<span class="math display">\[\hat y_0 = \hat \beta_0 + \hat \beta_1 x_0 =  (1, x_0) \begin{pmatrix} \hat \beta_0 \\ \hat \beta_1 \end{pmatrix}\]</span></p>
+<p>Zatiaľčo budúca hodnota je
+<span class="math display">\[y_0 = \hat y_0 + \epsilon_0\]</span></p>
+<ul>
+<li><span class="math inline">\(95\%\)</span>ný konfidenčný interval pre strednú hodnotu <span class="math inline">\(\hat y_0 \pm t_{n-p}^{(\alpha/2)} \hat \sigma \sqrt{ (1, x_0) (X^T X)^{-1}(1, x_0)^T}\)</span></li>
+<li><span class="math inline">\(95\%\)</span>ný predičný interval pre budúcu hodnotu <span class="math inline">\(\hat y_0 \pm t_{n-p}^{(\alpha/2)} \hat \sigma \sqrt{1 + (1, x_0) (X^T X)^{-1}(1, x_0)^T}\)</span></li>
+</ul>
+<p>Ten druhý interval je širší, lebo v sebe zahŕňa aj informáciu o buducej chybe <span class="math inline">\(\epsilon_0\)</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+var(\hat y_0 + \epsilon_0) &amp;=&amp; var(\hat y_0)+ var(\epsilon_0) \\
+&amp;=&amp;  (1, x_0) (X^T X)^{-1}(1, x_0)^T \sigma^2 + \sigma^2 \\
+&amp;=&amp; \big({\color{green}1 +} (1, x_0) (X^T X)^{-1}(1, x_0)^T\big) \sigma^2
+\end{eqnarray*}\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reg-14"></span>
+<img src="fig_8_reg_ci.png" alt="Konfidenčné a predikčné intervaly." width="80%" />
+<p class="caption">
+Obrázok 8.7: Konfidenčné a predikčné intervaly.
+</p>
+</div>
+<p>Predikčné intervaly nie sú v <code>ggplot2</code> natívne, preto si ich musíme dorobiť mechanicky.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="reg.html#cb6-1" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> hours, <span class="at">data=</span>df)</span>
+<span id="cb6-2"><a href="reg.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="reg.html#cb6-3" tabindex="-1"></a>pi95 <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmod, <span class="at">interval=</span><span class="st">&quot;prediction&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in predict.lm(lmod, interval = &quot;prediction&quot;): predictions on current data refer to _future_ responses</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="reg.html#cb8-1" tabindex="-1"></a>df2      <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df, pi95)</span>
+<span id="cb8-2"><a href="reg.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="reg.html#cb8-3" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df2, <span class="fu">aes</span>(<span class="at">x=</span>hours,<span class="at">y=</span>score)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="reg.html#cb8-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb8-5"><a href="reg.html#cb8-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,</span>
+<span id="cb8-6"><a href="reg.html#cb8-6" tabindex="-1"></a>              <span class="at">formula =</span> <span class="st">&quot;y~x&quot;</span>,</span>
+<span id="cb8-7"><a href="reg.html#cb8-7" tabindex="-1"></a>              <span class="at">se=</span><span class="cn">TRUE</span>) <span class="sc">+</span> </span>
+<span id="cb8-8"><a href="reg.html#cb8-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>lwr), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>)<span class="sc">+</span></span>
+<span id="cb8-9"><a href="reg.html#cb8-9" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>upr), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-15-1.png" width="672" /></p>
+</div>
+<div id="viacrozmerná-lineárna-regresia" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">8.7</span> Viacrozmerná lineárna regresia<a href="reg.html#viacrozmerná-lineárna-regresia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Doteraz nám lineárna regresia slúžila na modelovanie vzťahu medzi dvomi veličinami. Častokrát však chceme použiť mnoho rôznych faktorov na predikovanie nejakej premennej. Napríklad</p>
+<ul>
+<li>rôzne vlastnosti ojazdeného auta môžu determinovať jeho trhovú cenu,</li>
+<li>rôzne vlastnosti absolventa budú terminovať jeho mzdu o 10 rokov,</li>
+<li>rôzne vlastnosti filmu môžu determinovať jeho obľúbenosť alebo zisk, ktorý vygeneruje.</li>
+</ul>
+<p>Začneme triviálnym rozšírením nášho modelu. Teraz nebudeme mať len jeden prediktor <span class="math inline">\(x\)</span> ale mnoho.
+Model bude vyzerať nasledovne:</p>
+<span class="math display">\[y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_p x_{ip} + \epsilon_{i}\]</span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reg-16"></span>
+<img src="fig_8_reg_linreg.png" alt="Vizualizácia lineárnej regresie, vľavo sa použitím len jednej vysvetľovacej premennej, vpravo dvomi. (Zdroj: Faraway, Julian J. Linear models with R. Chapman and Hall/CRC, 2004.)" width="80%" />
+<p class="caption">
+Obrázok 8.8: Vizualizácia lineárnej regresie, vľavo sa použitím len jednej vysvetľovacej premennej, vpravo dvomi. (Zdroj: Faraway, Julian J. Linear models with R. Chapman and Hall/CRC, 2004.)
+</p>
+</div>
+<p>Maticová notácia nám ostáva, len musíme predefinovať maticu <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[ \begin{pmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix} = \begin{pmatrix}1 &amp; x_{11} &amp; x_{12} &amp; \dots &amp; x_{1n} \\1 &amp; x_{21} &amp; x_{22} &amp; \dots &amp; x_{2n} \\ \vdots&amp; \vdots&amp; \vdots &amp; \vdots &amp; \vdots \\ 1 &amp; x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{1n} \end{pmatrix} \begin{pmatrix}\beta_0 \\ \beta_1 \\ \beta_2\\ \vdots \\ \beta_p \end{pmatrix} + \begin{pmatrix}\epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \end{pmatrix}\]</span>
+alebo skrátene len
+<span class="math display">\[y = X\beta + \epsilon.\]</span></p>
+<p>Preto bude zápis odhadu minimalizujúceho súčet štvorcov odchýlok v maticovom zápise rovnaký ako predtým:</p>
+<p><span class="math display">\[\hat \beta = (X^T X)^{-1} X^T y\]</span>
+Demonštrujeme si to na príklade. Chceli by sme vysvetlovať tržby na základe objemu peňazí investovaného do rôzneho typu reklamy (facebook, youtube, noviny).</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="reg.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(datarium)</span>
+<span id="cb9-2"><a href="reg.html#cb9-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;marketing&quot;</span>, <span class="at">package =</span> <span class="st">&quot;datarium&quot;</span>)</span>
+<span id="cb9-3"><a href="reg.html#cb9-3" tabindex="-1"></a><span class="co">#let us try to explain sales with ads on both youtube and facebook</span></span>
+<span id="cb9-4"><a href="reg.html#cb9-4" tabindex="-1"></a><span class="fu">summary</span>(marketing)</span></code></pre></div>
+<pre><code>##     youtube          facebook       newspaper          sales      
+##  Min.   :  0.84   Min.   : 0.00   Min.   :  0.36   Min.   : 1.92  
+##  1st Qu.: 89.25   1st Qu.:11.97   1st Qu.: 15.30   1st Qu.:12.45  
+##  Median :179.70   Median :27.48   Median : 30.90   Median :15.48  
+##  Mean   :176.45   Mean   :27.92   Mean   : 36.66   Mean   :16.83  
+##  3rd Qu.:262.59   3rd Qu.:43.83   3rd Qu.: 54.12   3rd Qu.:20.88  
+##  Max.   :355.68   Max.   :59.52   Max.   :136.80   Max.   :32.40</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="reg.html#cb11-1" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube<span class="sc">+</span>facebook <span class="sc">+</span> newspaper,<span class="at">data=</span>marketing)</span>
+<span id="cb11-2"><a href="reg.html#cb11-2" tabindex="-1"></a><span class="fu">summary</span>(lmod)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sales ~ youtube + facebook + newspaper, data = marketing)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -10.5932  -1.0690   0.2902   1.4272   3.3951 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  3.526667   0.374290   9.422   &lt;2e-16 ***
+## youtube      0.045765   0.001395  32.809   &lt;2e-16 ***
+## facebook     0.188530   0.008611  21.893   &lt;2e-16 ***
+## newspaper   -0.001037   0.005871  -0.177     0.86    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.023 on 196 degrees of freedom
+## Multiple R-squared:  0.8972, Adjusted R-squared:  0.8956 
+## F-statistic: 570.3 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Môžeme si všimnúť, že tržby sú pozitívne asociované s nákladami na reklamu na Youtube a Facebooku a príslušné koeficienty sú štatisticky významné. Reklama v novinách je len veľmi málo asociovaná s tržbami, dokonca negatívne ale jej koeficient nie je štatisticky významný. A táto negatívna parciálna asociácia je tam aj napriek tomu, že samotná korelácia medzi reklamou v novinách a tržbami je pozitívna. Môže to byť napríklad tým, že keď firmy inzerujú na Facebooku, tak inzerujú aj v novinách ale v skutočnosti je ta tá Facebooková reklama, ktorá zaberá. Každopádne teraz skúmame len asociácie. Nevieme, prečo v skutočnosti tržby rastú.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="reg.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb13-2"><a href="reg.html#cb13-2" tabindex="-1"></a><span class="fu">corrplot</span>(<span class="fu">cor</span>(marketing), <span class="at">type =</span> <span class="st">&quot;upper&quot;</span>, <span class="at">order =</span> <span class="st">&quot;hclust&quot;</span>, </span>
+<span id="cb13-3"><a href="reg.html#cb13-3" tabindex="-1"></a>         <span class="at">tl.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">tl.srt =</span> <span class="dv">45</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-18-1.png" width="672" /></p>
+<p>Teraz si zobrazme asociáciu medzi tržbami a štatisticky významými prediktormi (<code>youtube</code>, <code>facebook</code>), spolu s odhadnutou regresnou plochou.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="reg.html#cb14-1" tabindex="-1"></a><span class="co"># we will follow https://rpubs.com/pjozefek/576206</span></span>
+<span id="cb14-2"><a href="reg.html#cb14-2" tabindex="-1"></a><span class="co"># and modify it for our purposes</span></span>
+<span id="cb14-3"><a href="reg.html#cb14-3" tabindex="-1"></a><span class="fu">attach</span>(marketing)</span>
+<span id="cb14-4"><a href="reg.html#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="reg.html#cb14-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> sales</span>
+<span id="cb14-6"><a href="reg.html#cb14-6" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> facebook</span>
+<span id="cb14-7"><a href="reg.html#cb14-7" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> youtube</span>
+<span id="cb14-8"><a href="reg.html#cb14-8" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="reg.html#cb14-9" tabindex="-1"></a>lmodM <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2)</span>
+<span id="cb14-10"><a href="reg.html#cb14-10" tabindex="-1"></a><span class="fu">summary</span>(lmodM)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x1 + x2)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -10.5572  -1.0502   0.2906   1.4049   3.3994 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  3.50532    0.35339   9.919   &lt;2e-16 ***
+## x1           0.18799    0.00804  23.382   &lt;2e-16 ***
+## x2           0.04575    0.00139  32.909   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.018 on 197 degrees of freedom
+## Multiple R-squared:  0.8972, Adjusted R-squared:  0.8962 
+## F-statistic: 859.6 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="reg.html#cb16-1" tabindex="-1"></a><span class="fu">library</span>(plot3D)</span>
+<span id="cb16-2"><a href="reg.html#cb16-2" tabindex="-1"></a>grid.lines <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb16-3"><a href="reg.html#cb16-3" tabindex="-1"></a>x1.pred <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x1), <span class="fu">max</span>(x1), <span class="at">length.out =</span> grid.lines)</span>
+<span id="cb16-4"><a href="reg.html#cb16-4" tabindex="-1"></a>x2.pred <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x2), <span class="fu">max</span>(x2), <span class="at">length.out =</span> grid.lines)</span>
+<span id="cb16-5"><a href="reg.html#cb16-5" tabindex="-1"></a>x1x2 <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>( <span class="at">x1 =</span> x1.pred, <span class="at">x2 =</span> x2.pred)</span>
+<span id="cb16-6"><a href="reg.html#cb16-6" tabindex="-1"></a>y.pred <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">predict</span>(lmodM, <span class="at">newdata =</span> x1x2), </span>
+<span id="cb16-7"><a href="reg.html#cb16-7" tabindex="-1"></a>                 <span class="at">nrow =</span> grid.lines, <span class="at">ncol =</span> grid.lines)</span>
+<span id="cb16-8"><a href="reg.html#cb16-8" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="reg.html#cb16-9" tabindex="-1"></a><span class="co"># create the fitted points for droplines to the surface</span></span>
+<span id="cb16-10"><a href="reg.html#cb16-10" tabindex="-1"></a>fitpoints <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmodM)</span>
+<span id="cb16-11"><a href="reg.html#cb16-11" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="reg.html#cb16-12" tabindex="-1"></a><span class="co"># scatter plot with regression plane</span></span>
+<span id="cb16-13"><a href="reg.html#cb16-13" tabindex="-1"></a><span class="fu">scatter3D</span>(x1, x2, y, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="dv">1</span>,<span class="at">colvar =</span> <span class="cn">NULL</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, </span>
+<span id="cb16-14"><a href="reg.html#cb16-14" tabindex="-1"></a>          <span class="at">theta =</span> <span class="sc">-</span><span class="dv">130</span>, <span class="at">phi =</span> <span class="dv">20</span>, <span class="at">bty=</span><span class="st">&quot;b&quot;</span>,</span>
+<span id="cb16-15"><a href="reg.html#cb16-15" tabindex="-1"></a>          <span class="at">xlab =</span> <span class="st">&quot;youtube&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;facebook&quot;</span>, <span class="at">zlab =</span> <span class="st">&quot;sales&quot;</span>,  </span>
+<span id="cb16-16"><a href="reg.html#cb16-16" tabindex="-1"></a>          <span class="at">surf =</span> <span class="fu">list</span>(<span class="at">x =</span> x1.pred, <span class="at">y =</span> x2.pred, <span class="at">z =</span> y.pred,  </span>
+<span id="cb16-17"><a href="reg.html#cb16-17" tabindex="-1"></a>                      <span class="at">facets =</span> <span class="cn">TRUE</span>, <span class="at">fit =</span> fitpoints, </span>
+<span id="cb16-18"><a href="reg.html#cb16-18" tabindex="-1"></a>                      <span class="at">col=</span><span class="fu">ramp.col</span> (<span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;dodgerblue3&quot;</span>,<span class="st">&quot;seagreen2&quot;</span>), </span>
+<span id="cb16-19"><a href="reg.html#cb16-19" tabindex="-1"></a>                                    <span class="at">n =</span> <span class="dv">300</span>, <span class="at">alpha=</span><span class="fl">0.9</span>), <span class="at">border=</span><span class="st">&quot;black&quot;</span>), </span>
+<span id="cb16-20"><a href="reg.html#cb16-20" tabindex="-1"></a>          <span class="at">main =</span> <span class="st">&quot;Marketing&quot;</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-19-1.png" width="672" />
+## Nelineárne vzťahy a lineárna regresia</p>
+<p>Niekedy je závislosť medzi dvomi premennými zjavne nelineárna. Ak sa nazdávame, že by bola vhodne modelovaná kvadratickou funkciou, potom by sme chceli fitovať nasledovný model.</p>
+<p><span class="math display">\[y_i = \beta_0 + \beta_1 x_i + \beta_2 x^2_i + \epsilon_i,\]</span>
+Takýto model odhadneme nasledovne (dva spôsoby).</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="reg.html#cb17-1" tabindex="-1"></a>marketing<span class="sc">$</span>youtube2 <span class="ot">&lt;-</span> (marketing<span class="sc">$</span>youtube)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb17-2"><a href="reg.html#cb17-2" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="reg.html#cb17-3" tabindex="-1"></a><span class="co">#lmodq &lt;- lm(sales ~ youtube + youtube2, data=marketing)</span></span>
+<span id="cb17-4"><a href="reg.html#cb17-4" tabindex="-1"></a><span class="co">#summary(lmod)</span></span>
+<span id="cb17-5"><a href="reg.html#cb17-5" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="reg.html#cb17-6" tabindex="-1"></a>lmodq2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> <span class="fu">I</span>(youtube<span class="sc">^</span><span class="dv">2</span>), <span class="at">data=</span>marketing)</span>
+<span id="cb17-7"><a href="reg.html#cb17-7" tabindex="-1"></a><span class="fu">summary</span>(lmodq2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sales ~ youtube + I(youtube^2), data = marketing)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -9.2213 -2.1412 -0.1874  2.4106  9.0117 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   7.337e+00  7.911e-01   9.275  &lt; 2e-16 ***
+## youtube       6.727e-02  1.059e-02   6.349 1.46e-09 ***
+## I(youtube^2) -5.706e-05  2.965e-05  -1.924   0.0557 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.884 on 197 degrees of freedom
+## Multiple R-squared:  0.619,  Adjusted R-squared:  0.6152 
+## F-statistic: 160.1 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Zo sumárnej tabuľky vidime, že kvadratický člen má pridružený p-hodnotu tesne nad <span class="math inline">\(5\%\)</span>. Na tomto obrázku to môžeme porovnať vizuálne.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="reg.html#cb19-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>marketing, <span class="fu">aes</span>(<span class="at">x=</span>youtube, <span class="at">y=</span>sales)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="reg.html#cb19-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb19-3"><a href="reg.html#cb19-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">formula=</span><span class="st">&quot;y ~ x&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb19-4"><a href="reg.html#cb19-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">formula=</span><span class="st">&quot;y ~ x + I(x^2)&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-21-1.png" width="672" /></p>
+<p>Teraz môžeme tieto myšlienky nakombinovať. Uvažujme, nech je závislosť v premennej <code>youtube</code> kvadratická a nech je v premennej <code>facebook</code> lineárna:</p>
+<p><span class="math display">\[sales_i = \beta_0 + \beta_1 youtube_i + \beta_2 youtube^2_i + \beta_3 facebook_i  + \epsilon_i,\]</span></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="reg.html#cb20-1" tabindex="-1"></a>lmod_yt2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> <span class="fu">I</span>(youtube<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> facebook, <span class="at">data=</span>marketing)</span>
+<span id="cb20-2"><a href="reg.html#cb20-2" tabindex="-1"></a><span class="fu">summary</span>(lmod_yt2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sales ~ youtube + I(youtube^2) + facebook, data = marketing)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -8.8632 -1.0586 -0.0598  1.1536  4.2870 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   1.545e+00  4.306e-01   3.588 0.000421 ***
+## youtube       7.844e-02  4.985e-03  15.736  &lt; 2e-16 ***
+## I(youtube^2) -9.465e-05  1.397e-05  -6.775 1.42e-10 ***
+## facebook      1.930e-01  7.293e-03  26.465  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.821 on 196 degrees of freedom
+## Multiple R-squared:  0.9167, Adjusted R-squared:  0.9154 
+## F-statistic:   719 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Berúc do úvahy aj reklamu na Facebooku sa kvadratický člen pri Youtube ukazuje ako silne signifikantný.</p>
+</div>
+<div id="testovanie-podmodelov" class="section level2 hasAnchor" number="8.8">
+<h2><span class="header-section-number">8.8</span> Testovanie podmodelov<a href="reg.html#testovanie-podmodelov" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ak sme v situácii, že máme 2 modely, jeden zložitejší, čo fituje dáta lepšie a jeden jednoduchší, ktorý je zasa elegantnejší. Ako sa medzi nimi rozhodujeme? Za predpokladu normality chýb na to môžeme použiť testovaciu štatistiku. Ak by bol menší model (ktorý je len špeciálnou verziou väčšieho modelu) správny, má nasledovná štatistika F rozdelenie.</p>
+<p><span class="math display">\[\frac{(RSS_{rest}-RSS_{full})/df}{\hat \sigma^2} \sim F_{df, n-p},\]</span>
+kde</p>
+<ul>
+<li><span class="math inline">\(RSS_{rest}\)</span> je reziduálna suma štvorcov menšieho (jednoduchšieho) modelu</li>
+<li><span class="math inline">\(RSS_{full}\)</span> je reziduálna suma štvorcov plného (zložitejšieho) modelu</li>
+<li><span class="math inline">\(df\)</span> je počet reštrikcií, ktoré z plného modelu urobia jednoduchší</li>
+<li><span class="math inline">\(n\)</span> je počet pozorovaní</li>
+<li><span class="math inline">\(p\)</span> je počet premenných vo veľkom modeli</li>
+<li><span class="math inline">\(\sigma^2\)</span> je odhad variancie reziduí.</li>
+</ul>
+<p>Geometria je nasledovná</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:reg-23"></span>
+<img src="fig_8_3projection_LL.png" alt="Porovnanie zložitejšieho a jednoduchšieho modelu." width="80%" />
+<p class="caption">
+Obrázok 8.9: Porovnanie zložitejšieho a jednoduchšieho modelu.
+</p>
+</div>
+<p>Test toho, či je podmodel korektný, je implementovaný nasledovne:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="reg.html#cb22-1" tabindex="-1"></a>lmod_full <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> <span class="fu">I</span>(youtube<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> facebook <span class="sc">+</span> newspaper, <span class="at">data=</span>marketing)</span>
+<span id="cb22-2"><a href="reg.html#cb22-2" tabindex="-1"></a>lmod_rest <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> youtube <span class="sc">+</span> facebook, <span class="at">data=</span>marketing)</span>
+<span id="cb22-3"><a href="reg.html#cb22-3" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="reg.html#cb22-4" tabindex="-1"></a>RSS_rest <span class="ot">&lt;-</span> <span class="fu">sum</span>(lmod_rest<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb22-5"><a href="reg.html#cb22-5" tabindex="-1"></a>RSS_full <span class="ot">&lt;-</span> <span class="fu">sum</span>(lmod_full<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb22-6"><a href="reg.html#cb22-6" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="reg.html#cb22-7" tabindex="-1"></a><span class="fu">anova</span>(lmod_rest,lmod_full)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: sales ~ youtube + facebook
+## Model 2: sales ~ youtube + I(youtube^2) + facebook + newspaper
+##   Res.Df    RSS Df Sum of Sq      F    Pr(&gt;F)    
+## 1    197 801.96                                  
+## 2    195 649.71  2    152.25 22.847 1.217e-09 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Teraz tieto čísla zreprodukujeme mechanicky:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="reg.html#cb24-1" tabindex="-1"></a><span class="co">#get F-statistic</span></span>
+<span id="cb24-2"><a href="reg.html#cb24-2" tabindex="-1"></a><span class="co"># this tests null hypothesis H0:beta1=0</span></span>
+<span id="cb24-3"><a href="reg.html#cb24-3" tabindex="-1"></a>(Fstat <span class="ot">&lt;-</span> ((RSS_rest <span class="sc">-</span> RSS_full)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">/</span> (RSS_full<span class="sc">/</span>(<span class="dv">200-5</span>)) ) </span></code></pre></div>
+<pre><code>## [1] 22.84728</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="reg.html#cb26-1" tabindex="-1"></a><span class="co">#corresponding p-value</span></span>
+<span id="cb26-2"><a href="reg.html#cb26-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pf</span>(Fstat,<span class="at">df1=</span><span class="dv">2</span>,<span class="at">df2=</span><span class="dv">200-5</span>)</span></code></pre></div>
+<pre><code>## [1] 1.217338e-09</code></pre>
+<p>Tu sme testovali reštrikciu, či je kvadratický člen <code>youtube</code> nevýznamný a zároveň či je prediktor <code>newspaper</code> nevýznamný, teda či sú prislúchajúce koeficienty nulové.</p>
+</div>
+<div id="transformácie-a-interpretácia" class="section level2 hasAnchor" number="8.9">
+<h2><span class="header-section-number">8.9</span> Transformácie a interpretácia<a href="reg.html#transformácie-a-interpretácia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>V niektorých prípadoch modelujeme namiesto samotnej premennej jej rast. Napríklad je asi uveriteľnejšie uvažovať, že vzdelanie môže pomôcť zvýšit mzdu <strong>proporcionálne</strong>. To znamená, že absolvovanie vysokej školy zvýši mzdu v priemere približne o 20% a nie o 300eur. Rozdiel medzi 1000eur a 1300eur je totiž výraznejší z praktického hľadiska ako z 3500eur na 3800eur. Na modelovanie rastu používame logaritmickú transformáciu. Všetko si to ukážeme na našom príklade so študentami a ich výkonom na teste.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="reg.html#cb28-1" tabindex="-1"></a>hoursLearned <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">40</span>,<span class="dv">33</span>,<span class="dv">11</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="fl">13.5</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">30</span>,</span>
+<span id="cb28-2"><a href="reg.html#cb28-2" tabindex="-1"></a>                  <span class="dv">6</span>,<span class="dv">22</span>,<span class="dv">45</span>,<span class="dv">20</span>,<span class="dv">11</span>,<span class="dv">22</span>,<span class="dv">40</span>,<span class="dv">29</span>,<span class="dv">47</span>,<span class="dv">9</span>)</span>
+<span id="cb28-3"><a href="reg.html#cb28-3" tabindex="-1"></a>testScore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">81</span>, <span class="fl">95.5</span>, <span class="fl">63.5</span>, <span class="dv">71</span>, <span class="dv">59</span>, <span class="dv">59</span>, <span class="dv">57</span>, <span class="fl">60.5</span>, <span class="dv">79</span>,</span>
+<span id="cb28-4"><a href="reg.html#cb28-4" tabindex="-1"></a>               <span class="dv">45</span>, <span class="dv">54</span>, <span class="dv">50</span>, <span class="dv">52</span>, <span class="dv">50</span>, <span class="dv">61</span>, <span class="dv">68</span>, <span class="dv">66</span>, <span class="dv">64</span>, <span class="dv">50</span>)</span>
+<span id="cb28-5"><a href="reg.html#cb28-5" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">&quot;B&quot;</span>,<span class="dv">10</span>))</span>
+<span id="cb28-6"><a href="reg.html#cb28-6" tabindex="-1"></a>gA <span class="ot">&lt;-</span> (group<span class="sc">==</span><span class="st">&quot;A&quot;</span>)<span class="sc">*</span><span class="dv">1</span></span>
+<span id="cb28-7"><a href="reg.html#cb28-7" tabindex="-1"></a>gB <span class="ot">&lt;-</span> (group<span class="sc">==</span><span class="st">&quot;B&quot;</span>)<span class="sc">*</span><span class="dv">1</span></span></code></pre></div>
+<p>Na konci každého modelu je korektná interpretácia. Budeme uvažovať štyri rôzne modely.</p>
+<ul>
+<li>Level-level model <span class="math inline">\(testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
+<li>Log-level model ak budeme modelovať rast skóre pomocou hodín strávených učením <span class="math inline">\(\log(testScore_i) = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\)</span></li>
+<li>Level-log model ak budeme modelovať skóre pomocou rastu hodín strávených učením <span class="math inline">\(testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
+<li>Log-log model ak budeme modelovať rast skóre pomocou rastu hodín strávených učením <span class="math inline">\(\log(testScore_i) = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
+</ul>
+<p>Ktorý z týchto modelov je najrozumnejší? Treba zvažiť. Každopádne rozhodovanie by nemalo záležať na tom, ako dobre nám modelu fituje dáta. Do rozhovorov by sme mali prizvať niekoho, kto sa vyzná do danej problematiky.</p>
+<div id="level-level-model" class="section level3 hasAnchor" number="8.9.1">
+<h3><span class="header-section-number">8.9.1</span> Level-level model<a href="reg.html#level-level-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[testScore_i = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\]</span></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="reg.html#cb29-1" tabindex="-1"></a><span class="co">#level - level</span></span>
+<span id="cb29-2"><a href="reg.html#cb29-2" tabindex="-1"></a>lmod_lv_lv <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> gA <span class="sc">+</span> hoursLearned)</span>
+<span id="cb29-3"><a href="reg.html#cb29-3" tabindex="-1"></a><span class="fu">summary</span>(lmod_lv_lv)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = testScore ~ gA + hoursLearned)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -19.0139  -4.0357   0.6593   3.5072  18.9040 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   39.5855     4.4224   8.951 7.65e-08 ***
+## gA            15.4297     3.7988   4.062 0.000811 ***
+## hoursLearned   0.6540     0.1426   4.585 0.000264 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 8.209 on 17 degrees of freedom
+## Multiple R-squared:  0.6376, Adjusted R-squared:  0.595 
+## F-statistic: 14.96 on 2 and 17 DF,  p-value: 0.0001789</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="reg.html#cb31-1" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
+<span id="cb31-2"><a href="reg.html#cb31-2" tabindex="-1"></a><span class="co"># 1hour additional learning is associated with an increase of </span></span>
+<span id="cb31-3"><a href="reg.html#cb31-3" tabindex="-1"></a><span class="co"># test score by 0.65 points on average</span></span>
+<span id="cb31-4"><a href="reg.html#cb31-4" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
+<span id="cb31-5"><a href="reg.html#cb31-5" tabindex="-1"></a><span class="fu">abline</span>(lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">1</span>],lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">3</span>])</span>
+<span id="cb31-6"><a href="reg.html#cb31-6" tabindex="-1"></a><span class="fu">abline</span>(lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">1</span>]<span class="sc">+</span>lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">2</span>],lmod_lv_lv<span class="sc">$</span>coeff[<span class="dv">3</span>])</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-27-1.png" width="672" /></p>
+<p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je každá ďaľšia hodina učenia asociovaná s navýšením skóre v priemere o <span class="math inline">\(0.65\)</span>.</p>
+<p><span class="math display">\[\begin{eqnarray*}
+y_i &amp;=&amp; \beta_0 + \beta_1 x_i + \epsilon_i \\
+&amp;&amp; x_i \rightarrow x_i + \Delta \\
+&amp;&amp; \implies \\
+y_i &amp;\rightarrow&amp; \beta_0 + \beta_1 (x_i + \Delta) + \epsilon_i  \\
+y_i &amp;\rightarrow&amp; \beta_0 + \beta_1 x_i + \epsilon_i +  \beta_1 \Delta  \\
+y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
+\end{eqnarray*}\]</span></p>
+<p> </p>
+<p>Tu je dôležité poznamenať niekoľko skutočností</p>
+<ul>
+<li><em>Náš model predikuje</em> je dôležitý disclaimer a nielen slovná vata. Ide o to, že my nehovoríme o pravde, lebo nevieme aká je pravda. My hovoríme o našom lineárnom regresnom modeli, ktorý má len aproximovať realitu.</li>
+<li><em>pre danú skupinu žiakov</em> znamená, že parameter <span class="math inline">\(g^A\)</span> je zafixovaný.</li>
+<li><em>je asociovaná</em> neznamená, že spôsobuje. Nevieme čo spôsobuje čo, netušíme nič o kauzalite. Popisujeme ako nejaké premenné zvyknú spolu nastávať.</li>
+</ul>
+<p>Toto nie sú detaily. Naozaj nie. Korektná interpretácia precízne komunikuje výsledky a podčiarkuje limity použitej štatistickej metódy.</p>
+</div>
+<div id="log-level-model" class="section level3 hasAnchor" number="8.9.2">
+<h3><span class="header-section-number">8.9.2</span> Log-level model<a href="reg.html#log-level-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\log(testScore_i) = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\]</span></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="reg.html#cb32-1" tabindex="-1"></a><span class="co">#log - level</span></span>
+<span id="cb32-2"><a href="reg.html#cb32-2" tabindex="-1"></a>lmod_log_lv <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(testScore) <span class="sc">~</span> gA <span class="sc">+</span> hoursLearned)</span>
+<span id="cb32-3"><a href="reg.html#cb32-3" tabindex="-1"></a><span class="fu">summary</span>(lmod_log_lv)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = log(testScore) ~ gA + hoursLearned)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.309170 -0.043717 -0.000054  0.061891  0.225005 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  3.757613   0.067438  55.720  &lt; 2e-16 ***
+## gA           0.236549   0.057929   4.083 0.000774 ***
+## hoursLearned 0.010302   0.002175   4.736 0.000191 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.1252 on 17 degrees of freedom
+## Multiple R-squared:  0.6475, Adjusted R-squared:  0.606 
+## F-statistic: 15.61 on 2 and 17 DF,  p-value: 0.0001417</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="reg.html#cb34-1" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
+<span id="cb34-2"><a href="reg.html#cb34-2" tabindex="-1"></a><span class="co"># 1hour additional learning is associated with an increase of </span></span>
+<span id="cb34-3"><a href="reg.html#cb34-3" tabindex="-1"></a><span class="co"># test score by approximately 1.03% on average</span></span>
+<span id="cb34-4"><a href="reg.html#cb34-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb34-5"><a href="reg.html#cb34-5" tabindex="-1"></a>dfA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>),<span class="at">hoursLearned=</span>x)</span>
+<span id="cb34-6"><a href="reg.html#cb34-6" tabindex="-1"></a>predA <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_lv,dfA))</span>
+<span id="cb34-7"><a href="reg.html#cb34-7" tabindex="-1"></a>dfB <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">50</span>),<span class="at">hoursLearned=</span>x)</span>
+<span id="cb34-8"><a href="reg.html#cb34-8" tabindex="-1"></a>predB <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_lv,dfB))</span>
+<span id="cb34-9"><a href="reg.html#cb34-9" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
+<span id="cb34-10"><a href="reg.html#cb34-10" tabindex="-1"></a><span class="fu">lines</span>(x,predA)</span>
+<span id="cb34-11"><a href="reg.html#cb34-11" tabindex="-1"></a><span class="fu">lines</span>(x,predB)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-28-1.png" width="672" /></p>
+<p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je každá ďaľšia hodina učenia asociovaná s navýšením skóre v priemer o približne <span class="math inline">\(1.03\%\)</span>.</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\log(y_i) &amp;=&amp; \beta_0 + \beta_1 x_i + \epsilon_i \\
+&amp;&amp; x_i \rightarrow x_i + \Delta \\
+&amp;&amp; \implies \\
+\log(y_i) &amp;\rightarrow&amp; \beta_0 + \beta_1 (x_i + \Delta) + \epsilon_i  \\
+y_i &amp;\rightarrow&amp; e^{\beta_0 + \beta_1 (x_i + \Delta) + \epsilon_i}  \\
+y_i &amp;\rightarrow&amp; e^{\beta_0 + \beta_1 x_i + \epsilon_i +  \beta_1 \Delta}  \\
+y_i &amp;\rightarrow&amp; e^{\beta_0 + \beta_1 x_i + \epsilon_i}  e^{\beta_1 \Delta}  \\
+y_i &amp;\rightarrow&amp; y_i e^{\beta_1 \Delta} \\
+&amp;\sim&amp;\\
+y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
+\end{eqnarray*}\]</span></p>
+<p> </p>
+<p>Táto aproximácia (preto to slovo <em>približne</em>) je založená na tom, že pre malé hodnoty <span class="math inline">\(x\)</span> je funkcia <span class="math inline">\((1+\beta x)\)</span> veľmi podobná funkcii <span class="math inline">\(e^{\beta x}\)</span> ako je zobrazené na tomto obrázku.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="reg.html#cb35-1" tabindex="-1"></a><span class="co"># 1+beta*x is similar to exp(beta*x) for small x</span></span>
+<span id="cb35-2"><a href="reg.html#cb35-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="fl">0.01</span>)</span>
+<span id="cb35-3"><a href="reg.html#cb35-3" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb35-4"><a href="reg.html#cb35-4" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>beta<span class="sc">*</span>x</span>
+<span id="cb35-5"><a href="reg.html#cb35-5" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">exp</span>(beta<span class="sc">*</span>x)</span>
+<span id="cb35-6"><a href="reg.html#cb35-6" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb35-7"><a href="reg.html#cb35-7" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb35-8"><a href="reg.html#cb35-8" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-29-1.png" width="672" /></p>
+</div>
+<div id="level-log-model" class="section level3 hasAnchor" number="8.9.3">
+<h3><span class="header-section-number">8.9.3</span> Level-log model<a href="reg.html#level-log-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i  + \epsilon_i\]</span></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="reg.html#cb36-1" tabindex="-1"></a><span class="co">#level - log</span></span>
+<span id="cb36-2"><a href="reg.html#cb36-2" tabindex="-1"></a>lhoursLearned <span class="ot">&lt;-</span> <span class="fu">log</span>(hoursLearned)</span>
+<span id="cb36-3"><a href="reg.html#cb36-3" tabindex="-1"></a>lmod_lv_log <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> gA <span class="sc">+</span> lhoursLearned)</span>
+<span id="cb36-4"><a href="reg.html#cb36-4" tabindex="-1"></a><span class="fu">summary</span>(lmod_lv_log)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = testScore ~ gA + lhoursLearned)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -15.709  -3.417   0.372   3.872  17.950 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)     18.257      6.801   2.684 0.015675 *  
+## gA              15.707      3.256   4.824 0.000159 ***
+## lhoursLearned   12.465      2.122   5.874 1.84e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.052 on 17 degrees of freedom
+## Multiple R-squared:  0.7325, Adjusted R-squared:  0.7011 
+## F-statistic: 23.28 on 2 and 17 DF,  p-value: 1.354e-05</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="reg.html#cb38-1" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
+<span id="cb38-2"><a href="reg.html#cb38-2" tabindex="-1"></a><span class="co"># 1% in time spent learning is associated with an increase of </span></span>
+<span id="cb38-3"><a href="reg.html#cb38-3" tabindex="-1"></a><span class="co"># test score by approximately on average 0.12 points</span></span>
+<span id="cb38-4"><a href="reg.html#cb38-4" tabindex="-1"></a><span class="co"># (hence doubling the time learning ~ +12points)</span></span>
+<span id="cb38-5"><a href="reg.html#cb38-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb38-6"><a href="reg.html#cb38-6" tabindex="-1"></a>lx <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>))</span>
+<span id="cb38-7"><a href="reg.html#cb38-7" tabindex="-1"></a>dfA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
+<span id="cb38-8"><a href="reg.html#cb38-8" tabindex="-1"></a>predA <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmod_lv_log,dfA)</span>
+<span id="cb38-9"><a href="reg.html#cb38-9" tabindex="-1"></a>dfB <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
+<span id="cb38-10"><a href="reg.html#cb38-10" tabindex="-1"></a>predB <span class="ot">&lt;-</span> <span class="fu">predict</span>(lmod_lv_log,dfB)</span>
+<span id="cb38-11"><a href="reg.html#cb38-11" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
+<span id="cb38-12"><a href="reg.html#cb38-12" tabindex="-1"></a><span class="fu">lines</span>(x,predA)</span>
+<span id="cb38-13"><a href="reg.html#cb38-13" tabindex="-1"></a><span class="fu">lines</span>(x,predB)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-30-1.png" width="672" /></p>
+<p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je nárast učenia o 1% asociovaný s navýšením skóre v priemere o približne <span class="math inline">\(0.12\)</span>. Takže zdvojnásobnenie je asociované s približne 12 bodmi na teste.</p>
+<p><span class="math display">\[\begin{eqnarray*}
+y_i &amp;=&amp; \beta_0 + \beta_1 \log(x_i) + \epsilon_i \\
+&amp;&amp; x_i \rightarrow x_i (1+\Delta) \\
+&amp;&amp; \implies \\
+y_i &amp;\rightarrow&amp; \beta_0 + \beta_1 \log(x_i (1+\Delta)) + \epsilon_i  \\
+y_i &amp;\rightarrow&amp; \beta_0 + \beta_1 \log(x_i) +  \beta_1 \log(1+\Delta) + \epsilon_i  \\
+y_i &amp;\rightarrow&amp; y_i +  \beta_1 \log(1+\Delta)\\
+&amp;\sim&amp;\\
+y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
+\end{eqnarray*}\]</span></p>
+<p> </p>
+<p>Táto aproximácia (preto to slovo <em>približne</em>) je založená na tom, že pre malé hodnoty <span class="math inline">\(x\)</span> je funkcia <span class="math inline">\(\beta \log(1+ x)\)</span> veľmi podobná funkcii <span class="math inline">\(\beta x\)</span> ako je zobrazené na tomto obrázku.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="reg.html#cb39-1" tabindex="-1"></a><span class="co"># beta*log(1+x) is similar to beta*x for small x</span></span>
+<span id="cb39-2"><a href="reg.html#cb39-2" tabindex="-1"></a><span class="co"># or </span></span>
+<span id="cb39-3"><a href="reg.html#cb39-3" tabindex="-1"></a><span class="co"># log(1+x) is similar to x for small x</span></span>
+<span id="cb39-4"><a href="reg.html#cb39-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="dv">1</span>,<span class="fl">0.01</span>)</span>
+<span id="cb39-5"><a href="reg.html#cb39-5" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb39-6"><a href="reg.html#cb39-6" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> beta<span class="sc">*</span><span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span>x)</span>
+<span id="cb39-7"><a href="reg.html#cb39-7" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> beta<span class="sc">*</span>x</span>
+<span id="cb39-8"><a href="reg.html#cb39-8" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb39-9"><a href="reg.html#cb39-9" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb39-10"><a href="reg.html#cb39-10" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-31-1.png" width="672" /></p>
+</div>
+<div id="log-log-model" class="section level3 hasAnchor" number="8.9.4">
+<h3><span class="header-section-number">8.9.4</span> Log-log model<a href="reg.html#log-log-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\log(testScore_i) = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i  + \epsilon_i\]</span></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="reg.html#cb40-1" tabindex="-1"></a><span class="co">#log - log</span></span>
+<span id="cb40-2"><a href="reg.html#cb40-2" tabindex="-1"></a>ltestScore <span class="ot">&lt;-</span> <span class="fu">log</span>(testScore)</span>
+<span id="cb40-3"><a href="reg.html#cb40-3" tabindex="-1"></a>lmod_log_log <span class="ot">&lt;-</span> <span class="fu">lm</span>(ltestScore <span class="sc">~</span> gA <span class="sc">+</span> lhoursLearned)</span>
+<span id="cb40-4"><a href="reg.html#cb40-4" tabindex="-1"></a><span class="fu">summary</span>(lmod_log_log)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = ltestScore ~ gA + lhoursLearned)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.261596 -0.044612  0.005685  0.046149  0.205080 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    3.40421    0.09547  35.658  &lt; 2e-16 ***
+## gA             0.24312    0.04571   5.319 5.65e-05 ***
+## lhoursLearned  0.20212    0.02979   6.785 3.18e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.099 on 17 degrees of freedom
+## Multiple R-squared:  0.7795, Adjusted R-squared:  0.7536 
+## F-statistic: 30.05 on 2 and 17 DF,  p-value: 2.624e-06</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="reg.html#cb42-1" tabindex="-1"></a><span class="co">#our model predicts that for a given group fixed an increase of </span></span>
+<span id="cb42-2"><a href="reg.html#cb42-2" tabindex="-1"></a><span class="co"># 1% in time spent learning is associated with an increase of </span></span>
+<span id="cb42-3"><a href="reg.html#cb42-3" tabindex="-1"></a><span class="co"># test score by approximately 0.2% points</span></span>
+<span id="cb42-4"><a href="reg.html#cb42-4" tabindex="-1"></a><span class="co"># (hence doubling the time learning ~ +20%points)</span></span>
+<span id="cb42-5"><a href="reg.html#cb42-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb42-6"><a href="reg.html#cb42-6" tabindex="-1"></a>lx <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="at">by=</span><span class="dv">1</span>))</span>
+<span id="cb42-7"><a href="reg.html#cb42-7" tabindex="-1"></a>dfA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
+<span id="cb42-8"><a href="reg.html#cb42-8" tabindex="-1"></a>predA <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_log,dfA))</span>
+<span id="cb42-9"><a href="reg.html#cb42-9" tabindex="-1"></a>dfB <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gA=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">50</span>),<span class="at">lhoursLearned=</span>lx)</span>
+<span id="cb42-10"><a href="reg.html#cb42-10" tabindex="-1"></a>predB <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(lmod_log_log,dfB))</span>
+<span id="cb42-11"><a href="reg.html#cb42-11" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore, <span class="at">pch=</span>group)</span>
+<span id="cb42-12"><a href="reg.html#cb42-12" tabindex="-1"></a><span class="fu">lines</span>(x,predA)</span>
+<span id="cb42-13"><a href="reg.html#cb42-13" tabindex="-1"></a><span class="fu">lines</span>(x,predB)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-32-1.png" width="672" /></p>
+<p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je nárast učenia o 1% asociovaný s navýšením skóre v priemerę o približne <span class="math inline">\(0.2\%\)</span> bodov. Takže zdvojnásobnenie je asociované s približne s 20% nárastom bodov na teste.</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\log(y_i) &amp;=&amp; \beta_0 + \beta_1 \log(x_i) + \epsilon_i \\
+&amp;&amp; x_i \rightarrow x_i (1+\Delta) \\
+&amp;&amp; \implies \\
+\log(y_i) &amp;\rightarrow&amp; \beta_0 + \beta_1 \log(x_i (1+\Delta)) + \epsilon_i  \\
+\log(y_i) &amp;\rightarrow&amp; \beta_0 + \beta_1 \log(x_i)  + \epsilon_i +  \beta_1 \log(1+\Delta) \\
+y_i &amp;\rightarrow&amp; e^{\beta_0 + \beta_1 \log(x_i)  + \epsilon_i +  \beta_1 \log(1+\Delta)}\\
+y_i &amp;\rightarrow&amp; e^{\beta_0 + \beta_1 \log(x_i)  + \epsilon_i} e^{\beta_1 \log(1+\Delta)}\\
+y_i &amp;\rightarrow&amp; y_i e^{\beta_1 \log(1+\Delta)}\\
+y_i &amp;\rightarrow&amp; y_i e^{ \log\big((1+\Delta)^{\beta}\big)}\\
+y_i &amp;\rightarrow&amp; y_i (1+\Delta)^{\beta}\\
+&amp;\sim&amp;\\
+y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
+\end{eqnarray*}\]</span></p>
+<p> </p>
+<p>Táto aproximácia (znovu tu máme slovo <em>približne</em>) je založená na tom, že pre malé hodnoty <span class="math inline">\(x\)</span> je funkcia <span class="math inline">\((1+ x)^{\beta}\)</span> veľmi podobná funkcii <span class="math inline">\(1+\beta x\)</span> ako je zobrazené na tomto obrázku.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="reg.html#cb43-1" tabindex="-1"></a><span class="co"># (1+x)^beta is similar to (1+beta*x) for small x</span></span>
+<span id="cb43-2"><a href="reg.html#cb43-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="dv">1</span>,<span class="fl">0.01</span>)</span>
+<span id="cb43-3"><a href="reg.html#cb43-3" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb43-4"><a href="reg.html#cb43-4" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">+</span>x)<span class="sc">^</span>beta</span>
+<span id="cb43-5"><a href="reg.html#cb43-5" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>beta<span class="sc">*</span>x</span>
+<span id="cb43-6"><a href="reg.html#cb43-6" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb43-7"><a href="reg.html#cb43-7" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb43-8"><a href="reg.html#cb43-8" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<p><img src="PaS2bookdown_files/figure-html/reg-33-1.png" width="672" /></p>
+</div>
+</div>
+<div id="zhrnutie-1" class="section level2 hasAnchor" number="8.10">
+<h2><span class="header-section-number">8.10</span> Zhrnutie<a href="reg.html#zhrnutie-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>V tejto kapitole sme sa pozreli na kvantifikovanie lineárnej súvzťažnosti medzi dvomi premennými. Na to sme použili nástroj lineárnej regresie. Skúmali sme užitočnosť tohoto modelu ako aj štatistické vlastnosti odhadov, ktoré tento model produkuje. Potom sme pomocou lineárneho modelu používali viacero prediktorov na modelovanie nejakej premennej, ktorá nás zaujíma.</p>
+</div>
+<div id="cvičenia-7" class="section level2 hasAnchor" number="8.11">
+<h2><span class="header-section-number">8.11</span> Cvičenia<a href="reg.html#cvičenia-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://www.dropbox.com/s/dl86x1dihedzmq3/labs_week10.R?dl=0">R súbor k cvičeniam</a></p>
+<!-- [R súbor k cvičeniam 24.11.2022 riešenia](https://www.dropbox.com/s/ivhfnghkk21x1gd/labs_week10_solutions.R?dl=0) -->
+<!-- [R súbor k cvičeniam 2.12.2022 (riešené)](https://www.dropbox.com/s/i4wldlfiuyqbb05/labs_week11.R?dl=0) -->
+<div class="exercise">
+<p><span id="exr:unlabeled-div-1" class="exercise"><strong>Cvičenie 8.1  (Ag testovanie) </strong></span>Stiahnite si tieto <a href="https://www.dropbox.com/s/i7ia0n0elm1ts8l/Kompletny-prehlad-mesta-a-obce%20ciste.xlsx?dl=0">dáta</a> o veľkom Slovenskom antigénovom testovaní z roku 2020. Skúmajte aký je vzťah medzi percentom nakazených v prvom a v druhom kole testovania pre rôzne obce. Pozrite sa oddelene na malé, stredné a veľké obce.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Cvičenie 8.2  (Miera fitu - mechanicky) </strong></span>Mechanicky spočítajte ESS, RSS a ESS a overte ich vzťah. Potom zrátajte <span class="math inline">\(R^2\)</span> a porovnajte s výsledkom v sumárnej tabuľke.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Cvičenie 8.3  (Sumárna tabuľka - mechanicky) </strong></span>Mechanicky zreprodukujte všetky výsledky (okrem adjusted <span class="math inline">\(R^2\)</span>) zo sumárnej tabuľke. (Toto je užitočné cvičenie.)</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Cvičenie 8.4  (Autá brzdia) </strong></span>Stiahnite si dataset <code>cars</code> z knižnice <code>dataset</code>. Zobrazte závislosť medzi brzdnou dráhou a rýchlosťou (brzdná dráha bude vysveltovaná premenná) a popíšte ich vzťah aj pomocou jednoduchého lineárneho regresného modelu. Odhadnite koeficienty pomocou funkcie <code>lm</code> a interpretujte výsledky v sumárnej tabuľke.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Cvičenie 8.5  (Filmy) </strong></span>Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> sa pozrite, či veľkosť rozpočtu vie predikovať priemerné hodnotenie. Na túto závislosť sa pozrite pre rôzne typy filmov a dáta spolu s regresnými priamkami vhodne zobrazte. Kriticky zhodnoťte model a výsledky opatrne interpretujte.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Cvičenie 8.6  (Zločiny) </strong></span>Z datasetu <code>USArrests</code> porovnajte úrovne rôznych zločinov podľa toho, či žije v mestách veľa ľudí (<span class="math inline">\(y\)</span> budú <code>Murder</code>,<code>Assault</code>,<code>Rape</code> a <span class="math inline">\(x\)</span> bude <code>UrbanPop</code> ). Dáta zobrazte. Odhadnite koeficienty pomocou funkcie <code>lm</code> a interpretujte výsledky v sumárnej tabuľke.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Cvičenie 8.7  (Filmy (znova)) </strong></span>Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> sa znovu pozrieme na predikciu priemerného hodnotenia. Pozrite sa, či typ filmu, rozpočet a dĺžka filmu vedia predikovať hodnotenie.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-8" class="exercise"><strong>Cvičenie 8.8  (Študenti) </strong></span>Majme nasledovné dve skupiny študentov. Zaujíma nás, ako je počet hodín strávených učením asociovaný s dosiahnutým skóre v teste.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="reg.html#cb44-1" tabindex="-1"></a><span class="co"># you measure how much they learned</span></span>
+<span id="cb44-2"><a href="reg.html#cb44-2" tabindex="-1"></a>hoursLearned <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">40</span>,<span class="dv">33</span>,<span class="dv">11</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="fl">13.5</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">30</span>,</span>
+<span id="cb44-3"><a href="reg.html#cb44-3" tabindex="-1"></a>                  <span class="dv">6</span>,<span class="dv">22</span>,<span class="dv">45</span>,<span class="dv">20</span>,<span class="dv">11</span>,<span class="dv">22</span>,<span class="dv">40</span>,<span class="dv">29</span>,<span class="dv">47</span>,<span class="dv">9</span>)</span>
+<span id="cb44-4"><a href="reg.html#cb44-4" tabindex="-1"></a><span class="co"># and how they performed on a test</span></span>
+<span id="cb44-5"><a href="reg.html#cb44-5" tabindex="-1"></a>testScore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">81</span>, <span class="fl">95.5</span>, <span class="fl">63.5</span>, <span class="dv">71</span>, <span class="dv">59</span>, <span class="dv">59</span>, <span class="dv">57</span>, <span class="fl">60.5</span>, <span class="dv">79</span>,</span>
+<span id="cb44-6"><a href="reg.html#cb44-6" tabindex="-1"></a>               <span class="dv">45</span>, <span class="dv">54</span>, <span class="dv">50</span>, <span class="dv">52</span>, <span class="dv">50</span>, <span class="dv">61</span>, <span class="dv">68</span>, <span class="dv">66</span>, <span class="dv">64</span>, <span class="dv">50</span>)</span>
+<span id="cb44-7"><a href="reg.html#cb44-7" tabindex="-1"></a><span class="co"># and how they performed on a test</span></span>
+<span id="cb44-8"><a href="reg.html#cb44-8" tabindex="-1"></a></span>
+<span id="cb44-9"><a href="reg.html#cb44-9" tabindex="-1"></a><span class="co">#there are two different groups of students</span></span>
+<span id="cb44-10"><a href="reg.html#cb44-10" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">&quot;B&quot;</span>,<span class="dv">10</span>))</span></code></pre></div>
+<p>Využitím lineárneho modelu uvažujte ako sú tieto dve skupiny rôzne: čo sa týka priemerného testovacieho skóre ako aj čo sa týka citlivosti skóre na učenie.</p>
+</div>
+</div>
+<div id="domáca-úloha-4" class="section level2 hasAnchor" number="8.12">
+<h2><span class="header-section-number">8.12</span> Domáca úloha 4<a href="reg.html#domáca-úloha-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deadline je 8.1.2024 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie <code>rar</code> súbor, nie OneDrive folder) v tvare <code>du4_MenoPriezvisko.zip</code> (napr. <code>du4_PeterKovac.zip</code>) a pošlite na email <code>miroslava.sartorisova@umb.sk</code>. Kód musí byť <strong>spustiteľný</strong> (vyskúšajte či Vám prebehne, keď máte prázdnu pamäť. Tú si uvoľníte pomocou príkazu <code>rm(list=ls())</code>) a podrobne okomentovaný. Odovzdávate mi Vašu <strong>vlastnú</strong> prácu (teda nie niekoho iného).</p>
+<p>Dáta sú vymyslené, <a href="https://www.dropbox.com/scl/fi/5bz3q2rusd6f0ys3gdd57/du4-data.R?rlkey=0nmap4wm3emv7w626akg2sxvh&amp;dl=0">stiahnete si ich tu</a>.
+Všetky vaše zistenia podrobne okomentujte a podporte vhodným obrázkom.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-9" class="exercise"><strong>Cvičenie 8.9  (DÚ 4.1 teplota) </strong></span>Na niekoľkých meracích staniciach máme údaje o teplote, hĺbke jazera a jeho nadmorskej výške.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Urobte jednoduchý lineárny model vysvetľujúci teplotu pomocou nadmorskej výšky jazera.
+Odhadnite teplotu jazera v nadmorskej výške 1100 m.n.m. a 1250 m.n.m.
+Tieto predpovede farebne vyznačte do vykresleného grafu.
+Odhadnite, o koľko sa zmení teplota nejakého jazera, pokiaľ by sa nachádzalo o 100 výškových metrov vyššie alebo nižšie.</p></li>
+<li><p>Urobte jednoduchý lineárny model vysvetľujúci teplotu pomocou hĺbky jazera a porovnajte
+ho s prvým lineárnym modelom. Odhadnite teplotu jazera s hĺbkou 22 m.</p></li>
+<li><p>Urobte lineárny model vysvetľujúci teplotu pomocou nadmorskej výšky aj hĺbky jazera a
+určte, ktorý z troch modelov je najlepší. Odhadnite teplotu pre jazero v nadmorskej výške
+1100 m.n.m. s hĺbkou 22 m.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-10" class="exercise"><strong>Cvičenie 8.10  (DÚ 4.2) </strong></span>Urobte jednoduchý lineárny model, kde hodnoty y budete predpovedať pomocou
+hodnôt x. Pomocou obrázku zistite, či je lineárny model vhodný na takýto typ dát. Pokúste sa
+spraviť lepší lineárny model a porovnajte ho s predošlým.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>dáta x1, y1 z priloženého R-kódu.</p></li>
+<li><p>dáta x2, y2 z priloženého R-kódu.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-11" class="exercise"><strong>Cvičenie 8.11  (DÚ 4.3 - Filmy a Rmd Projekt) </strong></span>Pozrite sa do datasetu <code>movies</code> z knižnice <code>ggplot2movies</code>. Vaše zadanie je vyprodukovať ucelený report o prediktoroch hodnotenia filmu. Zaujíma nás vzťah medzi hodnotením filmu a jeho rozpočtom ako aj dĺžkou a typom filmu.</p>
+<p>Vyberte len relevantné hodnotenia.</p>
+<p>Bude obsahovať</p>
+<ul>
+<li>Krátky popis datasetu, premenných a problému, ktorý skúmame,</li>
+<li>Sumárne štatistiky premenných,</li>
+<li>Párové grafy a korelácie,</li>
+<li>Porovnanie rôznych podskupín pomocou vhodných štatistických testov a zobrazení.</li>
+<li>Rozumne zvolený lineárny model,</li>
+<li>Závery, interpretácie a zistenia. Nepodceňte túto časť.</li>
+</ul>
+<p>Dokument</p>
+<ul>
+<li>musí byť čitateľný pre <em>úplného laika</em>,</li>
+<li>musí byť vytvorený v RMarkdown,</li>
+<li>všetok kód musí byť schovaný ale vhodne okomentovaný v <code>rmd</code> súbore,</li>
+<li>obrázky musia byť vyladené, musia mať vhodne zvolené vizuálne elementy ako aj popisy,</li>
+<li>môžete ale nemusíte písať v angličtine,</li>
+<li>k tejto úlohe mi prosím pošlite dva súbory: <code>Rmd</code> súbor a <code>html</code> súbor.</li>
+</ul>
+<p>Bude to demonštrácia, vizitka a oslava všetkého toho, čo ste sa naučili.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ttest.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="report.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PaS2bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
