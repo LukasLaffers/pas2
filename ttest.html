@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2023-12-13" />
+<meta name="date" content="2024-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -186,7 +186,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
 <li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
 <li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
-<li class="chapter" data-level="3.8" data-path="random.html"><a href="random.html#domáca-úloha-1"><i class="fa fa-check"></i><b>3.8</b> Domáca úloha 1</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
 <ul>
@@ -224,7 +223,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="visual.html"><a href="visual.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
 <li class="chapter" data-level="6.5" data-path="visual.html"><a href="visual.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
 <li class="chapter" data-level="6.6" data-path="visual.html"><a href="visual.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
-<li class="chapter" data-level="6.7" data-path="visual.html"><a href="visual.html#domáca-úloha-2"><i class="fa fa-check"></i><b>6.7</b> Domáca úloha 2</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ttest.html"><a href="ttest.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
 <ul>
@@ -248,7 +246,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="ttest.html"><a href="ttest.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
 <li class="chapter" data-level="7.6" data-path="ttest.html"><a href="ttest.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
 <li class="chapter" data-level="7.7" data-path="ttest.html"><a href="ttest.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
-<li class="chapter" data-level="7.8" data-path="ttest.html"><a href="ttest.html#domáca-úloha-3"><i class="fa fa-check"></i><b>7.8</b> Domáca úloha 3</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
 <ul>
@@ -270,7 +267,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.11" data-path="reg.html"><a href="reg.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.11</b> Zhrnutie</a></li>
 <li class="chapter" data-level="8.12" data-path="reg.html"><a href="reg.html#cvičenia-7"><i class="fa fa-check"></i><b>8.12</b> Cvičenia</a></li>
-<li class="chapter" data-level="8.13" data-path="reg.html"><a href="reg.html#domáca-úloha-4"><i class="fa fa-check"></i><b>8.13</b> Domáca úloha 4</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="report.html"><a href="report.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
 <ul>
@@ -386,7 +382,7 @@ Nie je to samozrejme úplne to isté, ako to, že sú celé distribúcie týchto
 <pre><code>## [1] 18.25302</code></pre>
 <p>Väčšina študentov sa zlepšila ale nájdu sa aj takí, ktorí sa dokonca zhoršili, konkrétne traja. Priemerné zlepšenie je <span class="math inline">\(18.25\)</span>.</p>
 <p>Chceli by sme vedieť či je stredná hodnota väčšia ako <span class="math inline">\(15\)</span> alebo nie. Nuž vidíme, že v našom prípade je o <span class="math inline">\(3.25\)</span> viacej. Ako veľmi si ale môžeme byť tým istí?</p>
-<p>Na to aby sme to vedeli posúdiť potrebujeme nejakým spôsobom odhadnúť ako veľa je variability v tom čísle <span class="math inline">\(18.25,\)</span> ako blízko by sme očakávali, že má byť k čislu 15. Ako sme videli, čím viacej máme pozorovaní tým menej neistoty je v tom, ako ďaleko je tento aritmetický priemer (18.25) od skutočného populačného priemeru (15). Zo sekcie o <a href="https://bookdown.org/lukas_laffers/pas1/zvc.html">zákone o veľkých čislach</a> vieme, že</p>
+<p>Na to aby sme to vedeli posúdiť potrebujeme nejakým spôsobom odhadnúť ako veľa je variability v tom čísle <span class="math inline">\(18.25,\)</span> ako blízko by sme očakávali, že má byť k čislu 15. Ako sme videli, čím viacej máme pozorovaní tým menej neistoty je v tom, ako ďaleko je tento aritmetický priemer (18.25) od skutočného populačného priemeru (15). Zo sekcie o <a href="https://lukaslaffers.github.io/pas1/zvc.html">zákone o veľkých čislach</a> vieme, že</p>
 <p>Ak <span class="math inline">\(X_1, X_2, X_3, \dots {\text{iid} }, \text{E}[X_1] = \mu, \text{Var}[X_1] = \sigma^2 \implies \bar{X}_n \equiv \frac{X_1 + X_2 + \dots + X_n}{n} \rightarrow_D N(\mu, \frac{\sigma^2}{n}),\)</span></p>
 <p>pokiaľ <span class="math inline">\(X_1, X_2,...\)</span> sú združene nezávislé a rovnako rozdelené (iid = independent and identically distributed) náhodné premenné.</p>
 <p>Takže vidíme, že variancia nášho odhadu klesá proporionálne veľkosti dátovej vzorky <span class="math inline">\(n.\)</span></p>
@@ -396,7 +392,7 @@ takže
 <span class="math display">\[\sqrt{n}\frac{\bar{X}_n - \mu}{\sigma} \rightarrow_D N(0,1).\]</span>
 Čo nám z toho vyplýva? Nuž, že vieme čosi povedať o pravdepodobnostnom správaní priemeru, za predpokladu, že vieme strednú hodnotu <span class="math inline">\(\mu\)</span> a varianciu <span class="math inline">\(\sigma^2.\)</span> A čo s tou smerodajnou odchýlkou <span class="math inline">\(\sigma\)</span>? Vieme ju odhadnúť pomocou výberovej smerodajnej odchýlky <span class="math inline">\(S,\)</span> ktorá je odmocninou z výberovej variancie <span class="math inline">\(S^2\)</span>:</p>
 <p><span class="math display">\[S^2 = \frac{\sum_{i=1}^n(X_i - \bar{X}_n)^2}{n-1}.\]</span>
-Vieme, že <span class="math inline">\(S^2 \rightarrow_P \sigma^2,\)</span> kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href="https://bookdown.org/lukas_laffers/pas1/zvc.html#konvergencia-podľa-pravdepodobnosti">konvergenciu podľa pravdepodobnosti</a>. Preto</p>
+Vieme, že <span class="math inline">\(S^2 \rightarrow_P \sigma^2,\)</span> kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href="https://lukaslaffers.github.io/pas1/zvc.html#konvergencia-podľa-pravdepodobnosti">konvergenciu podľa pravdepodobnosti</a>. Preto</p>
 <p><span class="math display">\[Z \equiv \sqrt{n}\frac{\bar{X}_n - \mu}{S} \rightarrow_D N(0,1).\]</span></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="ttest.html#cb8-1" tabindex="-1"></a>( S2 <span class="ot">&lt;-</span> <span class="fu">sum</span>((zmena<span class="sc">-</span><span class="fu">mean</span>(zmena))<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(<span class="fu">length</span>(zmena)<span class="sc">-</span><span class="dv">1</span>)) )</span></code></pre></div>
 <pre><code>## [1] 154.5722</code></pre>
@@ -423,7 +419,7 @@ A je rovná
 <span class="math display">\[\int_{1.43}^{\infty} \phi(x) dx = 1-\Phi(1.43) = 0.076,\]</span> kde</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="ttest.html#cb15-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">1.43</span>)</span></code></pre></div>
 <pre><code>## [1] 0.07635851</code></pre>
-<p><span class="math inline">\(\phi(x) = \frac{1}{2\pi}e^{-\frac{x^2}{2}},\)</span> takže funkcia hustoty <a href="https://bookdown.org/lukas_laffers/pas1/snp.html#normálne-rozdelenie">normovaného normálneho rozdelenia</a>.</p>
+<p><span class="math inline">\(\phi(x) = \frac{1}{2\pi}e^{-\frac{x^2}{2}},\)</span> takže funkcia hustoty <a href="https://lukaslaffers.github.io/pas1/snp.html#normálne-rozdelenie">normovaného normálneho rozdelenia</a>.</p>
 <p>To znamená, že ak by sme opakovali takýto pokus</p>
 <ul>
 <li>zozbierali 30 iid pozorovaní</li>
@@ -476,7 +472,7 @@ Tomuto hovoríme <strong>obojstranný test</strong> nulovej hypotézy <span clas
 <p>V prípade, že <span class="math inline">\(X_1, X_2, X_3, \dots\)</span> nielenže sú iid, ale ak sú dokonca aj normálne rozdelené, takže ak <span class="math inline">\(X_1 \sim N(\mu,\sigma^2),\)</span> potom môžeme naše výsledky spresniť, budeme môcť <strong>presne popísať pravdepodobnostné správanie testovacej štatistiky</strong>. Predtým sme využili, že <span class="math inline">\(Z \rightarrow_D N(0,1).\)</span> No ale čo ak máme len málo pozorovaní? Vtedy nemôžeme použiť asymptotickú aproximáciu, tá funguje len ak máme dostatočne veľa pozorovaní, teda ak <span class="math inline">\(n\)</span> je dostatočne veľké.</p>
 <p>Keď sú však <span class="math inline">\(X_1 \sim N(\mu,\sigma^2)\)</span> (kedže postupnosť <span class="math inline">\(X_1, X_2,X_3,\dots\)</span> je iid, tak aj <span class="math inline">\(X_i \sim N(\mu,\sigma^2)\)</span> pre <span class="math inline">\(i = 1,2,3,\dots.\)</span>), tak potom priamo vieme rozdelenie náhodnej premennej <span class="math inline">\(\sqrt{n}\frac{\bar{X}_n - \mu}{S}\)</span>, ktorú teraz premenujeme na T.</p>
 <p><span class="math display">\[T \equiv \sqrt{n}\frac{\bar{X}_n - \mu}{S} \sim t_{n-1}\]</span>
-To preto lebo má <a href="https://bookdown.org/lukas_laffers/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">t-rozdelenie s <span class="math inline">\(n-1\)</span> stupňami voľnosti</a>.</p>
+To preto lebo má <a href="https://lukaslaffers.github.io/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">t-rozdelenie s <span class="math inline">\(n-1\)</span> stupňami voľnosti</a>.</p>
 <p>Pre dostatočne veľký počet pozorovaní je len maličký rozdiel medzi <span class="math inline">\(t-\)</span>rozdelením a <span class="math inline">\(N(0,1)\)</span> rozdelením.
 <img src="PaS2bookdown_files/figure-html/ttest-13-1.png" width="672" /></p>
 <p>Môžeme ísť naspäť k nášmu príkladu so študentami a pozrieť sa na porovnanie medzi testom na základe normálnej aproximácie a t-testom. Priblížime na relevantnú oblasť, aby sme to vedeli porovnať.</p>
@@ -748,7 +744,7 @@ Ak je naša dátová vzorka veľkosti <span class="math inline">\(n=10\)</span>,
 <p>Je dôležité si uvedomiť, že konfidenčný interval je <strong>náhodný interval</strong>. Náhodnosť plynie z <span class="math inline">\(\bar{X}_n\)</span> a <span class="math inline">\(S\)</span>, ktoré sú <strong>náhodné</strong> premenné. To znamená, že jedna dátová vzorka nám dá len jednu realizáciu <span class="math inline">\(CI^{(1-\alpha)}.\)</span> Jeho interpretácia je taká, že ak by sme dostali 100 náhodných vzoriek z modelu, tak tento náhodný interval by ho pokryl približne 5 krát.</p>
 <p>Pozrime sa na to na nasledujúcej simulácii (ktorú si urobíme ako cvičenie):</p>
 <p><img src="PaS2bookdown_files/figure-html/ttest-27-1.png" width="672" />
-Pozorujeme, že spomedzi 100 simulácií <span class="math inline">\(95\%\)</span>ný konfidenčný interval pokryl skutočnú hodnotu 94 krát, zatiaľčo <span class="math inline">\(95\%\)</span>ný konfidenčný interval pokryl túto hodnotu 89 krát. Ak by sme mali týcho simulácii viacej, tento pomer by sa blížil k <span class="math inline">\(95\%\)</span> a <span class="math inline">\(90\%\)</span>.</p>
+Pozorujeme, že spomedzi 100 simulácií <span class="math inline">\(95\%\)</span>ný konfidenčný interval pokryl skutočnú hodnotu 94 krát, zatiaľčo <span class="math inline">\(90\%\)</span>ný konfidenčný interval pokryl túto hodnotu 89 krát. Ak by sme mali týcho simulácii viacej, tento pomer by sa blížil k <span class="math inline">\(95\%\)</span> a <span class="math inline">\(90\%\)</span>.</p>
 </div>
 <div id="testovanie-podielu" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Testovanie podielu<a href="ttest.html#testovanie-podielu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1058,49 +1054,39 @@ kde</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-12" class="exercise"><strong>Cvičenie 7.10  (Mzdy) </strong></span>Z kniźnice <code>ISLR</code> máme v datasete <code>Wage</code> informácie o mzdách. Vytvorte kategorickú premennú, či je daná mzda nad alebo pod mediánom. Pozrite sa ako táto kategorická premenná suvisí so vzdelaním a s rasou.</p>
 </div>
-<p><a href="https://www.dropbox.com/scl/fi/ttr6hvp9nfs0g0ugsw2ub/20231123-labs07.R?rlkey=ih72oepnm4bbvznk1wlloy7u2&amp;dl=0">R súbor z cvičení 23.11.2023</a></p>
-</div>
-<div id="domáca-úloha-3" class="section level2 hasAnchor" number="7.8">
-<h2><span class="header-section-number">7.8</span> Domáca úloha 3<a href="ttest.html#domáca-úloha-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Deadline je 4.12.2023 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie <code>rar</code> súbor, nie OneDrive folder) v tvare <code>du3_MenoPriezvisko.zip</code> (napr. <code>du3_PeterKovac.zip</code>) a pošlite na email <code>miroslava.sartorisova@umb.sk</code>. Kód musí byť <strong>spustiteľný</strong> (vyskúšajte či Vám prebehne, keď máte prázdnu pamäť. Tú si uvoľníte pomocou príkazu <code>rm(list=ls())</code>) a podrobne okomentovaný. Odovzdávate mi Vašu <strong>vlastnú</strong> prácu (teda nie niekoho iného).</p>
-<p>Dáta sú vymyslené, <a href="https://www.dropbox.com/scl/fi/1s1geleqi6ji9wv5odlpm/du3-data.R?rlkey=vvrpz87v5q2n296qqqtagz4jx&amp;dl=0">stiahnete si ich tu</a>.
-Všetky vaše zistenia podrobne okomentujte a podporte vhodným obrázkom.</p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-13" class="exercise"><strong>Cvičenie 7.11  (DÚ 3.1 (teplota)) </strong></span>Máme údaje o teplote vzduchu na niekoľkých meracích staniciach z dňa 24.12.2021 a 24.12.2022.
-Priemerná teplota za posledné roky v tento deň bola 1°C.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Zistite, či v roku 2021 bola teplota štatisticky významne iná ako za posledné roky. Ak áno, použitím vhodnej alternatívy zistite, či bola vyššia alebo nižšia.</p></li>
-<li><p>Zistite, či v roku 2022 bola teplota štatisticky významne iná ako za posledné roky. Ak áno, použitím vhodnej alternatívy zistite, či bola vyššia alebo nižšia.</p></li>
-<li><p>Použitím vhodného testu zistite, či sa teploty v roku 2021 a 2022 štatisticky významne líšia. Vysvetlite, prečo ste zvolili tento test.</p></li>
-<li><p>Aký je konfidenčný interval pre priemernú teplotu v roku 2022?</p></li>
-</ol>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-14" class="exercise"><strong>Cvičenie 7.12  (DÚ 3.2 (borovice)) </strong></span>Máme údaje o výške borovice lesnej na Slovensku a v Poľsku. Priemerná výška borovice je 30 metrov.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Zistite, či na Slovensku je výška borovíc štatisticky významne iná, ako priemer. Ak áno, použitím vhodného testu určite, či je vyššia alebo nižšia.</p></li>
-<li><p>Zistite, či na Slovensku je výška borovíc štatisticky významne iná, ako priemer, na hladine významnosti <span class="math inline">\(\alpha = 0.01\)</span>. Ak áno, použitím vhodného testu určite, či je vyššia alebo nižšia.</p></li>
-<li><p>Zistite, či v Poľsku je výška borovíc štatisticky významne iná, ako priemer. Ak áno, použitím vhodného testu určite, či je vyššia alebo nižšia.</p></li>
-<li><p>Zistite, či sú borovice na Slovensku štatisticky významne rovnako vysoké ako v Poľsku. Ak nie, použitím vhodnej alternatívy zistite, kde sú vyššie.</p></li>
-<li><p>Urobte konfidenčný interval pre priemernú výšku borovice na Slovensku.</p></li>
-<li><p>Urobte konfidenčný interval pre priemernú výšku borovice na Slovensku pre <span class="math inline">\(\alpha = 0.01\)</span>.</p></li>
-</ol>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Cvičenie 7.13  (DÚ 3.3 (dopravný prostriedok)) </strong></span>V kontingenčných tabuľkách máte údaje o používaní dopravného prostriedku podľa pohlavia a podľa toho, či človek študuje, pracuje alebo je nezamestnaný.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Zistite, či výber dopravného prostriedku štatisticky významne závisí od pohlavia.</p></li>
-<li><p>Zistite, či výber dopravného prostriedku štatisticky významne závisí od toho, či človek študuje, pracuje alebo je nezamestnaný.</p></li>
-</ol>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-16" class="exercise"><strong>Cvičenie 7.14  (DÚ 3.4 (BMI)) </strong></span>V kontingenčných tabuľkách máte údaje o BMI, pohlaví, počte rôznych športových aktivít (za týždeň).</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Zistite, či je štatisticky významný rozdiel medzi BMI mužov a BMI žien.</p></li>
-<li><p>Zistite, či celkový počet športových aktivít medzi mužmi a ženami sa štatisticky významne líši.</p></li>
-<li><p>Rozdeľte BMI do 3 kategórií (nad, pod a norma). Pozrite sa, ako táto kategorická premenná suvisí s pohlavím a celkovým počtom športových aktivít za týždeň.</p></li>
-</ol>
-</div>
+<!-- [R súbor z cvičení 23.11.2023](https://www.dropbox.com/scl/fi/ttr6hvp9nfs0g0ugsw2ub/20231123-labs07.R?rlkey=ih72oepnm4bbvznk1wlloy7u2&dl=0) -->
+<!-- ## Domáca úloha 3 -->
+<!-- Deadline je 4.12.2023 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie `rar` súbor, nie OneDrive folder) v tvare `du3_MenoPriezvisko.zip` (napr. `du3_PeterKovac.zip`) a pošlite na email `miroslava.sartorisova@umb.sk`. Kód musí byť **spustiteľný** (vyskúšajte či Vám prebehne, keď máte prázdnu pamäť. Tú si uvoľníte pomocou príkazu `rm(list=ls())`) a podrobne okomentovaný. Odovzdávate mi Vašu **vlastnú** prácu (teda nie niekoho iného). -->
+<!-- Dáta sú vymyslené, [stiahnete si ich tu](https://www.dropbox.com/scl/fi/1s1geleqi6ji9wv5odlpm/du3-data.R?rlkey=vvrpz87v5q2n296qqqtagz4jx&dl=0). -->
+<!-- Všetky vaše zistenia podrobne okomentujte a podporte vhodným obrázkom. -->
+<!-- ::: {.exercise name="DÚ 3.1 (teplota)"} -->
+<!-- Máme údaje o teplote vzduchu na niekoľkých meracích staniciach z dňa 24.12.2021 a 24.12.2022. -->
+<!-- Priemerná teplota za posledné roky v tento deň bola 1°C. -->
+<!-- a) Zistite, či v roku 2021 bola teplota štatisticky významne iná ako za posledné roky. Ak áno, použitím vhodnej alternatívy zistite, či bola vyššia alebo nižšia. -->
+<!-- b) Zistite, či v roku 2022 bola teplota štatisticky významne iná ako za posledné roky. Ak áno, použitím vhodnej alternatívy zistite, či bola vyššia alebo nižšia. -->
+<!-- c) Použitím vhodného testu zistite, či sa teploty v roku 2021 a 2022 štatisticky významne líšia. Vysvetlite, prečo ste zvolili tento test. -->
+<!-- d) Aký je konfidenčný interval pre priemernú teplotu v roku 2022? -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 3.2 (borovice)"} -->
+<!-- Máme údaje o výške borovice lesnej na Slovensku a v Poľsku. Priemerná výška borovice je 30 metrov. -->
+<!-- a) Zistite, či na Slovensku je výška borovíc štatisticky významne iná, ako priemer. Ak áno, použitím vhodného testu určite, či je vyššia alebo nižšia. -->
+<!-- b) Zistite, či na Slovensku je výška borovíc štatisticky významne iná, ako priemer, na hladine významnosti $\alpha = 0.01$. Ak áno, použitím vhodného testu určite, či je vyššia alebo nižšia. -->
+<!-- c) Zistite, či v Poľsku je výška borovíc štatisticky významne iná, ako priemer. Ak áno, použitím vhodného testu určite, či je vyššia alebo nižšia. -->
+<!-- d) Zistite, či sú borovice na Slovensku štatisticky významne rovnako vysoké ako v Poľsku. Ak nie, použitím vhodnej alternatívy zistite, kde sú vyššie.  -->
+<!-- e) Urobte konfidenčný interval pre priemernú výšku borovice na Slovensku. -->
+<!-- f) Urobte konfidenčný interval pre priemernú výšku borovice na Slovensku pre $\alpha = 0.01$. -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 3.3 (dopravný prostriedok)"} -->
+<!-- V kontingenčných tabuľkách máte údaje o používaní dopravného prostriedku podľa pohlavia a podľa toho, či človek študuje, pracuje alebo je nezamestnaný. -->
+<!-- a) Zistite, či výber dopravného prostriedku štatisticky významne závisí od pohlavia. -->
+<!-- b) Zistite, či výber dopravného prostriedku štatisticky významne závisí od toho, či človek študuje, pracuje alebo je nezamestnaný. -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 3.4 (BMI)"} -->
+<!-- V kontingenčných tabuľkách máte údaje o BMI, pohlaví, počte rôznych športových aktivít (za týždeň). -->
+<!-- a) Zistite, či je štatisticky významný rozdiel medzi BMI mužov a BMI žien. -->
+<!-- b) Zistite, či celkový počet športových aktivít medzi mužmi a ženami sa štatisticky významne líši. -->
+<!-- c) Rozdeľte BMI do 3 kategórií (nad, pod a norma). Pozrite sa, ako táto kategorická premenná suvisí s pohlavím a celkovým počtom športových aktivít za týždeň. -->
+<!-- ::: -->
 <!-- ## Domáca úloha 4 -->
 <!-- Deadline je 28.11.2022 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie `rar` súbor, nie OneDrive folder) v tvare `du4_MenoPriezvisko.zip` (napr. `du4_PeterKovac.zip`) a pošlite na email. Kód musí byť **spustiteľný** (vyskúšajte či Vám prebehne, keď máte prázdnu pamäť. Tú si uvoľníte pomocou príkazu `rm(list=ls())`) a podrobne okomentovaný. Odovzdávate mi Vašu **vlastnú** prácu (teda nie niekoho iného).  -->
 <!-- ::: {.exercise name="DÚ 4.1 (test rovnosti stredných hodnôt)"} -->

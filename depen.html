@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2023-12-19" />
+<meta name="date" content="2024-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -188,7 +188,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
 <li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
 <li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
-<li class="chapter" data-level="3.8" data-path="random.html"><a href="random.html#domáca-úloha-1"><i class="fa fa-check"></i><b>3.8</b> Domáca úloha 1</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
 <ul>
@@ -226,7 +225,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="visual.html"><a href="visual.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
 <li class="chapter" data-level="6.5" data-path="visual.html"><a href="visual.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
 <li class="chapter" data-level="6.6" data-path="visual.html"><a href="visual.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
-<li class="chapter" data-level="6.7" data-path="visual.html"><a href="visual.html#domáca-úloha-2"><i class="fa fa-check"></i><b>6.7</b> Domáca úloha 2</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ttest.html"><a href="ttest.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
 <ul>
@@ -250,7 +248,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="ttest.html"><a href="ttest.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
 <li class="chapter" data-level="7.6" data-path="ttest.html"><a href="ttest.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
 <li class="chapter" data-level="7.7" data-path="ttest.html"><a href="ttest.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
-<li class="chapter" data-level="7.8" data-path="ttest.html"><a href="ttest.html#domáca-úloha-3"><i class="fa fa-check"></i><b>7.8</b> Domáca úloha 3</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
 <ul>
@@ -272,7 +269,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.11" data-path="reg.html"><a href="reg.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.11</b> Zhrnutie</a></li>
 <li class="chapter" data-level="8.12" data-path="reg.html"><a href="reg.html#cvičenia-7"><i class="fa fa-check"></i><b>8.12</b> Cvičenia</a></li>
-<li class="chapter" data-level="8.13" data-path="reg.html"><a href="reg.html#domáca-úloha-4"><i class="fa fa-check"></i><b>8.13</b> Domáca úloha 4</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="report.html"><a href="report.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
 <ul>
@@ -298,8 +294,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="depen" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">5</span> Náhodné vektory a súvis medzi náhodnými premennými<a href="depen.html#depen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Odteraz budeme načas hovoriť o <strong>náhodnom vektore</strong>. Je to vektor náhodných premenných definovaných na rovnakom pravdepodobnostnom priestore. V <a href="https://bookdown.org/lukas_laffers/pas1/cov.html">tejto kapitole</a> sme hovorili o dvojrozmernom náhodnom vektore, teraz to rozšírime a budeme hovoriť o <strong><span class="math inline">\(n\)</span>-rozmernom</strong> náhodnom vektore <span class="math inline">\((X_1,X_2,\dots,X_n)^T.\)</span></p>
-<p>Tento pojem kľúčový na pochopenie štatistického testovania hypotéz, o ktorom budeme hovoriť neskôr. Ide o triviálne rozšírenie dvojrozmerného náhodného vektora, ktorý sme <a href="https://bookdown.org/lukas_laffers/pas1/cov.html">opisovali skorej</a>.</p>
+<p>Odteraz budeme načas hovoriť o <strong>náhodnom vektore</strong>. Je to vektor náhodných premenných definovaných na rovnakom pravdepodobnostnom priestore. V <a href="https://lukaslaffers.github.io/pas1/cov.html">tejto kapitole</a> sme hovorili o dvojrozmernom náhodnom vektore, teraz to rozšírime a budeme hovoriť o <strong><span class="math inline">\(n\)</span>-rozmernom</strong> náhodnom vektore <span class="math inline">\((X_1,X_2,\dots,X_n)^T.\)</span></p>
+<p>Tento pojem kľúčový na pochopenie štatistického testovania hypotéz, o ktorom budeme hovoriť neskôr. Ide o triviálne rozšírenie dvojrozmerného náhodného vektora, ktorý sme <a href="https://lukaslaffers.github.io/pas1/cov.html">opisovali skorej</a>.</p>
 <p><strong>Združená kumulatívna distribučná funkcia</strong> <span class="math inline">\(F_{XY}: \mathbb{R}^n \rightarrow [0,1]\)</span> náhodného vektora <span class="math inline">\((X_1,X_2,\dots,X_n)^T\)</span> je definovaná nasledovne:</p>
 <p><span class="math display">\[\begin{eqnarray*}
 F_{X_1,X_2,\dots,X_n}(t_1,t_2,\dots,t_n) &amp;=&amp; P(X_1 \leq t_1 \cap X_2 \leq t_2 \cap \dots \cap X_n \leq t_n)\\
@@ -444,13 +440,13 @@ P(X=1, Y=1) &amp;=&amp; 0.1\\
 P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 \end{eqnarray*}\]</span></p>
 <p>Neplatí. Takže sme našli protipríklad na nezávislosť, takže náhodné premenné <span class="math inline">\(X\)</span> a <span class="math inline">\(Y\)</span> nie sú nezávislé. Nemusíme už skúšať ďalšie kombinácie.
-Napriek tomu, že sú nezávislé, tak <a href="https://bookdown.org/lukas_laffers/pas1/cov.html#miera-závislosti">majú koreláciu rovnú nule</a>.</p>
+Napriek tomu, že sú nezávislé, tak <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">majú koreláciu rovnú nule</a>.</p>
 <p>To len hovorí o tom, že korelácia je špecifická miera závislosti, konkrétne <strong>lineárnej</strong> závislosti.</p>
 </div>
 <div id="závislosť-náhodných-premenných" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Závislosť náhodných premenných<a href="depen.html#závislosť-náhodných-premenných" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Teraz vieme, čo znamená keď sú náhodné premenné nezávislé. Keď sú <a href="https://bookdown.org/lukas_laffers/pas1/cov.html#nezávislé-náhodné-premenné">dve</a>, ale odteraz aj keď ich je viacej. Ak náhodné premenné nie sú nezávislé, mohli by sme chcieť merať <strong>ako veľmi sú závislé</strong>.</p>
-<p>Je veľa rôznych mier závislosti dvojíc náhodných premenných. Jednou z nich je <a href="https://bookdown.org/lukas_laffers/pas1/cov.html#miera-závislosti">korelácia</a>, teda miera <strong>lineárnej</strong> závislosti.</p>
+<p>Teraz vieme, čo znamená keď sú náhodné premenné nezávislé. Keď sú <a href="https://lukaslaffers.github.io/pas1/cov.html#nezávislé-náhodné-premenné">dve</a>, ale odteraz aj keď ich je viacej. Ak náhodné premenné nie sú nezávislé, mohli by sme chcieť merať <strong>ako veľmi sú závislé</strong>.</p>
+<p>Je veľa rôznych mier závislosti dvojíc náhodných premenných. Jednou z nich je <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">korelácia</a>, teda miera <strong>lineárnej</strong> závislosti.</p>
 <p>Pripomeňme si ju:</p>
 <p><strong>Kovarianciou</strong> dvoch náhodných premenných <span class="math inline">\(X_1, X_2\)</span> nazývame</p>
 <p><span class="math display">\[\text{Cov}[X_1,X_2] \equiv \text{E}[(X_1-\text{E}[X_1])(X_2-\text{E}[X_2])].\]</span></p>
@@ -465,7 +461,7 @@ Napriek tomu, že sú nezávislé, tak <a href="https://bookdown.org/lukas_laffe
 </li>
 <li><span class="math inline">\(X_1\)</span> a <span class="math inline">\(X_2\)</span> sú nezávislé <span class="math inline">\(\implies \text{E}[X_1 X_2] = \text{E}[X_1]\text{E}[X_2] \implies \text{Corr}[X_1,X_2]=0\)</span></li>
 </ul>
-<p>Ilustratívny príklad s dinosaurom, kedy korelácia nedobre popisuje mieru závislosti, lebo závislosť nie je lineárna <a href="https://bookdown.org/lukas_laffers/pas1/cov.html#miera-závislosti">je tu</a>.</p>
+<p>Ilustratívny príklad s dinosaurom, kedy korelácia nedobre popisuje mieru závislosti, lebo závislosť nie je lineárna <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">je tu</a>.</p>
 <p>Tu je Rkový kód, ktorý generuje dvojice dát s rôznymi závislosťami
 Takto vyzerá realizácia 100 náhodných vektorov <span class="math inline">\((X,Y)\)</span> s rôznymi koreláciami.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="depen.html#cb2-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span>
@@ -591,8 +587,8 @@ Obrázok 5.2: (zdroj: www.pixabay.com)
 </div>
 <div id="cvičenia-4" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Cvičenia<a href="depen.html#cvičenia-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="https://www.dropbox.com/s/zn6n8d9x8wq7ekg/labs_week6.R?dl=0">R súbor pre cvičenia</a></p>
-<p><a href="https://www.dropbox.com/scl/fi/t0rb4nxr3p6t74ldlncfe/20231012-labs05.R?rlkey=p5863jc8pfwxd9k63pvzsztrv&amp;dl=0">R súbor z cvičení zo 19.10.2023</a></p>
+<!-- [R súbor pre cvičenia](https://www.dropbox.com/s/zn6n8d9x8wq7ekg/labs_week6.R?dl=0) -->
+<!-- [R súbor z cvičení zo 19.10.2023](https://www.dropbox.com/scl/fi/t0rb4nxr3p6t74ldlncfe/20231012-labs05.R?rlkey=p5863jc8pfwxd9k63pvzsztrv&dl=0) -->
 <div class="exercise">
 <p><span id="exr:unlabeled-div-7" class="exercise"><strong>Cvičenie 5.1  </strong></span>Pozrite sa na korelačnú štruktúru premenných v nasledovnom dasete o autách.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="depen.html#cb13-1" tabindex="-1"></a>data_car <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;http://www.r-exercises.com/wp-content/uploads/2017/04/auto.csv&quot;</span>)</span></code></pre></div>
