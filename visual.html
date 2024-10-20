@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2024-02-04" />
+<meta name="date" content="2024-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -186,6 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
 <li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
 <li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="3.8" data-path="random.html"><a href="random.html#domáca-úloha-1"><i class="fa fa-check"></i><b>3.8</b> Domáca úloha 1</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
 <ul>
@@ -292,6 +293,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="visual" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Zobrazovanie dát<a href="visual.html#visual" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<style>
+  .boxed {
+    border: 1px solid #000000;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    text-align: center; /* Center the text */
+  }
+</style>
 <p>Vhodné zobrazenie dát je tak trochu umenie. Treba nájsť vhodný typ grafu, farieb, písiem na plynulé odkomunikovanie myšlienky. Čo umenie nie je, je urobiť <strong>zlú</strong> vizualizáciu.</p>
 <div id="zlé-vizualizácie" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Zlé vizualizácie<a href="visual.html#zlé-vizualizácie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -413,25 +423,20 @@ USA je ohromne iná krajina, čo sa týka zbraní. Veľmi veľmi iná. Grafické
 <span id="cb3-17"><a href="visual.html#cb3-17" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>)</span>
 <span id="cb3-18"><a href="visual.html#cb3-18" tabindex="-1"></a></span>
 <span id="cb3-19"><a href="visual.html#cb3-19" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">&quot;AUTO&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: Using alpha for a discrete variable is not advised.</code></pre>
-<pre><code>## Warning: The shape palette can deal with a maximum of 6 discrete values because
-## more than 6 becomes difficult to discriminate; you have 7. Consider
-## specifying shapes manually if you must have them.</code></pre>
-<pre><code>## Warning: Removed 62 rows containing missing values (`geom_point()`).</code></pre>
 <p><img src="PaS2bookdown_files/figure-html/visual-poin-1.png" width="672" /></p>
 <p>Môžeme sa pozerať na závislosť premenných <code>hwy</code> a <code>displ</code> pre rôzne kombinácie typu pohonu <code>drv</code> (predný, zadný, 4x4) a počet valcov <code>cyl</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="visual.html#cb7-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
-<span id="cb7-2"><a href="visual.html#cb7-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
-<span id="cb7-3"><a href="visual.html#cb7-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>drv)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="visual.html#cb4-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb4-2"><a href="visual.html#cb4-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb4-3"><a href="visual.html#cb4-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>drv)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/visual-cyl-1.png" width="672" /></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="visual.html#cb8-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
-<span id="cb8-2"><a href="visual.html#cb8-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
-<span id="cb8-3"><a href="visual.html#cb8-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(cyl <span class="sc">~</span> drv)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="visual.html#cb5-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb5-2"><a href="visual.html#cb5-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="visual.html#cb5-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(cyl <span class="sc">~</span> drv)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/visual-cyl-2.png" width="672" /></p>
 <p>Parametre <code>data</code> a <code>mapping</code> môžu ísť priamo do <code>ggplot</code> objektu, takže ich netreba separátne volať pre rôzne vrstvy. Tu je navyše vrstva <code>geom_smooth</code>, ktorá vyhladí dáta - preloźí nimi aproximačnú krivku.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="visual.html#cb9-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
-<span id="cb9-2"><a href="visual.html#cb9-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb9-3"><a href="visual.html#cb9-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="visual.html#cb6-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb6-2"><a href="visual.html#cb6-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a href="visual.html#cb6-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="PaS2bookdown_files/figure-html/visual-mpg-1.png" width="672" /></p>
 <p>Rko nás upozorní, ktorú vyhladzovaciu krivku použilo.</p>
@@ -441,88 +446,79 @@ USA je ohromne iná krajina, čo sa týka zbraní. Veľmi veľmi iná. Grafické
 <div id="zobrazenie-distribúcie-premennej" class="section level3 hasAnchor" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> Zobrazenie distribúcie premennej<a href="visual.html#zobrazenie-distribúcie-premennej" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Vygenerujme si dáta, ktore budeme zobrazovať (inšpirované <a href="http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization">nasledovných odkazom</a>).</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="visual.html#cb12-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2930</span>)</span>
-<span id="cb12-2"><a href="visual.html#cb12-2" tabindex="-1"></a>data_test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb12-3"><a href="visual.html#cb12-3" tabindex="-1"></a>              <span class="at">school=</span><span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;8r_gym&quot;</span>, <span class="st">&quot;4r_gym&quot;</span>), <span class="at">each=</span><span class="dv">40</span>)),</span>
-<span id="cb12-4"><a href="visual.html#cb12-4" tabindex="-1"></a>              <span class="at">score=</span><span class="fu">round</span>(<span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">75</span>, <span class="at">sd=</span><span class="dv">8</span>), <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">65</span>, <span class="at">sd=</span><span class="dv">5</span>)))</span>
-<span id="cb12-5"><a href="visual.html#cb12-5" tabindex="-1"></a>              )</span>
-<span id="cb12-6"><a href="visual.html#cb12-6" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="visual.html#cb12-7" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
-<span id="cb12-8"><a href="visual.html#cb12-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="visual.html#cb9-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2930</span>)</span>
+<span id="cb9-2"><a href="visual.html#cb9-2" tabindex="-1"></a>data_test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-3"><a href="visual.html#cb9-3" tabindex="-1"></a>              <span class="at">school=</span><span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;8r_gym&quot;</span>, <span class="st">&quot;4r_gym&quot;</span>), <span class="at">each=</span><span class="dv">40</span>)),</span>
+<span id="cb9-4"><a href="visual.html#cb9-4" tabindex="-1"></a>              <span class="at">score=</span><span class="fu">round</span>(<span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">75</span>, <span class="at">sd=</span><span class="dv">8</span>), <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">65</span>, <span class="at">sd=</span><span class="dv">5</span>)))</span>
+<span id="cb9-5"><a href="visual.html#cb9-5" tabindex="-1"></a>              )</span>
+<span id="cb9-6"><a href="visual.html#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="visual.html#cb9-7" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb9-8"><a href="visual.html#cb9-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="PaS2bookdown_files/figure-html/visual-dist-1.png" width="672" /></p>
 <p>Tu si skúsime ponastavovať rôzne vlastnosti vrstvy <code>geom_histogram</code>. Vertikálnu čiaru pridáme pomocou <code>geom_vline</code> a odhad hustoty cez <code>geom_density</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="visual.html#cb14-1" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
-<span id="cb14-2"><a href="visual.html#cb14-2" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(<span class="at">binwidth=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>, <span class="at">fill=</span><span class="st">&quot;white&quot;</span>)</span>
-<span id="cb14-3"><a href="visual.html#cb14-3" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="visual.html#cb14-4" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
-<span id="cb14-5"><a href="visual.html#cb14-5" tabindex="-1"></a>        <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb14-6"><a href="visual.html#cb14-6" tabindex="-1"></a>        <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept=</span><span class="fu">mean</span>(score)),</span>
-<span id="cb14-7"><a href="visual.html#cb14-7" tabindex="-1"></a>            <span class="at">color=</span><span class="st">&quot;blue&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-## ℹ Please use `linewidth` instead.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-## generated.</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="visual.html#cb16-1" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
-<span id="cb16-2"><a href="visual.html#cb16-2" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..)) <span class="sc">+</span> </span>
-<span id="cb16-3"><a href="visual.html#cb16-3" tabindex="-1"></a>        <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>, <span class="at">fill=</span><span class="st">&quot;red&quot;</span>) </span>
-<span id="cb16-4"><a href="visual.html#cb16-4" tabindex="-1"></a>  </span>
-<span id="cb16-5"><a href="visual.html#cb16-5" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
-<span id="cb16-6"><a href="visual.html#cb16-6" tabindex="-1"></a>        <span class="fu">geom_histogram</span>()</span>
-<span id="cb16-7"><a href="visual.html#cb16-7" tabindex="-1"></a>        </span>
-<span id="cb16-8"><a href="visual.html#cb16-8" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="visual.html#cb16-9" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">&quot;AUTO&quot;</span>)</span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
-## ℹ Please use `after_stat(density)` instead.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-## generated.</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="visual.html#cb11-1" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb11-2"><a href="visual.html#cb11-2" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(<span class="at">binwidth=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>, <span class="at">fill=</span><span class="st">&quot;white&quot;</span>)</span>
+<span id="cb11-3"><a href="visual.html#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="visual.html#cb11-4" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb11-5"><a href="visual.html#cb11-5" tabindex="-1"></a>        <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb11-6"><a href="visual.html#cb11-6" tabindex="-1"></a>        <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept=</span><span class="fu">mean</span>(score)),</span>
+<span id="cb11-7"><a href="visual.html#cb11-7" tabindex="-1"></a>            <span class="at">color=</span><span class="st">&quot;blue&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)</span>
+<span id="cb11-8"><a href="visual.html#cb11-8" tabindex="-1"></a>  </span>
+<span id="cb11-9"><a href="visual.html#cb11-9" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb11-10"><a href="visual.html#cb11-10" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..)) <span class="sc">+</span> </span>
+<span id="cb11-11"><a href="visual.html#cb11-11" tabindex="-1"></a>        <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>, <span class="at">fill=</span><span class="st">&quot;red&quot;</span>) </span>
+<span id="cb11-12"><a href="visual.html#cb11-12" tabindex="-1"></a>  </span>
+<span id="cb11-13"><a href="visual.html#cb11-13" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb11-14"><a href="visual.html#cb11-14" tabindex="-1"></a>        <span class="fu">geom_histogram</span>()</span>
+<span id="cb11-15"><a href="visual.html#cb11-15" tabindex="-1"></a>        </span>
+<span id="cb11-16"><a href="visual.html#cb11-16" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="visual.html#cb11-17" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">&quot;AUTO&quot;</span>)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="PaS2bookdown_files/figure-html/visual-hist-1.png" width="672" /></p>
 <p>Pozrite sa na tento kód a zhodnoťte, čo robí ten ktorý príkaz.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="visual.html#cb20-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb20-2"><a href="visual.html#cb20-2" tabindex="-1"></a>mu <span class="ot">&lt;-</span> data_test <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(school) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">group_means =</span> <span class="fu">mean</span>(score))</span>
-<span id="cb20-3"><a href="visual.html#cb20-3" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="visual.html#cb20-4" tabindex="-1"></a><span class="fu">ggplot</span>(data_test, <span class="fu">aes</span>(<span class="at">x=</span>score, <span class="at">color=</span>school, <span class="at">fill=</span>school)) <span class="sc">+</span></span>
-<span id="cb20-5"><a href="visual.html#cb20-5" tabindex="-1"></a><span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">position=</span><span class="st">&quot;identity&quot;</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb20-6"><a href="visual.html#cb20-6" tabindex="-1"></a><span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
-<span id="cb20-7"><a href="visual.html#cb20-7" tabindex="-1"></a><span class="fu">geom_vline</span>(<span class="at">data=</span>mu, <span class="fu">aes</span>(<span class="at">xintercept=</span>group_means, <span class="at">color=</span>school),</span>
-<span id="cb20-8"><a href="visual.html#cb20-8" tabindex="-1"></a>           <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>)<span class="sc">+</span></span>
-<span id="cb20-9"><a href="visual.html#cb20-9" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;#999999&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>))<span class="sc">+</span></span>
-<span id="cb20-10"><a href="visual.html#cb20-10" tabindex="-1"></a><span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;#999999&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>))<span class="sc">+</span></span>
-<span id="cb20-11"><a href="visual.html#cb20-11" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Score histogram&quot;</span>,<span class="at">x=</span><span class="st">&quot;Score(points)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)<span class="sc">+</span></span>
-<span id="cb20-12"><a href="visual.html#cb20-12" tabindex="-1"></a><span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb20-13"><a href="visual.html#cb20-13" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="visual.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-2"><a href="visual.html#cb13-2" tabindex="-1"></a>mu <span class="ot">&lt;-</span> data_test <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(school) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">group_means =</span> <span class="fu">mean</span>(score))</span>
+<span id="cb13-3"><a href="visual.html#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="visual.html#cb13-4" tabindex="-1"></a><span class="fu">ggplot</span>(data_test, <span class="fu">aes</span>(<span class="at">x=</span>score, <span class="at">color=</span>school, <span class="at">fill=</span>school)) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="visual.html#cb13-5" tabindex="-1"></a><span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">position=</span><span class="st">&quot;identity&quot;</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb13-6"><a href="visual.html#cb13-6" tabindex="-1"></a><span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb13-7"><a href="visual.html#cb13-7" tabindex="-1"></a><span class="fu">geom_vline</span>(<span class="at">data=</span>mu, <span class="fu">aes</span>(<span class="at">xintercept=</span>group_means, <span class="at">color=</span>school),</span>
+<span id="cb13-8"><a href="visual.html#cb13-8" tabindex="-1"></a>           <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>)<span class="sc">+</span></span>
+<span id="cb13-9"><a href="visual.html#cb13-9" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;#999999&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>))<span class="sc">+</span></span>
+<span id="cb13-10"><a href="visual.html#cb13-10" tabindex="-1"></a><span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;#999999&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>))<span class="sc">+</span></span>
+<span id="cb13-11"><a href="visual.html#cb13-11" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Score histogram&quot;</span>,<span class="at">x=</span><span class="st">&quot;Score(points)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)<span class="sc">+</span></span>
+<span id="cb13-12"><a href="visual.html#cb13-12" tabindex="-1"></a><span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb13-13"><a href="visual.html#cb13-13" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="PaS2bookdown_files/figure-html/visual-cols-1.png" width="672" /></p>
 <p>Na zobrazovanie distribúcie je užitočný aj boxplot. Nasledujúce obrázky (inšpirované týmto <a href="http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization">odkazom</a>) sú vytvorené pomocou vrstiev <code>geom_boxplot</code>, <code>geom_dotplot</code> a <code>geom_jitter</code>.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="visual.html#cb22-1" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score)) <span class="sc">+</span> </span>
-<span id="cb22-2"><a href="visual.html#cb22-2" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span>
-<span id="cb22-3"><a href="visual.html#cb22-3" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="visual.html#cb22-4" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> g1 <span class="sc">+</span></span>
-<span id="cb22-5"><a href="visual.html#cb22-5" tabindex="-1"></a>        <span class="fu">geom_dotplot</span>(<span class="at">binaxis=</span><span class="st">&#39;y&#39;</span>, <span class="at">stackdir=</span><span class="st">&#39;center&#39;</span>, <span class="at">dotsize=</span><span class="dv">1</span>)</span>
-<span id="cb22-6"><a href="visual.html#cb22-6" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="visual.html#cb22-7" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> g1 <span class="sc">+</span></span>
-<span id="cb22-8"><a href="visual.html#cb22-8" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
-<span id="cb22-9"><a href="visual.html#cb22-9" tabindex="-1"></a>  </span>
-<span id="cb22-10"><a href="visual.html#cb22-10" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">color =</span> school)) <span class="sc">+</span> </span>
-<span id="cb22-11"><a href="visual.html#cb22-11" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb22-12"><a href="visual.html#cb22-12" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
-<span id="cb22-13"><a href="visual.html#cb22-13" tabindex="-1"></a></span>
-<span id="cb22-14"><a href="visual.html#cb22-14" tabindex="-1"></a>g5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">fill =</span> school)) <span class="sc">+</span> </span>
-<span id="cb22-15"><a href="visual.html#cb22-15" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb22-16"><a href="visual.html#cb22-16" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
-<span id="cb22-17"><a href="visual.html#cb22-17" tabindex="-1"></a></span>
-<span id="cb22-18"><a href="visual.html#cb22-18" tabindex="-1"></a>g6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">fill =</span> school)) <span class="sc">+</span> </span>
-<span id="cb22-19"><a href="visual.html#cb22-19" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb22-20"><a href="visual.html#cb22-20" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>)) <span class="sc">+</span></span>
-<span id="cb22-21"><a href="visual.html#cb22-21" tabindex="-1"></a>        <span class="fu">scale_fill_grey</span>() <span class="sc">+</span> </span>
-<span id="cb22-22"><a href="visual.html#cb22-22" tabindex="-1"></a>        <span class="fu">theme_classic</span>()</span>
-<span id="cb22-23"><a href="visual.html#cb22-23" tabindex="-1"></a></span>
-<span id="cb22-24"><a href="visual.html#cb22-24" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, g5, g6, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">&quot;AUTO&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="visual.html#cb15-1" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score)) <span class="sc">+</span> </span>
+<span id="cb15-2"><a href="visual.html#cb15-2" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span>
+<span id="cb15-3"><a href="visual.html#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="visual.html#cb15-4" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> g1 <span class="sc">+</span></span>
+<span id="cb15-5"><a href="visual.html#cb15-5" tabindex="-1"></a>        <span class="fu">geom_dotplot</span>(<span class="at">binaxis=</span><span class="st">&#39;y&#39;</span>, <span class="at">stackdir=</span><span class="st">&#39;center&#39;</span>, <span class="at">dotsize=</span><span class="dv">1</span>)</span>
+<span id="cb15-6"><a href="visual.html#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="visual.html#cb15-7" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> g1 <span class="sc">+</span></span>
+<span id="cb15-8"><a href="visual.html#cb15-8" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
+<span id="cb15-9"><a href="visual.html#cb15-9" tabindex="-1"></a>  </span>
+<span id="cb15-10"><a href="visual.html#cb15-10" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">color =</span> school)) <span class="sc">+</span> </span>
+<span id="cb15-11"><a href="visual.html#cb15-11" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb15-12"><a href="visual.html#cb15-12" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
+<span id="cb15-13"><a href="visual.html#cb15-13" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="visual.html#cb15-14" tabindex="-1"></a>g5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">fill =</span> school)) <span class="sc">+</span> </span>
+<span id="cb15-15"><a href="visual.html#cb15-15" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb15-16"><a href="visual.html#cb15-16" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
+<span id="cb15-17"><a href="visual.html#cb15-17" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="visual.html#cb15-18" tabindex="-1"></a>g6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">fill =</span> school)) <span class="sc">+</span> </span>
+<span id="cb15-19"><a href="visual.html#cb15-19" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb15-20"><a href="visual.html#cb15-20" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb15-21"><a href="visual.html#cb15-21" tabindex="-1"></a>        <span class="fu">scale_fill_grey</span>() <span class="sc">+</span> </span>
+<span id="cb15-22"><a href="visual.html#cb15-22" tabindex="-1"></a>        <span class="fu">theme_classic</span>()</span>
+<span id="cb15-23"><a href="visual.html#cb15-23" tabindex="-1"></a></span>
+<span id="cb15-24"><a href="visual.html#cb15-24" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, g5, g6, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">&quot;AUTO&quot;</span>)</span></code></pre></div>
 <pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with
 ## `binwidth`.</code></pre>
 <p><img src="PaS2bookdown_files/figure-html/visual-mnoho-1.png" width="672" /></p>
@@ -564,6 +560,12 @@ Obrázok 6.10: Vybrať si vhodnú farebnú identitu je náročné. Zdroj: <a hre
 <li>V prípade rôznych názorov je užitočné hľadať konsenzus v tíme.</li>
 </ul>
 <p><strong>Individuálnym výstupom rozumieme na základe porovnávania podobných objektov.</strong></p>
+<p><br></p>
+<div class="boxed">
+<p><a href="https://rpubs.com/Daniela365/1177271">Na tomto linku</a> nájdete tiež časť Bc. práce Daniely Rušinovej, ktorá spracovala tému vizualizácie do prístupnej webstránky s mnohými príkladmi.</p>
+<p>Ku každému príkladu je tiež R-kód.</p>
+</div>
+<p><br></p>
 </div>
 <div id="cvičenia-5" class="section level2 hasAnchor" number="6.5">
 <h2><span class="header-section-number">6.5</span> Cvičenia<a href="visual.html#cvičenia-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -573,17 +575,17 @@ Obrázok 6.10: Vybrať si vhodnú farebnú identitu je náročné. Zdroj: <a hre
 <!-- [R súbor k cvičeniam (riešenia) 3.11.2022](https://www.dropbox.com/s/plw8hvv5bz9fuws/labs_week7_solutions.R?dl=0) -->
 <div class="exercise">
 <p><span id="exr:unlabeled-div-1" class="exercise"><strong>Cvičenie 6.1  (Znovu filmy) </strong></span>Použite túto náhodnú podvzorku filmov z knižnice <code>ggplot2movies</code>.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="visual.html#cb24-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
-<span id="cb24-2"><a href="visual.html#cb24-2" tabindex="-1"></a><span class="fu">library</span>(eatATA)</span>
-<span id="cb24-3"><a href="visual.html#cb24-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">224</span>)</span>
-<span id="cb24-4"><a href="visual.html#cb24-4" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;year&quot;</span>,<span class="st">&quot;length&quot;</span>,<span class="st">&quot;budget&quot;</span>,<span class="st">&quot;rating&quot;</span>,<span class="st">&quot;votes&quot;</span>)</span>
-<span id="cb24-5"><a href="visual.html#cb24-5" tabindex="-1"></a>catVars <span class="ot">&lt;-</span> <span class="fu">names</span>(movies)[<span class="dv">18</span><span class="sc">:</span><span class="dv">23</span>]</span>
-<span id="cb24-6"><a href="visual.html#cb24-6" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">rowSums</span>(movies[,<span class="dv">18</span><span class="sc">:</span><span class="dv">23</span>])<span class="sc">==</span><span class="dv">1</span>)</span>
-<span id="cb24-7"><a href="visual.html#cb24-7" tabindex="-1"></a>ind2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(ind,<span class="dv">1000</span>)</span>
-<span id="cb24-8"><a href="visual.html#cb24-8" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> movies[ind2,<span class="fu">c</span>(vars, catVars)]</span>
-<span id="cb24-9"><a href="visual.html#cb24-9" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> <span class="fu">dummiesToFactor</span>(data_sam, catVars, <span class="at">facVar =</span> <span class="st">&quot;category&quot;</span>)</span>
-<span id="cb24-10"><a href="visual.html#cb24-10" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> data_sam <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">era =</span> <span class="fu">as.factor</span>(<span class="dv">50</span><span class="sc">*</span><span class="fu">floor</span>(data_sam<span class="sc">$</span>year<span class="sc">/</span><span class="dv">50</span>)))</span>
-<span id="cb24-11"><a href="visual.html#cb24-11" tabindex="-1"></a><span class="fu">levels</span>(data_sam<span class="sc">$</span>era) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1850-1899&quot;</span>, <span class="st">&quot;1900-1949&quot;</span>, <span class="st">&quot;1950-1999&quot;</span>, <span class="st">&quot;2000-&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="visual.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
+<span id="cb17-2"><a href="visual.html#cb17-2" tabindex="-1"></a><span class="fu">library</span>(eatATA)</span>
+<span id="cb17-3"><a href="visual.html#cb17-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">224</span>)</span>
+<span id="cb17-4"><a href="visual.html#cb17-4" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;year&quot;</span>,<span class="st">&quot;length&quot;</span>,<span class="st">&quot;budget&quot;</span>,<span class="st">&quot;rating&quot;</span>,<span class="st">&quot;votes&quot;</span>)</span>
+<span id="cb17-5"><a href="visual.html#cb17-5" tabindex="-1"></a>catVars <span class="ot">&lt;-</span> <span class="fu">names</span>(movies)[<span class="dv">18</span><span class="sc">:</span><span class="dv">23</span>]</span>
+<span id="cb17-6"><a href="visual.html#cb17-6" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">rowSums</span>(movies[,<span class="dv">18</span><span class="sc">:</span><span class="dv">23</span>])<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb17-7"><a href="visual.html#cb17-7" tabindex="-1"></a>ind2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(ind,<span class="dv">1000</span>)</span>
+<span id="cb17-8"><a href="visual.html#cb17-8" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> movies[ind2,<span class="fu">c</span>(vars, catVars)]</span>
+<span id="cb17-9"><a href="visual.html#cb17-9" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> <span class="fu">dummiesToFactor</span>(data_sam, catVars, <span class="at">facVar =</span> <span class="st">&quot;category&quot;</span>)</span>
+<span id="cb17-10"><a href="visual.html#cb17-10" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> data_sam <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">era =</span> <span class="fu">as.factor</span>(<span class="dv">50</span><span class="sc">*</span><span class="fu">floor</span>(data_sam<span class="sc">$</span>year<span class="sc">/</span><span class="dv">50</span>)))</span>
+<span id="cb17-11"><a href="visual.html#cb17-11" tabindex="-1"></a><span class="fu">levels</span>(data_sam<span class="sc">$</span>era) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1850-1899&quot;</span>, <span class="st">&quot;1900-1949&quot;</span>, <span class="st">&quot;1950-1999&quot;</span>, <span class="st">&quot;2000-&quot;</span>)</span></code></pre></div>
 <p>Čo presne sme tu urobili?</p>
 <p>Teraz zreprodukujte tieto grafy:
 <img src="PaS2bookdown_files/figure-html/visual-zrepro-1.png" width="672" /><img src="PaS2bookdown_files/figure-html/visual-zrepro-2.png" width="672" /><img src="PaS2bookdown_files/figure-html/visual-zrepro-3.png" width="672" /></p>
@@ -689,10 +691,9 @@ Obrázok 6.10: Vybrať si vhodnú farebnú identitu je náročné. Zdroj: <a hre
 <!-- ::: {.exercise name="DÚ 2.5 (voľby NRSR 2023)"} -->
 <!-- Stiahnite si volebné dáta z [nedávnych volieb do NRSR](https://www.volbysr.sk/files/xlsx/NRSR2023_SK_tab03c.xlsx). -->
 <!-- <!-- ```{r visual-cvf,cache = TRUE,eval=FALSE, echo=TRUE} -->
-<p>–&gt;
-<!-- <!-- library(openxlsx) --> –&gt;
-<!-- <!-- data_zupy <- read.xlsx("https://www.volbysr.sk/osk/files/xlsx/OSK2022_SK_tab04b.xlsx") --> –&gt;
-<!-- <!-- ``` --> –&gt;</p>
+<!-- <!-- library(openxlsx) -->
+<!-- <!-- data_zupy <- read.xlsx("https://www.volbysr.sk/osk/files/xlsx/OSK2022_SK_tab04b.xlsx") -->
+<!-- <!-- ``` -->
 <!-- Vyberte si dve ľubovoľné politické strany, ktoré získali vo voľbách viac ako $3\%$ a zobrazte, aký bol pomer počtu hlasov pre tieto politické strany ku všetkým iným politickým stranám. Pozrite sa na tento vzťah osobitne cez rôzne kraje a cez územné obvody. Zvoľte vhodný typ vizualizácie a dotiahnite detaily. -->
 <!-- ::: -->
 <!-- ::: {.exercise name="DÚ 2.6 (vymyslený zamestnanci)"} -->
