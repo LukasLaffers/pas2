@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2024-02-04" />
+<meta name="date" content="2024-11-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -186,6 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
 <li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
 <li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="3.8" data-path="random.html"><a href="random.html#domáca-úloha-1"><i class="fa fa-check"></i><b>3.8</b> Domáca úloha 1</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
 <ul>
@@ -223,6 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="visual.html"><a href="visual.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
 <li class="chapter" data-level="6.5" data-path="visual.html"><a href="visual.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
 <li class="chapter" data-level="6.6" data-path="visual.html"><a href="visual.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
+<li class="chapter" data-level="6.7" data-path="visual.html"><a href="visual.html#domáca-úloha-2-dobrovoľná-a-nehodnotená"><i class="fa fa-check"></i><b>6.7</b> Domáca úloha 2 (dobrovoľná a nehodnotená)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ttest.html"><a href="ttest.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
 <ul>
@@ -237,15 +239,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.2" data-path="ttest.html"><a href="ttest.html#rôzna-variancia"><i class="fa fa-check"></i><b>7.2.2</b> Rôzna variancia</a></li>
 <li class="chapter" data-level="7.2.3" data-path="ttest.html"><a href="ttest.html#párové-testy"><i class="fa fa-check"></i><b>7.2.3</b> Párové testy</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="ttest.html"><a href="ttest.html#konfidenčný-interval"><i class="fa fa-check"></i><b>7.3</b> Konfidenčný interval</a></li>
-<li class="chapter" data-level="7.4" data-path="ttest.html"><a href="ttest.html#testovanie-podielu"><i class="fa fa-check"></i><b>7.4</b> Testovanie podielu</a>
+<li class="chapter" data-level="7.3" data-path="ttest.html"><a href="ttest.html#porovnanie-stredných-hodnôt-viacerých-vzoriek-anova"><i class="fa fa-check"></i><b>7.3</b> Porovnanie stredných hodnôt viacerých vzoriek (ANOVA)</a></li>
+<li class="chapter" data-level="7.4" data-path="ttest.html"><a href="ttest.html#konfidenčný-interval"><i class="fa fa-check"></i><b>7.4</b> Konfidenčný interval</a></li>
+<li class="chapter" data-level="7.5" data-path="ttest.html"><a href="ttest.html#testovanie-podielu"><i class="fa fa-check"></i><b>7.5</b> Testovanie podielu</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="ttest.html"><a href="ttest.html#testovanie-podielu-pre-jednu-skupinu"><i class="fa fa-check"></i><b>7.4.1</b> Testovanie podielu pre jednu skupinu</a></li>
-<li class="chapter" data-level="7.4.2" data-path="ttest.html"><a href="ttest.html#testovanie-rovnosti-podielov-pre-dve-skupiny"><i class="fa fa-check"></i><b>7.4.2</b> Testovanie rovnosti podielov pre dve skupiny</a></li>
+<li class="chapter" data-level="7.5.1" data-path="ttest.html"><a href="ttest.html#testovanie-podielu-pre-jednu-skupinu"><i class="fa fa-check"></i><b>7.5.1</b> Testovanie podielu pre jednu skupinu</a></li>
+<li class="chapter" data-level="7.5.2" data-path="ttest.html"><a href="ttest.html#testovanie-rovnosti-podielov-pre-dve-skupiny"><i class="fa fa-check"></i><b>7.5.2</b> Testovanie rovnosti podielov pre dve skupiny</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="ttest.html"><a href="ttest.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
-<li class="chapter" data-level="7.6" data-path="ttest.html"><a href="ttest.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
-<li class="chapter" data-level="7.7" data-path="ttest.html"><a href="ttest.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="7.6" data-path="ttest.html"><a href="ttest.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.6</b> Kontigenčné tabuľky</a></li>
+<li class="chapter" data-level="7.7" data-path="ttest.html"><a href="ttest.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.7</b> Zopár poznámok na záver.</a></li>
+<li class="chapter" data-level="7.8" data-path="ttest.html"><a href="ttest.html#prehľad"><i class="fa fa-check"></i><b>7.8</b> Prehľad</a></li>
+<li class="chapter" data-level="7.9" data-path="ttest.html"><a href="ttest.html#cvičenia-6"><i class="fa fa-check"></i><b>7.9</b> Cvičenia</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
 <ul>
@@ -295,7 +299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Majme dve skupiny a chceli by sme vedieť, či sú tieto skupiny rôzne.</p>
 <ul>
 <li>Líšia sa pacienti, ktorí dostali inovatívnu liečbu od tých ktorí dostali tradičnú liečbu?</li>
-<li>Majú študenti/tky z osemročných gymnázií lepšie výsledky ako tí/tie zo śtvorročných gymnázií?</li>
+<li>Majú študenti/tky z osemročných gymnázií lepšie výsledky ako tí/tie zo štvorročných gymnázií?</li>
 <li>Sú čitatelia denníka Alobal náchylnejší na podľahnutie konšpiráciám?</li>
 <li>Zarábajú viacej absolventi štúdijného odboru matematika alebo kombinovaného štúdijného odboru záhradkárstvo a kulturistika?</li>
 </ul>
@@ -456,7 +460,7 @@ Tomuto hovoríme <strong>obojstranný test</strong> nulovej hypotézy <span clas
 ##  18.25302</code></pre>
 <div id="intuícia" class="section level4 hasAnchor" number="7.1.1.1">
 <h4><span class="header-section-number">7.1.1.1</span> Intuícia<a href="ttest.html#intuícia" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Takže ešte raz. Predstavme si, źe testovacia štatistika bude obrovská a p-hodnota veľmi veľmi malá.</p>
+<p>Takže ešte raz. Predstavme si, že testovacia štatistika bude obrovská a p-hodnota veľmi veľmi malá.</p>
 <ul>
 <li>Ak by platila nulová hypotéza, tak by som naozaj neočakával takú veľkú hodnotu testovacej štatistiky.</li>
 <li>Akože áno, môže to nastať ale šanca je veľmi malá.</li>
@@ -504,15 +508,16 @@ Najčastejšie testujeme, či je rozdiel nula alebo nie.</p>
 <p>T-testy, ktoré tu prezentujeme sa dajú nahradiť Z-testami, v prípade, že je dátová vzorka dostatočne veľká je skreslenie minimálne.</p>
 <div id="rovnaká-variancia" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Rovnaká variancia<a href="ttest.html#rovnaká-variancia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Ak
+<p>Nech
 <span class="math display">\[X_1 \sim N(\mu_x,\sigma^2)\]</span>
-<span class="math display">\[Y_1 \sim N(\mu_y,\sigma^2)\]</span></p>
+<span class="math display">\[Y_1 \sim N(\mu_y,\sigma^2)\]</span>
+a majme dve iid vzorky.</p>
 <p>Ak majú spoločnú rovnakú varianciu, tak ju môžeme odhadnúť spolu
 <span class="math display">\[S^2 = \frac{(n_x-1)S^2_x + (n_y - 1)S^2_y}{(n_x-1) + (n_y-1)}\]</span>
 teda vážený priemer výberových variancií <span class="math inline">\(X\)</span> a <span class="math inline">\(Y.\)</span></p>
 <p>Náhodná premenná</p>
 <p><span class="math display">\[T \equiv \frac{(\bar{X} - \bar{Y}) - (\mu_x - \mu_y)}{S \sqrt{\frac{1}{n_x} + \frac{1}{n_y}}} \sim t_{n_x + n_y - 2}\]</span>
-Takźe máme rozdelenie testovacej štatistiky.</p>
+Takže máme rozdelenie testovacej štatistiky.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-1" class="example"><strong>Príklad 7.1  (dojazd) </strong></span>Majú staršie auta iný diaľničný dojazd? Pozrime sa osobitne na diaľničný a mestský dojazd.
 Tu je syntax ako to urobíme v Rku.</p>
@@ -604,11 +609,12 @@ Na základe dvojvýberového t-testu s rovnakými varianciami nevieme na hladine
 </div>
 <div id="rôzna-variancia" class="section level3 hasAnchor" number="7.2.2">
 <h3><span class="header-section-number">7.2.2</span> Rôzna variancia<a href="ttest.html#rôzna-variancia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Ak
+<p>Nech
 <span class="math display">\[X_1 \sim N(\mu_x,\sigma_x^2)\]</span>
-<span class="math display">\[Y_1 \sim N(\mu_y,\sigma_y^2)\]</span></p>
+<span class="math display">\[Y_1 \sim N(\mu_y,\sigma_y^2)\]</span>
+teda uvažujeme, že majú rôzne variancie.</p>
 <p>Náhodná premenná</p>
-<p><span class="math display">\[T \equiv \frac{(\bar{X} - \bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\frac{s^2_x}{n_x} + \frac{s^2_y}{n_y}}} \sim t_{n_x + n_y - 2}\]</span>
+<p><span class="math display">\[T \equiv \frac{(\bar{X} - \bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\frac{s^2_x}{n_x} + \frac{s^2_y}{n_y}}} \sim t_{df}\]</span>
 má približné t-rozdelenie s</p>
 <p><span class="math display">\[df = \frac{\left(\frac{s^2_x}{n_x}+\frac{s^2_y}{n_y} \right)^2}{\frac{\left(\frac{s^2_x}{n_x}\right)^2}{n_x-1} + \frac{\left(\frac{s^2_y}{n_y}\right)^2}{n_y-1}}.\]</span>
 stupňami voľnosti.</p>
@@ -667,6 +673,7 @@ stupňami voľnosti.</p>
 <p>Párový test nie je nič iné ako <a href="ttest.html#jedno">jednovýberový test</a> aplikovaný na premennú <span class="math inline">\(X - Y,\)</span> keď <span class="math inline">\(n_x = n_y.\)</span>
 Príklad, ktorý sme v <a href="ttest.html#jedno">sekcii</a> používali (zlepšenie) bol presne taký istý.</p>
 <p>Párový test so sebou nesie samozrejme viacej informácie ako obyčajný (nepárový) dvojvýberový test.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="ttest.html#cb38-1" tabindex="-1"></a><span class="fu">t.test</span>(test <span class="sc">~</span> cas, <span class="at">data=</span>data_test, <span class="at">mu=</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -678,6 +685,7 @@ Príklad, ktorý sme v <a href="ttest.html#jedno">sekcii</a> používali (zlepš
 ## sample estimates:
 ##   mean in group po mean in group pred 
 ##           64.87932           46.62629</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="ttest.html#cb40-1" tabindex="-1"></a><span class="fu">t.test</span>(test <span class="sc">~</span> cas, <span class="at">paired=</span><span class="cn">TRUE</span>,<span class="at">data=</span>data_test, <span class="at">mu=</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -689,6 +697,7 @@ Príklad, ktorý sme v <a href="ttest.html#jedno">sekcii</a> používali (zlepš
 ## sample estimates:
 ## mean difference 
 ##        18.25302</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="ttest.html#cb42-1" tabindex="-1"></a><span class="fu">t.test</span>(zmena, <span class="at">mu=</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -714,7 +723,7 @@ Príklad, ktorý sme v <a href="ttest.html#jedno">sekcii</a> používali (zlepš
 ## mean difference 
 ##           -1.58</code></pre>
 <p><img src="PaS2bookdown_files/figure-html/ttest-24-1.png" width="672" /></p>
-<p>Na základe párového t-testu na hladine významnosti 5% zamietame, že priemerné predĺženie spánku je rovnaké pri užívaní rôznych liekov. Hodnota testovacej štatistiky je -4.062 čomu zodpovedá p-hodnota 0.0028.</p>
+<p>Na základe párového t-testu na hladine významnosti 5% zamietame, že priemerné predĺženie spánku je rovnaké pri užívaní rôznych liekov. Hodnota testovacej štatistiky je -4.062 čomu zodpovedá p-hodnota 0.0028. Všimnime si, že teraz dáva zmysel spojiť jednotlivé merania toho istého subjektu čiarou - párový test totiž berie túto informáciu do úvahy.</p>
 <p>Poznamenajme, že ak by sme ignorovali informáciu, že ide o párové dáta, na hladine významnosti 5% by sme ju ani nevedeli zamietnuť(!)</p>
 <pre><code>## 
 ##  Welch Two Sample t-test
@@ -729,8 +738,27 @@ Príklad, ktorý sme v <a href="ttest.html#jedno">sekcii</a> používali (zlepš
 ##            0.75            2.33</code></pre>
 </div>
 </div>
-<div id="konfidenčný-interval" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Konfidenčný interval<a href="ttest.html#konfidenčný-interval" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="porovnanie-stredných-hodnôt-viacerých-vzoriek-anova" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Porovnanie stredných hodnôt viacerých vzoriek (ANOVA)<a href="ttest.html#porovnanie-stredných-hodnôt-viacerých-vzoriek-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Môžeme chcieť otestovať rovnosť stredných hodnôt vo viacerých ako v dvoch skupinách. Napríklad ak by sme testovali ako dobre fungujú 4 rôzne liečby.</p>
+<p>Za týmto účelom používame test ANOVA (analysis of variance). Jeho predpokladmi sú rovnaké variancie, normalita a nezávislosť vzoriek.</p>
+<p>Majte teraz <span class="math inline">\(k\)</span> rôznych skupín s veľkosťami dátových vzoriek <span class="math inline">\(n_1, n_2, \cdots n_k\)</span>. Nulová hypotéza, ktorá nás zaujíma je
+<span class="math display">\[H_0: \mu_{Y_1} = \mu_{Y_2} = \cdots \mu_{Y_k}\]</span>
+Testovacia štatistika má nasledovný tvar:</p>
+<p><span class="math display">\[F = \sum_{j=1}^k n_j \frac{(\bar Y_{j} - \bar{Y})^2}{k-1} \sim F_{k-1,n-k}\]</span>
+kde <span class="math inline">\(n = n_1 + \cdots n_k\)</span> a <span class="math inline">\(\bar{Y}\)</span> je celkový priemer.</p>
+<p>Tu je implementácia testu, kde sa pozeráme, či je diaľničný dojazd rôzny cez rôzne kategórie aút (7 kategórií: minivan, compact, subcompact, midsize, suv, 2seater, pickup).</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="ttest.html#cb46-1" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">aov</span>(hwy <span class="sc">~</span> class, <span class="at">data =</span> mpg)</span>
+<span id="cb46-2"><a href="ttest.html#cb46-2" tabindex="-1"></a><span class="fu">summary</span>(anova_model)</span></code></pre></div>
+<pre><code>##              Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## class         6   5683   947.2   83.39 &lt;2e-16 ***
+## Residuals   227   2578    11.4                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>P-hodnota testu je veľmi malá a zamietame nulovú hypotézu, že rôzne kategórie áut majú rovnaký priemerný diaľničný dojazd (čo zasa asi nie je až také prekvapivé).</p>
+</div>
+<div id="konfidenčný-interval" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Konfidenčný interval<a href="ttest.html#konfidenčný-interval" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Doteraz sme používali p-hodnotu na kvantifikáciu toho, ako veľmi je nulová hypotéza kompatibilná s našou dátovou vzorkou. Iný, alternatívny pohľad na kvantifikovanie neistoty je pozrieť sa na množinu všetkých tých hodnôt, ktoré by neboli bývali zamietnuté pri nejakej fixnej hladine významnosti.</p>
 <p>Vezmime si napríklad jednovýberový T-test. T-štatistika <span class="math inline">\(T \equiv \sqrt{n}\frac{\bar{X}_n - \mu}{S}\)</span> má <span class="math inline">\(t_{n-1}\)</span> rozdelenie, takže</p>
 <p><span class="math display">\[P\left(t^{(\alpha/2)}_{n-1} \leq T \leq t^{(1-\alpha/2)}_{n-1}\right) = P\left(t^{(\alpha/2)}_{n-1} \leq \sqrt{n}\frac{\bar{X}_n - \mu}{S} \leq t^{(1-\alpha/2)}_{n-1}\right) = 1-\alpha,\]</span>
@@ -746,16 +774,16 @@ Ak je naša dátová vzorka veľkosti <span class="math inline">\(n=10\)</span>,
 <p><img src="PaS2bookdown_files/figure-html/ttest-27-1.png" width="672" />
 Pozorujeme, že spomedzi 100 simulácií <span class="math inline">\(95\%\)</span>ný konfidenčný interval pokryl skutočnú hodnotu 94 krát, zatiaľčo <span class="math inline">\(90\%\)</span>ný konfidenčný interval pokryl túto hodnotu 89 krát. Ak by sme mali týcho simulácii viacej, tento pomer by sa blížil k <span class="math inline">\(95\%\)</span> a <span class="math inline">\(90\%\)</span>.</p>
 </div>
-<div id="testovanie-podielu" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Testovanie podielu<a href="ttest.html#testovanie-podielu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="testovanie-podielu" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Testovanie podielu<a href="ttest.html#testovanie-podielu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Niekedy sme v situácii, že potrebujeme skúmať rozdiely medzi skupinami a premenná, ktorú sledujeme je binárna - áno/nie.</p>
 <ul>
 <li>Niečo nastalo/nenastalo</li>
 <li>Produkt bol zakúpený</li>
 <li>Pacient sa vyzdravil do 2 týždňov</li>
 </ul>
-<div id="testovanie-podielu-pre-jednu-skupinu" class="section level3 hasAnchor" number="7.4.1">
-<h3><span class="header-section-number">7.4.1</span> Testovanie podielu pre jednu skupinu<a href="ttest.html#testovanie-podielu-pre-jednu-skupinu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="testovanie-podielu-pre-jednu-skupinu" class="section level3 hasAnchor" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> Testovanie podielu pre jednu skupinu<a href="ttest.html#testovanie-podielu-pre-jednu-skupinu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Predstavme si nasledovnú situáciu. Zo vzorky <span class="math inline">\(n=1024\)</span> respondentov získa v prieskume volebných preferencií určitá strana <span class="math inline">\(6.152\%\)</span> (63 hlasov). Zaujíma ju, či sa dostane do parlamentu, teda, či prekročí hranicu <span class="math inline">\(5\%\)</span>.</p>
 <p>Uvažujme, že počet respondentov, ktorí odpovedali, že by ju volili je rozdelený binomicky s neznámou pravdepodobnosťou <span class="math inline">\(p\)</span>:</p>
 <p><span class="math display">\[Y \sim Bin(n,p)\]</span>.</p>
@@ -788,14 +816,14 @@ Obrázok 7.1: Prieskum volebných preferencií z februára 2022.
 </p>
 </div>
 <p>Poďme sa pozrieť hneď na prvý riadok. Z 1003 respondentov <span class="math inline">\(65.2\%\)</span> respondentov označilo stranu, to jest 654. Z nich <span class="math inline">\(18.5\%\)</span> zodpovedá 121 respondentov. <span class="math inline">\(95\%\)</span>ný interval spoľahlivosti je preto:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="ttest.html#cb43-1" tabindex="-1"></a>hatp <span class="ot">&lt;-</span> <span class="dv">121</span><span class="sc">/</span><span class="dv">654</span></span>
-<span id="cb43-2"><a href="ttest.html#cb43-2" tabindex="-1"></a>c_low  <span class="ot">&lt;-</span> hatp <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)<span class="sc">*</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">/</span><span class="dv">654</span>)</span>
-<span id="cb43-3"><a href="ttest.html#cb43-3" tabindex="-1"></a>c_high <span class="ot">&lt;-</span> hatp <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)<span class="sc">*</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">/</span><span class="dv">654</span>)</span>
-<span id="cb43-4"><a href="ttest.html#cb43-4" tabindex="-1"></a></span>
-<span id="cb43-5"><a href="ttest.html#cb43-5" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(c_low, c_high),<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="ttest.html#cb48-1" tabindex="-1"></a>hatp <span class="ot">&lt;-</span> <span class="dv">121</span><span class="sc">/</span><span class="dv">654</span></span>
+<span id="cb48-2"><a href="ttest.html#cb48-2" tabindex="-1"></a>c_low  <span class="ot">&lt;-</span> hatp <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)<span class="sc">*</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">/</span><span class="dv">654</span>)</span>
+<span id="cb48-3"><a href="ttest.html#cb48-3" tabindex="-1"></a>c_high <span class="ot">&lt;-</span> hatp <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)<span class="sc">*</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">/</span><span class="dv">654</span>)</span>
+<span id="cb48-4"><a href="ttest.html#cb48-4" tabindex="-1"></a></span>
+<span id="cb48-5"><a href="ttest.html#cb48-5" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(c_low, c_high),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.155 0.215</code></pre>
 <p>Test, ktorý berie do úvahy skutočnosť, že binomicky rozdelená premenná nie je spojitá, je implementovaný pomocou</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="ttest.html#cb45-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="ttest.html#cb50-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>)</span></code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test with continuity correction
 ## 
@@ -808,7 +836,7 @@ Obrázok 7.1: Prieskum volebných preferencií z februára 2022.
 ##         p 
 ## 0.1850153</code></pre>
 <p>a verzia vhodná na malé dátové vzorky (presný test)</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="ttest.html#cb47-1" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="dv">121</span>,<span class="dv">654</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="ttest.html#cb52-1" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="dv">121</span>,<span class="dv">654</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Exact binomial test
 ## 
@@ -822,7 +850,7 @@ Obrázok 7.1: Prieskum volebných preferencií z februára 2022.
 ##              0.1850153</code></pre>
 <p>Z praktického hľadiska medzi nimi väčšinou nie je veľký rozdiel. Extenzívne porovnanie kvality rôznych testov je napríklad <a href="https://doi.org/10.1002/(SICI)1097-0258(19980430)17:8%3C857::AID-SIM777%3E3.0.CO;2-E">tu</a>.</p>
 <p>Poďme sa bližšie pozrieť pod kapotu <code>prop.test</code> s parametrom <code>correct=FALSE</code>. Budeme mechanicky meniť pravdepodobnosť testu a ukladať si p-hodnotu.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="ttest.html#cb49-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">p=</span><span class="fl">0.2</span>,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="ttest.html#cb54-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">p=</span><span class="fl">0.2</span>,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test without continuity correction
 ## 
@@ -834,10 +862,10 @@ Obrázok 7.1: Prieskum volebných preferencií z februára 2022.
 ## sample estimates:
 ##         p 
 ## 0.1850153</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="ttest.html#cb51-1" tabindex="-1"></a>U <span class="ot">&lt;-</span> (<span class="dv">121</span> <span class="sc">-</span> <span class="dv">654</span><span class="sc">*</span><span class="fl">0.2</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">654</span><span class="sc">*</span><span class="fl">0.2</span><span class="sc">*</span>(<span class="dv">1</span><span class="fl">-0.2</span>))</span>
-<span id="cb51-2"><a href="ttest.html#cb51-2" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(U)))</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="ttest.html#cb56-1" tabindex="-1"></a>U <span class="ot">&lt;-</span> (<span class="dv">121</span> <span class="sc">-</span> <span class="dv">654</span><span class="sc">*</span><span class="fl">0.2</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">654</span><span class="sc">*</span><span class="fl">0.2</span><span class="sc">*</span>(<span class="dv">1</span><span class="fl">-0.2</span>))</span>
+<span id="cb56-2"><a href="ttest.html#cb56-2" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(U)))</span></code></pre></div>
 <pre><code>## [1] 0.3380497</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="ttest.html#cb53-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="ttest.html#cb58-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test without continuity correction
 ## 
@@ -849,20 +877,20 @@ Obrázok 7.1: Prieskum volebných preferencií z februára 2022.
 ## sample estimates:
 ##         p 
 ## 0.1850153</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="ttest.html#cb55-1" tabindex="-1"></a>p_vec <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.14</span>,<span class="fl">0.22</span>,<span class="at">by=</span><span class="fl">0.00001</span>)</span>
-<span id="cb55-2"><a href="ttest.html#cb55-2" tabindex="-1"></a>np <span class="ot">&lt;-</span> <span class="fu">length</span>(p_vec)</span>
-<span id="cb55-3"><a href="ttest.html#cb55-3" tabindex="-1"></a>pval_vec <span class="ot">&lt;-</span> <span class="fu">numeric</span>(np)</span>
-<span id="cb55-4"><a href="ttest.html#cb55-4" tabindex="-1"></a><span class="cf">for</span> (ip <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>np){</span>
-<span id="cb55-5"><a href="ttest.html#cb55-5" tabindex="-1"></a>  pval_vec[ip] <span class="ot">&lt;-</span> <span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">p=</span>p_vec[ip],<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>p.value</span>
-<span id="cb55-6"><a href="ttest.html#cb55-6" tabindex="-1"></a>}</span>
-<span id="cb55-7"><a href="ttest.html#cb55-7" tabindex="-1"></a><span class="fu">range</span>(p_vec[<span class="fu">which</span>(pval_vec<span class="sc">&gt;</span><span class="fl">0.05</span>)])</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="ttest.html#cb60-1" tabindex="-1"></a>p_vec <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.14</span>,<span class="fl">0.22</span>,<span class="at">by=</span><span class="fl">0.00001</span>)</span>
+<span id="cb60-2"><a href="ttest.html#cb60-2" tabindex="-1"></a>np <span class="ot">&lt;-</span> <span class="fu">length</span>(p_vec)</span>
+<span id="cb60-3"><a href="ttest.html#cb60-3" tabindex="-1"></a>pval_vec <span class="ot">&lt;-</span> <span class="fu">numeric</span>(np)</span>
+<span id="cb60-4"><a href="ttest.html#cb60-4" tabindex="-1"></a><span class="cf">for</span> (ip <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>np){</span>
+<span id="cb60-5"><a href="ttest.html#cb60-5" tabindex="-1"></a>  pval_vec[ip] <span class="ot">&lt;-</span> <span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">p=</span>p_vec[ip],<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>p.value</span>
+<span id="cb60-6"><a href="ttest.html#cb60-6" tabindex="-1"></a>}</span>
+<span id="cb60-7"><a href="ttest.html#cb60-7" tabindex="-1"></a><span class="fu">range</span>(p_vec[<span class="fu">which</span>(pval_vec<span class="sc">&gt;</span><span class="fl">0.05</span>)])</span></code></pre></div>
 <pre><code>## [1] 0.15713 0.21658</code></pre>
 <p>Teraz vidíme, že funkcia <code>prop.test</code> implementuje nasledovný konfidenčný interval,</p>
 <p><span class="math display">\[P\left(-z^{(1-\alpha/2)} \leq \frac{Y - np}{\sqrt{n  p (1- p)}}  \leq z^{(1-\alpha/2)}\right) \approx 1-\alpha,\]</span>
 rozdielom je, že v menovateli nie je aproximácia.</p>
 <p>A teraz sa pozrime na exaktný test <code>binom.test</code>. Tento test nerobí vôbec žiadnu aproximáciu normálnym rozdelením.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="ttest.html#cb57-1" tabindex="-1"></a><span class="co"># exact - based on binomial distribution</span></span>
-<span id="cb57-2"><a href="ttest.html#cb57-2" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="fl">0.2</span>,<span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="ttest.html#cb62-1" tabindex="-1"></a><span class="co"># exact - based on binomial distribution</span></span>
+<span id="cb62-2"><a href="ttest.html#cb62-2" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="fl">0.2</span>,<span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Exact binomial test
 ## 
@@ -874,38 +902,38 @@ rozdielom je, že v menovateli nie je aproximácia.</p>
 ## sample estimates:
 ## probability of success 
 ##              0.1850153</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ttest.html#cb59-1" tabindex="-1"></a><span class="co">#more extreme number than 121?</span></span>
-<span id="cb59-2"><a href="ttest.html#cb59-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">170</span>,<span class="fu">dbinom</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">170</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>))</span>
-<span id="cb59-3"><a href="ttest.html#cb59-3" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">121</span>,<span class="fu">dbinom</span>(<span class="dv">121</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb59-4"><a href="ttest.html#cb59-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">dbinom</span>(<span class="dv">121</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb59-5"><a href="ttest.html#cb59-5" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">121</span>,<span class="fu">dbinom</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">121</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span>
-<span id="cb59-6"><a href="ttest.html#cb59-6" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">170</span>,<span class="fu">dbinom</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">170</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="ttest.html#cb64-1" tabindex="-1"></a><span class="co">#more extreme number than 121?</span></span>
+<span id="cb64-2"><a href="ttest.html#cb64-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">170</span>,<span class="fu">dbinom</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">170</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>))</span>
+<span id="cb64-3"><a href="ttest.html#cb64-3" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">121</span>,<span class="fu">dbinom</span>(<span class="dv">121</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb64-4"><a href="ttest.html#cb64-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">dbinom</span>(<span class="dv">121</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb64-5"><a href="ttest.html#cb64-5" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">121</span>,<span class="fu">dbinom</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">121</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb64-6"><a href="ttest.html#cb64-6" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">170</span>,<span class="fu">dbinom</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">170</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/ttest-33-1.png" width="672" /></p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="ttest.html#cb60-1" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">121</span>,<span class="dv">654</span>,<span class="fl">0.2</span>))<span class="sc">+</span><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">654</span>,<span class="dv">654</span>,<span class="fl">0.2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ttest.html#cb65-1" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">121</span>,<span class="dv">654</span>,<span class="fl">0.2</span>))<span class="sc">+</span><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">654</span>,<span class="dv">654</span>,<span class="fl">0.2</span>))</span></code></pre></div>
 <pre><code>## [1] 0.3532905</code></pre>
 <p>Za predpokladu nulovej hypotézy priamo vieme rozdelenie. Sčítame pravdepodobnosti ešte extrémnejšej udalosti.</p>
 </div>
-<div id="testovanie-rovnosti-podielov-pre-dve-skupiny" class="section level3 hasAnchor" number="7.4.2">
-<h3><span class="header-section-number">7.4.2</span> Testovanie rovnosti podielov pre dve skupiny<a href="ttest.html#testovanie-rovnosti-podielov-pre-dve-skupiny" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="testovanie-rovnosti-podielov-pre-dve-skupiny" class="section level3 hasAnchor" number="7.5.2">
+<h3><span class="header-section-number">7.5.2</span> Testovanie rovnosti podielov pre dve skupiny<a href="ttest.html#testovanie-rovnosti-podielov-pre-dve-skupiny" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Testovacia štatistika, ktorá testuje nulovú hypotézu, že proporcie v dvoch vzorkách veľkosti <span class="math inline">\(n_1\)</span> a <span class="math inline">\(n_2\)</span> sú rovnaké, má nasledovnú formu:</p>
 <p><span class="math display">\[Z \equiv \frac{\hat p_1 - \hat p_2 }{\sqrt{ \hat p (1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right) }} \rightarrow_D N(0,1),\]</span></p>
-<p>kde <span class="math inline">\(\hat p_1 = Y_1/n_1, \hat p_2 = Y_2/n_2, \hat p = \frac{Y_1 + Y_2}{n_1 + n_2}.\)</span></p>
+<p>kde <span class="math inline">\(\hat p_1 = Y_1/n_1, \hat p_2 = Y_2/n_2,  \hat p = \frac{Y_1 + Y_2}{n_1 + n_2}.\)</span></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-2" class="example"><strong>Príklad 7.2  </strong></span>Chceli by sme porovnať efekt dvoch jedov na hmyz. V prvej skupine sme namerali, že 28 z 90 hmyzov zahynulo. V druhej skupine to bolo 8 zo 60. Hodnota <span class="math inline">\(Z\)</span> štatistiky je</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="ttest.html#cb62-1" tabindex="-1"></a>hatp1 <span class="ot">&lt;-</span> <span class="dv">28</span><span class="sc">/</span><span class="dv">90</span></span>
-<span id="cb62-2"><a href="ttest.html#cb62-2" tabindex="-1"></a>hatp2 <span class="ot">&lt;-</span> <span class="dv">8</span><span class="sc">/</span><span class="dv">60</span></span>
-<span id="cb62-3"><a href="ttest.html#cb62-3" tabindex="-1"></a>hatp <span class="ot">&lt;-</span> (<span class="dv">28</span><span class="sc">+</span><span class="dv">8</span>)<span class="sc">/</span>(<span class="dv">90</span><span class="sc">+</span><span class="dv">60</span>)</span>
-<span id="cb62-4"><a href="ttest.html#cb62-4" tabindex="-1"></a></span>
-<span id="cb62-5"><a href="ttest.html#cb62-5" tabindex="-1"></a>( Z <span class="ot">&lt;-</span> (hatp1<span class="sc">-</span>hatp2)<span class="sc">/</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">90</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">60</span>)) )</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="ttest.html#cb67-1" tabindex="-1"></a>hatp1 <span class="ot">&lt;-</span> <span class="dv">28</span><span class="sc">/</span><span class="dv">90</span></span>
+<span id="cb67-2"><a href="ttest.html#cb67-2" tabindex="-1"></a>hatp2 <span class="ot">&lt;-</span> <span class="dv">8</span><span class="sc">/</span><span class="dv">60</span></span>
+<span id="cb67-3"><a href="ttest.html#cb67-3" tabindex="-1"></a>hatp <span class="ot">&lt;-</span> (<span class="dv">28</span><span class="sc">+</span><span class="dv">8</span>)<span class="sc">/</span>(<span class="dv">90</span><span class="sc">+</span><span class="dv">60</span>)</span>
+<span id="cb67-4"><a href="ttest.html#cb67-4" tabindex="-1"></a></span>
+<span id="cb67-5"><a href="ttest.html#cb67-5" tabindex="-1"></a>( Z <span class="ot">&lt;-</span> (hatp1<span class="sc">-</span>hatp2)<span class="sc">/</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">90</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">60</span>)) )</span></code></pre></div>
 <pre><code>## [1] 2.497562</code></pre>
 <p>a kritická hodnota obojstranného 95<span class="math inline">\(\%\)</span> testu je</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="ttest.html#cb64-1" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="ttest.html#cb69-1" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
 <pre><code>## [1] 1.959964</code></pre>
 <p>takže zamietame nulovú hypotézu, že dva insekticídy sú rovnaké. P-hodnota obojstranného testu je</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="ttest.html#cb66-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="fu">abs</span>(Z)))</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="ttest.html#cb71-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="fu">abs</span>(Z)))</span></code></pre></div>
 <pre><code>## [1] 0.01250505</code></pre>
 <p>Iný spôsob na základe inej testovacej štatistiky s korekciou na spojitosť je</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="ttest.html#cb68-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">8</span>),<span class="fu">c</span>(<span class="dv">90</span>,<span class="dv">60</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ttest.html#cb73-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">8</span>),<span class="fu">c</span>(<span class="dv">90</span>,<span class="dv">60</span>))</span></code></pre></div>
 <pre><code>## 
 ##  2-sample test for equality of proportions with continuity correction
 ## 
@@ -920,8 +948,8 @@ rozdielom je, že v menovateli nie je aproximácia.</p>
 </div>
 </div>
 </div>
-<div id="kontigenčné-tabuľky" class="section level2 hasAnchor" number="7.5">
-<h2><span class="header-section-number">7.5</span> Kontigenčné tabuľky<a href="ttest.html#kontigenčné-tabuľky" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="kontigenčné-tabuľky" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Kontigenčné tabuľky<a href="ttest.html#kontigenčné-tabuľky" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Začnime príkladom. Chceli by sme vedieť či súvisí farba očí s farbou vlasov. Máme odpozorovanú vzorku 592 ĺudí v rôznych kategóriách. Neexistuje žiadne prirodzené číselné usporiadanie farieb, ide o <strong>kategorickú</strong> premennú.</p>
 <p><img src="fig_7_ind1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Vidíme, že máme 20 modrokých ľudí s čiernymi vlasmi ale 68 ľudí s hnedými očami (20 ľudí má orieškovú farbu očí - pozn. ja som tie farby nevymýšľal.).</p>
@@ -944,8 +972,8 @@ kde</p>
 <li><span class="math inline">\(m\)</span> označuje počet stupňov voľnosti. Je to <span class="math inline">\(m = (c_1 - 1)(c_2-1)\)</span> kde <span class="math inline">\(c_1\)</span> je počet kategórii prvej kategorickej premennej a <span class="math inline">\(c_2\)</span> je počet kategórii druhej kategorickej premennej. (V našom prípade <span class="math inline">\(c_1 = c_2 = 4\)</span> a preto <span class="math inline">\(m = (4-1)(4-1)=9.\)</span>)</li>
 </ul>
 <p>Tu je mechanická implementácia v R ako aj výsledok za použitia funkcie <code>chisq.test</code>.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="ttest.html#cb70-1" tabindex="-1"></a><span class="fu">library</span>(faraway)</span></code></pre></div>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="ttest.html#cb71-1" tabindex="-1"></a>haireye</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ttest.html#cb75-1" tabindex="-1"></a><span class="fu">library</span>(faraway)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="ttest.html#cb76-1" tabindex="-1"></a>haireye</span></code></pre></div>
 <pre><code>##      y   eye  hair
 ## 1    5 green BLACK
 ## 2   29 green BROWN
@@ -963,35 +991,35 @@ kde</p>
 ## 14 119 brown BROWN
 ## 15  26 brown   RED
 ## 16   7 brown BLOND</code></pre>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ttest.html#cb73-1" tabindex="-1"></a>(ct <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(y <span class="sc">~</span> hair <span class="sc">+</span> eye, haireye))</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="ttest.html#cb78-1" tabindex="-1"></a>(ct <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(y <span class="sc">~</span> hair <span class="sc">+</span> eye, haireye))</span></code></pre></div>
 <pre><code>##        eye
 ## hair    green hazel blue brown
 ##   BLACK     5    15   20    68
 ##   BROWN    29    54   84   119
 ##   RED      14    14   17    26
 ##   BLOND    16    10   94     7</code></pre>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ttest.html#cb75-1" tabindex="-1"></a><span class="fu">summary</span>(ct)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="ttest.html#cb80-1" tabindex="-1"></a><span class="fu">summary</span>(ct)</span></code></pre></div>
 <pre><code>## Call: xtabs(formula = y ~ hair + eye, data = haireye)
 ## Number of cases in table: 592 
 ## Number of factors: 2 
 ## Test for independence of all factors:
 ##  Chisq = 138.29, df = 9, p-value = 2.325e-25</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="ttest.html#cb77-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">250</span>,<span class="fu">dchisq</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">250</span>,<span class="at">df=</span><span class="dv">9</span>),<span class="at">type=</span><span class="st">&quot;l&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="ttest.html#cb82-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">250</span>,<span class="fu">dchisq</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">250</span>,<span class="at">df=</span><span class="dv">9</span>),<span class="at">type=</span><span class="st">&quot;l&quot;</span>)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/ttest-45-1.png" width="672" /></p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="ttest.html#cb78-1" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">margin.table</span>(ct,<span class="dv">1</span>)<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">margin.table</span>(ct,<span class="dv">1</span>))</span>
-<span id="cb78-2"><a href="ttest.html#cb78-2" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">margin.table</span>(ct,<span class="dv">2</span>)<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">margin.table</span>(ct,<span class="dv">2</span>))</span>
-<span id="cb78-3"><a href="ttest.html#cb78-3" tabindex="-1"></a></span>
-<span id="cb78-4"><a href="ttest.html#cb78-4" tabindex="-1"></a><span class="co">#table under independency</span></span>
-<span id="cb78-5"><a href="ttest.html#cb78-5" tabindex="-1"></a>indTable <span class="ot">&lt;-</span> h <span class="sc">%*%</span> <span class="fu">t</span>(e)</span>
-<span id="cb78-6"><a href="ttest.html#cb78-6" tabindex="-1"></a><span class="fu">sum</span>(indTable)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="ttest.html#cb83-1" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">margin.table</span>(ct,<span class="dv">1</span>)<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">margin.table</span>(ct,<span class="dv">1</span>))</span>
+<span id="cb83-2"><a href="ttest.html#cb83-2" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">margin.table</span>(ct,<span class="dv">2</span>)<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">margin.table</span>(ct,<span class="dv">2</span>))</span>
+<span id="cb83-3"><a href="ttest.html#cb83-3" tabindex="-1"></a></span>
+<span id="cb83-4"><a href="ttest.html#cb83-4" tabindex="-1"></a><span class="co">#table under independency</span></span>
+<span id="cb83-5"><a href="ttest.html#cb83-5" tabindex="-1"></a>indTable <span class="ot">&lt;-</span> h <span class="sc">%*%</span> <span class="fu">t</span>(e)</span>
+<span id="cb83-6"><a href="ttest.html#cb83-6" tabindex="-1"></a><span class="fu">sum</span>(indTable)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="ttest.html#cb80-1" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">sum</span>(ct)</span>
-<span id="cb80-2"><a href="ttest.html#cb80-2" tabindex="-1"></a></span>
-<span id="cb80-3"><a href="ttest.html#cb80-3" tabindex="-1"></a><span class="fu">sum</span>( (ct <span class="sc">-</span> indTable<span class="sc">*</span>N)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(indTable<span class="sc">*</span>N) ) </span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ttest.html#cb85-1" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">sum</span>(ct)</span>
+<span id="cb85-2"><a href="ttest.html#cb85-2" tabindex="-1"></a></span>
+<span id="cb85-3"><a href="ttest.html#cb85-3" tabindex="-1"></a><span class="fu">sum</span>( (ct <span class="sc">-</span> indTable<span class="sc">*</span>N)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(indTable<span class="sc">*</span>N) ) </span></code></pre></div>
 <pre><code>## [1] 138.2898</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="ttest.html#cb82-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(ct)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="ttest.html#cb87-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(ct)</span></code></pre></div>
 <p><img src="PaS2bookdown_files/figure-html/ttest-45-2.png" width="672" /></p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="ttest.html#cb83-1" tabindex="-1"></a><span class="fu">chisq.test</span>(ct)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="ttest.html#cb88-1" tabindex="-1"></a><span class="fu">chisq.test</span>(ct)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
@@ -999,10 +1027,10 @@ kde</p>
 ## X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <p>Je neprekvapivé, že v tomto prípade veľmi silno zamietame nulovú hypotézu o tom, že farba očí a vlasov je nezávislá.</p>
 </div>
-<div id="zopár-poznámok-na-záver." class="section level2 hasAnchor" number="7.6">
-<h2><span class="header-section-number">7.6</span> Zopár poznámok na záver.<a href="ttest.html#zopár-poznámok-na-záver." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="zopár-poznámok-na-záver." class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> Zopár poznámok na záver.<a href="ttest.html#zopár-poznámok-na-záver." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>V praxi je uźitočné zobraziť dáta. Vždy.</li>
+<li>V praxi je užitočné zobraziť dáta. Vždy.</li>
 <li>V drvivej väčšine prípadov robíme test s nerovnakými varianciami. Málokedy máme dôvod uvažovať, že vzorky majú rovnakú varianciu.</li>
 <li>Na to, ako veĺmi popisuje normálne rozdelenie naše vzorky môžeme pomôcť vizualizačné nástroje. Ak aj nie sú normálne, vďaka centrálnej limitnej vete budú pre rastúcu dátovú vzorku naše štatistiky aspoň asymptoticky t alebo normálne rozdelené.</li>
 <li>Na veľmi malé dátové vzorky sa niekedy používajú aj neparametrické testy. Tieto nespomíname v tomto kurze.</li>
@@ -1013,13 +1041,137 @@ kde</p>
 <li>za platnosti modelových predpokladov (napr. rovnaká variancia)</li>
 <li>aká by bola šanca, že uvidíme ešte extrémnejší výsledok ako ten čo pozorujeme, ak by sme opakovali zber dát mnohokrát. No ale toto je problém lebo my máme <strong>len jednu vzorku</strong>.</li>
 </ul></li>
-<li>Okrem śtatistickej významnosti sa treba pozerať aj na reálnu hodnotu rozdielu. Ak budeme mať dostatočne veľa dát, tak <strong>vždy</strong> zamietneme nulovú hypotézu, že stredné hodnoty dvoch vzoriek sú rovnaké. Ale ak je rozdiel v dojazde na nádrž auta 0.3km alebo ak je rozdiel v ročnej mzde 4.50eur, tak tento hoc aj štatisticky významný rozdiel nie je zaujímavý.</li>
+<li>Okrem štatistickej významnosti sa treba pozerať aj na reálnu hodnotu rozdielu. Ak budeme mať dostatočne veľa dát, tak <strong>vždy</strong> zamietneme nulovú hypotézu, že stredné hodnoty dvoch vzoriek sú rovnaké. Ale ak je rozdiel v dojazde na nádrž auta 0.3km alebo ak je rozdiel v ročnej mzde 4.50eur, tak tento hoc aj štatisticky významný rozdiel nie je zaujímavý.</li>
 <li>Existuje dosť veľká skupina ľudí, ktorá považuje tento spôsob uvažovania (štatistické testovanie hypotéz) za <a href="https://www.nature.com/articles/519009f">neužitočný</a>. (Toto môžeme byť aj my ale najprv tomu budeme musieť do hĺbky porozumieť)</li>
 <li>Štatistické testovanie hypotéz môže vzbudiť dojem vedeckosti. Nie je však o nič vedeckejšie ako zobraziť dáta vhodnou vizualizáciou. Na testovanie sa pozeráme ako na ďalší nástroj, ktorého ambíciou je byť užitočné. To, že niečo zamietneme alebo nezamietneme neznamená, že to je alebo nie je pravda. Testovanie nám umožňuje systematizovať naše rozhodovanie a kvantifikovať intuíciu, ktorú nadobudneme pozeraním sa na surové dáta.</li>
 </ul>
 </div>
-<div id="cvičenia-6" class="section level2 hasAnchor" number="7.7">
-<h2><span class="header-section-number">7.7</span> Cvičenia<a href="ttest.html#cvičenia-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="prehľad" class="section level2 hasAnchor" number="7.8">
+<h2><span class="header-section-number">7.8</span> Prehľad<a href="ttest.html#prehľad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="font-size: 0.7em;">
+<div style="overflow-x: auto; width: 100%;">
+<table style="width:100%;">
+<colgroup>
+<col width="27%" />
+<col width="9%" />
+<col width="13%" />
+<col width="22%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Použitie</th>
+<th>Test</th>
+<th>Testovacia štatistika</th>
+<th>Hypotéza</th>
+<th>V Rku</th>
+<th>Poznámky</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Stredná hodnota je rovná číslu <span class="math inline">\(\mu\)</span></td>
+<td>Z-Test</td>
+<td><span class="math inline">\(Z= \sqrt{n}\frac{\bar{X}_n - \mu}{\sigma} \sim N(0,1)\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_X = \mu\)</span></td>
+<td><code>BSDA::z.test()</code></td>
+<td>Vyžaduje známe <span class="math inline">\(\sigma\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>T-Test</td>
+<td><span class="math inline">\(T= \sqrt{n}\frac{\bar{X}_n - \mu}{S} \sim t_{n}\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_X = \mu\)</span></td>
+<td><code>t.test()</code></td>
+<td>Používa odhadnuté <span class="math inline">\(\sigma\)</span></td>
+</tr>
+<tr class="odd">
+<td>Porovnanie stredných hodnôt dvoch vzoriek</td>
+<td>T-Test</td>
+<td><span class="math inline">\(T \equiv \frac{(\bar{X} - \bar{Y}) - (\mu_x - \mu_y)}{S \sqrt{\frac{1}{n_x} + \frac{1}{n_y}}} \sim t_{n_x + n_y - 2}\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_X = \mu_Y\)</span></td>
+<td><code>t.test(,var.equal=TRUE)</code></td>
+<td><span class="math inline">\(S\)</span> je odhadom <span class="math inline">\(\sigma_X = \sigma_Y\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>(Welchov) T-Test</td>
+<td><span class="math inline">\(T \equiv \frac{(\bar{X} - \bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\frac{s^2_x}{n_x} + \frac{s^2_y}{n_y}}} \sim t_{df}\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_X = \mu_Y\)</span></td>
+<td><code>t.test(,var.equal=FALSE)</code></td>
+<td>Približný test</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Párový T-Test</td>
+<td><span class="math inline">\(T \equiv \sqrt{n}\frac{(\bar{X} - \bar{Y})}{S} \sim t_{n-1}\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_X - \mu_Y = 0\)</span></td>
+<td><code>t.test(,paired=TRUE)</code></td>
+<td><span class="math inline">\(n_X = n_Y\)</span></td>
+</tr>
+<tr class="even">
+<td>Porovnanie stredných hodnôt viacerých vzoriek</td>
+<td>ANOVA</td>
+<td><span class="math inline">\(F = \sum_{j=1}^k n_j \frac{(\bar Y_{j} - \bar{Y})^2}{k-1} \sim F_{k-1,n-k}\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_{Y_1} = \mu_{Y_2} = \cdots \mu_{Y_k}\)</span></td>
+<td><code>aov()</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Testovanie podielu pre jednu skupinu</td>
+<td>Z-test</td>
+<td><span class="math inline">\(Z \equiv \frac{Y - np}{\sqrt{n p (1-p)}} \rightarrow_D N(0,1)\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p_Y = p\)</span></td>
+<td><code>z.test()</code></td>
+<td>Veľká vzorka</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Chí-Kvadrát test</td>
+<td><span class="math inline">\(\chi^2_1\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p_Y = p\)</span></td>
+<td><code>prop.test()</code></td>
+<td>Na základe kont. tabuľky</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Binomický test</td>
+<td><span class="math inline">\(Y \sim Binom(n,p)\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p_Y = p\)</span></td>
+<td><code>binom.test()</code></td>
+<td>Exaktný test - pre malé vzorky</td>
+</tr>
+<tr class="even">
+<td>Testovanie rovnosti podielov pre dve skupiny</td>
+<td>Z-test</td>
+<td><span class="math inline">\(Z \equiv \frac{\hat p_1 - \hat p_2 }{\sqrt{ \hat p (1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right) }} \rightarrow_D N(0,1)\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p_1 = p_2\)</span></td>
+<td>mechanicky</td>
+<td><span class="math inline">\(\hat p\)</span> je odhad proporcie z oboch vzoriek naraz</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Chí-Kvadrát test</td>
+<td><span class="math inline">\(\chi^2_1\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p_1 = p_2\)</span></td>
+<td><code>prop.test()</code></td>
+<td>Na základe kont. tabuľky.</td>
+</tr>
+<tr class="even">
+<td>Asociácia medzi kategorickými premennými</td>
+<td>Chí-Kvadrát test</td>
+<td><span class="math inline">\(C = \sum_i \frac{(O_i - E_i)^2}{E_i} \sim \chi^2_m\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: X a Y sú nezávislé</td>
+<td><code>chisq.test()</code></td>
+<td><span class="math inline">\(m = (c_1 - 1)(c_2-1)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="cvičenia-6" class="section level2 hasAnchor" number="7.9">
+<h2><span class="header-section-number">7.9</span> Cvičenia<a href="ttest.html#cvičenia-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://www.dropbox.com/scl/fi/34lf7hxqdvo8uyvlf2qu9/20231123-labs07-base.R?rlkey=t4ge8keij03yn7qufc3qp74sv&amp;dl=0">R súbor k cvičeniam</a></p>
 <!-- [R súbor k cvičeniam 11.11.2022 riešenia](https://www.dropbox.com/s/k5y1851ekt7jpe8/labs_week8_solutions_package.zip?dl=0) -->
 <!-- [R súbor k cvičeniam](https://www.dropbox.com/s/vqldvranyfat4ok/labs_week9.R?dl=0) -->
@@ -1052,7 +1204,7 @@ kde</p>
 <p><span id="exr:unlabeled-div-11" class="exercise"><strong>Cvičenie 7.9  (Volebný prieskum 2) </strong></span><a href="https://www.median.sk/pdf/OSTATNE/4521527_RTVS_Hodnotenievlady_v22.pdf">Tento prieskum</a> neobsahuje kvantifikáciu neistoty pomocou konfidenčných intervalov. Doplňte informáciu o konfidenčných intervaloch na slajd na strane 8 (prieskum volebných preferencií). Je rozdiel v proporcii hlasujúcich pre 2 strany, ktoré získali <span class="math inline">\(5\%\)</span> a <span class="math inline">\(4.7\%\)</span> štatisticky významný?</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Cvičenie 7.10  (Mzdy) </strong></span>Z kniźnice <code>ISLR</code> máme v datasete <code>Wage</code> informácie o mzdách. Vytvorte kategorickú premennú, či je daná mzda nad alebo pod mediánom. Pozrite sa ako táto kategorická premenná suvisí so vzdelaním a s rasou.</p>
+<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Cvičenie 7.10  (Mzdy) </strong></span>Z knižnice <code>ISLR</code> máme v datasete <code>Wage</code> informácie o mzdách. Vytvorte kategorickú premennú, či je daná mzda nad alebo pod mediánom. Pozrite sa ako táto kategorická premenná suvisí so vzdelaním a s rasou.</p>
 </div>
 <!-- [R súbor z cvičení 23.11.2023](https://www.dropbox.com/scl/fi/ttr6hvp9nfs0g0ugsw2ub/20231123-labs07.R?rlkey=ih72oepnm4bbvznk1wlloy7u2&dl=0) -->
 <!-- ## Domáca úloha 3 -->
