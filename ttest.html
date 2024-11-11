@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Štatistické testovanie hypotéz | Pravdepodobnosť a štatistika 2</title>
   <meta name="description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Štatistické testovanie hypotéz | Pravdepodobnosť a štatistika 2" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2024-11-03" />
+<meta name="date" content="2024-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -917,7 +917,7 @@ rozdielom je, že v menovateli nie je aproximácia.</p>
 <h3><span class="header-section-number">7.5.2</span> Testovanie rovnosti podielov pre dve skupiny<a href="ttest.html#testovanie-rovnosti-podielov-pre-dve-skupiny" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Testovacia štatistika, ktorá testuje nulovú hypotézu, že proporcie v dvoch vzorkách veľkosti <span class="math inline">\(n_1\)</span> a <span class="math inline">\(n_2\)</span> sú rovnaké, má nasledovnú formu:</p>
 <p><span class="math display">\[Z \equiv \frac{\hat p_1 - \hat p_2 }{\sqrt{ \hat p (1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right) }} \rightarrow_D N(0,1),\]</span></p>
-<p>kde <span class="math inline">\(\hat p_1 = Y_1/n_1, \hat p_2 = Y_2/n_2,  \hat p = \frac{Y_1 + Y_2}{n_1 + n_2}.\)</span></p>
+<p>kde <span class="math inline">\(\hat p_1 = Y_1/n_1, \hat p_2 = Y_2/n_2, \hat p = \frac{Y_1 + Y_2}{n_1 + n_2}.\)</span></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-2" class="example"><strong>Príklad 7.2  </strong></span>Chceli by sme porovnať efekt dvoch jedov na hmyz. V prvej skupine sme namerali, že 28 z 90 hmyzov zahynulo. V druhej skupine to bolo 8 zo 60. Hodnota <span class="math inline">\(Z\)</span> štatistiky je</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="ttest.html#cb67-1" tabindex="-1"></a>hatp1 <span class="ot">&lt;-</span> <span class="dv">28</span><span class="sc">/</span><span class="dv">90</span></span>
@@ -1172,7 +1172,8 @@ kde</p>
 </div>
 <div id="cvičenia-6" class="section level2 hasAnchor" number="7.9">
 <h2><span class="header-section-number">7.9</span> Cvičenia<a href="ttest.html#cvičenia-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="https://www.dropbox.com/scl/fi/34lf7hxqdvo8uyvlf2qu9/20231123-labs07-base.R?rlkey=t4ge8keij03yn7qufc3qp74sv&amp;dl=0">R súbor k cvičeniam</a></p>
+<p><a href="https://www.dropbox.com/scl/fi/34lf7hxqdvo8uyvlf2qu9/20231123-labs07-base.R?rlkey=t4ge8keij03yn7qufc3qp74sv&amp;dl=0">R súbor k cvičeniam 4.Nov</a></p>
+<p><a href="https://www.dropbox.com/scl/fi/5govia98jibfdf1ca9dxa/PAS2_Cvicenia_11Nov2024_base.R?rlkey=z78h68oqmdqiup6o67u3xp39k&amp;dl=0">R súbor k cvičeniam 11.Nov</a></p>
 <!-- [R súbor k cvičeniam 11.11.2022 riešenia](https://www.dropbox.com/s/k5y1851ekt7jpe8/labs_week8_solutions_package.zip?dl=0) -->
 <!-- [R súbor k cvičeniam](https://www.dropbox.com/s/vqldvranyfat4ok/labs_week9.R?dl=0) -->
 <!-- [R súbor k cvičeniam 18.11.2022 riešenia](https://www.dropbox.com/s/e9gqygq4c0ydp4e/labs_week9_solutions.R?dl=0) -->
