@@ -298,15 +298,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">8</span> Úvod do lineárnej regresie<a href="reg.html#reg" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Doteraz sme sa naučili načítať dataset, zobraziť dáta, vypočítať a zobraziť korelácie a otestovať či je medzi nejakými skupinami významný rozdiel. Teraz sa budeme viacej venovať <strong>súvzťažnosti</strong> rôznych premenných.</p>
 <p>Začnime príkladom. Majme informácie o tom, koľko hodín sa študenti pripravujú na test a ich výsledku na teste.</p>
-<p><img src="PaS2bookdown_files/figure-html/reg-1-1.png" width="672" />
-Pozorujeme pozitívnu závislosť, čo nie je prekvapivé. Miera ich lineárnej súvzťažnosti, teda korelácia, je rovná <span class="math inline">\(91.8\%\)</span>, takže veľmi vysoká.</p>
+<p><img src="PaS2bookdown_files/figure-html/reg-1-1.png" width="672" /></p>
+<p>Pozorujeme pozitívnu závislosť, čo nie je prekvapivé. Miera ich lineárnej súvzťažnosti, teda korelácia, je rovná <span class="math inline">\(91.8\%\)</span>, takže veľmi vysoká.</p>
 <pre><code>## [1] 0.9177971</code></pre>
 <p>Možno by sme chceli nejakým spôsobom popísať, ako presne rastie výsledok testu s úsilím, meraným počtom hodín strávených štúdiom, kvantifikovať túto závislosť.</p>
 <p>Uvažujme situáciu, že absolútne nepripravený študent uhádne <span class="math inline">\(40\%\)</span> a potom každá strávená hodina učenia mu zvýši očakávaný výsledok o 1 percentuálny bod.
-<img src="PaS2bookdown_files/figure-html/reg-3-1.png" width="672" />
-Nie je to úplne nemysliteľné ale keď sa zahľadím na dáta spolu s touto modrou čiarou, tak vidíme, že fituje len nedobre. Ak by sme si mysleli, že nepripravený študent uhádne 50% na teste a každá hodina štúdia navýši očakávaný výsledok o 0.8 percentuálneho bodu, potom by to vyzeralo nasledovne:
-<img src="PaS2bookdown_files/figure-html/reg-4-1.png" width="672" />
-Táto priamka oveľa lepšie fituje dáta. Avšak asi by sme potrebovali nejaký systematickejší spôsob ako zvoliť tú priamku, ktorá najlepšie fituje dáta. Slovo “najlepšie” implikuje, že potrebujeme mať <strong>merateľné kritérium</strong>, ktoré bude posudzovať kvalitu fitu. Jedným takýmto kritériom je napríklad suma štovrcov vertikálnych vzdialeností.</p>
+<img src="PaS2bookdown_files/figure-html/reg-3-1.png" width="672" /></p>
+<p>Nie je to úplne nemysliteľné ale keď sa zahľadím na dáta spolu s touto modrou čiarou, tak vidíme, že fituje len nedobre. Ak by sme si mysleli, že nepripravený študent uhádne 50% na teste a každá hodina štúdia navýši očakávaný výsledok o 0.8 percentuálneho bodu, potom by to vyzeralo nasledovne:
+<img src="PaS2bookdown_files/figure-html/reg-4-1.png" width="672" /></p>
+<p>Táto priamka oveľa lepšie fituje dáta. Avšak asi by sme potrebovali nejaký systematickejší spôsob ako zvoliť tú priamku, ktorá najlepšie fituje dáta. Slovo “najlepšie” implikuje, že potrebujeme mať <strong>merateľné kritérium</strong>, ktoré bude posudzovať kvalitu fitu. Jedným takýmto kritériom je napríklad suma štovrcov vertikálnych vzdialeností.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="reg.html#cb2-1" tabindex="-1"></a><span class="fu">plot</span>(hoursLearned, testScore)</span>
 <span id="cb2-2"><a href="reg.html#cb2-2" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="reg.html#cb2-3" tabindex="-1"></a>lmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(testScore <span class="sc">~</span> hoursLearned)</span>
@@ -317,8 +317,8 @@ Táto priamka oveľa lepšie fituje dáta. Avšak asi by sme potrebovali nejaký
 <span id="cb2-8"><a href="reg.html#cb2-8" tabindex="-1"></a><span class="fu">lines</span>(hoursLearned, predictedScore)</span>
 <span id="cb2-9"><a href="reg.html#cb2-9" tabindex="-1"></a><span class="fu">segments</span>(hoursLearned, predictedScore,hoursLearned,testScore)</span>
 <span id="cb2-10"><a href="reg.html#cb2-10" tabindex="-1"></a><span class="fu">points</span>(hoursLearned, predictedScore, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="PaS2bookdown_files/figure-html/reg-5-1.png" width="672" />
-Spomedzi všetkých možných priamiek, je práve táto ktorá minimializuje sumu štvorcov vertikálnych výchyliek. Budeme používať nasledovné značenie:</p>
+<p><img src="PaS2bookdown_files/figure-html/reg-5-1.png" width="672" /></p>
+<p>Spomedzi všetkých možných priamiek, je práve táto ktorá minimializuje sumu štvorcov vertikálnych výchyliek. Budeme používať nasledovné značenie:</p>
 <ul>
 <li><span class="math inline">\(n\)</span> je veľkosť dátovej vzorky (u nás <span class="math inline">\(n=10\)</span>)</li>
 <li><span class="math inline">\(i \in \{1,2,\dots,n \}\)</span> bude index pozorovania (u nás <span class="math inline">\(i\)</span> bude označovať jedného z 10 študentov)</li>
