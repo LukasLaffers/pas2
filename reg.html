@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Úvod do lineárnej regresie | Pravdepodobnosť a štatistika 2</title>
   <meta name="description" content="Toto sú poznámky pre študentov a študentky matematiky Fakulty Prírodných Vied Univerzity Mateja Bela v Banskej Bystrici." />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Úvod do lineárnej regresie | Pravdepodobnosť a štatistika 2" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2024-02-04" />
+<meta name="date" content="2024-11-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -186,6 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="random.html"><a href="random.html#náhodný-výber"><i class="fa fa-check"></i><b>3.5</b> Náhodný výber</a></li>
 <li class="chapter" data-level="3.6" data-path="random.html"><a href="random.html#zhrnutie"><i class="fa fa-check"></i><b>3.6</b> Zhrnutie</a></li>
 <li class="chapter" data-level="3.7" data-path="random.html"><a href="random.html#cvičenia-2"><i class="fa fa-check"></i><b>3.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="3.8" data-path="random.html"><a href="random.html#domáca-úloha-1"><i class="fa fa-check"></i><b>3.8</b> Domáca úloha 1</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Zopakovanie pojmov</a>
 <ul>
@@ -223,6 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="visual.html"><a href="visual.html#niektoré-princípy"><i class="fa fa-check"></i><b>6.4</b> Niektoré princípy</a></li>
 <li class="chapter" data-level="6.5" data-path="visual.html"><a href="visual.html#cvičenia-5"><i class="fa fa-check"></i><b>6.5</b> Cvičenia</a></li>
 <li class="chapter" data-level="6.6" data-path="visual.html"><a href="visual.html#bonus"><i class="fa fa-check"></i><b>6.6</b> Bonus</a></li>
+<li class="chapter" data-level="6.7" data-path="visual.html"><a href="visual.html#domáca-úloha-2-dobrovoľná-a-nehodnotená"><i class="fa fa-check"></i><b>6.7</b> Domáca úloha 2 (dobrovoľná a nehodnotená)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ttest.html"><a href="ttest.html"><i class="fa fa-check"></i><b>7</b> Štatistické testovanie hypotéz</a>
 <ul>
@@ -237,15 +239,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.2" data-path="ttest.html"><a href="ttest.html#rôzna-variancia"><i class="fa fa-check"></i><b>7.2.2</b> Rôzna variancia</a></li>
 <li class="chapter" data-level="7.2.3" data-path="ttest.html"><a href="ttest.html#párové-testy"><i class="fa fa-check"></i><b>7.2.3</b> Párové testy</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="ttest.html"><a href="ttest.html#konfidenčný-interval"><i class="fa fa-check"></i><b>7.3</b> Konfidenčný interval</a></li>
-<li class="chapter" data-level="7.4" data-path="ttest.html"><a href="ttest.html#testovanie-podielu"><i class="fa fa-check"></i><b>7.4</b> Testovanie podielu</a>
+<li class="chapter" data-level="7.3" data-path="ttest.html"><a href="ttest.html#porovnanie-stredných-hodnôt-viacerých-vzoriek-anova"><i class="fa fa-check"></i><b>7.3</b> Porovnanie stredných hodnôt viacerých vzoriek (ANOVA)</a></li>
+<li class="chapter" data-level="7.4" data-path="ttest.html"><a href="ttest.html#konfidenčný-interval"><i class="fa fa-check"></i><b>7.4</b> Konfidenčný interval</a></li>
+<li class="chapter" data-level="7.5" data-path="ttest.html"><a href="ttest.html#testovanie-podielu"><i class="fa fa-check"></i><b>7.5</b> Testovanie podielu</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="ttest.html"><a href="ttest.html#testovanie-podielu-pre-jednu-skupinu"><i class="fa fa-check"></i><b>7.4.1</b> Testovanie podielu pre jednu skupinu</a></li>
-<li class="chapter" data-level="7.4.2" data-path="ttest.html"><a href="ttest.html#testovanie-rovnosti-podielov-pre-dve-skupiny"><i class="fa fa-check"></i><b>7.4.2</b> Testovanie rovnosti podielov pre dve skupiny</a></li>
+<li class="chapter" data-level="7.5.1" data-path="ttest.html"><a href="ttest.html#testovanie-podielu-pre-jednu-skupinu"><i class="fa fa-check"></i><b>7.5.1</b> Testovanie podielu pre jednu skupinu</a></li>
+<li class="chapter" data-level="7.5.2" data-path="ttest.html"><a href="ttest.html#testovanie-rovnosti-podielov-pre-dve-skupiny"><i class="fa fa-check"></i><b>7.5.2</b> Testovanie rovnosti podielov pre dve skupiny</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="ttest.html"><a href="ttest.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.5</b> Kontigenčné tabuľky</a></li>
-<li class="chapter" data-level="7.6" data-path="ttest.html"><a href="ttest.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.6</b> Zopár poznámok na záver.</a></li>
-<li class="chapter" data-level="7.7" data-path="ttest.html"><a href="ttest.html#cvičenia-6"><i class="fa fa-check"></i><b>7.7</b> Cvičenia</a></li>
+<li class="chapter" data-level="7.6" data-path="ttest.html"><a href="ttest.html#kontigenčné-tabuľky"><i class="fa fa-check"></i><b>7.6</b> Kontigenčné tabuľky</a></li>
+<li class="chapter" data-level="7.7" data-path="ttest.html"><a href="ttest.html#zopár-poznámok-na-záver."><i class="fa fa-check"></i><b>7.7</b> Zopár poznámok na záver.</a></li>
+<li class="chapter" data-level="7.8" data-path="ttest.html"><a href="ttest.html#prehľad"><i class="fa fa-check"></i><b>7.8</b> Prehľad</a></li>
+<li class="chapter" data-level="7.9" data-path="ttest.html"><a href="ttest.html#cvičenia-6"><i class="fa fa-check"></i><b>7.9</b> Cvičenia</a></li>
+<li class="chapter" data-level="7.10" data-path="ttest.html"><a href="ttest.html#domáca-úloha-3-dobrovoľná-a-nehodnotená"><i class="fa fa-check"></i><b>7.10</b> Domáca úloha 3 (dobrovoľná a nehodnotená)</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>8</b> Úvod do lineárnej regresie</a>
 <ul>
@@ -1033,7 +1038,7 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 <div id="cvičenia-7" class="section level2 hasAnchor" number="8.11">
 <h2><span class="header-section-number">8.11</span> Cvičenia<a href="reg.html#cvičenia-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://www.dropbox.com/s/dl86x1dihedzmq3/labs_week10.R?dl=0">R súbor k cvičeniam</a></p>
-<p><a href="https://www.dropbox.com/scl/fi/ltg828cjae7z0x9de2m7h/20231214-labs08-komentare.R?rlkey=1thlpstfht8re73bau3yv2e8p&amp;dl=0">R súbor z cvičení s komentármi</a></p>
+<!-- [R súbor z cvičení s komentármi](https://www.dropbox.com/scl/fi/ltg828cjae7z0x9de2m7h/20231214-labs08-komentare.R?rlkey=1thlpstfht8re73bau3yv2e8p&dl=0) -->
 <!-- [R súbor k cvičeniam 24.11.2022 riešenia](https://www.dropbox.com/s/ivhfnghkk21x1gd/labs_week10_solutions.R?dl=0) -->
 <!-- [R súbor k cvičeniam 2.12.2022 (riešené)](https://www.dropbox.com/s/i4wldlfiuyqbb05/labs_week11.R?dl=0) -->
 <div class="exercise">
