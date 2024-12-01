@@ -23,7 +23,7 @@
 <meta name="author" content="Lukáš Lafférs" />
 
 
-<meta name="date" content="2024-11-25" />
+<meta name="date" content="2024-12-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -271,6 +271,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.10" data-path="reg.html"><a href="reg.html#zhrnutie-1"><i class="fa fa-check"></i><b>8.10</b> Zhrnutie</a></li>
 <li class="chapter" data-level="8.11" data-path="reg.html"><a href="reg.html#cvičenia-7"><i class="fa fa-check"></i><b>8.11</b> Cvičenia</a></li>
+<li class="chapter" data-level="8.12" data-path="reg.html"><a href="reg.html#domáca-úloha-4"><i class="fa fa-check"></i><b>8.12</b> Domáca úloha 4</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="report.html"><a href="report.html"><i class="fa fa-check"></i><b>9</b> Komunikácia výsledkov</a>
 <ul>
@@ -780,10 +781,10 @@ Obrázok 8.9: Porovnanie zložitejšieho a jednoduchšieho modelu.
 <span id="cb28-7"><a href="reg.html#cb28-7" tabindex="-1"></a>gB <span class="ot">&lt;-</span> (group<span class="sc">==</span><span class="st">&quot;B&quot;</span>)<span class="sc">*</span><span class="dv">1</span></span></code></pre></div>
 <p>Na konci každého modelu je korektná interpretácia. Budeme uvažovať štyri rôzne modely.</p>
 <ul>
-<li>Level-level model <span class="math inline">\(testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
+<li>Level-level model <span class="math inline">\(testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i  + \epsilon_i\)</span></li>
 <li>Log-level model ak budeme modelovať rast skóre pomocou hodín strávených učením <span class="math inline">\(\log(testScore_i) = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\)</span></li>
-<li>Level-log model ak budeme modelovať skóre pomocou rastu hodín strávených učením <span class="math inline">\(testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
-<li>Log-log model ak budeme modelovať rast skóre pomocou rastu hodín strávených učením <span class="math inline">\(\log(testScore_i) = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
+<li>Level-log model ak budeme modelovať skóre pomocou rastu hodín strávených učením <span class="math inline">\(testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i  + \epsilon_i\)</span></li>
+<li>Log-log model ak budeme modelovať rast skóre pomocou rastu hodín strávených učením <span class="math inline">\(\log(testScore_i) = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i  + \epsilon_i\)</span></li>
 </ul>
 <p>Ktorý z týchto modelov je najrozumnejší? Treba zvažiť. Každopádne rozhodovanie by nemalo záležať na tom, ako dobre nám modelu fituje dáta. Do rozhovorov by sme mali prizvať niekoho, kto sa vyzná do danej problematiky.</p>
 <div id="level-level-model" class="section level3 hasAnchor" number="8.9.1">
@@ -1039,6 +1040,8 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 <h2><span class="header-section-number">8.11</span> Cvičenia<a href="reg.html#cvičenia-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://www.dropbox.com/scl/fi/5cc32hipzo6w5hj7msmik/labs_week10_2024.R?rlkey=bv1m779svscmsi9jdge1oi0m8&amp;dl=0">R súbor k cvičeniam 18.11.2024</a></p>
 <p><a href="https://www.dropbox.com/scl/fi/ynwhj35pvs5rn2oxzyyhw/labs_week11_2024.R?rlkey=n1smbvoyim1y52k59f4tuu9cz&amp;dl=0">R súbor k cvičeniam 25.11.2024</a></p>
+<p><a href="https://www.dropbox.com/scl/fi/0o6z6upbzgmsog5dny2gf/PAS_Cvicenia_kapitola8_komentare.R?rlkey=m7c2j3d8j5ohfv1abr139jbdk&amp;dl=0">R súbor s okomentovanými riešeniami</a></p>
+<p><a href="https://www.dropbox.com/scl/fi/nvj6pqmy93hbcwkf4s4u5/PAS2_2Dec2024.R?rlkey=hkartadviko2t4s1xmscpymdt&amp;dl=0">R súbor k cvičeniam 2.12.2024</a></p>
 <!-- [R súbor z cvičení s komentármi](https://www.dropbox.com/scl/fi/ltg828cjae7z0x9de2m7h/20231214-labs08-komentare.R?rlkey=1thlpstfht8re73bau3yv2e8p&dl=0) -->
 <!-- [R súbor k cvičeniam 24.11.2022 riešenia](https://www.dropbox.com/s/ivhfnghkk21x1gd/labs_week10_solutions.R?dl=0) -->
 <!-- [R súbor k cvičeniam 2.12.2022 (riešené)](https://www.dropbox.com/s/i4wldlfiuyqbb05/labs_week11.R?dl=0) -->
@@ -1077,48 +1080,58 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 <span id="cb44-10"><a href="reg.html#cb44-10" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">&quot;B&quot;</span>,<span class="dv">10</span>))</span></code></pre></div>
 <p>Využitím lineárneho modelu uvažujte ako sú tieto dve skupiny rôzne: čo sa týka priemerného testovacieho skóre ako aj čo sa týka citlivosti skóre na učenie.</p>
 </div>
-<!-- ## Domáca úloha 4 -->
-<!-- Deadline je 8.1.2024 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie `rar` súbor, nie OneDrive folder) v tvare `du4_MenoPriezvisko.zip` (napr. `du4_PeterKovac.zip`) a pošlite na email `miroslava.sartorisova@umb.sk`. Kód musí byť **spustiteľný** (vyskúšajte či Vám prebehne, keď máte prázdnu pamäť. Tú si uvoľníte pomocou príkazu `rm(list=ls())`) a podrobne okomentovaný. Odovzdávate mi Vašu **vlastnú** prácu (teda nie niekoho iného). -->
-<!-- Dáta sú vymyslené, [stiahnete si ich tu](https://www.dropbox.com/scl/fi/5bz3q2rusd6f0ys3gdd57/du4-data.R?rlkey=0nmap4wm3emv7w626akg2sxvh&dl=0). -->
-<!-- Všetky vaše zistenia podrobne okomentujte a podporte vhodným obrázkom. -->
-<!-- ::: {.exercise name="DÚ 4.1 teplota"} -->
-<!-- Na niekoľkých meracích staniciach máme údaje o teplote, hĺbke jazera a jeho nadmorskej výške. -->
-<!-- a) Urobte jednoduchý lineárny model vysvetľujúci teplotu pomocou nadmorskej výšky jazera. -->
-<!-- Odhadnite teplotu jazera v nadmorskej výške 1100 m.n.m. a 1250 m.n.m. -->
-<!-- Tieto predpovede farebne vyznačte do vykresleného grafu. -->
-<!-- Odhadnite, o koľko sa zmení teplota nejakého jazera, pokiaľ by sa nachádzalo o 100 výškových metrov vyššie alebo nižšie. -->
-<!-- b) Urobte jednoduchý lineárny model vysvetľujúci teplotu pomocou hĺbky jazera a porovnajte -->
-<!-- ho s prvým lineárnym modelom. Odhadnite teplotu jazera s hĺbkou 22 m. -->
-<!-- c) Urobte lineárny model vysvetľujúci teplotu pomocou nadmorskej výšky aj hĺbky jazera a -->
-<!-- určte, ktorý z troch modelov je najlepší. Odhadnite teplotu pre jazero v nadmorskej výške -->
-<!-- 1100 m.n.m. s hĺbkou 22 m. -->
-<!-- ::: -->
-<!-- ::: {.exercise name="DÚ 4.2"} -->
-<!-- Urobte jednoduchý lineárny model, kde hodnoty y budete predpovedať pomocou -->
-<!-- hodnôt x. Pomocou obrázku zistite, či je lineárny model vhodný na takýto typ dát. Pokúste sa -->
-<!-- spraviť lepší lineárny model a porovnajte ho s predošlým. -->
-<!-- a) dáta x1, y1 z priloženého R-kódu. -->
-<!-- b) dáta x2, y2 z priloženého R-kódu. -->
-<!-- ::: -->
-<!-- ::: {.exercise name="DÚ 4.3 - Filmy a Rmd Projekt"} -->
-<!-- Pozrite sa do datasetu `movies` z knižnice `ggplot2movies`. Vaše zadanie je vyprodukovať ucelený report o prediktoroch hodnotenia filmu. Zaujíma nás vzťah medzi hodnotením filmu a jeho rozpočtom ako aj dĺžkou a typom filmu. -->
-<!-- Vyberte len relevantné hodnotenia. -->
-<!-- Bude obsahovať -->
-<!-- * Krátky popis datasetu, premenných a problému, ktorý skúmame, -->
-<!-- * Sumárne štatistiky premenných, -->
-<!-- * Párové grafy a korelácie, -->
-<!-- * Porovnanie rôznych podskupín pomocou vhodných štatistických testov a zobrazení. -->
-<!-- * Rozumne zvolený lineárny model, -->
-<!-- * Závery, interpretácie a zistenia. Nepodceňte túto časť. -->
-<!-- Dokument -->
-<!-- * musí byť čitateľný pre *úplného laika*, -->
-<!-- * musí byť vytvorený v RMarkdown, -->
-<!-- * všetok kód musí byť schovaný ale vhodne okomentovaný v `rmd` súbore, -->
-<!-- * obrázky musia byť vyladené, musia mať vhodne zvolené vizuálne elementy ako aj popisy, -->
-<!-- * môžete ale nemusíte písať v angličtine, -->
-<!-- * k tejto úlohe mi prosím pošlite dva súbory: `Rmd` súbor a `html` súbor. -->
-<!-- Bude to demonštrácia, vizitka a oslava všetkého toho, čo ste sa naučili. -->
-<!-- ::: -->
+</div>
+<div id="domáca-úloha-4" class="section level2 hasAnchor" number="8.12">
+<h2><span class="header-section-number">8.12</span> Domáca úloha 4<a href="reg.html#domáca-úloha-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deadline je 13.12.2024 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie <code>rar</code> súbor, nie OneDrive folder) v tvare <code>du4_MenoPriezvisko.zip</code> (napr. <code>du4_PeterKovac.zip</code>) a pošlite cez formulár, ktorého odkaz je na stránke. Kód musí byť spustiteľný a podrobne okomentovaný. Odovzdávate mi Vašu <strong>vlastnú</strong> prácu. Domáca úloha je <strong>dobrovoľná</strong> a <strong>nehodnotená</strong>. V prípade, že ju pošlete do termínu dostanete spätnú väzbu</p>
+<p>Dáta sú vymyslené, <a href="https://www.dropbox.com/scl/fi/5bz3q2rusd6f0ys3gdd57/du4-data.R?rlkey=0nmap4wm3emv7w626akg2sxvh&amp;dl=0">stiahnete si ich tu</a>.
+Všetky vaše zistenia podrobne okomentujte a podporte vhodným obrázkom.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-9" class="exercise"><strong>Cvičenie 8.9  (DÚ 4.1 teplota) </strong></span>Na niekoľkých meracích staniciach máme údaje o teplote, hĺbke jazera a jeho nadmorskej výške.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Urobte jednoduchý lineárny model vysvetľujúci teplotu pomocou nadmorskej výšky jazera.
+Odhadnite teplotu jazera v nadmorskej výške 1100 m.n.m. a 1250 m.n.m.
+Tieto predpovede farebne vyznačte do vykresleného grafu.
+Odhadnite, o koľko sa zmení teplota nejakého jazera, pokiaľ by sa nachádzalo o 100 výškových metrov vyššie alebo nižšie.</p></li>
+<li><p>Urobte jednoduchý lineárny model vysvetľujúci teplotu pomocou hĺbky jazera a porovnajte
+ho s prvým lineárnym modelom. Odhadnite teplotu jazera s hĺbkou 22 m.</p></li>
+<li><p>Urobte lineárny model vysvetľujúci teplotu pomocou nadmorskej výšky aj hĺbky jazera a
+určte, ktorý z troch modelov je najlepší. Odhadnite teplotu pre jazero v nadmorskej výške
+1100 m.n.m. s hĺbkou 22 m.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-10" class="exercise"><strong>Cvičenie 8.10  (DÚ 4.2) </strong></span>Urobte jednoduchý lineárny model, kde hodnoty y budete predpovedať pomocou
+hodnôt x. Pomocou obrázku zistite, či je lineárny model vhodný na takýto typ dát. Pokúste sa
+spraviť lepší lineárny model a porovnajte ho s predošlým.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>dáta x1, y1 z priloženého R-kódu.</p></li>
+<li><p>dáta x2, y2 z priloženého R-kódu.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-11" class="exercise"><strong>Cvičenie 8.11  (DÚ 4.3 - Filmy a Rmd Projekt) </strong></span>Pozrite sa do datasetu <code>movies</code> z knižnice <code>ggplot2movies</code>. Vaše zadanie je vyprodukovať ucelený report o prediktoroch hodnotenia filmu. Zaujíma nás vzťah medzi hodnotením filmu a jeho rozpočtom ako aj dĺžkou a typom filmu.</p>
+<p>Vyberte len relevantné hodnotenia.</p>
+<p>Bude obsahovať</p>
+<ul>
+<li>Krátky popis datasetu, premenných a problému, ktorý skúmame,</li>
+<li>Sumárne štatistiky premenných,</li>
+<li>Párové grafy a korelácie,</li>
+<li>Porovnanie rôznych podskupín pomocou vhodných štatistických testov a zobrazení.</li>
+<li>Rozumne zvolený lineárny model,</li>
+<li>Závery, interpretácie a zistenia. Nepodceňte túto časť.</li>
+</ul>
+<p>Dokument</p>
+<ul>
+<li>musí byť čitateľný pre <em>úplného laika</em>,</li>
+<li>musí byť vytvorený v RMarkdown,</li>
+<li>všetok kód musí byť schovaný ale vhodne okomentovaný v <code>rmd</code> súbore,</li>
+<li>obrázky musia byť vyladené, musia mať vhodne zvolené vizuálne elementy ako aj popisy,</li>
+<li>môžete ale nemusíte písať v angličtine,</li>
+<li>k tejto úlohe mi prosím pošlite dva súbory: <code>Rmd</code> súbor a <code>html</code> súbor.</li>
+</ul>
+<p>Bude to demonštrácia, vizitka a oslava všetkého toho, čo ste sa naučili.</p>
+</div>
 
 </div>
 </div>
