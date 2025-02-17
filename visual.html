@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Zobrazovanie dát – Pravdepodobnosť a štatistika 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ttest.html" rel="next">
+<link href="./depen.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./visual.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Pravdepodobnosť a štatistika 2</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">O tomto kurze</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Úvod do jazyka R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./structures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Premenné a dátové štruktúry</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./random.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Náhodné čísla a simulácie</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./recap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./depen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visual.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ttest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#zlé-vizualizácie" id="toc-zlé-vizualizácie" class="nav-link active" data-scroll-target="#zlé-vizualizácie"><span class="header-section-number">7.1</span> Zlé vizualizácie</a></li>
+  <li><a href="#dobré-vizualizácie" id="toc-dobré-vizualizácie" class="nav-link" data-scroll-target="#dobré-vizualizácie"><span class="header-section-number">7.2</span> Dobré vizualizácie</a></li>
+  <li><a href="#vizualizácia-v-rku-ggplot2-knižnica" id="toc-vizualizácia-v-rku-ggplot2-knižnica" class="nav-link" data-scroll-target="#vizualizácia-v-rku-ggplot2-knižnica"><span class="header-section-number">7.3</span> Vizualizácia v Rku: <code>ggplot2</code> knižnica</a>
+  <ul class="collapse">
+  <li><a href="#zobrazenie-závislosti-dvoch-premenných" id="toc-zobrazenie-závislosti-dvoch-premenných" class="nav-link" data-scroll-target="#zobrazenie-závislosti-dvoch-premenných"><span class="header-section-number">7.3.1</span> Zobrazenie závislosti dvoch premenných</a></li>
+  <li><a href="#zobrazenie-distribúcie-premennej" id="toc-zobrazenie-distribúcie-premennej" class="nav-link" data-scroll-target="#zobrazenie-distribúcie-premennej"><span class="header-section-number">7.3.2</span> Zobrazenie distribúcie premennej</a></li>
+  </ul></li>
+  <li><a href="#niektoré-princípy" id="toc-niektoré-princípy" class="nav-link" data-scroll-target="#niektoré-princípy"><span class="header-section-number">7.4</span> Niektoré princípy</a></li>
+  <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">7.5</span> Cvičenia</a></li>
+  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus"><span class="header-section-number">7.6</span> Bonus</a></li>
+  <li><a href="#domáca-úloha-2-dobrovoľná-a-nehodnotená" id="toc-domáca-úloha-2-dobrovoľná-a-nehodnotená" class="nav-link" data-scroll-target="#domáca-úloha-2-dobrovoľná-a-nehodnotená"><span class="header-section-number">7.7</span> Domáca úloha 2 (dobrovoľná a nehodnotená)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="visual" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+  .boxed {
+    border: 1px solid #000000;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    text-align: center; /* Center the text */
+  }
+</style>
+<p>Vhodné zobrazenie dát je tak trochu umenie. Treba nájsť vhodný typ grafu, farieb, písiem na plynulé odkomunikovanie myšlienky. Čo umenie nie je, je urobiť <strong>zlú</strong> vizualizáciu.</p>
+<section id="zlé-vizualizácie" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="zlé-vizualizácie"><span class="header-section-number">7.1</span> Zlé vizualizácie</h2>
+<p>Pri nasledujúcich obrázkov nebude príliš ťažké pochopiť, v čom sú problematické. V niektorých prípadoch ide o subjektívne hodnotenie.</p>
+<p>Častokrát <strong>proporcie nie sú zachované</strong>. Toto môže byť použité ako manipulatívna stratégia na demonštrovanie veľkého rastu.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_bad_1.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Obrovský nárast?</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_bad_5.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Späťnásobila sa minimálna mzda medzi 2012 a 2017?</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Koláčové grafy sú notoricky problematické</strong> a snažíme sa im vyhýbať, najmä ak je kategórií viacej a proporcie sú náročné na porovnávanie. Špeciálne zlé sú vždy a všade 3D koláčové grafy. Tie nesmierne skresľujú porovnávanie.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_bad_2.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Koláčové grafy radšej nie.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Trojrozmerné alebo aj dvojrozmerné piktogramy</strong> sú problematické tiež. Ak je ich úlohou oživiť prezentáciu, tomu sa dá porozumieť. Vyhýbame sa aj 3D prvkom.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_bad_3.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Bolo predajov domov v 2001 dvakrát viacej, štyrikrát viacej alebo osemkrát toľko ako v roku 2000?</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_3Dpismo.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Zdroj: vlastná tvorba.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Niekedy sú vizualizácie zlé lebo sú <strong>necitlivé</strong>, ako v týchto dvoch prípadoch.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_bad_4.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Naozaj to nešlo zobraziť nudnejšie?</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_bad_4_2.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Energia využitá na tvorbu tejto prezentácie nebola múdra investícia.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Niekedy príliš kreatívna ba priam <strong>manipulatívna</strong> transformácia vertikálnej osi chce pomôcť niečo odkomunikovať (napríklad nie príliš prudký nárast).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_bad_6.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Čo je to na vertikálnej osi?</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="dobré-vizualizácie" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="dobré-vizualizácie"><span class="header-section-number">7.2</span> Dobré vizualizácie</h2>
+<p>Dobrá vizualizácia je ako Rembrandtova kresba. Zaujme, odomunikuje emóciu, príbeh, vzbudí záujem a núti klásť otázky.</p>
+<p>Pozrime sa na nasledovný obrázok.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_good_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Okamžite si všimneme dominantné postavenie písmena n na pravej strane. Ktoré sú to tie krstné mená, ktoré končia na n? Prečo sa distribúcia tak zmenila? Človek má chuť okamžite hľadať, ktoré sú to mená(?) (John, Brandon, Ryan, Jonathan, Christian, Austin, Dylan, Ethan, Benjamin…). Tak či onak, tento obrázok je úspešný v tom, že zaujme.</p>
+<p>Všimnime si vzťah medzi výdavkami na zdravotnú starostlivosť a očaká vanou dĺžkou života.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_good_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Zvýraznené dve krajiny - USA a Mexiko sú susedné. Je okamžite zreteľné, že USA sú veľmi iné ako ostatné ekonomicky rozvinuté štáty. Namiesto sledovania čísel v tabuľkách máme túto informáciu okamžite.</p>
+<p>Podobným príkladom, z ktorého vyvstáva mnoho otázok je tento:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_vis_good_3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>USA je ohromne iná krajina, čo sa týka zbraní. Veľmi veľmi iná. Grafické zobrazenie nám umožní tento rozdiel “pocítiť”, tým, že vidíme vzdialenosti. Porovnáme si najextrémnejšie protipóly v ostatku sveta - Filipíny a India. Vidíme ako sú vzdialené Rusko a Čína. Žiadne z týchto rozdielov ani zďaleka neobsiahnu rozdiel medzi USA a zvyškom sveta.</p>
+</section>
+<section id="vizualizácia-v-rku-ggplot2-knižnica" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="vizualizácia-v-rku-ggplot2-knižnica"><span class="header-section-number">7.3</span> Vizualizácia v Rku: <code>ggplot2</code> knižnica</h2>
+<p><a href="https://r4ds.had.co.nz/data-visualisation.html">Knižnica <code>ggplot2</code></a> je veľmi populárnym spôsobom na vytváranie vizualizácií. Má vnútornú logiku: každý objekt sa skladá z vrstiev, ktoré majú určité atribúty. Názov <code>ggplot2</code> pochádza z “Grammar of Graphics”.</p>
+<section id="zobrazenie-závislosti-dvoch-premenných" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="zobrazenie-závislosti-dvoch-premenných"><span class="header-section-number">7.3.1</span> Zobrazenie závislosti dvoch premenných</h3>
+<p>Začnime príkladom, zobrazme si spotrebu aút (dataset <code>mpg</code> z knižnice <code>ggplot2</code>), konkrétne vzťah medzi diaľničným dojazdom v míľach <code>hwy</code> oproti objemu motora v litroch <code>displ</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-aes-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Tento príkaz inicializuje grafické okno, dáta, teda parameter <code>data</code> vstupujú vo formáte <code>data.frame</code>. Funkcia <code>geom_point()</code> zobrazuje jednu vrstvu, konkrétne body. Táto potrebuje</p>
+<ul>
+<li><code>data</code> - tie sú už zadefinované globálne v rámci grafického okna <code>ggplot</code></li>
+<li><code>mapping</code> - musíme vedieť, ktoré premenné majú byť na osiach. Hodnota <code>aes(x = displ, y = hwy)</code> nastaví horizontálnu os na premennú <code>displ</code> a vertikálnu os na <code>hwy</code></li>
+</ul>
+<p>V datasete máme informáciu aj o tom, v akej triede je auto (<code>class</code>). Túto informáciu môžeme zobraziť rôznymi spôsobmi: napríklad nastavením</p>
+<ul>
+<li>farby (<code>color</code>)</li>
+<li>priesvitnosti (<code>alpha</code>)</li>
+<li>tvaru (<code>shape</code>)</li>
+</ul>
+<p>bodov.</p>
+<p>Rovnaký výsledok dostaneme aj pomocou použitia pipeline-u <code>%&gt;%</code> z knižnice <code>dplyr</code>. Knižnica <code>tidyverse</code> rovno načíta <code>ggplot2</code> aj <code>dplyr</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Grafické parametre môžeme nastaviť aj nezávisle od hodnôt nejakej premennej. Tieto parametre sú nastavené špecificky pre vrstvu <code>geom_point</code>. Nižšie je príklad keď je skombinovaná jedna vrstva s druhou. V druhej vrstve je vybraný iný parameter <code>data</code>, konkrétne len tie autá, ktoré majú 4 valce. Pre viacero príkladov stačí keď do konzoly zadáte <code>vignette("ggplot2-specs")</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ lubridate 1.9.3     ✔ tibble    3.2.1
+✔ purrr     1.0.2     ✔ tidyr     1.3.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'cowplot'
+
+The following object is masked from 'package:lubridate':
+
+    stamp</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> class))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">alpha =</span> class))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">shape =</span> class))</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy), </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"blue"</span>,  <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">shape =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mpg <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span>),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy), </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"red"</span>,  <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">shape =</span> <span class="dv">1</span>, </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">"AUTO"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-poin-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Môžeme sa pozerať na závislosť premenných <code>hwy</code> a <code>displ</code> pre rôzne kombinácie typu pohonu <code>drv</code> (predný, zadný, 4x4) a počet valcov <code>cyl</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>drv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-cyl-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(cyl <span class="sc">~</span> drv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-cyl-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Parametre <code>data</code> a <code>mapping</code> môžu ísť priamo do <code>ggplot</code> objektu, takže ich netreba separátne volať pre rôzne vrstvy. Tu je navyše vrstva <code>geom_smooth</code>, ktorá vyhladí dáta - preloźí nimi aproximačnú krivku.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-mpg-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Rko nás upozorní, ktorú vyhladzovaciu krivku použilo.</p>
+<p>Nasledujúci kód uloží obrázok ako vo formáte pdf s danými veľkosťami.</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
+</div>
+</section>
+<section id="zobrazenie-distribúcie-premennej" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="zobrazenie-distribúcie-premennej"><span class="header-section-number">7.3.2</span> Zobrazenie distribúcie premennej</h3>
+<p>Vygenerujme si dáta, ktore budeme zobrazovať (inšpirované <a href="http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization">nasledovných odkazom</a>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2930</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data_test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">school=</span><span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"8r_gym"</span>, <span class="st">"4r_gym"</span>), <span class="at">each=</span><span class="dv">40</span>)),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">score=</span><span class="fu">round</span>(<span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">75</span>, <span class="at">sd=</span><span class="dv">8</span>), <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">65</span>, <span class="at">sd=</span><span class="dv">5</span>)))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>              )</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-dist-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Tu si skúsime ponastavovať rôzne vlastnosti vrstvy <code>geom_histogram</code>. Vertikálnu čiaru pridáme pomocou <code>geom_vline</code> a odhad hustoty cez <code>geom_density</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(<span class="at">binwidth=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">"black"</span>, <span class="at">fill=</span><span class="st">"white"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept=</span><span class="fu">mean</span>(score)),</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">color=</span><span class="st">"blue"</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">size=</span><span class="dv">1</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..)) <span class="sc">+</span> </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>, <span class="at">fill=</span><span class="st">"red"</span>) </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>score)) <span class="sc">+</span> </span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_histogram</span>()</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">"AUTO"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-hist-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Pozrite sa na tento kód a zhodnoťte, čo robí ten ktorý príkaz.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> data_test <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(school) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">group_means =</span> <span class="fu">mean</span>(score))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_test, <span class="fu">aes</span>(<span class="at">x=</span>score, <span class="at">color=</span>school, <span class="at">fill=</span>school)) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">position=</span><span class="st">"identity"</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_vline</span>(<span class="at">data=</span>mu, <span class="fu">aes</span>(<span class="at">xintercept=</span>group_means, <span class="at">color=</span>school),</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#999999"</span>, <span class="st">"#E69F00"</span>, <span class="st">"#56B4E9"</span>))<span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#999999"</span>, <span class="st">"#E69F00"</span>, <span class="st">"#56B4E9"</span>))<span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Score histogram"</span>,<span class="at">x=</span><span class="st">"Score(points)"</span>, <span class="at">y =</span> <span class="st">"Density"</span>)<span class="sc">+</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-cols-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Na zobrazovanie distribúcie je užitočný aj boxplot. Nasledujúce obrázky (inšpirované týmto <a href="http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization">odkazom</a>) sú vytvorené pomocou vrstiev <code>geom_boxplot</code>, <code>geom_dotplot</code> a <code>geom_jitter</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score)) <span class="sc">+</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> g1 <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_dotplot</span>(<span class="at">binaxis=</span><span class="st">'y'</span>, <span class="at">stackdir=</span><span class="st">'center'</span>, <span class="at">dotsize=</span><span class="dv">1</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> g1 <span class="sc">+</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">color =</span> school)) <span class="sc">+</span> </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>g5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">fill =</span> school)) <span class="sc">+</span> </span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>))</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>g6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data_test, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> school, <span class="at">y =</span> score, <span class="at">fill =</span> school)) <span class="sc">+</span> </span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_jitter</span>(<span class="at">shape=</span><span class="dv">16</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_fill_grey</span>() <span class="sc">+</span> </span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_classic</span>()</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(g1, g2, g3, g4, g5, g6, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="st">"AUTO"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Bin width defaults to 1/30 of the range of the data. Pick better value with
+`binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-mnoho-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="niektoré-princípy" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="niektoré-princípy"><span class="header-section-number">7.4</span> Niektoré princípy</h2>
+<p><strong>Individuálnym výstupom rozumieme na základe porovnávania podobných objektov.</strong></p>
+<p>Toto si vždy opakujeme, keď si nie sme nejakou voľbou istí. <a href="https://blog.datawrapper.de/category/datavis-dos-and-donts/">Toto</a> je vynikajúca séria článkov od Lisy Charlotte Muth, odporúčam tiež <a href="https://pubs.aeaweb.org/doi/pdf/10.1257/jep.28.1.209">prehľadový článok</a>, <a href="https://policyviz.com/pv_books/better-presentations-a-guide-for-scholars-researchers-and-wonks/">knihu o prezentáciách</a> a <a href="https://policyviz.com/pv_books/better-data-visualizations-a-guide-for-scholars-researchers-and-wonks/">vizualizáciách</a> od Jonathana Schwabisha.</p>
+<ul>
+<li>Zvoľte správny typ grafu.</li>
+<li>Sumárne štatistiky zavádzajú.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_1dyn.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Tieto dátové vzorky majú rovnaké sumárne štatistiky.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Je užitočné zobraziť surové dáta.</li>
+<li>Dátový bod = jedna machuľa atramentu.</li>
+<li>Ďalšie machule pridávame len ak nám pomôžu pochopiť niečo nové.</li>
+<li>Využite moment prekvapenia vo svoj prospech.</li>
+<li>Zvýraznite dôležité elementy grafu. Napríklad ten najdôležitejší dátový bod alebo podskupinu. Označovať môžete priamo v grafe aj textom.</li>
+<li>Zjednodušujte. Vynechajte nepotrebné grafické elementy, menej je niekedy viacej.</li>
+<li>Graf by mal byť samovysvetľujúci, na jeho základné pochopenie by malo stačiť pozrieť sa na graf a príslušný popis.</li>
+<li>Označenie osí musí byť zrozumiteľné. Prispôsobte tomu veľkosť a typ písma. V počítačovej podobe preferujeme písmo bez pätiek. V tlačenej podobne naopak <a href="https://blog.datawrapper.de/fonts-for-data-visualization/#sans-serif-fonts">pätkové písmo</a>. Čísla sa lepšie porovnávajú ak sú tabulované (majú rovnakú šírku) a liniovité (majú rovnakú výšku).</li>
+<li>Farebné elementy lepšie vyniknú na sivom alebo (ako čistobielom) <a href="https://blog.datawrapper.de/background-color-of-data-visualizations/">podklade</a>. Bezpečnou voľbou na podklad je tiež teplá, veľmi svetlá a málo saturovaná farba. Farby sa zväčša používajú na vysvetľovanú premennú, nie na prediktory. <a href="https://blog.datawrapper.de/10-ways-to-use-fewer-colors-in-your-data-visualizations/">Volíme menej farieb</a> ak sa to dá, napríklad spojených niektorých kategórií a ideálne volíme farebnú škálu zrozumiteľnú aj pre čiastočne farboslepých. Farbám sa môžeme vyhnúť aj tak, že skupiny odlíšime symbolmi, vzormi alebo typom čiary. Rôzne mediá, inštitúcie alebo spoločnosti používajú <a href="https://blog.datawrapper.de/colors-for-data-vis-style-guides/">fixné farebné palety</a> aby bola prezentácia farebne jednotná.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig_color_pallete.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Vybrať si vhodnú farebnú identitu je náročné. Zdroj: https://blog.datawrapper.de/colors-for-data-vis-style-guides/</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>V prípade rôznych názorov je užitočné hľadať konsenzus v tíme.</li>
+</ul>
+<p><strong>Individuálnym výstupom rozumieme na základe porovnávania podobných objektov.</strong></p>
+<p><br></p>
+<div class="boxed">
+<p><a href="https://rpubs.com/Daniela365/1177271">Na tomto linku</a> nájdete tiež časť Bc. práce Daniely Rušinovej, ktorá spracovala tému vizualizácie do prístupnej webstránky s mnohými príkladmi.</p>
+<p>Ku každému príkladu je tiež R-kód.</p>
+</div>
+<p><br></p>
+</section>
+<section id="cvičenia" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">7.5</span> Cvičenia</h2>
+<!-- [R súbor k cvičeniam](https://www.dropbox.com/scl/fi/bwacjvql5q1klrwcz7doy/20231025-labs06-base.R?rlkey=b352e9yvxfp4gjis4v0sbceoy&dl=0) -->
+<!-- [R súbor k cvičeniam (riešenia) 26.10.2023](https://www.dropbox.com/s/k9ie2nuqcf2ryp5/20231026-labs06.R?dl=0) -->
+<!-- [R súbor k cvičeniam (riešenia) 9.11.2023](https://www.dropbox.com/scl/fi/4d5md4hkof8axeijumgrr/20231109-labs06-part2.R?rlkey=xg3hvy3g3sklhkytmo1e7vni2&dl=0) -->
+<!-- [R súbor k cvičeniam (riešenia) 3.11.2022](https://www.dropbox.com/s/plw8hvv5bz9fuws/labs_week7_solutions.R?dl=0) -->
+<div class="exercise" name="Znovu filmy">
+<p>Použite túto náhodnú podvzorku filmov z knižnice <code>ggplot2movies</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(eatATA)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">224</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"year"</span>,<span class="st">"length"</span>,<span class="st">"budget"</span>,<span class="st">"rating"</span>,<span class="st">"votes"</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>catVars <span class="ot">&lt;-</span> <span class="fu">names</span>(movies)[<span class="dv">18</span><span class="sc">:</span><span class="dv">23</span>]</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">rowSums</span>(movies[,<span class="dv">18</span><span class="sc">:</span><span class="dv">23</span>])<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>ind2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(ind,<span class="dv">1000</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> movies[ind2,<span class="fu">c</span>(vars, catVars)]</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> <span class="fu">dummiesToFactor</span>(data_sam, catVars, <span class="at">facVar =</span> <span class="st">"category"</span>)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> data_sam <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">era =</span> <span class="fu">as.factor</span>(<span class="dv">50</span><span class="sc">*</span><span class="fu">floor</span>(data_sam<span class="sc">$</span>year<span class="sc">/</span><span class="dv">50</span>)))</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(data_sam<span class="sc">$</span>era) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"1850-1899"</span>, <span class="st">"1900-1949"</span>, <span class="st">"1950-1999"</span>, <span class="st">"2000-"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Čo presne sme tu urobili?</p>
+<p>Teraz zreprodukujte tieto grafy:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-zrepro-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-zrepro-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-zrepro-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-zrepro-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Bin width defaults to 1/30 of the range of the data. Pick better value with
+`binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-zrepro-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>(Pri poslednom grafe potrebujete vytvoriť novú premennú.)</p>
+</div>
+</section>
+<section id="bonus" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="bonus"><span class="header-section-number">7.6</span> Bonus</h2>
+<p>Dáta vedia rozprávať príbehy. Je dôležité pozerať sa na dáta z rôznych strán, uhlov, aby sme pochopili do hĺbky všetky skryté súvislosti v ich plnej rozmanitosti.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-bonus-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- ## Domáca úloha 3 -->
+<!-- Deadline je 14.11.2022 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie `rar` súbor, nie OneDrive folder) v tvare `du3_MenoPriezvisko.zip` (napr. `du3_PeterKovac.zip`) a pošlite na email. Kód musí byť spustiteľný a podrobne okomentovaný. Odovzdávate mi Vašu **vlastnú** prácu.  -->
+<!-- ::: {.exercise name="DÚ 3.1"} -->
+<!-- Stiahnite si dataset o HDP zo [stránky Our World In Data](https://ourworldindata.org/grapher/gdp-per-capita-worldbank). -->
+<!-- Zobrazte vývoj hrubého domáceho produktu v krajinách V4 na logaritmickej osi pomocou knižnice `ggplot2`. Krajiny V4 zobrazte rôznymi farbami a pridajte rovné čiary, ktoré budú kopírovať dáta za posledných 20 rokov pre rôzne krajiny (napr. pomocou vrstvy `geom_smooth()` s parametrom `method="lm"`). Stručne okomentujte, čo ste sa dozvedeli. -->
+<!-- Urobte Váš graf zrozumiteľným a vizuálne príťažlivým vhodnou voľbou grafických elementov (farieb, typom a veľkostou písiem, popismi, nápisov, legendou...). -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 3.2"} -->
+<!-- Zrekonštruujte nasledovné obrázky z datasetu `USArrests` z knižnice `datasets`. -->
+<!-- ```{r visual-cv1,cache = TRUE,eval=TRUE, echo=FALSE} -->
+<!-- g1 <- ggplot(data = USArrests) +  -->
+<!--   geom_point(mapping = aes(x = Assault, y = Murder))+ -->
+<!--   geom_smooth(mapping = aes(x = Assault, y = Murder), -->
+<!--               method = 'loess', formula = 'y ~ x') -->
+<!-- g2 <- ggplot(data = USArrests) +  -->
+<!--   geom_text(mapping = aes(x = Assault, y = Murder, label=rownames(USArrests)), -->
+<!--             check_overlap = TRUE) -->
+<!-- g3 <- ggplot(data = USArrests, mapping = aes(x = UrbanPop, y = Assault)) +  -->
+<!--   geom_point() + -->
+<!--   geom_smooth(method = 'loess', formula = 'y ~ x') +  -->
+<!--   geom_smooth(method = "lm", formula = 'y ~ x',  -->
+<!--               color = "red")  -->
+<!-- g4 <- ggplot(data = USArrests) +  -->
+<!--   geom_point(mapping = aes(x = Assault, y = Murder, color = UrbanPop > mean(UrbanPop))) + -->
+<!--   theme(legend.position="bottom") -->
+<!-- plot_grid(g1, g2, ncol = 1, labels = "AUTO") -->
+<!-- plot_grid(g3, g4, ncol = 1, labels = "AUTO") -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 3.3 (voľby)"} -->
+<!-- Stiahnite si volebné dáta z nedávnych volieb do župných samospráv. -->
+<!-- ```{r visual-cvf,cache = TRUE,eval=FALSE, echo=TRUE} -->
+<!-- library(openxlsx) -->
+<!-- data_zupy <- read.xlsx("https://www.volbysr.sk/osk/files/xlsx/OSK2022_SK_tab04b.xlsx") -->
+<!-- ``` -->
+<!-- Zobrazte aký bol vzťah medzi percentuálnym ziskom vo voľbách do zastupiteľstiev a skutočnosťou, či bol/nebol kandidát/ka podporovaný/á nejakou politickou stranou. Pozrite sa na tento vzťah osobitne cez rôzne kraje a cez veľké/malé okrsky. Zvoľte vhodný typ vizualizácie a dotiahnite detaily. -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 3.4 (indexy)"} -->
+<!-- Využite dáta `EuStockMarkets` z knižnice `datasets` a skúmajte ako sa korelačná matica **výnosov** (pozor nie cien) rôznych európskych indexov menila v čase.  Popíšte Vaše zistenia. -->
+<!-- Súčasťou riešenia je výber rozumného spôsobu vizualizácie. -->
+<!-- ::: -->
+</section>
+<section id="domáca-úloha-2-dobrovoľná-a-nehodnotená" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="domáca-úloha-2-dobrovoľná-a-nehodnotená"><span class="header-section-number">7.7</span> Domáca úloha 2 (dobrovoľná a nehodnotená)</h2>
+<p>Deadline je 10.11.2024 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie <code>rar</code> súbor, nie OneDrive folder) v tvare <code>du2_MenoPriezvisko.zip</code> (napr. <code>du2_PeterKovac.zip</code>) a pošlite cez formulár, ktorého odkaz je na stránke. Kód musí byť spustiteľný a podrobne okomentovaný. Odovzdávate mi Vašu <strong>vlastnú</strong> prácu. Domáca úloha je <strong>dobrovoľná</strong> a <strong>nehodnotená</strong>. V prípade, že ju pošlete do termínu dostanete spätnú väzbu.</p>
+<div class="exercise" name="DÚ 2.1">
+<p>Zrekonštruujte nasledovné obrázky z datasetu <code>USArrests</code> z knižnice <code>datasets</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-cv1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visual_files/figure-html/visual-cv1-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" name="DÚ 2.2">
+<p>Náhodná premenná <span class="math inline">\(X\)</span> dáva výsledok o počte správnych odpovedí na záverečnej skúške. Tá má 50 otázok, pravdepodobnosť správnej odpovede študenta je <span class="math inline">\(0.65\)</span>. Spočítajte teoretickú strednú hodnotu a varianciu. Urobte program na simuláciu strednej hodnoty a variancie a zistite, koľko simulácií potrebujete, aby sa odhadnutá stredná hodnota blížila teoretickej aspoň na 2 desatinné miesta. Opíšte svoje uvažovanie.</p>
+</div>
+<!-- ::: {.exercise name="DÚ 2.2 malinové kríky"} -->
+<!-- V laboratóriu máte 2 skupiny malinových kríkov. Na prvej (experimentálnej) testujete nové hnojivo na 20 kríkoch, a v druhej (kontrolnej) máte tiež 20 kríkov. -->
+<!-- Počet malín na kríku v experimentálnej skupine sa dá modelovať normálnym rozdelením so strednou hodnotou $50$ a varianciou $16$. Počet malín na kríku v druhej skupine sa dá modelovať normálnym rodzelením so strednou hodnotou $35$ a varianciou $25$. -->
+<!-- V oboch skupinách zrátate počet malín na kríkoch. -->
+<!-- Aká je pravdepodobnosť, že na kríkoch v prvej skupine je viac malín? -->
+<!-- Koľko by muselo byť kríkov v druhej skupine, aby táto pravdepodobnosť bola 50\%? -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 2.3 turizmus"} -->
+<!-- Stiahnite si dataset o medzinárodných turistických výletoch (International tourist trips) zo [stránky Our World In Data](https://ourworldindata.org/tourism). -->
+<!-- Zobrazte počet turistov za jednotlivé roky na Slovensku a v jeho susedných krajinách pomocou knižnice `ggplot2`. -->
+<!-- Jednotlivé krajiny zobrazte rôznymi farbami a pridajte rovné čiary, ktoré budú kopírovať dáta za posledných 20 rokov pre rôzne krajiny (napr. pomocou vrstvy `geom_smooth()` s parametrom `method="lm"`). Stručne okomentujte, čo ste sa dozvedeli. -->
+<!-- Urobte Váš graf zrozumiteľným a vizuálne príťažlivým vhodnou voľbou grafických elementov (farieb, typom a veľkostou písiem, popismi, nápisov, legendou...). -->
+<!-- ::: -->
+<!-- ::: {.exercise name="DÚ 2.4 grafy"} -->
+<!-- Zrekonštruujte nasledovné obrázky z datasetu `mtcars` z knižnice `datasets`. -->
+<!-- ```{r visual-du24,cache = TRUE,eval=TRUE, echo=FALSE} -->
+<!-- library(ggplot2) -->
+<!-- library(cowplot) -->
+<!-- g1 <- ggplot(data = mtcars) + -->
+<!--   geom_point(mapping = aes(x = wt, y = mpg))+ -->
+<!--   geom_smooth(mapping = aes(x = wt, y = mpg), -->
+<!--               method = 'loess', formula = 'y ~ x') -->
+<!-- g2 <- ggplot(data = mtcars) + -->
+<!--   geom_text(mapping = aes(x = wt, y = mpg, label=rownames(mtcars)), -->
+<!--             check_overlap = TRUE) -->
+<!-- g3 <- ggplot(data = mtcars, mapping = aes(x = wt, y = qsec)) + -->
+<!--   geom_point() + -->
+<!--   geom_smooth(method = 'loess', formula = 'y ~ x') + -->
+<!--   geom_smooth(method = "lm", formula = 'y ~ x', -->
+<!--               color = "red") -->
+<!-- g4 <- ggplot(data = mtcars) + -->
+<!--   geom_point(mapping = aes(x = wt, y = mpg, color = wt > mean(wt))) + -->
+<!--   theme(legend.position="bottom") -->
+<!-- plot_grid(g1, g2, ncol = 1, labels = "AUTO") -->
+<!-- plot_grid(g3, g4, ncol = 1, labels = "AUTO") -->
+<!-- ``` -->
+<!-- ::: -->
+<div class="exercise" name="DÚ 2.3 (voľby EU parlament 2024)">
+<p>Stiahnite si volebné dáta z <a href="https://www.volbysr.sk/sk/subory_na_stiahnutie.html">volieb do Európskeho parlamentu</a>.</p>
+<p>Vyberte si nejaké dve ľubovoľné politické strany, ktoré získali vo voľbách viac ako <span class="math inline">\(5\%\)</span> a skúmajte asociáciu medzi výsledkami týchto dvoch politických strán. Pozrite sa na tento vzťah osobitne cez rôzne kraje a cez územné obvody. Zvoľte vhodný typ vizualizácie a dotiahnite detaily.</p>
+</div>
+<div class="exercise" name="DÚ 2.4">
+<p>Stiahnite si dataset o HDP zo <a href="https://ourworldindata.org/grapher/gdp-per-capita-worldbank">stránky Our World In Data</a>. Zobrazte vývoj hrubého domáceho produktu v krajinách V4 na logaritmickej osi pomocou knižnice <code>ggplot2</code>. Krajiny V4 zobrazte rôznymi farbami a pridajte rovné čiary, ktoré budú kopírovať dáta za posledných 20 rokov pre rôzne krajiny (napr. pomocou vrstvy <code>geom_smooth()</code> s parametrom <code>method="lm"</code>). Stručne okomentujte, čo ste sa dozvedeli.</p>
+<p>Urobte Váš graf zrozumiteľným a vizuálne príťažlivým vhodnou voľbou grafických elementov (farieb, typom a veľkostou písiem, popismi, nápisov, legendou…).</p>
+</div>
+<!-- ```{r visual-cvf,cache = TRUE,eval=FALSE, echo=TRUE}
+<!-- library(openxlsx)
+<!-- data_zupy <- read.xlsx("https://www.volbysr.sk/osk/files/xlsx/OSK2022_SK_tab04b.xlsx")
+
+
+
+
+
+<!-- ::: {.exercise name="DÚ 2.6 (vymyslení zamestnanci)"} -->
+<!-- Preskúmajte korelácie medzi premennými z [vymysleného datasetu o zamestancoch](https://www.dropbox.com/scl/fi/hk422cbmrpsefnuk2d2x0/zamestanci-corel.xlsx?rlkey=whgkvcf2waz37v6b2ztyzz6xx&dl=0). -->
+<!-- Popíšte vaše pozorovania, skúste ich vysvetliť a korelácie rozumne zvizualizujte. -->
+<!-- ::: -->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./depen.html" class="pagination-link" aria-label="Náhodné vektory a súvis medzi náhodnými premennými">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ttest.html" class="pagination-link" aria-label="Štatistické testovanie hypotéz">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
