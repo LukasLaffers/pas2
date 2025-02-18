@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sk" xml:lang="sk"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.40">
@@ -89,17 +89,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Žiadne výsledky",
+    "search-matching-documents-text": "zhodné dokumenty",
+    "search-copy-link-title": "Skopírovať odkaz pre vyhľadávanie",
+    "search-hide-matches-text": "Skryť ďalšie výsledky",
+    "search-more-match-text": "ďalší výsledok v tomto dokumente",
+    "search-more-matches-text": "ďalších výsledkov v tomto dokumente",
+    "search-clear-button-title": "Vymazať",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Zrušiť",
+    "search-submit-button-title": "Odoslať",
+    "search-label": "Hľadať"
   }
 }</script>
 
@@ -141,13 +141,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./random.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Náhodné čísla a simulácie</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Hľadať" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -164,7 +164,7 @@ window.Quarto = {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Hľadať"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -236,7 +236,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Obsah</h2>
    
   <ul>
   <li><a href="#pseudonáhodné-čísla-v-počítači" id="toc-pseudonáhodné-čísla-v-počítači" class="nav-link active" data-scroll-target="#pseudonáhodné-čísla-v-počítači"><span class="header-section-number">3.1</span> (Pseudo)Náhodné čísla v počítači</a></li>
@@ -285,7 +285,7 @@ window.Quarto = {
 <p>Tieto príklady sú ilustratívne a pomôžu nám uchopiť štruktúru niektorých jednoduchých typov náhodnosti. Akonáhle však ideme riešiť praktické problémy, veci sa veľmi rýchlo počítajú ťažšie.</p>
 <p>&nbsp;</p>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Example 3.1</strong></span> Letecké spoločnosti typicky robia overbooking. Predajú viacej lístkov ako majú miest na sedenie, lebo sa mnohokrát stane, že niekto zmešká let/nepríde. Ak prídu všetci, niektorých musia posadiť na ďalší let a zaplatiť im nejaké kompenzácie. Ak predajú málo leteniek, tak nosia v lietadle vzduch a ten neplatí za letenky. Balancovať tieto dve protichodné sily je neľahké. Predstavte si Boeing 737-700, ktorý má 149 miest na sedenie pre pasažierov. Nech je počet záujemcov o let Poissonovsky rozdelená náhodná premenná so strednou hodnotou 150. Nech je pravdepodnosť, že pasažier, ktorý si kúpi lístok príde na letisko náhodná premenná, ktorá je rovnomerne rozdelená na intervale <span class="math inline">\([0.95,1].\)</span> Nech cena letenky 200eur ale pre 150.teho zákazníka stúpa od 300euro po 5 eurách (t.j. potenciálny 180.zákazník zaplatí <span class="math inline">\(300+30.5 = 450\)</span> eur). S overbookingom je spojené riziko, že zákazníkovi, ktorý sa nedostane do lietadla musí letecká spoločnosť vyplatiť kompenzáciu vo výške 1000eur. Každý 50.ty sklamaný zákazník podá žalobu na leteckú spoločnosť z čoho jej vznikne ujma 500eur pre každú žalobu a ak spoločnosť súd prehrá ďalších 10000eur. Zo skúseností vieme, že šanca úspešnej žaloby je <span class="math inline">\(30\%\)</span> s pravdepodobnosťou <span class="math inline">\(90\%\)</span> a normálne rozdelená náhodná premenná so strednou hodnotou <span class="math inline">\(80\%\)</span> a smerodajnou odchýlkou <span class="math inline">\(2\%\)</span> s pravdepodobnosťou <span class="math inline">\(10\%.\)</span></p>
+<p><span class="theorem-title"><strong>Príklad 3.1</strong></span> Letecké spoločnosti typicky robia overbooking. Predajú viacej lístkov ako majú miest na sedenie, lebo sa mnohokrát stane, že niekto zmešká let/nepríde. Ak prídu všetci, niektorých musia posadiť na ďalší let a zaplatiť im nejaké kompenzácie. Ak predajú málo leteniek, tak nosia v lietadle vzduch a ten neplatí za letenky. Balancovať tieto dve protichodné sily je neľahké. Predstavte si Boeing 737-700, ktorý má 149 miest na sedenie pre pasažierov. Nech je počet záujemcov o let Poissonovsky rozdelená náhodná premenná so strednou hodnotou 150. Nech je pravdepodnosť, že pasažier, ktorý si kúpi lístok príde na letisko náhodná premenná, ktorá je rovnomerne rozdelená na intervale <span class="math inline">\([0.95,1].\)</span> Nech cena letenky 200eur ale pre 150.teho zákazníka stúpa od 300euro po 5 eurách (t.j. potenciálny 180.zákazník zaplatí <span class="math inline">\(300+30.5 = 450\)</span> eur). S overbookingom je spojené riziko, že zákazníkovi, ktorý sa nedostane do lietadla musí letecká spoločnosť vyplatiť kompenzáciu vo výške 1000eur. Každý 50.ty sklamaný zákazník podá žalobu na leteckú spoločnosť z čoho jej vznikne ujma 500eur pre každú žalobu a ak spoločnosť súd prehrá ďalších 10000eur. Zo skúseností vieme, že šanca úspešnej žaloby je <span class="math inline">\(30\%\)</span> s pravdepodobnosťou <span class="math inline">\(90\%\)</span> a normálne rozdelená náhodná premenná so strednou hodnotou <span class="math inline">\(80\%\)</span> a smerodajnou odchýlkou <span class="math inline">\(2\%\)</span> s pravdepodobnosťou <span class="math inline">\(10\%.\)</span></p>
 <p>Ako má robiť táto letecká spoločnosť overbooking? Konkrétne:</p>
 <ul>
 <li>Aká je optimálna stratégia leteckej spoločnosti, ak chce maximalizovať priemerný zisk?</li>
@@ -299,11 +299,11 @@ window.Quarto = {
 <p>Na to aby sme vedeli generovať náhodné čísla, potrebujeme nejaký zdroj náhodnosti. Ten môže prísť z nejakého externého zdroja.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Na počítači sa preto uspokojujeme so <em>pseudonáhodnými</em> číslami. Existujú deterministické procesy, ktoré generujú čísla, ktoré sú z praktického hľadiska náhodné. Tieto procesy sú rôzne a sú “rôzne kvalitné” generátory pseudonáhodných čísel. My budeme používať tú predvolenú metódu v Rku.</p>
 <p>Príkazom <code>set.seed()</code> zafixujeme generátor náhodných čísel a zabezpečíme tým reprodukovateľnosť našich výsledkov.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28394</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28394</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Keď si teraz niekto nechá vygenerovať 10 náhodných čísel z intervalu <span class="math inline">\([0,1],\)</span> ktoré sú rovnomerne rozdelené, tak dostane úplne tie isté čísla.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 0.1707599 0.1818867 0.7865318 0.5782902 0.9364266 0.9324842 0.1914957
  [8] 0.2923337 0.4330475 0.8927892</code></pre>
@@ -311,7 +311,7 @@ window.Quarto = {
 </div>
 <p>Akonáhle si vygenerujeme novú desaticu čísel, tieto budú prirodzene iné.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 0.5294097 0.9021275 0.9895494 0.5304749 0.1230083 0.3572835 0.2611675
  [8] 0.3291930 0.3557725 0.7183207</code></pre>
@@ -320,7 +320,7 @@ window.Quarto = {
 <p>Ale ak znovu zafixujeme seed náhodného generátora čísel, znova dostaneme tie isté čísla ako predtým.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28394</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">10</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 0.1707599 0.1818867 0.7865318 0.5782902 0.9364266 0.9324842 0.1914957
  [8] 0.2923337 0.4330475 0.8927892</code></pre>
@@ -341,7 +341,7 @@ window.Quarto = {
 <p>Vieme, že <span class="math inline">\(E[I(A)] = 1\cdot P(A) + 0\cdot P(A^C) = P(A).\)</span> Preto použitím <a href="https://lukaslaffers.github.io/pas1/zvc.html#slabý-zákon-veľkých-č%C3%ADsel">ZVČ</a> vieme, že ak máme <span class="math inline">\(I_1, I_2,\cdots,I_n\)</span> nezávislé realizácie <span class="math inline">\(I(A),\)</span> potom</p>
 <p><span class="math display">\[\frac{I_1 + \cdots + I_n}{n} \rightarrow_P P(A),\]</span> kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href="https://lukaslaffers.github.io/pas1/zvc.html#konvergencia-podľa-pravdepodobnosti">konvergenciu podľa pravdepodobnosti</a>. Takže v skutočnosti len využívame <a href="https://lukaslaffers.github.io/pas1/set.html#kombinátorika">frekventistickú interpretáciu pravdepodobnosti</a>: <span class="math display">\[P(A) = \frac{\text{počet úspešných pokusov (teda udalosť $A$ nastane)}}{\text{počet všetkých možných pokusov}}.\]</span></p>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Example 3.2</strong></span> Odhad čísla <span class="math inline">\(\pi\)</span> pomocou simulácie. Vieme, že obsah kruhu je <span class="math inline">\(\pi r^2.\)</span> Môžeme rovnomerne náhodne generovať čísla na intervale <span class="math inline">\([0,1]\)</span> na oboch osiach a pozrieť sa, aká proporcia z nich spadne do kruhu.</p>
+<p><span class="theorem-title"><strong>Príklad 3.2</strong></span> Odhad čísla <span class="math inline">\(\pi\)</span> pomocou simulácie. Vieme, že obsah kruhu je <span class="math inline">\(\pi r^2.\)</span> Môžeme rovnomerne náhodne generovať čísla na intervale <span class="math inline">\([0,1]\)</span> na oboch osiach a pozrieť sa, aká proporcia z nich spadne do kruhu.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>piApprox <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
@@ -353,7 +353,7 @@ window.Quarto = {
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)<span class="sc">^</span><span class="dv">2</span>))</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">points</span>(x[z],y[z],<span class="at">col=</span><span class="st">"red"</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">1000</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -361,7 +361,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">piApprox</span>(<span class="dv">10000</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -372,7 +372,7 @@ window.Quarto = {
 </div>
 </div>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Example 3.3</strong></span> <a href="https://lukaslaffers.github.io/pas1/zvc.html">Zákon o veľkých číslach</a> Aritmetický priemer z pozorovaní s rovnakou strednou hodnotou sa za určitých podmienok blíži ku skutočnému priemeru.</p>
+<p><span class="theorem-title"><strong>Príklad 3.3</strong></span> <a href="https://lukaslaffers.github.io/pas1/zvc.html">Zákon o veľkých číslach</a> Aritmetický priemer z pozorovaní s rovnakou strednou hodnotou sa za určitých podmienok blíži ku skutočnému priemeru.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#law of large numbers</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>simLLN <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim,nSample){</span>
@@ -383,7 +383,7 @@ window.Quarto = {
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(barX,<span class="at">main=</span><span class="st">"Demonstration of LLN"</span>)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -391,7 +391,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">simLLN</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -402,7 +402,7 @@ window.Quarto = {
 </div>
 </div>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Example 3.4</strong></span> <a href="https://lukaslaffers.github.io/pas1/clv.html">Centrálna limitná veta</a> Aritmetický priemer z iid pozorovaní sa za určitých podmienok blíži k normálnemu rozdeleniu.</p>
+<p><span class="theorem-title"><strong>Príklad 3.4</strong></span> <a href="https://lukaslaffers.github.io/pas1/clv.html">Centrálna limitná veta</a> Aritmetický priemer z iid pozorovaní sa za určitých podmienok blíži k normálnemu rozdeleniu.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>simCLT <span class="ot">&lt;-</span> <span class="cf">function</span>(nSim,nSample){</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  barX <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nSim) </span>
@@ -417,7 +417,7 @@ window.Quarto = {
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">main=</span><span class="st">"Demonstration of CLT"</span>)</span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>( <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>),<span class="fu">dnorm</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>)) )</span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">1000</span>,<span class="dv">100</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -425,7 +425,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">simCLT</span>(<span class="dv">10000</span>,<span class="dv">1000</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -462,12 +462,12 @@ window.Quarto = {
 <h2 data-number="3.4" class="anchored" data-anchor-id="rovnomerné-rozdelenie-ako-základ"><span class="header-section-number">3.4</span> Rovnomerné rozdelenie ako základ</h2>
 <p>Akonáhle máme generátor pseudonáhodných čísel, ktorý vie generovať rovnomerne náhodne na intervale <span class="math inline">\([0,1]\)</span>, pomocou neho vieme generovať akékoľvek iné pravdepodobnostné rozdelenie.</p>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Example 3.5</strong></span> Skúsme simulovať hádzanie kockou ale len s pomocou funkcie <code>runif()</code>. Ak padne číslo väčšie ako 0.5, prehlásime to za hlavu.</p>
+<p><span class="theorem-title"><strong>Príklad 3.5</strong></span> Skúsme simulovať hádzanie kockou ale len s pomocou funkcie <code>runif()</code>. Ak padne číslo väčšie ako 0.5, prehlásime to za hlavu.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hodMincou <span class="ot">&lt;-</span> <span class="cf">function</span>(nThrows){</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span><span class="sc">*</span>(<span class="fu">runif</span>(nThrows)<span class="sc">&gt;</span><span class="fl">0.5</span>))</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hodMincou</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hodMincou</span>(<span class="dv">10</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 1 0 0 1 0 0 1 1 1 0</code></pre>
 </div>
@@ -484,7 +484,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sampling</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>namesVec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Julia"</span>,<span class="st">"Martin"</span>,<span class="st">"Peter"</span>,<span class="st">"Stefan"</span>,<span class="st">"Robert"</span>,<span class="st">"Maria"</span>,<span class="st">"Zuzana"</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#random permutation</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Peter"  "Maria"  "Robert" "Stefan" "Martin" "Zuzana" "Julia" </code></pre>
 </div>
@@ -492,7 +492,7 @@ window.Quarto = {
 <p>Druhý argument hovorí o tom, koľko objektov máme vybrať, defaultne je to dĺžka vstupného vektora.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#choose 3 names without replacement</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Zuzana" "Stefan" "Robert"</code></pre>
 </div>
@@ -500,7 +500,7 @@ window.Quarto = {
 <p>Tretí argument je, či je daný objekt môžeme po vybratí dať naspäť (<code>replace=TRUE</code> znamená, že áno, dáme naspäť).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#choose 3 names WITH replacement</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">3</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Stefan" "Maria"  "Maria" </code></pre>
 </div>
@@ -508,7 +508,7 @@ window.Quarto = {
 <p>Počet vybratých objektov môže byť väčší ako dĺžka vstupného vektora len ak je nastavené <code>replace=TRUE</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#choose 10 names WITH replacement</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">10</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(namesVec,<span class="dv">10</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Martin" "Peter"  "Robert" "Zuzana" "Robert" "Martin" "Peter"  "Martin"
  [9] "Julia"  "Martin"</code></pre>
@@ -517,7 +517,7 @@ window.Quarto = {
 <p>Skúsme hodiť férovou mincou 100krát.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#throw a fair coin 100 times</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">100</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">100</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1] 1 1 1 1 0 0 0 0 1 1 1 0 1 0 0 1 1 1 0 0 1 0 1 1 0 1 1 0 1 1 1 0 0 0 0 0 1
  [38] 1 1 1 0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 1 0 1 0 0 1 0 0 0 1 1 1 1 1 0 1 0 0 0
@@ -527,13 +527,13 @@ window.Quarto = {
 <p>Alebo 20krát hodiť férovou kockou.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#throw a fair dice 100 times</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">20</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">20</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 1 3 1 3 2 6 3 6 2 6 6 6 5 2 1 4 4 2 6 6</code></pre>
 </div>
 </div>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Example 3.6</strong></span> Hodili sme férovou kockou 6 krát a súčet je 30. Je to veľa?</p>
+<p><span class="theorem-title"><strong>Príklad 3.6</strong></span> Hodili sme férovou kockou 6 krát a súčet je 30. Je to veľa?</p>
 <p>A vôbec, čo to vlastné znamená “veľa”?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We throw the dice 6 times and got 30 in sum together. Is it a lot?</span></span>
@@ -547,7 +547,7 @@ window.Quarto = {
 <span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>throws <span class="ot">&lt;-</span> <span class="fu">sim3dices</span>(<span class="dv">10000</span>)</span>
 <span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co">#plot</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(throws)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(throws)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -556,7 +556,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check how many times we got 30 or more extreme observation</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(throws<span class="sc">&gt;=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(throws<span class="sc">&gt;=</span><span class="dv">30</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.0212</code></pre>
 </div>
@@ -564,12 +564,12 @@ window.Quarto = {
 <p>Môžeme si simulovať hádzanie mnoho krát a skrátka sa pozrieť koľkokrát nastane ešte extrémnejšia udalosť. Na to, aby toto číslo bolo presné potrebujeme veľa simulácií.</p>
 </div>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Example 3.7</strong></span> Vyberte 100 náhodných animovaných filmov dlhších ako 60 minút a zobrazte vzťah medzi hodnotením a rozpočtom.</p>
+<p><span class="theorem-title"><strong>Príklad 3.7</strong></span> Vyberte 100 náhodných animovaných filmov dlhších ako 60 minút a zobrazte vzťah medzi hodnotením a rozpočtom.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot the relationship between budget and rating for 100 randomly selected</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># animation films that are longer than 60mins</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
@@ -590,7 +590,7 @@ Attaching package: 'dplyr'</code></pre>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>nRows  <span class="ot">&lt;-</span> <span class="fu">dim</span>(dd)[<span class="dv">1</span>]</span>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>idRows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>nRows,<span class="dv">100</span>)</span>
 <span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>dd100  <span class="ot">&lt;-</span> dd[idRows,]</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dd100,<span class="fu">plot</span>(budget,rating))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dd100,<span class="fu">plot</span>(budget,rating))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -619,37 +619,37 @@ Attaching package: 'dplyr'</code></pre>
 <section id="cvičenia" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">3.7</span> Cvičenia</h2>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.1</strong></span> Naprogramujte hod férovou kockou len s použitím funkcie <code>runif()</code>. Potom s ňou hoďte 100 krát a nakreslite histogram. Zabezpečte, aby váš kód bol reprodukovateľný.</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.1</strong></span> Naprogramujte hod férovou kockou len s použitím funkcie <code>runif()</code>. Potom s ňou hoďte 100 krát a nakreslite histogram. Zabezpečte, aby váš kód bol reprodukovateľný.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.2</strong></span> Použitím predošlej funkcie popíšte pravdepodobnostné správanie súčtu počtu bodíkov na troch nezávislých kockách. Zabezpečte, aby bol váš popis dostatočne presný.</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.2</strong></span> Použitím predošlej funkcie popíšte pravdepodobnostné správanie súčtu počtu bodíkov na troch nezávislých kockách. Zabezpečte, aby bol váš popis dostatočne presný.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.3</strong></span> Podrobne vysvetlite, prečo nie je dobrým nápadom fixovať seed náhodného generátora vo vnútri funkcie.</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.3</strong></span> Podrobne vysvetlite, prečo nie je dobrým nápadom fixovať seed náhodného generátora vo vnútri funkcie.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.4</strong></span> Majme balíček kariet hodnosti v poradí 2,3,4,5,6,7,8,9,10,J,Q,K,A a 4 rôzne farby. Vyberte z balíčka 5 kariet. Aká je šanca, že dostaneme postupku?</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.4</strong></span> Majme balíček kariet hodnosti v poradí 2,3,4,5,6,7,8,9,10,J,Q,K,A a 4 rôzne farby. Vyberte z balíčka 5 kariet. Aká je šanca, že dostaneme postupku?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.5</strong></span> Vyberte 200 náhodných akčných filmov starších ako 20 rokov a zobrazte vzťah medzi hodnotením a dĺžkou filmu. Vyberte rôzne vzorky a pozerajte sa, ako veľmi sa tento vzťah mení.</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.5</strong></span> Vyberte 200 náhodných akčných filmov starších ako 20 rokov a zobrazte vzťah medzi hodnotením a dĺžkou filmu. Vyberte rôzne vzorky a pozerajte sa, ako veľmi sa tento vzťah mení.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.6</strong></span> Palicu rovnomerne náhodne zlomíme na dvoch miestach. Aká je šanca, že budeme vedieť z týchto troch kúskov urobiť trojuholník?</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.6</strong></span> Palicu rovnomerne náhodne zlomíme na dvoch miestach. Aká je šanca, že budeme vedieť z týchto troch kúskov urobiť trojuholník?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.7</strong></span> Skúsení kartári poznajú hru Vojna. Porozmýšľajte, ako by ste overili akú veľkú výhodu Vám dáva skutočnosť, že máte v balíčku všetky 4 esá. Aké všetky komplikácie musíte riešiť. Navrhnite principiálny postup (nič neprogramujte), ako by ste to overili ak by ste mali neobmedzene veľa výpočtovej sily.</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.7</strong></span> Skúsení kartári poznajú hru Vojna. Porozmýšľajte, ako by ste overili akú veľkú výhodu Vám dáva skutočnosť, že máte v balíčku všetky 4 esá. Aké všetky komplikácie musíte riešiť. Navrhnite principiálny postup (nič neprogramujte), ako by ste to overili ak by ste mali neobmedzene veľa výpočtovej sily.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.8</strong></span> Adam a Božena idú do streleckého súboja, Adam strieľa ako prvý a trafí s pravdepdodobnosťou 30%. Božena po ňom (ak sa netrafí) a triafa s pravdepobnosťou 35%. Kto má väčšiu šancu, že vyhrá? Aká by musela byť Boženina presnosť, aby bol súboj spravodlivý?</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.8</strong></span> Adam a Božena idú do streleckého súboja, Adam strieľa ako prvý a trafí s pravdepdodobnosťou 30%. Božena po ňom (ak sa netrafí) a triafa s pravdepobnosťou 35%. Kto má väčšiu šancu, že vyhrá? Aká by musela byť Boženina presnosť, aby bol súboj spravodlivý?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.9</strong></span> Astrián sa má stretnúť s Barborou niekedy medzi 10 a 11tou. Ale nikto si nepamätá presne kedy. Obaja sú ochotní čakať 10 minút. Aká je šanca, že sa stretnú?</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.9</strong></span> Astrián sa má stretnúť s Barborou niekedy medzi 10 a 11tou. Ale nikto si nepamätá presne kedy. Obaja sú ochotní čakať 10 minút. Aká je šanca, že sa stretnú?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.10</strong></span> Piati ľudia v porote majú nasledovné šance, že sa správne rozhodnú: 95%, 80%, 90%, 82%, 99%. O výsledku rozhodne väčšina. Aká je šanca, že sa celá porota zhodne na správnom výsledku?</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.10</strong></span> Piati ľudia v porote majú nasledovné šance, že sa správne rozhodnú: 95%, 80%, 90%, 82%, 99%. O výsledku rozhodne väčšina. Aká je šanca, že sa celá porota zhodne na správnom výsledku?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.11</strong></span> Aká, je šanca, medzi študentami absolovujúcimi tento kurz bude aspoň jedna dvojica s rovnakým dátumom narodenia?</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.11</strong></span> Aká, je šanca, medzi študentami absolovujúcimi tento kurz bude aspoň jedna dvojica s rovnakým dátumom narodenia?</p>
 <p>Aká je pravdepodobnostná distribúcia počtu ľudí, ktorí zdieľajú narodeniny s niekým iným v skupine 25ľudí?</p>
 </div>
 <!-- [R súbor z cvičení zo 14.10.2022](https://www.dropbox.com/s/7p88mytf5pjpz1c/labs_week4.R?dl=0) -->
@@ -790,12 +790,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Skopírované!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Skopírované!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

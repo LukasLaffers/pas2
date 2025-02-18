@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sk" xml:lang="sk"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.40">
@@ -89,17 +89,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Žiadne výsledky",
+    "search-matching-documents-text": "zhodné dokumenty",
+    "search-copy-link-title": "Skopírovať odkaz pre vyhľadávanie",
+    "search-hide-matches-text": "Skryť ďalšie výsledky",
+    "search-more-match-text": "ďalší výsledok v tomto dokumente",
+    "search-more-matches-text": "ďalších výsledkov v tomto dokumente",
+    "search-clear-button-title": "Vymazať",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Zrušiť",
+    "search-submit-button-title": "Odoslať",
+    "search-label": "Hľadať"
   }
 }</script>
 
@@ -141,13 +141,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ttest.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Hľadať" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -164,7 +164,7 @@ window.Quarto = {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Hľadať"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -236,7 +236,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Obsah</h2>
    
   <ul>
   <li><a href="#jedno" id="toc-jedno" class="nav-link active" data-scroll-target="#jedno"><span class="header-section-number">7.1</span> Jednovýberové testy</a>
@@ -327,7 +327,7 @@ window.Quarto = {
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,<span class="cf">function</span>(n) <span class="fu">sim_hist</span>(<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">30</span>))</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(g[[<span class="dv">1</span>]],g[[<span class="dv">2</span>]],g[[<span class="dv">3</span>]],</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>          g[[<span class="dv">4</span>]],g[[<span class="dv">5</span>]],g[[<span class="dv">6</span>]],</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">labels =</span> <span class="st">"AUTO"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">labels =</span> <span class="st">"AUTO"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
 ℹ Please use `after_stat(density)` instead.</code></pre>
@@ -346,7 +346,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,<span class="cf">function</span>(n) <span class="fu">sim_hist</span>(<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">300</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(g[[<span class="dv">1</span>]],g[[<span class="dv">2</span>]],g[[<span class="dv">3</span>]],</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>          g[[<span class="dv">4</span>]],g[[<span class="dv">5</span>]],g[[<span class="dv">6</span>]],</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">labels =</span> <span class="st">"AUTO"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">labels =</span> <span class="st">"AUTO"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -361,7 +361,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,<span class="cf">function</span>(n) <span class="fu">sim_hist</span>(<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">10000</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(g[[<span class="dv">1</span>]],g[[<span class="dv">2</span>]],g[[<span class="dv">3</span>]],</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>          g[[<span class="dv">4</span>]],g[[<span class="dv">5</span>]],g[[<span class="dv">6</span>]],</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">labels =</span> <span class="st">"AUTO"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">labels =</span> <span class="st">"AUTO"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -391,7 +391,7 @@ window.Quarto = {
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">position=</span><span class="st">"identity"</span>, </span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">alpha=</span><span class="fl">0.5</span>,</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">bins=</span><span class="dv">30</span>)<span class="sc">+</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.6</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -399,7 +399,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(zmena)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(zmena)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 18.25302</code></pre>
 </div>
@@ -414,15 +414,15 @@ window.Quarto = {
 <p><span class="math display">\[S^2 = \frac{\sum_{i=1}^n(X_i - \bar{X}_n)^2}{n-1}.\]</span> Vieme, že <span class="math inline">\(S^2 \rightarrow_P \sigma^2,\)</span> kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href="https://lukaslaffers.github.io/pas1/zvc.html#konvergencia-podľa-pravdepodobnosti">konvergenciu podľa pravdepodobnosti</a>. Preto</p>
 <p><span class="math display">\[Z \equiv \sqrt{n}\frac{\bar{X}_n - \mu}{S} \rightarrow_D N(0,1).\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>( S2 <span class="ot">&lt;-</span> <span class="fu">sum</span>((zmena<span class="sc">-</span><span class="fu">mean</span>(zmena))<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(<span class="fu">length</span>(zmena)<span class="sc">-</span><span class="dv">1</span>)) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>( S2 <span class="ot">&lt;-</span> <span class="fu">sum</span>((zmena<span class="sc">-</span><span class="fu">mean</span>(zmena))<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(<span class="fu">length</span>(zmena)<span class="sc">-</span><span class="dv">1</span>)) )</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 154.5722</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(zmena) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(zmena) </span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 154.5722</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(zmena))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(zmena))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 12.43271</code></pre>
 </div>
@@ -437,7 +437,7 @@ window.Quarto = {
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="fl">1.43</span>, <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"hustota N(0,1)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"hustota N(0,1)"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -458,7 +458,7 @@ window.Quarto = {
 </div>
 <p>A je rovná <span class="math display">\[\int_{1.43}^{\infty} \phi(x) dx = 1-\Phi(1.43) = 0.076,\]</span> kde</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">1.43</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">1.43</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.07635851</code></pre>
 </div>
@@ -548,14 +548,14 @@ mean of x
 </div>
 <p>P-hodnota testu je iná, je to 0.0817, takže t-rozdelenie prisudzuje chvostom väčšiu váhu.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fl">1.43</span>,<span class="at">df=</span><span class="dv">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fl">1.43</span>,<span class="at">df=</span><span class="dv">29</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.08170164</code></pre>
 </div>
 </div>
 <p>V praxi je to však veľmi jednoduché, stačí takýto príkaz a nemusíme nič počítať sami.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(zmena, <span class="at">alternative=</span><span class="st">"greater"</span>,<span class="at">mu=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(zmena, <span class="at">alternative=</span><span class="st">"greater"</span>,<span class="at">mu=</span><span class="dv">15</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     One Sample t-test
@@ -587,7 +587,7 @@ mean of x
 <div class="example" name="dojazd">
 <p>Majú staršie auta iný diaľničný dojazd? Pozrime sa osobitne na diaľničný a mestský dojazd. Tu je syntax ako to urobíme v Rku.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(mpg<span class="sc">$</span>hwy[mpg<span class="sc">$</span>year<span class="sc">&gt;=</span><span class="dv">2004</span>],mpg<span class="sc">$</span>hwy[mpg<span class="sc">$</span>year<span class="sc">&lt;</span><span class="dv">2004</span>],<span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(mpg<span class="sc">$</span>hwy[mpg<span class="sc">$</span>year<span class="sc">&gt;=</span><span class="dv">2004</span>],mpg<span class="sc">$</span>hwy[mpg<span class="sc">$</span>year<span class="sc">&lt;</span><span class="dv">2004</span>],<span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Two Sample t-test
@@ -601,7 +601,7 @@ sample estimates:
 mean of x mean of y 
  23.45299  23.42735 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(hwy <span class="sc">~</span> (year<span class="sc">&lt;</span><span class="dv">2004</span>), <span class="at">data=</span>mpg ,<span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(hwy <span class="sc">~</span> (year<span class="sc">&lt;</span><span class="dv">2004</span>), <span class="at">data=</span>mpg ,<span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Two Sample t-test
@@ -615,7 +615,7 @@ sample estimates:
 mean in group FALSE  mean in group TRUE 
            23.45299            23.42735 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(mpg<span class="sc">$</span>cty[mpg<span class="sc">$</span>year<span class="sc">&gt;=</span><span class="dv">2004</span>],mpg<span class="sc">$</span>cty[mpg<span class="sc">$</span>year<span class="sc">&lt;</span><span class="dv">2004</span>],<span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(mpg<span class="sc">$</span>cty[mpg<span class="sc">$</span>year<span class="sc">&gt;=</span><span class="dv">2004</span>],mpg<span class="sc">$</span>cty[mpg<span class="sc">$</span>year<span class="sc">&lt;</span><span class="dv">2004</span>],<span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Two Sample t-test
@@ -629,7 +629,7 @@ sample estimates:
 mean of x mean of y 
  16.70085  17.01709 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(cty <span class="sc">~</span> (year<span class="sc">&lt;</span><span class="dv">2004</span>), <span class="at">data=</span>mpg ,<span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(cty <span class="sc">~</span> (year<span class="sc">&lt;</span><span class="dv">2004</span>), <span class="at">data=</span>mpg ,<span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Two Sample t-test
@@ -662,7 +662,7 @@ mean in group FALSE  mean in group TRUE
 <span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="fu">paste0</span>(<span class="st">"Diaľničný dojazd (p = "</span>,</span>
 <span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">as.character</span>(<span class="fu">round</span>(t<span class="sc">$</span>p.value,<span class="dv">3</span>)),<span class="st">")"</span>),</span>
 <span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Dojazd"</span>,<span class="at">x =</span><span class="st">"Vek auta"</span>)<span class="sc">+</span></span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -686,7 +686,7 @@ mean in group FALSE  mean in group TRUE
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="fu">paste0</span>(<span class="st">"Dojazd v meste (p = "</span>,</span>
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">as.character</span>(<span class="fu">round</span>(t2<span class="sc">$</span>p.value,<span class="dv">3</span>)),<span class="st">")"</span>),</span>
 <span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Dojazd"</span>,<span class="at">x =</span><span class="st">"Vek auta"</span>)<span class="sc">+</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -713,7 +713,7 @@ mean in group FALSE  mean in group TRUE
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>data_test8r <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">school=</span><span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"8r_gym"</span>, <span class="st">"4r_gym"</span>), <span class="at">each=</span><span class="dv">40</span>)),</span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">score=</span><span class="fu">round</span>(<span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">75</span>, <span class="at">sd=</span><span class="dv">8</span>), <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean=</span><span class="dv">65</span>, <span class="at">sd=</span><span class="dv">5</span>)))</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>              )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>              )</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Pripomeňme si, že takto vyzerala ich distribúcia.</p>
 <div class="cell">
@@ -727,7 +727,7 @@ mean in group FALSE  mean in group TRUE
 </div>
 <p>Znovu existujú dva rôzne spôsoby (syntaxe) ako spustiť tento test, ktoré dávajú identické výsledky.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>(t_test <span class="ot">&lt;-</span> <span class="fu">t.test</span>(score <span class="sc">~</span> school, <span class="at">data=</span>data_test8r))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>(t_test <span class="ot">&lt;-</span> <span class="fu">t.test</span>(score <span class="sc">~</span> school, <span class="at">data=</span>data_test8r))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -741,7 +741,7 @@ sample estimates:
 mean in group 4r_gym mean in group 8r_gym 
               66.150               75.475 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(data_test8r<span class="sc">$</span>score[data_test8r<span class="sc">$</span>school<span class="sc">==</span><span class="st">"4r_gym"</span>],data_test8r<span class="sc">$</span>score[data_test8r<span class="sc">$</span>school<span class="sc">==</span><span class="st">"8r_gym"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(data_test8r<span class="sc">$</span>score[data_test8r<span class="sc">$</span>school<span class="sc">==</span><span class="st">"4r_gym"</span>],data_test8r<span class="sc">$</span>score[data_test8r<span class="sc">$</span>school<span class="sc">==</span><span class="st">"8r_gym"</span>])</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -765,7 +765,7 @@ mean of x mean of y
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="fu">paste0</span>(<span class="st">"Akademický výkon (p = "</span>,</span>
 <span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">as.character</span>(<span class="fu">round</span>(t_test<span class="sc">$</span>p.value,<span class="dv">3</span>)),<span class="st">")"</span>),</span>
 <span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Score(points)"</span>,<span class="at">x =</span><span class="st">"Typ školy"</span>)<span class="sc">+</span></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -781,7 +781,7 @@ mean of x mean of y
 <p>Párový test nie je nič iné ako <a href="#jedno">jednovýberový test</a> aplikovaný na premennú <span class="math inline">\(X - Y,\)</span> keď <span class="math inline">\(n_x = n_y.\)</span> Príklad, ktorý sme v <a href="#jedno">sekcii</a> používali (zlepšenie) bol presne taký istý.</p>
 <p>Párový test so sebou nesie samozrejme viacej informácie ako obyčajný (nepárový) dvojvýberový test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(test <span class="sc">~</span> cas, <span class="at">data=</span>data_test, <span class="at">mu=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(test <span class="sc">~</span> cas, <span class="at">data=</span>data_test, <span class="at">mu=</span><span class="dv">15</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -796,7 +796,7 @@ sample estimates:
           64.87932           46.62629 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#t.test(test ~ cas, paired=TRUE,data=data_test, mu=15)</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(data_test<span class="sc">$</span>test[data_test<span class="sc">$</span>cas<span class="sc">==</span><span class="st">"pred"</span>],data_test<span class="sc">$</span>test[data_test<span class="sc">$</span>cas<span class="sc">==</span><span class="st">"po"</span>], <span class="at">paired=</span><span class="cn">TRUE</span>,<span class="at">data=</span>data_test, <span class="at">mu=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(data_test<span class="sc">$</span>test[data_test<span class="sc">$</span>cas<span class="sc">==</span><span class="st">"pred"</span>],data_test<span class="sc">$</span>test[data_test<span class="sc">$</span>cas<span class="sc">==</span><span class="st">"po"</span>], <span class="at">paired=</span><span class="cn">TRUE</span>,<span class="at">data=</span>data_test, <span class="at">mu=</span><span class="dv">15</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Paired t-test
@@ -810,7 +810,7 @@ sample estimates:
 mean difference 
       -18.25302 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(zmena, <span class="at">mu=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(zmena, <span class="at">mu=</span><span class="dv">15</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     One Sample t-test
@@ -877,7 +877,7 @@ mean in group 1 mean in group 2
 <p>Tu je implementácia testu, kde sa pozeráme, či je diaľničný dojazd rôzny cez rôzne kategórie aút (7 kategórií: minivan, compact, subcompact, midsize, suv, 2seater, pickup).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">aov</span>(hwy <span class="sc">~</span> class, <span class="at">data =</span> mpg)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_model)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F)    
 class         6   5683   947.2   83.39 &lt;2e-16 ***
@@ -967,14 +967,14 @@ P\left(\hat p - z^{(1-\alpha/2)}\sqrt{\frac{1}{n} \hat p (1- \hat p)} \leq  p  \
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>c_low  <span class="ot">&lt;-</span> hatp <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)<span class="sc">*</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">/</span><span class="dv">654</span>)</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>c_high <span class="ot">&lt;-</span> hatp <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)<span class="sc">*</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">/</span><span class="dv">654</span>)</span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(c_low, c_high),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(c_low, c_high),<span class="dv">3</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.155 0.215</code></pre>
 </div>
 </div>
 <p>Test, ktorý berie do úvahy skutočnosť, že binomicky rozdelená premenná nie je spojitá, je implementovaný pomocou</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     1-sample proportions test with continuity correction
@@ -991,7 +991,7 @@ sample estimates:
 </div>
 <p>a verzia vhodná na malé dátové vzorky (presný test)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="dv">121</span>,<span class="dv">654</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="dv">121</span>,<span class="dv">654</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Exact binomial test
@@ -1009,7 +1009,7 @@ probability of success
 <p>Z praktického hľadiska medzi nimi väčšinou nie je veľký rozdiel. Extenzívne porovnanie kvality rôznych testov je napríklad <a href="https://doi.org/10.1002/(SICI)1097-0258(19980430)17:8%3C857::AID-SIM777%3E3.0.CO;2-E">tu</a>.</p>
 <p>Poďme sa bližšie pozrieť pod kapotu <code>prop.test</code> s parametrom <code>correct=FALSE</code>. Budeme mechanicky meniť pravdepodobnosť testu a ukladať si p-hodnotu.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">p=</span><span class="fl">0.2</span>,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">p=</span><span class="fl">0.2</span>,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     1-sample proportions test without continuity correction
@@ -1024,11 +1024,11 @@ sample estimates:
 0.1850153 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>U <span class="ot">&lt;-</span> (<span class="dv">121</span> <span class="sc">-</span> <span class="dv">654</span><span class="sc">*</span><span class="fl">0.2</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">654</span><span class="sc">*</span><span class="fl">0.2</span><span class="sc">*</span>(<span class="dv">1</span><span class="fl">-0.2</span>))</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(U)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(U)))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3380497</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     1-sample proportions test without continuity correction
@@ -1048,7 +1048,7 @@ sample estimates:
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (ip <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>np){</span>
 <span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  pval_vec[ip] <span class="ot">&lt;-</span> <span class="fu">prop.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="at">p=</span>p_vec[ip],<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>p.value</span>
 <span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(p_vec[<span class="fu">which</span>(pval_vec<span class="sc">&gt;</span><span class="fl">0.05</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(p_vec[<span class="fu">which</span>(pval_vec<span class="sc">&gt;</span><span class="fl">0.05</span>)])</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.15713 0.21658</code></pre>
 </div>
@@ -1058,7 +1058,7 @@ sample estimates:
 <p>A teraz sa pozrime na exaktný test <code>binom.test</code>. Tento test nerobí vôbec žiadnu aproximáciu normálnym rozdelením.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># exact - based on binomial distribution</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="fl">0.2</span>,<span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="dv">121</span>,<span class="dv">654</span>,<span class="fl">0.2</span>,<span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Exact binomial test
@@ -1077,7 +1077,7 @@ probability of success
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">121</span>,<span class="fu">dbinom</span>(<span class="dv">121</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">"red"</span>)</span>
 <span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">dbinom</span>(<span class="dv">121</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">"red"</span>)</span>
 <span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">121</span>,<span class="fu">dbinom</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">121</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">"green"</span>)</span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">170</span>,<span class="fu">dbinom</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">170</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">170</span>,<span class="fu">dbinom</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">170</span>, <span class="dv">654</span>, <span class="at">p=</span><span class="fl">0.2</span>),<span class="at">col=</span><span class="st">"green"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1085,7 +1085,7 @@ probability of success
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">121</span>,<span class="dv">654</span>,<span class="fl">0.2</span>))<span class="sc">+</span><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">654</span>,<span class="dv">654</span>,<span class="fl">0.2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">121</span>,<span class="dv">654</span>,<span class="fl">0.2</span>))<span class="sc">+</span><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">141</span><span class="sc">:</span><span class="dv">654</span>,<span class="dv">654</span>,<span class="fl">0.2</span>))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3532905</code></pre>
 </div>
@@ -1104,28 +1104,28 @@ probability of success
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>hatp2 <span class="ot">&lt;-</span> <span class="dv">8</span><span class="sc">/</span><span class="dv">60</span></span>
 <span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>hatp <span class="ot">&lt;-</span> (<span class="dv">28</span><span class="sc">+</span><span class="dv">8</span>)<span class="sc">/</span>(<span class="dv">90</span><span class="sc">+</span><span class="dv">60</span>)</span>
 <span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>( Z <span class="ot">&lt;-</span> (hatp1<span class="sc">-</span>hatp2)<span class="sc">/</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">90</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">60</span>)) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>( Z <span class="ot">&lt;-</span> (hatp1<span class="sc">-</span>hatp2)<span class="sc">/</span><span class="fu">sqrt</span>(hatp<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>hatp)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">90</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">60</span>)) )</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.497562</code></pre>
 </div>
 </div>
 <p>a kritická hodnota obojstranného 95<span class="math inline">\(\%\)</span> testu je</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.959964</code></pre>
 </div>
 </div>
 <p>takže zamietame nulovú hypotézu, že dva insekticídy sú rovnaké. P-hodnota obojstranného testu je</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="fu">abs</span>(Z)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="fu">abs</span>(Z)))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.01250505</code></pre>
 </div>
 </div>
 <p>Iný spôsob na základe inej testovacej štatistiky s korekciou na spojitosť je</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">8</span>),<span class="fu">c</span>(<span class="dv">90</span>,<span class="dv">60</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">8</span>),<span class="fu">c</span>(<span class="dv">90</span>,<span class="dv">60</span>))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     2-sample test for equality of proportions with continuity correction
@@ -1195,7 +1195,7 @@ sample estimates:
 </div>
 </div>
 </div>
-<p>Teraz môžeme testovaciu založiť na tom, že očakávaná tabuľka za predpokladu nezávislosti by mala byť blízka tej pozorovanej. Ak budú rozdiely veľmi veľké, zamietame nulovú hypotézu nezávislosti.</p>
+<p>Teraz môžeme testovaciu štatistiku založiť na tom, že očakávaná tabuľka za predpokladu nezávislosti by mala byť blízka tej pozorovanej. Ak budú rozdiely veľmi veľké, zamietame nulovú hypotézu nezávislosti.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1215,10 +1215,10 @@ sample estimates:
 </ul>
 <p>Tu je mechanická implementácia v R ako aj výsledok za použitia funkcie <code>chisq.test</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(faraway)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(faraway)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>haireye</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>haireye</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     y   eye  hair
 1    5 green BLACK
@@ -1238,7 +1238,7 @@ sample estimates:
 15  26 brown   RED
 16   7 brown BLOND</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>(ct <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(y <span class="sc">~</span> hair <span class="sc">+</span> eye, haireye))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>(ct <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(y <span class="sc">~</span> hair <span class="sc">+</span> eye, haireye))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       eye
 hair    green hazel blue brown
@@ -1247,7 +1247,7 @@ hair    green hazel blue brown
   RED      14    14   17    26
   BLOND    16    10   94     7</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ct)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ct)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Call: xtabs(formula = y ~ hair + eye, data = haireye)
 Number of cases in table: 592 
@@ -1255,7 +1255,7 @@ Number of factors: 2
 Test for independence of all factors:
     Chisq = 138.29, df = 9, p-value = 2.325e-25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">250</span>,<span class="fu">dchisq</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">250</span>,<span class="at">df=</span><span class="dv">9</span>),<span class="at">type=</span><span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">250</span>,<span class="fu">dchisq</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">250</span>,<span class="at">df=</span><span class="dv">9</span>),<span class="at">type=</span><span class="st">"l"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1268,17 +1268,17 @@ Test for independence of all factors:
 <span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="co">#table under independency</span></span>
 <span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>indTable <span class="ot">&lt;-</span> h <span class="sc">%*%</span> <span class="fu">t</span>(e)</span>
-<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(indTable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(indTable)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">sum</span>(ct)</span>
 <span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( (ct <span class="sc">-</span> indTable<span class="sc">*</span>N)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(indTable<span class="sc">*</span>N) ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( (ct <span class="sc">-</span> indTable<span class="sc">*</span>N)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(indTable<span class="sc">*</span>N) ) </span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 138.2898</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(ct)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(ct)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1286,7 +1286,7 @@ Test for independence of all factors:
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(ct)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(ct)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
@@ -1447,34 +1447,34 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <!-- [R súbor k cvičeniam](https://www.dropbox.com/s/vqldvranyfat4ok/labs_week9.R?dl=0) -->
 <!-- [R súbor k cvičeniam 18.11.2022 riešenia](https://www.dropbox.com/s/e9gqygq4c0ydp4e/labs_week9_solutions.R?dl=0) -->
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.1</strong></span> Využite dáta <code>EuStockMarkets</code> z knižnice <code>datasets</code> a porovnajte priemerné denné výnosy nemeckého DAX a britského FTSE. Využijete párový alebo nepárový test? Dáta zobrazte.</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.1</strong></span> Využite dáta <code>EuStockMarkets</code> z knižnice <code>datasets</code> a porovnajte priemerné denné výnosy nemeckého DAX a britského FTSE. Využijete párový alebo nepárový test? Dáta zobrazte.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.2</strong></span> Z datasetu <code>USArrests</code> porovnajte úrovne rôznych zločinov podľa toho, či žije v mestách veľa ľudí. Dáta zobrazte.</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.2</strong></span> Z datasetu <code>USArrests</code> porovnajte úrovne rôznych zločinov podľa toho, či žije v mestách veľa ľudí. Dáta zobrazte.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.3</strong></span> V datasete <code>airquality</code> sú informácie o kvalite vzduchu. Otestujte jednostrannú hypotézu, či je rýchlosť vetra väčšia ako 11 míľ za hodinu. Podporte tento výsledok aj vizuálne. Porovnajte T-test so Z-testom.</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.3</strong></span> V datasete <code>airquality</code> sú informácie o kvalite vzduchu. Otestujte jednostrannú hypotézu, či je rýchlosť vetra väčšia ako 11 míľ za hodinu. Podporte tento výsledok aj vizuálne. Porovnajte T-test so Z-testom.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.4</strong></span> Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> otestuje hypotézu, že vo filmoch vydaných po roku 2000 (vrátane) sú komédie kratšie ako akčné filmy. Filmy vhodne zobrazte (napríklad ak je priveľa dát na zobrazenie všetkých filmov, môžete zobraziť aspoň náhodnú podvzorku).</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.4</strong></span> Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> otestuje hypotézu, že vo filmoch vydaných po roku 2000 (vrátane) sú komédie kratšie ako akčné filmy. Filmy vhodne zobrazte (napríklad ak je priveľa dát na zobrazenie všetkých filmov, môžete zobraziť aspoň náhodnú podvzorku).</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.5</strong></span> V datasete <code>energy</code> z knižnice <code>ISwR</code> je 24-hodinový energetický výdaj v MJ pre 22 pacientiek. Porovnajte a zobrazte energetický výdaj pre obézne a neobézne pacientky. Ešte predtým ako urobíte nejaký test dáta zobrazte. Aký výsledok očakávate? Je v tomto prípade test užitočný?</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.5</strong></span> V datasete <code>energy</code> z knižnice <code>ISwR</code> je 24-hodinový energetický výdaj v MJ pre 22 pacientiek. Porovnajte a zobrazte energetický výdaj pre obézne a neobézne pacientky. Ešte predtým ako urobíte nejaký test dáta zobrazte. Aký výsledok očakávate? Je v tomto prípade test užitočný?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.6</strong></span> V datasete <code>stroke</code> z knižnice <code>ISwR</code> sú informácie o 829 pacientoch z Tartu medzi 1991-1993, ktorí mali porážku. Porovnajte sumárne štatistiky medzi pacientami, ktorí umreli a ktorí prežili (v prípade kategorických premenných sa pozrite na proporcie). V ktorých premenných nachádzate signifikantné rozdiely? Hint: pomôžte si funkciou <code>st</code> z knižnice <code>vtable</code>. Vaše zistenia interpretujte.</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.6</strong></span> V datasete <code>stroke</code> z knižnice <code>ISwR</code> sú informácie o 829 pacientoch z Tartu medzi 1991-1993, ktorí mali porážku. Porovnajte sumárne štatistiky medzi pacientami, ktorí umreli a ktorí prežili (v prípade kategorických premenných sa pozrite na proporcie). V ktorých premenných nachádzate signifikantné rozdiely? Hint: pomôžte si funkciou <code>st</code> z knižnice <code>vtable</code>. Vaše zistenia interpretujte.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.7</strong></span> Zreprodukujte obrázok zo simulácie konfidenčných intervalov. Nastavte <code>set.seed(29)</code>, zvoľte <span class="math inline">\(n=10\)</span> a generujte vzorky z rozdelenia <span class="math inline">\(N(2,1).\)</span></p>
+<p><span class="theorem-title"><strong>Cvičenie 7.7</strong></span> Zreprodukujte obrázok zo simulácie konfidenčných intervalov. Nastavte <code>set.seed(29)</code>, zvoľte <span class="math inline">\(n=10\)</span> a generujte vzorky z rozdelenia <span class="math inline">\(N(2,1).\)</span></p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.8</strong></span> Mechanicky zreprodukujte konfidenčné intervaly z <a href="https://www.focus-research.sk/wp-content/uploads/2022/07/Volebne-preferencie-politickych-stran_jun-2022.pdf">tohoto prieskumu</a>.</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.8</strong></span> Mechanicky zreprodukujte konfidenčné intervaly z <a href="https://www.focus-research.sk/wp-content/uploads/2022/07/Volebne-preferencie-politickych-stran_jun-2022.pdf">tohoto prieskumu</a>.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.9</strong></span> <a href="https://www.median.sk/pdf/OSTATNE/4521527_RTVS_Hodnotenievlady_v22.pdf">Tento prieskum</a> neobsahuje kvantifikáciu neistoty pomocou konfidenčných intervalov. Doplňte informáciu o konfidenčných intervaloch na slajd na strane 8 (prieskum volebných preferencií). Je rozdiel v proporcii hlasujúcich pre 2 strany, ktoré získali <span class="math inline">\(5\%\)</span> a <span class="math inline">\(4.7\%\)</span> štatisticky významný?</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.9</strong></span> <a href="https://www.median.sk/pdf/OSTATNE/4521527_RTVS_Hodnotenievlady_v22.pdf">Tento prieskum</a> neobsahuje kvantifikáciu neistoty pomocou konfidenčných intervalov. Doplňte informáciu o konfidenčných intervaloch na slajd na strane 8 (prieskum volebných preferencií). Je rozdiel v proporcii hlasujúcich pre 2 strany, ktoré získali <span class="math inline">\(5\%\)</span> a <span class="math inline">\(4.7\%\)</span> štatisticky významný?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.10</strong></span> Z knižnice <code>ISLR</code> máme v datasete <code>Wage</code> informácie o mzdách. Vytvorte kategorickú premennú, či je daná mzda nad alebo pod mediánom. Pozrite sa ako táto kategorická premenná suvisí so vzdelaním a s rasou.</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.10</strong></span> Z knižnice <code>ISLR</code> máme v datasete <code>Wage</code> informácie o mzdách. Vytvorte kategorickú premennú, či je daná mzda nad alebo pod mediánom. Pozrite sa ako táto kategorická premenná suvisí so vzdelaním a s rasou.</p>
 </div>
 <!-- [R súbor z cvičení 23.11.2023](https://www.dropbox.com/scl/fi/ttr6hvp9nfs0g0ugsw2ub/20231123-labs07.R?rlkey=ih72oepnm4bbvznk1wlloy7u2&dl=0) -->
 <!-- ## Domáca úloha 3 -->
@@ -1588,12 +1588,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Skopírované!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Skopírované!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
