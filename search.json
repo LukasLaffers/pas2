@@ -24,7 +24,7 @@
     "href": "intro.html#r",
     "title": "1  Úvod do jazyka R",
     "section": "",
-    "text": "Rafael Irizarry: Data science in R  https://rafalab.github.io/dsbook/data.html\nW. N. Venables, D. M. Smith and the R Core Team. “An Introduction to R” https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf\nWickham, Hadley, and Garrett Grolemund. R for data science: import, tidy, transform, visualize, and model data. ” O’Reilly Media, Inc.”, 2016. https://r4ds.had.co.nz\nGrant McDermott: Intro to Data Science https://github.com/uo-ec607/lectures",
+    "text": "Rafael Irizarry: Data science in R https://rafalab.github.io/dsbook/data.html\nW. N. Venables, D. M. Smith and the R Core Team. “An Introduction to R” https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf\nWickham, Hadley, and Garrett Grolemund. R for data science: import, tidy, transform, visualize, and model data. ” O’Reilly Media, Inc.”, 2016. https://r4ds.had.co.nz\nGrant McDermott: Intro to Data Science https://github.com/uo-ec607/lectures",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Úvod do jazyka R</span>"
     ]
