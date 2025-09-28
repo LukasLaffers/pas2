@@ -332,12 +332,13 @@ window.Quarto = {
 <h2 data-number="3.2" class="anchored" data-anchor-id="ako-to-funguje"><span class="header-section-number">3.2</span> Ako to funguje</h2>
 <p>Z <a href="https://lukaslaffers.github.io/pas1/zvc.html#slabý-zákon-veľkých-č%C3%ADsel">teórie vieme</a>, že sa (za určitých podmienok) aritmetický priemer vypočítaný z iid vzorky blíži ku skutočnému populačnému priemeru.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Uvažujme udalosť <span class="math inline">\(A.\)</span> Jej pravdepodobnosť označme <span class="math inline">\(P(A).\)</span> Označme naviac funkciu <span class="math inline">\(I(A),\)</span> ktorá nadobúda hodnotu 1 ak udalosť <span class="math inline">\(A\)</span> nastala a hodnotu <span class="math inline">\(0\)</span> ak nenastala.</p>
-<p>[ I(A)=</p>
-<span class="math display">\[\begin{cases}
-    1,&amp; \text{ak udalosť A nastala,} \\
-    0,              &amp; \text{ak udalosť A nenastala.}
-\end{cases}\]</span>
-<p>]</p>
+<p><span class="math display">\[
+I(A)=
+\begin{cases}
+  1, &amp; \text{ak udalosť $A$ nastala},\\
+  0, &amp; \text{ak udalosť $A$ nenastala}.
+\end{cases}
+\]</span></p>
 <p>Vieme, že <span class="math inline">\(E[I(A)] = 1\cdot P(A) + 0\cdot P(A^C) = P(A).\)</span> Preto použitím <a href="https://lukaslaffers.github.io/pas1/zvc.html#slabý-zákon-veľkých-č%C3%ADsel">ZVČ</a> vieme, že ak máme <span class="math inline">\(I_1, I_2,\cdots,I_n\)</span> nezávislé realizácie <span class="math inline">\(I(A),\)</span> potom</p>
 <p><span class="math display">\[\frac{I_1 + \cdots + I_n}{n} \rightarrow_P P(A),\]</span> kde symbol <span class="math inline">\(\rightarrow_P\)</span> označuje <a href="https://lukaslaffers.github.io/pas1/zvc.html#konvergencia-podľa-pravdepodobnosti">konvergenciu podľa pravdepodobnosti</a>. Takže v skutočnosti len využívame <a href="https://lukaslaffers.github.io/pas1/set.html#kombinátorika">frekventistickú interpretáciu pravdepodobnosti</a>: <span class="math display">\[P(A) = \frac{\text{počet úspešných pokusov (teda udalosť $A$ nastane)}}{\text{počet všetkých možných pokusov}}.\]</span></p>
 <div id="exm-" class="Example theorem example">
@@ -651,9 +652,6 @@ Attaching package: 'dplyr'</code></pre>
 <div id="exr-" class="Exercise theorem exercise">
 <p><span class="theorem-title"><strong>Cvičenie 3.11</strong></span> Aká, je šanca, medzi študentami absolovujúcimi tento kurz bude aspoň jedna dvojica s rovnakým dátumom narodenia?</p>
 <p>Aká je pravdepodobnostná distribúcia počtu ľudí, ktorí zdieľajú narodeniny s niekým iným v skupine 25ľudí?</p>
-</div>
-<div>
-<p>Prázdny súbor na cvičenie <a href="https://www.dropbox.com/scl/fi/lpk1gz8ckapwdj26p8ov5/cvicenie3-prazdne.R?rlkey=yf5tvyberm6e099fihvzzh1j8&e=1&dl=0">tu</a> </p>
 </div>
 <!-- [R súbor z cvičení zo 14.10.2022](https://www.dropbox.com/s/7p88mytf5pjpz1c/labs_week4.R?dl=0) -->
 <!-- [R súbor z cvičení zo 5.10.2023](https://www.dropbox.com/scl/fi/ce0o6duu7qys73499h40d/20231005-labs03.R?rlkey=hbwjr8gwg427ale7acc8gng0w&dl=0) -->
