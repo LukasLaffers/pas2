@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Zobrazovanie dát – Pravdepodobnosť a štatistika 2</title>
+<title>7&nbsp; Zobrazovanie dát – Pravdepodobnosť a štatistika 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./visual.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./visual.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Hľadať" onclick="window.quartoOpenSearch();">
@@ -166,38 +166,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Čistenie dát</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./depen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visual.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ttest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span></a>
   </div>
 </li>
     </ul>
@@ -210,16 +216,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Obsah</h2>
    
   <ul>
-  <li><a href="#zlé-vizualizácie" id="toc-zlé-vizualizácie" class="nav-link active" data-scroll-target="#zlé-vizualizácie"><span class="header-section-number">6.1</span> Zlé vizualizácie</a></li>
-  <li><a href="#dobré-vizualizácie" id="toc-dobré-vizualizácie" class="nav-link" data-scroll-target="#dobré-vizualizácie"><span class="header-section-number">6.2</span> Dobré vizualizácie</a></li>
-  <li><a href="#vizualizácia-v-rku-ggplot2-knižnica" id="toc-vizualizácia-v-rku-ggplot2-knižnica" class="nav-link" data-scroll-target="#vizualizácia-v-rku-ggplot2-knižnica"><span class="header-section-number">6.3</span> Vizualizácia v Rku: <code>ggplot2</code> knižnica</a>
+  <li><a href="#zlé-vizualizácie" id="toc-zlé-vizualizácie" class="nav-link active" data-scroll-target="#zlé-vizualizácie"><span class="header-section-number">7.1</span> Zlé vizualizácie</a></li>
+  <li><a href="#dobré-vizualizácie" id="toc-dobré-vizualizácie" class="nav-link" data-scroll-target="#dobré-vizualizácie"><span class="header-section-number">7.2</span> Dobré vizualizácie</a></li>
+  <li><a href="#vizualizácia-v-rku-ggplot2-knižnica" id="toc-vizualizácia-v-rku-ggplot2-knižnica" class="nav-link" data-scroll-target="#vizualizácia-v-rku-ggplot2-knižnica"><span class="header-section-number">7.3</span> Vizualizácia v Rku: <code>ggplot2</code> knižnica</a>
   <ul class="collapse">
-  <li><a href="#zobrazenie-závislosti-dvoch-premenných" id="toc-zobrazenie-závislosti-dvoch-premenných" class="nav-link" data-scroll-target="#zobrazenie-závislosti-dvoch-premenných"><span class="header-section-number">6.3.1</span> Zobrazenie závislosti dvoch premenných</a></li>
-  <li><a href="#zobrazenie-distribúcie-premennej" id="toc-zobrazenie-distribúcie-premennej" class="nav-link" data-scroll-target="#zobrazenie-distribúcie-premennej"><span class="header-section-number">6.3.2</span> Zobrazenie distribúcie premennej</a></li>
+  <li><a href="#zobrazenie-závislosti-dvoch-premenných" id="toc-zobrazenie-závislosti-dvoch-premenných" class="nav-link" data-scroll-target="#zobrazenie-závislosti-dvoch-premenných"><span class="header-section-number">7.3.1</span> Zobrazenie závislosti dvoch premenných</a></li>
+  <li><a href="#zobrazenie-distribúcie-premennej" id="toc-zobrazenie-distribúcie-premennej" class="nav-link" data-scroll-target="#zobrazenie-distribúcie-premennej"><span class="header-section-number">7.3.2</span> Zobrazenie distribúcie premennej</a></li>
   </ul></li>
-  <li><a href="#niektoré-princípy" id="toc-niektoré-princípy" class="nav-link" data-scroll-target="#niektoré-princípy"><span class="header-section-number">6.4</span> Niektoré princípy</a></li>
-  <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">6.5</span> Cvičenia</a></li>
-  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus"><span class="header-section-number">6.6</span> Bonus</a></li>
+  <li><a href="#niektoré-princípy" id="toc-niektoré-princípy" class="nav-link" data-scroll-target="#niektoré-princípy"><span class="header-section-number">7.4</span> Niektoré princípy</a></li>
+  <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">7.5</span> Cvičenia</a></li>
+  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus"><span class="header-section-number">7.6</span> Bonus</a></li>
   </ul>
 </nav>
     </div>
@@ -228,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="visual" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></h1>
+<h1 class="title"><span id="visual" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></h1>
 </div>
 
 
@@ -255,8 +261,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 </style>
 <p>Vhodné zobrazenie dát je tak trochu umenie. Treba nájsť vhodný typ grafu, farieb, písiem na plynulé odkomunikovanie myšlienky. Čo umenie nie je, je urobiť <strong>zlú</strong> vizualizáciu.</p>
-<section id="zlé-vizualizácie" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="zlé-vizualizácie"><span class="header-section-number">6.1</span> Zlé vizualizácie</h2>
+<section id="zlé-vizualizácie" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="zlé-vizualizácie"><span class="header-section-number">7.1</span> Zlé vizualizácie</h2>
 <p>Pri nasledujúcich obrázkov nebude príliš ťažké pochopiť, v čom sú problematické. V niektorých prípadoch ide o subjektívne hodnotenie.</p>
 <p>Častokrát <strong>proporcie nie sú zachované</strong>. Toto môže byť použité ako manipulatívna stratégia na demonštrovanie veľkého rastu.</p>
 <div class="cell" data-layout-align="center">
@@ -345,8 +351,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="dobré-vizualizácie" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="dobré-vizualizácie"><span class="header-section-number">6.2</span> Dobré vizualizácie</h2>
+<section id="dobré-vizualizácie" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="dobré-vizualizácie"><span class="header-section-number">7.2</span> Dobré vizualizácie</h2>
 <p>Dobrá vizualizácia je ako Rembrandtova kresba. Zaujme, odomunikuje emóciu, príbeh, vzbudí záujem a núti klásť otázky.</p>
 <p>Pozrime sa na nasledovný obrázok.</p>
 <div class="cell" data-layout-align="center">
@@ -382,11 +388,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>USA je ohromne iná krajina, čo sa týka zbraní. Veľmi veľmi iná. Grafické zobrazenie nám umožní tento rozdiel “pocítiť”, tým, že vidíme vzdialenosti. Porovnáme si najextrémnejšie protipóly v ostatku sveta - Filipíny a India. Vidíme ako sú vzdialené Rusko a Čína. Žiadne z týchto rozdielov ani zďaleka neobsiahnu rozdiel medzi USA a zvyškom sveta.</p>
 </section>
-<section id="vizualizácia-v-rku-ggplot2-knižnica" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="vizualizácia-v-rku-ggplot2-knižnica"><span class="header-section-number">6.3</span> Vizualizácia v Rku: <code>ggplot2</code> knižnica</h2>
+<section id="vizualizácia-v-rku-ggplot2-knižnica" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="vizualizácia-v-rku-ggplot2-knižnica"><span class="header-section-number">7.3</span> Vizualizácia v Rku: <code>ggplot2</code> knižnica</h2>
 <p><a href="https://r4ds.had.co.nz/data-visualisation.html">Knižnica <code>ggplot2</code></a> je veľmi populárnym spôsobom na vytváranie vizualizácií. Má vnútornú logiku: každý objekt sa skladá z vrstiev, ktoré majú určité atribúty. Názov <code>ggplot2</code> pochádza z “Grammar of Graphics”.</p>
-<section id="zobrazenie-závislosti-dvoch-premenných" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="zobrazenie-závislosti-dvoch-premenných"><span class="header-section-number">6.3.1</span> Zobrazenie závislosti dvoch premenných</h3>
+<section id="zobrazenie-závislosti-dvoch-premenných" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="zobrazenie-závislosti-dvoch-premenných"><span class="header-section-number">7.3.1</span> Zobrazenie závislosti dvoch premenných</h3>
 <p>Začnime príkladom, zobrazme si spotrebu aút (dataset <code>mpg</code> z knižnice <code>ggplot2</code>), konkrétne vzťah medzi diaľničným dojazdom v míľach <code>hwy</code> oproti objemu motora v litroch <code>displ</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -516,8 +522,8 @@ The following object is masked from 'package:lubridate':
 </div>
 </div>
 </section>
-<section id="zobrazenie-distribúcie-premennej" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="zobrazenie-distribúcie-premennej"><span class="header-section-number">6.3.2</span> Zobrazenie distribúcie premennej</h3>
+<section id="zobrazenie-distribúcie-premennej" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="zobrazenie-distribúcie-premennej"><span class="header-section-number">7.3.2</span> Zobrazenie distribúcie premennej</h3>
 <p>Vygenerujme si dáta, ktore budeme zobrazovať (inšpirované <a href="http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization">nasledovných odkazom</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2930</span>)</span>
@@ -637,8 +643,8 @@ The following object is masked from 'package:lubridate':
 </div>
 </section>
 </section>
-<section id="niektoré-princípy" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="niektoré-princípy"><span class="header-section-number">6.4</span> Niektoré princípy</h2>
+<section id="niektoré-princípy" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="niektoré-princípy"><span class="header-section-number">7.4</span> Niektoré princípy</h2>
 <p><strong>Individuálnym výstupom rozumieme na základe porovnávania podobných objektov.</strong></p>
 <p>Toto si vždy opakujeme, keď si nie sme nejakou voľbou istí. <a href="https://blog.datawrapper.de/category/datavis-dos-and-donts/">Toto</a> je vynikajúca séria článkov od Lisy Charlotte Muth, odporúčam tiež <a href="https://pubs.aeaweb.org/doi/pdf/10.1257/jep.28.1.209">prehľadový článok</a>, <a href="https://policyviz.com/pv_books/better-presentations-a-guide-for-scholars-researchers-and-wonks/">knihu o prezentáciách</a> a <a href="https://policyviz.com/pv_books/better-data-visualizations-a-guide-for-scholars-researchers-and-wonks/">vizualizáciách</a> od Jonathana Schwabisha.</p>
 <ul>
@@ -687,14 +693,14 @@ The following object is masked from 'package:lubridate':
 </div>
 <p><br></p>
 </section>
-<section id="cvičenia" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">6.5</span> Cvičenia</h2>
+<section id="cvičenia" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">7.5</span> Cvičenia</h2>
 <!-- [R súbor k cvičeniam](https://www.dropbox.com/scl/fi/bwacjvql5q1klrwcz7doy/20231025-labs06-base.R?rlkey=b352e9yvxfp4gjis4v0sbceoy&dl=0) -->
 <!-- [R súbor k cvičeniam (riešenia) 26.10.2023](https://www.dropbox.com/s/k9ie2nuqcf2ryp5/20231026-labs06.R?dl=0) -->
 <!-- [R súbor k cvičeniam (riešenia) 9.11.2023](https://www.dropbox.com/scl/fi/4d5md4hkof8axeijumgrr/20231109-labs06-part2.R?rlkey=xg3hvy3g3sklhkytmo1e7vni2&dl=0) -->
 <!-- [R súbor k cvičeniam (riešenia) 3.11.2022](https://www.dropbox.com/s/plw8hvv5bz9fuws/labs_week7_solutions.R?dl=0) -->
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 6.1</strong></span> Použite túto náhodnú podvzorku filmov z knižnice <code>ggplot2movies</code>.</p>
+<p><span class="theorem-title"><strong>Cvičenie 7.1</strong></span> Použite túto náhodnú podvzorku filmov z knižnice <code>ggplot2movies</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(eatATA)</span>
@@ -757,8 +763,8 @@ The following object is masked from 'package:lubridate':
 <p>(Pri poslednom grafe potrebujete vytvoriť novú premennú.)</p>
 </div>
 </section>
-<section id="bonus" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="bonus"><span class="header-section-number">6.6</span> Bonus</h2>
+<section id="bonus" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="bonus"><span class="header-section-number">7.6</span> Bonus</h2>
 <p>Dáta vedia rozprávať príbehy. Je dôležité pozerať sa na dáta z rôznych strán, uhlov, aby sme pochopili do hĺbky všetky skryté súvislosti v ich plnej rozmanitosti.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1319,12 +1325,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./depen.html" class="pagination-link" aria-label="Náhodné vektory a súvis medzi náhodnými premennými">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./ttest.html" class="pagination-link" aria-label="Štatistické testovanie hypotéz">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

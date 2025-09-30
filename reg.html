@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Úvod do lineárnej regresie – Pravdepodobnosť a štatistika 2</title>
+<title>9&nbsp; Úvod do lineárnej regresie – Pravdepodobnosť a štatistika 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reg.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reg.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Hľadať" onclick="window.quartoOpenSearch();">
@@ -195,38 +195,44 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Čistenie dát</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./depen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ttest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reg.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span></a>
   </div>
 </li>
     </ul>
@@ -239,24 +245,24 @@ window.Quarto = {
     <h2 id="toc-title">Obsah</h2>
    
   <ul>
-  <li><a href="#lineárny-regresný-model" id="toc-lineárny-regresný-model" class="nav-link active" data-scroll-target="#lineárny-regresný-model"><span class="header-section-number">8.1</span> Lineárny regresný model</a></li>
-  <li><a href="#maticová-notácia" id="toc-maticová-notácia" class="nav-link" data-scroll-target="#maticová-notácia"><span class="header-section-number">8.2</span> Maticová notácia</a></li>
-  <li><a href="#názvoslovie" id="toc-názvoslovie" class="nav-link" data-scroll-target="#názvoslovie"><span class="header-section-number">8.3</span> Názvoslovie</a></li>
-  <li><a href="#ako-na-to" id="toc-ako-na-to" class="nav-link" data-scroll-target="#ako-na-to"><span class="header-section-number">8.4</span> Ako na to</a></li>
-  <li><a href="#geometria-najmenších-štvorcov" id="toc-geometria-najmenších-štvorcov" class="nav-link" data-scroll-target="#geometria-najmenších-štvorcov"><span class="header-section-number">8.5</span> Geometria najmenších štvorcov</a></li>
-  <li><a href="#konfidenčné-intervaly" id="toc-konfidenčné-intervaly" class="nav-link" data-scroll-target="#konfidenčné-intervaly"><span class="header-section-number">8.6</span> Konfidenčné intervaly</a></li>
-  <li><a href="#viacrozmerná-lineárna-regresia" id="toc-viacrozmerná-lineárna-regresia" class="nav-link" data-scroll-target="#viacrozmerná-lineárna-regresia"><span class="header-section-number">8.7</span> Viacrozmerná lineárna regresia</a></li>
-  <li><a href="#nelineárne-vzťahy-a-lineárna-regresia" id="toc-nelineárne-vzťahy-a-lineárna-regresia" class="nav-link" data-scroll-target="#nelineárne-vzťahy-a-lineárna-regresia"><span class="header-section-number">8.8</span> Nelineárne vzťahy a lineárna regresia</a></li>
-  <li><a href="#testovanie-podmodelov" id="toc-testovanie-podmodelov" class="nav-link" data-scroll-target="#testovanie-podmodelov"><span class="header-section-number">8.9</span> Testovanie podmodelov</a></li>
-  <li><a href="#transformácie-a-interpretácia" id="toc-transformácie-a-interpretácia" class="nav-link" data-scroll-target="#transformácie-a-interpretácia"><span class="header-section-number">8.10</span> Transformácie a interpretácia</a>
+  <li><a href="#lineárny-regresný-model" id="toc-lineárny-regresný-model" class="nav-link active" data-scroll-target="#lineárny-regresný-model"><span class="header-section-number">9.1</span> Lineárny regresný model</a></li>
+  <li><a href="#maticová-notácia" id="toc-maticová-notácia" class="nav-link" data-scroll-target="#maticová-notácia"><span class="header-section-number">9.2</span> Maticová notácia</a></li>
+  <li><a href="#názvoslovie" id="toc-názvoslovie" class="nav-link" data-scroll-target="#názvoslovie"><span class="header-section-number">9.3</span> Názvoslovie</a></li>
+  <li><a href="#ako-na-to" id="toc-ako-na-to" class="nav-link" data-scroll-target="#ako-na-to"><span class="header-section-number">9.4</span> Ako na to</a></li>
+  <li><a href="#geometria-najmenších-štvorcov" id="toc-geometria-najmenších-štvorcov" class="nav-link" data-scroll-target="#geometria-najmenších-štvorcov"><span class="header-section-number">9.5</span> Geometria najmenších štvorcov</a></li>
+  <li><a href="#konfidenčné-intervaly" id="toc-konfidenčné-intervaly" class="nav-link" data-scroll-target="#konfidenčné-intervaly"><span class="header-section-number">9.6</span> Konfidenčné intervaly</a></li>
+  <li><a href="#viacrozmerná-lineárna-regresia" id="toc-viacrozmerná-lineárna-regresia" class="nav-link" data-scroll-target="#viacrozmerná-lineárna-regresia"><span class="header-section-number">9.7</span> Viacrozmerná lineárna regresia</a></li>
+  <li><a href="#nelineárne-vzťahy-a-lineárna-regresia" id="toc-nelineárne-vzťahy-a-lineárna-regresia" class="nav-link" data-scroll-target="#nelineárne-vzťahy-a-lineárna-regresia"><span class="header-section-number">9.8</span> Nelineárne vzťahy a lineárna regresia</a></li>
+  <li><a href="#testovanie-podmodelov" id="toc-testovanie-podmodelov" class="nav-link" data-scroll-target="#testovanie-podmodelov"><span class="header-section-number">9.9</span> Testovanie podmodelov</a></li>
+  <li><a href="#transformácie-a-interpretácia" id="toc-transformácie-a-interpretácia" class="nav-link" data-scroll-target="#transformácie-a-interpretácia"><span class="header-section-number">9.10</span> Transformácie a interpretácia</a>
   <ul class="collapse">
-  <li><a href="#level-level-model" id="toc-level-level-model" class="nav-link" data-scroll-target="#level-level-model"><span class="header-section-number">8.10.1</span> Level-level model</a></li>
-  <li><a href="#log-level-model" id="toc-log-level-model" class="nav-link" data-scroll-target="#log-level-model"><span class="header-section-number">8.10.2</span> Log-level model</a></li>
-  <li><a href="#level-log-model" id="toc-level-log-model" class="nav-link" data-scroll-target="#level-log-model"><span class="header-section-number">8.10.3</span> Level-log model</a></li>
-  <li><a href="#log-log-model" id="toc-log-log-model" class="nav-link" data-scroll-target="#log-log-model"><span class="header-section-number">8.10.4</span> Log-log model</a></li>
+  <li><a href="#level-level-model" id="toc-level-level-model" class="nav-link" data-scroll-target="#level-level-model"><span class="header-section-number">9.10.1</span> Level-level model</a></li>
+  <li><a href="#log-level-model" id="toc-log-level-model" class="nav-link" data-scroll-target="#log-level-model"><span class="header-section-number">9.10.2</span> Log-level model</a></li>
+  <li><a href="#level-log-model" id="toc-level-log-model" class="nav-link" data-scroll-target="#level-log-model"><span class="header-section-number">9.10.3</span> Level-log model</a></li>
+  <li><a href="#log-log-model" id="toc-log-log-model" class="nav-link" data-scroll-target="#log-log-model"><span class="header-section-number">9.10.4</span> Log-log model</a></li>
   </ul></li>
-  <li><a href="#zhrnutie" id="toc-zhrnutie" class="nav-link" data-scroll-target="#zhrnutie"><span class="header-section-number">8.11</span> Zhrnutie</a></li>
-  <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">8.12</span> Cvičenia</a></li>
+  <li><a href="#zhrnutie" id="toc-zhrnutie" class="nav-link" data-scroll-target="#zhrnutie"><span class="header-section-number">9.11</span> Zhrnutie</a></li>
+  <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">9.12</span> Cvičenia</a></li>
   </ul>
 </nav>
     </div>
@@ -265,7 +271,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="reg" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></h1>
+<h1 class="title"><span id="reg" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></h1>
 </div>
 
 
@@ -402,15 +408,15 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="lineárny-regresný-model" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="lineárny-regresný-model"><span class="header-section-number">8.1</span> Lineárny regresný model</h2>
+<section id="lineárny-regresný-model" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="lineárny-regresný-model"><span class="header-section-number">9.1</span> Lineárny regresný model</h2>
 <p>Môžeme sa na problém pozrieť nasledovne. Predpokladajme, že skutočné <span class="math inline">\(y_i\)</span> a <span class="math inline">\(x_i\)</span> sú v nasledujúcom vzťahu</p>
 <p><span class="math display">\[y_i = \beta_0 + \beta_1 x_i + \epsilon_i,\]</span> kde <span class="math inline">\(\epsilon_i\)</span> označuje aproximačnú chybu. Takto rozdelíme variabilitu v <span class="math inline">\(y_i\)</span> na systematickú časť (<span class="math inline">\(\beta_0 + \beta_1 x_i\)</span>) a nesystematickú časť (<span class="math inline">\(\epsilon_i\)</span>). Pomocou nášho odhadu <span class="math inline">\((\hat \beta_0, \hat \beta_1)\)</span> neznámych parametrov <span class="math inline">\((\beta_0, \beta_1)\)</span> teda dostávame <strong>odhad</strong> <span class="math inline">\(\hat \epsilon_i = y_i - (\hat \beta_0 + \hat \beta_1 x_i)\)</span> skutočných aproximačných chýb <span class="math inline">\(\epsilon_i\)</span>, ktoré sú nepozorované.</p>
 <p>Toto je samozrejme nejaké zjednodušenie. Nemusíme veriť, že je to <em>presne</em> tak, robíme to preto, aby sme systematizovali kvantifikáciu vzťahu medzi dvomi veličinami. Ak predpokláme o chybách, že sú rozdelené normálne</p>
 <p><span class="math display">\[\epsilon_i \sim N(0, \sigma^2),\]</span> tak potom vieme odvodiť aj pravdepodobnostné správanie samotných odhadov <span class="math inline">\((\hat \beta_0, \hat \beta_1),\)</span> ktoré majú taktiež normálne rozdelenie a sú centrované okolo skutočných hodnôt <span class="math inline">\((\beta_0,\beta_1).\)</span></p>
 </section>
-<section id="maticová-notácia" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="maticová-notácia"><span class="header-section-number">8.2</span> Maticová notácia</h2>
+<section id="maticová-notácia" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="maticová-notácia"><span class="header-section-number">9.2</span> Maticová notácia</h2>
 <p>Ak rovnice <span class="math inline">\(y_i = \beta_0 + \beta_1 x_i + \epsilon_i\)</span> napíšeme pod seba <span class="math inline">\(i = 1,2,\dots,n,\)</span> dostaneme</p>
 <p><span class="math display">\[ \begin{pmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix} = \begin{pmatrix}1 &amp; x_1 \\1 &amp; x_2 \\ \vdots&amp; \vdots \\ 1 &amp; x_n \end{pmatrix} \begin{pmatrix}\beta_0 \\ \beta_1 \end{pmatrix} + \begin{pmatrix}\epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \end{pmatrix}\]</span> alebo skrátene len <span class="math display">\[y = X\beta + \epsilon.\]</span></p>
 <p>Odhad minimalizujúci súčet štvorcov odchýlok je v maticovom zápise nasledovný:</p>
@@ -433,8 +439,8 @@ window.Quarto = {
 <p>Tento odhad variancie chýb použijeme na odhad kovariančnej matice <span class="math inline">\(\hat \beta\)</span>:</p>
 <p><span class="math display">\[\hat Var[\hat \beta] = \hat Var\left[\begin{pmatrix}\hat \beta_0 \\ \hat \beta_1 \end{pmatrix}\right] = \hat \sigma^2 (X^T X)^{-1}.\]</span> Diagonálne elementy <span class="math inline">\(2 \times 2\)</span> matice <span class="math inline">\(Var[\hat \beta]\)</span> sú <span class="math inline">\(Var\left[\hat \beta_0\right]\)</span> a <span class="math inline">\(Var\left[\hat \beta_1\right].\)</span> Podobne diagonálne členy odhadu (symetrickej) matice <span class="math inline">\(\hat [\hat \beta]\)</span> sú <span class="math inline">\(\hat Var\left[\hat \beta_0\right]\)</span> a <span class="math inline">\(\hat Var\left[\hat \beta_1\right]\)</span>, mimo diagonály sú <span class="math inline">\(\hat Cov\left[\hat \beta_0,\hat \beta_1\right]\)</span>.</p>
 </section>
-<section id="názvoslovie" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="názvoslovie"><span class="header-section-number">8.3</span> Názvoslovie</h2>
+<section id="názvoslovie" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="názvoslovie"><span class="header-section-number">9.3</span> Názvoslovie</h2>
 <p>Pripomeňme si, čo je čo. V matematike je pekným zvykom rozumieť, čo ktoré objekty označujú.</p>
 <ul>
 <li><span class="math inline">\(x_4\)</span> je náhodná premenná, ide o náhodnú premennú <span class="math inline">\(x\)</span> nameranú pre štvrté pozorovanie,</li>
@@ -456,8 +462,8 @@ window.Quarto = {
 <li><span class="math inline">\(\hat Var\left[\hat \beta\right] = \hat \sigma^2 (X^T X)^{-1}\)</span> je odhad kovariančnej matice náhodného vektora <span class="math inline">\(\hat \beta\)</span>.</li>
 </ul>
 </section>
-<section id="ako-na-to" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="ako-na-to"><span class="header-section-number">8.4</span> Ako na to</h2>
+<section id="ako-na-to" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="ako-na-to"><span class="header-section-number">9.4</span> Ako na to</h2>
 <p>Čiaru minimalizujúcu fit v zmysle najmenších štvorcov odchýlok dostaneme aj použitím funkcie <code>geom_smooth</code> možnosťou <code>method="lm"</code> a <code>formula = "y~x"</code> ako je uvedené nižšie.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -538,8 +544,8 @@ F-statistic: 42.75 on 1 and 8 DF,  p-value: 0.0001807</code></pre>
 <li>F štatistika testuje významnosť regresie, teda v tomto prípade porovnáva modely <span class="math inline">\(y_i = \beta_0 + \beta_1 x_i + \epsilon_i,\)</span> a <span class="math inline">\(y_i = \beta_0 + \epsilon_i,\)</span> takže v tomto prípade testuje <span class="math inline">\(H_0: \beta_1 = 0.\)</span> (Všimnime si, že p-hodnota je rovnaká ako v riadku pri <span class="math inline">\(\hat \beta_1\)</span>, až na zaokrúhlenie).</li>
 </ul>
 </section>
-<section id="geometria-najmenších-štvorcov" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="geometria-najmenších-štvorcov"><span class="header-section-number">8.5</span> Geometria najmenších štvorcov</h2>
+<section id="geometria-najmenších-štvorcov" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="geometria-najmenších-štvorcov"><span class="header-section-number">9.5</span> Geometria najmenších štvorcov</h2>
 <p>Metóda, ktorá nastavuje parametre neznámej priamky tak, že minimalizuje sumu štvorcov má zaujimavú geometrickú interpretáciu.</p>
 <p>Ide totiž o projekciu.</p>
 <p>&nbsp;</p>
@@ -576,8 +582,8 @@ F-statistic: 42.75 on 1 and 8 DF,  p-value: 0.0001807</code></pre>
 </div>
 <p>Ale to je tak vždy, keď sa komplexnú informáciu snažím skomprimovať do jedného čísla, svet je totiž rozmanitý.</p>
 </section>
-<section id="konfidenčné-intervaly" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="konfidenčné-intervaly"><span class="header-section-number">8.6</span> Konfidenčné intervaly</h2>
+<section id="konfidenčné-intervaly" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="konfidenčné-intervaly"><span class="header-section-number">9.6</span> Konfidenčné intervaly</h2>
 <p>Chceli by sme kvantifikovať neistotu spojenú s odhadom budúcich hodnôt. Ako veľmi si môžeme byť istí tým, že študent učiaci sa 20 hodín bude mať očakávaný počet bodov práve <span class="math inline">\(\hat \beta_0 + \hat \beta_1 20 = 46.52 + 1.12 \cdot 20 = 68.92\)</span>?</p>
 <p>Nakoľko vieme kvantifikovať neistotu spojenú s <span class="math inline">\(\hat \beta_0\)</span> a <span class="math inline">\(\hat \beta_1\)</span>, môžeme použiť na <span class="math inline">\(\hat \beta_0 + \hat \beta_1 x\)</span> pre akékoľvek číslo <span class="math inline">\(x\)</span>.</p>
 <p>Stredná hodnota pre modelovanú premennú ak by <span class="math inline">\(x\)</span> nadobúdalo hodnotu <span class="math inline">\(x_0\)</span> je <span class="math display">\[\hat y_0 = \hat \beta_0 + \hat \beta_1 x_0 =  (1, x_0) \begin{pmatrix} \hat \beta_0 \\ \hat \beta_1 \end{pmatrix}\]</span></p>
@@ -628,8 +634,8 @@ var(\hat y_0 + \epsilon_0) &amp;=&amp; var(\hat y_0)+ var(\epsilon_0) \\
 </div>
 </div>
 </section>
-<section id="viacrozmerná-lineárna-regresia" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="viacrozmerná-lineárna-regresia"><span class="header-section-number">8.7</span> Viacrozmerná lineárna regresia</h2>
+<section id="viacrozmerná-lineárna-regresia" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="viacrozmerná-lineárna-regresia"><span class="header-section-number">9.7</span> Viacrozmerná lineárna regresia</h2>
 <p>Doteraz nám lineárna regresia slúžila na modelovanie vzťahu medzi dvomi veličinami. Častokrát však chceme použiť mnoho rôznych faktorov na predikovanie nejakej premennej. Napríklad</p>
 <ul>
 <li>rôzne vlastnosti ojazdeného auta môžu determinovať jeho trhovú cenu,</li>
@@ -766,8 +772,8 @@ F-statistic: 859.6 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </section>
-<section id="nelineárne-vzťahy-a-lineárna-regresia" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="nelineárne-vzťahy-a-lineárna-regresia"><span class="header-section-number">8.8</span> Nelineárne vzťahy a lineárna regresia</h2>
+<section id="nelineárne-vzťahy-a-lineárna-regresia" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="nelineárne-vzťahy-a-lineárna-regresia"><span class="header-section-number">9.8</span> Nelineárne vzťahy a lineárna regresia</h2>
 <p>Niekedy je závislosť medzi dvomi premennými zjavne nelineárna. Ak sa nazdávame, že by bola vhodne modelovaná kvadratickou funkciou, potom by sme chceli fitovať nasledovný model.</p>
 <p><span class="math display">\[y_i = \beta_0 + \beta_1 x_i + \beta_2 x^2_i + \epsilon_i,\]</span> Takýto model odhadneme nasledovne (dva spôsoby).</p>
 <div class="cell">
@@ -844,8 +850,8 @@ F-statistic:   719 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>Berúc do úvahy aj reklamu na Facebooku sa kvadratický člen pri Youtube ukazuje ako silne signifikantný.</p>
 </section>
-<section id="testovanie-podmodelov" class="level2" data-number="8.9">
-<h2 data-number="8.9" class="anchored" data-anchor-id="testovanie-podmodelov"><span class="header-section-number">8.9</span> Testovanie podmodelov</h2>
+<section id="testovanie-podmodelov" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="testovanie-podmodelov"><span class="header-section-number">9.9</span> Testovanie podmodelov</h2>
 <p>Ak sme v situácii, že máme 2 modely, jeden zložitejší, čo fituje dáta lepšie a jeden jednoduchší, ktorý je zasa elegantnejší. Ako sa medzi nimi rozhodujeme? Za predpokladu normality chýb na to môžeme použiť testovaciu štatistiku. Ak by bol menší model (ktorý je len špeciálnou verziou väčšieho modelu) správny, má nasledovná štatistika F rozdelenie.</p>
 <p><span class="math display">\[\frac{(RSS_{rest}-RSS_{full})/df}{\hat \sigma^2} \sim F_{df, n-p},\]</span> kde</p>
 <ul>
@@ -904,8 +910,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <p>Tu sme testovali reštrikciu, či je kvadratický člen <code>youtube</code> nevýznamný a zároveň či je prediktor <code>newspaper</code> nevýznamný, teda či sú prislúchajúce koeficienty nulové.</p>
 </section>
-<section id="transformácie-a-interpretácia" class="level2" data-number="8.10">
-<h2 data-number="8.10" class="anchored" data-anchor-id="transformácie-a-interpretácia"><span class="header-section-number">8.10</span> Transformácie a interpretácia</h2>
+<section id="transformácie-a-interpretácia" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="transformácie-a-interpretácia"><span class="header-section-number">9.10</span> Transformácie a interpretácia</h2>
 <p>V niektorých prípadoch modelujeme namiesto samotnej premennej jej rast. Napríklad je asi uveriteľnejšie uvažovať, že vzdelanie môže pomôcť zvýšit mzdu <strong>proporcionálne</strong>. To znamená, že absolvovanie vysokej školy zvýši mzdu v priemere približne o 20% a nie o 300eur. Rozdiel medzi 1000eur a 1300eur je totiž výraznejší z praktického hľadiska ako z 3500eur na 3800eur. Na modelovanie rastu používame logaritmickú transformáciu. Všetko si to ukážeme na našom príklade so študentami a ich výkonom na teste.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>hoursLearned <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">40</span>,<span class="dv">33</span>,<span class="dv">11</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="fl">13.5</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">30</span>,</span>
@@ -924,8 +930,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <li>Log-log model ak budeme modelovať rast skóre pomocou rastu hodín strávených učením <span class="math inline">\(\log(testScore_i) = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
 </ul>
 <p>Ktorý z týchto modelov je najrozumnejší? Treba zvažiť. Každopádne rozhodovanie by nemalo záležať na tom, ako dobre nám modelu fituje dáta. Do rozhovorov by sme mali prizvať niekoho, kto sa vyzná do danej problematiky.</p>
-<section id="level-level-model" class="level3" data-number="8.10.1">
-<h3 data-number="8.10.1" class="anchored" data-anchor-id="level-level-model"><span class="header-section-number">8.10.1</span> Level-level model</h3>
+<section id="level-level-model" class="level3" data-number="9.10.1">
+<h3 data-number="9.10.1" class="anchored" data-anchor-id="level-level-model"><span class="header-section-number">9.10.1</span> Level-level model</h3>
 <p><span class="math display">\[testScore_i = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#level - level</span></span>
@@ -984,8 +990,8 @@ y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
 </ul>
 <p>Toto nie sú detaily. Naozaj nie. Korektná interpretácia precízne komunikuje výsledky a podčiarkuje limity použitej štatistickej metódy.</p>
 </section>
-<section id="log-level-model" class="level3" data-number="8.10.2">
-<h3 data-number="8.10.2" class="anchored" data-anchor-id="log-level-model"><span class="header-section-number">8.10.2</span> Log-level model</h3>
+<section id="log-level-model" class="level3" data-number="9.10.2">
+<h3 data-number="9.10.2" class="anchored" data-anchor-id="log-level-model"><span class="header-section-number">9.10.2</span> Log-level model</h3>
 <p><span class="math display">\[\log(testScore_i) = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#log - level</span></span>
@@ -1064,8 +1070,8 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 </div>
 </div>
 </section>
-<section id="level-log-model" class="level3" data-number="8.10.3">
-<h3 data-number="8.10.3" class="anchored" data-anchor-id="level-log-model"><span class="header-section-number">8.10.3</span> Level-log model</h3>
+<section id="level-log-model" class="level3" data-number="9.10.3">
+<h3 data-number="9.10.3" class="anchored" data-anchor-id="level-log-model"><span class="header-section-number">9.10.3</span> Level-log model</h3>
 <p><span class="math display">\[testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i  + \epsilon_i\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#level - log</span></span>
@@ -1147,8 +1153,8 @@ y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
 </div>
 </div>
 </section>
-<section id="log-log-model" class="level3" data-number="8.10.4">
-<h3 data-number="8.10.4" class="anchored" data-anchor-id="log-log-model"><span class="header-section-number">8.10.4</span> Log-log model</h3>
+<section id="log-log-model" class="level3" data-number="9.10.4">
+<h3 data-number="9.10.4" class="anchored" data-anchor-id="log-log-model"><span class="header-section-number">9.10.4</span> Log-log model</h3>
 <p><span class="math display">\[\log(testScore_i) = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i  + \epsilon_i\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#log - log</span></span>
@@ -1233,12 +1239,12 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 </div>
 </section>
 </section>
-<section id="zhrnutie" class="level2" data-number="8.11">
-<h2 data-number="8.11" class="anchored" data-anchor-id="zhrnutie"><span class="header-section-number">8.11</span> Zhrnutie</h2>
+<section id="zhrnutie" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="zhrnutie"><span class="header-section-number">9.11</span> Zhrnutie</h2>
 <p>V tejto kapitole sme sa pozreli na kvantifikovanie lineárnej súvzťažnosti medzi dvomi premennými. Na to sme použili nástroj lineárnej regresie. Skúmali sme užitočnosť tohoto modelu ako aj štatistické vlastnosti odhadov, ktoré tento model produkuje. Potom sme pomocou lineárneho modelu používali viacero prediktorov na modelovanie nejakej premennej, ktorá nás zaujíma.</p>
 </section>
-<section id="cvičenia" class="level2" data-number="8.12">
-<h2 data-number="8.12" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">8.12</span> Cvičenia</h2>
+<section id="cvičenia" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">9.12</span> Cvičenia</h2>
 <!-- [R súbor k cvičeniam 18.11.2024](https://www.dropbox.com/scl/fi/5cc32hipzo6w5hj7msmik/labs_week10_2024.R?rlkey=bv1m779svscmsi9jdge1oi0m8&dl=0) -->
 <!-- [R súbor k cvičeniam 25.11.2024](https://www.dropbox.com/scl/fi/ynwhj35pvs5rn2oxzyyhw/labs_week11_2024.R?rlkey=n1smbvoyim1y52k59f4tuu9cz&dl=0) -->
 <!-- [R súbor s okomentovanými riešeniami](https://www.dropbox.com/scl/fi/0o6z6upbzgmsog5dny2gf/PAS_Cvicenia_kapitola8_komentare.R?rlkey=m7c2j3d8j5ohfv1abr139jbdk&dl=0) -->
@@ -1247,28 +1253,28 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 <!-- [R súbor k cvičeniam 24.11.2022 riešenia](https://www.dropbox.com/s/ivhfnghkk21x1gd/labs_week10_solutions.R?dl=0) -->
 <!-- [R súbor k cvičeniam 2.12.2022 (riešené)](https://www.dropbox.com/s/i4wldlfiuyqbb05/labs_week11.R?dl=0) -->
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 8.1</strong></span> Stiahnite si tieto <a href="https://www.dropbox.com/s/i7ia0n0elm1ts8l/Kompletny-prehlad-mesta-a-obce%20ciste.xlsx?dl=0">dáta</a> o veľkom Slovenskom antigénovom testovaní z roku 2020. Skúmajte aký je vzťah medzi percentom nakazených v prvom a v druhom kole testovania pre rôzne obce. Pozrite sa oddelene na malé, stredné a veľké obce.</p>
+<p><span class="theorem-title"><strong>Cvičenie 9.1</strong></span> Stiahnite si tieto <a href="https://www.dropbox.com/s/i7ia0n0elm1ts8l/Kompletny-prehlad-mesta-a-obce%20ciste.xlsx?dl=0">dáta</a> o veľkom Slovenskom antigénovom testovaní z roku 2020. Skúmajte aký je vzťah medzi percentom nakazených v prvom a v druhom kole testovania pre rôzne obce. Pozrite sa oddelene na malé, stredné a veľké obce.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 8.2</strong></span> Mechanicky spočítajte ESS, RSS a ESS a overte ich vzťah. Potom zrátajte <span class="math inline">\(R^2\)</span> a porovnajte s výsledkom v sumárnej tabuľke.</p>
+<p><span class="theorem-title"><strong>Cvičenie 9.2</strong></span> Mechanicky spočítajte ESS, RSS a ESS a overte ich vzťah. Potom zrátajte <span class="math inline">\(R^2\)</span> a porovnajte s výsledkom v sumárnej tabuľke.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 8.3</strong></span> Mechanicky zreprodukujte všetky výsledky (okrem adjusted <span class="math inline">\(R^2\)</span>) zo sumárnej tabuľke. (Toto je užitočné cvičenie.)</p>
+<p><span class="theorem-title"><strong>Cvičenie 9.3</strong></span> Mechanicky zreprodukujte všetky výsledky (okrem adjusted <span class="math inline">\(R^2\)</span>) zo sumárnej tabuľke. (Toto je užitočné cvičenie.)</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 8.4</strong></span> Stiahnite si dataset <code>cars</code> z knižnice <code>dataset</code>. Zobrazte závislosť medzi brzdnou dráhou a rýchlosťou (brzdná dráha bude vysveltovaná premenná) a popíšte ich vzťah aj pomocou jednoduchého lineárneho regresného modelu. Odhadnite koeficienty pomocou funkcie <code>lm</code> a interpretujte výsledky v sumárnej tabuľke.</p>
+<p><span class="theorem-title"><strong>Cvičenie 9.4</strong></span> Stiahnite si dataset <code>cars</code> z knižnice <code>dataset</code>. Zobrazte závislosť medzi brzdnou dráhou a rýchlosťou (brzdná dráha bude vysveltovaná premenná) a popíšte ich vzťah aj pomocou jednoduchého lineárneho regresného modelu. Odhadnite koeficienty pomocou funkcie <code>lm</code> a interpretujte výsledky v sumárnej tabuľke.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 8.5</strong></span> Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> sa pozrite, či veľkosť rozpočtu vie predikovať priemerné hodnotenie. Na túto závislosť sa pozrite pre rôzne typy filmov a dáta spolu s regresnými priamkami vhodne zobrazte. Kriticky zhodnoťte model a výsledky opatrne interpretujte.</p>
+<p><span class="theorem-title"><strong>Cvičenie 9.5</strong></span> Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> sa pozrite, či veľkosť rozpočtu vie predikovať priemerné hodnotenie. Na túto závislosť sa pozrite pre rôzne typy filmov a dáta spolu s regresnými priamkami vhodne zobrazte. Kriticky zhodnoťte model a výsledky opatrne interpretujte.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 8.6</strong></span> Z datasetu <code>USArrests</code> porovnajte úrovne rôznych zločinov podľa toho, či žije v mestách veľa ľudí (<span class="math inline">\(y\)</span> budú <code>Murder</code>,<code>Assault</code>,<code>Rape</code> a <span class="math inline">\(x\)</span> bude <code>UrbanPop</code> ). Dáta zobrazte. Odhadnite koeficienty pomocou funkcie <code>lm</code> a interpretujte výsledky v sumárnej tabuľke.</p>
+<p><span class="theorem-title"><strong>Cvičenie 9.6</strong></span> Z datasetu <code>USArrests</code> porovnajte úrovne rôznych zločinov podľa toho, či žije v mestách veľa ľudí (<span class="math inline">\(y\)</span> budú <code>Murder</code>,<code>Assault</code>,<code>Rape</code> a <span class="math inline">\(x\)</span> bude <code>UrbanPop</code> ). Dáta zobrazte. Odhadnite koeficienty pomocou funkcie <code>lm</code> a interpretujte výsledky v sumárnej tabuľke.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 8.7</strong></span> Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> sa znovu pozrieme na predikciu priemerného hodnotenia. Pozrite sa, či typ filmu, rozpočet a dĺžka filmu vedia predikovať hodnotenie.</p>
+<p><span class="theorem-title"><strong>Cvičenie 9.7</strong></span> Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> sa znovu pozrieme na predikciu priemerného hodnotenia. Pozrite sa, či typ filmu, rozpočet a dĺžka filmu vedia predikovať hodnotenie.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 8.8</strong></span> Majme nasledovné dve skupiny študentov. Zaujíma nás, ako je počet hodín strávených učením asociovaný s dosiahnutým skóre v teste.</p>
+<p><span class="theorem-title"><strong>Cvičenie 9.8</strong></span> Majme nasledovné dve skupiny študentov. Zaujíma nás, ako je počet hodín strávených učením asociovaný s dosiahnutým skóre v teste.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># you measure how much they learned</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>hoursLearned <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">40</span>,<span class="dv">33</span>,<span class="dv">11</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="fl">13.5</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">30</span>,</span>
@@ -1741,12 +1747,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./ttest.html" class="pagination-link" aria-label="Štatistické testovanie hypotéz">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./report.html" class="pagination-link" aria-label="Komunikácia výsledkov">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Náhodné vektory a súvis medzi náhodnými premennými – Pravdepodobnosť a štatistika 2</title>
+<title>6&nbsp; Náhodné vektory a súvis medzi náhodnými premennými – Pravdepodobnosť a štatistika 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -146,7 +146,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./depen.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./depen.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Hľadať" onclick="window.quartoOpenSearch();">
@@ -197,38 +197,44 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Čistenie dát</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./depen.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ttest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span></a>
   </div>
 </li>
     </ul>
@@ -241,9 +247,9 @@ window.Quarto = {
     <h2 id="toc-title">Obsah</h2>
    
   <ul>
-  <li><a href="#závislosť-náhodných-premenných" id="toc-závislosť-náhodných-premenných" class="nav-link active" data-scroll-target="#závislosť-náhodných-premenných"><span class="header-section-number">5.1</span> Závislosť náhodných premenných</a></li>
-  <li><a href="#korelácia-nie-je-kauzalita" id="toc-korelácia-nie-je-kauzalita" class="nav-link" data-scroll-target="#korelácia-nie-je-kauzalita"><span class="header-section-number">5.2</span> Korelácia nie je kauzalita</a></li>
-  <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">5.3</span> Cvičenia</a></li>
+  <li><a href="#závislosť-náhodných-premenných" id="toc-závislosť-náhodných-premenných" class="nav-link active" data-scroll-target="#závislosť-náhodných-premenných"><span class="header-section-number">6.1</span> Závislosť náhodných premenných</a></li>
+  <li><a href="#korelácia-nie-je-kauzalita" id="toc-korelácia-nie-je-kauzalita" class="nav-link" data-scroll-target="#korelácia-nie-je-kauzalita"><span class="header-section-number">6.2</span> Korelácia nie je kauzalita</a></li>
+  <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">6.3</span> Cvičenia</a></li>
   </ul>
 </nav>
     </div>
@@ -252,7 +258,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="depen" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></h1>
+<h1 class="title"><span id="depen" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></h1>
 </div>
 
 
@@ -308,7 +314,7 @@ P\left(X_1 \in [a_1,b_1] \cap \dots \cap X_n \in [a_n,b_n] \right)  &amp;=&amp; 
 <p><span class="math display">\[\forall x_1 \in \mathbb{R}, \dots, \forall x_n \in \mathbb{R}: f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) = f_{X_1}(x_1) \dots f_{X_n}(x_n).\]</span> ak sú spojite rozdelené.</p>
 <p>Nezávislé náhodné premenné spolu vôbec nesúvisia. Preto informácia o správaní <em>jednotlivých</em> náhodných premenných je postačujúca na <strong>úplný popis</strong> celého pravdepodobnostného vektora.</p>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 5.1</strong></span> Majme dve náhodné premenné <span class="math inline">\((X, Y)\)</span>, ktorých pravdepodobnostná funkcia je popísaná nasledovnou tabuľkou:</p>
+<p><span class="theorem-title"><strong>Príklad 6.1</strong></span> Majme dve náhodné premenné <span class="math inline">\((X, Y)\)</span>, ktorých pravdepodobnostná funkcia je popísaná nasledovnou tabuľkou:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"X=1"</span>,<span class="st">"X=2"</span>, <span class="st">"X=3"</span>), </span>
@@ -385,8 +391,8 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 <p>Neplatí. Takže sme našli protipríklad na nezávislosť, takže náhodné premenné <span class="math inline">\(X\)</span> a <span class="math inline">\(Y\)</span> nie sú nezávislé. Nemusíme už skúšať ďalšie kombinácie. Napriek tomu, že sú nezávislé, tak <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">majú koreláciu rovnú nule</a>.</p>
 <p>To len hovorí o tom, že korelácia je špecifická miera závislosti, konkrétne <strong>lineárnej</strong> závislosti.</p>
 </div>
-<section id="závislosť-náhodných-premenných" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="závislosť-náhodných-premenných"><span class="header-section-number">5.1</span> Závislosť náhodných premenných</h2>
+<section id="závislosť-náhodných-premenných" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="závislosť-náhodných-premenných"><span class="header-section-number">6.1</span> Závislosť náhodných premenných</h2>
 <p>Teraz vieme, čo znamená keď sú náhodné premenné nezávislé. Keď sú <a href="https://lukaslaffers.github.io/pas1/cov.html#nezávislé-náhodné-premenné">dve</a>, ale odteraz aj keď ich je viacej. Ak náhodné premenné nie sú nezávislé, mohli by sme chcieť merať <strong>ako veľmi sú závislé</strong>.</p>
 <p>Je veľa rôznych mier závislosti dvojíc náhodných premenných. Jednou z nich je <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">korelácia</a>, teda miera <strong>lineárnej</strong> závislosti.</p>
 <p>Pripomeňme si ju:</p>
@@ -445,7 +451,7 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 <li>je kladne semidefinitná, takže <span class="math display">\[a^T\text{Var}[X]a \geq 0,\]</span> pre akýkoľvek vektor <span class="math inline">\(a \in \mathbb{R}^n.\)</span> Toto platí lebo <span class="math inline">\(\text{Var}[a^T X] = a^T\text{Var}[X]a\)</span> a zároveň vieme, že <span class="math inline">\(\text{Var}[Z] \geq 0\)</span> pre akúkoľvek náhodnú premennú a teda aj pre <span class="math inline">\(Z=a^T X.\)</span></li>
 </ul>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 5.2</strong></span> Pozrime sa na korelácie rôznych premenných náhodnej podvzorky filmov z knižnice <code>ggplot2movies</code>.</p>
+<p><span class="theorem-title"><strong>Príklad 6.2</strong></span> Pozrime sa na korelácie rôznych premenných náhodnej podvzorky filmov z knižnice <code>ggplot2movies</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -508,7 +514,7 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 </div>
 </div>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 5.3</strong></span> Tu je situácia, keď je jedna premenná priamo lineárnou transformáciou druhej. Konkrétne <span class="math inline">\(X_2 = 2-3X_3\)</span></p>
+<p><span class="theorem-title"><strong>Príklad 6.3</strong></span> Tu je situácia, keď je jedna premenná priamo lineárnou transformáciou druhej. Konkrétne <span class="math inline">\(X_2 = 2-3X_3\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">232</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">20</span>,<span class="dv">1</span>)</span>
@@ -537,8 +543,8 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <p>Teraz vidíme, že <span class="math inline">\(\text{Corr}[X_1,X_2]\)</span> je “skoro” <span class="math inline">\(-1\)</span>.</p>
 </div>
 </section>
-<section id="korelácia-nie-je-kauzalita" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="korelácia-nie-je-kauzalita"><span class="header-section-number">5.2</span> Korelácia nie je kauzalita</h2>
+<section id="korelácia-nie-je-kauzalita" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="korelácia-nie-je-kauzalita"><span class="header-section-number">6.2</span> Korelácia nie je kauzalita</h2>
 <p>Toto ste počuli už mnohokrát.</p>
 <p>Doteraz sme nič nehovorili o tom, že čo je príčina, čo je následok, ako veci spolu <strong>kauzálne</strong> súvisia. A robili sme tak náročky. Pozrite sa na nasledujúci obrázok:</p>
 <div class="cell" data-layout-align="center">
@@ -555,13 +561,13 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <p>Na idenfikovanie príčiny a dôsledku, na odlíšenie asociácie od kauzality potrebujeme nejaký zdroj náhody. Ako v prípade randomizovanej štúdie v medicíne. <strong>Náhodne</strong> rozdelíme pacientov/tky na tých, ktorí dostanú liek a tých ktorí dostanú placebo. Ak sú tieto vzorky naozaj podobné (a ak máme pacientov/tky dostatočne veľa, tak budú podobné), tak je to naozaj ten liek a nie niečo iné čo mení prognózu pacienta/tky.</p>
 <p>Vo všeobecnosti je ťažké odlíšiť koreláciu od kauzality. Pozorované dáta, ktoré sú neexperimentálne, nás len málokedy informujú priamo o kauzálnom efekte. Zamyslite sa nad tým keď budete nabudúce pri rannej káve čítať noviny o tom, koľko káv denne Vám predĺži/skráti život.</p>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 5.4</strong></span> Toto je obrovská otázka, ktorej sa venuje veľká časť ekonómie pracovného trhu (labor economics). V dátach vidíme, že vzdelaní ľudia zarábajú v priemere viacej. Znamená to, že absolovovanie vysokej školy zvýši Vašu mzdu?</p>
+<p><span class="theorem-title"><strong>Príklad 6.4</strong></span> Toto je obrovská otázka, ktorej sa venuje veľká časť ekonómie pracovného trhu (labor economics). V dátach vidíme, že vzdelaní ľudia zarábajú v priemere viacej. Znamená to, že absolovovanie vysokej školy zvýši Vašu mzdu?</p>
 </div>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 5.5</strong></span> Mať malé triedy je drahé. Plat učiteľa/ľky je tým najvýznamnejším nákladom pri vzdelávaní. Oplatí sa mať triedy kde bude menej žiakov/čok?</p>
+<p><span class="theorem-title"><strong>Príklad 6.5</strong></span> Mať malé triedy je drahé. Plat učiteľa/ľky je tým najvýznamnejším nákladom pri vzdelávaní. Oplatí sa mať triedy kde bude menej žiakov/čok?</p>
 </div>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 5.6</strong></span> Niekedy nie sú experimentálne dáta dostupné z etických alebo iných príčin (nemôžem jednu skupinu náhodne vybraných ľudí prinútiť fajčiť, inej to zasa zakázať). Napriek tomu máme množstvo mechanizmov, ktorých pochopenie nám umožňuje porozumieť mechanizmu príčiny a následku napriek neexistencii experimentálnych dát. Dokonca Sir Ronald Fisher, jeden z najvýznamnejších štatistikov upozorňoval, že na základe korelácie nemožno odvodiť kauzálne závery. Dnes už je absolútny vedecký konsenzus o škodlivosti fajčenia. Napriek neexistencii experimentu. Mimochodom, Fisher bol tuhý fajčiar.</p>
+<p><span class="theorem-title"><strong>Príklad 6.6</strong></span> Niekedy nie sú experimentálne dáta dostupné z etických alebo iných príčin (nemôžem jednu skupinu náhodne vybraných ľudí prinútiť fajčiť, inej to zasa zakázať). Napriek tomu máme množstvo mechanizmov, ktorých pochopenie nám umožňuje porozumieť mechanizmu príčiny a následku napriek neexistencii experimentálnych dát. Dokonca Sir Ronald Fisher, jeden z najvýznamnejších štatistikov upozorňoval, že na základe korelácie nemožno odvodiť kauzálne závery. Dnes už je absolútny vedecký konsenzus o škodlivosti fajčenia. Napriek neexistencii experimentu. Mimochodom, Fisher bol tuhý fajčiar.</p>
 </div>
 <p>Zamyslite sa, prečo je náročné odpovedať na tieto otázky:</p>
 <ul>
@@ -587,21 +593,21 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 </div>
 </div>
 </section>
-<section id="cvičenia" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">5.3</span> Cvičenia</h2>
+<section id="cvičenia" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">6.3</span> Cvičenia</h2>
 <!-- [R súbor pre cvičenia](https://www.dropbox.com/s/zn6n8d9x8wq7ekg/labs_week6.R?dl=0) -->
 <!-- [R súbor z cvičení zo 19.10.2023](https://www.dropbox.com/scl/fi/t0rb4nxr3p6t74ldlncfe/20231012-labs05.R?rlkey=p5863jc8pfwxd9k63pvzsztrv&dl=0) -->
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 5.1</strong></span> Pozrite sa na korelačnú štruktúru premenných v nasledovnom dasete o autách.</p>
+<p><span class="theorem-title"><strong>Cvičenie 6.1</strong></span> Pozrite sa na korelačnú štruktúru premenných v nasledovnom dasete o autách.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data_car <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"http://www.r-exercises.com/wp-content/uploads/2017/04/auto.csv"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 5.2</strong></span> Pomocou simulácie overte vzťah <span class="math inline">\(\text{Var}[a^T X] = a^T\text{Var}[X]a\)</span> pre nejakú voľbu trojrozmerného náhodného vektora <span class="math inline">\(X\)</span>, ktorý vygenerujte s viacrozmerného normálneho rozdelenia pomocou funkcie <code>rmvnorm</code> z knižnice <code>mvtnorm</code>. Vyskúšajte rôzne trojrozmerné vektory <span class="math inline">\(a\)</span>.</p>
+<p><span class="theorem-title"><strong>Cvičenie 6.2</strong></span> Pomocou simulácie overte vzťah <span class="math inline">\(\text{Var}[a^T X] = a^T\text{Var}[X]a\)</span> pre nejakú voľbu trojrozmerného náhodného vektora <span class="math inline">\(X\)</span>, ktorý vygenerujte s viacrozmerného normálneho rozdelenia pomocou funkcie <code>rmvnorm</code> z knižnice <code>mvtnorm</code>. Vyskúšajte rôzne trojrozmerné vektory <span class="math inline">\(a\)</span>.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 5.3</strong></span> Nech <span class="math inline">\(X_3 = 3X_1 + X_2,\)</span> kde <span class="math inline">\(X_1 \sim N(20,3^2)\)</span> a <span class="math inline">\(X_2 \sim N(30,6^2)\)</span> a zároveň <span class="math inline">\(X_1\)</span> a <span class="math inline">\(X_2\)</span> sú nezávislé.</p>
+<p><span class="theorem-title"><strong>Cvičenie 6.3</strong></span> Nech <span class="math inline">\(X_3 = 3X_1 + X_2,\)</span> kde <span class="math inline">\(X_1 \sim N(20,3^2)\)</span> a <span class="math inline">\(X_2 \sim N(30,6^2)\)</span> a zároveň <span class="math inline">\(X_1\)</span> a <span class="math inline">\(X_2\)</span> sú nezávislé.</p>
 <ul>
 <li>Aká je variancia <span class="math inline">\(X_3\)</span>?</li>
 <li>Aká je kovariancia <span class="math inline">\(X_2\)</span> a <span class="math inline">\(X_3\)</span>?</li>
@@ -611,16 +617,16 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <p>Preskúmajte variabilitu Vašich odhadov. Aká počet simulácií je dostatočný na uspokojivú odpoveď (teoretické hodnoty sú dostatočne blízke tým, ktoré sú odhadnuté pomocou simulácií.)?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 5.4</strong></span> Vhodne zobrazte korelačnú maticu premenných: koncentrácie ozónu, úrovne slnečného žiarenia, rýchlosti vetra a teploty z datasetu <code>airquality</code> z knižnice <code>datasets</code>.</p>
+<p><span class="theorem-title"><strong>Cvičenie 6.4</strong></span> Vhodne zobrazte korelačnú maticu premenných: koncentrácie ozónu, úrovne slnečného žiarenia, rýchlosti vetra a teploty z datasetu <code>airquality</code> z knižnice <code>datasets</code>.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 5.5</strong></span> Dataset <code>EuStockMarkets</code> z knižnice <code>datasets</code> obsahuje denné dáta cien Európskych burzových indexov počas 90-tych rokov. Zobrazte ich do prehľadného grafu. Naviac zobrazte korelačnú štruktúru denných výnosov (výnos v dni <span class="math inline">\(t\)</span> je definovaný ako <span class="math inline">\(\frac{p_{t}-p_{t-1}}{p_{t-1}},\)</span> kde <span class="math inline">\(p_t\)</span> je cena cenného papiera na konci dňa <span class="math inline">\(t\)</span>.).</p>
+<p><span class="theorem-title"><strong>Cvičenie 6.5</strong></span> Dataset <code>EuStockMarkets</code> z knižnice <code>datasets</code> obsahuje denné dáta cien Európskych burzových indexov počas 90-tych rokov. Zobrazte ich do prehľadného grafu. Naviac zobrazte korelačnú štruktúru denných výnosov (výnos v dni <span class="math inline">\(t\)</span> je definovaný ako <span class="math inline">\(\frac{p_{t}-p_{t-1}}{p_{t-1}},\)</span> kde <span class="math inline">\(p_t\)</span> je cena cenného papiera na konci dňa <span class="math inline">\(t\)</span>.).</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 5.6</strong></span> Dataset <code>USArrests</code> z knižnice <code>datasets</code> má informácie o zatknutiach na 100’000 obyvateľov pre rôzne Americké štáty v roku 1973. Zobrazte korelačnú štruktúru týchto dát, pozrite sa ako sú asociované rôzne typy zatknutí s percentom ľudí žijúcich v mestách.</p>
+<p><span class="theorem-title"><strong>Cvičenie 6.6</strong></span> Dataset <code>USArrests</code> z knižnice <code>datasets</code> má informácie o zatknutiach na 100’000 obyvateľov pre rôzne Americké štáty v roku 1973. Zobrazte korelačnú štruktúru týchto dát, pozrite sa ako sú asociované rôzne typy zatknutí s percentom ľudí žijúcich v mestách.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 5.7</strong></span> V datasete <code>mtcars</code> z knižnice <code>datasets</code> sú informácie o 32 autách z roku 1974. Pozrite sa korelačnú štruktúru týchto premenných.</p>
+<p><span class="theorem-title"><strong>Cvičenie 6.7</strong></span> V datasete <code>mtcars</code> z knižnice <code>datasets</code> sú informácie o 32 autách z roku 1974. Pozrite sa korelačnú štruktúru týchto premenných.</p>
 </div>
 
 
@@ -1047,12 +1053,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./recap.html" class="pagination-link" aria-label="Zopakovanie pojmov">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./visual.html" class="pagination-link" aria-label="Zobrazovanie dát">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

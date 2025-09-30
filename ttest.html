@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Štatistické testovanie hypotéz – Pravdepodobnosť a štatistika 2</title>
+<title>8&nbsp; Štatistické testovanie hypotéz – Pravdepodobnosť a štatistika 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ttest.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ttest.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Prepnúť postrannú navigáciu" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Hľadať" onclick="window.quartoOpenSearch();">
@@ -195,38 +195,44 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Čistenie dát</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Zopakovanie pojmov</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./depen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Náhodné vektory a súvis medzi náhodnými premennými</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ttest.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Komunikácia výsledkov</span></span></a>
   </div>
 </li>
     </ul>
@@ -239,27 +245,27 @@ window.Quarto = {
     <h2 id="toc-title">Obsah</h2>
    
   <ul>
-  <li><a href="#jedno" id="toc-jedno" class="nav-link active" data-scroll-target="#jedno"><span class="header-section-number">7.1</span> Jednovýberové testy</a>
+  <li><a href="#jedno" id="toc-jedno" class="nav-link active" data-scroll-target="#jedno"><span class="header-section-number">8.1</span> Jednovýberové testy</a>
   <ul class="collapse">
-  <li><a href="#test-na-základe-normálnej-aproximácie-z-test" id="toc-test-na-základe-normálnej-aproximácie-z-test" class="nav-link" data-scroll-target="#test-na-základe-normálnej-aproximácie-z-test"><span class="header-section-number">7.1.1</span> Test na základe normálnej aproximácie (Z-test)</a></li>
-  <li><a href="#t-test" id="toc-t-test" class="nav-link" data-scroll-target="#t-test"><span class="header-section-number">7.1.2</span> T-test</a></li>
+  <li><a href="#test-na-základe-normálnej-aproximácie-z-test" id="toc-test-na-základe-normálnej-aproximácie-z-test" class="nav-link" data-scroll-target="#test-na-základe-normálnej-aproximácie-z-test"><span class="header-section-number">8.1.1</span> Test na základe normálnej aproximácie (Z-test)</a></li>
+  <li><a href="#t-test" id="toc-t-test" class="nav-link" data-scroll-target="#t-test"><span class="header-section-number">8.1.2</span> T-test</a></li>
   </ul></li>
-  <li><a href="#dvojvýberové-testy" id="toc-dvojvýberové-testy" class="nav-link" data-scroll-target="#dvojvýberové-testy"><span class="header-section-number">7.2</span> Dvojvýberové testy</a>
+  <li><a href="#dvojvýberové-testy" id="toc-dvojvýberové-testy" class="nav-link" data-scroll-target="#dvojvýberové-testy"><span class="header-section-number">8.2</span> Dvojvýberové testy</a>
   <ul class="collapse">
-  <li><a href="#rovnaká-variancia" id="toc-rovnaká-variancia" class="nav-link" data-scroll-target="#rovnaká-variancia"><span class="header-section-number">7.2.1</span> Rovnaká variancia</a></li>
-  <li><a href="#rôzna-variancia" id="toc-rôzna-variancia" class="nav-link" data-scroll-target="#rôzna-variancia"><span class="header-section-number">7.2.2</span> Rôzna variancia</a></li>
-  <li><a href="#párové-testy" id="toc-párové-testy" class="nav-link" data-scroll-target="#párové-testy"><span class="header-section-number">7.2.3</span> Párové testy</a></li>
+  <li><a href="#rovnaká-variancia" id="toc-rovnaká-variancia" class="nav-link" data-scroll-target="#rovnaká-variancia"><span class="header-section-number">8.2.1</span> Rovnaká variancia</a></li>
+  <li><a href="#rôzna-variancia" id="toc-rôzna-variancia" class="nav-link" data-scroll-target="#rôzna-variancia"><span class="header-section-number">8.2.2</span> Rôzna variancia</a></li>
+  <li><a href="#párové-testy" id="toc-párové-testy" class="nav-link" data-scroll-target="#párové-testy"><span class="header-section-number">8.2.3</span> Párové testy</a></li>
   </ul></li>
-  <li><a href="#porovnanie-stredných-hodnôt-viacerých-vzoriek-anova" id="toc-porovnanie-stredných-hodnôt-viacerých-vzoriek-anova" class="nav-link" data-scroll-target="#porovnanie-stredných-hodnôt-viacerých-vzoriek-anova"><span class="header-section-number">7.3</span> Porovnanie stredných hodnôt viacerých vzoriek (ANOVA)</a></li>
-  <li><a href="#konfidenčný-interval" id="toc-konfidenčný-interval" class="nav-link" data-scroll-target="#konfidenčný-interval"><span class="header-section-number">7.4</span> Konfidenčný interval</a></li>
-  <li><a href="#testovanie-podielu" id="toc-testovanie-podielu" class="nav-link" data-scroll-target="#testovanie-podielu"><span class="header-section-number">7.5</span> Testovanie podielu</a>
+  <li><a href="#porovnanie-stredných-hodnôt-viacerých-vzoriek-anova" id="toc-porovnanie-stredných-hodnôt-viacerých-vzoriek-anova" class="nav-link" data-scroll-target="#porovnanie-stredných-hodnôt-viacerých-vzoriek-anova"><span class="header-section-number">8.3</span> Porovnanie stredných hodnôt viacerých vzoriek (ANOVA)</a></li>
+  <li><a href="#konfidenčný-interval" id="toc-konfidenčný-interval" class="nav-link" data-scroll-target="#konfidenčný-interval"><span class="header-section-number">8.4</span> Konfidenčný interval</a></li>
+  <li><a href="#testovanie-podielu" id="toc-testovanie-podielu" class="nav-link" data-scroll-target="#testovanie-podielu"><span class="header-section-number">8.5</span> Testovanie podielu</a>
   <ul class="collapse">
-  <li><a href="#testovanie-podielu-pre-jednu-skupinu" id="toc-testovanie-podielu-pre-jednu-skupinu" class="nav-link" data-scroll-target="#testovanie-podielu-pre-jednu-skupinu"><span class="header-section-number">7.5.1</span> Testovanie podielu pre jednu skupinu</a></li>
-  <li><a href="#testovanie-rovnosti-podielov-pre-dve-skupiny" id="toc-testovanie-rovnosti-podielov-pre-dve-skupiny" class="nav-link" data-scroll-target="#testovanie-rovnosti-podielov-pre-dve-skupiny"><span class="header-section-number">7.5.2</span> Testovanie rovnosti podielov pre dve skupiny</a></li>
+  <li><a href="#testovanie-podielu-pre-jednu-skupinu" id="toc-testovanie-podielu-pre-jednu-skupinu" class="nav-link" data-scroll-target="#testovanie-podielu-pre-jednu-skupinu"><span class="header-section-number">8.5.1</span> Testovanie podielu pre jednu skupinu</a></li>
+  <li><a href="#testovanie-rovnosti-podielov-pre-dve-skupiny" id="toc-testovanie-rovnosti-podielov-pre-dve-skupiny" class="nav-link" data-scroll-target="#testovanie-rovnosti-podielov-pre-dve-skupiny"><span class="header-section-number">8.5.2</span> Testovanie rovnosti podielov pre dve skupiny</a></li>
   </ul></li>
-  <li><a href="#kontigenčné-tabuľky" id="toc-kontigenčné-tabuľky" class="nav-link" data-scroll-target="#kontigenčné-tabuľky"><span class="header-section-number">7.6</span> Kontigenčné tabuľky</a></li>
-  <li><a href="#zopár-poznámok-na-záver." id="toc-zopár-poznámok-na-záver." class="nav-link" data-scroll-target="#zopár-poznámok-na-záver."><span class="header-section-number">7.7</span> Zopár poznámok na záver.</a></li>
-  <li><a href="#prehľad" id="toc-prehľad" class="nav-link" data-scroll-target="#prehľad"><span class="header-section-number">7.8</span> Prehľad</a></li>
+  <li><a href="#kontigenčné-tabuľky" id="toc-kontigenčné-tabuľky" class="nav-link" data-scroll-target="#kontigenčné-tabuľky"><span class="header-section-number">8.6</span> Kontigenčné tabuľky</a></li>
+  <li><a href="#zopár-poznámok-na-záver." id="toc-zopár-poznámok-na-záver." class="nav-link" data-scroll-target="#zopár-poznámok-na-záver."><span class="header-section-number">8.7</span> Zopár poznámok na záver.</a></li>
+  <li><a href="#prehľad" id="toc-prehľad" class="nav-link" data-scroll-target="#prehľad"><span class="header-section-number">8.8</span> Prehľad</a></li>
   </ul>
 </nav>
     </div>
@@ -268,7 +274,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="ttest" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></h1>
+<h1 class="title"><span id="ttest" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Štatistické testovanie hypotéz</span></span></h1>
 </div>
 
 
@@ -372,11 +378,11 @@ window.Quarto = {
 </div>
 <p>Vyskúšali sme si a dozvedeli sme sa jednu neprekvapivú vec. S rastúcim počtom pozorovaní vieme dobre odlíšiť aj malý rozdiel medzi premennými.</p>
 <p>V realite my samozrejme nevieme z akej distribúcie tie dve vzorky pochádzajú.</p>
-<section id="jedno" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="jedno"><span class="header-section-number">7.1</span> Jednovýberové testy</h2>
+<section id="jedno" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="jedno"><span class="header-section-number">8.1</span> Jednovýberové testy</h2>
 <p>Teraz budeme mať len jednu vzorku pozorovaní. Náhodnú iid vzorku veľkosti <span class="math inline">\(n\)</span>.</p>
-<section id="test-na-základe-normálnej-aproximácie-z-test" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="test-na-základe-normálnej-aproximácie-z-test"><span class="header-section-number">7.1.1</span> Test na základe normálnej aproximácie (Z-test)</h3>
+<section id="test-na-základe-normálnej-aproximácie-z-test" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="test-na-základe-normálnej-aproximácie-z-test"><span class="header-section-number">8.1.1</span> Test na základe normálnej aproximácie (Z-test)</h3>
 <p>Začneme najjednoduchším prípadom. Prepokladajme, že naše pozorovania pochádzajú z normálneho rozdelenia s neznámou strednou hodnotou a s neznámou varianciou. Nech ide o zmenu výsledku na teste. Študent absolvuje test na začiatku semestra a potom (podobný) test na konci semestra. A chceli by sme vedieť či sa výsledky zlepšili. Teda, že či sa študenti niečo naučili.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">437</span>)</span>
@@ -508,8 +514,8 @@ mean of x
  18.25302 </code></pre>
 </div>
 </div>
-<section id="intuícia" class="level4" data-number="7.1.1.1">
-<h4 data-number="7.1.1.1" class="anchored" data-anchor-id="intuícia"><span class="header-section-number">7.1.1.1</span> Intuícia</h4>
+<section id="intuícia" class="level4" data-number="8.1.1.1">
+<h4 data-number="8.1.1.1" class="anchored" data-anchor-id="intuícia"><span class="header-section-number">8.1.1.1</span> Intuícia</h4>
 <p>Takže ešte raz. Predstavme si, že testovacia štatistika bude obrovská a p-hodnota veľmi veľmi malá.</p>
 <ul>
 <li>Ak by platila nulová hypotéza, tak by som naozaj neočakával takú veľkú hodnotu testovacej štatistiky.</li>
@@ -521,8 +527,8 @@ mean of x
 </ul>
 </section>
 </section>
-<section id="t-test" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="t-test"><span class="header-section-number">7.1.2</span> T-test</h3>
+<section id="t-test" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="t-test"><span class="header-section-number">8.1.2</span> T-test</h3>
 <p>V prípade, že <span class="math inline">\(X_1, X_2, X_3, \dots\)</span> nielenže sú iid, ale ak sú dokonca aj normálne rozdelené, takže ak <span class="math inline">\(X_1 \sim N(\mu,\sigma^2),\)</span> potom môžeme naše výsledky spresniť, budeme môcť <strong>presne popísať pravdepodobnostné správanie testovacej štatistiky</strong>. Predtým sme využili, že <span class="math inline">\(Z \rightarrow_D N(0,1).\)</span> No ale čo ak máme len málo pozorovaní? Vtedy nemôžeme použiť asymptotickú aproximáciu, tá funguje len ak máme dostatočne veľa pozorovaní, teda ak <span class="math inline">\(n\)</span> je dostatočne veľké.</p>
 <p>Keď sú však <span class="math inline">\(X_1 \sim N(\mu,\sigma^2)\)</span> (kedže postupnosť <span class="math inline">\(X_1, X_2,X_3,\dots\)</span> je iid, tak aj <span class="math inline">\(X_i \sim N(\mu,\sigma^2)\)</span> pre <span class="math inline">\(i = 1,2,3,\dots.\)</span>), tak potom priamo vieme rozdelenie náhodnej premennej <span class="math inline">\(\sqrt{n}\frac{\bar{X}_n - \mu}{S}\)</span>, ktorú teraz premenujeme na T.</p>
 <p><span class="math display">\[T \equiv \sqrt{n}\frac{\bar{X}_n - \mu}{S} \sim t_{n-1}\]</span> To preto lebo má <a href="https://lukaslaffers.github.io/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">t-rozdelenie s <span class="math inline">\(n-1\)</span> stupňami voľnosti</a>.</p>
@@ -572,14 +578,14 @@ mean of x
 </div>
 </section>
 </section>
-<section id="dvojvýberové-testy" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="dvojvýberové-testy"><span class="header-section-number">7.2</span> Dvojvýberové testy</h2>
+<section id="dvojvýberové-testy" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="dvojvýberové-testy"><span class="header-section-number">8.2</span> Dvojvýberové testy</h2>
 <p>Myšlienka ostáva tá istá. Jediné, čo sa mení, je <strong>testovacia štatistika</strong>.</p>
 <p>Teraz budeme mať dve rôzne vzorky z dvoch distribúcií. A budeme testovať rozdiel ich stredných hodnôt. Najčastejšie testujeme, či je rozdiel nula alebo nie.</p>
 <p>Uvažujme dve vzorky <span class="math inline">\(X_1, X_2, X_3, \dots, X_{n_{x}}\)</span> a <span class="math inline">\(Y_1, Y_2, Y_3, \dots Y_{n_{y}}\)</span>, veľkostí <span class="math inline">\(n_x\)</span> a <span class="math inline">\(n_y.\)</span></p>
 <p>T-testy, ktoré tu prezentujeme sa dajú nahradiť Z-testami, v prípade, že je dátová vzorka dostatočne veľká je skreslenie minimálne.</p>
-<section id="rovnaká-variancia" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="rovnaká-variancia"><span class="header-section-number">7.2.1</span> Rovnaká variancia</h3>
+<section id="rovnaká-variancia" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="rovnaká-variancia"><span class="header-section-number">8.2.1</span> Rovnaká variancia</h3>
 <p>Nech <span class="math display">\[X_1 \sim N(\mu_x,\sigma^2)\]</span> <span class="math display">\[Y_1 \sim N(\mu_y,\sigma^2)\]</span> a majme dve iid vzorky.</p>
 <p>Ak majú spoločnú rovnakú varianciu, tak ju môžeme odhadnúť spolu <span class="math display">\[S^2 = \frac{(n_x-1)S^2_x + (n_y - 1)S^2_y}{(n_x-1) + (n_y-1)}\]</span> teda vážený priemer výberových variancií <span class="math inline">\(X\)</span> a <span class="math inline">\(Y.\)</span></p>
 <p>Náhodná premenná</p>
@@ -698,8 +704,8 @@ mean in group FALSE  mean in group TRUE
 <p>Na základe dvojvýberového t-testu s rovnakými varianciami nevieme na hladine významnosti 5% zamietnuť, že priemerný dojazd v meste mladších aút je iný ako starších aút. Hodnota testovacej štatistiky je -0.5675 čomu zodpovedá p-hodnota 0.571.</p>
 </div>
 </section>
-<section id="rôzna-variancia" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="rôzna-variancia"><span class="header-section-number">7.2.2</span> Rôzna variancia</h3>
+<section id="rôzna-variancia" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="rôzna-variancia"><span class="header-section-number">8.2.2</span> Rôzna variancia</h3>
 <p>Nech <span class="math display">\[X_1 \sim N(\mu_x,\sigma_x^2)\]</span> <span class="math display">\[Y_1 \sim N(\mu_y,\sigma_y^2)\]</span> teda uvažujeme, že majú rôzne variancie.</p>
 <p>Náhodná premenná</p>
 <p><span class="math display">\[T \equiv \frac{(\bar{X} - \bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\frac{s^2_x}{n_x} + \frac{s^2_y}{n_y}}} \sim t_{df}\]</span> má približné t-rozdelenie s</p>
@@ -776,8 +782,8 @@ mean of x mean of y
 </div>
 <p>Na základe dvojvýberového t-testu s rôznymi varianciami (Welchov test) na hladine významnosti 5% zamietame, že priemerný výsledok na testoch 4ročných gymnázií je iný ako 8ročných gymnázií. Hodnota testovacej štatistiky je -6.78 čomu zodpovedá p-hodnota <span class="math inline">\(5.17 \cdot 10^{-9}\)</span>. Takže veľmi silne zamietame nulovú hypotézu, že sú tieto školy rovnaké, čo sa týka priemerných výsledkov testov.</p>
 </section>
-<section id="párové-testy" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="párové-testy"><span class="header-section-number">7.2.3</span> Párové testy</h3>
+<section id="párové-testy" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="párové-testy"><span class="header-section-number">8.2.3</span> Párové testy</h3>
 <p>Párový test nie je nič iné ako <a href="#jedno">jednovýberový test</a> aplikovaný na premennú <span class="math inline">\(X - Y,\)</span> keď <span class="math inline">\(n_x = n_y.\)</span> Príklad, ktorý sme v <a href="#jedno">sekcii</a> používali (zlepšenie) bol presne taký istý.</p>
 <p>Párový test so sebou nesie samozrejme viacej informácie ako obyčajný (nepárový) dvojvýberový test.</p>
 <div class="cell">
@@ -868,8 +874,8 @@ mean in group 1 mean in group 2
 </div>
 </section>
 </section>
-<section id="porovnanie-stredných-hodnôt-viacerých-vzoriek-anova" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="porovnanie-stredných-hodnôt-viacerých-vzoriek-anova"><span class="header-section-number">7.3</span> Porovnanie stredných hodnôt viacerých vzoriek (ANOVA)</h2>
+<section id="porovnanie-stredných-hodnôt-viacerých-vzoriek-anova" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="porovnanie-stredných-hodnôt-viacerých-vzoriek-anova"><span class="header-section-number">8.3</span> Porovnanie stredných hodnôt viacerých vzoriek (ANOVA)</h2>
 <p>Môžeme chcieť otestovať rovnosť stredných hodnôt vo viacerých ako v dvoch skupinách. Napríklad ak by sme testovali ako dobre fungujú 4 rôzne liečby.</p>
 <p>Za týmto účelom používame test ANOVA (analysis of variance). Jeho predpokladmi sú rovnaké variancie, normalita a nezávislosť vzoriek.</p>
 <p>Majte teraz <span class="math inline">\(k\)</span> rôznych skupín s veľkosťami dátových vzoriek <span class="math inline">\(n_1, n_2, \cdots n_k\)</span>. Nulová hypotéza, ktorá nás zaujíma je <span class="math display">\[H_0: \mu_{Y_1} = \mu_{Y_2} = \cdots \mu_{Y_k}\]</span> Testovacia štatistika má nasledovný tvar:</p>
@@ -888,8 +894,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <p>P-hodnota testu je veľmi malá a zamietame nulovú hypotézu, že rôzne kategórie áut majú rovnaký priemerný diaľničný dojazd (čo zasa asi nie je až také prekvapivé).</p>
 </section>
-<section id="konfidenčný-interval" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="konfidenčný-interval"><span class="header-section-number">7.4</span> Konfidenčný interval</h2>
+<section id="konfidenčný-interval" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="konfidenčný-interval"><span class="header-section-number">8.4</span> Konfidenčný interval</h2>
 <p>Doteraz sme používali p-hodnotu na kvantifikáciu toho, ako veľmi je nulová hypotéza kompatibilná s našou dátovou vzorkou. Iný, alternatívny pohľad na kvantifikovanie neistoty je pozrieť sa na množinu všetkých tých hodnôt, ktoré by neboli bývali zamietnuté pri nejakej fixnej hladine významnosti.</p>
 <p>Vezmime si napríklad jednovýberový T-test. T-štatistika <span class="math inline">\(T \equiv \sqrt{n}\frac{\bar{X}_n - \mu}{S}\)</span> má <span class="math inline">\(t_{n-1}\)</span> rozdelenie, takže</p>
 <p><span class="math display">\[P\left(t^{(\alpha/2)}_{n-1} \leq T \leq t^{(1-\alpha/2)}_{n-1}\right) = P\left(t^{(\alpha/2)}_{n-1} \leq \sqrt{n}\frac{\bar{X}_n - \mu}{S} \leq t^{(1-\alpha/2)}_{n-1}\right) = 1-\alpha,\]</span> kde <span class="math inline">\(t^{(\alpha)}_{n-1}\)</span> označuje <span class="math inline">\(100(\alpha/2)\%\)</span>-ný kvantil T-rozdelenia s <span class="math inline">\(n-1\)</span> stupňami voľnosti. Nakoľko je T-rozdelenie symetrické, máme <span class="math inline">\(t^{(\alpha/2)}_{n-1} = - t^{(1-\alpha/2)}_{n-1}.\)</span> Teda:</p>
@@ -919,16 +925,16 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <p>Pozorujeme, že spomedzi 100 simulácií <span class="math inline">\(95\%\)</span>ný konfidenčný interval pokryl skutočnú hodnotu 94 krát, zatiaľčo <span class="math inline">\(90\%\)</span>ný konfidenčný interval pokryl túto hodnotu 89 krát. Ak by sme mali týcho simulácii viacej, tento pomer by sa blížil k <span class="math inline">\(95\%\)</span> a <span class="math inline">\(90\%\)</span>.</p>
 </section>
-<section id="testovanie-podielu" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="testovanie-podielu"><span class="header-section-number">7.5</span> Testovanie podielu</h2>
+<section id="testovanie-podielu" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="testovanie-podielu"><span class="header-section-number">8.5</span> Testovanie podielu</h2>
 <p>Niekedy sme v situácii, že potrebujeme skúmať rozdiely medzi skupinami a premenná, ktorú sledujeme je binárna - áno/nie.</p>
 <ul>
 <li>Niečo nastalo/nenastalo</li>
 <li>Produkt bol zakúpený</li>
 <li>Pacient sa vyzdravil do 2 týždňov</li>
 </ul>
-<section id="testovanie-podielu-pre-jednu-skupinu" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="testovanie-podielu-pre-jednu-skupinu"><span class="header-section-number">7.5.1</span> Testovanie podielu pre jednu skupinu</h3>
+<section id="testovanie-podielu-pre-jednu-skupinu" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="testovanie-podielu-pre-jednu-skupinu"><span class="header-section-number">8.5.1</span> Testovanie podielu pre jednu skupinu</h3>
 <p>Predstavme si nasledovnú situáciu. Zo vzorky <span class="math inline">\(n=1024\)</span> respondentov získa v prieskume volebných preferencií určitá strana <span class="math inline">\(6.152\%\)</span> (63 hlasov). Zaujíma ju, či sa dostane do parlamentu, teda, či prekročí hranicu <span class="math inline">\(5\%\)</span>.</p>
 <p>Uvažujme, že počet respondentov, ktorí odpovedali, že by ju volili je rozdelený binomicky s neznámou pravdepodobnosťou <span class="math inline">\(p\)</span>:</p>
 <p><span class="math display">\[Y \sim Bin(n,p)\]</span>.</p>
@@ -1092,8 +1098,8 @@ probability of success
 </div>
 <p>Za predpokladu nulovej hypotézy priamo vieme rozdelenie. Sčítame pravdepodobnosti ešte extrémnejšej udalosti.</p>
 </section>
-<section id="testovanie-rovnosti-podielov-pre-dve-skupiny" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="testovanie-rovnosti-podielov-pre-dve-skupiny"><span class="header-section-number">7.5.2</span> Testovanie rovnosti podielov pre dve skupiny</h3>
+<section id="testovanie-rovnosti-podielov-pre-dve-skupiny" class="level3" data-number="8.5.2">
+<h3 data-number="8.5.2" class="anchored" data-anchor-id="testovanie-rovnosti-podielov-pre-dve-skupiny"><span class="header-section-number">8.5.2</span> Testovanie rovnosti podielov pre dve skupiny</h3>
 <p>Testovacia štatistika, ktorá testuje nulovú hypotézu, že proporcie v dvoch vzorkách veľkosti <span class="math inline">\(n_1\)</span> a <span class="math inline">\(n_2\)</span> sú rovnaké, má nasledovnú formu:</p>
 <p><span class="math display">\[Z \equiv \frac{\hat p_1 - \hat p_2 }{\sqrt{ \hat p (1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right) }} \rightarrow_D N(0,1),\]</span></p>
 <p>kde <span class="math inline">\(\hat p_1 = Y_1/n_1, \hat p_2 = Y_2/n_2, \hat p = \frac{Y_1 + Y_2}{n_1 + n_2}.\)</span></p>
@@ -1143,8 +1149,8 @@ sample estimates:
 </div>
 </section>
 </section>
-<section id="kontigenčné-tabuľky" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="kontigenčné-tabuľky"><span class="header-section-number">7.6</span> Kontigenčné tabuľky</h2>
+<section id="kontigenčné-tabuľky" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="kontigenčné-tabuľky"><span class="header-section-number">8.6</span> Kontigenčné tabuľky</h2>
 <p>Začnime príkladom. Chceli by sme vedieť či súvisí farba očí s farbou vlasov. Máme odpozorovanú vzorku 592 ĺudí v rôznych kategóriách. Neexistuje žiadne prirodzené číselné usporiadanie farieb, ide o <strong>kategorickú</strong> premennú.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -1297,8 +1303,8 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 </div>
 <p>Je neprekvapivé, že v tomto prípade veľmi silno zamietame nulovú hypotézu o tom, že farba očí a vlasov je nezávislá.</p>
 </section>
-<section id="zopár-poznámok-na-záver." class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="zopár-poznámok-na-záver."><span class="header-section-number">7.7</span> Zopár poznámok na záver.</h2>
+<section id="zopár-poznámok-na-záver." class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="zopár-poznámok-na-záver."><span class="header-section-number">8.7</span> Zopár poznámok na záver.</h2>
 <ul>
 <li>V praxi je užitočné zobraziť dáta. Vždy.</li>
 <li>V drvivej väčšine prípadov robíme test s nerovnakými varianciami. Málokedy máme dôvod uvažovať, že vzorky majú rovnakú varianciu.</li>
@@ -1316,8 +1322,8 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <li>Štatistické testovanie hypotéz môže vzbudiť dojem vedeckosti. Nie je však o nič vedeckejšie ako zobraziť dáta vhodnou vizualizáciou. Na testovanie sa pozeráme ako na ďalší nástroj, ktorého ambíciou je byť užitočné. To, že niečo zamietneme alebo nezamietneme neznamená, že to je alebo nie je pravda. Testovanie nám umožňuje systematizovať naše rozhodovanie a kvantifikovať intuíciu, ktorú nadobudneme pozeraním sa na surové dáta.</li>
 </ul>
 </section>
-<section id="prehľad" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="prehľad"><span class="header-section-number">7.8</span> Prehľad</h2>
+<section id="prehľad" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="prehľad"><span class="header-section-number">8.8</span> Prehľad</h2>
 <div style="font-size: 0.7em;">
 <div style="overflow-x: auto; width: 100%;">
 <table class="caption-top table">
@@ -1439,42 +1445,42 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 </tbody>
 </table>
 </div>
-<section id="cvičenia" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">7.9</span> Cvičenia</h2>
+<section id="cvičenia" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">8.9</span> Cvičenia</h2>
 <!-- [R súbor k cvičeniam 4.Nov](https://www.dropbox.com/scl/fi/34lf7hxqdvo8uyvlf2qu9/20231123-labs07-base.R?rlkey=t4ge8keij03yn7qufc3qp74sv&dl=0) -->
 <!-- [R súbor k cvičeniam 11.Nov](https://www.dropbox.com/scl/fi/5govia98jibfdf1ca9dxa/PAS2_Cvicenia_11Nov2024_base.R?rlkey=z78h68oqmdqiup6o67u3xp39k&dl=0) -->
 <!-- [R súbor k cvičeniam 11.11.2022 riešenia](https://www.dropbox.com/s/k5y1851ekt7jpe8/labs_week8_solutions_package.zip?dl=0) -->
 <!-- [R súbor k cvičeniam](https://www.dropbox.com/s/vqldvranyfat4ok/labs_week9.R?dl=0) -->
 <!-- [R súbor k cvičeniam 18.11.2022 riešenia](https://www.dropbox.com/s/e9gqygq4c0ydp4e/labs_week9_solutions.R?dl=0) -->
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.1</strong></span> Využite dáta <code>EuStockMarkets</code> z knižnice <code>datasets</code> a porovnajte priemerné denné výnosy nemeckého DAX a britského FTSE. Využijete párový alebo nepárový test? Dáta zobrazte.</p>
+<p><span class="theorem-title"><strong>Cvičenie 8.1</strong></span> Využite dáta <code>EuStockMarkets</code> z knižnice <code>datasets</code> a porovnajte priemerné denné výnosy nemeckého DAX a britského FTSE. Využijete párový alebo nepárový test? Dáta zobrazte.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.2</strong></span> Z datasetu <code>USArrests</code> porovnajte úrovne rôznych zločinov podľa toho, či žije v mestách veľa ľudí. Dáta zobrazte.</p>
+<p><span class="theorem-title"><strong>Cvičenie 8.2</strong></span> Z datasetu <code>USArrests</code> porovnajte úrovne rôznych zločinov podľa toho, či žije v mestách veľa ľudí. Dáta zobrazte.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.3</strong></span> V datasete <code>airquality</code> sú informácie o kvalite vzduchu. Otestujte jednostrannú hypotézu, či je rýchlosť vetra väčšia ako 11 míľ za hodinu. Podporte tento výsledok aj vizuálne. Porovnajte T-test so Z-testom.</p>
+<p><span class="theorem-title"><strong>Cvičenie 8.3</strong></span> V datasete <code>airquality</code> sú informácie o kvalite vzduchu. Otestujte jednostrannú hypotézu, či je rýchlosť vetra väčšia ako 11 míľ za hodinu. Podporte tento výsledok aj vizuálne. Porovnajte T-test so Z-testom.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.4</strong></span> Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> otestuje hypotézu, že vo filmoch vydaných po roku 2000 (vrátane) sú komédie kratšie ako akčné filmy. Filmy vhodne zobrazte (napríklad ak je priveľa dát na zobrazenie všetkých filmov, môžete zobraziť aspoň náhodnú podvzorku).</p>
+<p><span class="theorem-title"><strong>Cvičenie 8.4</strong></span> Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> otestuje hypotézu, že vo filmoch vydaných po roku 2000 (vrátane) sú komédie kratšie ako akčné filmy. Filmy vhodne zobrazte (napríklad ak je priveľa dát na zobrazenie všetkých filmov, môžete zobraziť aspoň náhodnú podvzorku).</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.5</strong></span> V datasete <code>energy</code> z knižnice <code>ISwR</code> je 24-hodinový energetický výdaj v MJ pre 22 pacientiek. Porovnajte a zobrazte energetický výdaj pre obézne a neobézne pacientky. Ešte predtým ako urobíte nejaký test dáta zobrazte. Aký výsledok očakávate? Je v tomto prípade test užitočný?</p>
+<p><span class="theorem-title"><strong>Cvičenie 8.5</strong></span> V datasete <code>energy</code> z knižnice <code>ISwR</code> je 24-hodinový energetický výdaj v MJ pre 22 pacientiek. Porovnajte a zobrazte energetický výdaj pre obézne a neobézne pacientky. Ešte predtým ako urobíte nejaký test dáta zobrazte. Aký výsledok očakávate? Je v tomto prípade test užitočný?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.6</strong></span> V datasete <code>stroke</code> z knižnice <code>ISwR</code> sú informácie o 829 pacientoch z Tartu medzi 1991-1993, ktorí mali porážku. Porovnajte sumárne štatistiky medzi pacientami, ktorí umreli a ktorí prežili (v prípade kategorických premenných sa pozrite na proporcie). V ktorých premenných nachádzate signifikantné rozdiely? Hint: pomôžte si funkciou <code>st</code> z knižnice <code>vtable</code>. Vaše zistenia interpretujte.</p>
+<p><span class="theorem-title"><strong>Cvičenie 8.6</strong></span> V datasete <code>stroke</code> z knižnice <code>ISwR</code> sú informácie o 829 pacientoch z Tartu medzi 1991-1993, ktorí mali porážku. Porovnajte sumárne štatistiky medzi pacientami, ktorí umreli a ktorí prežili (v prípade kategorických premenných sa pozrite na proporcie). V ktorých premenných nachádzate signifikantné rozdiely? Hint: pomôžte si funkciou <code>st</code> z knižnice <code>vtable</code>. Vaše zistenia interpretujte.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.7</strong></span> Zreprodukujte obrázok zo simulácie konfidenčných intervalov. Nastavte <code>set.seed(29)</code>, zvoľte <span class="math inline">\(n=10\)</span> a generujte vzorky z rozdelenia <span class="math inline">\(N(2,1).\)</span></p>
+<p><span class="theorem-title"><strong>Cvičenie 8.7</strong></span> Zreprodukujte obrázok zo simulácie konfidenčných intervalov. Nastavte <code>set.seed(29)</code>, zvoľte <span class="math inline">\(n=10\)</span> a generujte vzorky z rozdelenia <span class="math inline">\(N(2,1).\)</span></p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.8</strong></span> Mechanicky zreprodukujte konfidenčné intervaly z <a href="https://www.focus-research.sk/wp-content/uploads/2022/07/Volebne-preferencie-politickych-stran_jun-2022.pdf">tohoto prieskumu</a>.</p>
+<p><span class="theorem-title"><strong>Cvičenie 8.8</strong></span> Mechanicky zreprodukujte konfidenčné intervaly z <a href="https://www.focus-research.sk/wp-content/uploads/2022/07/Volebne-preferencie-politickych-stran_jun-2022.pdf">tohoto prieskumu</a>.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.9</strong></span> <a href="https://www.median.sk/pdf/OSTATNE/4521527_RTVS_Hodnotenievlady_v22.pdf">Tento prieskum</a> neobsahuje kvantifikáciu neistoty pomocou konfidenčných intervalov. Doplňte informáciu o konfidenčných intervaloch na slajd na strane 8 (prieskum volebných preferencií). Je rozdiel v proporcii hlasujúcich pre 2 strany, ktoré získali <span class="math inline">\(5\%\)</span> a <span class="math inline">\(4.7\%\)</span> štatisticky významný?</p>
+<p><span class="theorem-title"><strong>Cvičenie 8.9</strong></span> <a href="https://www.median.sk/pdf/OSTATNE/4521527_RTVS_Hodnotenievlady_v22.pdf">Tento prieskum</a> neobsahuje kvantifikáciu neistoty pomocou konfidenčných intervalov. Doplňte informáciu o konfidenčných intervaloch na slajd na strane 8 (prieskum volebných preferencií). Je rozdiel v proporcii hlasujúcich pre 2 strany, ktoré získali <span class="math inline">\(5\%\)</span> a <span class="math inline">\(4.7\%\)</span> štatisticky významný?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 7.10</strong></span> Z knižnice <code>ISLR</code> máme v datasete <code>Wage</code> informácie o mzdách. Vytvorte kategorickú premennú, či je daná mzda nad alebo pod mediánom. Pozrite sa ako táto kategorická premenná suvisí so vzdelaním a s rasou.</p>
+<p><span class="theorem-title"><strong>Cvičenie 8.10</strong></span> Z knižnice <code>ISLR</code> máme v datasete <code>Wage</code> informácie o mzdách. Vytvorte kategorickú premennú, či je daná mzda nad alebo pod mediánom. Pozrite sa ako táto kategorická premenná suvisí so vzdelaním a s rasou.</p>
 </div>
 <!-- [R súbor z cvičení 23.11.2023](https://www.dropbox.com/scl/fi/ttr6hvp9nfs0g0ugsw2ub/20231123-labs07.R?rlkey=ih72oepnm4bbvznk1wlloy7u2&dl=0) -->
 <!-- ## Domáca úloha 3 -->
@@ -1965,12 +1971,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./visual.html" class="pagination-link" aria-label="Zobrazovanie dát">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Zobrazovanie dát</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./reg.html" class="pagination-link" aria-label="Úvod do lineárnej regresie">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Úvod do lineárnej regresie</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
