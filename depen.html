@@ -277,7 +277,7 @@ window.Quarto = {
 
 <p>Odteraz budeme načas hovoriť o <strong>náhodnom vektore</strong>. Je to vektor náhodných premenných definovaných na rovnakom pravdepodobnostnom priestore. V <a href="https://lukaslaffers.github.io/pas1/cov.html">tejto kapitole</a> sme hovorili o dvojrozmernom náhodnom vektore, teraz to rozšírime a budeme hovoriť o <span class="math inline">\(n\)</span>-rozmernom náhodnom vektore <span class="math inline">\((X_1,X_2,\dots,X_n)^T.\)</span></p>
 <p>Tento pojem kľúčový na pochopenie štatistického testovania hypotéz, o ktorom budeme hovoriť neskôr. Ide o triviálne rozšírenie dvojrozmerného náhodného vektora, ktorý sme <a href="https://lukaslaffers.github.io/pas1/cov.html">opisovali skorej</a>.</p>
-<p><strong>Združená kumulatívna distribučná funkcia</strong> <span class="math inline">\(F_{XY}: \mathbb{R}^n \rightarrow [0,1]\)</span> náhodného vektora <span class="math inline">\((X_1,X_2,\dots,X_n)^T\)</span> je definovaná nasledovne:</p>
+<p><strong>Združená kumulatívna distribučná funkcia</strong> <span class="math inline">\(F_{X_1,X_2,\dots,X_n}: \mathbb{R}^n \rightarrow [0,1]\)</span> náhodného vektora <span class="math inline">\((X_1,X_2,\dots,X_n)^T\)</span> je definovaná nasledovne:</p>
 <span class="math display">\[\begin{eqnarray*}
 F_{X_1,X_2,\dots,X_n}(t_1,t_2,\dots,t_n) &amp;=&amp; P(X_1 \leq t_1 \cap X_2 \leq t_2 \cap \dots \cap X_n \leq t_n)\\
 &amp;=&amp; P(X_1 \leq t_1, X_2 \leq t_2, \dots , X_n \leq t_n).
@@ -438,12 +438,12 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 </div>
 <p>Korelačná štruktúra náhodného vektora <span class="math inline">\(X\)</span> je popísaná <strong>korelačnou maticou</strong> <span class="math inline">\(\text{Corr}[X]\)</span>, ktorej <span class="math inline">\(i,j\)</span>-ty prvok je daný <span class="math inline">\(\text{Corr}[X_i,X_j]\)</span>:</p>
 <p><span class="math display">\[{\small \text{Corr}[X] = \begin{pmatrix}
-\text{Var}[X_1] &amp; \text{Corr}[X_1, X_2] &amp; \cdots  &amp; \cdots &amp; \cdots  &amp; \text{Corr}[X_1, X_n]\\
-\text{Corr}[X_2, X_1] &amp; \text{Var}[X_1] &amp; \text{Corr}[X_2, X_3] &amp; \cdots &amp; \cdots &amp; \text{Corr}[X_2, X_n]\\
-\text{Corr}[X_3, X_1] &amp; \text{Corr}[X_3, X_2]&amp;  \text{Var}[X_3] &amp; \text{Corr}[X_3, X_4] &amp; \cdots &amp; \text{Corr}[X_3, X_n]\\
+1 &amp; \text{Corr}[X_1, X_2] &amp; \cdots  &amp; \cdots &amp; \cdots  &amp; \text{Corr}[X_1, X_n]\\
+\text{Corr}[X_2, X_1] &amp; 1 &amp; \text{Corr}[X_2, X_3] &amp; \cdots &amp; \cdots &amp; \text{Corr}[X_2, X_n]\\
+\text{Corr}[X_3, X_1] &amp; \text{Corr}[X_3, X_2]&amp;  1 &amp; \text{Corr}[X_3, X_4] &amp; \cdots &amp; \text{Corr}[X_3, X_n]\\
 \vdots &amp; &amp; \ddots &amp; \ddots &amp; &amp;  \vdots  \\
 \vdots &amp; &amp; &amp; \ddots &amp; \ddots &amp;   \vdots  \\
-\text{Corr}[X_n, X_1] &amp; \text{Corr}[X_n, X_2]&amp; \cdots &amp; \cdots &amp; \text{Corr}[X_n, X_{n-1}] &amp; \text{Var}[X_n]
+\text{Corr}[X_n, X_1] &amp; \text{Corr}[X_n, X_2]&amp; \cdots &amp; \cdots &amp; \text{Corr}[X_n, X_{n-1}] &amp; 1
 \end{pmatrix}}\]</span></p>
 <p>Podobne zadefinovaná je <strong>kovariančná matica</strong> <span class="math inline">\(\text{Var}[X]\)</span>, ktorej <span class="math inline">\(i,j\)</span>-ty prvok je daný <span class="math inline">\(\text{Cov}[X_i,X_j]\)</span>. Táto matica</p>
 <ul>
