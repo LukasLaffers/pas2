@@ -445,7 +445,16 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 \vdots &amp; &amp; &amp; \ddots &amp; \ddots &amp;   \vdots  \\
 \text{Corr}[X_n, X_1] &amp; \text{Corr}[X_n, X_2]&amp; \cdots &amp; \cdots &amp; \text{Corr}[X_n, X_{n-1}] &amp; 1
 \end{pmatrix}}\]</span></p>
-<p>Podobne zadefinovaná je <strong>kovariančná matica</strong> <span class="math inline">\(\text{Var}[X]\)</span>, ktorej <span class="math inline">\(i,j\)</span>-ty prvok je daný <span class="math inline">\(\text{Cov}[X_i,X_j]\)</span>. Táto matica</p>
+<p>Podobne zadefinovaná je <strong>kovariančná matica</strong> <span class="math inline">\(\text{Var}[X]\)</span>, ktorej <span class="math inline">\(i,j\)</span>-ty prvok je daný <span class="math inline">\(\text{Cov}[X_i,X_j]\)</span>.</p>
+<p><span class="math display">\[{\small \text{Cov}[X] = \begin{pmatrix}
+\text{Var}[X_1] &amp; \text{Cov}[X_1, X_2] &amp; \cdots  &amp; \cdots &amp; \cdots  &amp; \text{Cov}[X_1, X_n]\\
+\text{Cov}[X_2, X_1] &amp; \text{Var}[X_2] &amp; \text{Cov}[X_2, X_3] &amp; \cdots &amp; \cdots &amp; \text{Cov}[X_2, X_n]\\
+\text{Cov}[X_3, X_1] &amp; \text{Cov}[X_3, X_2]&amp;  \text{Var}[X_3] &amp; \text{Cov}[X_3, X_4] &amp; \cdots &amp; \text{Cov}[X_3, X_n]\\
+\vdots &amp; &amp; \ddots &amp; \ddots &amp; &amp;  \vdots  \\
+\vdots &amp; &amp; &amp; \ddots &amp; \ddots &amp;   \vdots  \\
+\text{Cov}[X_n, X_1] &amp; \text{Cov}[X_n, X_2]&amp; \cdots &amp; \cdots &amp; \text{Cov}[X_n, X_{n-1}] &amp; \text{Var}[X_n]
+\end{pmatrix}}\]</span></p>
+<p>Táto matica</p>
 <ul>
 <li>je symetrická (lebo <span class="math inline">\(\text{Cov}[X_i,X_j]=\text{Cov}[X_j,X_j]\)</span>) a okrem toho</li>
 <li>je kladne semidefinitná, takže <span class="math display">\[a^T\text{Var}[X]a \geq 0,\]</span> pre akýkoľvek vektor <span class="math inline">\(a \in \mathbb{R}^n.\)</span> Toto platí lebo <span class="math inline">\(\text{Var}[a^T X] = a^T\text{Var}[X]a\)</span> a zároveň vieme, že <span class="math inline">\(\text{Var}[Z] \geq 0\)</span> pre akúkoľvek náhodnú premennú a teda aj pre <span class="math inline">\(Z=a^T X.\)</span></li>
@@ -514,7 +523,7 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 </div>
 </div>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 6.3</strong></span> Tu je situácia, keď je jedna premenná priamo lineárnou transformáciou druhej. Konkrétne <span class="math inline">\(X_2 = 2-3X_3\)</span></p>
+<p><span class="theorem-title"><strong>Príklad 6.3</strong></span> Tu je situácia, keď je jedna premenná priamo lineárnou transformáciou druhej. Konkrétne <span class="math inline">\(X_3 = 2-3X_2\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">232</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">20</span>,<span class="dv">1</span>)</span>
@@ -529,7 +538,7 @@ x3  0.1118414 -1.0000000  1.0000000</code></pre>
 </div>
 </div>
 <p>Tu vidíme, že <span class="math inline">\(\text{Corr}[X_1,X_2]=-1.\)</span></p>
-<p>Teraz nech <span class="math inline">\(X_2 = 2-3X_3^{1.05},\)</span> takže závislosť medzi <span class="math inline">\(X_2\)</span> a <span class="math inline">\(X_3\)</span> je “skoro” lineárna.</p>
+<p>Teraz nech <span class="math inline">\(X_3 = 2-3X_2^{1.1},\)</span> takže závislosť medzi <span class="math inline">\(X_2\)</span> a <span class="math inline">\(X_3\)</span> je “skoro” lineárna.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">=</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2<span class="sc">^</span>{<span class="fl">1.1</span>} <span class="sc">+</span> <span class="dv">2</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cbind</span>(x1,x2,x3))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
