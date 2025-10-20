@@ -250,6 +250,7 @@ window.Quarto = {
   <li><a href="#závislosť-náhodných-premenných" id="toc-závislosť-náhodných-premenných" class="nav-link active" data-scroll-target="#závislosť-náhodných-premenných"><span class="header-section-number">6.1</span> Závislosť náhodných premenných</a></li>
   <li><a href="#korelácia-nie-je-kauzalita" id="toc-korelácia-nie-je-kauzalita" class="nav-link" data-scroll-target="#korelácia-nie-je-kauzalita"><span class="header-section-number">6.2</span> Korelácia nie je kauzalita</a></li>
   <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">6.3</span> Cvičenia</a></li>
+  <li><a href="#domáca-úloha-2" id="toc-domáca-úloha-2" class="nav-link" data-scroll-target="#domáca-úloha-2"><span class="header-section-number">6.4</span> Domáca úloha 2</a></li>
   </ul>
 </nav>
     </div>
@@ -606,6 +607,7 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <h2 data-number="6.3" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">6.3</span> Cvičenia</h2>
 <!-- [R súbor pre cvičenia](https://www.dropbox.com/s/zn6n8d9x8wq7ekg/labs_week6.R?dl=0) -->
 <!-- [R súbor z cvičení zo 19.10.2023](https://www.dropbox.com/scl/fi/t0rb4nxr3p6t74ldlncfe/20231012-labs05.R?rlkey=p5863jc8pfwxd9k63pvzsztrv&dl=0) -->
+<p><a href="https://www.dropbox.com/scl/fi/hfjyjc85mdayt516xxqpk/Cvicenie6.R?rlkey=316dpz0xv98jmjin50x36j6vi&amp;dl=0">R súbor z cvičení z 20.10.2025</a></p>
 <div id="exr-" class="Exercise theorem exercise">
 <p><span class="theorem-title"><strong>Cvičenie 6.1</strong></span> Pozrite sa na korelačnú štruktúru premenných v nasledovnom dasete o autách.</p>
 <div class="cell">
@@ -636,6 +638,47 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
 <p><span class="theorem-title"><strong>Cvičenie 6.7</strong></span> V datasete <code>mtcars</code> z knižnice <code>datasets</code> sú informácie o 32 autách z roku 1974. Pozrite sa korelačnú štruktúru týchto premenných.</p>
+</div>
+<p>:::</p>
+</section>
+<section id="domáca-úloha-2" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="domáca-úloha-2"><span class="header-section-number">6.4</span> Domáca úloha 2</h2>
+<p>Prosím odovzdať do 2.11.2025 19:59 cez formulár (tento Vám príde emailom).</p>
+<p>V riešeniach používajte prosím plnovýznamové vety a nahrávajte riešenia v jednom pdf súbore nazvanom podľa Vašich priezvísk v tvare DU1_priezvisko1_priezvisko2.pdf (napríklad DU1_Kovacova_Zelinka.pdf).</p>
+<div class="exercise" name="DÚ 2.1, iris">
+<p>Majme <a href="https://www.kaggle.com/datasets/uciml/iris">iris dataset</a></p>
+<p>Stiahnite si tento dataset a</p>
+<ol type="1">
+<li><p>vypočítajte korelačnú maticu</p></li>
+<li><p>vytvorte aspoň 3 rôzne vizualizácie korelačnej matice (rôzne method alebo aj mix)</p></li>
+<li><p>nájdite najsilnejšiu koreláciu a antikoreláciu, vypíšte aspoň 2 ďalšie silné korelácie a antikorelácie</p></li>
+</ol>
+<p>Pozor! Nie všetky atribúty v datasete sú číselné</p>
+<p>Rovnaký postup zopakujte aj pre <a href="https://www.kaggle.com/datasets/yasserh/wine-quality-dataset">wine dataset</a> a tiež pre Boston dataset v knižnici/package MASS.</p>
+</div>
+<div class="exercise" name="DÚ 2.2, simulácia náhodných premenných">
+<p>Nech <span class="math inline">\(X_1\)</span> a <span class="math inline">\(X_2\)</span> sú nezávislé náhodné premenné:</p>
+<p><span class="math inline">\(X_1 \sim N(50, 5^2)\)</span> <span class="math inline">\(X_2 \sim N(30, 10^2)\)</span></p>
+<p>a definujme novú premennú</p>
+<p><span class="math inline">\(X_3 = 2X_1 - 0.5X_2\)</span></p>
+<ol type="1">
+<li><p>vygenerujte 1000 realizácií náhodných premenných <span class="math inline">\(X_1, X_2\)</span> a <span class="math inline">\(X_3\)</span></p></li>
+<li><p>vypočítajte empiricky:</p></li>
+</ol>
+<ul>
+<li>varianciu <span class="math inline">\(\text{Var}[X_3]\)</span></li>
+<li>kovarianciu <span class="math inline">\(\text{Cov}[X_1, X_3]\)</span></li>
+<li>koreláciu <span class="math inline">\(\text{Cor}[X_1, X_3]\)</span></li>
+</ul>
+<ol start="3" type="1">
+<li><p>porovnajte ich s teoretickými hodnotami Var, Cov a Cor</p></li>
+<li><p>zopakujte simuláciu pre rôzne počty pozorovaní, porovnajte ako sa zmenila sa zmenila presnosť odhadu (oproti teoretickým hodnotám) a odôvodnite prečo</p></li>
+</ol>
+<p>BONUS:</p>
+<p>Vymyslite vlastnú lineárnu kombináciu:</p>
+<p><span class="math inline">\(Y = c_1X_1 + c_2X_2\)</span></p>
+<p>s ĺubovoľnými koeficientmi <span class="math inline">\(c_1\)</span> a <span class="math inline">\(c_2\)</span> a zopakujte celý postup pre <span class="math inline">\(Y\)</span>.</p>
+<p>Vysvetlite, či a ako sa zmenila korelácia medzi <span class="math inline">\(X_1\)</span> a <span class="math inline">\(Y\)</span> oproti pôvodnéhmu prípadu.</p>
 </div>
 
 
