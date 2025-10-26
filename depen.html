@@ -651,7 +651,7 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <ol type="1">
 <li><p>vypočítajte korelačnú maticu</p></li>
 <li><p>vytvorte aspoň 3 rôzne vizualizácie korelačnej matice (rôzne method alebo aj mix)</p></li>
-<li><p>nájdite najsilnejšiu koreláciu a antikoreláciu, vypíšte aspoň 2 ďalšie silné korelácie a antikorelácie</p></li>
+<li><p>nájdite najsilnejšiu koreláciu (pozitívnu alebo negatívnu), vypíšte aspoň 2 ďalšie silné korelácie</p></li>
 </ol>
 <p>Pozor! Nie všetky atribúty v datasete sú číselné</p>
 <p>Rovnaký postup zopakujte aj pre <a href="https://www.kaggle.com/datasets/yasserh/wine-quality-dataset">wine dataset</a> a tiež pre Boston dataset v knižnici/package MASS.</p>
@@ -663,21 +663,21 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <p><span class="math inline">\(X_3 = 2X_1 - 0.5X_2\)</span></p>
 <ol type="1">
 <li><p>vygenerujte 1000 realizácií náhodných premenných <span class="math inline">\(X_1, X_2\)</span> a <span class="math inline">\(X_3\)</span></p></li>
-<li><p>vypočítajte empiricky:</p></li>
+<li><p>vypočítajte odhad:</p></li>
 </ol>
 <ul>
-<li>varianciu <span class="math inline">\(\text{Var}[X_3]\)</span></li>
-<li>kovarianciu <span class="math inline">\(\text{Cov}[X_1, X_3]\)</span></li>
-<li>koreláciu <span class="math inline">\(\text{Cor}[X_1, X_3]\)</span></li>
+<li>variancie <span class="math inline">\(\text{Var}[X_3]\)</span></li>
+<li>kovariancie <span class="math inline">\(\text{Cov}[X_1, X_3]\)</span></li>
+<li>korelácie <span class="math inline">\(\text{Cor}[X_1, X_3]\)</span></li>
 </ul>
 <ol start="3" type="1">
-<li><p>porovnajte ich s teoretickými hodnotami Var, Cov a Cor</p></li>
+<li><p>porovnajte ich s teoretickými hodnotami</p></li>
 <li><p>zopakujte simuláciu pre rôzne počty pozorovaní, porovnajte ako sa zmenila sa zmenila presnosť odhadu (oproti teoretickým hodnotám) a odôvodnite prečo</p></li>
 </ol>
 <p>BONUS:</p>
 <p>Vymyslite vlastnú lineárnu kombináciu:</p>
 <p><span class="math inline">\(Y = c_1X_1 + c_2X_2\)</span></p>
-<p>s ĺubovoľnými koeficientmi <span class="math inline">\(c_1\)</span> a <span class="math inline">\(c_2\)</span> a zopakujte celý postup pre <span class="math inline">\(Y\)</span>.</p>
+<p>s ľubovoľnými koeficientmi <span class="math inline">\(c_1\)</span> a <span class="math inline">\(c_2\)</span> a zopakujte celý postup pre <span class="math inline">\(Y\)</span>.</p>
 <p>Vysvetlite, či a ako sa zmenila korelácia medzi <span class="math inline">\(X_1\)</span> a <span class="math inline">\(Y\)</span> oproti pôvodnéhmu prípadu.</p>
 </div>
 
