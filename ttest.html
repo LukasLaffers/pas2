@@ -1602,7 +1602,10 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <li><p>Vykonajte aj jednostrannú hypotézu: “liek 2 zvyšuje spánok oproti lieku 1”.</p></li>
 </ol>
 <p>Tip: Môžete použiť pivot_wider na samostatné vektory pre T-test:</p>
+<p>pivot_wider(sleep, names_from = group, values_from =   extra, names_prefix = "Drug_")</p>
 <p>Môžete použiť pivot_longer na jednoduchšiu vizualizáciu s boxplotom:</p>
+<p>pivot_longer(sleep_wide, cols = c("Drug_1", "Drug_2"),
+                           names_to = "Drug", values_to = "ExtraSleep")</p>
 </div>
 
 
