@@ -1445,6 +1445,7 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 </tbody>
 </table>
 </div>
+</div>
 <section id="cvičenia" class="level2" data-number="8.9">
 <h2 data-number="8.9" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">8.9</span> Cvičenia</h2>
 <!-- [R súbor k cvičeniam 4.Nov](https://www.dropbox.com/scl/fi/34lf7hxqdvo8uyvlf2qu9/20231123-labs07-base.R?rlkey=t4ge8keij03yn7qufc3qp74sv&dl=0) -->
@@ -1483,6 +1484,7 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <p><span class="theorem-title"><strong>Cvičenie 8.10</strong></span> Z knižnice <code>ISLR</code> máme v datasete <code>Wage</code> informácie o mzdách. Vytvorte kategorickú premennú, či je daná mzda nad alebo pod mediánom. Pozrite sa ako táto kategorická premenná suvisí so vzdelaním a s rasou.</p>
 </div>
 <!-- [R súbor z cvičení 23.11.2023](https://www.dropbox.com/scl/fi/ttr6hvp9nfs0g0ugsw2ub/20231123-labs07.R?rlkey=ih72oepnm4bbvznk1wlloy7u2&dl=0) -->
+<p><a href="https://www.dropbox.com/scl/fi/clq4iydk8c1dh6utcyawy/cvicenie8-part1.R?rlkey=h5r4lt9y6igu2l2ldyoedfjp3&amp;dl=0">R súbor z cvičení 3.11.2025</a></p>
 <!-- ## Domáca úloha 3 -->
 <!-- Deadline je 4.12.2023 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie `rar` súbor, nie OneDrive folder) v tvare `du3_MenoPriezvisko.zip` (napr. `du3_PeterKovac.zip`) a pošlite na email `miroslava.sartorisova@umb.sk`. Kód musí byť **spustiteľný** (vyskúšajte či Vám prebehne, keď máte prázdnu pamäť. Tú si uvoľníte pomocou príkazu `rm(list=ls())`) a podrobne okomentovaný. Odovzdávate mi Vašu **vlastnú** prácu (teda nie niekoho iného). -->
 <!-- Dáta sú vymyslené, [stiahnete si ich tu](https://www.dropbox.com/scl/fi/1s1geleqi6ji9wv5odlpm/du3-data.R?rlkey=vvrpz87v5q2n296qqqtagz4jx&dl=0). -->
@@ -1527,30 +1529,88 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <!-- V datasete `esdcomp` v knižnici `faraway` sú informácie o sťažnostiach pacientov na lekárov/ky. Porovnajte počet sťažností, hodinovú mzdu a počet odrobených hodín pre mužov a ženy a potom lekárov/iek v zácviku voči tým, ktorí nie sú v zácviku (premenná `residency`), teda dokopy 6 porovnaní. Zvoľte vhodný test aj vizualizáciu. -->
 <!-- ::: -->
 <!-- <!-- ::: {.exercise name="DÚ 3.4 (prijímačky na Berkeley)"} -->
-<p>–&gt;</p>
 <!-- <!-- V datasete `UCBAdmissions` v knižnici `datasets` sú informácie o prijímacom konaní na Berkeley v roku 1973 na 6 rôznych departmentoch. -->
-<p>–&gt;</p>
 <!-- <!-- Otázkou môže byť, či nedochádzalo k diskriminácii. Otestujte či boli rovnako prijímané ženy a muži na jedntlivých departmentoch. -->
-<p>–&gt;</p>
 <!-- <!-- Potom otestuje či boli rovnako prijímané ženy a muži **celkovo**. -->
-<p>–&gt;</p>
 <!-- <!-- Výsledky interpretujte a vysvetlite. -->
-<p>–&gt;</p>
 <!-- <!-- ::: -->
-<p>–&gt;</p>
 <!-- ::: {.exercise name="DÚ 3.4"} -->
 <!-- Pripravte si funkciu, ktorá Vám bude uľahčovať život. Jej vstupom budú dva vektory $x$ a $y$, ktorých stredné hodnoty (alebo proporcie) budete chcieť porovnať a iné potenciálne užitočné vstupy. Výsledkom funkcie bude vhodné a vyladené (vhodný výber farieb, popisov, legendy a iných grafických elementov) grafické porovnanie s informáciou o použitom teste a p-hodnotou. Demonštrujte túto Vami vytvorenú funkciu na DÚ 3.1 a 3.3. -->
 <!-- ::: -->
 <!-- ::: {.exercise name="DÚ 3.5 (BONUS)"} -->
 <!-- V datasete `heart.rate` z knižnice `ISwR` je odmeraný pulz pre 9 pacientov v rôzych časoch po podaní lieku enalaprilat. Pozrite sa na rozdiel pred podaním lieku a pulz odmeraný v rôznych časoch. Otestujte tieto rozdiely vhodnými testami (0 vs 30, 30 vs 60, 60 vs 120). Zobrazte vedľa seba 4 boxploty pre pulz v rôznych časoch. -->
 <!-- ::: -->
-
-
 </section>
+<section id="domáca-úloha-3" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="domáca-úloha-3"><span class="header-section-number">8.10</span> Domáca úloha 3</h2>
+<p>Prosím odovzdať do 9.11.2025 19:59 cez formulár (tento Vám príde emailom).</p>
+<p>V riešeniach používajte prosím plnovýznamové vety a nahrávajte riešenia v jednom pdf súbore nazvanom podľa Vašich priezvísk v tvare DU3_priezvisko1_priezvisko2.pdf (napríklad DU3_Kovacova_Zelinka.pdf).</p>
+<p>V úlohách 1-3 máme dané datasety, úlohy vhodne vizualizujte, opíšte prečo ste použili dané atribúty, paremetre, typ grafu a následne opíšte čo na danom grafe môžeme vidieť.</p>
+<p>V úlohách 4-7 robíme t-testy, z-testy a overanie hypotéz.</p>
+<div class="exercise" name="DÚ 3.1, mtcars">
+<p>Použite dataset mtcars (základný v R).</p>
+<ol type="1">
+<li><p>Ktoré autá majú najväčšiu variabilitu v spotrebe na diaľnici?</p></li>
+<li><p>Rastie spotreba v meste s objemom motora?</p></li>
+<li><p>Koľko áut má pohon 4x4?</p></li>
+<li><p>Ako vyzerá rozdelenie spotreby v meste?</p></li>
+<li><p>Majú autá s 8 valcami inú spotrebu ako ostatné?</p></li>
+</ol>
 </div>
-</section>
+<div class="exercise" name="DÚ 3.2, diamonds">
+<p>Použite dataset diamonds (základný v R).</p>
+<ol type="1">
+<li><p>Ktorý rez má najviac odľahlích cien?</p></li>
+<li><p>Rastie cena s váhou?</p></li>
+<li><p>Koľko briliantov má farbu “D” (najlepšia)?</p></li>
+<li><p>Ako vyzerá rozdelenie váhy?</p></li>
+<li><p>Majú brilianty s rezom “Ideal” inú cenu ako “Fair”?</p></li>
+</ol>
+</div>
+<div class="exercise" name="DÚ 3.3, economics">
+<p>Použite dataset economics (základný v R).</p>
+<ol type="1">
+<li><p>Ako sa vyvíjala nezamestnanosť v čase?</p></li>
+<li><p>Rástla populácia rovnomerne?</p></li>
+<li><p>Aký je vzťah medzi nezamestnanosťou a úsporami?</p></li>
+<li><p>Kedy bola najvyššia nezamestnanosť?</p></li>
+<li><p>Ako sa menila miera úspor v čase?</p></li>
+</ol>
+</div>
+<div class="exercise" name="DÚ 3.4, mtcars2">
+<p>Použite dataset mtcars (základný v R). Porovnajte priemernú spotrebu paliva medzi autami s automatickou a manuálnou prevodovkou.</p>
+<ol type="1">
+<li><p>Použite T-test a Z-test (predpokladajte, že poznáte σ ako SD celej vzorky). Odôvodnite prečo párový alebo nepárový.</p></li>
+<li><p>Určte, či existuje signifikantný rozdiel v spotrebe medzi typmi prevodovky.</p></li>
+<li><p>Vizualizujte výsledky (napr. boxplot).</p></li>
+</ol>
+<p>Bonus: Skúste jednostrannú hypotézu: “autá s manuálnou prevodovkou majú vyššiu spotrebu než automaty” a porovnajte s opačnou hypotézou. Výsledok opíšte.</p>
+</div>
+<div class="exercise" name="DÚ 3.5, aiquality">
+<p>Použite dataset airquality (základný v R). Otestujte jednostrannú hypotézu, či je teplota (Temp) väčšia ako 80°F počas leta.</p>
+<ol type="1">
+<li><p>Otestujte danú hypotézu (či je teplota väčšia ako 80°F počas leta).</p></li>
+<li><p>Vizualizujte histogram s čiarou pre hodnotu 80°F.</p></li>
+<li><p>Skúste aj opačnú hypotézu (Temp &lt; 80°F) a porovnajte výsledky.</p></li>
+</ol>
+</div>
+<div class="exercise" name="DÚ 3.6, sleep">
+<p>Použite dataset sleep (základný v R). Dataset sleep obsahuje záznamy o spánku 10 osôb po dvoch typoch liekov (group = 1 a group = 2). Otestujte, či existuje signifikantný rozdiel v spánku medzi týmito dvoma liekmi.</p>
+<ol type="1">
+<li><p>Rozhodnite, či je test párový alebo nepárový a prečo.</p></li>
+<li><p>Vizualizujte rozdiel (napr. boxplot).</p></li>
+<li><p>Vykonajte aj jednostrannú hypotézu: “liek 2 zvyšuje spánok oproti lieku 1”.</p></li>
+</ol>
+<p>Tip: Môžete použiť pivot_wider na samostatné vektory pre T-test:</p>
+<p>Môžete použiť pivot_longer na jednoduchšiu vizualizáciu s boxplotom:</p>
+</div>
 
-</main> <!-- /main -->
+
+</section>
+</section></main></div>
+
+
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1980,7 +2040,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 
