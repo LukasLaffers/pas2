@@ -266,6 +266,9 @@ window.Quarto = {
   <li><a href="#kontigenčné-tabuľky" id="toc-kontigenčné-tabuľky" class="nav-link" data-scroll-target="#kontigenčné-tabuľky"><span class="header-section-number">8.6</span> Kontigenčné tabuľky</a></li>
   <li><a href="#zopár-poznámok-na-záver." id="toc-zopár-poznámok-na-záver." class="nav-link" data-scroll-target="#zopár-poznámok-na-záver."><span class="header-section-number">8.7</span> Zopár poznámok na záver.</a></li>
   <li><a href="#prehľad" id="toc-prehľad" class="nav-link" data-scroll-target="#prehľad"><span class="header-section-number">8.8</span> Prehľad</a></li>
+  <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">8.9</span> Cvičenia</a></li>
+  <li><a href="#domáca-úloha-3" id="toc-domáca-úloha-3" class="nav-link" data-scroll-target="#domáca-úloha-3"><span class="header-section-number">8.10</span> Domáca úloha 3</a></li>
+  <li><a href="#domáca-úloha-4" id="toc-domáca-úloha-4" class="nav-link" data-scroll-target="#domáca-úloha-4"><span class="header-section-number">8.11</span> Domáca úloha 4</a></li>
   </ul>
 </nav>
     </div>
@@ -1324,16 +1327,15 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 </section>
 <section id="prehľad" class="level2" data-number="8.8">
 <h2 data-number="8.8" class="anchored" data-anchor-id="prehľad"><span class="header-section-number">8.8</span> Prehľad</h2>
-<div style="font-size: 0.7em;">
-<div style="overflow-x: auto; width: 100%;">
+<div style="font-size: 0.6em; overflow-x: auto; width: 100%;">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 14%">
+<col style="width: 5%">
+<col style="width: 41%">
+<col style="width: 15%">
+<col style="width: 8%">
+<col style="width: 15%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1349,103 +1351,103 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <tr class="odd">
 <td>Stredná hodnota je rovná číslu <span class="math inline">\(\mu\)</span></td>
 <td>Z-Test</td>
-<td>(Z= N(0,1))</td>
-<td>(H_0): <span class="math inline">\(\mu_X = \mu\)</span></td>
+<td><span class="math inline">\(Z = \sqrt{n}\frac{\bar{X}_n - \mu}{\sigma} \sim N(0,1)\)</span></td>
+<td><span class="math inline">\(H_0: \mu_X = \mu\)</span></td>
 <td><code>BSDA::z.test()</code></td>
 <td>Vyžaduje známe <span class="math inline">\(\sigma\)</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>T-Test</td>
-<td>(T= t_{n})</td>
-<td>(H_0): <span class="math inline">\(\mu_X = \mu\)</span></td>
+<td><span class="math inline">\(T = \sqrt{n}\frac{\bar{X}_n - \mu}{S} \sim t_{n}\)</span></td>
+<td><span class="math inline">\(H_0: \mu_X = \mu\)</span></td>
 <td><code>t.test()</code></td>
 <td>Používa odhadnuté <span class="math inline">\(\sigma\)</span></td>
 </tr>
 <tr class="odd">
 <td>Porovnanie stredných hodnôt dvoch vzoriek</td>
 <td>T-Test</td>
-<td>(T t_{n_x + n_y - 2})</td>
-<td>(H_0): <span class="math inline">\(\mu_X = \mu_Y\)</span></td>
-<td><code>t.test(,var.equal=TRUE)</code></td>
-<td>(S) je odhadom (_X = _Y)</td>
+<td><span class="math inline">\(T = \frac{(\bar{X} - \bar{Y}) - (\mu_x - \mu_y)}{S \sqrt{\frac{1}{n_x} + \frac{1}{n_y}}} \sim t_{n_x + n_y - 2}\)</span></td>
+<td><span class="math inline">\(H_0: \mu_X = \mu_Y\)</span></td>
+<td><code>t.test(, var.equal=TRUE)</code></td>
+<td><span class="math inline">\(S\)</span> je odhadom <span class="math inline">\((\sigma_X = \sigma_Y)\)</span></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>(Welchov) T-Test</td>
-<td>(T t_{df})</td>
-<td>(H_0): <span class="math inline">\(\mu_X = \mu_Y\)</span></td>
-<td><code>t.test(,var.equal=FALSE)</code></td>
+<td>Welchov T-Test</td>
+<td><span class="math inline">\(T = \frac{(\bar{X} - \bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\frac{s_x^2}{n_x} + \frac{s_y^2}{n_y}}} \sim t_{df}\)</span></td>
+<td><span class="math inline">\(H_0: \mu_X = \mu_Y\)</span></td>
+<td><code>t.test(, var.equal=FALSE)</code></td>
 <td>Približný test</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Párový T-Test</td>
-<td>(T t_{n-1})</td>
-<td>(H_0): <span class="math inline">\(\mu_X - \mu_Y = 0\)</span></td>
-<td><code>t.test(,paired=TRUE)</code></td>
-<td>(n_X = n_Y)</td>
+<td><span class="math inline">\(T = \sqrt{n}\frac{(\bar{X} - \bar{Y})}{S} \sim t_{n-1}\)</span></td>
+<td><span class="math inline">\(H_0: \mu_X - \mu_Y = 0\)</span></td>
+<td><code>t.test(, paired=TRUE)</code></td>
+<td><span class="math inline">\(n_X = n_Y\)</span></td>
 </tr>
 <tr class="even">
 <td>Porovnanie stredných hodnôt viacerých vzoriek</td>
 <td>ANOVA</td>
-<td>(F = *{j=1}^k n_j* F{k-1,n-k})</td>
-<td>(H_0): <span class="math inline">\(\mu_{Y_1} = \mu_{Y_2} = \cdots \mu_{Y_k}\)</span></td>
+<td><span class="math inline">\(F = \sum_{j=1}^k n_j \frac{(\bar Y_{j} - \bar{Y})^2}{k-1} \sim F_{k-1,n-k}\)</span></td>
+<td><span class="math inline">\(H_0: \mu_{Y_1} = \mu_{Y_2} = \cdots = \mu_{Y_k}\)</span></td>
 <td><code>aov()</code></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>Testovanie podielu pre jednu skupinu</td>
 <td>Z-test</td>
-<td>(Z _D N(0,1) )</td>
-<td>(H_0): <span class="math inline">\(p_Y = p\)</span></td>
+<td><span class="math inline">\(Z = \frac{Y - np}{\sqrt{n p (1-p)}} \rightarrow_D N(0,1)\)</span></td>
+<td><span class="math inline">\(H_0: p_Y = p\)</span></td>
 <td><code>z.test()</code></td>
 <td>Veľká vzorka</td>
 </tr>
 <tr class="even">
 <td></td>
 <td>Chí-Kvadrát test</td>
-<td>(^2_1 )</td>
-<td>(H_0): <span class="math inline">\(p_Y = p\)</span></td>
+<td><span class="math inline">\(\chi^2_1\)</span></td>
+<td><span class="math inline">\(H_0: p_Y = p\)</span></td>
 <td><code>prop.test()</code></td>
 <td>Na základe kont. tabuľky</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Binomický test</td>
-<td>(Y Binom(n,p) )</td>
-<td>(H_0): <span class="math inline">\(p_Y = p\)</span></td>
+<td><span class="math inline">\(Y \sim \text{Binom}(n,p)\)</span></td>
+<td><span class="math inline">\(H_0: p_Y = p\)</span></td>
 <td><code>binom.test()</code></td>
-<td>Exaktný test - pre malé vzorky</td>
+<td>Exaktný test – pre malé vzorky</td>
 </tr>
 <tr class="even">
 <td>Testovanie rovnosti podielov pre dve skupiny</td>
 <td>Z-test</td>
-<td>(Z _D N(0,1) )</td>
-<td>(H_0): <span class="math inline">\(p_1 = p_2\)</span></td>
+<td><span class="math inline">\(Z = \frac{\hat p_1 - \hat p_2}{\sqrt{\hat p (1 - \hat p)\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \rightarrow_D N(0,1)\)</span></td>
+<td><span class="math inline">\(H_0: p_1 = p_2\)</span></td>
 <td>mechanicky</td>
-<td>(p) je odhad proporcie z oboch vzoriek naraz</td>
+<td><span class="math inline">\(\hat p\)</span> je odhad proporcie z oboch vzoriek naraz</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Chí-Kvadrát test</td>
-<td>(^2_1 )</td>
-<td>(H_0): <span class="math inline">\(p_1 = p_2\)</span></td>
+<td><span class="math inline">\(\chi^2_1\)</span></td>
+<td><span class="math inline">\(H_0: p_1 = p_2\)</span></td>
 <td><code>prop.test()</code></td>
-<td>Na základe kont. tabuľky.</td>
+<td>Na základe kont. tabuľky</td>
 </tr>
 <tr class="even">
 <td>Asociácia medzi kategorickými premennými</td>
 <td>Chí-Kvadrát test</td>
-<td>(C = _i ^2_m )</td>
-<td>(H_0): X a Y sú nezávislé</td>
+<td><span class="math inline">\(C = \sum_i \frac{(O_i - E_i)^2}{E_i} \sim \chi^2_m\)</span></td>
+<td><span class="math inline">\(H_0\)</span>: X a Y sú nezávislé</td>
 <td><code>chisq.test()</code></td>
-<td>(m = (c_1 - 1)(c_2-1))</td>
+<td><span class="math inline">\(m = (c_1 - 1)(c_2 - 1)\)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
+</section>
 <section id="cvičenia" class="level2" data-number="8.9">
 <h2 data-number="8.9" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">8.9</span> Cvičenia</h2>
 <!-- [R súbor k cvičeniam 4.Nov](https://www.dropbox.com/scl/fi/34lf7hxqdvo8uyvlf2qu9/20231123-labs07-base.R?rlkey=t4ge8keij03yn7qufc3qp74sv&dl=0) -->
@@ -1485,7 +1487,7 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 </div>
 <!-- [R súbor z cvičení 23.11.2023](https://www.dropbox.com/scl/fi/ttr6hvp9nfs0g0ugsw2ub/20231123-labs07.R?rlkey=ih72oepnm4bbvznk1wlloy7u2&dl=0) -->
 <p><a href="https://www.dropbox.com/scl/fi/clq4iydk8c1dh6utcyawy/cvicenie8-part1.R?rlkey=h5r4lt9y6igu2l2ldyoedfjp3&amp;dl=0">R súbor z cvičení 3.11.2025</a></p>
-<p><a href="https://www.dropbox.com/scl/fi/yx4oovjtu55511x8z9up8/cvicenie8.R?rlkey=02n0lok33zqcgc6r98xz4c0z7&dl=0">R súbor z cvičení 10.11.2025</a></p>
+<p><a href="https://www.dropbox.com/scl/fi/yx4oovjtu55511x8z9up8/cvicenie8.R?rlkey=02n0lok33zqcgc6r98xz4c0z7&amp;dl=0">R súbor z cvičení 10.11.2025</a></p>
 <!-- ## Domáca úloha 3 -->
 <!-- Deadline je 4.12.2023 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie `rar` súbor, nie OneDrive folder) v tvare `du3_MenoPriezvisko.zip` (napr. `du3_PeterKovac.zip`) a pošlite na email `miroslava.sartorisova@umb.sk`. Kód musí byť **spustiteľný** (vyskúšajte či Vám prebehne, keď máte prázdnu pamäť. Tú si uvoľníte pomocou príkazu `rm(list=ls())`) a podrobne okomentovaný. Odovzdávate mi Vašu **vlastnú** prácu (teda nie niekoho iného). -->
 <!-- Dáta sú vymyslené, [stiahnete si ich tu](https://www.dropbox.com/scl/fi/1s1geleqi6ji9wv5odlpm/du3-data.R?rlkey=vvrpz87v5q2n296qqqtagz4jx&dl=0). -->
@@ -1548,7 +1550,7 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <p>V riešeniach používajte prosím plnovýznamové vety a nahrávajte riešenia v jednom pdf súbore nazvanom podľa Vašich priezvísk v tvare DU3_priezvisko1_priezvisko2.pdf (napríklad DU3_Kovacova_Zelinka.pdf).</p>
 <p>V úlohách 1-3 máme dané datasety, úlohy vhodne vizualizujte, opíšte prečo ste použili dané atribúty, paremetre, typ grafu a následne opíšte čo na danom grafe môžeme vidieť.</p>
 <p>V úlohách 4-7 robíme t-testy, z-testy a overanie hypotéz.</p>
-<div class="exercise" name="DÚ 3.1, mtcars">
+<div class="exercise" name="DÚ 3.1, mpg">
 <p>Použite dataset mpg (základný v R).</p>
 <ol type="1">
 <li><p>Ktoré autá majú najväčšiu variabilitu v spotrebe na diaľnici?</p></li>
@@ -1578,7 +1580,7 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <li><p>Ako sa menila miera úspor v čase?</p></li>
 </ol>
 </div>
-<div class="exercise" name="DÚ 3.4, mtcars2">
+<div class="exercise" name="DÚ 3.4, mtcars">
 <p>Použite dataset mtcars (základný v R). Porovnajte priemernú spotrebu paliva medzi autami s automatickou a manuálnou prevodovkou.</p>
 <ol type="1">
 <li><p>Použite T-test a Z-test (predpokladajte, že poznáte σ ako SD celej vzorky). Odôvodnite prečo párový alebo nepárový.</p></li>
@@ -1603,18 +1605,33 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <li><p>Vykonajte aj jednostrannú hypotézu: “liek 2 zvyšuje spánok oproti lieku 1”.</p></li>
 </ol>
 <p>Tip: Môžete použiť pivot_wider na samostatné vektory pre T-test:</p>
-<p>pivot_wider(sleep, names_from = group, values_from =   extra, names_prefix = "Drug_")</p>
 <p>Môžete použiť pivot_longer na jednoduchšiu vizualizáciu s boxplotom:</p>
-<p>pivot_longer(sleep_wide, cols = c("Drug_1", "Drug_2"),
-                           names_to = "Drug", values_to = "ExtraSleep")</p>
+</div>
+<p>:::</p>
+</section>
+<section id="domáca-úloha-4" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="domáca-úloha-4"><span class="header-section-number">8.11</span> Domáca úloha 4</h2>
+<p>Prosím odovzdať do 23.11.2025 19:59 cez formulár (tento Vám príde emailom).</p>
+<p>V riešeniach používajte prosím plnovýznamové vety a nahrávajte riešenia v jednom pdf súbore nazvanom podľa Vašich priezvísk v tvare DU4_priezvisko1_priezvisko2.pdf (napríklad DU4_Kovacova_Zelinka.pdf).</p>
+<div class="exercise" name="DÚ 4.1, coffee">
+<p>Preferencia nápojov podľa pracovného statusu</p>
+<p>Vymyslený dataset nájdete v súbore <a href="https://www.dropbox.com/scl/fi/1x4dm9fjvadxvl9fdrvha/Data.R?rlkey=54wgg57s9jt1ul02kw1cqmvp0&amp;dl=0">tu</a> (data 4.1)</p>
+<p>Porovnajte sumárne štatistiky medzi ľuďmi ktorí kávu pijú a nepijú (coffee=T/F), ktoré premenné majú signifikantný vplyv? Vaše zistenia interpretujte.</p>
+</div>
+<div class="exercise" name="DÚ 4.2, transport">
+<p>Cestovanie do práce autom</p>
+<p>Vymyslený dataset nájdete v súbore <a href="https://www.dropbox.com/scl/fi/1x4dm9fjvadxvl9fdrvha/Data.R?rlkey=54wgg57s9jt1ul02kw1cqmvp0&amp;dl=0">tu</a> (data 4.2)</p>
+<p>Porovnajte sumárne štatistiky medzi ľuďmi ktorí cestujú do práce autom alebo nie (transport_via_car=T/F), ktoré premenné majú signifikantný vplyv? Vaše zistenia interpretujte.</p>
+</div>
+<div class="exercise" name="DÚ 4.3, election">
+<p>Volebný prieskum</p>
+<p>Majme vymyslený prieskum, kde bolo oslovených 1000 ľudí, z toho by išlo voliť 73% oslovených respondentov. Strana A má nameraných 17.3%, strana B má nameraných 11.7%, strana C má nameraných 6.4%. Vypočítajte CI (konfidenčné intervaly) daným stranám.</p>
 </div>
 
 
 </section>
-</section></main></div>
 
-
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -2044,7 +2061,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav>
- <!-- /content -->
+</div> <!-- /content -->
 
 
 
