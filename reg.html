@@ -437,7 +437,7 @@ window.Quarto = {
 <p>Teda my úplne presne vieme aké má pravdepodobnostné rozdelenie. Až na varianciu chýb <span class="math inline">\(\sigma^2\)</span>. Tú nevieme a znova len budeme musieť odhadnúť. Dobrým odhadom (nevychýleným) je</p>
 <p><span class="math display">\[\hat \sigma^2 = \sum_{i=1}^n  \frac{\hat \epsilon_i^2}{n-k} = \sum_{i=1}^n  \frac{ \left(y_i - (\beta_0 + \beta_1 x_i)\right)^2}{n-k},\]</span> kde <span class="math inline">\(k\)</span> je počet parametrov v modeli (v našom prípade 2).</p>
 <p>Tento odhad variancie chýb použijeme na odhad kovariančnej matice <span class="math inline">\(\hat \beta\)</span>:</p>
-<p><span class="math display">\[\hat Var[\hat \beta] = \hat Var\left[\begin{pmatrix}\hat \beta_0 \\ \hat \beta_1 \end{pmatrix}\right] = \hat \sigma^2 (X^T X)^{-1}.\]</span> Diagonálne elementy <span class="math inline">\(2 \times 2\)</span> matice <span class="math inline">\(Var[\hat \beta]\)</span> sú <span class="math inline">\(Var\left[\hat \beta_0\right]\)</span> a <span class="math inline">\(Var\left[\hat \beta_1\right].\)</span> Podobne diagonálne členy odhadu (symetrickej) matice <span class="math inline">\(\hat [\hat \beta]\)</span> sú <span class="math inline">\(\hat Var\left[\hat \beta_0\right]\)</span> a <span class="math inline">\(\hat Var\left[\hat \beta_1\right]\)</span>, mimo diagonály sú <span class="math inline">\(\hat Cov\left[\hat \beta_0,\hat \beta_1\right]\)</span>.</p>
+<p><span class="math display">\[\hat Var[\hat \beta] = \hat Var\left[\begin{pmatrix}\hat \beta_0 \\ \hat \beta_1 \end{pmatrix}\right] = \hat \sigma^2 (X^T X)^{-1}.\]</span> Diagonálne elementy <span class="math inline">\(2 \times 2\)</span> matice <span class="math inline">\(Var[\hat \beta]\)</span> sú <span class="math inline">\(Var\left[\hat \beta_0\right]\)</span> a <span class="math inline">\(Var\left[\hat \beta_1\right].\)</span> Podobne diagonálne členy odhadu (symetrickej) matice <span class="math inline">\(\hat Var [\hat \beta]\)</span> sú <span class="math inline">\(\hat Var\left[\hat \beta_0\right]\)</span> a <span class="math inline">\(\hat Var\left[\hat \beta_1\right]\)</span>, mimo diagonály sú <span class="math inline">\(\hat Cov\left[\hat \beta_0,\hat \beta_1\right]\)</span>.</p>
 </section>
 <section id="názvoslovie" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="názvoslovie"><span class="header-section-number">9.3</span> Názvoslovie</h2>
@@ -524,7 +524,7 @@ F-statistic: 42.75 on 1 and 8 DF,  p-value: 0.0001807</code></pre>
 <li>Residuals označujú charakteristiky distribúcie odhadovaných chýb, takže hodnoty <span class="math inline">\(\hat \epsilon_i\)</span>.</li>
 <li>V tabuľke koeficientov je prvý riadok o odhade <span class="math inline">\(\hat \beta_0\)</span> a druhý riadok o odhade <span class="math inline">\(\hat \beta_1\)</span>.</li>
 <li>Prvý stĺpec sú samotné hodnoty odhadov, v druhom sú odhady smerodajných odchýlok odhadov, nazývané aj <strong>štandardné chyby</strong> (v angl. Standard errors).</li>
-<li>V treťom stĺpci sú testovacie štatistiky, ktoré testujú hypotézu <span class="math inline">\(H_0: \beta_0 = 0\)</span> a <span class="math inline">\(H_0: \beta_1 = 0\)</span> a v poslednom stĺpci sú príslušné p-hodnoty týchto testov (viac o testovacích štatistikách neskôr).</li>
+<li>V treťom stĺpci sú testovacie štatistiky, ktoré testujú hypotézu <span class="math inline">\(H_0: \beta_0 = 0\)</span> a <span class="math inline">\(H_0: \beta_1 = 0\)</span> a v poslednom stĺpci sú príslušné p-hodnoty týchto testov. Testovacia štatistika má formu: <span class="math display">\[T=\frac{\hat \beta_1}{\hat{sd}(\hat \beta_1)}\]</span> a má <a href="https://lukaslaffers.github.io/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">Studentovo t-rozdelenie</a>, s <span class="math inline">\(n-p\)</span> stupňami voľnosti, kde <span class="math inline">\(p\)</span> je počet odhadnutých parametrov (v jednoduchej lineárnej regresie sú to dva parametre, ktoré odhadujeme: <span class="math inline">\(\beta_0\)</span> a <span class="math inline">\(\beta_1\)</span>). V menovateli je <span class="math inline">\(\hat{sd}(\hat \beta_1)\)</span>, čo je odhad smerodajnej odchýlky odhadu <span class="math inline">\(\hat \beta_1,\)</span> teda <span class="math inline">\(\hat{sd}(\hat \beta_1) = \sqrt{\hat Var \left[\hat \beta_1 \right]}.\)</span> Táto kvantita sa tiež označuje ako štandardná chyba (v anj. standard error). Všeobecný prístup k testovaniu je vysvetlený <a href="https://lukaslaffers.github.io/pas2/reg.html#testovanie-podmodelov">neskôr</a>.</li>
 </ul>
 <p>Pokračujeme ďalej:</p>
 <div class="cell" data-layout-align="center">
@@ -554,21 +554,120 @@ F-statistic: 42.75 on 1 and 8 DF,  p-value: 0.0001807</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig_8_reg_geom.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="fig_8_reg_geom2.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption>Geometria najmenších štvorcov</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Obrázok ukazuje geometriu najmenších štvorcov. Každý vektor (šípka) reprezentuje bod v n-rozmernom priestore. Vektor <span class="math inline">\(y\)</span> sa nenachádza v priestore generovanom vektorom konštantných jednotiek a <span class="math inline">\(x\)</span>. Metóda najmenších štvorcov projektu vektor <span class="math inline">\(y\)</span> do tohoto podpriestoru, teda hľadá minimálnu vzdialenosť červeného vektora <span class="math inline">\(\hat \epsilon\)</span> v zmysle euklidovskej vzdialenosti (to je taká tá obyčajná na akú sme zvyknú v našom 3D svete a meriame ju pravítkom). Takže tu máme viacerozmernú verziu Pytagorovho trojuholníka.</p>
-<p>Miera (lineárneho) fitu je popísaná nasledujúcim vzťahom:</p>
-<p><span class="math display">\[R^2 = 1- \frac{\sum (y_i - \hat y_i )^2}{\sum (y_i - \bar y)^2} = 1- \frac{{RSS}}{{TSS}} =  \frac{ESS}{{TSS}} = \frac{\sum (\bar y - \hat y_i )^2}{\sum (y_i - \bar y)^2},\]</span> kde používame nasledovné značenie</p>
+<p>V obrázku máme znázornené dva rozklady <span class="math inline">\(n-\)</span>rozmerného vektora <span class="math inline">\(y = (y_1, \cdots, y_n)^T.\)</span></p>
+<p>Prvý <span class="math display">\[ y = {\color{blue}\hat y} + {\color{red}\hat \epsilon}\]</span> alebo vektorovo</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+y_1 \\ y_2 \\ \vdots \\ y_n
+\end{pmatrix}
+=
+{\color{blue}
+\begin{pmatrix}
+1 &amp; x_1 \\
+1 &amp; x_2 \\
+\vdots &amp; \vdots \\
+1 &amp; x_n
+\end{pmatrix}
+\begin{pmatrix}
+\hat \beta_0 \\ \hat \beta_1
+\end{pmatrix}}
++
+{\color{red}
+\begin{pmatrix}
+\hat \epsilon_1 \\ \hat \epsilon_2 \\ \vdots \\ \hat \epsilon_n
+\end{pmatrix}} =
+{\color{blue}
+\begin{pmatrix}
+\hat y_1 \\ \hat y_2 \\ \vdots \\ \hat y_n
+\end{pmatrix}}
++
+{\color{red}
+\begin{pmatrix}
+\hat \epsilon_1 \\ \hat \epsilon_2 \\ \vdots \\ \hat \epsilon_n
+\end{pmatrix}}
+\]</span></p>
+<p>je výsledkom odhadovania pôvodného modelu: <span class="math inline">\(y_i = {\color{blue}\beta_0 + \beta_1 x_i} + {\color{red}\epsilon_i}.\)</span></p>
+<p>Druhý <span class="math display">\[ y = {\color{green}\bar y} + {\color{orange}\bar \epsilon}\]</span> alebo vektorovo <span class="math display">\[
+\begin{pmatrix}
+y_1 \\ y_2 \\ \vdots \\ y_n
+\end{pmatrix}
+=
+{\color{green}
+\begin{pmatrix}
+1  \\
+1  \\
+\vdots \\
+1
+\end{pmatrix}
+\bar \beta_0
+}
++
+{\color{orange}
+\begin{pmatrix}
+\bar \epsilon_1 \\ \bar \epsilon_2 \\ \vdots \\ \bar \epsilon_n
+\end{pmatrix}} =
+{\color{green}
+\begin{pmatrix}
+1 \\  1 \\ \vdots \\  1
+\end{pmatrix}
+\bar y_n}
++
+{\color{orange}
+\begin{pmatrix}
+\bar \epsilon_1 \\ \bar \epsilon_2 \\ \vdots \\ \bar \epsilon_n
+\end{pmatrix}}
+\]</span></p>
+<p>je výsledkom odhadovania zjednodušeného modelu bez vysvetľujúcej premennej <span class="math inline">\(x\)</span>: <span class="math inline">\(y_i = {\color{green}\beta_0 } + {\color{orange} \bar \epsilon_i}.\)</span> Tento pesimistický model nedáva žiadnu šancu premennej <span class="math inline">\(x\)</span> aby vysvetlila variabilitu v premennej <span class="math inline">\(y.\)</span> Je to však užitočný rámec na porovnávanie.</p>
+<p>Označme <span class="math inline">\(\mathbf{1}= (1,1,\cdots,1)^T = \begin{pmatrix}
+1 \\ 1 \\ \vdots \\ 1
+\end{pmatrix}\)</span> ako <span class="math inline">\(n-\)</span>rozmerný vektor jednotiek.</p>
+<p>Vyššie sme využili <span class="math inline">\(\bar \beta_0 = \bar y_n\)</span> nakoľko: <span class="math display">\[{\color{green}\bar \beta_0} = (\mathbf{1} ^T \mathbf{1})^{-1} \mathbf{1} ^T y = \frac{1}{n}\mathbf{1} ^T y = \frac{\sum_{i=1}^n y_i}{n} = \bar y_n,\]</span> takže ide o jednoduchý aritmetický priemer. Rovnako <span class="math inline">\({\color{green}\bar y} = \mathbf{1} \bar y_n\)</span> označuje konštantný <span class="math inline">\(n-\)</span>rozmerný vektor aritmetických priemerov.</p>
+<p>Miera (lineárneho) fitu je daná nasledovnou dekompozíciou</p>
+<p><span class="math display">\[
+{\color{orange}
+\begin{pmatrix}
+\bar \epsilon_1 \\ \bar \epsilon_2 \\ \vdots \\ \bar \epsilon_n
+\end{pmatrix}} =
+\begin{pmatrix}
+y_1 - {\color{green}\bar y_n} \\ y_2 - {\color{green}\bar y_n} \\ \vdots \\ y_n - {\color{green}\bar y_n}
+\end{pmatrix} =
+\begin{pmatrix}
+{\color{blue}\hat y_1} - {\color{green}\bar y_n}\\ {\color{blue}\hat y_2} - {\color{green}\bar y_n} \\ \vdots \\ {\color{blue}\hat y_n} - {\color{green}\bar y_n}
+\end{pmatrix}
++
+{
+\begin{pmatrix}
+y_1 - {\color{blue}\hat y_1}\\ y_2 - {\color{blue}\hat y_2} \\ \vdots \\ y_n - {\color{blue}\hat y_n}
+\end{pmatrix}
+}
+=
+{\color{purple}
+\begin{pmatrix}
+{\color{purple}\hat y_1} - {\color{purple}\bar y_n}\\ {\color{purple}\hat y_2} - {\color{purple}\bar y_n} \\ \vdots \\ {\color{purple}\hat y_n} - {\color{purple}\bar y_n}
+\end{pmatrix}}
++
+{\color{red}
+\begin{pmatrix}
+{\color{red}\hat \epsilon_1} \\ {\color{red}\hat \epsilon_2} \\ \vdots \\ {\color{red}\hat \epsilon_n}
+\end{pmatrix}}
+\]</span></p>
+<p>a je popísaná nasledujúcim vzťahom:</p>
+<p><span class="math display">\[R^2 = 1- \frac{\sum (y_i - {\color{blue}\hat y_i} )^2}{\sum (y_i - {\color{green}\bar y_n})^2} = 1- \frac{{{\color{red}RSS}}}{{{\color{orange}TSS}}} =  \frac{{\color{purple}ESS}}{{{\color{orange}TSS}}} = \frac{\sum ({\color{blue}\hat y_i} - {\color{green}\bar y_n} )^2}{\sum (y_i - {\color{green}\bar y_n})^2},\]</span> kde používame nasledovné značenie</p>
 <ul>
-<li>RSS - reziduálna suma štvorcov (residual sum of squares),</li>
-<li>ESS - vysvetlená suma štvorcov (explained sum of squares),</li>
-<li>TSS - celková suma štvorcov (total sum of squares).</li>
+<li><span class="math inline">\({\color{red}RSS}\)</span> - reziduálna suma štvorcov (residual sum of squares),</li>
+<li><span class="math inline">\({\color{purple}ESS}\)</span> - vysvetlená suma štvorcov (explained sum of squares),</li>
+<li><span class="math inline">\({\color{orange}TSS}\)</span> - celková suma štvorcov (total sum of squares).</li>
 </ul>
 <p>Nejde v podstate o nič iné ako odhad lineárnej súvzťažnosti medzi <span class="math inline">\(y\)</span> a odhadovaných <span class="math inline">\(\hat y\)</span>: <span class="math display">\[R^2 = \left(\hat{cor}(\hat y, y)\right)^2 = \frac{\sum (\bar y - \hat y_i )^2}{\sum (y_i - \bar y_i)^2}.\]</span></p>
+<p>Ak je zjednodušený model <span class="math inline">\(y_i = {\color{green}\beta_0 } + {\color{orange} \bar \epsilon_i}\)</span> podobne dobrý ako zložitejší model <span class="math inline">\(y_i = {\color{blue}\beta_0 + \beta_1 x_i} + {\color{red}\epsilon_i},\)</span> potom <span class="math inline">\(R^2\)</span> bude blízke nule. Premenná <span class="math inline">\(x\)</span> nám totiž nepomôže k vysvetľovaniu <span class="math inline">\(y.\)</span></p>
+<p>Naviac, skutočná závislosť medzi <span class="math inline">\(x\)</span> a <span class="math inline">\(y\)</span> je <strong>presne</strong> lineárna (teda ak platí model bez akejkoľvek chyby!): <span class="math inline">\(y_i = \beta_0 + \beta_1 x_i,\)</span> práve vtedy a len vtedy, keď je <span class="math inline">\(R^2 = 1\)</span>.</p>
 <p>Hodnota <span class="math inline">\(R^2\)</span> nám teda hovorí o miere <strong>lineárnej</strong> súvzťažnosti medzi fitovanými hodnotami <span class="math inline">\(\hat y\)</span> a skutočnými hodnotami <span class="math inline">\(y\)</span>. Toto však môže byť matúce, ak medzi dvomi premennými nie je lineárny vzťah. (Tuto ide o menej zábavnú verziu <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">datasetov s dinosaurom</a>.)</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -852,7 +951,7 @@ F-statistic:   719 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
 </section>
 <section id="testovanie-podmodelov" class="level2" data-number="9.9">
 <h2 data-number="9.9" class="anchored" data-anchor-id="testovanie-podmodelov"><span class="header-section-number">9.9</span> Testovanie podmodelov</h2>
-<p>Ak sme v situácii, že máme 2 modely, jeden zložitejší, čo fituje dáta lepšie a jeden jednoduchší, ktorý je zasa elegantnejší. Ako sa medzi nimi rozhodujeme? Za predpokladu normality chýb na to môžeme použiť testovaciu štatistiku. Ak by bol menší model (ktorý je len špeciálnou verziou väčšieho modelu) správny, má nasledovná štatistika F rozdelenie.</p>
+<p>Ak sme v situácii, že máme 2 modely, jeden zložitejší, čo fituje dáta lepšie a jeden jednoduchší, ktorý je zasa elegantnejší. Ako sa medzi nimi rozhodujeme? Za predpokladu normality chýb na to môžeme použiť testovaciu štatistiku. Ak by bol menší model (ktorý je len špeciálnou verziou väčšieho modelu) správny, má nasledovná štatistika F rozdelenie (toto je vynormovaný podiel dvoch <a href="https://lukaslaffers.github.io/pas1/snp.html#chí-kvadrát-rozdelenie">Chí-kvadrát rozdelení</a>).</p>
 <p><span class="math display">\[\frac{(RSS_{rest}-RSS_{full})/df}{\hat \sigma^2} \sim F_{df, n-p},\]</span> kde</p>
 <ul>
 <li><span class="math inline">\(RSS_{rest}\)</span> je reziduálna suma štvorcov menšieho (jednoduchšieho) modelu</li>
@@ -1252,7 +1351,7 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 <!-- [R súbor z cvičení s komentármi](https://www.dropbox.com/scl/fi/ltg828cjae7z0x9de2m7h/20231214-labs08-komentare.R?rlkey=1thlpstfht8re73bau3yv2e8p&dl=0) -->
 <!-- [R súbor k cvičeniam 24.11.2022 riešenia](https://www.dropbox.com/s/ivhfnghkk21x1gd/labs_week10_solutions.R?dl=0) -->
 <!-- [R súbor k cvičeniam 2.12.2022 (riešené)](https://www.dropbox.com/s/i4wldlfiuyqbb05/labs_week11.R?dl=0) -->
-<p><a href="https://www.dropbox.com/scl/fi/moluuoa1dg24kpvwiekp9/cvicenie9part1.R?rlkey=a361zkhh93r8k62c0nzg3qn5p&dl=0">R súbor z cvičení z 24.11.2025</a></p>
+<p><a href="https://www.dropbox.com/scl/fi/moluuoa1dg24kpvwiekp9/cvicenie9part1.R?rlkey=a361zkhh93r8k62c0nzg3qn5p&amp;dl=0">R súbor z cvičení 24.11.2025</a></p>
 <div id="exr-" class="Exercise theorem exercise">
 <p><span class="theorem-title"><strong>Cvičenie 9.1</strong></span> Stiahnite si tieto <a href="https://www.dropbox.com/s/i7ia0n0elm1ts8l/Kompletny-prehlad-mesta-a-obce%20ciste.xlsx?dl=0">dáta</a> o veľkom Slovenskom antigénovom testovaní z roku 2020. Skúmajte aký je vzťah medzi percentom nakazených v prvom a v druhom kole testovania pre rôzne obce. Pozrite sa oddelene na malé, stredné a veľké obce.</p>
 </div>
