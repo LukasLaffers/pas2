@@ -754,7 +754,7 @@ var(\hat y_0 + \epsilon_0) &amp;=&amp; var(\hat y_0)+ var(\epsilon_0) \\
 </div>
 </div>
 <p>Maticová notácia nám ostáva, len musíme predefinovať maticu <span class="math inline">\(X\)</span>:</p>
-<p><span class="math display">\[ \begin{pmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix} = \begin{pmatrix}1 &amp; x_{11} &amp; x_{12} &amp; \dots &amp; x_{1n} \\1 &amp; x_{21} &amp; x_{22} &amp; \dots &amp; x_{2n} \\ \vdots&amp; \vdots&amp; \vdots &amp; \vdots &amp; \vdots \\ 1 &amp; x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{1n} \end{pmatrix} \begin{pmatrix}\beta_0 \\ \beta_1 \\ \beta_2\\ \vdots \\ \beta_p \end{pmatrix} + \begin{pmatrix}\epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \end{pmatrix}\]</span> alebo skrátene len <span class="math display">\[y = X\beta + \epsilon.\]</span></p>
+<p><span class="math display">\[ \begin{pmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix} = \begin{pmatrix}1 &amp; x_{11} &amp; x_{12} &amp; \dots &amp; x_{n1} \\1 &amp; x_{21} &amp; x_{22} &amp; \dots &amp; x_{n2} \\ \vdots&amp; \vdots&amp; \vdots &amp; \vdots &amp; \vdots \\ 1 &amp; x_{n1} &amp; x_{n2} &amp; \dots &amp; x_{np} \end{pmatrix} \begin{pmatrix}\beta_0 \\ \beta_1 \\ \beta_2\\ \vdots \\ \beta_p \end{pmatrix} + \begin{pmatrix}\epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \end{pmatrix}\]</span> alebo skrátene len <span class="math display">\[y = X\beta + \epsilon.\]</span></p>
 <p>Preto bude zápis odhadu minimalizujúceho súčet štvorcov odchýlok v maticovom zápise rovnaký ako predtým:</p>
 <p><span class="math display">\[\hat \beta = (X^T X)^{-1} X^T y\]</span> Demonštrujeme si to na príklade. Chceli by sme vysvetlovať tržby na základe objemu peňazí investovaného do rôzneho typu reklamy (facebook, youtube, noviny).</p>
 <div class="cell">
@@ -1047,7 +1047,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <p>Na konci každého modelu je korektná interpretácia. Budeme uvažovať štyri rôzne modely.</p>
 <ul>
-<li>Level-level model <span class="math inline">\(testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
+<li>Level-level model <span class="math inline">\(testScore_i = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\)</span></li>
 <li>Log-level model ak budeme modelovať rast skóre pomocou hodín strávených učením <span class="math inline">\(\log(testScore_i) = \beta_0 + \beta_1 hoursLearned_i + \beta_2 g^A_i + \epsilon_i\)</span></li>
 <li>Level-log model ak budeme modelovať skóre pomocou rastu hodín strávených učením <span class="math inline">\(testScore_i = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
 <li>Log-log model ak budeme modelovať rast skóre pomocou rastu hodín strávených učením <span class="math inline">\(\log(testScore_i) = \beta_0 + \beta_1 \log(hoursLearned_i) + \beta_2 g^A_i + \epsilon_i\)</span></li>
@@ -1336,8 +1336,8 @@ F-statistic: 30.05 on 2 and 17 DF,  p-value: 2.624e-06</code></pre>
 y_i &amp;\rightarrow&amp; e^{\beta_0 + \beta_1 \log(x_i)  + \epsilon_i +  \beta_1 \log(1+\Delta)}\\
 y_i &amp;\rightarrow&amp; e^{\beta_0 + \beta_1 \log(x_i)  + \epsilon_i} e^{\beta_1 \log(1+\Delta)}\\
 y_i &amp;\rightarrow&amp; y_i e^{\beta_1 \log(1+\Delta)}\\
-y_i &amp;\rightarrow&amp; y_i e^{ \log\big((1+\Delta)^{\beta}\big)}\\
-y_i &amp;\rightarrow&amp; y_i (1+\Delta)^{\beta}\\
+y_i &amp;\rightarrow&amp; y_i e^{ \log\big((1+\Delta)^{\beta_1}\big)}\\
+y_i &amp;\rightarrow&amp; y_i (1+\Delta)^{\beta_1}\\
 &amp;\sim&amp;\\
 y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 \end{eqnarray*}\]</span>
