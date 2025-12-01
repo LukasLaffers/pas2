@@ -263,6 +263,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#zhrnutie" id="toc-zhrnutie" class="nav-link" data-scroll-target="#zhrnutie"><span class="header-section-number">9.11</span> Zhrnutie</a></li>
   <li><a href="#cvičenia" id="toc-cvičenia" class="nav-link" data-scroll-target="#cvičenia"><span class="header-section-number">9.12</span> Cvičenia</a></li>
+  <li><a href="#domáca-úloha-5" id="toc-domáca-úloha-5" class="nav-link" data-scroll-target="#domáca-úloha-5"><span class="header-section-number">9.13</span> Domáca úloha 5</a></li>
   </ul>
 </nav>
     </div>
@@ -1376,6 +1377,7 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 <!-- [R súbor k cvičeniam 24.11.2022 riešenia](https://www.dropbox.com/s/ivhfnghkk21x1gd/labs_week10_solutions.R?dl=0) -->
 <!-- [R súbor k cvičeniam 2.12.2022 (riešené)](https://www.dropbox.com/s/i4wldlfiuyqbb05/labs_week11.R?dl=0) -->
 <p><a href="https://www.dropbox.com/scl/fi/moluuoa1dg24kpvwiekp9/cvicenie9part1.R?rlkey=a361zkhh93r8k62c0nzg3qn5p&amp;dl=0">R súbor z cvičení 24.11.2025</a></p>
+<p><a href="https://www.dropbox.com/scl/fi/wok2lovpnq8g3ye0gxpt5/cvicenie9.R?rlkey=goswlrw8u4xgeigdun2da5kfz&amp;dl=0">R súbor z cvičení 1.12.2025</a></p>
 <div id="exr-" class="Exercise theorem exercise">
 <p><span class="theorem-title"><strong>Cvičenie 9.1</strong></span> Stiahnite si tieto <a href="https://www.dropbox.com/s/i7ia0n0elm1ts8l/Kompletny-prehlad-mesta-a-obce%20ciste.xlsx?dl=0">dáta</a> o veľkom Slovenskom antigénovom testovaní z roku 2020. Skúmajte aký je vzťah medzi percentom nakazených v prvom a v druhom kole testovania pre rôzne obce. Pozrite sa oddelene na malé, stredné a veľké obce.</p>
 </div>
@@ -1412,6 +1414,42 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 <span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"A"</span>,<span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">"B"</span>,<span class="dv">10</span>))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Využitím lineárneho modelu uvažujte ako sú tieto dve skupiny rôzne: čo sa týka priemerného testovacieho skóre ako aj čo sa týka citlivosti skóre na učenie.</p>
+</div>
+<p>:::</p>
+</section>
+<section id="domáca-úloha-5" class="level2" data-number="9.13">
+<h2 data-number="9.13" class="anchored" data-anchor-id="domáca-úloha-5"><span class="header-section-number">9.13</span> Domáca úloha 5</h2>
+<p>Prosím odovzdať do 14.12.2025 19:59 cez formulár (tento Vám príde emailom).</p>
+<p>V riešeniach používajte prosím plnovýznamové vety a nahrávajte riešenia v jednom pdf súbore nazvanom podľa Vašich priezvísk v tvare DU5_priezvisko1_priezvisko2.pdf (napríklad DU5_Kovacova_Zelinka.pdf).</p>
+<div class="exercise" name="DÚ 5.1, mtcars">
+<p>Závislosť spotreby paliva od hmotnosti auta (dataset mtcars) Použite dataset mtcars.</p>
+<ol type="a">
+<li><p>Zobrazte vzťah medzi spotrebou (mpg) a hmotnosťou auta (wt). – mpg bude vysvetľovaná premenná.</p></li>
+<li><p>Odhadnite jednoduchý lineárny model mpg ~ wt.</p></li>
+<li><p>Interpretujte výsledky v sumárnej tabuľke.</p></li>
+<li><p>Vizualizujte dáta aj s regresnou priamkou.</p></li>
+<li><p>Odhadnite spotrebu pre auto s hmotnosťou 2.5t a 4.0t (tony) pomocou: intervalov spoľahlivosti, predikčných intervalov.</p></li>
+</ol>
+<p>Pozor na jednotky hmotnosti v datasete!</p>
+</div>
+<div class="exercise" name="DÚ 5.2, diamonds">
+<p>Predikcia ceny diamantu podľa karátu (dataset diamonds) Použite dataset diamonds (ggplot2).</p>
+<ol type="a">
+<li><p>Zobrazte závislosť medzi price (cena, vysvetľovaná premenná), carat (veľkosť).</p></li>
+<li><p>Postavte lineárny model price ~ carat.</p></li>
+<li><p>Interpretujte výsledky v sumárnej tabuľke.</p></li>
+<li><p>Vizualizujte dáta aj s regresnou priamkou.</p></li>
+</ol>
+</div>
+<div class="exercise" name="DÚ 5.3, galtonFamilies">
+<p>Predikcia výšky dieťaťa pomocou výšky rodičov (dataset GaltonFamilies) Použijeme dataset GaltonFamilies z balíka/knižnice HistData (je verejne dostupný a obsahuje dáta o výške rodičov a detí).</p>
+<ol type="a">
+<li><p>Zobrazte vzťah medzi výškou dieťaťa (childHeight) a priemernou výškou rodičov (midparentHeight).</p></li>
+<li><p>Odhadnite lineárny model: childHeight ~ midparentHeight</p></li>
+<li><p>Interpretujte výsledky v sumárnej tabuľke.</p></li>
+<li><p>Vizualizujte dáta spolu s regresnou priamkou.</p></li>
+<li><p>Odhadnite výšku dieťaťa (s intervalmi spoľahlivosti/confidence aj predikcie/prediction) pre: rodičov s priemernou výškou 65 rodičov s priemernou výškou 70</p></li>
+</ol>
 </div>
 <!-- ## Domáca úloha 4 -->
 <!-- Deadline je 13.12.2024 o 20:00. Váš kód aj ostatné pomocné súbory (napríklad dáta) mi zabaľte do jedného (1) zip súboru (nie `rar` súbor, nie OneDrive folder) v tvare `du4_MenoPriezvisko.zip` (napr. `du4_PeterKovac.zip`) a pošlite cez formulár, ktorého odkaz je na stránke. Kód musí byť spustiteľný a podrobne okomentovaný. Odovzdávate mi Vašu **vlastnú** prácu. Domáca úloha je **dobrovoľná** a **nehodnotená**. V prípade, že ju pošlete do termínu dostanete spätnú väzbu -->
