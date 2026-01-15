@@ -387,6 +387,7 @@ window.Quarto = {
 <section id="test-na-základe-normálnej-aproximácie-z-test" class="level3" data-number="8.1.1">
 <h3 data-number="8.1.1" class="anchored" data-anchor-id="test-na-základe-normálnej-aproximácie-z-test"><span class="header-section-number">8.1.1</span> Test na základe normálnej aproximácie (Z-test)</h3>
 <p>Začneme najjednoduchším prípadom. Prepokladajme, že naše pozorovania pochádzajú z normálneho rozdelenia s neznámou strednou hodnotou a s neznámou varianciou. Nech ide o zmenu výsledku na teste. Študent absolvuje test na začiatku semestra a potom (podobný) test na konci semestra. A chceli by sme vedieť či sa výsledky zlepšili. Teda, že či sa študenti niečo naučili.</p>
+<p>Pre názornosť si teraz vygenerujeme dáta so strednými hodnotami 50 (pred) a 65 (po), takže rozdiel je 15.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">437</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data_test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cas=</span><span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"pred"</span>, <span class="st">"po"</span>), <span class="at">each=</span><span class="dv">30</span>)),</span>
@@ -414,7 +415,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Väčšina študentov sa zlepšila ale nájdu sa aj takí, ktorí sa dokonca zhoršili, konkrétne traja. Priemerné zlepšenie je <span class="math inline">\(18.25\)</span>.</p>
-<p>Chceli by sme vedieť či je stredná hodnota väčšia ako <span class="math inline">\(15\)</span> alebo nie. Nuž vidíme, že v našom prípade je o <span class="math inline">\(3.25\)</span> viacej. Ako veľmi si ale môžeme byť tým istí?</p>
+<p>Chceli by sme vedieť či je stredná hodnota väčšia ako (napríklad) <span class="math inline">\(15\)</span> alebo nie. (Rovnako by nás mohlo napríklad zaujímať, či je rozdiel väčší ako 0, teda či nastalo vôbec nejaké zlepšenie.) Nuž vidíme, že v našom prípade je o <span class="math inline">\(3.25\)</span> viacej ako <span class="math inline">\(!%\)</span>. Ako veľmi si ale môžeme byť tým istí?</p>
 <p>Na to aby sme to vedeli posúdiť potrebujeme nejakým spôsobom odhadnúť ako veľa je variability v tom čísle <span class="math inline">\(18.25,\)</span> ako blízko by sme očakávali, že má byť k čislu 15. Ako sme videli, čím viacej máme pozorovaní tým menej neistoty je v tom, ako ďaleko je tento aritmetický priemer (18.25) od skutočného populačného priemeru (15). Zo sekcie o <a href="https://lukaslaffers.github.io/pas1/zvc.html">zákone o veľkých čislach</a> vieme, že</p>
 <p>Ak <span class="math inline">\(X_1, X_2, X_3, \dots {\text{iid} }, \text{E}[X_1] = \mu, \text{Var}[X_1] = \sigma^2 \implies \bar{X}_n \equiv \frac{X_1 + X_2 + \dots + X_n}{n} \rightarrow_D N(\mu, \frac{\sigma^2}{n}),\)</span></p>
 <p>pokiaľ <span class="math inline">\(X_1, X_2,...\)</span> sú združene nezávislé a rovnako rozdelené (iid = independent and identically distributed) náhodné premenné.</p>
