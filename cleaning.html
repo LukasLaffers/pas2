@@ -254,7 +254,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Čistenie dát (data cleaning, data cleansing) je proces, pri ktorom odstraňujeme alebo orpavujeme chyby a nezrovnalosti v dátach, aby boli použiteľné na analýzu. Cieľom je, aby údaje boli presné, úplné, konzistentné a mali zmysel pre ďalšie spracovanie.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<em>Túto kapitolu napísala Bianka Modrovičová.</em></p>
+<p>Čistenie dát (data cleaning, data cleansing) je proces, pri ktorom odstraňujeme alebo opravujeme chyby a nezrovnalosti v dátach, aby boli použiteľné na analýzu. Cieľom je, aby údaje boli presné, úplné, konzistentné a mali zmysel pre ďalšie spracovanie.</p>
 <p>Typické problémy, ktoré sa pri čistení dát riešia:</p>
 <ul>
 <li><p>duplicitné záznamy</p></li>
@@ -288,7 +289,7 @@ Attaching package: 'janitor'</code></pre>
 <ul>
 <li><p>Upraví písmená a oddeľovače na konzistentný formát (predvolený je <code>snake_case</code>, ale dostupné sú aj iné napr. <code>camelCase</code>)</p></li>
 <li><p>Rieši špeciálne znaky a medzery, vrátane transiliterácie znakov</p></li>
-<li><p>Pridáva čísla k duplicitným názvnom stĺpcov</p></li>
+<li><p>Pridáva čísla k duplicitným názvom stĺpcov</p></li>
 <li><p>Konvertuje znaky <code>%</code> na <code>percent</code> a <code>#</code> na <code>number</code>, aby sa zachoval význam názvu.</p></li>
 <li><p>Zachováva medzery (alebo ich absenciu) okolo čísel</p></li>
 </ul>
@@ -302,22 +303,19 @@ Attaching package: 'janitor'</code></pre>
 <pre><code>  first_name age_years score_percent repeat_value repeat_value_2  x
 1         NA        NA            NA           NA             NA NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   first_name age_years score_percent repeat_value repeat_value_2  x</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1         NA        NA            NA           NA             NA NA</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Základné R by vytvorilo toto:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make.names</span>(<span class="fu">names</span>(data))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make.names</span>(<span class="fu">names</span>(data))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "First.Name"  "Age..Years." "score.."     "repeatVálue" "repeatValue"
 [6] "X"          </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "First.Name"  "Age..Years." "score.."     "repeatVálue" "repeatValue" "X"</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="kontrola-kompatibility-stĺpcov" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="kontrola-kompatibility-stĺpcov"><span class="header-section-number">4.1.2</span> Kontrola kompatibility stĺpcov</h3>
-<p>Pri práci s viacerými súbormi dát, ktoré by mali byť indetické sa často stane, že ich chceme načítať a zlúčiť na analýzu. Niekedy však funkcie ako napr. <code>dplyr::bind_rows()</code> alebo <code>rbind()</code> zlyhajúce, pretože stĺpce sa líšia názvom alebo typom.</p>
+<p>Pri práci s viacerými súbormi dát, ktoré by mali byť identické sa často stane, že ich chceme načítať a zlúčiť na analýzu. Niekedy však funkcie ako napr. <code>dplyr::bind_rows()</code> alebo <code>rbind()</code> zlyhajú, pretože stĺpce sa líšia názvom alebo typom.</p>
 <p>Funkcia <code>compare_df_cols()</code> umožňuje rýchlo porovnať viacero data.frameov. Prijíma názvy bez úvodzoviek alebo zoznam data.frameov a vracia zhrnutie ich porovnania. Môžeme zistiť:</p>
 <ul>
 <li><p>Aký je typ jednotlivých stĺpcov</p></li>
@@ -326,52 +324,41 @@ Attaching package: 'janitor'</code></pre>
 </ul>
 <p><strong>Príklad</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">b =</span> <span class="fu">c</span>(<span class="st">"big"</span>, <span class="st">"small"</span>))</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">b =</span> <span class="fu">c</span>(<span class="st">"medium"</span>, <span class="st">"small"</span>, <span class="st">"big"</span>), <span class="at">c =</span> <span class="dv">0</span>, <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>) <span class="co"># here, column b is a factor</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">b =</span> <span class="fu">as.character</span>(b))</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Porovnanie všetkých stĺpcov</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols</span>(df1, df2, df3)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">b =</span> <span class="fu">c</span>(<span class="st">"big"</span>, <span class="st">"small"</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">b =</span> <span class="fu">c</span>(<span class="st">"medium"</span>, <span class="st">"small"</span>, <span class="st">"big"</span>), <span class="at">c =</span> <span class="dv">0</span>, <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>) <span class="co"># here, column b is a factor</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">b =</span> <span class="fu">as.character</span>(b))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Porovnanie všetkých stĺpcov</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols</span>(df1, df2, df3)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  column_name       df1     df2       df3
 1           a   integer integer   integer
 2           b character  factor character
 3           c      &lt;NA&gt; numeric      &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   column_name       df1     df2       df3</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1           a   integer integer   integer</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2           b character  factor character</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3           c      &lt;NA&gt; numeric      &lt;NA&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Len rozdiely medzi stĺpcami</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols</span>(df1, df2, df3, <span class="at">return =</span> <span class="st">"mismatch"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Len rozdiely medzi stĺpcami</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols</span>(df1, df2, df3, <span class="at">return =</span> <span class="st">"mismatch"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  column_name       df1    df2       df3
 1           b character factor character</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   column_name       df1    df2       df3</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1           b character factor character</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Špecifikácia metódy spájania stĺpcov</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols</span>(df1, df2, df3, <span class="at">return =</span> <span class="st">"mismatch"</span>, <span class="at">bind_method =</span> <span class="st">"rbind"</span>) <span class="co"># default is dplyr::bind_rows</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Špecifikácia metódy spájania stĺpcov</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols</span>(df1, df2, df3, <span class="at">return =</span> <span class="st">"mismatch"</span>, <span class="at">bind_method =</span> <span class="st">"rbind"</span>) <span class="co"># default is dplyr::bind_rows</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  column_name       df1     df2       df3
 1           b character  factor character
 2           c      &lt;NA&gt; numeric      &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   column_name       df1     df2       df3</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1           b character  factor character</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2           c      &lt;NA&gt; numeric      &lt;NA&gt;</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ak chceme jednoducho zistiť či je možné data.frames úspešne zlúčiť podľa stĺpcov, použijeme <code>compare_df_cols_same()</code>. Funkcia vráti <code>TRUE</code> alebo <code>FALSE</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols_same</span>(df1, df3)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols_same</span>(df1, df3)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols_same</span>(df2, df3)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_df_cols_same</span>(df2, df3)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  column_name    ..1       ..2
 1           b factor character</code></pre>
@@ -379,17 +366,14 @@ Attaching package: 'janitor'</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   column_name    ..1       ..2</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1           b factor character</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="kontrola-duplikátov" class="level3" data-number="4.1.3">
 <h3 data-number="4.1.3" class="anchored" data-anchor-id="kontrola-duplikátov"><span class="header-section-number">4.1.3</span> Kontrola duplikátov</h3>
 <p>Pri čistení dát je často potrebné overiť, či sa v dátach nenachádzajú neželané duplikáty. Funkcie v balíku janitor umožňujú rýchlo identifikovať a preskúmať duplicitné záznamy, čo je dôležité najmä v prípadoch, keď by sa mal každý unikátny záznam objaviť v dátach len raz.</p>
-<p>Jednou z takýchto funkcií je <code>get_dupes()</code>. T8 vracia všetky záznamy, ktoré sú duplicitné a pridáva stĺpec s počtom opakovaní, aby bolo jednoduché odhaliť problematické záznamy.</p>
+<p>Jednou z takýchto funkcií je <code>get_dupes()</code>. Tá vracia všetky záznamy, ktoré sú duplicitné a pridáva stĺpec s počtom opakovaní, aby bolo jednoduché odhaliť problematické záznamy.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_dupes</span>(mtcars, wt, cyl) <span class="co"># or mtcars %&gt;% get_dupes(wt, cyl) if you prefer to pipe</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_dupes</span>(mtcars, wt, cyl) <span class="co"># or mtcars %&gt;% get_dupes(wt, cyl) if you prefer to pipe</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    wt cyl dupe_count  mpg  disp  hp drat  qsec vs am gear carb
 1 3.44   6          2 19.2 167.6 123 3.92 18.30  1  0    4    4
@@ -397,18 +381,13 @@ Attaching package: 'janitor'</code></pre>
 3 3.57   8          2 14.3 360.0 245 3.21 15.84  0  0    3    4
 4 3.57   8          2 15.0 301.0 335 3.54 14.60  0  1    5    8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     wt cyl dupe_count  mpg  disp  hp drat  qsec vs am gear carb</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 3.44   6          2 19.2 167.6 123 3.92 18.30  1  0    4    4</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 3.44   6          2 17.8 167.6 123 3.92 18.90  1  0    4    4</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 3.57   8          2 14.3 360.0 245 3.21 15.84  0  0    3    4</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 3.57   8          2 15.0 301.0 335 3.54 14.60  0  1    5    8</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="preskúmanie-vzťahov-medzi-stĺpcami" class="level3" data-number="4.1.4">
 <h3 data-number="4.1.4" class="anchored" data-anchor-id="preskúmanie-vzťahov-medzi-stĺpcami"><span class="header-section-number">4.1.4</span> Preskúmanie vzťahov medzi stĺpcami</h3>
 <p>Pri práci s dátami je užitočné vedieť, či niektoré stĺpce majú jedinečné vzťahy medzi sebou, napr. keď každý záznam v jednom stĺpci zodpovedá presne jednému záznamu v inom stĺpci. Funkcia <code>get_one_to_one()</code> zobazuje, ktoré stĺpce v dátovom rámci majú medzi sebou <strong>one-to-one</strong> vzťahy.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
@@ -423,8 +402,8 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>starwars[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_one_to_one</span>()</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>starwars[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_one_to_one</span>()</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] "name"       "height"     "mass"       "skin_color" "birth_year"
@@ -436,15 +415,6 @@ Attaching package: 'dplyr'</code></pre>
 [[3]]
 [1] "sex"     "species"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "name"       "height"     "mass"       "skin_color" "birth_year"</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [6] "films"     </span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "hair_color" "starships" </span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "sex"     "species"</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="odstraňovanie-prázdnych-riadkov-a-stĺpcov" class="level3" data-number="4.1.5">
@@ -452,19 +422,16 @@ Attaching package: 'dplyr'</code></pre>
 <p>Pri čistení dát z Excelu alebo iných zdrojov sa často stretneme s prázdnymi riadkami a stĺpcami, ktoré po načítaní do R nemajú žiadne hodnoty. Takéto riadky a stĺpce môžu zbytočne komplikovať analýzu a vizualizácie.</p>
 <p>Na odstránenie prázdnych riadkov a stĺpcov môžeme použiť funkciu <code>remove_empty()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">v1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">3</span>),</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">v2 =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">v3 =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="cn">NA</span>, <span class="st">"b"</span>))</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>q <span class="sc">%&gt;%</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="fu">c</span>(<span class="st">"rows"</span>, <span class="st">"cols"</span>))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">v1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">3</span>),</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">v2 =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">v3 =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="cn">NA</span>, <span class="st">"b"</span>))</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>q <span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="fu">c</span>(<span class="st">"rows"</span>, <span class="st">"cols"</span>))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  v1 v3
 1  1  a
 3  3  b</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   v1 v3</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  1  a</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  3  b</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="odstraňovanie-stĺpcov-s-konštantnými-hodnotami" class="level3" data-number="4.1.6">
@@ -472,80 +439,67 @@ Attaching package: 'dplyr'</code></pre>
 <p>V niektorých dátových súboroch sa môžeme stretnúť so stĺpcami, ktoré odstraňujú len jednu hodnotu vo všetkých riadkoch. Takéto stĺpce zvyčajne neposkytujú žiadnu informatívnu hodnotu a môžu zbytočne zaťažovať analýzu.</p>
 <p>Na ich odstránenie môžeme využiť funkciu <code>remove_constant()</code>. Táto funkcia tiež umožňuje nastaviť, či sa majú považovať hodnoty <code>NA</code> za odlišné od konštanty prostredníctvom parametra <code>na.rm</code>. Funkcia pracuje nielen s data.frames, ale aj s maticami.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">good =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">boring =</span> <span class="st">"the same"</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">%&gt;%</span> <span class="fu">remove_constant</span>()</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">good =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">boring =</span> <span class="st">"the same"</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">%&gt;%</span> <span class="fu">remove_constant</span>()</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  good
 1    1
 2    2
 3    3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   good</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    1</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    2</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    3</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="zaokrúhľovanie-čísel" class="level3" data-number="4.1.7">
 <h3 data-number="4.1.7" class="anchored" data-anchor-id="zaokrúhľovanie-čísel"><span class="header-section-number">4.1.7</span> Zaokrúhľovanie čísel</h3>
-<p>V R sa štandartne používa tzv. “bankers rounding”, čo znamená, že polovičné hodnoty (napr. 2.5, 3.5) sa zaokrúhľujú na najbližšie <strong>párne číslo</strong>. V praxi to môže byť mätúce, keď očakávame, že 2.5 sa zaokrúhli nahor na 3.</p>
+<p>V R sa štandardne používa tzv. “bankers rounding”, čo znamená, že polovičné hodnoty (napr. 2.5, 3.5) sa zaokrúhľujú na najbližšie <strong>párne číslo</strong>. V praxi to môže byť mätúce, keď očakávame, že 2.5 sa zaokrúhli nahor na 3.</p>
 <p>Funkcia <code>round_half_up()</code> rieši tento problém tým, že všetky polovičné hodnoty zaokrúhľuje <strong>nahor</strong> - presne podľa bežného očakávania.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>nums <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="fl">3.5</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(nums)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>nums <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="fl">3.5</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(nums)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 4</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round_half_up</span>(nums)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round_half_up</span>(nums)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 3 4</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="konverzia-čísel-z-excelu-na-dátumy" class="level3" data-number="4.1.8">
 <h3 data-number="4.1.8" class="anchored" data-anchor-id="konverzia-čísel-z-excelu-na-dátumy"><span class="header-section-number">4.1.8</span> Konverzia čísel z Excelu na dátumy</h3>
 <p>Pri práci s dátami z Excelu sa často stretávame s číslami, ktoré predstavujú dátumy - napríklad hodnota <code>42223</code> by mala byť dátumom. Funkcia <code>excel_numeric_to_date()</code> umožňuje tieto Excel serial numbers previesť na objekt triedy <code>Date</code> alebo <code>POSIXlt</code>, pričom podporuje rôzne systémy kódovania dátumov v Exceli a zachováva aj časové zložky ak sú obsiahnuté v zlomkoch dňa.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_numeric_to_date</span>(<span class="dv">41103</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_numeric_to_date</span>(<span class="dv">41103</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2012-07-13"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "2012-07-13"</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_numeric_to_date</span>(<span class="fl">41103.01</span>) <span class="co"># ignores decimal places, returns Date object</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_numeric_to_date</span>(<span class="fl">41103.01</span>) <span class="co"># ignores decimal places, returns Date object</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2012-07-13"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "2012-07-13"</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_numeric_to_date</span>(<span class="fl">41103.01</span>, <span class="at">include_time =</span> <span class="cn">TRUE</span>) <span class="co"># returns POSIXlt object</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_numeric_to_date</span>(<span class="fl">41103.01</span>, <span class="at">include_time =</span> <span class="cn">TRUE</span>) <span class="co"># returns POSIXlt object</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2012-07-13 00:14:24 CEST"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "2012-07-13 00:14:24 EDT"</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_numeric_to_date</span>(<span class="fl">41103.01</span>, <span class="at">date_system =</span> <span class="st">"mac pre-2011"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_numeric_to_date</span>(<span class="fl">41103.01</span>, <span class="at">date_system =</span> <span class="st">"mac pre-2011"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2016-07-14"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "2016-07-14"</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Takáto konverzia je užitočná, keď načítavame Excel súbory do R a chceme pracovať s dátumami priamo ako s dátovými typmi, namiesto manuálneho prevodu alebo zložitej úpravy čísel.</p>
 </section>
 <section id="konverzia-zmiešaných-dátumov-a-časov-na-dátum" class="level3" data-number="4.1.9">
 <h3 data-number="4.1.9" class="anchored" data-anchor-id="konverzia-zmiešaných-dátumov-a-časov-na-dátum"><span class="header-section-number">4.1.9</span> Konverzia zmiešaných dátumov a časov na dátum</h3>
-<p>Funkcie <code>convert_to_date()</code> a <code>covert_to_datetime()</code> nadväzujú na <code>excel_numeric_to_date()</code> a umožňujú <strong>robustnejšie spracovanie zmiešaných vstupov</strong> - napr. kombinácie textových dátumov a Excel serial numbers. Sú veľmi užitočné, keď načítavame viacero tabuliek, ktoré by mali mať rovnaké formáty stĺpcov, ale v praxi sa líšia.</p>
+<p>Funkcie <code>convert_to_date()</code> a <code>convert_to_datetime()</code> nadväzujú na <code>excel_numeric_to_date()</code> a umožňujú <strong>robustnejšie spracovanie zmiešaných vstupov</strong> - napr. kombinácie textových dátumov a Excel serial numbers. Sú veľmi užitočné, keď načítavame viacero tabuliek, ktoré by mali mať rovnaké formáty stĺpcov, ale v praxi sa líšia.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">convert_to_date</span>(<span class="fu">c</span>(<span class="st">"2020-02-29"</span>, <span class="st">"40000.1"</span>))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">convert_to_date</span>(<span class="fu">c</span>(<span class="st">"2020-02-29"</span>, <span class="st">"40000.1"</span>))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2020-02-29" "2009-07-06"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "2020-02-29" "2009-07-06"</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">convert_to_datetime</span>(<span class="fl">44874.5</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">convert_to_datetime</span>(<span class="fl">44874.5</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2022-11-09 12:00:00 UTC"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "2022-11-09 12:00:00 UTC"</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -554,12 +508,12 @@ Attaching package: 'dplyr'</code></pre>
 <div class="Exercise">
 <p>Očistime dáta v Titanic datasete, ktorý obsahuje informácie o pasažiaroch Titanicu. Tento dataset je verejne dostupný a využívaný napr. na riešenie klasifikačných problémov. Tento dataset obsahuje nejednotné názvy stĺpcov, napr. “PassengerId a”Name”, ktoré je potrebné upraviť.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"</span></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url)</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  PassengerId Survived Pclass
 1           1        0      3

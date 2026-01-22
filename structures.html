@@ -293,7 +293,7 @@ window.Quarto = {
 </header>
 
 
-<p>V tejto kapitole postupneme pokračujeme v spoznávaní Rka. Pozrieme sa na bežne používané objekty s ktorými budeme pracovať, či už premenné dátové štruktúry alebo iné užitočné funkcie.</p>
+<p>V tejto kapitole postupneme pokračujeme v spoznávaní Rka. Pozrieme sa na bežne používané objekty, s ktorými budeme pracovať, či už premenné, dátové štruktúry alebo iné užitočné funkcie.</p>
 <section id="typy-premenných" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="typy-premenných"><span class="header-section-number">2.1</span> Typy premenných</h2>
 <section id="numeric" class="level3" data-number="2.1.1">
@@ -304,7 +304,7 @@ window.Quarto = {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">5</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># it will be filled with zeros</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Ďalej sa môžeme opýtať či je daný objekt typu <code>numeric</code> pomocou <code>is.numeric()</code> Ak nie je, tak môžeme skonvertovať do <code>numeric</code> typu pomocou <code>as.numeric()</code>, pokiaľ sa to dá.</p>
+<p>Ďalej sa môžeme opýtať, či je daný objekt typu <code>numeric</code> pomocou <code>is.numeric()</code>. Ak nie je, tak môžeme skonvertovať do <code>numeric</code> typu pomocou <code>as.numeric()</code>, pokiaľ sa to dá.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(x)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -346,7 +346,7 @@ window.Quarto = {
 <pre><code>[1] 10</code></pre>
 </div>
 </div>
-<p>Logické premenné sú tiež doležité na skúmanie podmnožín</p>
+<p>Logické premenné sú tiež dôležité na skúmanie podmnožín.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.75</span>, <span class="fl">1.80</span>, <span class="fl">1.65</span>, <span class="fl">1.90</span>, <span class="fl">1.74</span>, <span class="fl">1.91</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>height <span class="sc">&gt;</span> <span class="fl">1.70</span></span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -369,7 +369,7 @@ window.Quarto = {
 </section>
 <section id="factor" class="level3" data-number="2.1.4">
 <h3 data-number="2.1.4" class="anchored" data-anchor-id="factor"><span class="header-section-number">2.1.4</span> <code>factor</code></h3>
-<p>Faktorová premenná (<code>factor</code>) je užitočná na prácu s informáciami, ktoré sú v nenumerickom tvare. Môžeme mať usporiadané faktory (silne nesúhlasím, nesúhlasím, nemám názor, súhlasím, silne súhlasím.) alebo neusporiadané faktory (modrá, žltá, zelená…).</p>
+<p>Faktorová premenná (<code>factor</code>) je užitočná na prácu s informáciami, ktoré sú v nenumerickom tvare. Môžeme mať usporiadané faktory (silne nesúhlasím, nesúhlasím, nemám názor, súhlasím, silne súhlasím) alebo neusporiadané faktory (modrá, žltá, zelená…).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>carColors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"red"</span>,<span class="st">"red"</span>,<span class="st">"blue"</span>,<span class="st">"yellow"</span>,<span class="st">"salmon"</span>,<span class="st">"white"</span>,<span class="st">"grapefruit"</span>,<span class="st">"white"</span>,<span class="st">"black"</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>fcarColors <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(carColors)</span>
@@ -529,9 +529,9 @@ Levels: none &lt; mild &lt; medium &lt; severe</code></pre>
 <ul>
 <li>Neporiadok v kóde - čítať neporiadny kód je bolesť. Niekedy je aj vlastný kód po pár mesiacoch úplne nečitateľný. Špeciálna bolesť je čítat cudzí neporiadny kód.</li>
 <li><code>(0.1 + 0.2) == 0.3</code> - treba si dávať pozor na to, ako počítač reprezentuje čísla.</li>
-<li>zlé ozátvorkovanie - viacej zátvoriek je skoro vždy lepšie. Keď sa neviete rozhodnúť č’i pridať zátvorku, pridajte ju. Sú lacné.</li>
-<li>chýbajúca knižnica - je dobrou praxou na začiatku programu inicializovať všetky knižnice, ktoré sú potrebné na spustenie.</li>
-<li>nekompatibilné objekty - veľmi často sa robia operácie s nekompatibilnými objektami. Pokiaľ Rko neviem automaticky skonvertovať objekty na kompatibilné, tak vyhlási chybu. Niekedy je však horšie keď chybu ani nevyhlási, niečo urobí a chyba sa môže ukázať na úplne inom mieste.</li>
+<li>Zlé ozátvorkovanie - viacej zátvoriek je skoro vždy lepšie. Keď sa neviete rozhodnúť, či pridať zátvorku, pridajte ju. Sú lacné.</li>
+<li>Chýbajúca knižnica - je dobrou praxou na začiatku programu inicializovať všetky knižnice, ktoré sú potrebné na spustenie.</li>
+<li>Nekompatibilné objekty - veľmi často sa robia operácie s nekompatibilnými objektami. Pokiaľ Rko neviem automaticky skonvertovať objekty na kompatibilné, tak vyhlási chybu. Niekedy je však horšie keď chybu ani nevyhlási, niečo urobí a chyba sa môže ukázať na úplne inom mieste.</li>
 </ul>
 </section>
 <section id="demonštrácia-v-r" class="level2" data-number="2.8">
@@ -639,7 +639,7 @@ Attaching package: 'survival'</code></pre>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"myfunction2.R"</span>)</span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">myfunction2</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Tu sú rôzne spôsoby ako vykresiť závislosť dvoch premenných. Funkcia <code>with(table,fun)</code> vyhodnotí <code>fun</code> na dátovej tabuľke <code>table</code>.</p>
+<p>Tu sú rôzne spôsoby ako vykresliť závislosť dvoch premenných. Funkcia <code>with(table,fun)</code> vyhodnotí <code>fun</code> na dátovej tabuľke <code>table</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(thuesen)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -862,7 +862,7 @@ Attaching package: 'survival'</code></pre>
 </div>
 </div>
 </div>
-<p>Naćítanie dát z tabuľky je zvyčajne prvým krokom akejkoľvek analýzy. Dáta prichádzajú v rôznych formách. Tu je zopár príkladov ako načítať dáta z rôznych typov súborov. Dôležité je, aby v adresári v ktorom sa nachádzame daný súbor aj naozaj bol.</p>
+<p>Načítanie dát z tabuľky je zvyčajne prvým krokom akejkoľvek analýzy. Dáta prichádzajú v rôznych formách. Tu je zopár príkladov ako načítať dáta z rôznych typov súborov. Dôležité je, aby v adresári, v ktorom sa nachádzame daný súbor aj naozaj bol.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="do">######################################</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="co">#This part is not taken from ISwR book</span></span>
@@ -1031,7 +1031,7 @@ Attaching package: 'survival'</code></pre>
                                                                             </code></pre>
 </div>
 </div>
-<p>Vśimneme si, že premenná je typu faktor.</p>
+<p>Všimneme si, že premenná je typu faktor.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co">#IQ is apparently not a text</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>data_card<span class="sc">$</span>iq[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>

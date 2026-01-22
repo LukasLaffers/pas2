@@ -280,9 +280,9 @@ window.Quarto = {
 
 <p>Obrovskou výhodou počítačov je schopnosť simulovať náhodnosť.</p>
 <p>&nbsp;</p>
-<p>Veľa otázok je mimoriadne zložitých, častokrát kvôli tomu, že sa týkajú nejakého javu, ktorý je náhodný. Nevieme, aké bude zajtra počasie alebo ako dopadnú voľby. Náhodnosť je zväčša súčasťou daného procesu a nevieme sa jej zbaviť. Chceme ju <em>spoznať</em>, <em>porozumieť</em> jej. Na toto je vhodný mechanický nástroj. Pomocou počítača si veci vieme vyskúšať, môžeme simulovať rôzne scenáre toho, ako veci môžu dopadnúť. A výpočtová sila je stále a stále lacnejšia, transistory v procesoroch sa zmenšujú a dnešná moderná smart chladnička má väčšiu výpočtovú silu ako superpočítač v minulosti.</p>
+<p>Veľa otázok je mimoriadne zložitých, častokrát kvôli tomu, že sa týkajú nejakého javu, ktorý je náhodný. Nevieme, aké bude zajtra počasie alebo ako dopadnú voľby. Náhodnosť je zväčša súčasťou daného procesu a nevieme sa jej zbaviť. Chceme ju <em>spoznať</em>, <em>porozumieť</em> jej. Na toto je vhodný mechanický nástroj. Pomocou počítača si veci vieme vyskúšať, môžeme simulovať rôzne scenáre toho, ako veci môžu dopadnúť. A výpočtová sila je stále a stále lacnejšia, tranzistory v procesoroch sa zmenšujú a dnešná moderná smart chladnička má väčšiu výpočtovú silu ako superpočítač v minulosti.</p>
 <p>&nbsp;</p>
-<p>V minulosti sme sa naučili ako kvantifikovať náhodnosť. Pomocou rôznych nástrojov niekedy vieme vypočítať pravdepodobnosť nejakej udalosti alebo charakteristiky nejakej náhodnej premennej. Príklady s ktorými sme sa doteraz stretali sú relatívne umelé. Na to aby sme vedeli vypočítať pravdepodobnosť udalosti pomocou ceruzky a papiera, potrebujeme aby bol daný problém dostatočne jednoduchý. A preto sme:</p>
+<p>V minulosti sme sa naučili ako kvantifikovať náhodnosť. Pomocou rôznych nástrojov niekedy vieme vypočítať pravdepodobnosť nejakej udalosti alebo charakteristiky nejakej náhodnej premennej. Príklady, s ktorými sme sa doteraz stretali sú relatívne umelé. Na to aby sme vedeli vypočítať pravdepodobnosť udalosti pomocou ceruzky a papiera, potrebujeme aby bol daný problém dostatočne jednoduchý. A preto sme:</p>
 <ul>
 <li>hádzali férovou mincou.</li>
 <li>hádzali neférovou mincou.</li>
@@ -292,14 +292,14 @@ window.Quarto = {
 <p>Tieto príklady sú ilustratívne a pomôžu nám uchopiť štruktúru niektorých jednoduchých typov náhodnosti. Akonáhle však ideme riešiť praktické problémy, veci sa veľmi rýchlo počítajú ťažšie.</p>
 <p>&nbsp;</p>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 3.1</strong></span> Letecké spoločnosti typicky robia overbooking. Predajú viacej lístkov ako majú miest na sedenie, lebo sa mnohokrát stane, že niekto zmešká let/nepríde. Ak prídu všetci, niektorých musia posadiť na ďalší let a zaplatiť im nejaké kompenzácie. Ak predajú málo leteniek, tak nosia v lietadle vzduch a ten neplatí za letenky. Balancovať tieto dve protichodné sily je neľahké. Predstavte si Boeing 737-700, ktorý má 149 miest na sedenie pre pasažierov. Nech je počet záujemcov o let Poissonovsky rozdelená náhodná premenná so strednou hodnotou 150. Nech je pravdepodnosť, že pasažier, ktorý si kúpi lístok príde na letisko náhodná premenná, ktorá je rovnomerne rozdelená na intervale <span class="math inline">\([0.95,1].\)</span> Nech cena letenky 200eur ale pre 150.teho zákazníka stúpa od 300euro po 5 eurách (t.j. potenciálny 180.zákazník zaplatí <span class="math inline">\(300+30.5 = 450\)</span> eur). S overbookingom je spojené riziko, že zákazníkovi, ktorý sa nedostane do lietadla musí letecká spoločnosť vyplatiť kompenzáciu vo výške 1000eur. Každý 50.ty sklamaný zákazník podá žalobu na leteckú spoločnosť z čoho jej vznikne ujma 500eur pre každú žalobu a ak spoločnosť súd prehrá ďalších 10000eur. Zo skúseností vieme, že šanca úspešnej žaloby je <span class="math inline">\(30\%\)</span> s pravdepodobnosťou <span class="math inline">\(90\%\)</span> a normálne rozdelená náhodná premenná so strednou hodnotou <span class="math inline">\(80\%\)</span> a smerodajnou odchýlkou <span class="math inline">\(2\%\)</span> s pravdepodobnosťou <span class="math inline">\(10\%.\)</span></p>
+<p><span class="theorem-title"><strong>Príklad 3.1</strong></span> Letecké spoločnosti typicky robia overbooking. Predajú viacej lístkov ako majú miest na sedenie, lebo sa mnohokrát stane, že niekto zmešká let/nepríde. Ak prídu všetci, niektorých musia posadiť na ďalší let a zaplatiť im nejaké kompenzácie. Ak predajú málo leteniek, tak nosia v lietadle vzduch a ten neplatí za letenky. Balancovať tieto dve protichodné sily je neľahké. Predstavte si Boeing 737-700, ktorý má 149 miest na sedenie pre pasažierov. Nech je počet záujemcov o let Poissonovsky rozdelená náhodná premenná so strednou hodnotou 150. Nech je pravdepodnosť, že pasažier, ktorý si kúpi lístok príde na letisko náhodná premenná, ktorá je rovnomerne rozdelená na intervale <span class="math inline">\([0.95,1].\)</span> Nech cena letenky je 200 eur ale pre 150.teho zákazníka stúpa od 300 eur po 5 eurách (t.j. potenciálny 180. zákazník zaplatí <span class="math inline">\(300+30.5 = 450\)</span> eur). S overbookingom je spojené riziko, že zákazníkovi, ktorý sa nedostane do lietadla musí letecká spoločnosť vyplatiť kompenzáciu vo výške 1000 eur. Každý 50. sklamaný zákazník podá žalobu na leteckú spoločnosť z čoho jej vznikne ujma 500 eur pre každú žalobu a ak spoločnosť súd prehrá ďalších 10000 eur. Zo skúseností vieme, že šanca úspešnej žaloby je <span class="math inline">\(30\%\)</span> s pravdepodobnosťou <span class="math inline">\(90\%\)</span> a normálne rozdelená náhodná premenná so strednou hodnotou <span class="math inline">\(80\%\)</span> a smerodajnou odchýlkou <span class="math inline">\(2\%\)</span> s pravdepodobnosťou <span class="math inline">\(10\%.\)</span></p>
 <p>Ako má robiť táto letecká spoločnosť overbooking? Konkrétne:</p>
 <ul>
 <li>Aká je optimálna stratégia leteckej spoločnosti, ak chce maximalizovať priemerný zisk?</li>
 <li>Aká je optimálna stratégia leteckej spoločnosti, ak chce minimalizovať riziko pri fixnom priemernom zisku 42000 eur za jeden let?</li>
 </ul>
 <p>&nbsp;</p>
-<p>Odpoveď asi nebude priamočiara. Šikovnejší sa k odpovedi dopočítajú v konečnom čase ale my ostatní si zvolíme praktickejšiu cestu. Odpoveď získame pomocou <em>simulácie</em>! Vygenerujeme si veľa veľa náhodných scenárov pre rôzne úrovne overbookingu a pozrieme sa, čo je najlepšie pre leteckú spoločnosť najlepšie. Detaily neskôr. Poučenie nateraz je takéto: pravdepodobnosť nie sú len karty, guličky a kocky. Sú to aj peniaze.</p>
+<p>Odpoveď asi nebude priamočiara. Šikovnejší sa k odpovedi dopočítajú v konečnom čase ale my ostatní si zvolíme praktickejšiu cestu. Odpoveď získame pomocou <em>simulácie</em>! Vygenerujeme si veľa veľa náhodných scenárov pre rôzne úrovne overbookingu a pozrieme sa, čo je pre leteckú spoločnosť najlepšie. Detaily neskôr. Poučenie nateraz je takéto: pravdepodobnosť nie sú len karty, guličky a kocky. Sú to aj peniaze.</p>
 </div>
 <section id="pseudonáhodné-čísla-v-počítači" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="pseudonáhodné-čísla-v-počítači"><span class="header-section-number">3.1</span> (Pseudo)Náhodné čísla v počítači</h2>
@@ -456,21 +456,21 @@ I(A)=
 <p>Pre iné <a href="https://lukaslaffers.github.io/pas1/np.html#kumulat%C3%ADvna-distribučná-funkcia">náhodné premenné</a> je syntax podobná:</p>
 <ul>
 <li><code>runif</code>, <code>dunif</code>, <code>punif</code>, <code>qunif</code> - Rovnomerné rozdelenie (<a href="https://lukaslaffers.github.io/pas1/dnp.html#rovnomerné-rozdelenie">diskrétne</a>, <a href="">spojité</a>)</li>
-<li><code>rbinom</code>, <code>dbinom</code>, <code>pbinom</code>, <code>qbinom</code> <a href="https://lukaslaffers.github.io/pas1/dnp.html#binomické-rozdelenie">Binomické rozdelenie</a> (a jeho špeciálny príklad <a href="https://lukaslaffers.github.io/pas1/dnp.html#bernoulliho-rozdelenie">Bernoulliho rozdelenie</a>)</li>
-<li><code>rgeom</code>, <code>dgeom</code>, <code>pgeom</code>, <code>qgeom</code> -<a href="https://lukaslaffers.github.io/pas1/dnp.html#geometrické-rozdelenie">Geometrické rozdelenie</a></li>
-<li><code>rhyper</code>, <code>dhyper</code>, <code>phyper</code>, <code>qhyper</code> -<a href="https://lukaslaffers.github.io/pas1/dnp.html#hypergeometrické-rozdelenie">Hypergeometrické rozdelenie</a></li>
-<li><code>rnbinom</code>, <code>dnbinom</code>, <code>pnbinom</code>, <code>qnbinom</code> -<a href="https://lukaslaffers.github.io/pas1/dnp.html#negat%C3%ADvne-binomické-rozdelenie">Negatívne binomické rozdelenie</a></li>
-<li><code>rnorm</code>, <code>dnorm</code>, <code>pnorm</code>, <code>qnorm</code> -<a href="https://lukaslaffers.github.io/pas1/snp.html#normálne-rozdelenie">Normálne rozdelenie</a></li>
-<li><code>rexp</code>, <code>dexp</code>, <code>pexp</code>, <code>qexp</code> -<a href="https://lukaslaffers.github.io/pas1/snp.html#exponenciálne-rozdelenie">Exponenciálne rozdelenie</a></li>
-<li><code>rchisq</code>, <code>dchisq</code>, <code>pchisq</code>, <code>qchisq</code> -<a href="https://lukaslaffers.github.io/pas1/snp.html#ch%C3%AD-kvadrát-rozdelenie">Chí-kvadrát rozdelenie</a></li>
-<li><code>rt</code>, <code>dt</code>, <code>pt</code>, <code>qt</code> -<a href="https://lukaslaffers.github.io/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">Studentovo rozdelenie (t-rozdelenie)</a></li>
+<li><code>rbinom</code>, <code>dbinom</code>, <code>pbinom</code>, <code>qbinom</code> - <a href="https://lukaslaffers.github.io/pas1/dnp.html#binomické-rozdelenie">Binomické rozdelenie</a> (a jeho špeciálny príklad <a href="https://lukaslaffers.github.io/pas1/dnp.html#bernoulliho-rozdelenie">Bernoulliho rozdelenie</a>)</li>
+<li><code>rgeom</code>, <code>dgeom</code>, <code>pgeom</code>, <code>qgeom</code> - <a href="https://lukaslaffers.github.io/pas1/dnp.html#geometrické-rozdelenie">Geometrické rozdelenie</a></li>
+<li><code>rhyper</code>, <code>dhyper</code>, <code>phyper</code>, <code>qhyper</code> - <a href="https://lukaslaffers.github.io/pas1/dnp.html#hypergeometrické-rozdelenie">Hypergeometrické rozdelenie</a></li>
+<li><code>rnbinom</code>, <code>dnbinom</code>, <code>pnbinom</code>, <code>qnbinom</code> - <a href="https://lukaslaffers.github.io/pas1/dnp.html#negat%C3%ADvne-binomické-rozdelenie">Negatívne binomické rozdelenie</a></li>
+<li><code>rnorm</code>, <code>dnorm</code>, <code>pnorm</code>, <code>qnorm</code> - <a href="https://lukaslaffers.github.io/pas1/snp.html#normálne-rozdelenie">Normálne rozdelenie</a></li>
+<li><code>rexp</code>, <code>dexp</code>, <code>pexp</code>, <code>qexp</code> - <a href="https://lukaslaffers.github.io/pas1/snp.html#exponenciálne-rozdelenie">Exponenciálne rozdelenie</a></li>
+<li><code>rchisq</code>, <code>dchisq</code>, <code>pchisq</code>, <code>qchisq</code> - <a href="https://lukaslaffers.github.io/pas1/snp.html#ch%C3%AD-kvadrát-rozdelenie">Chí-kvadrát rozdelenie</a></li>
+<li><code>rt</code>, <code>dt</code>, <code>pt</code>, <code>qt</code> - <a href="https://lukaslaffers.github.io/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">Studentovo rozdelenie (t-rozdelenie)</a></li>
 </ul>
 </section>
 <section id="rovnomerné-rozdelenie-ako-základ" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="rovnomerné-rozdelenie-ako-základ"><span class="header-section-number">3.4</span> Rovnomerné rozdelenie ako základ</h2>
 <p>Akonáhle máme generátor pseudonáhodných čísel, ktorý vie generovať rovnomerne náhodne na intervale <span class="math inline">\([0,1]\)</span>, pomocou neho vieme generovať akékoľvek iné pravdepodobnostné rozdelenie.</p>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 3.5</strong></span> Skúsme simulovať hádzanie kockou ale len s pomocou funkcie <code>runif()</code>. Ak padne číslo väčšie ako 0.5, prehlásime to za hlavu.</p>
+<p><span class="theorem-title"><strong>Príklad 3.5</strong></span> Skúsme simulovať hádzanie mincou ale len s pomocou funkcie <code>runif()</code>. Ak padne číslo väčšie ako 0.5, prehlásime to za hlavu.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hodMincou <span class="ot">&lt;-</span> <span class="cf">function</span>(nThrows){</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span><span class="sc">*</span>(<span class="fu">runif</span>(nThrows)<span class="sc">&gt;</span><span class="fl">0.5</span>))</span>
@@ -522,7 +522,7 @@ I(A)=
  [9] "Julia"  "Martin"</code></pre>
 </div>
 </div>
-<p>Skúsme hodiť férovou mincou 100krát.</p>
+<p>Skúsme hodiť férovou mincou 100-krát.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#throw a fair coin 100 times</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">100</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -532,7 +532,7 @@ I(A)=
  [75] 0 1 0 0 1 0 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 0 1 0 1 1</code></pre>
 </div>
 </div>
-<p>Alebo 20krát hodiť férovou kockou.</p>
+<p>Alebo 20-krát hodiť férovou kockou.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#throw a fair dice 100 times</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">20</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -541,8 +541,8 @@ I(A)=
 </div>
 </div>
 <div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 3.6</strong></span> Hodili sme férovou kockou 6 krát a súčet je 30. Je to veľa?</p>
-<p>A vôbec, čo to vlastné znamená “veľa”?</p>
+<p><span class="theorem-title"><strong>Príklad 3.6</strong></span> Hodili sme férovou kockou 6-krát a súčet je 30. Je to veľa?</p>
+<p>A vôbec, čo to vlastne znamená “veľa”?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We throw the dice 6 times and got 30 in sum together. Is it a lot?</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Simulate</span></span>
@@ -657,7 +657,7 @@ Attaching package: 'dplyr'</code></pre>
 <p><span class="theorem-title"><strong>Cvičenie 3.10</strong></span> Piati ľudia v porote majú nasledovné šance, že sa správne rozhodnú: 95%, 80%, 90%, 82%, 99%. O výsledku rozhodne väčšina. Aká je šanca, že sa celá porota zhodne na správnom výsledku?</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 3.11</strong></span> Aká, je šanca, medzi študentami absolovujúcimi tento kurz bude aspoň jedna dvojica s rovnakým dátumom narodenia?</p>
+<p><span class="theorem-title"><strong>Cvičenie 3.11</strong></span> Aká, je šanca, že medzi študentami absolovujúcimi tento kurz bude aspoň jedna dvojica s rovnakým dátumom narodenia?</p>
 <p>Aká je pravdepodobnostná distribúcia počtu ľudí, ktorí zdieľajú narodeniny s niekým iným v skupine 25ľudí?</p>
 </div>
 <!-- [R súbor z cvičení zo 14.10.2022](https://www.dropbox.com/s/7p88mytf5pjpz1c/labs_week4.R?dl=0) -->

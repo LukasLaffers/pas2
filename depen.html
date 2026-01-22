@@ -277,14 +277,14 @@ window.Quarto = {
 
 
 <p>Odteraz budeme načas hovoriť o <strong>náhodnom vektore</strong>. Je to vektor náhodných premenných definovaných na rovnakom pravdepodobnostnom priestore. V <a href="https://lukaslaffers.github.io/pas1/cov.html">tejto kapitole</a> sme hovorili o dvojrozmernom náhodnom vektore, teraz to rozšírime a budeme hovoriť o <span class="math inline">\(n\)</span>-rozmernom náhodnom vektore <span class="math inline">\((X_1,X_2,\dots,X_n)^T.\)</span></p>
-<p>Tento pojem kľúčový na pochopenie štatistického testovania hypotéz, o ktorom budeme hovoriť neskôr. Ide o triviálne rozšírenie dvojrozmerného náhodného vektora, ktorý sme <a href="https://lukaslaffers.github.io/pas1/cov.html">opisovali skorej</a>.</p>
+<p>Tento pojem je kľúčový na pochopenie štatistického testovania hypotéz, o ktorom budeme hovoriť neskôr. Ide o triviálne rozšírenie dvojrozmerného náhodného vektora, ktorý sme <a href="https://lukaslaffers.github.io/pas1/cov.html">opisovali skorej</a>.</p>
 <p><strong>Združená kumulatívna distribučná funkcia</strong> <span class="math inline">\(F_{X_1,X_2,\dots,X_n}: \mathbb{R}^n \rightarrow [0,1]\)</span> náhodného vektora <span class="math inline">\((X_1,X_2,\dots,X_n)^T\)</span> je definovaná nasledovne:</p>
 <span class="math display">\[\begin{eqnarray*}
 F_{X_1,X_2,\dots,X_n}(t_1,t_2,\dots,t_n) &amp;=&amp; P(X_1 \leq t_1 \cap X_2 \leq t_2 \cap \dots \cap X_n \leq t_n)\\
 &amp;=&amp; P(X_1 \leq t_1, X_2 \leq t_2, \dots , X_n \leq t_n).
 \end{eqnarray*}\]</span>
 <p><strong>Diskrétne náhodné premenné</strong></p>
-<p>Ak sú časti náhodného vektora diskrétne rozdelené náhodné premenné, pravdepodobobnostné správanie popisujeme tiež <strong>združenou pravdepodobnostnou funkciou</strong></p>
+<p>Ak sú časti náhodného vektora diskrétne rozdelené náhodné premenné, pravdepodobnostné správanie popisujeme tiež <strong>združenou pravdepodobnostnou funkciou</strong></p>
 <span class="math display">\[\begin{eqnarray*}
 p_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) &amp;=&amp; P(X_1 = x_1 \cap X_2 = x_2 \cap \dots \cap X_n = x_n)\\
 &amp;=&amp; P(X_1 = x_1, X_2 = x_2, \dots ,X_n = x_n).
@@ -305,9 +305,9 @@ P\left(X_1 \in [a_1,b_1] \cap \dots \cap X_n \in [a_n,b_n] \right)  &amp;=&amp; 
 <ul>
 <li><span class="math inline">\(\forall x_1 \in \mathbb{R}, \dots, \forall x_n \in \mathbb{R}: f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) \geq 0,\)</span></li>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} \dots \int_{-\infty}^{\infty} f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) dx_1 \dots dx_n =1,\)</span></li>
-<li><span class="math inline">\(\forall i = 1,\dots,n: \forall x_i \in \mathbb{R}:\)</span> <span class="math inline">\(\int_{-\infty}^{\infty}\dots \int_{-\infty}^{\infty} f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) dx_1 \dots dx_{i-1} dx_{i+1} dx_n= f_{X_i}(x_i).\)</span></li>
+<li><span class="math inline">\(\forall i = 1,\dots,n: \forall x_i \in \mathbb{R}:\)</span> <span class="math inline">\(\int_{-\infty}^{\infty}\dots \int_{-\infty}^{\infty} f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) dx_1 \dots dx_{i-1} dx_{i+1} \dots dx_n= f_{X_i}(x_i).\)</span></li>
 </ul>
-<p>Vzťah medzi <span class="math inline">\(f_{X_1,X_2,\dots,X_n}\)</span> a <span class="math inline">\(f_{X_1,X_2,\dots,X_n}\)</span> je takýto:</p>
+<p>Vzťah medzi <span class="math inline">\(F_{X_1,X_2,\dots,X_n}\)</span> a <span class="math inline">\(f_{X_1,X_2,\dots,X_n}\)</span> je takýto:</p>
 <p><span class="math display">\[F_{X_1,X_2,\dots,X_n}(t_1, \dots, t_n) = \int_{-\infty}^{t_1} \dots \int_{-\infty}^{t_n} f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) dx_1 \dots dx_n\]</span> a</p>
 <p><span class="math display">\[ f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) = \frac{\partial^n}{\partial x_1 \dots \partial x_n }F_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n).\]</span></p>
 <p>Hovoríme, že náhodné premenné <span class="math inline">\(X_1,X_2,\dots,X_n\)</span> sú <strong>združene nezávislé</strong>, ak platí:</p>
@@ -385,7 +385,7 @@ Pravdedpodobnostná funkcia
 <span class="math display">\[\begin{eqnarray*}
 P(X=1) &amp;=&amp; 0.1 + 0 + 0.1 + 0 = 0.2 \\
 P(Y=1) &amp;=&amp; 0.1 +  0.3 + 0 = 0.4 \\
-P(X=1)\cdot P(Y=1) &amp;=&amp; = 0.2 \cdot 0.4 = 0.08 \\
+P(X=1)\cdot P(Y=1) &amp;=&amp; 0.2 \cdot 0.4 = 0.08 \\
 P(X=1, Y=1) &amp;=&amp; 0.1\\
 P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 \end{eqnarray*}\]</span>
@@ -400,7 +400,7 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 <p><strong>Kovarianciou</strong> dvoch náhodných premenných <span class="math inline">\(X_1, X_2\)</span> nazývame</p>
 <p><span class="math display">\[\text{Cov}[X_1,X_2] \equiv \text{E}[(X_1-\text{E}[X_1])(X_2-\text{E}[X_2])].\]</span></p>
 <p>Pre kovarianciu platí <span class="math inline">\(\text{Cov}[X_1,X_2] = \text{E}[X_1 X_2] - \text{E}[X_1]\text{E}[X_2]\)</span> a <span class="math inline">\(\text{Cov}[X_i,X_i] = \text{Var}[X_i].\)</span></p>
-<p><strong>Koreláciou</strong> (teda škálovanou kovarianciou) dvoch náhodných premenných nazývame</p>
+<p><strong>Koreláciou</strong> (teda škálovanou kovarianciou) dvoch náhodných premenných nazývame nasledovnú kvantitu</p>
 <p><span class="math display">\[\text{Corr}[X_1,X_2] \equiv \frac{\text{Cov}[X_1,X_2]}{\text{sd}[X_1] \cdot \text{sd}[X_2] } =  \frac{ \text{E}[(X_1-\text{E}[X_1])(X_2-\text{E}[X_2])]}{\sqrt{\text{E}[(X_1-\text{E}[X_1])^2]}\cdot\sqrt{\text{E}[(X_2-\text{E}[X_2])^2]}}.\]</span></p>
 <p>Pre koreláciu platí:</p>
 <ul>
@@ -447,7 +447,7 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 \text{Corr}[X_n, X_1] &amp; \text{Corr}[X_n, X_2]&amp; \cdots &amp; \cdots &amp; \text{Corr}[X_n, X_{n-1}] &amp; 1
 \end{pmatrix}}\]</span></p>
 <p>Podobne zadefinovaná je <strong>kovariančná matica</strong> <span class="math inline">\(\text{Var}[X]\)</span>, ktorej <span class="math inline">\(i,j\)</span>-ty prvok je daný <span class="math inline">\(\text{Cov}[X_i,X_j]\)</span>.</p>
-<p><span class="math display">\[{\small \text{Cov}[X] = \begin{pmatrix}
+<p><span class="math display">\[{\small \text{Var}[X] = \begin{pmatrix}
 \text{Var}[X_1] &amp; \text{Cov}[X_1, X_2] &amp; \cdots  &amp; \cdots &amp; \cdots  &amp; \text{Cov}[X_1, X_n]\\
 \text{Cov}[X_2, X_1] &amp; \text{Var}[X_2] &amp; \text{Cov}[X_2, X_3] &amp; \cdots &amp; \cdots &amp; \text{Cov}[X_2, X_n]\\
 \text{Cov}[X_3, X_1] &amp; \text{Cov}[X_3, X_2]&amp;  \text{Var}[X_3] &amp; \text{Cov}[X_3, X_4] &amp; \cdots &amp; \text{Cov}[X_3, X_n]\\
@@ -538,7 +538,7 @@ x2 -0.1118414  1.0000000 -1.0000000
 x3  0.1118414 -1.0000000  1.0000000</code></pre>
 </div>
 </div>
-<p>Tu vidíme, že <span class="math inline">\(\text{Corr}[X_1,X_2]=-1.\)</span></p>
+<p>Tu vidíme, že <span class="math inline">\(\text{Corr}[X_2,X_3]=-1.\)</span></p>
 <p>Teraz nech <span class="math inline">\(X_3 = 2-3X_2^{1.1},\)</span> takže závislosť medzi <span class="math inline">\(X_2\)</span> a <span class="math inline">\(X_3\)</span> je “skoro” lineárna.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">=</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2<span class="sc">^</span>{<span class="fl">1.1</span>} <span class="sc">+</span> <span class="dv">2</span></span>
@@ -550,7 +550,7 @@ x2 -0.1118414  1.0000000 -0.9999870
 x3  0.1118155 -0.9999870  1.0000000</code></pre>
 </div>
 </div>
-<p>Teraz vidíme, že <span class="math inline">\(\text{Corr}[X_1,X_2]\)</span> je “skoro” <span class="math inline">\(-1\)</span>.</p>
+<p>Teraz vidíme, že <span class="math inline">\(\text{Corr}[X_2,X_3]\)</span> je “skoro” <span class="math inline">\(-1\)</span>.</p>
 </div>
 </section>
 <section id="korelácia-nie-je-kauzalita" class="level2" data-number="6.2">
@@ -583,7 +583,7 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <ul>
 <li>Ovplyvňuje vzdelanie rodičov vzdelanie deti?</li>
 <li>Predlžujú tri malé kávy denne život o 7%?</li>
-<li>Je Keto diéta lepšia ako vysokosacharidová, čo sa týka vytrvalostných šport?</li>
+<li>Je Keto diéta lepšia ako vysokosacharidová, čo sa týka vytrvalostných športov?</li>
 <li>Zvyšuje globalizácia životnú úroveň?</li>
 <li>Pomáha chrániť vitamín C pred nachladnutím?</li>
 <li>Spôsobí zvýšenie dane z príjmu štátne príjmy alebo narastie objem čiernej práce?</li>

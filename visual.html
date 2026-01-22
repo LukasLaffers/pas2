@@ -263,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Vhodné zobrazenie dát je tak trochu umenie. Treba nájsť vhodný typ grafu, farieb, písiem na plynulé odkomunikovanie myšlienky. Čo umenie nie je, je urobiť <strong>zlú</strong> vizualizáciu.</p>
 <section id="zlé-vizualizácie" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="zlé-vizualizácie"><span class="header-section-number">7.1</span> Zlé vizualizácie</h2>
-<p>Pri nasledujúcich obrázkov nebude príliš ťažké pochopiť, v čom sú problematické. V niektorých prípadoch ide o subjektívne hodnotenie.</p>
+<p>Pri nasledujúcich obrázkoch nebude príliš ťažké pochopiť, v čom sú problematické. V niektorých prípadoch ide o subjektívne hodnotenie.</p>
 <p>Častokrát <strong>proporcie nie sú zachované</strong>. Toto môže byť použité ako manipulatívna stratégia na demonštrovanie veľkého rastu.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -365,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Okamžite si všimneme dominantné postavenie písmena n na pravej strane. Ktoré sú to tie krstné mená, ktoré končia na n? Prečo sa distribúcia tak zmenila? Človek má chuť okamžite hľadať, ktoré sú to mená(?) (John, Brandon, Ryan, Jonathan, Christian, Austin, Dylan, Ethan, Benjamin…). Tak či onak, tento obrázok je úspešný v tom, že zaujme.</p>
-<p>Všimnime si vzťah medzi výdavkami na zdravotnú starostlivosť a očaká vanou dĺžkou života.</p>
+<p>Všimnime si vzťah medzi výdavkami na zdravotnú starostlivosť a očakávanou dĺžkou života.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -393,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://r4ds.had.co.nz/data-visualisation.html">Knižnica <code>ggplot2</code></a> je veľmi populárnym spôsobom na vytváranie vizualizácií. Má vnútornú logiku: každý objekt sa skladá z vrstiev, ktoré majú určité atribúty. Názov <code>ggplot2</code> pochádza z “Grammar of Graphics”.</p>
 <section id="zobrazenie-závislosti-dvoch-premenných" class="level3" data-number="7.3.1">
 <h3 data-number="7.3.1" class="anchored" data-anchor-id="zobrazenie-závislosti-dvoch-premenných"><span class="header-section-number">7.3.1</span> Zobrazenie závislosti dvoch premenných</h3>
-<p>Začnime príkladom, zobrazme si spotrebu aút (dataset <code>mpg</code> z knižnice <code>ggplot2</code>), konkrétne vzťah medzi diaľničným dojazdom v míľach <code>hwy</code> oproti objemu motora v litroch <code>displ</code>.</p>
+<p>Začnime príkladom, zobrazme si spotrebu aut (dataset <code>mpg</code> z knižnice <code>ggplot2</code>), konkrétne vzťah medzi diaľničným dojazdom v míľach <code>hwy</code> oproti objemu motora v litroch <code>displ</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -498,7 +498,7 @@ The following object is masked from 'package:lubridate':
 </div>
 </div>
 </div>
-<p>Parametre <code>data</code> a <code>mapping</code> môžu ísť priamo do <code>ggplot</code> objektu, takže ich netreba separátne volať pre rôzne vrstvy. Tu je navyše vrstva <code>geom_smooth</code>, ktorá vyhladí dáta - preloźí nimi aproximačnú krivku.</p>
+<p>Parametre <code>data</code> a <code>mapping</code> môžu ísť priamo do <code>ggplot</code> objektu, takže ich netreba separátne volať pre rôzne vrstvy. Tu je navyše vrstva <code>geom_smooth</code>, ktorá vyhladí dáta - preloží nimi aproximačnú krivku.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
@@ -524,7 +524,7 @@ The following object is masked from 'package:lubridate':
 </section>
 <section id="zobrazenie-distribúcie-premennej" class="level3" data-number="7.3.2">
 <h3 data-number="7.3.2" class="anchored" data-anchor-id="zobrazenie-distribúcie-premennej"><span class="header-section-number">7.3.2</span> Zobrazenie distribúcie premennej</h3>
-<p>Vygenerujme si dáta, ktore budeme zobrazovať (inšpirované <a href="http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization">nasledovných odkazom</a>).</p>
+<p>Vygenerujme si dáta, ktoré budeme zobrazovať (inšpirované <a href="http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization">nasledovných odkazom</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2930</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data_test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -577,7 +577,7 @@ The following object is masked from 'package:lubridate':
 </div>
 </div>
 </div>
-<p>Pozrite sa na tento kód a zhodnoťte, čo robí ten ktorý príkaz.</p>
+<p>Pozrite sa na tento kód a zhodnoťte, čo robia tie rôzne príkazy.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> data_test <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(school) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">group_means =</span> <span class="fu">mean</span>(score))</span>
@@ -670,7 +670,7 @@ The following object is masked from 'package:lubridate':
 <li>Zjednodušujte. Vynechajte nepotrebné grafické elementy, menej je niekedy viacej.</li>
 <li>Graf by mal byť samovysvetľujúci, na jeho základné pochopenie by malo stačiť pozrieť sa na graf a príslušný popis.</li>
 <li>Označenie osí musí byť zrozumiteľné. Prispôsobte tomu veľkosť a typ písma. V počítačovej podobe preferujeme písmo bez pätiek. V tlačenej podobne naopak <a href="https://blog.datawrapper.de/fonts-for-data-visualization/#sans-serif-fonts">pätkové písmo</a>. Čísla sa lepšie porovnávajú ak sú tabulované (majú rovnakú šírku) a liniovité (majú rovnakú výšku).</li>
-<li>Farebné elementy lepšie vyniknú na sivom alebo (ako čistobielom) <a href="https://blog.datawrapper.de/background-color-of-data-visualizations/">podklade</a>. Bezpečnou voľbou na podklad je tiež teplá, veľmi svetlá a málo saturovaná farba. Farby sa zväčša používajú na vysvetľovanú premennú, nie na prediktory. <a href="https://blog.datawrapper.de/10-ways-to-use-fewer-colors-in-your-data-visualizations/">Volíme menej farieb</a> ak sa to dá, napríklad spojených niektorých kategórií a ideálne volíme farebnú škálu zrozumiteľnú aj pre čiastočne farboslepých. Farbám sa môžeme vyhnúť aj tak, že skupiny odlíšime symbolmi, vzormi alebo typom čiary. Rôzne mediá, inštitúcie alebo spoločnosti používajú <a href="https://blog.datawrapper.de/colors-for-data-vis-style-guides/">fixné farebné palety</a> aby bola prezentácia farebne jednotná.</li>
+<li>Farebné elementy lepšie vyniknú na sivom alebo (ako čistobielom) <a href="https://blog.datawrapper.de/background-color-of-data-visualizations/">podklade</a>. Bezpečnou voľbou na podklad je tiež teplá, veľmi svetlá a málo saturovaná farba. Farby sa zväčša používajú na vysvetľovanú premennú, nie na prediktory. <a href="https://blog.datawrapper.de/10-ways-to-use-fewer-colors-in-your-data-visualizations/">Volíme menej farieb</a> ak sa to dá, napríklad spojením niektorých kategórií a ideálne volíme farebnú škálu zrozumiteľnú aj pre čiastočne farboslepých. Farbám sa môžeme vyhnúť aj tak, že skupiny odlíšime symbolmi, vzormi alebo typom čiary. Rôzne mediá, inštitúcie alebo spoločnosti používajú <a href="https://blog.datawrapper.de/colors-for-data-vis-style-guides/">fixné farebné palety</a> aby bola prezentácia farebne jednotná.</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -699,7 +699,7 @@ The following object is masked from 'package:lubridate':
 <!-- [R súbor k cvičeniam (riešenia) 26.10.2023](https://www.dropbox.com/s/k9ie2nuqcf2ryp5/20231026-labs06.R?dl=0) -->
 <!-- [R súbor k cvičeniam (riešenia) 9.11.2023](https://www.dropbox.com/scl/fi/4d5md4hkof8axeijumgrr/20231109-labs06-part2.R?rlkey=xg3hvy3g3sklhkytmo1e7vni2&dl=0) -->
 <!-- [R súbor k cvičeniam (riešenia) 3.11.2022](https://www.dropbox.com/s/plw8hvv5bz9fuws/labs_week7_solutions.R?dl=0) -->
-<p><a href="https://www.dropbox.com/scl/fi/fu6pmaemttkujsm09usaw/Cvicenie7.R?rlkey=2vh2u54z6r0v7a38zmkajb79c&dl=0">R súbor z cvičení z 27.10.2025</a></p>
+<p><a href="https://www.dropbox.com/scl/fi/fu6pmaemttkujsm09usaw/Cvicenie7.R?rlkey=2vh2u54z6r0v7a38zmkajb79c&amp;dl=0">R súbor z cvičení 27.10.2025</a></p>
 <div id="exr-" class="Exercise theorem exercise">
 <p><span class="theorem-title"><strong>Cvičenie 7.1</strong></span> Použite túto náhodnú podvzorku filmov z knižnice <code>ggplot2movies</code>.</p>
 <div class="cell">

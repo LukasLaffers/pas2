@@ -355,8 +355,8 @@ window.Quarto = {
 <ul>
 <li><span class="math inline">\(n\)</span> je veľkosť dátovej vzorky (u nás <span class="math inline">\(n=10\)</span>)</li>
 <li><span class="math inline">\(i \in \{1,2,\dots,n \}\)</span> bude index pozorovania (u nás <span class="math inline">\(i\)</span> bude označovať jedného z 10 študentov)</li>
-<li><span class="math inline">\(x_i\)</span> bude označovať nezávislú premennú pre pozorovanie <span class="math inline">\(i\)</span> (koľko hodín sa učil <span class="math inline">\(i\)</span>-ty śtudent)</li>
-<li><span class="math inline">\(y_i\)</span> bude označovať závislú premennú pre pozorovanie <span class="math inline">\(i\)</span> (výsledok testu <span class="math inline">\(i\)</span>-teho śtudenta)</li>
+<li><span class="math inline">\(x_i\)</span> bude označovať nezávislú premennú pre pozorovanie <span class="math inline">\(i\)</span> (koľko hodín sa učil <span class="math inline">\(i\)</span>-ty študent)</li>
+<li><span class="math inline">\(y_i\)</span> bude označovať závislú premennú pre pozorovanie <span class="math inline">\(i\)</span> (výsledok testu <span class="math inline">\(i\)</span>-teho študenta)</li>
 </ul>
 <p>Nájdenie najlepšej priamky v zmysle vedie na takýto optimializačný problém. <span class="math display">\[(\hat \beta_0, \hat \beta_1) = \arg \min_{(\beta_0, \beta_1)} \sum_{i=1}^{n} \Big(y_i - (\beta_0 + \beta_1 x_i) \Big)^2.\]</span> Na výpočet sme použili funkciu <code>lm</code> a naše odhady <span class="math inline">\((\hat \beta_0, \hat \beta_1)\)</span> neznámych parametrov <span class="math inline">\((\beta_0, \beta_1)\)</span> sú <span class="math inline">\(46.52\)</span> a <span class="math inline">\(1.12.\)</span> Číslo <span class="math inline">\(46.52\)</span> je výška v ktorej pretína čierna priamka os y a číslo <span class="math inline">\(1.12\)</span> je smernica tejto priamky, teda ako rýchlo rastie.</p>
 <p>Ešte predtým, ako sa zavŕtame do detailov, uvedomme si nasledovné skutočnosti</p>
@@ -450,7 +450,7 @@ window.Quarto = {
 <ul>
 <li><span class="math inline">\(x_4\)</span> je náhodná premenná, ide o náhodnú premennú <span class="math inline">\(x\)</span> nameranú pre štvrté pozorovanie,</li>
 <li><span class="math inline">\(y_7\)</span> je náhodná premenná, ide o náhodnú premennú <span class="math inline">\(y\)</span> nameranú pre siedme pozorovanie,</li>
-<li><span class="math inline">\(\epsilon_2\)</span> je náhodná premenná, realizáciu tejto náhodnej premennej druhéhp pozorovania nepozorujeme,</li>
+<li><span class="math inline">\(\epsilon_2\)</span> je náhodná premenná, realizáciu tejto náhodnej premennej druhého pozorovania nepozorujeme,</li>
 <li><span class="math inline">\(\bar x\)</span> je náhodná premenná (lebo je to funkcia iných náhodných premenných),</li>
 <li><span class="math inline">\(\bar y\)</span> je náhodná premenná (lebo je to funkcia iných náhodných premenných),</li>
 <li><span class="math inline">\(\beta_0\)</span> je číslo. Fixné ale nám neznáme. Hovorí o priesečníku (s osou <span class="math inline">\(y\)</span>) neznámej ale fixnej priamky <span class="math inline">\(\beta_0 + \beta_1 x\)</span>,</li>
@@ -528,8 +528,8 @@ F-statistic: 42.75 on 1 and 8 DF,  p-value: 0.0001807</code></pre>
 <li>Parameter formula nám hovorí akou rovnicou aproximujeme <span class="math inline">\(y_i\)</span> pomocou <span class="math inline">\(x_i\)</span>.</li>
 <li>Residuals označujú charakteristiky distribúcie odhadovaných chýb, takže hodnoty <span class="math inline">\(\hat \epsilon_i\)</span>.</li>
 <li>V tabuľke koeficientov je prvý riadok o odhade <span class="math inline">\(\hat \beta_0\)</span> a druhý riadok o odhade <span class="math inline">\(\hat \beta_1\)</span>.</li>
-<li>Prvý stĺpec sú samotné hodnoty odhadov, v druhom sú odhady smerodajných odchýlok odhadov, nazývané aj <strong>štandardné chyby</strong> (v angl. Standard errors).</li>
-<li>V treťom stĺpci sú testovacie štatistiky, ktoré testujú hypotézu <span class="math inline">\(H_0: \beta_0 = 0\)</span> a <span class="math inline">\(H_0: \beta_1 = 0\)</span> a v poslednom stĺpci sú príslušné p-hodnoty týchto testov. Testovacia štatistika má formu: <span class="math display">\[T=\frac{\hat \beta_1}{\hat{sd}(\hat \beta_1)}\]</span> a má <a href="https://lukaslaffers.github.io/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">Studentovo t-rozdelenie</a>, s <span class="math inline">\(n-p\)</span> stupňami voľnosti, kde <span class="math inline">\(p\)</span> je počet odhadnutých parametrov (v jednoduchej lineárnej regresie sú to dva parametre, ktoré odhadujeme: <span class="math inline">\(\beta_0\)</span> a <span class="math inline">\(\beta_1\)</span>). V menovateli je <span class="math inline">\(\hat{sd}(\hat \beta_1)\)</span>, čo je odhad smerodajnej odchýlky odhadu <span class="math inline">\(\hat \beta_1,\)</span> teda <span class="math inline">\(\hat{sd}(\hat \beta_1) = \sqrt{\hat Var \left[\hat \beta_1 \right]}.\)</span> Táto kvantita sa tiež označuje ako štandardná chyba (v anj. standard error). Všeobecný prístup k testovaniu je vysvetlený <a href="https://lukaslaffers.github.io/pas2/reg.html#testovanie-podmodelov">neskôr</a>.</li>
+<li>Prvý stĺpec sú samotné hodnoty odhadov, v druhom sú odhady smerodajných odchýlok odhadov, nazývané aj <strong>štandardné chyby</strong> (v ang. standard errors).</li>
+<li>V treťom stĺpci sú testovacie štatistiky, ktoré testujú hypotézu <span class="math inline">\(H_0: \beta_0 = 0\)</span> a <span class="math inline">\(H_0: \beta_1 = 0\)</span> a v poslednom stĺpci sú príslušné p-hodnoty týchto testov. Testovacia štatistika má formu: <span class="math display">\[T=\frac{\hat \beta_1}{\hat{sd}(\hat \beta_1)}\]</span> a má <a href="https://lukaslaffers.github.io/pas1/snp.html#studentovo-rozdelenie-t-rozdelenie">Studentovo t-rozdelenie</a>, s <span class="math inline">\(n-p\)</span> stupňami voľnosti, kde <span class="math inline">\(p\)</span> je počet odhadnutých parametrov (v jednoduchej lineárnej regresie sú to dva parametre, ktoré odhadujeme: <span class="math inline">\(\beta_0\)</span> a <span class="math inline">\(\beta_1\)</span>). V menovateli je <span class="math inline">\(\hat{sd}(\hat \beta_1)\)</span>, čo je odhad smerodajnej odchýlky odhadu <span class="math inline">\(\hat \beta_1,\)</span> teda <span class="math inline">\(\hat{sd}(\hat \beta_1) = \sqrt{\hat Var \left[\hat \beta_1 \right]}.\)</span> Táto kvantita sa označuje ako štandardná chyba (v ang. standard error). Všeobecný prístup k testovaniu je vysvetlený <a href="https://lukaslaffers.github.io/pas2/reg.html#testovanie-podmodelov">neskôr</a>.</li>
 </ul>
 <p>Pokračujeme ďalej:</p>
 <div class="cell" data-layout-align="center">
@@ -565,7 +565,7 @@ F-statistic: 42.75 on 1 and 8 DF,  p-value: 0.0001807</code></pre>
 </div>
 </div>
 </div>
-<p>Obrázok ukazuje geometriu najmenších štvorcov. Každý vektor (šípka) reprezentuje bod v n-rozmernom priestore. Vektor <span class="math inline">\(y\)</span> sa nenachádza v priestore generovanom vektorom konštantných jednotiek a <span class="math inline">\(x\)</span>. Metóda najmenších štvorcov projektu vektor <span class="math inline">\(y\)</span> do tohoto podpriestoru, teda hľadá minimálnu vzdialenosť červeného vektora <span class="math inline">\(\hat \epsilon\)</span> v zmysle euklidovskej vzdialenosti (to je taká tá obyčajná na akú sme zvyknú v našom 3D svete a meriame ju pravítkom). Takže tu máme viacerozmernú verziu Pytagorovho trojuholníka.</p>
+<p>Obrázok ukazuje geometriu najmenších štvorcov. Každý vektor (šípka) reprezentuje bod v n-rozmernom priestore. Vektor <span class="math inline">\(y\)</span> sa nenachádza v priestore generovanom vektorom konštantných jednotiek a <span class="math inline">\(x\)</span>. Metóda najmenších štvorcov projektu vektor <span class="math inline">\(y\)</span> do tohoto podpriestoru, teda hľadá minimálnu vzdialenosť červeného vektora <span class="math inline">\(\hat \epsilon\)</span> v zmysle euklidovskej vzdialenosti (to je taká tá obyčajná na akú sme zvyknutí v našom 3D svete a meriame ju pravítkom). Takže tu máme viacerozmernú verziu Pytagorovho trojuholníka.</p>
 <p>V obrázku máme znázornené dva rozklady <span class="math inline">\(n-\)</span>rozmerného vektora <span class="math inline">\(y = (y_1, \cdots, y_n)^T.\)</span></p>
 <p>Prvý <span class="math display">\[ y = {\color{blue}\hat y} + {\color{red}\hat \epsilon}\]</span> alebo vektorovo</p>
 <p><span class="math display">\[
@@ -673,7 +673,7 @@ y_1 - {\color{blue}\hat y_1}\\ y_2 - {\color{blue}\hat y_2} \\ \vdots \\ y_n - {
 <p>Nejde v podstate o nič iné ako odhad lineárnej súvzťažnosti medzi <span class="math inline">\(y\)</span> a odhadovaných <span class="math inline">\(\hat y\)</span>: <span class="math display">\[R^2 = \left(\hat{cor}(\hat y, y)\right)^2 = \frac{\sum (\bar y - \hat y_i )^2}{\sum (y_i - \bar y_i)^2}.\]</span></p>
 <p>Ak je zjednodušený model <span class="math inline">\(y_i = {\color{green}\beta_0 } + {\color{orange} \bar \epsilon_i}\)</span> podobne dobrý ako zložitejší model <span class="math inline">\(y_i = {\color{blue}\beta_0 + \beta_1 x_i} + {\color{red}\epsilon_i},\)</span> potom <span class="math inline">\(R^2\)</span> bude blízke nule. Premenná <span class="math inline">\(x\)</span> nám totiž nepomôže k vysvetľovaniu <span class="math inline">\(y.\)</span></p>
 <p>Naviac, skutočná závislosť medzi <span class="math inline">\(x\)</span> a <span class="math inline">\(y\)</span> je <strong>presne</strong> lineárna (teda ak platí model bez akejkoľvek chyby!): <span class="math inline">\(y_i = \beta_0 + \beta_1 x_i,\)</span> práve vtedy a len vtedy, keď je <span class="math inline">\(R^2 = 1\)</span>.</p>
-<p>Hodnota <span class="math inline">\(R^2\)</span> nám teda hovorí o miere <strong>lineárnej</strong> súvzťažnosti medzi fitovanými hodnotami <span class="math inline">\(\hat y\)</span> a skutočnými hodnotami <span class="math inline">\(y\)</span>. Toto však môže byť matúce, ak medzi dvomi premennými nie je lineárny vzťah. (Tuto ide o menej zábavnú verziu <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">datasetov s dinosaurom</a>.)</p>
+<p>Hodnota <span class="math inline">\(R^2\)</span> nám teda hovorí o miere <strong>lineárnej</strong> súvzťažnosti medzi fitovanými hodnotami <span class="math inline">\(\hat y\)</span> a skutočnými hodnotami <span class="math inline">\(y\)</span>. Toto však môže byť mätúce, ak medzi dvomi premennými nie je lineárny vzťah. (Tuto ide o menej zábavnú verziu <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">datasetov s dinosaurom</a>.)</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -690,13 +690,13 @@ y_1 - {\color{blue}\hat y_1}\\ y_2 - {\color{blue}\hat y_2} \\ \vdots \\ y_n - {
 <h2 data-number="9.6" class="anchored" data-anchor-id="konfidenčné-intervaly"><span class="header-section-number">9.6</span> Konfidenčné intervaly</h2>
 <p>Chceli by sme kvantifikovať neistotu spojenú s odhadom budúcich hodnôt. Ako veľmi si môžeme byť istí tým, že študent učiaci sa 20 hodín bude mať očakávaný počet bodov práve <span class="math inline">\(\hat \beta_0 + \hat \beta_1 20 = 46.52 + 1.12 \cdot 20 = 68.92\)</span>?</p>
 <p>Nakoľko vieme kvantifikovať neistotu spojenú s <span class="math inline">\(\hat \beta_0\)</span> a <span class="math inline">\(\hat \beta_1\)</span>, môžeme použiť na <span class="math inline">\(\hat \beta_0 + \hat \beta_1 x\)</span> pre akékoľvek číslo <span class="math inline">\(x\)</span>.</p>
-<p>Stredná hodnota pre modelovanú premennú ak by <span class="math inline">\(x\)</span> nadobúdalo hodnotu <span class="math inline">\(x_0\)</span> je <span class="math display">\[\hat y_0 = \hat \beta_0 + \hat \beta_1 x_0 =  (1, x_0) \begin{pmatrix} \hat \beta_0 \\ \hat \beta_1 \end{pmatrix}\]</span></p>
-<p>Zatiaľčo budúca hodnota je <span class="math display">\[y_0 = \hat y_0 + \epsilon_0\]</span></p>
+<p>Stredná hodnota pre modelovanú premennú ak by <span class="math inline">\(x\)</span> nadobúdalo hodnotu <span class="math inline">\(x_0\)</span> je <span class="math display">\[\hat y_0 = \hat \beta_0 + \hat \beta_1 x_0 =  (1, x_0) \begin{pmatrix} \hat \beta_0 \\ \hat \beta_1 \end{pmatrix}.\]</span></p>
+<p>Zatiaľ čo budúca hodnota je <span class="math display">\[y_0 = \hat y_0 + \epsilon_0\]</span></p>
 <ul>
 <li><span class="math inline">\(95\%\)</span>ný konfidenčný interval pre strednú hodnotu <span class="math inline">\(\hat y_0 \pm t_{n-p}^{(\alpha/2)} \hat \sigma \sqrt{ (1, x_0) (X^T X)^{-1}(1, x_0)^T}\)</span></li>
 <li><span class="math inline">\(95\%\)</span>ný predičný interval pre budúcu hodnotu <span class="math inline">\(\hat y_0 \pm t_{n-p}^{(\alpha/2)} \hat \sigma \sqrt{1 + (1, x_0) (X^T X)^{-1}(1, x_0)^T}\)</span></li>
 </ul>
-<p>Ten druhý interval je širší, lebo v sebe zahŕňa aj informáciu o buducej chybe <span class="math inline">\(\epsilon_0\)</span></p>
+<p>Ten druhý interval je širší, lebo v sebe zahŕňa aj informáciu o budúcej chybe <span class="math inline">\(\epsilon_0\)</span></p>
 <span class="math display">\[\begin{eqnarray*}
 var(\hat y_0 + \epsilon_0) &amp;=&amp; var(\hat y_0)+ var(\epsilon_0) \\
 &amp;=&amp;  (1, x_0) (X^T X)^{-1}(1, x_0)^T \sigma^2 + \sigma^2 \\
@@ -801,7 +801,7 @@ Multiple R-squared:  0.8972,    Adjusted R-squared:  0.8956
 F-statistic: 570.3 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>Môžeme si všimnúť, že tržby sú pozitívne asociované s nákladami na reklamu na Youtube a Facebooku a príslušné koeficienty sú štatisticky významné. Reklama v novinách je len veľmi málo asociovaná s tržbami, dokonca negatívne ale jej koeficient nie je štatisticky významný. A táto negatívna parciálna asociácia je tam aj napriek tomu, že samotná korelácia medzi reklamou v novinách a tržbami je pozitívna. Môže to byť napríklad tým, že keď firmy inzerujú na Facebooku, tak inzerujú aj v novinách ale v skutočnosti je ta tá Facebooková reklama, ktorá zaberá. Každopádne teraz skúmame len asociácie. Nevieme, prečo v skutočnosti tržby rastú.</p>
+<p>Môžeme si všimnúť, že tržby sú pozitívne asociované s nákladami na reklamu na Youtube a Facebooku a príslušné koeficienty sú štatisticky významné. Reklama v novinách je len veľmi málo asociovaná s tržbami, dokonca negatívne ale jej koeficient nie je štatisticky významný. A táto negatívna parciálna asociácia je tam aj napriek tomu, že samotná korelácia medzi reklamou v novinách a tržbami je pozitívna. Môže to byť napríklad tým, že keď firmy inzerujú na Facebooku, tak inzerujú aj v novinách ale v skutočnosti je to tá Facebooková reklama, ktorá zaberá. Každopádne teraz skúmame len asociácie. Nevieme, prečo v skutočnosti tržby rastú.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(<span class="fu">cor</span>(marketing), <span class="at">type =</span> <span class="st">"upper"</span>, <span class="at">order =</span> <span class="st">"hclust"</span>, </span>
@@ -902,7 +902,7 @@ F-statistic: 859.6 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
 </section>
 <section id="nelineárne-vzťahy-a-lineárna-regresia" class="level2" data-number="9.8">
 <h2 data-number="9.8" class="anchored" data-anchor-id="nelineárne-vzťahy-a-lineárna-regresia"><span class="header-section-number">9.8</span> Nelineárne vzťahy a lineárna regresia</h2>
-<p>Niekedy je závislosť medzi dvomi premennými zjavne nelineárna. Ak sa nazdávame, že by bola vhodne modelovaná kvadratickou funkciou, potom by sme chceli fitovať nasledovný model.</p>
+<p>Niekedy je závislosť medzi dvoma premennými zjavne nelineárna. Ak sa nazdávame, že by bola vhodne modelovaná kvadratickou funkciou, potom by sme chceli fitovať nasledovný model.</p>
 <p><span class="math display">\[y_i = \beta_0 + \beta_1 x_i + \beta_2 x^2_i + \epsilon_i,\]</span> Takýto model odhadneme nasledovne (dva spôsoby).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>marketing<span class="sc">$</span>youtube2 <span class="ot">&lt;-</span> (marketing<span class="sc">$</span>youtube)<span class="sc">^</span><span class="dv">2</span></span>
@@ -934,7 +934,7 @@ Multiple R-squared:  0.619, Adjusted R-squared:  0.6152
 F-statistic: 160.1 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>Zo sumárnej tabuľky vidime, že kvadratický člen má pridružený p-hodnotu tesne nad <span class="math inline">\(5\%\)</span>. Na tomto obrázku to môžeme porovnať vizuálne.</p>
+<p>Zo sumárnej tabuľky vidíme, že kvadratický člen má pridružený p-hodnotu tesne nad <span class="math inline">\(5\%\)</span>. Na tomto obrázku to môžeme porovnať vizuálne.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>marketing, <span class="fu">aes</span>(<span class="at">x=</span>youtube, <span class="at">y=</span>sales)) <span class="sc">+</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
@@ -1165,7 +1165,7 @@ F-statistic: 15.61 on 2 and 17 DF,  p-value: 0.0001417</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je každá ďaľšia hodina učenia asociovaná s navýšením skóre v priemer o približne <span class="math inline">\(1.03\%\)</span>.</p>
+<p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je každá ďaľšia hodina učenia asociovaná s navýšením skóre v priemere o približne <span class="math inline">\(1.03\%\)</span>.</p>
 <span class="math display">\[\begin{eqnarray*}
 \log(y_i) &amp;=&amp; \beta_0 + \beta_1 x_i + \epsilon_i \\
 &amp;&amp; x_i \rightarrow x_i + \Delta \\
@@ -1331,7 +1331,7 @@ F-statistic: 30.05 on 2 and 17 DF,  p-value: 2.624e-06</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je nárast učenia o 1% asociovaný s navýšením skóre v priemerę o približne <span class="math inline">\(0.2\%\)</span> bodov. Takže zdvojnásobnenie je asociované s približne s 20% nárastom bodov na teste.</p>
+<p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je nárast učenia o 1% asociovaný s navýšením skóre v priemere o približne <span class="math inline">\(0.2\%\)</span> bodov. Takže zdvojnásobnenie je asociované s približne s 20% nárastom bodov na teste.</p>
 <span class="math display">\[\begin{eqnarray*}
 \log(y_i) &amp;=&amp; \beta_0 + \beta_1 \log(x_i) + \epsilon_i \\
 &amp;&amp; x_i \rightarrow x_i (1+\Delta) \\
@@ -1369,7 +1369,7 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 </section>
 <section id="zhrnutie" class="level2" data-number="9.11">
 <h2 data-number="9.11" class="anchored" data-anchor-id="zhrnutie"><span class="header-section-number">9.11</span> Zhrnutie</h2>
-<p>V tejto kapitole sme sa pozreli na kvantifikovanie lineárnej súvzťažnosti medzi dvomi premennými. Na to sme použili nástroj lineárnej regresie. Skúmali sme užitočnosť tohoto modelu ako aj štatistické vlastnosti odhadov, ktoré tento model produkuje. Potom sme pomocou lineárneho modelu používali viacero prediktorov na modelovanie nejakej premennej, ktorá nás zaujíma.</p>
+<p>V tejto kapitole sme sa pozreli na kvantifikovanie lineárnej súvzťažnosti medzi dvoma premennými. Na to sme použili nástroj lineárnej regresie. Skúmali sme užitočnosť tohoto modelu ako aj štatistické vlastnosti odhadov, ktoré tento model produkuje. Potom sme pomocou lineárneho modelu používali viacero prediktorov na modelovanie nejakej premennej, ktorá nás zaujíma.</p>
 </section>
 <section id="cvičenia" class="level2" data-number="9.12">
 <h2 data-number="9.12" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">9.12</span> Cvičenia</h2>
@@ -1392,7 +1392,7 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 <p><span class="theorem-title"><strong>Cvičenie 9.3</strong></span> Mechanicky zreprodukujte všetky výsledky (okrem adjusted <span class="math inline">\(R^2\)</span>) zo sumárnej tabuľke. (Toto je užitočné cvičenie.)</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 9.4</strong></span> Stiahnite si dataset <code>cars</code> z knižnice <code>dataset</code>. Zobrazte závislosť medzi brzdnou dráhou a rýchlosťou (brzdná dráha bude vysveltovaná premenná) a popíšte ich vzťah aj pomocou jednoduchého lineárneho regresného modelu. Odhadnite koeficienty pomocou funkcie <code>lm</code> a interpretujte výsledky v sumárnej tabuľke.</p>
+<p><span class="theorem-title"><strong>Cvičenie 9.4</strong></span> Stiahnite si dataset <code>cars</code> z knižnice <code>dataset</code>. Zobrazte závislosť medzi brzdnou dráhou a rýchlosťou (brzdná dráha bude vysvetľovaná premenná) a popíšte ich vzťah aj pomocou jednoduchého lineárneho regresného modelu. Odhadnite koeficienty pomocou funkcie <code>lm</code> a interpretujte výsledky v sumárnej tabuľke.</p>
 </div>
 <div id="exr-" class="Exercise theorem exercise">
 <p><span class="theorem-title"><strong>Cvičenie 9.5</strong></span> Z datasetu <code>movies</code> z knižnice <code>ggplot2movies</code> sa pozrite, či veľkosť rozpočtu vie predikovať priemerné hodnotenie. Na túto závislosť sa pozrite pre rôzne typy filmov a dáta spolu s regresnými priamkami vhodne zobrazte. Kriticky zhodnoťte model a výsledky opatrne interpretujte.</p>
