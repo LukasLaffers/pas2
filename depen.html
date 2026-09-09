@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="sk" xml:lang="sk"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,7 +103,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -279,16 +281,16 @@ window.Quarto = {
 <p>Odteraz budeme načas hovoriť o <strong>náhodnom vektore</strong>. Je to vektor náhodných premenných definovaných na rovnakom pravdepodobnostnom priestore. V <a href="https://lukaslaffers.github.io/pas1/cov.html">tejto kapitole</a> sme hovorili o dvojrozmernom náhodnom vektore, teraz to rozšírime a budeme hovoriť o <span class="math inline">\(n\)</span>-rozmernom náhodnom vektore <span class="math inline">\((X_1,X_2,\dots,X_n)^T.\)</span></p>
 <p>Tento pojem je kľúčový na pochopenie štatistického testovania hypotéz, o ktorom budeme hovoriť neskôr. Ide o triviálne rozšírenie dvojrozmerného náhodného vektora, ktorý sme <a href="https://lukaslaffers.github.io/pas1/cov.html">opisovali skorej</a>.</p>
 <p><strong>Združená kumulatívna distribučná funkcia</strong> <span class="math inline">\(F_{X_1,X_2,\dots,X_n}: \mathbb{R}^n \rightarrow [0,1]\)</span> náhodného vektora <span class="math inline">\((X_1,X_2,\dots,X_n)^T\)</span> je definovaná nasledovne:</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 F_{X_1,X_2,\dots,X_n}(t_1,t_2,\dots,t_n) &amp;=&amp; P(X_1 \leq t_1 \cap X_2 \leq t_2 \cap \dots \cap X_n \leq t_n)\\
 &amp;=&amp; P(X_1 \leq t_1, X_2 \leq t_2, \dots , X_n \leq t_n).
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p><strong>Diskrétne náhodné premenné</strong></p>
 <p>Ak sú časti náhodného vektora diskrétne rozdelené náhodné premenné, pravdepodobnostné správanie popisujeme tiež <strong>združenou pravdepodobnostnou funkciou</strong></p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 p_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) &amp;=&amp; P(X_1 = x_1 \cap X_2 = x_2 \cap \dots \cap X_n = x_n)\\
 &amp;=&amp; P(X_1 = x_1, X_2 = x_2, \dots ,X_n = x_n).
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>Aby táto bola korektná, tak musí platiť</p>
 <ul>
 <li><span class="math inline">\(\forall x_1 \in \mathcal{S}_{X_1}, \dots, \forall x_n \in \mathcal{S}_{X_n}: p_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) \geq 0,\)</span></li>
@@ -297,10 +299,10 @@ p_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) &amp;=&amp; P(X_1 = x_1 \cap X_2 = x_2 
 </ul>
 <p><strong>Spojité náhodné premenné</strong></p>
 <p>Ak sú časti náhodného vektora spojite rozdelené, popisujeme pravdepodobnostné správanie pomocou <strong>združenej funkcie hustoty</strong> <span class="math inline">\(f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n): \mathbb{R}^n \rightarrow \mathbb{R}^{+},\)</span> ktorá spĺňa nasledovnú vlastnosť</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 P\left(X_1 \in [a_1,b_1] \cap \dots \cap X_n \in [a_n,b_n] \right)  &amp;=&amp; P\left(X_1 \in [a_1,b_a], \dots X_n \in [a_n,b_n] \right) \\
 &amp;=&amp; \int_{a_1}^{b_1}\dots \int_{a_n}^{b_n}f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) dx_1 \dots dx_n.
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>Funkcia hustoty musí spĺňať nasledovné vlastnosti</p>
 <ul>
 <li><span class="math inline">\(\forall x_1 \in \mathbb{R}, \dots, \forall x_n \in \mathbb{R}: f_{X_1,X_2,\dots,X_n}(x_1,x_2,\dots,x_n) \geq 0,\)</span></li>
@@ -317,17 +319,20 @@ P\left(X_1 \in [a_1,b_1] \cap \dots \cap X_n \in [a_n,b_n] \right)  &amp;=&amp; 
 <div id="exm-" class="Example theorem example">
 <p><span class="theorem-title"><strong>Príklad 6.1</strong></span> Majme dve náhodné premenné <span class="math inline">\((X, Y)\)</span>, ktorých pravdepodobnostná funkcia je popísaná nasledovnou tabuľkou:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"X=1"</span>,<span class="st">"X=2"</span>, <span class="st">"X=3"</span>), </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"1"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"0.1"</span>,<span class="st">"0.3"</span>,<span class="st">"0"</span>), </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"2"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"0"</span>,<span class="st">"0"</span>,<span class="st">"0.2"</span>), </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"3"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"0.1"</span>,<span class="st">"0.1"</span>,<span class="st">"0"</span>), </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"4"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"0"</span>,<span class="st">"0.2"</span>,<span class="st">"0"</span>))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">c</span>(<span class="st">" "</span>,<span class="st">"Y=1"</span>,<span class="st">"Y=2"</span>,<span class="st">"Y=3"</span>,<span class="st">"Y=4"</span>))</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(df, <span class="at">booktabs =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">"Pravdedpodobnostná funkcia"</span> <span class="ot">=</span> <span class="dv">5</span>))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'kableExtra' was built under R version 4.5.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"X=1"</span>,<span class="st">"X=2"</span>, <span class="st">"X=3"</span>), </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"1"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"0.1"</span>,<span class="st">"0.3"</span>,<span class="st">"0"</span>), </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"2"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"0"</span>,<span class="st">"0"</span>,<span class="st">"0.2"</span>), </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"3"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"0.1"</span>,<span class="st">"0.1"</span>,<span class="st">"0"</span>), </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"4"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"0"</span>,<span class="st">"0.2"</span>,<span class="st">"0"</span>))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">c</span>(<span class="st">" "</span>,<span class="st">"Y=1"</span>,<span class="st">"Y=2"</span>,<span class="st">"Y=3"</span>,<span class="st">"Y=4"</span>))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(df, <span class="at">booktabs =</span> T) <span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">"Pravdedpodobnostná funkcia"</span> <span class="ot">=</span> <span class="dv">5</span>))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
@@ -382,13 +387,13 @@ Pravdedpodobnostná funkcia
 <p>Zistite, či sú <span class="math inline">\(X\)</span> a <span class="math inline">\(Y\)</span> nezávislé. Potom vypočítajte ich koreláciu</p>
 <p>&nbsp;</p>
 <p>Poďme vyskúšať rôzne kombinácie <span class="math inline">\(X=x\)</span> a <span class="math inline">\(Y=y\)</span>, či platí <span class="math inline">\(P(X=x,Y=y) = P(X=x)\cdot P(Y=y).\)</span> Začnime <span class="math inline">\(x=1\)</span> a <span class="math inline">\(y=1.\)</span></p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 P(X=1) &amp;=&amp; 0.1 + 0 + 0.1 + 0 = 0.2 \\
 P(Y=1) &amp;=&amp; 0.1 +  0.3 + 0 = 0.4 \\
 P(X=1)\cdot P(Y=1) &amp;=&amp; 0.2 \cdot 0.4 = 0.08 \\
 P(X=1, Y=1) &amp;=&amp; 0.1\\
 P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>Neplatí. Takže sme našli protipríklad na nezávislosť, takže náhodné premenné <span class="math inline">\(X\)</span> a <span class="math inline">\(Y\)</span> nie sú nezávislé. Nemusíme už skúšať ďalšie kombinácie. Napriek tomu, že sú nezávislé, tak <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">majú koreláciu rovnú nule</a>.</p>
 <p>To len hovorí o tom, že korelácia je špecifická miera závislosti, konkrétne <strong>lineárnej</strong> závislosti.</p>
 </div>
@@ -413,15 +418,18 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 <p>Ilustratívny príklad s dinosaurom, kedy korelácia nedobre popisuje mieru závislosti, lebo závislosť nie je lineárna <a href="https://lukaslaffers.github.io/pas1/cov.html#miera-závislosti">je tu</a>.</p>
 <p>Tu je Rkový kód, ktorý generuje dvojice dát s rôznymi závislosťami Takto vyzerá realizácia 100 náhodných vektorov <span class="math inline">\((X,Y)\)</span> s rôznymi koreláciami.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12922</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>rho <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.9</span>,<span class="sc">-</span><span class="fl">0.7</span>,<span class="sc">-</span><span class="fl">0.6</span>,<span class="sc">-</span><span class="fl">0.2</span>,<span class="sc">-</span><span class="fl">0.1</span>, <span class="dv">0</span>, <span class="fl">0.15</span>,<span class="fl">0.3</span>,<span class="fl">0.4</span>, <span class="fl">0.6</span>,<span class="fl">0.8</span>,<span class="fl">0.99</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (iRho <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(rho)){</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(<span class="dv">100</span>,<span class="at">sigma=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,rho[iRho],rho[iRho],<span class="dv">1</span>),<span class="at">nrow=</span><span class="dv">2</span>))</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x[,<span class="dv">1</span>],x[,<span class="dv">2</span>],<span class="at">main=</span><span class="fu">paste</span>(<span class="st">"Korelácia ="</span>,rho[iRho]),<span class="at">xlab=</span><span class="st">"X"</span>,<span class="at">ylab=</span><span class="st">"Y"</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'mvtnorm' was built under R version 4.5.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12922</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>rho <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.9</span>,<span class="sc">-</span><span class="fl">0.7</span>,<span class="sc">-</span><span class="fl">0.6</span>,<span class="sc">-</span><span class="fl">0.2</span>,<span class="sc">-</span><span class="fl">0.1</span>, <span class="dv">0</span>, <span class="fl">0.15</span>,<span class="fl">0.3</span>,<span class="fl">0.4</span>, <span class="fl">0.6</span>,<span class="fl">0.8</span>,<span class="fl">0.99</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (iRho <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(rho)){</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(<span class="dv">100</span>,<span class="at">sigma=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,rho[iRho],rho[iRho],<span class="dv">1</span>),<span class="at">nrow=</span><span class="dv">2</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x[,<span class="dv">1</span>],x[,<span class="dv">2</span>],<span class="at">main=</span><span class="fu">paste</span>(<span class="st">"Korelácia ="</span>,rho[iRho]),<span class="at">xlab=</span><span class="st">"X"</span>,<span class="at">ylab=</span><span class="st">"Y"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -460,17 +468,17 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 <li>je symetrická (lebo <span class="math inline">\(\text{Cov}[X_i,X_j]=\text{Cov}[X_j,X_j]\)</span>) a okrem toho</li>
 <li>je kladne semidefinitná, takže <span class="math display">\[a^T\text{Var}[X]a \geq 0,\]</span> pre akýkoľvek vektor <span class="math inline">\(a \in \mathbb{R}^n.\)</span> Toto platí lebo <span class="math inline">\(\text{Var}[a^T X] = a^T\text{Var}[X]a\)</span> a zároveň vieme, že <span class="math inline">\(\text{Var}[Z] \geq 0\)</span> pre akúkoľvek náhodnú premennú a teda aj pre <span class="math inline">\(Z=a^T X.\)</span></li>
 </ul>
-<div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 6.2</strong></span> Pozrime sa na korelácie rôznych premenných náhodnej podvzorky filmov z knižnice <code>ggplot2movies</code>.</p>
+<div class="Example">
+<p>Pozrime sa na korelácie rôznych premenných náhodnej podvzorky filmov z knižnice <code>ggplot2movies</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">224</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"year"</span>,<span class="st">"length"</span>,<span class="st">"budget"</span>,<span class="st">"rating"</span>,<span class="st">"votes"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(movies)[<span class="dv">1</span>],<span class="dv">1000</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> movies[ind,vars]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(data_sam)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">224</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"year"</span>,<span class="st">"length"</span>,<span class="st">"budget"</span>,<span class="st">"rating"</span>,<span class="st">"votes"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(movies)[<span class="dv">1</span>],<span class="dv">1000</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>data_sam <span class="ot">&lt;-</span> movies[ind,vars]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(data_sam)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -481,17 +489,12 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 </div>
 <p>Alebo krajší párový graf s využitím knižnice <code>GGally</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: ggplot2</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 method overwritten by 'GGally':
-  method from   
-  +.gg   ggplot2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(data_sam)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(data_sam)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -502,18 +505,18 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 </div>
 <p>Korelačné matice sa dajú <a href="https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html">rôzne zobraziť</a>, aby odkomunikovali súvzťažnosť jednotlivých premenných. Tu sú nejaké príklady:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>corrplot 0.95 loaded</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(data_sam,<span class="at">use=</span><span class="st">"pairwise.complete.obs"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">'color'</span>, <span class="at">order =</span> <span class="st">'alphabet'</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">'shade'</span>, <span class="at">order =</span> <span class="st">'AOE'</span>, <span class="at">diag =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">'ellipse'</span>, <span class="at">order =</span> <span class="st">'AOE'</span>, <span class="at">type =</span> <span class="st">'upper'</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(cor_matrix, <span class="at">order =</span> <span class="st">'AOE'</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(cor_matrix, <span class="at">lower =</span> <span class="st">'shade'</span>, <span class="at">upper =</span> <span class="st">'pie'</span>, <span class="at">order =</span> <span class="st">'hclust'</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(data_sam,<span class="at">use=</span><span class="st">"pairwise.complete.obs"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">'color'</span>, <span class="at">order =</span> <span class="st">'alphabet'</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">'shade'</span>, <span class="at">order =</span> <span class="st">'AOE'</span>, <span class="at">diag =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">'ellipse'</span>, <span class="at">order =</span> <span class="st">'AOE'</span>, <span class="at">type =</span> <span class="st">'upper'</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(cor_matrix, <span class="at">order =</span> <span class="st">'AOE'</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(cor_matrix, <span class="at">lower =</span> <span class="st">'shade'</span>, <span class="at">upper =</span> <span class="st">'pie'</span>, <span class="at">order =</span> <span class="st">'hclust'</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -523,14 +526,14 @@ P(X=1, Y=1) &amp;\neq&amp; P(X=1)\cdot P(Y=1) \\
 </div>
 </div>
 </div>
-<div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 6.3</strong></span> Tu je situácia, keď je jedna premenná priamo lineárnou transformáciou druhej. Konkrétne <span class="math inline">\(X_3 = 2-3X_2\)</span></p>
+<div class="Example">
+<p>Tu je situácia, keď je jedna premenná priamo lineárnou transformáciou druhej. Konkrétne <span class="math inline">\(X_3 = 2-3X_2\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">232</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">20</span>,<span class="dv">1</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">30</span>,<span class="dv">2</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2 <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cbind</span>(x1,x2,x3))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">232</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">20</span>,<span class="dv">1</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">30</span>,<span class="dv">2</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2 <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cbind</span>(x1,x2,x3))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           x1         x2         x3
 x1  1.0000000 -0.1118414  0.1118414
@@ -541,8 +544,8 @@ x3  0.1118414 -1.0000000  1.0000000</code></pre>
 <p>Tu vidíme, že <span class="math inline">\(\text{Corr}[X_2,X_3]=-1.\)</span></p>
 <p>Teraz nech <span class="math inline">\(X_3 = 2-3X_2^{1.1},\)</span> takže závislosť medzi <span class="math inline">\(X_2\)</span> a <span class="math inline">\(X_3\)</span> je “skoro” lineárna.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">=</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2<span class="sc">^</span>{<span class="fl">1.1</span>} <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cbind</span>(x1,x2,x3))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">=</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">*</span> x2<span class="sc">^</span>{<span class="fl">1.1</span>} <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cbind</span>(x1,x2,x3))</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           x1         x2         x3
 x1  1.0000000 -0.1118414  0.1118155
@@ -570,14 +573,14 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <p>Útoky žralokov sú veľmi silno korelované s objemom predanej zmrzliny. Ale neznamená to to, že jedno spôsobuje druhé. V tomto prípade majú obe premenné zjavne silnú časovú zložku. V lete je teplo, ľudia sa viacej kúpu a vtedy aj žraloky majú na koho útočiť. Na druhej strane v zime sa nám príliš nežiada studenej zmrzliny.</p>
 <p>Na idenfikovanie príčiny a dôsledku, na odlíšenie asociácie od kauzality potrebujeme nejaký zdroj náhody. Ako v prípade randomizovanej štúdie v medicíne. <strong>Náhodne</strong> rozdelíme pacientov/tky na tých, ktorí dostanú liek a tých ktorí dostanú placebo. Ak sú tieto vzorky naozaj podobné (a ak máme pacientov/tky dostatočne veľa, tak budú podobné), tak je to naozaj ten liek a nie niečo iné čo mení prognózu pacienta/tky.</p>
 <p>Vo všeobecnosti je ťažké odlíšiť koreláciu od kauzality. Pozorované dáta, ktoré sú neexperimentálne, nás len málokedy informujú priamo o kauzálnom efekte. Zamyslite sa nad tým keď budete nabudúce pri rannej káve čítať noviny o tom, koľko káv denne Vám predĺži/skráti život.</p>
-<div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 6.4</strong></span> Toto je obrovská otázka, ktorej sa venuje veľká časť ekonómie pracovného trhu (labor economics). V dátach vidíme, že vzdelaní ľudia zarábajú v priemere viacej. Znamená to, že absolovovanie vysokej školy zvýši Vašu mzdu?</p>
+<div class="Example">
+<p>Toto je obrovská otázka, ktorej sa venuje veľká časť ekonómie pracovného trhu (labor economics). V dátach vidíme, že vzdelaní ľudia zarábajú v priemere viacej. Znamená to, že absolovovanie vysokej školy zvýši Vašu mzdu?</p>
 </div>
-<div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 6.5</strong></span> Mať malé triedy je drahé. Plat učiteľa/ľky je tým najvýznamnejším nákladom pri vzdelávaní. Oplatí sa mať triedy kde bude menej žiakov/čok?</p>
+<div class="Example">
+<p>Mať malé triedy je drahé. Plat učiteľa/ľky je tým najvýznamnejším nákladom pri vzdelávaní. Oplatí sa mať triedy kde bude menej žiakov/čok?</p>
 </div>
-<div id="exm-" class="Example theorem example">
-<p><span class="theorem-title"><strong>Príklad 6.6</strong></span> Niekedy nie sú experimentálne dáta dostupné z etických alebo iných príčin (nemôžem jednu skupinu náhodne vybraných ľudí prinútiť fajčiť, inej to zasa zakázať). Napriek tomu máme množstvo mechanizmov, ktorých pochopenie nám umožňuje porozumieť mechanizmu príčiny a následku napriek neexistencii experimentálnych dát. Dokonca Sir Ronald Fisher, jeden z najvýznamnejších štatistikov upozorňoval, že na základe korelácie nemožno odvodiť kauzálne závery. Dnes už je absolútny vedecký konsenzus o škodlivosti fajčenia. Napriek neexistencii experimentu. Mimochodom, Fisher bol tuhý fajčiar.</p>
+<div class="Example">
+<p>Niekedy nie sú experimentálne dáta dostupné z etických alebo iných príčin (nemôžem jednu skupinu náhodne vybraných ľudí prinútiť fajčiť, inej to zasa zakázať). Napriek tomu máme množstvo mechanizmov, ktorých pochopenie nám umožňuje porozumieť mechanizmu príčiny a následku napriek neexistencii experimentálnych dát. Dokonca Sir Ronald Fisher, jeden z najvýznamnejších štatistikov upozorňoval, že na základe korelácie nemožno odvodiť kauzálne závery. Dnes už je absolútny vedecký konsenzus o škodlivosti fajčenia. Napriek neexistencii experimentu. Mimochodom, Fisher bol tuhý fajčiar.</p>
 </div>
 <p>Zamyslite sa, prečo je náročné odpovedať na tieto otázky:</p>
 <ul>
@@ -607,18 +610,18 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <h2 data-number="6.3" class="anchored" data-anchor-id="cvičenia"><span class="header-section-number">6.3</span> Cvičenia</h2>
 <!-- [R súbor pre cvičenia](https://www.dropbox.com/s/zn6n8d9x8wq7ekg/labs_week6.R?dl=0) -->
 <!-- [R súbor z cvičení zo 19.10.2023](https://www.dropbox.com/scl/fi/t0rb4nxr3p6t74ldlncfe/20231012-labs05.R?rlkey=p5863jc8pfwxd9k63pvzsztrv&dl=0) -->
-<p><a href="https://www.dropbox.com/scl/fi/hfjyjc85mdayt516xxqpk/Cvicenie6.R?rlkey=316dpz0xv98jmjin50x36j6vi&amp;dl=0">R súbor z cvičení z 20.10.2025</a></p>
+<!-- [R súbor z cvičení z 20.10.2025](https://www.dropbox.com/scl/fi/hfjyjc85mdayt516xxqpk/Cvicenie6.R?rlkey=316dpz0xv98jmjin50x36j6vi&dl=0) -->
 <div id="exr-" class="Exercise theorem exercise">
 <p><span class="theorem-title"><strong>Cvičenie 6.1</strong></span> Pozrite sa na korelačnú štruktúru premenných v nasledovnom dasete o autách.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data_car <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"http://www.r-exercises.com/wp-content/uploads/2017/04/auto.csv"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>data_car <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"http://www.r-exercises.com/wp-content/uploads/2017/04/auto.csv"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 6.2</strong></span> Pomocou simulácie overte vzťah <span class="math inline">\(\text{Var}[a^T X] = a^T\text{Var}[X]a\)</span> pre nejakú voľbu trojrozmerného náhodného vektora <span class="math inline">\(X\)</span>, ktorý vygenerujte s viacrozmerného normálneho rozdelenia pomocou funkcie <code>rmvnorm</code> z knižnice <code>mvtnorm</code>. Vyskúšajte rôzne trojrozmerné vektory <span class="math inline">\(a\)</span>.</p>
+<div class="Exercise">
+<p>Pomocou simulácie overte vzťah <span class="math inline">\(\text{Var}[a^T X] = a^T\text{Var}[X]a\)</span> pre nejakú voľbu trojrozmerného náhodného vektora <span class="math inline">\(X\)</span>, ktorý vygenerujte s viacrozmerného normálneho rozdelenia pomocou funkcie <code>rmvnorm</code> z knižnice <code>mvtnorm</code>. Vyskúšajte rôzne trojrozmerné vektory <span class="math inline">\(a\)</span>.</p>
 </div>
-<div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 6.3</strong></span> Nech <span class="math inline">\(X_3 = 3X_1 + X_2,\)</span> kde <span class="math inline">\(X_1 \sim N(20,3^2)\)</span> a <span class="math inline">\(X_2 \sim N(30,6^2)\)</span> a zároveň <span class="math inline">\(X_1\)</span> a <span class="math inline">\(X_2\)</span> sú nezávislé.</p>
+<div class="Exercise">
+<p>Nech <span class="math inline">\(X_3 = 3X_1 + X_2,\)</span> kde <span class="math inline">\(X_1 \sim N(20,3^2)\)</span> a <span class="math inline">\(X_2 \sim N(30,6^2)\)</span> a zároveň <span class="math inline">\(X_1\)</span> a <span class="math inline">\(X_2\)</span> sú nezávislé.</p>
 <ul>
 <li>Aká je variancia <span class="math inline">\(X_3\)</span>?</li>
 <li>Aká je kovariancia <span class="math inline">\(X_2\)</span> a <span class="math inline">\(X_3\)</span>?</li>
@@ -627,24 +630,25 @@ x3  0.1118155 -0.9999870  1.0000000</code></pre>
 <p>Porovnajte teoretické hodnoty s tými, ktoré ste odhadli pomocou simulácií.</p>
 <p>Preskúmajte variabilitu Vašich odhadov. Aká počet simulácií je dostatočný na uspokojivú odpoveď (teoretické hodnoty sú dostatočne blízke tým, ktoré sú odhadnuté pomocou simulácií.)?</p>
 </div>
-<div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 6.4</strong></span> Vhodne zobrazte korelačnú maticu premenných: koncentrácie ozónu, úrovne slnečného žiarenia, rýchlosti vetra a teploty z datasetu <code>airquality</code> z knižnice <code>datasets</code>.</p>
+<div class="Exercise">
+<p>Vhodne zobrazte korelačnú maticu premenných: koncentrácie ozónu, úrovne slnečného žiarenia, rýchlosti vetra a teploty z datasetu <code>airquality</code> z knižnice <code>datasets</code>.</p>
 </div>
-<div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 6.5</strong></span> Dataset <code>EuStockMarkets</code> z knižnice <code>datasets</code> obsahuje denné dáta cien Európskych burzových indexov počas 90-tych rokov. Zobrazte ich do prehľadného grafu. Naviac zobrazte korelačnú štruktúru denných výnosov (výnos v dni <span class="math inline">\(t\)</span> je definovaný ako <span class="math inline">\(\frac{p_{t}-p_{t-1}}{p_{t-1}},\)</span> kde <span class="math inline">\(p_t\)</span> je cena cenného papiera na konci dňa <span class="math inline">\(t\)</span>.).</p>
+<div class="Exercise">
+<p>Dataset <code>EuStockMarkets</code> z knižnice <code>datasets</code> obsahuje denné dáta cien Európskych burzových indexov počas 90-tych rokov. Zobrazte ich do prehľadného grafu. Naviac zobrazte korelačnú štruktúru denných výnosov (výnos v dni <span class="math inline">\(t\)</span> je definovaný ako <span class="math inline">\(\frac{p_{t}-p_{t-1}}{p_{t-1}},\)</span> kde <span class="math inline">\(p_t\)</span> je cena cenného papiera na konci dňa <span class="math inline">\(t\)</span>.).</p>
 </div>
-<div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 6.6</strong></span> Dataset <code>USArrests</code> z knižnice <code>datasets</code> má informácie o zatknutiach na 100’000 obyvateľov pre rôzne Americké štáty v roku 1973. Zobrazte korelačnú štruktúru týchto dát, pozrite sa ako sú asociované rôzne typy zatknutí s percentom ľudí žijúcich v mestách.</p>
+<div class="Exercise">
+<p>Dataset <code>USArrests</code> z knižnice <code>datasets</code> má informácie o zatknutiach na 100’000 obyvateľov pre rôzne Americké štáty v roku 1973. Zobrazte korelačnú štruktúru týchto dát, pozrite sa ako sú asociované rôzne typy zatknutí s percentom ľudí žijúcich v mestách.</p>
 </div>
-<div id="exr-" class="Exercise theorem exercise">
-<p><span class="theorem-title"><strong>Cvičenie 6.7</strong></span> V datasete <code>mtcars</code> z knižnice <code>datasets</code> sú informácie o 32 autách z roku 1974. Pozrite sa korelačnú štruktúru týchto premenných.</p>
+<div class="Exercise">
+<p>V datasete <code>mtcars</code> z knižnice <code>datasets</code> sú informácie o 32 autách z roku 1974. Pozrite sa korelačnú štruktúru týchto premenných.</p>
 </div>
 <p>:::</p>
 </section>
 <section id="domáca-úloha-2" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="domáca-úloha-2"><span class="header-section-number">6.4</span> Domáca úloha 2</h2>
-<p>Prosím odovzdať do 2.11.2025 19:59 cez formulár (tento Vám príde emailom).</p>
-<p>V riešeniach používajte prosím plnovýznamové vety a nahrávajte riešenia v jednom pdf súbore nazvanom podľa Vašich priezvísk v tvare DU1_priezvisko1_priezvisko2.pdf (napríklad DU1_Kovacova_Zelinka.pdf).</p>
+<!-- Prosím odovzdať do 2.11.2025 19:59 cez formulár (tento Vám príde emailom).
+
+V riešeniach používajte prosím plnovýznamové vety a nahrávajte riešenia v jednom pdf súbore nazvanom podľa Vašich priezvísk v tvare DU1_priezvisko1_priezvisko2.pdf (napríklad DU1_Kovacova_Zelinka.pdf). -->
 <div class="exercise" name="DÚ 2.1, iris">
 <p>Majme <a href="https://www.kaggle.com/datasets/uciml/iris">iris dataset</a></p>
 <p>Stiahnite si tento dataset a</p>

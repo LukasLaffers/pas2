@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="sk" xml:lang="sk"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -313,12 +313,12 @@ window.Quarto = {
 <p><span class="math display">\[\text{sd}[X] = \sqrt{\text{Var}[X]}.\]</span></p>
 <div id="exm-" class="Example theorem example">
 <p><span class="theorem-title"><strong>Príklad 5.1</strong></span> Stredná hodnota, variancia a smerodajná odchýlka výsledku hodu <a href="https://lukaslaffers.github.io/pas1/dnp.html#variancia-rozptyl">neférovej mince</a>.</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \text{E}[X] &amp;=&amp; 0 \cdot 0.2 + 1 \cdot 0.8 = 0.8,\\
 E[X^2] &amp;=&amp; 0^2 \cdot 0.2 + 1^2 \cdot 0.8 = 0.8,\\
 \text{Var}[X] &amp;=&amp; E[X^2] - (\text{E}[X])^2 = 0.8 - 0.8^2 = 0.16, \\
 \text{sd}[X] &amp;=&amp; \sqrt{\text{Var}[X]} = \sqrt{0.16} = 0.4.
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 </div>
 <p>Pre ilustráciu variancie môžete <a href="https://seeing-theory.brown.edu/basic-probability/index.html#section2">kliknúť sem</a></p>
 <div id="exm-" class="Example theorem example">
@@ -432,11 +432,11 @@ E[X^2] &amp;=&amp; 0^2 \cdot 0.2 + 1^2 \cdot 0.8 = 0.8,\\
 </div>
 <div id="exm-" class="Example theorem example">
 <p><span class="theorem-title"><strong>Príklad 5.3</strong></span> Uvažujme náhodnú premennú <span class="math inline">\(X\)</span>, ktorá modeluje IQ náhodne vybraného človeka z danej populácie. Táto náhodná premenná má nasledovnú funkciu hustoty <span class="math inline">\(f_X(x) = \frac{1}{15\sqrt{2 \pi}} e^{-\frac{1}{2}\frac{(x-100)^2}{15^2}}\)</span>. Vypočítajte pravdepodobnosť, že náhodne vybraný človek z tejto populácie bude mať IQ väčšie ako 130.</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 P(X &gt; 130) &amp;=&amp; 1-P(X \leq 130) =  1 - \int_{-\infty}^{130} f_X(x)dx \\
 &amp;=&amp;  1 - \int_{-\infty}^{130} \frac{1}{15\sqrt{2 \pi}} e^{-\frac{1}{2}\frac{(x-100)^2}{15^2}} dx \\
 &amp;=&amp; \cdots \approx  1 -  0.9772 = 2.28\%.
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>Tento integrál nemá analytické (“pekné”) riešenie a treba ho zrátať numericky pomocou počítačového programu.</p>
 <p>Nasledujúci obrázok túto situáciu ilustruje</p>
 <div class="cell">
@@ -479,13 +479,13 @@ P(X &gt; 130) &amp;=&amp; 1-P(X \leq 130) =  1 - \int_{-\infty}^{130} f_X(x)dx \
 <p><span class="math display">\[\text{sd}[X] = \sqrt{\text{Var}[X]}.\]</span></p>
 <div id="exm-" class="Example theorem example">
 <p><span class="theorem-title"><strong>Príklad 5.4</strong></span> Majme náhodnú premennú <span class="math inline">\(X\)</span>, ktorá má nasledovnú funkciu hustoty <span class="math inline">\(f_X(x) = \frac{1}{2}e^{-x/2}\)</span> pre <span class="math inline">\(x &gt; 0\)</span> inak <span class="math inline">\(f_X(x)=0\)</span>. Vypočítajte <span class="math inline">\(\text{Var}[X].\)</span></p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \text{E}[X] &amp;=&amp;\int_{-\infty}^{\infty} x f_X(x) dx = \int_{0}^{\infty} x \frac{1}{2}e^{-x/2} dx \\
 &amp;=&amp; \left[x . \left(-e^{-\frac{x}{2}} \right)\right]^{\infty}_0  - \int_{0}^{\infty} 1 . \left(-e^{-\frac{x}{2}} \right) dx\\
 &amp;=&amp; 0 - 0 - \left[2 e^{-\frac{x}{2}} \right]^{\infty}_{0} = 0 - \left(-2\right) = 2 \\
 \text{E}[X^2] &amp;=&amp; \dots [\text{dva krát per partes}] \dots = 8 \\
 \text{Var}[X] &amp;=&amp; \text{E}[X^2] - \left(\text{E}[X]\right)^2 = 8 - 2^2 = 4
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 </div>
 </section>
 <section id="kvantil" class="level3" data-number="5.2.4">
@@ -663,7 +663,7 @@ P(X &gt; 130) &amp;=&amp; 1-P(X \leq 130) =  1 - \int_{-\infty}^{130} f_X(x)dx \
 <p><span class="theorem-title"><strong>Cvičenie 5.5</strong></span> Uvažujeme dva rôzne webshopy a ten istý produkt. Po istom čase pozbierali webshopy skúsenosti zákazníkov. V prvom bolo 24 z 25 ľudí spokojných, v druhom bolo 353 z 400 spokojných. Ľudia hodnotili produkt, nie webshop a produkt bol ten istý. Vieme, že šanca, že uvidíme aspoň 24 ľudí spokojných v prvom obchode je rovnaká ako to, že uvidíme aspoň 353 v druhom obchode. Aká je skutočná spokojnosť zákazníkov s týmto produktom?</p>
 </div>
 <!-- [R súbor z cvičení zo 12.10.2023](https://www.dropbox.com/scl/fi/pwa7r57bkd2tikbkjlvxz/20231012-labs04.R?rlkey=fgnhzkh4n2ynqqbzny9b664cf&dl=0) -->
-<p><a href="https://www.dropbox.com/scl/fi/3axhtet11borvh9xe2mix/cvicenie5.R?rlkey=9ehs61kgrch4j07clkosq5103&amp;dl=0">R súbor z cvičení z 13.10.2025</a></p>
+<!-- [R súbor z cvičení z 13.10.2025](https://www.dropbox.com/scl/fi/3axhtet11borvh9xe2mix/cvicenie5.R?rlkey=9ehs61kgrch4j07clkosq5103&dl=0) -->
 
 
 </section>

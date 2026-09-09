@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="sk" xml:lang="sk"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -427,18 +427,18 @@ window.Quarto = {
 <p>Odhad minimalizujúci súčet štvorcov odchýlok je v maticovom zápise nasledovný:</p>
 <p><span class="math display">\[\hat \beta = (X^T X)^{-1} X^T y\]</span></p>
 <p>Ak uvažujeme, že <span class="math inline">\(\epsilon_i \sim N(0, \sigma^2)\)</span> potom <span class="math inline">\(\epsilon \sim N(0, \sigma^2I_n),\)</span> kde <span class="math inline">\(I_n\)</span> označuje <span class="math inline">\(n \times n\)</span> maticu identity (diagonálnu maticu s jednotkami na diagonále a nulami inde).</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \hat \beta &amp;=&amp; (X^T X)^{-1} X^T y \\
 &amp;=&amp; (X^T X)^{-1} X^T (X\beta + \epsilon) \\
 &amp;=&amp; \beta + (X^T X)^{-1} X^T\epsilon
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>Preto</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \hat \beta &amp;\sim&amp; N(\beta, (X^T X)^{-1} X^T Var[\epsilon] X (X^T X)^{-1}  )\\
         &amp;\sim&amp; N(\beta, (X^T X)^{-1} X^T \sigma^2I_n X (X^T X)^{-1}  )\\
         &amp;\sim&amp; N(\beta, \sigma^2 (X^T X)^{-1} X^T X (X^T X)^{-1}  )\\
         &amp;\sim&amp; N(\beta, \sigma^2 (X^T X)^{-1}).
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>Teda my úplne presne vieme aké má pravdepodobnostné rozdelenie. Až na varianciu chýb <span class="math inline">\(\sigma^2\)</span>. Tú nevieme a znova len budeme musieť odhadnúť. Dobrým odhadom (nevychýleným) je</p>
 <p><span class="math display">\[\hat \sigma^2 = \sum_{i=1}^n  \frac{\hat \epsilon_i^2}{n-k} = \sum_{i=1}^n  \frac{ \left(y_i - (\beta_0 + \beta_1 x_i)\right)^2}{n-k},\]</span> kde <span class="math inline">\(k\)</span> je počet parametrov v modeli (v našom prípade 2).</p>
 <p>Tento odhad variancie chýb použijeme na odhad kovariančnej matice <span class="math inline">\(\hat \beta\)</span>:</p>
@@ -697,11 +697,11 @@ y_1 - {\color{blue}\hat y_1}\\ y_2 - {\color{blue}\hat y_2} \\ \vdots \\ y_n - {
 <li><span class="math inline">\(95\%\)</span>ný predičný interval pre budúcu hodnotu <span class="math inline">\(\hat y_0 \pm t_{n-p}^{(\alpha/2)} \hat \sigma \sqrt{1 + (1, x_0) (X^T X)^{-1}(1, x_0)^T}\)</span></li>
 </ul>
 <p>Ten druhý interval je širší, lebo v sebe zahŕňa aj informáciu o budúcej chybe <span class="math inline">\(\epsilon_0\)</span></p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 var(\hat y_0 + \epsilon_0) &amp;=&amp; var(\hat y_0)+ var(\epsilon_0) \\
 &amp;=&amp;  (1, x_0) (X^T X)^{-1}(1, x_0)^T \sigma^2 + \sigma^2 \\
 &amp;=&amp; \big({\color{green}1 +} (1, x_0) (X^T X)^{-1}(1, x_0)^T\big) \sigma^2
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1101,14 +1101,14 @@ F-statistic: 14.96 on 2 and 17 DF,  p-value: 0.0001789</code></pre>
 </div>
 </div>
 <p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je každá ďaľšia hodina učenia asociovaná s navýšením skóre v priemere o <span class="math inline">\(0.65\)</span>.</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 y_i &amp;=&amp; \beta_0 + \beta_1 x_i + \epsilon_i \\
 &amp;&amp; x_i \rightarrow x_i + \Delta \\
 &amp;&amp; \implies \\
 y_i &amp;\rightarrow&amp; \beta_0 + \beta_1 (x_i + \Delta) + \epsilon_i  \\
 y_i &amp;\rightarrow&amp; \beta_0 + \beta_1 x_i + \epsilon_i +  \beta_1 \Delta  \\
 y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>&nbsp;</p>
 <p>Tu je dôležité poznamenať niekoľko skutočností</p>
 <ul>
@@ -1166,7 +1166,7 @@ F-statistic: 15.61 on 2 and 17 DF,  p-value: 0.0001417</code></pre>
 </div>
 </div>
 <p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je každá ďaľšia hodina učenia asociovaná s navýšením skóre v priemere o približne <span class="math inline">\(1.03\%\)</span>.</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \log(y_i) &amp;=&amp; \beta_0 + \beta_1 x_i + \epsilon_i \\
 &amp;&amp; x_i \rightarrow x_i + \Delta \\
 &amp;&amp; \implies \\
@@ -1177,7 +1177,7 @@ y_i &amp;\rightarrow&amp; e^{\beta_0 + \beta_1 x_i + \epsilon_i}  e^{\beta_1 \De
 y_i &amp;\rightarrow&amp; y_i e^{\beta_1 \Delta} \\
 &amp;\sim&amp;\\
 y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>&nbsp;</p>
 <p>Táto aproximácia (preto to slovo <em>približne</em>) je založená na tom, že pre malé hodnoty <span class="math inline">\(x\)</span> je funkcia <span class="math inline">\((1+\beta x)\)</span> veľmi podobná funkcii <span class="math inline">\(e^{\beta x}\)</span> ako je zobrazené na tomto obrázku.</p>
 <div class="cell">
@@ -1249,7 +1249,7 @@ F-statistic: 23.28 on 2 and 17 DF,  p-value: 1.354e-05</code></pre>
 </div>
 </div>
 <p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je nárast učenia o 1% asociovaný s navýšením skóre v priemere o približne <span class="math inline">\(0.12\)</span>. Takže zdvojnásobnenie je asociované s približne 12 bodmi na teste.</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 y_i &amp;=&amp; \beta_0 + \beta_1 \log(x_i) + \epsilon_i \\
 &amp;&amp; x_i \rightarrow x_i (1+\Delta) \\
 &amp;&amp; \implies \\
@@ -1258,7 +1258,7 @@ y_i &amp;\rightarrow&amp; \beta_0 + \beta_1 \log(x_i) +  \beta_1 \log(1+\Delta) 
 y_i &amp;\rightarrow&amp; y_i +  \beta_1 \log(1+\Delta)\\
 &amp;\sim&amp;\\
 y_i &amp;\rightarrow&amp; y_i +  \beta_1 \Delta
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>&nbsp;</p>
 <p>Táto aproximácia (preto to slovo <em>približne</em>) je založená na tom, že pre malé hodnoty <span class="math inline">\(x\)</span> je funkcia <span class="math inline">\(\beta \log(1+ x)\)</span> veľmi podobná funkcii <span class="math inline">\(\beta x\)</span> ako je zobrazené na tomto obrázku.</p>
 <div class="cell">
@@ -1332,7 +1332,7 @@ F-statistic: 30.05 on 2 and 17 DF,  p-value: 2.624e-06</code></pre>
 </div>
 </div>
 <p><strong>Interpretácia:</strong> Náš model predikuje, že pre danú skupinu žiakov je nárast učenia o 1% asociovaný s navýšením skóre v priemere o približne <span class="math inline">\(0.2\%\)</span> bodov. Takže zdvojnásobnenie je asociované s približne s 20% nárastom bodov na teste.</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \log(y_i) &amp;=&amp; \beta_0 + \beta_1 \log(x_i) + \epsilon_i \\
 &amp;&amp; x_i \rightarrow x_i (1+\Delta) \\
 &amp;&amp; \implies \\
@@ -1345,7 +1345,7 @@ y_i &amp;\rightarrow&amp; y_i e^{ \log\big((1+\Delta)^{\beta_1}\big)}\\
 y_i &amp;\rightarrow&amp; y_i (1+\Delta)^{\beta_1}\\
 &amp;\sim&amp;\\
 y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>&nbsp;</p>
 <p>Táto aproximácia (znovu tu máme slovo <em>približne</em>) je založená na tom, že pre malé hodnoty <span class="math inline">\(x\)</span> je funkcia <span class="math inline">\((1+ x)^{\beta}\)</span> veľmi podobná funkcii <span class="math inline">\(1+\beta x\)</span> ako je zobrazené na tomto obrázku.</p>
 <div class="cell">
@@ -1380,8 +1380,8 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 <!-- [R súbor z cvičení s komentármi](https://www.dropbox.com/scl/fi/ltg828cjae7z0x9de2m7h/20231214-labs08-komentare.R?rlkey=1thlpstfht8re73bau3yv2e8p&dl=0) -->
 <!-- [R súbor k cvičeniam 24.11.2022 riešenia](https://www.dropbox.com/s/ivhfnghkk21x1gd/labs_week10_solutions.R?dl=0) -->
 <!-- [R súbor k cvičeniam 2.12.2022 (riešené)](https://www.dropbox.com/s/i4wldlfiuyqbb05/labs_week11.R?dl=0) -->
-<p><a href="https://www.dropbox.com/scl/fi/moluuoa1dg24kpvwiekp9/cvicenie9part1.R?rlkey=a361zkhh93r8k62c0nzg3qn5p&amp;dl=0">R súbor z cvičení 24.11.2025</a></p>
-<p><a href="https://www.dropbox.com/scl/fi/wok2lovpnq8g3ye0gxpt5/cvicenie9.R?rlkey=goswlrw8u4xgeigdun2da5kfz&amp;dl=0">R súbor z cvičení 1.12.2025</a></p>
+<!-- [R súbor z cvičení 24.11.2025](https://www.dropbox.com/scl/fi/moluuoa1dg24kpvwiekp9/cvicenie9part1.R?rlkey=a361zkhh93r8k62c0nzg3qn5p&dl=0) -->
+<!-- [R súbor z cvičení 1.12.2025](https://www.dropbox.com/scl/fi/wok2lovpnq8g3ye0gxpt5/cvicenie9.R?rlkey=goswlrw8u4xgeigdun2da5kfz&dl=0) -->
 <div id="exr-" class="Exercise theorem exercise">
 <p><span class="theorem-title"><strong>Cvičenie 9.1</strong></span> Stiahnite si tieto <a href="https://www.dropbox.com/s/i7ia0n0elm1ts8l/Kompletny-prehlad-mesta-a-obce%20ciste.xlsx?dl=0">dáta</a> o veľkom Slovenskom antigénovom testovaní z roku 2020. Skúmajte aký je vzťah medzi percentom nakazených v prvom a v druhom kole testovania pre rôzne obce. Pozrite sa oddelene na malé, stredné a veľké obce.</p>
 </div>
@@ -1423,8 +1423,9 @@ y_i &amp;\rightarrow&amp; y_i (1+\beta_1 \Delta)
 </section>
 <section id="domáca-úloha-5" class="level2" data-number="9.13">
 <h2 data-number="9.13" class="anchored" data-anchor-id="domáca-úloha-5"><span class="header-section-number">9.13</span> Domáca úloha 5</h2>
-<p>Prosím odovzdať do 14.12.2025 19:59 cez formulár (tento Vám príde emailom).</p>
-<p>V riešeniach používajte prosím plnovýznamové vety a nahrávajte riešenia v jednom pdf súbore nazvanom podľa Vašich priezvísk v tvare DU5_priezvisko1_priezvisko2.pdf (napríklad DU5_Kovacova_Zelinka.pdf).</p>
+<!-- Prosím odovzdať do 14.12.2025 19:59 cez formulár (tento Vám príde emailom).
+
+V riešeniach používajte prosím plnovýznamové vety a nahrávajte riešenia v jednom pdf súbore nazvanom podľa Vašich priezvísk v tvare DU5_priezvisko1_priezvisko2.pdf (napríklad DU5_Kovacova_Zelinka.pdf). -->
 <div class="exercise" name="DÚ 5.1, mtcars">
 <p>Závislosť spotreby paliva od hmotnosti auta (dataset mtcars) Použite dataset mtcars.</p>
 <ol type="a">
